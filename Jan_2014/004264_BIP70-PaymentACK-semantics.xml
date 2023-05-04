@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>BIP70: PaymentACK semantics</h1>
+    <hr>
+    <ul>
+
+        
+        
+        <p><b>Author:</b> Pieter Wuille</p>
+        
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004264.html">click here to read brief discussion</a>
+        <p>Published on: 2014-01-30T15:16:54+00:00</p>
+        <hr>
+        <h3> Summary:</h3>
+        <p>In a discussion about the payment protocol in Bitcoin Core, there was debate over whether wallets should broadcast transactions as soon as possible or wait for merchants to respond with a PaymentACK. Gavin Andresen proposed letting wallets experiment with different methods to see what works best in practice. However, another issue was raised regarding the bidirectional nature of the payment protocol. If a merchant wants to use the refund or memo feature, they need an alternative route for delivery before the transaction is made, as sending it may result in funds being transferred without knowing what to do with them. Pieter&#39;s suggestion was to add requirements to the specification, such as attempting to send the payment to the specified payment_uri and making a reasonable attempt to deliver the payment even if the transaction is broadcasted without payment.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-04T21:11:51.845844+00:00</p>
+</body>
+
+</html>

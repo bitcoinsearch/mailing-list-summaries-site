@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Time to worry about 80-bit collision attacks or not?</h1>
+    <hr>
+    <ul>
+
+        
+        
+        <p><b>Author:</b> Matt Corallo</p>
+        
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012208.html">click here to read brief discussion</a>
+        <p>Published on: 2016-01-08T01:26:22+00:00</p>
+        <hr>
+        <h3> Summary:</h3>
+        <p>The conversation on the bitcoin-dev mailing list revolves around the security of cryptographic algorithms used in Bitcoin transactions. Gavin Andresen expresses his concern about weakening the encryption used to protect billions of dollars worth of money belonging to others. Ethan Heilman presents an algorithm that can find collisions between two arbitrary values and also claims that length extension attacks are possible with RIPEMD160. Gavin asserts that the algorithm is not useful as an attack in the current context, and Dave describes a first preimage attack that requires 2^160 CPU time and no storage. They discuss the security implications of using SHA256(SHA256) over RIPEMD160(SHA256) and conclude that the former offers a negligible incremental increase in security compared to the risk of implementation errors caused by having multiple ways of interpreting the segwitness hash. They also believe that a single 20-byte segwitness in the scriptPubKey is the best design, considering its simplicity, smaller size, and the implied capacity increase.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-04T21:13:58.211763+00:00</p>
+</body>
+
+</html>

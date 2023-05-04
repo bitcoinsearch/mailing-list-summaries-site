@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr>
+    <ul>
+
+        
+        
+        <p><b>Author:</b> Matt Corallo</p>
+        
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016608.html">click here to read brief discussion</a>
+        <p>Published on: 2019-01-07T15:18:52+00:00</p>
+        <hr>
+        <h3> Summary:</h3>
+        <p>The conversation discusses the proposal of &#34;RBF-pinning&#34; problem in Bitcoin transactions. The proposal suggests a relay policy where children of marked transactions as &#34;likely-to-be-RBF&#39;ed&#34; would be rejected unless the resulting package would be &#34;near the top of the mempool&#34;. However, this could still fail to confirm within a handful of blocks given block time variance. It also restricts the ability to RBF/CPFP more than once in case the fee moves away from us, which is a significant limitation. The original proposal was considered a hack, but it works on the boundary condition where packages meet local anti-DoS rules in violation of the &#34;incentive compatible&#34; goal. Matt Corallo suggested an alternative proposal, which Rusty Russell found interesting and incentive-compatible. It reduces the problem that the current lightning proposal adds to the UTXO set with two anyone-can-spend txs for 1000 satoshis. However, it relies on some form of package relay, which comes with its own challenges.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-04T21:16:01.273595+00:00</p>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Capacity increases for the Bitcoin system.</h1>
+    <hr>
+    <ul>
+
+        
+        
+        <p><b>Author:</b> Anthony Towns</p>
+        
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012265.html">click here to read brief discussion</a>
+        <p>Published on: 2016-01-22T09:46:18+00:00</p>
+        <hr>
+        <h3> Summary:</h3>
+        <p>In a discussion on bitcoin-dev in 2016, Anthony Towns stated that he believed there were some mistakes in the numbers presented regarding segregated witness (segwit) scripts. He suggested that version 0 segwit transactions would be more efficient for P2PKH and would have the same security as Bitcoin currently has. The latest segwit code treats a 32 byte push as the sha256 of a script, and a 20 byte push as the hash of the public key. The witness scriptPubKey format uses &#34;OP_0 [hash]&#34; to push the version and hash to the script separately. This change means that segwit P2PKH needs 31 bytes per output instead of 36 bytes, giving another couple of percentage gains. Segwit P2PKH is estimated to improve by 174%-181% while 2-of-2 multisig will improve by 197%-204%. The p2pkh with segwit-via-p2sh is probably interesting, with these numbers working out as: segwit: 10+41i+31o + 0.25*105*i (for comparison); segp2sh: 10+60i+32o + 0.25*105*i [0] -&gt; 10+119i -&gt; 147%-151%.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-04T21:13:22.508776+00:00</p>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>OpenSSL 1.0.0p / 1.0.1k incompatible, causes blockchain rejection.</h1>
+    <hr>
+    <ul>
+
+        
+        
+        <p><b>Author:</b> Gregory Maxwell</p>
+        
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007097.html">click here to read brief discussion</a>
+        <p>Published on: 2015-01-10T04:26:23+00:00</p>
+        <hr>
+        <h3> Summary:</h3>
+        <p>OpenSSL 1.0.0p/1.0.1k has been released, but it is incompatible with the Bitcoin system and could lead to consensus forks. The incompatibility is due to the OpenSSL update changing the behavior of ECDSA validation, which can constitute a security vulnerability for the Bitcoin system. If you are running third-party or self-compiled Bitcoin Core or an alternative implementation using OpenSSL, you must not update OpenSSL or must run a Bitcoin software containing a workaround. The patches above only fix one symptom of the general problem, relying on software not designed or distributed for consensus use (in particular OpenSSL) for consensus-normative behavior. Therefore, as an incremental improvement, a targeted soft-fork to enforce strict DER compliance soon, utilizing a subset of BIP62, is proposed. Adding a blockchain rule for strict DER will reduce the risk of consensus inconsistencies from alternative implementations of signature parsing or signature verification, simplify BIP62, and better isolate the cryptographic validation code from the consensus algorithm.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-04T21:12:17.248757+00:00</p>
+</body>
+
+</html>

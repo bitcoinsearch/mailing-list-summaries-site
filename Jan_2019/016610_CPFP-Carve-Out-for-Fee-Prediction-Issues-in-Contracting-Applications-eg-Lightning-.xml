@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr>
+    <ul>
+
+        
+        
+        <p><b>Author:</b> Matt Corallo</p>
+        
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016610.html">click here to read brief discussion</a>
+        <p>Published on: 2019-01-08T14:46:45+00:00</p>
+        <hr>
+        <h3> Summary:</h3>
+        <p>The conversation is about an alternative proposal that does not guarantee the ability to RBF as fees change. The issue of a counterparty announcing a bogus package and leaving the user unable to add a new transaction is still present, but it may be significantly more expensive to do so. Defining a &#34;near the top of the mempool&#34; criteria is problematic, especially for lightning operators who need certainty that transactions will confirm by some deadline. Even if you imagine a steady-state mempool growth, the &#34;top of the next block&#34; criteria is not incentive-compatible due to block time variance. An attacker could make a 100k package that would get into the &#34;top,&#34; then push it out with a separate tx at slightly higher fee, then repeat. However, whatever is simplest to implement should win, and the speaker is not in a position to judge accurately.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-04T21:16:24.110116+00:00</p>
+</body>
+
+</html>

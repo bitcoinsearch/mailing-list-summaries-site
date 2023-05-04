@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Safer NOINPUT with output tagging</h1>
+    <hr>
+    <ul>
+
+        
+        
+        <p><b>Author:</b> Anthony Towns</p>
+        
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016640.html">click here to read brief discussion</a>
+        <p>Published on: 2019-01-31T06:04:05+00:00</p>
+        <hr>
+        <h3> Summary:</h3>
+        <p>In a Bitcoin-dev discussion, it was suggested that a boutique protocol could reduce the number of onchain wallets integrated in user interfaces. A proposal was made for using PSBT as a sufficient protocol. The proposed process involves the lightning node generating a PSBT for a new channel with no inputs and a single output of the 2-of-2 address. The wallet funds the PSBT but doesn&#39;t sign it, adding a change address if necessary, and can combine with other transactions similar to Bustapay style. Lightning determines the txid from PSBT and creates update/settlement tx&#39;s for funding tx so funds can be recovered. Then, the wallet signs and publishes the PSBT, and lightning sees the tx on chain and channel is open. Though this method is more complicated than the previous method, it avoids letting users get into the habit of passing NOINPUT addresses around or the risk of a user typo&#39;ing the value and losing money immediately. It also has the benefit that the wallet can tweak the value if (eg) that avoids a change address or enhances privacy.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-04T21:16:13.394080+00:00</p>
+</body>
+
+</html>
