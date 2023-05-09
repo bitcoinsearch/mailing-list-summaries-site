@@ -20,18 +20,21 @@
     <ul>
 
         
-        
-        <p><b>Author:</b> Matt Corallo</p>
-        
-        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012208.html">click here to read brief discussion</a>
-        <p>Published on: 2016-01-08T01:26:22+00:00</p>
-        <hr>
-        <h3> Summary:</h3>
-        <p>The conversation on the bitcoin-dev mailing list revolves around the security of cryptographic algorithms used in Bitcoin transactions. Gavin Andresen expresses his concern about weakening the encryption used to protect billions of dollars worth of money belonging to others. Ethan Heilman presents an algorithm that can find collisions between two arbitrary values and also claims that length extension attacks are possible with RIPEMD160. Gavin asserts that the algorithm is not useful as an attack in the current context, and Dave describes a first preimage attack that requires 2^160 CPU time and no storage. They discuss the security implications of using SHA256(SHA256) over RIPEMD160(SHA256) and conclude that the former offers a negligible incremental increase in security compared to the risk of implementation errors caused by having multiple ways of interpreting the segwitness hash. They also believe that a single 20-byte segwitness in the scriptPubKey is the best design, considering its simplicity, smaller size, and the implied capacity increase.</p>
+            
+                
+                <p><b>Author:</b> Matt Corallo</p>
+                
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012208.html">click here to read brief discussion</a>
+            <p>Published on: 2016-01-08T01:26:22+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>In a Bitcoin developer mailing list discussion, Gavin Andresen expressed his opposition to weakening the crypto used to protect billions of dollars of other people&#39;s money just because other attacks are possible. He stated that it is easy for wallets to mitigate any risks and claimed that a single 20-byte segwit in the scriptPubKey is the best design for security reasons. Ethan Heilman explained that even if all an adversary can do is create two random values that collide, they could use a length extension attack on RIPEMD-160 to find hash(x||z) = hash(y||z). Gavin then asked Matt/Adam if they had any reason to think that RIPEMD160 would be broken before SHA256 and whether they think they will be so broken that the nested hash construction RIPEMD160(SHA256()) will be vulnerable.</p>
         
     </ul>
     <hr>
-    <p>Updated on: 2023-05-04T21:13:58.211763+00:00</p>
+    <p>Updated on: 2023-05-09T22:28:23.079723+00:00</p>
 </body>
 
 </html>

@@ -20,18 +20,21 @@
     <ul>
 
         
-        
-        <p><b>Author:</b> Anthony Towns</p>
-        
-        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012218.html">click here to read brief discussion</a>
-        <p>Published on: 2016-01-08T15:33:29+00:00</p>
-        <hr>
-        <h3> Summary:</h3>
-        <p>In this communication, Gavin Andresen is requesting clarification on a collision attack scenario involving a payment channel. The attacker creates two scripts with different values that hash to the same result and can use them to make payments without alerting the victim. Ethan Heilman provides a procedure for creating such scripts using a function of the attacker&#39;s private key. Using a weakened hash function, Heilman demonstrates how to find a &#34;useful&#34; collision in under 15*2**80 work.</p>
+            
+                
+                <p><b>Author:</b> Anthony Towns</p>
+                
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012218.html">click here to read brief discussion</a>
+            <p>Published on: 2016-01-08T15:33:29+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>In January 2016, Gavin Andresen wrote on bitcoin-dev mailing list asking for confirmation if he correctly followed the specifics of the collision attack. The attack is performed by an attacker who is in the middle of establishing a payment channel with someone. The victim gives their public key to the attacker, who creates an innocent fund-locking script &#39;2 V A 2 CHECKMULTISIG&#39; (V is victim&#39;s public key, A is attacker&#39;s) but does not give it to the victim yet. Using Ethan Heilman&#39;s procedure, the attacker can create two scripts which hash to the same result. The attacker can make the form of the script be a function of their key and cycle through multiple attempts until they get a usable pair with under 3*2**80 work. In a python implementation with weakened hash function, a useful collision was obtained in the second attempt in about 7 seconds.</p>
         
     </ul>
     <hr>
-    <p>Updated on: 2023-05-04T21:13:46.511817+00:00</p>
+    <p>Updated on: 2023-05-09T22:28:13.386726+00:00</p>
 </body>
 
 </html>

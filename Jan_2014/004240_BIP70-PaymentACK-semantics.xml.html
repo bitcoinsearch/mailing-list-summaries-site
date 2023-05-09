@@ -20,18 +20,21 @@
     <ul>
 
         
-        
-        <p><b>Author:</b> Pieter Wuille</p>
-        
-        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004240.html">click here to read brief discussion</a>
-        <p>Published on: 2014-01-28T13:09:28+00:00</p>
-        <hr>
-        <h3> Summary:</h3>
-        <p>The conversation between Gavin Andresen and Mike Hearn revolves around the topic of CoinJoin and the specifications for broadcasting transactions. While the spec does not specify when to broadcast versus when to submit via HTTP, it is noted that if wallets were required to wait for a PaymentACK before broadcasting, it would make implementing CoinJoin more difficult. The discussion also touches on the importance of retrying if a payment_url is unavailable and the potential complexities in handling failed payments. Ultimately, while it may be preferred to not broadcast immediately, there are cases where it cannot be enforced.</p>
+            
+                
+                <p><b>Author:</b> Pieter Wuille</p>
+                
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004240.html">click here to read brief discussion</a>
+            <p>Published on: 2014-01-28T13:09:28+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>In an email exchange between Gavin Andresen and Mike Hearn in 2014, they discussed the issue of broadcasting transactions and the use of PaymentACK. If a wallet is doing automatic CoinJoin, then other participants will typically broadcast the transaction as soon as it&#39;s complete. However, if the specification says that wallets must not broadcast until they receive a PaymentACK, then this would violate the spec to do CoinJoin. It was suggested that not broadcasting if a payment_uri is present could minimize the risk of unreliable memo and refund addresses, but there are enough cases where this cannot be enforced. If a payment_url is unavailable, it&#39;s recommended to retry and even if you don&#39;t care about CoinJoin, not broadcasting the transaction as soon as the inputs are signed adds implementation complexity.</p>
         
     </ul>
     <hr>
-    <p>Updated on: 2023-05-04T21:12:05.609206+00:00</p>
+    <p>Updated on: 2023-05-09T22:23:36.479341+00:00</p>
 </body>
 
 </html>

@@ -20,18 +20,21 @@
     <ul>
 
         
-        
-        <p><b>Author:</b> Matt Corallo</p>
-        
-        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016610.html">click here to read brief discussion</a>
-        <p>Published on: 2019-01-08T14:46:45+00:00</p>
-        <hr>
-        <h3> Summary:</h3>
-        <p>The conversation is about an alternative proposal that does not guarantee the ability to RBF as fees change. The issue of a counterparty announcing a bogus package and leaving the user unable to add a new transaction is still present, but it may be significantly more expensive to do so. Defining a &#34;near the top of the mempool&#34; criteria is problematic, especially for lightning operators who need certainty that transactions will confirm by some deadline. Even if you imagine a steady-state mempool growth, the &#34;top of the next block&#34; criteria is not incentive-compatible due to block time variance. An attacker could make a 100k package that would get into the &#34;top,&#34; then push it out with a separate tx at slightly higher fee, then repeat. However, whatever is simplest to implement should win, and the speaker is not in a position to judge accurately.</p>
+            
+                
+                <p><b>Author:</b> Matt Corallo</p>
+                
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016610.html">click here to read brief discussion</a>
+            <p>Published on: 2019-01-08T14:46:45+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>The discussion is about an alternative proposal that does not guarantee the ability to RBF as fees change. The problem of a counterparty announcing a bogus package and leaving you unable to add a new transaction to it still exists, but it may be more expensive to do so. Defining a &#34;near the top of the mempool&#34; criteria is difficult, especially for Lightning&#39;s requirements. Lightning&#39;s operators need certainty that transactions will confirm by some deadline, which is different from large batched transactions. A steady-state mempool growth assumption does not hold up because of block time variance. Rusty Russell defines &#34;top of mempool&#34; as &#34;in the first 4 MSipa&#34;, which is next block, and assumed that RBF would only be allowed if the old package was not in the top and the replacement would be. However, even this criteria does not hold up because of block variance within a 12 block window. An attacker can make you pay next-block high fees, but it is still better than the current &#34;*always* overpay and hope!&#34;</p>
         
     </ul>
     <hr>
-    <p>Updated on: 2023-05-04T21:16:24.110116+00:00</p>
+    <p>Updated on: 2023-05-09T22:34:06.206117+00:00</p>
 </body>
 
 </html>

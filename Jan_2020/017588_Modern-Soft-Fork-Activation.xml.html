@@ -20,18 +20,21 @@
     <ul>
 
         
-        
-        <p><b>Author:</b> Anthony Towns</p>
-        
-        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017588.html">click here to read brief discussion</a>
-        <p>Published on: 2020-01-16T03:46:17+00:00</p>
-        <hr>
-        <h3> Summary:</h3>
-        <p>The discussion revolves around the proposal of implementing a soft-fork activation path through BIP 9. The goal is to have an &#34;out&#34; and observe the response of the ecosystem once the change is visible, before actually activating it. The concern raised is that there might not be enough time for observation and discussion. The proposed solution is to release the first point with the soft-fork activation parameters without updating getblocktemplate to signal the version bit by default. This way, miners can only enable signalling if they need to rush things, and there is more time for observation. The downside of this approach is that it might lead to forking the chain with no gain. The discussion also touches on how version bits are set on the mining software rather than the node software, which means that there is no strong link between signalling and having updated your software to enforce new rules. People have suggested moving signalling into the coinbase or similar to make that link tighter.</p>
+            
+                
+                <p><b>Author:</b> Anthony Towns</p>
+                
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017588.html">click here to read brief discussion</a>
+            <p>Published on: 2020-01-16T03:46:17+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>The discussion revolves around the proposal of using BIP 9 process as a compelling activation path and for providing observation and discussion time for any objections before a BIP 8/flag day activation. The concern raised is whether there is enough time for observation and discussion with the proposed timeline. The example of the BIP 68/112/113 bundle is given to support this concern. One suggestion to improve this is to have the first point release that includes the soft-fork activation parameters not update getblocktemplate to signal the version bit by default, but only do that in a second point release later. Additionally, it is mentioned that version bits are set via mining software rather than the node software that constructs blocks, which means there is no strong link between signaling and having actually updated software to enforce new rules. It is suggested that moving signaling into the coinbase or similar could make that link tighter.</p>
         
     </ul>
     <hr>
-    <p>Updated on: 2023-05-04T21:16:51.443037+00:00</p>
+    <p>Updated on: 2023-05-09T22:35:16.361781+00:00</p>
 </body>
 
 </html>
