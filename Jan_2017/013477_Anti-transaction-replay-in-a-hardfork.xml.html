@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Anti-transaction replay in a hardfork</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                <p><b>Author:</b> Johnson Lau</p>
+                
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013477.html">click here to read brief discussion</a>
+            <p>Published on: 2017-01-25T04:03:40+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>The conversation is about the proposal by Johnson Lau regarding opt-in and opt-out bits for transaction replay protection in a new network. Tom Harding comments that while Lau&#39;s proposal relies on non-standardness for protection, a responsible new network should allow something invalid in the existing network for transactions where replay to the existing network is undesirable. Furthermore, Harding suggests that specifying changes to be included in the new network, such as the specific O(n^2) fix proposed by Lau, is an overreach and should be left up to the new network itself. Lau&#39;s proposal depends on the new network enforcing a new SignatureHash for transactions with an nVersion not used in the existing network. This is a hard fork and the existing network would never accept such transactions. If the new network wants to protect its users, it could include a SignatureHash hard fork like this, along with other hard fork changes.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-09T22:30:11.149635+00:00</p>
+</body>
+
+</html>

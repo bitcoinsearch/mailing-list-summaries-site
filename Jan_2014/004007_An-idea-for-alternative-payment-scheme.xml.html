@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>An idea for alternative payment scheme</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                <p><b>Author:</b> Gregory Maxwell</p>
+                
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004007.html">click here to read brief discussion</a>
+            <p>Published on: 2014-01-03T18:30:38+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>In an email conversation dating back to January 3, 2014, Nadav Ivgi suggested a payment scheme where the payer would derive addresses instead of the payee. The proposed system involves the payee publishing their master public key, and the payer generating a random receipt number to derive an address from the public key and make a payment using it. The payer then sends the receipt to the payee, who derives a private key with that receipt and adds it to their wallet. However, another idea was introduced in the email chain where the payee publishes two public keys PP and PP2, and the payer multiplies PP2 by a chosen k value. They then pay to the pubkey PP+n with r in their first signature or in an optional OP_RETURN additional output if none of the txins are ECDSA signed. The payer then advises the payee that PP+(pp2_secret*r) is something they can redeem. Though this scheme has a downside, it offers the advantage that if the payer loses their computer after making the payment, the funds are not lost but remain confidential. These schemes offer an advantage over plain payment protocols as they allow for the first round of communication to be broadcast while still preserving privacy.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-09T22:22:43.145659+00:00</p>
+</body>
+
+</html>

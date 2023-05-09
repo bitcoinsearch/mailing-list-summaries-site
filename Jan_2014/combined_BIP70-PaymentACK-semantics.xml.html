@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Combined summary - BIP70: PaymentACK semantics</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                    <li>
+                    <a href="/Jan_2014/004264_BIP70-PaymentACK-semantics.xml.html">BIP70: PaymentACK semantics</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+                    <li>
+                    <a href="/Jan_2014/004240_BIP70-PaymentACK-semantics.xml.html">BIP70: PaymentACK semantics</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+                    <li>
+                    <a href="/Jan_2014/004228_BIP70-PaymentACK-semantics.xml.html">BIP70: PaymentACK semantics</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+                    <li>
+                    <a href="/Jan_2014/004265_BIP70-PaymentACK-semantics.xml.html">BIP70: PaymentACK semantics</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004264.html">click here to read brief discussion</a>
+            <p>Published on: 2014-01-30T15:16:54+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>The discussion is about the payment protocol being bidirectional, which allows merchants to use features such as refunds and memos. However, if the merchant&#39;s receive server is down at the time of transaction, the transfer of funds may occur without knowing what to do with it, making these fields useless. To prevent this issue, Pieter suggests that if a payment_uri is specified, the client must attempt to send the payment there. If a transaction is broadcast, a client should make a reasonable attempt at delivering the payment. If a paymentACK has been received, the client is no longer responsible for broadcasting the transaction but still may. The primary meaning of receiving an ACK is that the receiver takes responsibility for getting the transaction confirmed. This means the client does not need to stay online anymore, which removes the requirement for the P2P network to function as a reliable sender-&gt;receiver communication channel and reduces it to a broadcast medium to get transactions to miners.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-09T22:23:59.093520+00:00</p>
+</body>
+
+</html>

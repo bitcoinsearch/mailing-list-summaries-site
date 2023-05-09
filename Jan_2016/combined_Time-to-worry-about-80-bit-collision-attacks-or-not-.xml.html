@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Combined summary - Time to worry about 80-bit collision attacks or not?</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                    <li>
+                    <a href="/Jan_2016/012219_Time-to-worry-about-80-bit-collision-attacks-or-not-.xml.html">Time to worry about 80-bit collision attacks or not?</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+                    <li>
+                    <a href="/Jan_2016/012218_Time-to-worry-about-80-bit-collision-attacks-or-not-.xml.html">Time to worry about 80-bit collision attacks or not?</a>
+                    <b>Anthony Towns</b>
+                    </li>
+                
+                    <li>
+                    <a href="/Jan_2016/012208_Time-to-worry-about-80-bit-collision-attacks-or-not-.xml.html">Time to worry about 80-bit collision attacks or not?</a>
+                    <b>Matt Corallo</b>
+                    </li>
+                
+                    <li>
+                    <a href="/Jan_2016/012205_Time-to-worry-about-80-bit-collision-attacks-or-not-.xml.html">Time to worry about 80-bit collision attacks or not?</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+                    <li>
+                    <a href="/Jan_2016/012199_Time-to-worry-about-80-bit-collision-attacks-or-not-.xml.html">Time to worry about 80-bit collision attacks or not?</a>
+                    <b>Matt Corallo</b>
+                    </li>
+                
+
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012219.html">click here to read brief discussion</a>
+            <p>Published on: 2016-01-08T17:38:34+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>The Bitcoin community is currently discussing the implementation of Segregated Witness (segwit), a proposal aimed at resolving issues related to scaling and transaction malleability. A recent email exchange between Pieter Wuille, Bitcoin core developer; Gavin Andresen, former lead developer at Bitcoin Foundation; and Ethan Heilman, a Boston University computer science professor, revealed concerns over security issues related to hash collisions in segwit. While Wuille proposed a version 1 witness program, which would have increased security against such attacks but also increased implementation complexity, Andresen suggested using a version 0 witness program that simplifies the process, but at the cost of reducing security to 80 bits. Heilman subsequently demonstrated that an attacker could create two scripts that hashed to the same value in less than 3*2^80 work, using a length extension attack on RIPEMD-160. Andresen responded by arguing that he did not want to weaken the crypto used to protect billions of dollars in Bitcoin transactions.
+The discussion on the mailing list of Bitcoin-dev revolves around the security of hash functions, more specifically RIPEMD160 and SHA256. It was suggested to use RIPEMD160(SHA256()) as the hash function to save 12 bytes, however, some argued that it does not guarantee collision resistance and is not secure enough. It was mentioned that cascading the same hash function twice is weaker than using HMAC, but there is no research available regarding cascading RIPEMD160(SHA256()). Furthermore, the concern was raised that 80-bit collision resistance is not sufficient as targeted collision attacks can work without much memory. The fear of a pre-image attack against RIPEMD160 was also discussed. Some suggested that contract wallets could protect against collision attacks by refusing scripts with identical hashes while others argued that adding an extra 12 bytes to every segwit to prevent an attack that takes O(2^80) computation and storage is unlikely to be a problem in practice and is trivial to protect against. Lastly, the question was raised whether we should worry about collision attacks against RIPEMD160 today, as mounting a successful brute-force collision attack would require at least O(2^80) CPU and storage, which is infeasible currently.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-09T22:29:07.808062+00:00</p>
+</body>
+
+</html>
