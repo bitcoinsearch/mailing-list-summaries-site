@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Version bytes</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                <p><b>Author:</b> Pieter Wuille</p>
+                
+                <p></p>
+                <a href="/July_2011/combined_Version-bytes.xml.html">Combined Summary</a>
+
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000144.html">click here to read brief discussion</a>
+            <p>Published on: 2011-07-07T11:15:58+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>A discussion on IRC has led to the decision to standardize the version bytes used by Bitcoin for various applications. The three components deemed meaningful are network, data class, and version. While there is no technical reason why different networks and data classes would require separate version bytes, it is beneficial to prevent collisions. The alternate chain uses version byte 52, and bit 16 will be reserved for &#34;alternate chain.&#34; When bit 16 isn&#39;t set, testnet uses version 111. To avoid this conflict, bit 1 can be chosen for testnet, which will XOR the rest of the version number with 111 if set. Alternatively, testnet can be reset, and odd numbers will be designated as testnet while even numbers will be realnet. Six more bits can be utilized, with 128 already being used for private keys. Thus, (128,64,32) will define data class, (8,4,2) will define version number, and bit 1 will define testnet. Data class 192 is proposed for master keys, leaving lower numbers for basic data such as public keys.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-11T15:59:04.019254+00:00</p>
+</body>
+
+</html>

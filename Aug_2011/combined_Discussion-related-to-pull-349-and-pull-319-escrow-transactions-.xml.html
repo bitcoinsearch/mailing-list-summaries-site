@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Combined summary - Discussion related to pull 349 and pull 319 (escrow transactions)</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                    <li>
+                    <a href="/Aug_2011/000298_Discussion-related-to-pull-349-and-pull-319-escrow-transactions-.xml.html">Discussion related to pull 349 and pull 319 (escrow transactions)</a>
+                    <b>Gregory Maxwell</b>
+                    </li>
+                
+                    <li>
+                    <a href="/July_2011/000217_Discussion-related-to-pull-349-and-pull-319-escrow-transactions-.xml.html">Discussion related to pull 349 and pull 319 (escrow transactions)</a>
+                    <b>Gregory Maxwell</b>
+                    </li>
+                
+
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000298.html">click here to read brief discussion</a>
+            <p>Published on: 2011-08-04T20:35:53+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>The email conversation discusses the implementation of multiple signature escrowed transactions and the challenges in getting it added to the client. The IsStandard part of the patch is seen as uncontroversial and could go in quickly, while the full escrow feature set would require more testing and discussion before being added. However, it won&#39;t be deployable until an updated IsStandard is widely used in the network. The patch exposes an issue with multisig validation due to redundancy in the script length coding opcodes, which can cause the signature validation to fail when something used OP_PUSHDATA when a direct length could have been used. Pull 349 contains one candidate fix for this: excluding the length opcodes from the comparison. However, this carries a risk of creating differences in how nodes validate transactions leading to lasting forks. Another way of fixing it would be to just define that OP_PUSHDATA* cannot be used to push the smaller lengths which could be more efficiently encoded with the direct length opcodes. Changing out the templating code is also suggested but deemed tricky to implement and validate.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-11T16:02:35.071988+00:00</p>
+</body>
+
+</html>

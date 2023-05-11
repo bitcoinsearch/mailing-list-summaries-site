@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Combined summary - Version bytes</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                    <li>
+                    <a href="/July_2011/000144_Version-bytes.xml.html">Version bytes</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+                    <li>
+                    <a href="/July_2011/000156_Version-bytes.xml.html">Version bytes</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+                    <li>
+                    <a href="/July_2011/000152_Version-bytes.xml.html">Version bytes</a>
+                    <b>Pieter Wuille</b>
+                    </li>
+                
+
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000144.html">click here to read brief discussion</a>
+            <p>Published on: 2011-07-07T11:15:58+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>Bitcoin has decided to standardize the version bytes used for several applications. There are three components that seem meaningful: network, data class, and version. There is no technical reason why different networks and data classes would need separate version bytes, but it&#39;s a good thing to keep them from colliding. The proposal is to use bit 16 in the version byte for alternate chains, as Namecoin already uses version byte 52 for addresses. When bit 16 isn&#39;t set, the rest of the network can be defined. Testnet currently uses version 111, which is not a single bit. To solve this problem, they can choose bit 1 for testnet and XOR the rest of the version number with 111 if bit 1 is set. Otherwise, they could reset testnet and state odd=testnet and even=realnet. They can use bits 128, 64, and 32 for data classes and bits 8, 4, and 2 for version numbers. Bit 1 defines testnet, and bit 16 defines &#34;private&#34;. Data class 192 is suggested for defining a format for master keys, leaving the lower numbers for more basic data such as public keys.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-11T15:59:23.411646+00:00</p>
+</body>
+
+</html>

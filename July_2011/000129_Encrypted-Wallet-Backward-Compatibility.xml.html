@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Encrypted Wallet Backward Compatibility</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                <p><b>Author:</b> Matt Corallo</p>
+                
+                <p></p>
+                <a href="/July_2011/combined_Encrypted-Wallet-Backward-Compatibility.xml.html">Combined Summary</a>
+
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000129.html">click here to read brief discussion</a>
+            <p>Published on: 2011-07-04T17:52:53+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>Bitcoin has backward-compatibility issues with wallet encryption. In version 0.3.23, Bitcoin dies after writing one unencrypted private key to the otherwise encrypted wallet. In version 0.3.22, Bitcoin opens fine and displays transactions but shows a total balance of what is held only in unencrypted keys, and each transaction shows only confirmation count, date, no description, and a debit/credit of 0.00. When attempting to read keypool, users get the &#34;ReserveKeyFromKeyPool() : unknown key in key pool&#34; error. There are suggestions to work around this issue, such as renaming wallet.dat for encrypted wallets or doing nothing and letting old clients get mad. However, it is suggested that Bitcoin should handle multiple key types gracefully and ask for a password to encrypt the unencrypted ones. It is recommended that Bitcoin should not continue as if nothing had happened when faced with unknown keys in the future.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-11T15:57:10.218251+00:00</p>
+</body>
+
+</html>
