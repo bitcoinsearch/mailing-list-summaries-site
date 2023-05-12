@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <style type="text/css">
+        pre {
+            white-space: pre-wrap;
+            /* css-2.1, curent FF, Opera, Safari */
+        }
+    </style>
+</head>
+
+<body BGCOLOR="#fffffb">
+    <h1>Roadmap/schedules</h1>
+    <hr>
+    <ul>
+
+        
+            
+                
+                <p><b>Author:</b> Pieter Wuille</p>
+                
+                <p></p>
+                <a href="/Aug_2011/combined_Roadmap-schedules.xml.html">Combined Summary</a>
+
+            
+            <p></p>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000339.html">click here to read brief discussion</a>
+            <p>Published on: 2011-08-10T18:57:53+00:00</p>
+            <hr>
+            <h3> Summary:</h3>
+            <p>In this email thread, Gavin Andresen lists the issues on his priority list for the next few months. One of the issues is a chronic problem with new code causing CRITICAL_SECTION deadlocks (#453). Sipa proposes two solutions to solve this issue. The first solution is to rewrite everything into a single-threaded Bitcoin library that processes events in finite time without any separate threads. This would be a serious rewrite and could potentially limit growth. The second solution is a careful checking and rework of the locking system. Sipa suggests a system with one lock for the node-handling code, one lock for the wallet-handling code, and one lock for network-handling code, which would include functions that only need read-only access. Sipa also suggests moving towards reader-writer locks (boost&#39;s shared_mutex), which would require all inspector functions to be wrapped in a lock_shared/unlock_shared block, all mutator functions to be wrapped in a lock_upgrade/unlock_upgrade block, and data structure modification code to be wrapped in an unlock_upgrade_and_lock/unlock_and_lock_upgrade block. Another issue on Gavin&#39;s priority list is to move from wxWidgets to Qt for the GUI. Additionally, he wants to un-hardcode fee handling, and Sipa has proposed a draft for a reworked fee system but hasn&#39;t had the time to implement it yet.</p>
+        
+    </ul>
+    <hr>
+    <p>Updated on: 2023-05-12T04:55:30.569852+00:00</p>
+</body>
+
+</html>

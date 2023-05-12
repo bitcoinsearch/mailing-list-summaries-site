@@ -24,12 +24,12 @@
                 
                     <li>
                     <a href="/July_2011/000188_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
-                    <b>Matt Corallo</b>
+                    <b>Matt Corallo 2011-07-14 14:13:04</b>
                     </li>
                 
                     <li>
                     <a href="/July_2011/000187_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
-                    <b>Pieter Wuille</b>
+                    <b>Pieter Wuille 2011-07-14 09:10:42</b>
                     </li>
                 
 
@@ -39,11 +39,11 @@
             <p>Published on: 2011-07-14T14:13:04+00:00</p>
             <hr>
             <h3> Summary:</h3>
-            <p>John Smith proposed to add notifications to the client and wallet, in order to decouple UI and core communication. He suggested using boost::signal mechanism for this purpose, which allows decoupled delivery of &#39;signals&#39; from an object. Multiple other objects can listen in on an event without the emitting object having to care. Specific notifications that would be useful include balanceChanged(int64), transactionAdded(int256), transactionUpdated(int256), transactionRemoved(int256), addressAdded(int160), addressUpdated(int160), addressRemoved(int160), notification(std::string message, int severity), and numConnectionsChanged(int) and numBlocksChanged(int) for Network client.</p>
+            <p>The discussion is about adding notifications to the client and wallet to decouple UI and core communication. The proposal suggests using the boost::signal mechanism, which allows decoupled delivery of &#39;signals&#39; from an object, with multiple other objects listening on an event without the emitting object having to care. The proposed notifications for Wallet include balanceChanged, transactionAdded, transactionUpdated, transactionRemoved, addressAdded, addressUpdated, addressRemoved, notification, and askFee. For Network client, it includes numConnectionsChanged, numBlocksChanged, and notification. The discussion also mentions a central notification interface that all components communicate with, allowing for clean separation of pieces and large-scale rewrites without touching anything but the parts being redone. This would also allow cool programs to use Bitcoin as a library efficiently.</p>
         
     </ul>
     <hr>
-    <p>Updated on: 2023-05-11T16:01:08.556556+00:00</p>
+    <p>Updated on: 2023-05-12T04:45:26.173221+00:00</p>
 </body>
 
 </html>
