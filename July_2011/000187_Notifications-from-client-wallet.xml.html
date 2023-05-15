@@ -33,11 +33,11 @@
             <p>Published on: 2011-07-14T09:10:42+00:00</p>
             <hr>
             <h3> Summary:</h3>
-            <p>In a message to the Bitcoin development mailing list in 2011, John Smith suggested using boost::signal to add notifications to the client and wallet. This mechanism would allow for decoupled delivery of &#39;signals&#39; from an object to multiple other objects without the emitting object having to care. Smith proposed specific notifications for the Wallet including balanceChanged, transactionAdded, transactionUpdated, transactionRemoved, addressAdded, addressUpdated, addressRemoved, notification, and askFee. For the Network client, he suggested numConnectionsChanged, numBlocksChanged, and notification. Pieter, another member of the mailing list, expressed approval of this idea and offered some additional suggestions for implementation.</p>
+            <p>In a discussion thread from 2011, John Smith proposed using boost::signal mechanism to add notifications to the client and wallet. This would allow decoupling UI and core communication and eliminate the need for UIs to poll for changes. Wallet notifications such as balanceChanged, transactionAdded, transactionUpdated, transactionRemoved, addressAdded, addressUpdated, addressRemoved, notification and askFee could be added. Suggestions were made for defining high-level information requests functions for transactions such as GetTransactionState, GetBroadcasts, GetInputs, GetOutputsToMe, GetOutputsToOthers and GetFee. Network client notifications such as numConnectionsChanged, numBlocksChanged and notification were also discussed. It was suggested that these would need to be implemented as globals until a more modular structure was put in place.</p>
         
     </ul>
     <hr>
-    <p>Updated on: 2023-05-12T04:45:26.168265+00:00</p>
+    <p>Updated on: 2023-05-15T18:36:45.447339+00:00</p>
 </body>
 
 </html>
