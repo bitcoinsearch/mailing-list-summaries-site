@@ -1,3 +1,18 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">-->
+<!--    <title>Atom Feed Display</title>-->
+<!--    <style type="text/css">-->
+<!--        pre {-->
+<!--            white-space: pre-wrap;-->
+<!--            /* css-2.1, curent FF, Opera, Safari */-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
 <!doctype html>
 <html lang="en">
 
@@ -6,38 +21,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
     <title>Atom Feed Display</title>
-    <style type="text/css">
-        pre {
-            white-space: pre-wrap;
-            /* css-2.1, curent FF, Opera, Safari */
-        }
-    </style>
+    <link rel="stylesheet" href="../archive_styles.css">
 </head>
 
 <body BGCOLOR="#fffffb">
+    
     <h1>Notifications from client/wallet</h1>
-    <hr>
+    <hr class="solid">
+    
     <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo
+            <br><i>Published on: 2011-07-14T14:13:04+00:00</i></p>
 
         
-            
-                
-                <p><b>Author:</b> Matt Corallo</p>
-                
-                <p></p>
-                <a href="/July_2011/combined_Notifications-from-client-wallet.xml.html">Combined Summary</a>
-
-            
-            <p></p>
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000188.html">click here to read brief discussion</a>
-            <p>Published on: 2011-07-14T14:13:04+00:00</p>
-            <hr>
-            <h3> Summary:</h3>
-            <p>In an email thread from 2011, John Smith proposed the addition of notifications to the Bitcoin client and wallet. The purpose was to decouple UI and core communication and eliminate the need for polling for changes. The boost::signal mechanism was suggested as a way to achieve this, allowing for decoupled delivery of "signals" from an object. Multiple other objects could listen in on an event without the emitting object having to care. Specific notifications that would be useful were listed for the wallet and network client. For the wallet, examples included balanceChanged, transactionAdded, addressAdded, and notification. For the network client, examples included numConnectionsChanged, numBlocksChanged, and notification. Another significant idea mentioned in the email thread was the implementation of a central notification interface that all components such as the wallet(s), net, block store, etc., could communicate with. This would allow for clean separation of pieces and large-scale rewrites of one or another part without touching anything but the parts that are being redone. It would also allow for cool programs (like pushpoold/a block notification server/etc) to use Bitcoin as a library fairly efficiently.</p>
         
+
+        <li>
+        <a href="/July_2011/combined_Notifications-from-client-wallet.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000188.html"> Click here to read original discussion on the bitcoin-dev mailing list </a>
+        </li>
+
     </ul>
+
     <hr>
-    <p>Updated on: 2023-05-15T18:36:32.607297+00:00</p>
+    <h3> Summary:</h3>
+    <p>In an email thread from 2011, John Smith proposed the addition of notifications to the Bitcoin client and wallet. The purpose was to decouple UI and core communication and eliminate the need for polling for changes. The boost::signal mechanism was suggested as a way to achieve this, allowing for decoupled delivery of "signals" from an object. Multiple other objects could listen in on an event without the emitting object having to care. Specific notifications that would be useful were listed for the wallet and network client. For the wallet, examples included balanceChanged, transactionAdded, addressAdded, and notification. For the network client, examples included numConnectionsChanged, numBlocksChanged, and notification. Another significant idea mentioned in the email thread was the implementation of a central notification interface that all components such as the wallet(s), net, block store, etc., could communicate with. This would allow for clean separation of pieces and large-scale rewrites of one or another part without touching anything but the parts that are being redone. It would also allow for cool programs (like pushpoold/a block notification server/etc) to use Bitcoin as a library fairly efficiently.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-15T18:36:32.607297+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
 </body>
 
 </html>

@@ -1,3 +1,18 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">-->
+<!--    <title>Atom Feed Display</title>-->
+<!--    <style type="text/css">-->
+<!--        pre {-->
+<!--            white-space: pre-wrap;-->
+<!--            /* css-2.1, curent FF, Opera, Safari */-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
 <!doctype html>
 <html lang="en">
 
@@ -6,38 +21,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
     <title>Atom Feed Display</title>
-    <style type="text/css">
-        pre {
-            white-space: pre-wrap;
-            /* css-2.1, curent FF, Opera, Safari */
-        }
-    </style>
+    <link rel="stylesheet" href="../archive_styles.css">
 </head>
 
 <body BGCOLOR="#fffffb">
+    
     <h1>Wallet encryption migration</h1>
-    <hr>
+    <hr class="solid">
+    
     <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell
+            <br><i>Published on: 2011-07-17T08:01:47+00:00</i></p>
 
         
-            
-                
-                <p><b>Author:</b> Gregory Maxwell</p>
-                
-                <p></p>
-                <a href="/July_2011/combined_Wallet-encryption-migration.xml.html">Combined Summary</a>
-
-            
-            <p></p>
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000205.html">click here to read brief discussion</a>
-            <p>Published on: 2011-07-17T08:01:47+00:00</p>
-            <hr>
-            <h3> Summary:</h3>
-            <p>In a discussion, Luke-Jr suggested two ways to enhance the security of the Bitcoin wallet. The first suggestion was to write over the old unencrypted wallet.dat multiple times with pseudo-random data to secure-delete it. The second suggestion was to mark all keys imported from an unencrypted file as "potentially compromised" and never use them for new addresses. In response, Arthur Britto disagreed with the first suggestion, stating that writing zeros just once should be sufficient. He also pointed out that moving the keypool addresses aside so they won't be used sounds like a good idea. However, he lamented that there is currently no way for the wallet to be born-encrypted. The only way to prevent a leak is to build the wallet initially on a ramdisk or the like, then move it over after encrypting it. Finally, he agreed with Luke-Jr's second suggestion, as it would make the key leak on a new wallet inconsequential since all keys in it are keypool keys at that point.</p>
         
+
+        <li>
+        <a href="/July_2011/combined_Wallet-encryption-migration.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000205.html"> Click here to read original discussion on the bitcoin-dev mailing list </a>
+        </li>
+
     </ul>
+
     <hr>
-    <p>Updated on: 2023-05-15T18:53:54.948654+00:00</p>
+    <h3> Summary:</h3>
+    <p>In a discussion, Luke-Jr suggested two ways to enhance the security of the Bitcoin wallet. The first suggestion was to write over the old unencrypted wallet.dat multiple times with pseudo-random data to secure-delete it. The second suggestion was to mark all keys imported from an unencrypted file as "potentially compromised" and never use them for new addresses. In response, Arthur Britto disagreed with the first suggestion, stating that writing zeros just once should be sufficient. He also pointed out that moving the keypool addresses aside so they won't be used sounds like a good idea. However, he lamented that there is currently no way for the wallet to be born-encrypted. The only way to prevent a leak is to build the wallet initially on a ramdisk or the like, then move it over after encrypting it. Finally, he agreed with Luke-Jr's second suggestion, as it would make the key leak on a new wallet inconsequential since all keys in it are keypool keys at that point.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-15T18:53:54.948654+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
 </body>
 
 </html>
