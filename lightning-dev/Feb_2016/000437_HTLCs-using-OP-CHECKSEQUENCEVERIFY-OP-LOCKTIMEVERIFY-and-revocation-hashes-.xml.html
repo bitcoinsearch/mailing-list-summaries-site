@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTLCs using OP_CHECKSEQUENCEVERIFY/OP_LOCKTIMEVERIFY and revocation hashes.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns
+            <br><i>Published on: 2016-02-09T08:59:56+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_HTLCs-using-OP-CHECKSEQUENCEVERIFY-OP-LOCKTIMEVERIFY-and-revocation-hashes-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000437.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the options for closing a channel, Rusty Russell presents four possibilities: keeping it open, unilateral closure by either party, or cooperative closure. He believes that cooperative closure is the best option and that unilateral closure by the other party is better than doing it oneself. This is because of the OP_CSV delay on option (b), making it less preferable than (d) if one can use a lower transaction fee or spend directly to a useful output address. If trying to convince the other party to close unilaterally (b) to avoid doing it oneself (c), it is smarter to simply choose (d) as it is the preferred option anyway. Russell also notes that with the current arrangement, there aren't any realistic threats that the counterparty could make. However, if there were an OP_CSV on both sides of HTLCs, one could threaten to close unilaterally, locking up the counterparty's funds. Therefore, Russell concludes that changing the current system would make things marginally worse but not better.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-17T16:59:52.060398+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>commitment update steps</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns
+            <br><i>Published on: 2015-07-23T04:40:45+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/July_2015/combined_commitment-update-steps.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000053.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The lightning protocol at a network-protocol level is explained by the writer. The protocol includes the use of secrets for spending an output, with Alice and Bob's keys and shachain sequences being used for notational convenience. Their current commitments are listed as Alice's commitment txn and Bob's commitment txn, which are fully signed. If Alice wants to update the channel to reflect a conditional payment from Bob once R is revealed, a proposal is made by Alice, which Bob checks. Bob then approves and replies, requesting Alice's signature. The old commitment txns are discarded, and new ones are signed. If the protocol follows through to completion, then they each have matching, updated, signed commitment transactions; along with the secrets necessary to void attempts to use older commitments. If the protocol goes off track, either party can safely close the channel after any step. If Alice ever tries cheating and publishes an old commitment, it is up to Bob to work out which of the 100 Alice_N hashes he knows or can work out is being abused; prior to the DELAY expiring. HTLCs are harder if you assume pay2scripthash is used though.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-17T16:57:52.458637+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

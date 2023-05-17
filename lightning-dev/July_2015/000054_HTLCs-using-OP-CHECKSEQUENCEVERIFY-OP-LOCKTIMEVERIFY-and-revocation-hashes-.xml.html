@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTLCs using OP_CHECKSEQUENCEVERIFY/OP_LOCKTIMEVERIFY and revocation hashes.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns
+            <br><i>Published on: 2015-07-23T05:07:33+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/July_2015/combined_HTLCs-using-OP-CHECKSEQUENCEVERIFY-OP-LOCKTIMEVERIFY-and-revocation-hashes-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000054.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread from 2015, Rusty Russell explains how hash time-locked contracts (HTLCs) are generated for the Lightning network. Commitment transactions are maintained by both parties with two outputs: one paying to self and the other paying to the other side. Additional outputs are added per HTLC which are spendable under four conditions. First, if the recipient knows the R value, the funds go to them. Second, if the HTLC has timed out, funds return to the initiator. Third, if the HTLC has been revoked, funds go to the "non-cheating" side. Fourth, if the commit transaction has been revoked, funds also go to the "non-cheating" side. The last two failure modes are separate because HTLCs have different lifetimes from commit transactions. There are two options for resolving HTLCs - off-chain or on-chain. If resolved off-chain, both parties agree on which way the funds should go and both the commitment and HTLC are expired simultaneously. If resolved on-chain, either party decides to go to the blockchain, publishing their side of the commitment so that both the commitment and HTLC are executed simultaneously. It is suggested that the commit transaction might as well always be revoked before or simultaneously with the HTLC, in which case the conditions are just that the recipient knows the R value, the sender sees the HTLC has timed out, or the commit transaction has been revoked.Scripts were provided for generating HTLCs from the US to THEM and from THEM to US.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-17T17:00:23.500632+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

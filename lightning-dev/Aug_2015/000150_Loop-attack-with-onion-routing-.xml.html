@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Loop attack with onion routing..</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns
+            <br><i>Published on: 2015-08-24T10:06:25+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Aug_2015/combined_Loop-attack-with-onion-routing-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000150.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, Rusty Russell changed his mind about peeling the onion to close a channel. In case of Carol misbehaving by pretending that Dave was misbehaving when he wasn't, Carol closes the channel with Dave before accepting his resolution of the HTLC and passes the info to Bob. Since he's not cheating, Dave claims the HTLC output on the blockchain. Bob sees the HTLC output Carol was pointing at has been spent in a timely fashion, indicating Carol is cheating. Bob claims funds from Alice without having to justify being a cheat himself, and then closes the channel with Carol since she's being weird. However, Bob can't tell if Dave really sent it to Carol or not, but Alice doesn't care as someone paid 2 txfees in apology money for the delay. In another scenario, Dave starts the HTLC process but times out and doesn't resolve the HTLC in 20*11 seconds, and doesn't send back a blame packet from Emma either. In this case, Carol dumps the commit tx to the blockchain and the screwed-up HTLC along with any other casualty HTLCs in progress. She can include this commit tx + htlc txs in the blame packet back to Bob, and the HTLC txn provides Dave's public key id though, which is the only name for Dave that matters.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-17T17:03:49.217093+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

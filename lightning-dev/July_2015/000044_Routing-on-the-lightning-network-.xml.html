@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Routing on the lightning network?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns
+            <br><i>Published on: 2015-07-18T09:46:35+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/July_2015/combined_Routing-on-the-lightning-network-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000044.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email from 2015, Rusty Russell discussed the possibilities of source routing and each-hop routing. He suggested that source routing should not preclude each-hop routing and proposed extensible source-routing as a solution. Extensible source-routing allows clients to choose how many layers are required and enables the holder of the transaction to extend the route by adding intermediary hops. The pros of this system include adaptability to changing network conditions, anonymity for source and destination, and minimal client information required. However, there are also cons such as the inability to avoid nodes, difficulty in working out fees, and figuring out how to route to other hubs one doesn't want to have a direct channel with. To solve these issues, a global (but not necessarily complete) routing announcement service may be necessary. Rusty's proposal for a routed "transaction" involves sending satoshi to different recipients with messages and fees specified. Maliciously routing to /dev/null would result in R never getting revealed and the transaction eventually being considered refunded/cancelled. Rusty also suggests that the fee proportional to satoshi-hours may be backwards, proposing instead that senders pay inversely to how long finalisation takes. He further discusses how insufficient fees can render a transaction unroutable and how structuring the transaction can deter unnecessary fees. Lastly, Rusty explores the issue of concurrent independent transactions on a channel and proposes short timeouts to keep transactions flowing.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-17T16:56:08.844302+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTLCs using OP_CHECKSEQUENCEVERIFY/OP_LOCKTIMEVERIFY and revocation hashes.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns
+            <br><i>Published on: 2016-02-10T16:50:49+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_HTLCs-using-OP-CHECKSEQUENCEVERIFY-OP-LOCKTIMEVERIFY-and-revocation-hashes-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000441.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses a hypothetical payment scenario involving Alice, Eve, and Evelyn. The channels are set up with delay parameters for both channels and Alice's commitments include a fee that she expects will result in confirmation in less than a delay of "F". Two HTLCs exist where Eve pays Alice $X on receipt of R, CLTV at time T, and Alice pays Evelyn $X on receipt of R, CLTV at time T'. If the second HTLC is dealt with, things are fine so far, but on the other channel, Alice sends the R value to Eve, but Eve does not send Alice a commit transaction update, becoming completely unresponsive on this channel. As a result, Alice must broadcast her commit transaction containing the HTLC before the CLTV of the HTLC times out or Eve can try to claim the HTLC funds. The question arises as to which times out first, Alice's CSV or Eve's CLTV? Assuming the HTLC timeout is T0+1 day on the channel where Eve receives and T0+2 days on the channel where Eve sends, D + 2*F + N is what Eve wants to delay. Alice's CSV should have a delay less than one day, meaning Alice has a remaining 0.5 day time window in which her node must be up and running and connected to the Bitcoin network, to claim the HTLC funds.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-17T16:59:27.093687+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

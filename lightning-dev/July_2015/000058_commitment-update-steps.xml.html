@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>commitment update steps</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns
+            <br><i>Published on: 2015-07-24T03:30:05+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/July_2015/combined_commitment-update-steps.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000058.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is about the feasibility of cheating in a channel update by Bob, and how Alice can try stealing most of the channel's funds. The discussion revolves around the use of p2sh and HTLCs, where it is concluded that with p2sh, retrieving the hash values and timeouts is necessary to spend the output. However, since OP_RETURN is length-limited to 80 bytes, only two R hash values could be fitted in it. The solution is to have multiple OP_RETURN outputs, which would increase the transaction size by about 80%. In this case, the R values need to be remembered. If the number of updates per second is 100, and lasts for a month, that would be 259M updates, requiring 5GB of storage.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-17T16:58:08.875762+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
