@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP16/17 replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2012-02-01 10:02:08
+            <br><i>Published on: 2012-02-01T10:02:08+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/Feb_2012/combined_BIP16-17-replacement.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-February/001156.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On February 1st, 2012, there was a discussion between Andy Parkins and Luke-Jr regarding Bitcoin Improvement Proposals (BIP) 16 and 17. According to Luke-Jr, both BIPs were backward compatible enough that people could continue to use the old clients with each other. However, Andy questioned this statement and asked if it was true.In response to this, it was explained that IsStandard() is used for accepting transactions into the memory pool, and non-standard transactions are verified just fine when they are in the blockchain. BIP16/17 create transactions that, when interpreted as old scripts, are valid. The only change to the protocol is that previously-valid transactions become invalid. As long as a supermajority of miners enforce the new rules, everyone can happily keep using their old bitcoin client. They won't create the new transaction type, and don't accept them as payment, but they will accept the new block chain.However, it was emphasized that if a breaking change were made to the protocol, such as adding a new transaction type, ALL users must upgrade. Those who don't will see a fork of the chain from before the first new-style transaction. This was not the case with BIP16/17.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T23:04:10.775039+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

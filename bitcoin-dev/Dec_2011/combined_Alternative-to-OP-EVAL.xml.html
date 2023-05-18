@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Alternative to OP_EVAL <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2011/001006_Alternative-to-OP-EVAL.xml.html">Alternative to OP_EVAL</a>
+        <b>Pieter Wuille 2011-12-29 21:00:26</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2011/001004_Alternative-to-OP-EVAL.xml.html">Alternative to OP_EVAL</a>
+        <b>Pieter Wuille 2011-12-29 19:08:39</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-December/001006.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+    
+    <p><i>Published on: 2011-12-29T21:00:26+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille proposed an alternative to OP_EVAL called OP_CHECKEDEVAL. It is similar to OP_EVAL and it is specified as follows: it looks at the last (code-position wise) literal pushed on the stack and uses that as a script to be executed. The subscript is executed in an independent environment, which inherits only the main stack. Pieter believes this combines all advantages including easy spend-to-script-hash (shorter than OP_EVAL), backward compatible and statically analyzable. The implementation is very similar to what was already done for OP_EVAL, and modifications include EvalScriptInner needing less by-ref arguments, as it cannot modify the parent's state, and a literal-only stack needing to be maintained.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T22:53:17.730907+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

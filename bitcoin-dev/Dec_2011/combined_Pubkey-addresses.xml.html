@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pubkey addresses <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2011/000923_Pubkey-addresses.xml.html">Pubkey addresses</a>
+        <b>Pieter Wuille 2011-12-18 15:42:06</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2011/000912_Pubkey-addresses.xml.html">Pubkey addresses</a>
+        <b>Gregory Maxwell 2011-12-17 23:46:34</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2011/000905_Pubkey-addresses.xml.html">Pubkey addresses</a>
+        <b>Matt Corallo 2011-12-17 16:15:46</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-December/000923.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+    
+    <p><i>Published on: 2011-12-18T15:42:06+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been put forth to use full public key addresses instead of hashed public keys. The reason is that using hashed public keys requires more space than a send-to-pubkey, where the output contains the pubkey, and the input the signature. Possible improvements include compressed public keys, compact signatures, and pubkey recovery. Several combinations could be proposed including send-to-pubkeys-hash, send-to-recovered-pubkeys-hash-with-compact-signature-inside-op_eval, send-to-pubkey, send-to-compressed-pubkey, and send-to-compressed-pubkeys-hash. A small table was created by Gregory Maxwell to compare these options. If pruning isn't considered, everything is better than send-to-pubkeys-hash as we have now. Pay-to-address + key recovery is quite a bit smaller than pay-to-compressed pubkey. Pay-to non-compressed pubkey is smaller than pay-to-address-without-recovery assuming you don't prune, and its more deployable because nodes can already receive it. Under no circumstances should the use of first bits ever be supported.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T22:51:55.074631+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
