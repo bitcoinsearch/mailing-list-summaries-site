@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BOLT RFC#1] Encryption spec</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2016-03-18 06:03:17
+            <br><i>Published on: 2016-03-18T06:03:17+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/March_2016/combined_-BOLT-RFC-1-Encryption-spec.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000494.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Rusty Russell explains the derivation of shared secret and encryption keys. Upon receiving the initial handshake, a node can derive the shared secret using the received sessionpubkey point and its own sessionsecretkey scalar using EC Diffie-Hellman. However, he suggests that sessionsecretkey is calculated per libsecp256k1 (used in bitcoin protocol) rather than NIST specification which just uses the x coordinate of the point directly, ignoring y and not necessarily hashing it. He has added wording for this in a GitHub pull request. While multiple choices are possible for public-key cryptography, reusing the secp256k1 elliptic curve used in the bitcoin protocol avoids additional dependencies. However, if secp256k1 breaks and gets deprecated, it would be a backward incompatible change. To handle this, the protocol could increment the high byte of "length" in the first message and old clients would see that as an invalid length, >16M, and refuse the connection. New clients could just treat it as a version byte.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:46:10.073551+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BOLT Draft] Onion Routing Spec</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2016-10-03 17:21:35
+            <br><i>Published on: 2016-10-03T17:21:35+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Oct_2016/combined_-BOLT-Draft-Onion-Routing-Spec.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-October/000625.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation discusses the use of EC-Schnorr for on-chain keys instead of EC-DSA. The public/priv keys would remain the same, allowing the keys to be used for signing/verifying multi-sign for channel authentication proofs. The importance of protecting different secrets is highlighted and it is noted that compromise of the identity public key could allow an attacker to open/accept authenticated+confidential p2p connections on the network. It is suggested that all keying material should be as independent as possible from a compartmentalization standpoint. The commit keys should be rolled anew for each channel to enable per-channel process signers with mlock'd secrets and dedicated hardware. Separating onion privkey allows rotation, which would be beneficial if forward secrecy was obtained. The comms symmetric key should also be rotated with forward secrecy in mind. A simple ratcheting scheme could be included in the initial p2p spec.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:50:37.904158+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

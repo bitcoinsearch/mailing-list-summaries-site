@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Laundry list of inter-peer wire protocol changes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2016-01-27 14:22:29
+            <br><i>Published on: 2016-01-27T14:22:29+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Jan_2016/combined_Laundry-list-of-inter-peer-wire-protocol-changes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-January/000410.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Rusty Russell and aj, they discuss shachain vs elkrem. They use it to generate the revocation secrets to minimize storage and computation for a huge number of old commitment txs. They state that both shachain and elkrem are similar, but elkrem is much easier to comprehend. However, there seem to be some issues with the code example given in the comments, as it should be 0, 1 and 2, not 0, 1 and 8. The code also seems incorrect since if you try calling 'descend(6, 13, 2, R(seed))', you get L(L(R(seed))), instead of an error. They further discuss having the indexing backwards; i=0 should match the seed, and the first hash transmitted across the wire should be i=2^64-1, then counting down from there. This matches the numbering used in <a href="https://en.wikipedia.org/wiki/Hash_chain.">https://en.wikipedia.org/wiki/Hash_chain.</a> With shachain, the only parameter needed is the seed, and you can work out the hash for any given index directly from that, up to any arbitrary index. With elkrem, you can build an arbitrarily deep tree given a seed at the conceptual level without any further parameters. However, when mapping that to indexes, you need to know the desired height first. They also discuss using a simple secret "redeemhash" to allow easy tracing of transactions through the network, and multi-sig txs, which could enable escrow-style services. Joseph pointed out that by simply allowing more than one hash on commit txs, we can enable such services.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:42:00.694619+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

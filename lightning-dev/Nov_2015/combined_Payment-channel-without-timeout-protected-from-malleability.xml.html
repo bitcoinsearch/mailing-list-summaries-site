@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment channel without timeout protected from malleability <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2015/000360_Payment-channel-without-timeout-protected-from-malleability.xml.html">Payment channel without timeout protected from malleability</a>
+        <b>Anthony Towns 2015-11-27 20:11:13</b>
+        </li>
+        
+        <li>
+        <a href="/lightning-dev/Nov_2015/000355_Payment-channel-without-timeout-protected-from-malleability.xml.html">Payment channel without timeout protected from malleability</a>
+        <b>Anthony Towns 2015-11-27 09:09:46</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000360.html">Click here to read original discussion on the lightning-dev mailing list</a>
+    
+    <p><i>Published on: 2015-11-27T20:11:13+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is about opening a channel without suffering from malleability attack. By adapting an idea from gmaxwell, it is possible to do so. The process for A to open channel with B involves asking B's pubkey, creating the first commitment transaction, extracting the hash that B needs to sign after which A asks B to sign the hash but does not disclose the commitment and finally broadcasting the anchor followed by announcing it to B after confirmation. After passing the unsigned commitment to B and verifying that it's in the right format, B will provide a signature for a tx that has the anchor as input and has a single refund output payable to (A && OP_CSV) | (B && OP_HASH  OP_EQUALVERIFY). However, if A reuses a key, B can guess the redeem hash and would identify the transaction to malleate at broadcast time before A's announcement. Therefore, neither A nor B should reuse pubkeys between different channels using this protocol. Nonetheless, someone other than B could malleate the anchor between broadcast and confirmation just for their own amusement. Using child-pays-for-parent seems plausible, but CPFP doesn't work yet, and segregated witness seems like it'll happen sooner anyway.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:35:21.553497+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Better privacy with SNARKs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-11-26 11:15:16
+            <br><i>Published on: 2015-11-26T11:15:16+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Nov_2015/combined_Better-privacy-with-SNARKs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000344.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses two approaches to force someone to reveal the private key corresponding to a secp256k1 public key P. The first approach, suggested by Greg Maxwell, involves generating a signature with P that has 15 leading zero bytes or more. A known value with 11 leading zero bytes can be used for this purpose. However, brute-forcing approximately 4 billion parameters is required to get a valid signature. If successful, the secret key p can be revealed. Cheating can also be done by brute-forcing a secret key N with corresponding public key r. This approach requires grinding r values at a rate of 0.08 microseconds per try. With 7 leading zeroes in r, achieving 8 leading zeroes in s would require about 213,000 GH/s worth of mining hardware running for 24 hours to achieve. With 8 leading zeroes in r, only 7 leading zeroes in s are needed, which can be achieved in 1 hour with 20GH/s of mining hardware.The second approach, suggested by andytoshi and aj, is more complicated than the first one. It involves using multisig verify and coming up with secret keys Q' and R' based on transaction hashes h1, h2, and h3. If sigA, sigB, and sigC share the same r and SIGHASH settings, two valid signatures by key P with the same r value can be obtained, letting you calculate P'. However, if different sighash types are used between the signatures, coming up with valid keys and sigs seems to require doing discrete logs on the elliptic curve, so should be intractable.Greg Maxwell also pointed out a faster and secure way to do it. Assuming Q was the public key from the incoming HTLC, and P is the public key you'll use for the outgoing HTLC, and r is your secret, p=q+r and P=Q+r*G can be used to calculate P quickly. Once p is found, calculating q=p-r is easy.The second approach requires six sigops if the transaction needs to be dropped to the blockchain, which combined with the two other signatures an HTLC needs to be usable (one for A on timeout, one for B on success), means a total of 8 sigops per output. This is about equivalent to 400B per output given the relationship between the bytes-per-block and sigops-per-block limits. Translating from pseudocode into script is also a little hard.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T15:49:14.107795+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onion routing strawman proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-10-03 16:38:56
+            <br><i>Published on: 2015-10-03T16:38:56+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Oct_2015/combined_Onion-routing-strawman-proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000248.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network project has implemented test onion routing code in a fixed 3840 bytes format. The idea is to switch that to non-fixed size using protobufs. The system generates random EC key pairs for each hop, known to the initiator. The public key for each hop is included in plaintext as hop.pubkey. ECDH is used to establish a shared secret with each hop. Symmetric AES & HMAC keys are derived based on the secret. When a message is received, each hop structure is encrypted/decrypted in various stages. Lightning nodes are identified by the full 512 bit (or 257 bit?) public key used for routing unlike normal bitcoin pay2pubkey transactions. Different keys can still be used for routing and anchors/commitments so far.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T15:26:54.735129+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

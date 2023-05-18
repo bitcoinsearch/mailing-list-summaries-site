@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment channel without timeout protected from malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-11-27 09:09:46
+            <br><i>Published on: 2015-11-27T09:09:46+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Nov_2015/combined_Payment-channel-without-timeout-protected-from-malleability.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000355.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Nicolas Dorier suggests a method to open channels without being vulnerable to malleability attacks by adapting an idea from gmaxwell. The process involves A asking B for their pubkey, creating the first commitment transaction, and extracting the hash that B needs to sign to broadcast the commitment. A then asks B to sign the hash without disclosing the commitment, broadcasts the anchor, and after confirmation, announces the anchor to B. However, there is a potential risk for someone other than B to malleate the anchor between broadcast and confirmation. It is not possible for B to identify A's anchor before announcement because they do not know the P2SH of the multisig. Additionally, B cannot reuse pubkeys between different channels with this protocol. Using child-pays-for-parent (CPFP) seems plausible as a solution, but it does not work yet. Segregated witness appears to be a more likely solution.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:35:21.536158+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

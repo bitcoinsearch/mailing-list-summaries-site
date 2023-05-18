@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_NOINPUT in Segregated Witness</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2016-02-26 03:20:56
+            <br><i>Published on: 2016-02-26T03:20:56+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_SIGHASH-NOINPUT-in-Segregated-Witness.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000448.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on Bitcoin's development mailing list, developers have proposed the implementation of a new script type for bitcoin transactions, in order to enable more flexible transaction structures and increase scalability. The proposal suggests that three transactions could be conducted: an anchor transaction, a commitment transaction, and penalty transaction. The idea is that the anchor transaction would involve a single output, spendable by 2-of-2 multisig and possibly others as well. The commitment transaction would then take the anchor transaction as input and have several outputs including payment to both parties, time-based multi-sig transactions, and HTLCs. Finally, the penalty transaction would include all the outputs from the commitment transaction and have two outputs, one of which would pay to the source of the penalty transaction and the other would act as an outsourcing fee. The developers also discussed the issue of deploying a without-inputs SIGHASH flag without also deploying at least a fee-committing sighash-all, however, they noted that committing to a fee would not be workable for the lightning use case as it would require different signatures each time. They also highlighted the vulnerability to replay attacks with the proposal and suggest that it should be called out in bold, blinking text. Despite this, the developers agree that the new script type would provide greater flexibility and improve scalability for bitcoin transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:45:08.084194+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
