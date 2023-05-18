@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A state machine.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-08-31 02:24:26
+            <br><i>Published on: 2015-08-31T02:24:26+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/lightning-dev/Aug_2015/combined_A-state-machine-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000166.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Rusty Russell and Anthony Towns on August 31, 2015, they discussed the possibility of updating multiple hash time-locked contracts (HTLCs) at once. Russell proposed a single PKT_UPDATE_CHANNEL instead of ADD_HTLC, COMPLETE_HTLC, TIMEOUT_HTLC, etc., but Towns was hesitant to implement the optimization at that time due to the complexity of handshaking. They also discussed CMD_CLOSE and PKT_CLOSE options during different states. Towns suggested a new state diagram for HTLCs with clearer constraints, which Russell noted currently allows declining of HTLC updates and potential deadlocks if both parties think they are high or low priority. Towns pointed out that it is not safe to assume that strangers on the network have bug-free software and the current commitment ID does not actually give priority.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T00:34:09.698901+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

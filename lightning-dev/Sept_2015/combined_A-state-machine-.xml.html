@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A state machine. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2015/000166_A-state-machine-.xml.html">A state machine.</a>
+        <b>Anthony Towns 2015-08-31 02:24:26</b>
+        </li>
+        
+        <li>
+        <a href="/lightning-dev/Sept_2015/000178_A-state-machine-.xml.html">A state machine.</a>
+        <b>Anthony Towns 2015-09-01 22:32:42</b>
+        </li>
+        
+        <li>
+        <a href="/lightning-dev/Aug_2015/000160_A-state-machine-.xml.html">A state machine.</a>
+        <b>Anthony Towns 2015-08-30 00:51:54</b>
+        </li>
+        
+        <li>
+        <a href="/lightning-dev/Aug_2015/000156_A-state-machine-.xml.html">A state machine.</a>
+        <b>Anthony Towns 2015-08-29 07:42:39</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000166.html">Click here to read original discussion on the lightning-dev mailing list</a>
+    
+    <p><i>Published on: 2015-08-31T02:24:26+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Rusty Russell and Anthony Towns focuses on the development of a protocol for updating Hashed Time-Locked Contracts (HTLC). They discuss optimization possibilities and clarify the CMD_CLOSE option. The constraints of declining HTLCs and potential deadlocks are also considered. Additionally, they talk about error and bug handling when dealing with strangers on the network, as well as the potential costs of closing channels.One topic that comes up is time synchronization issues, and they propose adding a current time field to UPDATE_ADD_HTLC. Pierre raises a concern about the assumption that the initiator will fund the channel. They discuss how nodes will signal to initiate a connection and negotiate whether to register on a website or anchor the channel with PayPal or some other means. It's also discussed how initial funding can be as low as the node wants and then let the Lightning node fund the channel. Increasing the capacity of a channel would require a new anchor transaction.The state of the protocol is another point of discussion. Participants suggest a text flowchart for normal cases, which includes different states such as NORMAL, WAIT_FOR_HTLC_ACCEPT, UPDATE_COMPLETE, and UPDATE_SIG. They discuss combining the error paths applying to various states. Also, suggested is to have a constant tiebreak in case of simultaneous/overlapping channel updates, where whoever has the lowest channel balance wins. Finally, they discuss the potential deadlock and suggest having a "timeout waiting for message -> retry/close channel." Overall, the conversation is highly technical and focused on improving the efficiency and functionality of the lightning network protocol.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T01:50:03.695992+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
