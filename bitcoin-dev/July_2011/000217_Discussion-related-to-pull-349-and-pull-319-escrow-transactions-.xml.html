@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Discussion related to pull 349 and pull 319 (escrow transactions)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2011-07-23 23:39:13
+            <br><i>Published on: 2011-07-23T23:39:13+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/July_2011/combined_Discussion-related-to-pull-349-and-pull-319-escrow-transactions-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000217.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The pull request 349 on Github repository of Bitcoin implements a new feature for multiple signature escrowed transactions. Considering the demise of clearcoin, it is a necessary addition to the client. The implementation has been tested on a private network and works well but requires more testing and discussion before being added to the client. However, one challenge is that it needs a new transaction type, which cannot be deployed until an updated isStandard is widely used in the network. Therefore, the author suggests separating out the IsStandard part of the patch and getting it out in 0.4.However, the implementation exposes an issue with multisig validation caused by redundancy in script length coding opcodes. Due to multiple ways of coding a script, signature validation code creates new template scripts to evaluate signatures for one output. The problem arises when the new script is not coded the same as the original one, causing signature validation to fail. Pull 349 contains a candidate fix for this issue, excluding the length opcodes from comparison. But it carries a risk of creating differences in how nodes validate transactions leading to lasting forks.Another way of fixing this would be to define that OP_PUSHDATA* cannot be used to push smaller lengths which could be more efficiently encoded with the direct length opcodes. This would be consistent with current behavior and carry no severe split risk. Alternatively, changing the templating code to ensure it codes the template the same way as the original was coded would be beneficial if the same class of problem exists for other things besides length coding.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T21:27:18.431648+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
