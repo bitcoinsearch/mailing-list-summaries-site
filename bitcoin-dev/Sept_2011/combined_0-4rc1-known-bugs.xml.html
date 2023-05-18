@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>0.4rc1 known bugs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/000463_0-4rc1-known-bugs.xml.html">0.4rc1 known bugs</a>
+        <b>Pieter Wuille 2011-09-06 11:55:30</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/000447_0-4rc1-known-bugs.xml.html">0.4rc1 known bugs</a>
+        <b>Matt Corallo 2011-09-04 02:43:48</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000463.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+    
+    <p><i>Published on: 2011-09-06T11:55:30+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille compiled bitcoind with Gavin's DEBUG_LOCKORDER and fixed two potential reported deadlock issues. However, these were not actual potential deadlocks as all locking of cs_vRecv/cs_vSend happens inside TRY_CRITICAL_SECTION blocks. Regarding the actual deadlock between IRC seeding and AddAddress, DB internally uses pthreads to implement the txn_begin()/commit() scheme, which needs to be taken into account when searching for deadlocks, but are obviously not detected by DEBUG_LOCKORDER. In particular here, the processing of "addr" created a db transaction for the entire message, while only locking cs_mapAddresses inside AddAddress. For IRC seeded addresses however, no db tx was precreated, and AddAddress first locked cs_mapAddress, and then did the database write (causing a lock) inside. To fix this, a solution was provided in main.cpp, ProcessMessage, case "addr". Gavin Andresen gave a quick status update on 0.4 and stated that he probably won't have time to tackle the deadlock issues properly before Tuesday. sipa found what looks like a deadlock between the addr-handling and IRC-join-handling code and UukGoblin reports a deadlock problem on a bitcoind handling getwork requests. If someone wants to get familiar with the bitcoin code and has a lot of patience, tracking down deadlocks is a great way to do it. Additionally, ArtForz found a performance bug with transactions that have thousands of inputs and outputs on the solidcoin test network. Finally, it was reported that Gitian doesn't build properly, which was attributed to Gavin's fault.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T22:46:23.197499+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

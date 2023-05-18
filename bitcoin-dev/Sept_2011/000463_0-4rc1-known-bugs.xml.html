@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>0.4rc1 known bugs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2011-09-06 11:55:30
+            <br><i>Published on: 2011-09-06T11:55:30+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/combined_0-4rc1-known-bugs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000463.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On Sep 4, 2011, Pieter Wuille informed Gavin about the deadlock issues he found in bitcoind while using DEBUG_LOCKORDER. However, later he realized that all locking of cs_vRecv/cs_vSend happens inside TRY_CRITICAL_SECTION blocks, hence there are no actual potential deadlocks.Sipa found a deadlock between the addr-handling and IRC-join-handling code which was caused due to the db transaction for the entire message created by processing of "addr" while only locking cs_mapAddresses inside AddAddress. For IRC seeded addresses, no db tx was pre-created causing a lock inside AddAddress. A solution was proposed by adding CRITICAL_BLOCK(cs_mapAddresses) before addrDB.TxnBegin() in main.cpp, ProcessMessage, case "addr".</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T22:15:47.685453+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

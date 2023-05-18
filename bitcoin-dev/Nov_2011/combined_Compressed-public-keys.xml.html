@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Compressed public keys <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2011/000778_Compressed-public-keys.xml.html">Compressed public keys</a>
+        <b>Pieter Wuille 2011-11-21 02:34:30</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2011/000779_Compressed-public-keys.xml.html">Compressed public keys</a>
+        <b>Pieter Wuille 2011-11-21 11:48:20</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-November/000778.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+    
+    <p><i>Published on: 2011-11-21T02:34:30+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille has submitted a pull request (#649) which allows the use of compressed public keys in Bitcoin. These keys are 33 bytes long and contain only the X coordinate of the point, while the value of the Y-coordinate is reconstructed upon use. This requires some CPU but is much cheaper than verifying a signature. The implementation chooses only one key at generation time, as one private key now corresponds to two public keys and thus two different addresses. Compressed public keys are supported by default by OpenSSL and all alternative implementations that use OpenSSL should support these keys just fine as well. However, it is unclear whether all client implementations support them. Additionally, there is a need to figure out how to represent secrets for compressed pubkeys, and send-to-pubkey transactions are untested for now. Pieter provides an address corresponding to a compressed public key to help in testing.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T22:49:02.514595+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
