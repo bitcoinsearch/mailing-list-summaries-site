@@ -17,7 +17,7 @@
     <ul>
         
         
-            <p><b>Author:</b> Anthony Towns
+            <p><b>Author:</b> Anthony Towns 2015-08-11 19:38:16
             <br><i>Published on: 2015-08-11T19:38:16+00:00</i></p>
 
         
@@ -36,9 +36,9 @@
 
     <hr>
     <h3> Summary:</h3>
-    <p>The writer discusses the potential vulnerability of double-spending attacks in setting up new channels with untrusted parties. They propose a strategy to exploit this vulnerability by constructing multiple lightning channels and waiting for N confirmations before quickly routing payments to anonymous channels until they cannot send anymore. The author then publishes the doublespending fork, closing their original anonymous channels and gaining $X in funds available for the double spend. The capacity of the lightning network to route bitcoin is also discussed in relation to the cost of mounting a doublespend attack, which would require 1.4*25*M bitcoin to bribe 67% of hashpower for the time it would take to do 2*M blocks. If one can open 2000 channels per block, then X must be greater than 1.4*25*M/n.</p>
+    <p>The author discusses the potential for a doublespend attack in the Lightning Network when setting up a new channel with an untrusted counterparty. They suggest that if a user can afford to do a double-spend despite waiting for N confirmations, then they can take advantage of the network to gain funds. To do this, they recommend opening anonymous channels capable of receiving at least $X and simultaneously constructing multiple lightning channels, funding them at $d each. Once the new channels are active, the user can quickly route multiple payments from their new channels to their anonymous channels until they can't send anymore. The author then suggests publishing the doublespending fork, so that the $d*n never got spent. The author also mentions the cost of a doublespend attack, which would require 1.4*25*M bitcoin to mount over M blocks. If a user can open 2000 channels per block, then X > 1.4*25*M/n, which provides insight into how much capacity the Lightning Network has in routable Bitcoin.</p>
     <hr>
-    <p><i> Updated on: 2023-05-17T17:00:39.371742+00:00 </i></p>
+    <p><i> Updated on: 2023-05-18T00:23:14.878940+00:00 </i></p>
     
     
 

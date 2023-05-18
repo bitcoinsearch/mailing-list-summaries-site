@@ -17,7 +17,7 @@
     <ul>
         
         
-            <p><b>Author:</b> Anthony Towns
+            <p><b>Author:</b> Anthony Towns 2016-02-09 08:59:56
             <br><i>Published on: 2016-02-09T08:59:56+00:00</i></p>
 
         
@@ -36,9 +36,9 @@
 
     <hr>
     <h3> Summary:</h3>
-    <p>In a discussion about the options for closing a channel, Rusty Russell presents four possibilities: keeping it open, unilateral closure by either party, or cooperative closure. He believes that cooperative closure is the best option and that unilateral closure by the other party is better than doing it oneself. This is because of the OP_CSV delay on option (b), making it less preferable than (d) if one can use a lower transaction fee or spend directly to a useful output address. If trying to convince the other party to close unilaterally (b) to avoid doing it oneself (c), it is smarter to simply choose (d) as it is the preferred option anyway. Russell also notes that with the current arrangement, there aren't any realistic threats that the counterparty could make. However, if there were an OP_CSV on both sides of HTLCs, one could threaten to close unilaterally, locking up the counterparty's funds. Therefore, Russell concludes that changing the current system would make things marginally worse but not better.</p>
+    <p>In a discussion about the best options for closing a payment channel, Rusty Russell presents four possible choices: keeping the channel open, having the other party close it unilaterally, closing it unilaterally oneself, or cooperatively closing it together. He then argues that the preferences are strictly in favor of cooperative closing as opposed to unilateral closing by either party. Unilateral closing has some disadvantages compared to cooperative closing due to the OP_CSV delay. Russell also suggests that if one is trying to convince the other party to close the channel unilaterally instead of doing it oneself, it would be better to simply do a cooperative close. This approach would be preferred anyway and would also be more likely to be accepted by the other party. He believes that with the current arrangement, there are no realistic threats that the other party could make to avoid a cooperative close.Finally, Russell discusses the potential benefits of implementing an OP_CSV on both sides of HTLCs. With this change, one could threaten to close the channel unilaterally unless the other party pays a certain amount for a cooperative close. He concludes that while changing the system may make things marginally worse, it will not improve them.</p>
     <hr>
-    <p><i> Updated on: 2023-05-17T16:59:52.060398+00:00 </i></p>
+    <p><i> Updated on: 2023-05-18T00:22:40.051219+00:00 </i></p>
     
     
 

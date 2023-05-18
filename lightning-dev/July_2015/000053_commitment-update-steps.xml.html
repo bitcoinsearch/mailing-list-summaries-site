@@ -17,7 +17,7 @@
     <ul>
         
         
-            <p><b>Author:</b> Anthony Towns
+            <p><b>Author:</b> Anthony Towns 2015-07-23 04:40:45
             <br><i>Published on: 2015-07-23T04:40:45+00:00</i></p>
 
         
@@ -36,9 +36,9 @@
 
     <hr>
     <h3> Summary:</h3>
-    <p>The lightning protocol at a network-protocol level is explained by the writer. The protocol includes the use of secrets for spending an output, with Alice and Bob's keys and shachain sequences being used for notational convenience. Their current commitments are listed as Alice's commitment txn and Bob's commitment txn, which are fully signed. If Alice wants to update the channel to reflect a conditional payment from Bob once R is revealed, a proposal is made by Alice, which Bob checks. Bob then approves and replies, requesting Alice's signature. The old commitment txns are discarded, and new ones are signed. If the protocol follows through to completion, then they each have matching, updated, signed commitment transactions; along with the secrets necessary to void attempts to use older commitments. If the protocol goes off track, either party can safely close the channel after any step. If Alice ever tries cheating and publishes an old commitment, it is up to Bob to work out which of the 100 Alice_N hashes he knows or can work out is being abused; prior to the DELAY expiring. HTLCs are harder if you assume pay2scripthash is used though.</p>
+    <p>The lightning protocol for a network-protocol level is explained through a series of proposed steps. The proposal involves Alice and Bob, where they both have a channel setup with fully signed commitment transactions. Alice proposes an unsigned transaction to update the channel to reflect a conditional payment from Bob once R is revealed. Bob checks this transaction and either declines or approves it. If approved, Alice signs and stores a new transaction and discards the old one. Bob also discards the old transaction and reveals Bob_101. This process ensures that both parties have matching, updated, signed commitment transactions along with secrets necessary to void attempts to use older commitments. In case of cheating, either party can safely close the channel after any step. The process becomes more complicated if pay2scripthash is used for HTLCs.</p>
     <hr>
-    <p><i> Updated on: 2023-05-17T16:57:52.458637+00:00 </i></p>
+    <p><i> Updated on: 2023-05-18T00:20:41.284717+00:00 </i></p>
     
     
 
