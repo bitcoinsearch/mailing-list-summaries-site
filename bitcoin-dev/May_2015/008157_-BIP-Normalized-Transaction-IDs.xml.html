@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized Transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2015-05-13 19:40:54
+            <br><i>Published on: 2015-05-13T19:40:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_-BIP-Normalized-Transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008157.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the proposal for normalized transaction IDs and SIGHASH. Normalized transaction IDs help in building a long-running contract using a complex chain of transactions. The problem with malleable legacy transaction IDs is that they are not useful for complex interactions where there are multiple unconfirmed transactions waiting on each other, whereas normalized transaction IDs can solve this issue. The proposal is not to add any data to transactions but only adding a new operator called CHECKSIG to the script, which replaces the txids in txins by their ntxid. It is a softfork as it only impacts scripts that use the new CHECKSIG operator. Old nodes simply consider these checksigs valid. However, old full nodes are unknowingly reduced to SPV security for these opcodes. The proposed solution to address this problem is to keep using the old full transaction ids in blocks but ntxids everywhere else or having some alternative means to commit to the scriptSigs inside the block and have that enforced as a consensus rule.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T20:23:05.784457+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
