@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pruning in the reference client: ultraprune mode</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2012-07-06 17:19:59
+            <br><i>Published on: 2012-07-06T17:19:59+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/July_2012/combined_Pruning-in-the-reference-client-ultraprune-mode.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-July/001648.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille's performance numbers are considered conservative due to the reference client wasting time in redundant serialization and hashing operations. This information is supported by profiles on ultraprune, which shows that this is the major time sink. Once this issue is resolved, the system should perform significantly faster. It is important to note that this issue is not directly related to recent proposals for pruning that involve an alt chain with an index of unspent coins and addresses merged mined with the main chain. However, it could be a step towards such a system. Replacing the BDB indexing in ultraprune with a hash committed tree structure, whose root is committed in the blockchain, would result in a txout commitment scheme. Ultraprune handles most of the structural work for such a scheme. The remaining differences are mostly related to storage.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T03:55:21.685560+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

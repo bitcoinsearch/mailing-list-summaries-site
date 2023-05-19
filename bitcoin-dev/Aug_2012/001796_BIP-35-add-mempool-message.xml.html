@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 35: add mempool message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2012-08-16 17:56:39
+            <br><i>Published on: 2012-08-16T17:56:39+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/Aug_2012/combined_BIP-35-add-mempool-message.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-August/001796.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a discussion about P2P changes in Bitcoin, Jeff Garzik suggested creating a BIP to address these changes. He provided a link to the proposed BIP 0035 and requested feedback. One of the proposed changes was adding the ability to query the memory pool of a node, which would allow nodes to get a memory pool refill at startup. When a "mempool" message is received, the node will respond with an "inv" message containing MSG_TX hashes of all transactions in the node's transaction memory pool. However, there were concerns about the usefulness of the empty "inv" message that would be returned even if there were no transactions in the memory pool.Another change proposed was enabling feature discovery by checking two "version" message attributes: Protocol version >= 60002 and NODE_NETWORK bit set in nServices. While this seems safe, it may force full implementations to also implement this feature. Pieter, who was part of the discussion, suggested allocating an extra service bit for mempool-providing services. This would mean that these services could be discovered before connecting to them, as the service bits are carried around in addr messages. Overall, the discussion centered around making improvements to the Bitcoin P2P protocol.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T04:08:17.404620+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

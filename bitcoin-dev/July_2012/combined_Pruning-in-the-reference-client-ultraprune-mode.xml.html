@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pruning in the reference client: ultraprune mode <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2012/001645_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
+        <b>Pieter Wuille 2012-07-06 16:52:04</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/July_2012/001648_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
+        <b>Gregory Maxwell 2012-07-06 17:19:59</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-July/001645.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+    
+    <p><i>Published on: 2012-07-06T16:52:04+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille has implemented a new block/transaction validation system for the reference client, which he calls "ultraprune." The system keeps a database with only unspent transaction outputs, using custom compact serializations to reduce storage requirements for such a dataset to less than 70 MB. This is stored in a BDB database file (coins.dat), along with non-indexed but entire blocks (just each block in a separate file, for now), plus "undo" information for connected blocks. The step to pruning is easily made: just delete block files and undo information for old blocks. It allows one to run a full node with 130 MB coins.dat, 40 MB chain.dat, and the size of the retained blocks + +-12% of that for undo information. Ultraprune is faster, benchmarking a full import of the blockchain (187800 blocks) on a laptop in 22 minutes. However, it has some disadvantages, including not being able to find a (full) transaction from just its txid, transactions that depend on unconfirmed transactions will not get rebroadcasted, less consistency checks are possible on the database, and even fewer are implemented. It is also experimental.Replacing BDB indexing in ultraprune with a hash committed tree structure whose root is committed in the blockchain creates a txout commitment scheme. Ultraprune is most of the messy structural work for that, and the rest is mostly storage differences.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T03:57:10.725115+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

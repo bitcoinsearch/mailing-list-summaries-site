@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Near-term scalability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2012-06-15 13:08:55
+            <br><i>Published on: 2012-06-15T13:08:55+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_Near-term-scalability.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001536.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on scalability and SatoshiDice, Mike Hearn summarized the agreement that having senders/buyers pay no fees is desirable although it will eventually be necessary. The ideal world would have Bitcoin scaling perfectly without any winners or losers in confirmation time. Some one-off changes were discussed to address the current situation, but de-ranking transactions that re-use addresses was not favored because it avoids the real problem. A deprioritization of rapidly-reused addresses was suggested as an option, which can be implemented by limiting the count of address re-uses by default in memory pool. Several proposals were discussed, including changing the mining code to group transactions together with their mempool dependencies, using the same fee algorithms as Bitcoin-Qt for SatoshiDice, scalability improvements, and making the block size limit float instead of picking a new arbitrary threshold. Block chain pruning was also discussed, with some concerns regarding centralization and compatibility with older clients. However, pruning may eventually be necessary for p2pool and other getmemorypool-based pool mining. Regarding the issue of huge blocks slowing down end user syncing and wasting their resources, SPV clients like MultiBit and Android Wallet already exist and will improve with time. Jeff implementing the bloom filtering p2p commands can reduce excessive bandwidth usage and parse overheads from end users. In conclusion, the proposed ideas seem reasonable for addressing scalability and other issues in the Bitcoin network.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T03:37:52.754270+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

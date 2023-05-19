@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Coinbase script parse failures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2012-07-23 16:11:43
+            <br><i>Published on: 2012-07-23T16:11:43+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/July_2012/combined_Coinbase-script-parse-failures.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-July/001725.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A script engine for pynode, a python script which tokenizes the data stream of a scriptPubKey and scriptSig without execution, was written by Jeff Garzik. In testing the engine, he found over 8,000 tokenization failures in the blockchain, with 100% of those being in coinbase transactions' scriptSig. The scripts used to generate this can be found on GitHub. Matt mentioned on IRC that even though sigops that appear in coinbase transactions are not executed and required to be well-formed, they are still counted, which could be an interesting attack if a miner could put a byte in there equivalent to OP_CHECKSIG since sigops in the coinbase scriptSig are not counted during mining. However, Luke pointed out that the content of coinbase scriptSigs is always pushed properly by default, and modifying the code requires researching it thoroughly; if it breaks, it's their fault. Jeff Garzik provided a data dump of invalid scripts he found in the blockchain, some of which are included in his post.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T04:04:03.496457+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

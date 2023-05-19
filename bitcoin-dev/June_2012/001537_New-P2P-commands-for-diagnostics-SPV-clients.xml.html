@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New P2P commands for diagnostics, SPV clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2012-06-15 13:19:06
+            <br><i>Published on: 2012-06-15T13:19:06+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_New-P2P-commands-for-diagnostics-SPV-clients.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001537.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between developers on the Bitcoin mailing list, Mike Hearn proposed combining two functions related to bloom filters in order to streamline the code. However, another developer explained that having separate functions allows for more flexibility and negotiation between SPV clients and full nodes. By using 'filterload' and 'filteradd', transactions matching the bloom filter are announced and serialized blocks only include matching transactions. The format of how these arrive was discussed, with the suggestion of a CFilteredBlock or similar structure to avoid redundancies in the CMerkleTx's. This is important for scalability as it allows for limitations on CPU/memory usage for each node when serving multiple SPV peers.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T03:41:41.799903+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
