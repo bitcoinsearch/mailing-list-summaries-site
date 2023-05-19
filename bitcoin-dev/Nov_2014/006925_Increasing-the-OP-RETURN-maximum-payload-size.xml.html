@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Increasing the OP_RETURN maximum payload size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2014-11-17 12:00:07
+            <br><i>Published on: 2014-11-17T12:00:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2014/combined_Increasing-the-OP-RETURN-maximum-payload-size.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-November/006925.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about OP_RETURN, Flavien Charlon expressed concern that it encourages using the blockchain as a transport channel. However, Pieter argued that Counterparty, which is the main user of the blockchain for storage and transport, uses multi-sig outputs to store more than 40 bytes. The limit was not imposed to stop Counterparty from using it, but to avoid giving others the impression that OP_RETURN was intended for data storage. For Open Assets, they need to store a URL in the OP_RETURN output along with some bytes of overhead, which 40 bytes are insufficient for. Storing a URL allows any storage mechanism to be used, whereas with only a hash, the storing mechanism must be hardcoded in the protocol. Pieter raised concerns about publishing the data to everyone, exposing oneself to censorship and potentially decreased privacy for users. For most colored coin applications, just having the color transfer information in external data sent directly to the receiver with transactions committing to it should suffice.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:30:40.720376+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

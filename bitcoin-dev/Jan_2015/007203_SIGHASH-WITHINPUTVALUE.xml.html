@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_WITHINPUTVALUE</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-01-23 18:51:06
+            <br><i>Published on: 2015-01-23T18:51:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_SIGHASH-WITHINPUTVALUE.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007203.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, the topic being discussed is the limitations of memory in the embedded world and how it affects TREZOR. The sender, slush, mentions that dynamic memory allocation should be avoided along with any artificial restrictions to the number of inputs or outputs. Although the current solution may be slow, there are no limitations on transaction size. In the embedded world, there are significant restrictions to memory which is why TREZOR uses a powerful and expensive MCU to perform validations and calculate hashes. The recipient of the message expresses familiarity with embedded development and is surprised by the numbers presented. They understand that streaming the transaction along with its inputs interleaved reduces the memory requirement to two midstates and a value accumulator. However, resending the transaction may be required if a table is not used to avoid retransmitting reused transactions. In the worst-case scenario where 800 inputs spending from 100kb input transactions are sent, about 800MB of data may need to be sent which could take half an hour if hashing runs at 45KB/s or slower. Overall, the conversation highlights the challenges of working with limited memory in the embedded world and how it affects the capabilities of hardware like TREZOR.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:47:17.847839+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

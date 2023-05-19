@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[softfork proposal] Strict DER signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2015-01-21 20:30:44
+            <br><i>Published on: 2015-01-21T20:30:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_-softfork-proposal-Strict-DER-signatures.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007165.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter, a researcher, received feedback from Douglas Roark regarding his paper. The first point of feedback was related to a typo in the "Deployment" section, which Pieter fixed. In the second point, Douglas suggested tweaking the handling of the sighash byte in the comments of IsDERSignature() function. Pieter renamed the function to IsValidSignatureEncoding and clarified that it adds a Bitcoin-specific byte and supports an empty string too. The third feedback was regarding the code's decision to let a signature pass in IsDERSignature() when its size is zero, which is not actually DER-encoded. Pieter expanded on the comments about this issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:41:32.728254+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

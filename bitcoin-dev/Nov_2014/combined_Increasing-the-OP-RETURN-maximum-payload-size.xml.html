@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Increasing the OP_RETURN maximum payload size <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006925_Increasing-the-OP-RETURN-maximum-payload-size.xml.html">Increasing the OP_RETURN maximum payload size</a>
+                        <b>Pieter Wuille 2014-11-17 12:00:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006922_Increasing-the-OP-RETURN-maximum-payload-size.xml.html">Increasing the OP_RETURN maximum payload size</a>
+                        <b>Pieter Wuille 2014-11-17 10:35:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006928_Increasing-the-OP-RETURN-maximum-payload-size.xml.html">Increasing the OP_RETURN maximum payload size</a>
+                        <b>Pieter Wuille 2014-11-17 12:39:26</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-November/006925.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-11-17T12:00:07+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion is regarding the use of OP_RETURN. The main concern with OP_RETURN is that it encourages people to use blockchain as a convenient transport channel. For Open Assets, they need to store a URL in the OP_RETURN output with some bytes of overhead, and 40 bytes are not enough for that purpose. Storing only a hash is not enough to address an HTTP or FTP resource. Most colored coin applications do not require everyone to know the data published. They just need to send external data directly to the receiver with transactions committing to it, which is sufficient. In this regard, Pieter suggests using solutions that do not require additional data. In the context of HD wallets, Chris Pacia mentions that if users wish to use stealth addresses with out-of-band communication, the benefits of HD would be lost, and they would have to make regular backups. However, Pieter explains that anything that lists previous transactions needs backups. The benefit of HD wallets is that you can separate secret data and public data, and you only need one safe backup of the master secret key.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T19:31:29.489379+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[softfork proposal] Strict DER signatures <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2015/007297_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-02-03 00:44:37</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007207_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Gregory Maxwell 2015-01-25 14:48:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007206_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-25 14:34:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007176_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-22 04:20:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007165_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-21 20:30:44</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2015/007316_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-02-03 23:38:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2015/007309_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-02-03 18:15:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2015/007298_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Gregory Maxwell 2015-02-03 02:21:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007211_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Gregory Maxwell 2015-01-26 18:35:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007210_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-26 05:14:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007208_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-25 16:57:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007170_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-21 21:22:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007161_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-21 16:49:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2015/007156_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-01-21 00:35:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2015/007381_-softfork-proposal-Strict-DER-signatures.xml.html">[softfork proposal] Strict DER signatures</a>
+                        <b>Pieter Wuille 2015-02-06 21:38:40</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007297.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-02-03T00:44:37+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion revolves around setting upper bounds on R/S length and incorporating it into BIP66's DERSIG. This change is crucial for ensuring robustness to implementation differences, as allowing overlarge R/S values can have a significant impact. Initially, the function was created for Bitcoin Core v0.8.0 to enforce non-standardness, but not consensus. Therefore, there was no need to impose a maximum length for R and S arguments, as overly-long values would always result in integers >= 2^256, making the encoded signature invalid according to the ECDSA specification.However, in the proposed soft fork, non-DER results in immediate script failure, which is distinguishable from invalid signatures. Adding individual R and S length restrictions would be possible but deviates slightly from the standardness rule implementation that has been deployed for a while. Two options are under consideration: adding this R/S length restriction rule as a standardness requirement or including it in the softfork now. To deploy this change, they plan to reuse the double-threshold switchover mechanism from BIP 34.Pieter Wuille originally suggested a soft fork to make non-DER signatures illegal and proposed incorporating it into BIP66's DERSIG. However, after receiving feedback from implementers such as Suhar Daftuas, he retracted the proposal and expanded comments on the IsValidSignatureEncoding function. It was suggested that only allowing 0 as an invalid signature would align signature validity with decoding. Pieter requested a BIP number for this proposal. The code has been updated to handle the sigsize=0 case elsewhere, and a comment has been added in the BIP text. There was also discussion about edge cases that are not covered and the possibility of a cycle of making this non-standard before a further release enforces it.The proposal for a softfork to make non-DER signatures illegal is seen as a solution to the risk of depending on OpenSSL for consensus rules. Recent events have highlighted the need to address this problem soon. An implementation, including unit tests derived from the BIP text, can be found, which includes motivation and specification. Four implementations now exist, with reduced test code in versions 0.8 and 0.9, but identical implementation code. Work to improve this is welcome. The proposed BIP number is BIP0066. Minor changes were suggested, and some missing comments were fixed in the original document.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T19:45:01.400143+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
