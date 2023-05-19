@@ -15,46 +15,45 @@
     <hr class="solid">
     <br><b>Individual post summaries:</b>
     
-    <ul>
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000231_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
+                        <b>Matt Corallo 2011-07-26 17:18:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000225_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
+                        <b>Matt Corallo 2011-07-26 13:23:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000264_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
+                        <b>Matt Corallo 2011-07-30 14:07:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000227_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
+                        <b>Matt Corallo 2011-07-26 16:24:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000219_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
+                        <b>Matt Corallo 2011-07-26 01:35:56</b>
+                    </li>
+                
+            
+        </ul>
         
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000231.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <li>
-        <a href="/bitcoin-dev/July_2011/000231_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
-        <b>Matt Corallo 2011-07-26 17:18:42</b>
-        </li>
-        
-        <li>
-        <a href="/bitcoin-dev/July_2011/000225_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
-        <b>Matt Corallo 2011-07-26 13:23:39</b>
-        </li>
-        
-        <li>
-        <a href="/bitcoin-dev/July_2011/000264_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
-        <b>Matt Corallo 2011-07-30 14:07:01</b>
-        </li>
-        
-        <li>
-        <a href="/bitcoin-dev/July_2011/000227_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
-        <b>Matt Corallo 2011-07-26 16:24:36</b>
-        </li>
-        
-        <li>
-        <a href="/bitcoin-dev/July_2011/000219_bitcoin-DNS-addresses.xml.html">bitcoin DNS addresses</a>
-        <b>Matt Corallo 2011-07-26 01:35:56</b>
-        </li>
-        
-
-        
-    </ul>
-    
-        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000231.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-    
-    <p><i>Published on: 2011-07-26T17:18:42+00:00</i></p>
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion on the Bitcoin mailing list was focused on finding the best method for resolving Bitcoin addresses. DNS-based resolution was considered bad due to its potential vulnerability to MITM attacks, and DNSSEC was deemed unsuitable as a security measure for this purpose. Instead, HTTPS was suggested as a better alternative, which had several advantages over DNSSEC-based solutions without any significant drawbacks. One of the key benefits of HTTPS was the ease of giving different addresses to each client based on IP, which was not possible with DNS.Although DNS mapping doesn't prevent or deny anyone from leveraging HTTP(S) for similar mapping, it is designed for name-to-thing mapping and has no clear advantages over HTTPS. Additionally, using an HTTPS library is preferred due to its thorough security audits, whereas implementing a full resolver with root trust anchors and knowledge of root servers in Bitcoin would be necessary to secure it against a coffee-shop network MITMer, which does not seem like a good idea.Rick Wesson had suggested producing a patch in rpc.cpp to support DNS lookups, but Matt responded that URIs are much simpler and more useful in terms of being able to give different addresses and/or values per user. He suggests using a simple HTTPS server with addresses and client support instead. While Rick agrees on the need for simpler user experience, he also acknowledges the potential limitations of DNS-based resolving. DNSSEC is great if someone is running their own recursive name server, but it seems like way overkill to do name->address mapping. Moreover, DNS is not well-suited for transmitting something that will result in money transfer due to its vulnerability to MITM attacks. What's liked about the DNS is that it is frequently leveraged as a proxy for identity and http URIs are not. Bitcoin, if used in the DNS, might make DNSSEC more popular, which is a good thing, but Bitcoin is still tiny, so it's highly unlikely that it will make a difference to DNSSEC adoption. In conclusion, HTTPS offers several advantages over DNS and DNSSEC for resolving Bitcoin addresses, and it is a simpler and more secure solution for this purpose.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T02:42:00.053540+00:00 </i></p>
+        <p><i>Published on: 2011-07-26T17:18:42+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion on the Bitcoin mailing list was focused on finding the best method for resolving Bitcoin addresses. DNS-based resolution was considered bad due to its potential vulnerability to MITM attacks, and DNSSEC was deemed unsuitable as a security measure for this purpose. Instead, HTTPS was suggested as a better alternative, which had several advantages over DNSSEC-based solutions without any significant drawbacks. One of the key benefits of HTTPS was the ease of giving different addresses to each client based on IP, which was not possible with DNS.Although DNS mapping doesn't prevent or deny anyone from leveraging HTTP(S) for similar mapping, it is designed for name-to-thing mapping and has no clear advantages over HTTPS. Additionally, using an HTTPS library is preferred due to its thorough security audits, whereas implementing a full resolver with root trust anchors and knowledge of root servers in Bitcoin would be necessary to secure it against a coffee-shop network MITMer, which does not seem like a good idea.Rick Wesson had suggested producing a patch in rpc.cpp to support DNS lookups, but Matt responded that URIs are much simpler and more useful in terms of being able to give different addresses and/or values per user. He suggests using a simple HTTPS server with addresses and client support instead. While Rick agrees on the need for simpler user experience, he also acknowledges the potential limitations of DNS-based resolving. DNSSEC is great if someone is running their own recursive name server, but it seems like way overkill to do name->address mapping. Moreover, DNS is not well-suited for transmitting something that will result in money transfer due to its vulnerability to MITM attacks. What's liked about the DNS is that it is frequently leveraged as a proxy for identity and http URIs are not. Bitcoin, if used in the DNS, might make DNSSEC more popular, which is a good thing, but Bitcoin is still tiny, so it's highly unlikely that it will make a difference to DNSSEC adoption. In conclusion, HTTPS offers several advantages over DNS and DNSSEC for resolving Bitcoin addresses, and it is a simpler and more secure solution for this purpose.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T02:42:00.053540+00:00</i></p>
     
 
     

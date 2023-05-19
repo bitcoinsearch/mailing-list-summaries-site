@@ -15,31 +15,30 @@
     <hr class="solid">
     <br><b>Individual post summaries:</b>
     
-    <ul>
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2015/000325_Lightning-the-death-of-BIP62-and-Segregated-Witness.xml.html">Lightning, the death of BIP62, and Segregated Witness</a>
+                        <b>Matt Corallo 2015-11-19 19:48:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2015/000323_Lightning-the-death-of-BIP62-and-Segregated-Witness.xml.html">Lightning, the death of BIP62, and Segregated Witness</a>
+                        <b>Matt Corallo 2015-11-19 19:38:46</b>
+                    </li>
+                
+            
+        </ul>
         
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000325.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <li>
-        <a href="/lightning-dev/Nov_2015/000325_Lightning-the-death-of-BIP62-and-Segregated-Witness.xml.html">Lightning, the death of BIP62, and Segregated Witness</a>
-        <b>Matt Corallo 2015-11-19 19:48:04</b>
-        </li>
-        
-        <li>
-        <a href="/lightning-dev/Nov_2015/000323_Lightning-the-death-of-BIP62-and-Segregated-Witness.xml.html">Lightning, the death of BIP62, and Segregated Witness</a>
-        <b>Matt Corallo 2015-11-19 19:38:46</b>
-        </li>
-        
-
-        
-    </ul>
-    
-        <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000325.html">Click here to read original discussion on the lightning-dev mailing list</a>
-    
-    <p><i>Published on: 2015-11-19T19:48:04+00:00</i></p>
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Lightning-dev mailing list has been discussing the issue of transaction malleability and its impact on the creation of lightning channels. While BIP62 addresses many vectors for txid malleability, it does not address 3rd party malleability. To create reliable spending from unconfirmed transactions, Segregated witness can be used. However, this is a large hard-fork change.A proposal called Segregated Witness has been introduced to help with malleability and enable reliable spends from unconfirmed transactions. The current soft-fork change is still being discussed, but it appears that Pieter wants to push this forward. One of the motivations behind retracting BIP62 is that it addresses 3rd party malleability but doesn't help in the context of lightning channel creation, whereas Segregated witness can achieve this but requires a large hard-fork change.Sighash_noinput can also accomplish this functionality, and Tadge Dryja hopes to start testnet-L with this sighash type so that malleability mitigation can be tested.The basic idea of the soft-fork plan is simple; have the scriptPubKey be just the 20-byte hash of the redeem script while the scriptSig of the spending input is empty. The actual scriptSig, along with the redeem script and signatures, will be contained within a separate Merkle tree committed elsewhere in the block. The hardfork variant suggested by Greg Sanders involves sticking the signatures in another parallel merkle tree.It was mentioned by Glenn Tarbox, PhD, that there is little information available on Segregated Witness, however, it appears that it can be done with a soft fork similar to P2SH.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-18T20:27:23.080642+00:00 </i></p>
+        <p><i>Published on: 2015-11-19T19:48:04+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning-dev mailing list has been discussing the issue of transaction malleability and its impact on the creation of lightning channels. While BIP62 addresses many vectors for txid malleability, it does not address 3rd party malleability. To create reliable spending from unconfirmed transactions, Segregated witness can be used. However, this is a large hard-fork change.A proposal called Segregated Witness has been introduced to help with malleability and enable reliable spends from unconfirmed transactions. The current soft-fork change is still being discussed, but it appears that Pieter wants to push this forward. One of the motivations behind retracting BIP62 is that it addresses 3rd party malleability but doesn't help in the context of lightning channel creation, whereas Segregated witness can achieve this but requires a large hard-fork change.Sighash_noinput can also accomplish this functionality, and Tadge Dryja hopes to start testnet-L with this sighash type so that malleability mitigation can be tested.The basic idea of the soft-fork plan is simple; have the scriptPubKey be just the 20-byte hash of the redeem script while the scriptSig of the spending input is empty. The actual scriptSig, along with the redeem script and signatures, will be contained within a separate Merkle tree committed elsewhere in the block. The hardfork variant suggested by Greg Sanders involves sticking the signatures in another parallel merkle tree.It was mentioned by Glenn Tarbox, PhD, that there is little information available on Segregated Witness, however, it appears that it can be done with a soft fork similar to P2SH.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-18T20:27:23.080642+00:00</i></p>
     
 
     

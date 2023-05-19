@@ -15,31 +15,30 @@
     <hr class="solid">
     <br><b>Individual post summaries:</b>
     
-    <ul>
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000623_Supermajority-mining-votes-for-valid-invalid-changes-.xml.html">Supermajority mining votes for valid-&gt;invalid changes.</a>
+                        <b>Gregory Maxwell 2011-10-03 04:53:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000625_Supermajority-mining-votes-for-valid-invalid-changes-.xml.html">Supermajority mining votes for valid-&gt;invalid changes.</a>
+                        <b>Gregory Maxwell 2011-10-03 05:39:07</b>
+                    </li>
+                
+            
+        </ul>
         
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000623.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <li>
-        <a href="/bitcoin-dev/Oct_2011/000623_Supermajority-mining-votes-for-valid-invalid-changes-.xml.html">Supermajority mining votes for valid-&gt;invalid changes.</a>
-        <b>Gregory Maxwell 2011-10-03 04:53:51</b>
-        </li>
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2011/000625_Supermajority-mining-votes-for-valid-invalid-changes-.xml.html">Supermajority mining votes for valid-&gt;invalid changes.</a>
-        <b>Gregory Maxwell 2011-10-03 05:39:07</b>
-        </li>
-        
-
-        
-    </ul>
-    
-        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000623.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-    
-    <p><i>Published on: 2011-10-03T04:53:51+00:00</i></p>
-    <hr>
-    <h3> Summary:</h3>
-    <p>The distributed algorithm can be changed to make previously valid transactions invalid without causing chain splits. However, this could create issues if invalid transactions are emitted after the block height where the rule takes effect and a super-majority of miners have not yet upgraded. To avoid this problem, upgraded nodes must follow specific rules: never forward or mine a transaction that would be invalid under the new rule, apply old behavior before height X unconditionally (X set far enough in the future for large miners to deploy), and begin applying the new rule only after the first point in the chain after X when none of the last Y blocks have contained an invalid transaction under the new rules. After the software is released, members of the bitcoin community intentionally transmit transactions that are invalid under the new rules. By setting Y high enough for all major miners to have a chance to mine in the window, this becomes an effective vote for the change by miners with a stochastic super-majority threshold. All nodes can determine exactly at what block the election has completed since it is an objective fact of the chain. With this scheme, the new encoding will only become active when mining capacity supports it so that a large reorganization does not happen due to incompatible blocks during deployment.As a safeguard, before applying the new rule, 50% of the last Y blocks must contain a coinbase with an "I am upgraded" code. Until the new rule is active, an "I am upgraded" code should be included in every block; after activation, this can be turned off. The active statement provides a proof of how likely a fork of length X will be if a newly invalid transaction is announced at the time of activation. This scheme is sufficient without conflicting block discouragement and is generally superior to discouragement for this purpose.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T02:53:30.453938+00:00 </i></p>
+        <p><i>Published on: 2011-10-03T04:53:51+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The distributed algorithm can be changed to make previously valid transactions invalid without causing chain splits. However, this could create issues if invalid transactions are emitted after the block height where the rule takes effect and a super-majority of miners have not yet upgraded. To avoid this problem, upgraded nodes must follow specific rules: never forward or mine a transaction that would be invalid under the new rule, apply old behavior before height X unconditionally (X set far enough in the future for large miners to deploy), and begin applying the new rule only after the first point in the chain after X when none of the last Y blocks have contained an invalid transaction under the new rules. After the software is released, members of the bitcoin community intentionally transmit transactions that are invalid under the new rules. By setting Y high enough for all major miners to have a chance to mine in the window, this becomes an effective vote for the change by miners with a stochastic super-majority threshold. All nodes can determine exactly at what block the election has completed since it is an objective fact of the chain. With this scheme, the new encoding will only become active when mining capacity supports it so that a large reorganization does not happen due to incompatible blocks during deployment.As a safeguard, before applying the new rule, 50% of the last Y blocks must contain a coinbase with an "I am upgraded" code. Until the new rule is active, an "I am upgraded" code should be included in every block; after activation, this can be turned off. The active statement provides a proof of how likely a fork of length X will be if a newly invalid transaction is announced at the time of activation. This scheme is sufficient without conflicting block discouragement and is generally superior to discouragement for this purpose.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T02:53:30.453938+00:00</i></p>
     
 
     
