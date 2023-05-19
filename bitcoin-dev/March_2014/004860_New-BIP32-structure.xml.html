@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP32 structure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2014-03-27 16:14:05
+            <br><i>Published on: 2014-03-27T16:14:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_New-BIP32-structure.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004860.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter addressed concerns regarding standardizing a default key tree for BIP32 wallets. He argued that the “cointype” is unnecessary inside the derivation and already has support through magic bytes in the serialized form. While he believes a “reserved” field for future extensions would be useful, he doesn't think we can encode how key chains are to be used inside the derivation structure. Pieter proposed that each wallet should have a bunch of chains, with each chain serving a specific purpose, fixing how the derivation beneath it works. Some purposes will require extra layers beneath, but that is application-specific. In response to Allen Piscitello’s question about whether coins have a unique magic number assigned, Pieter replied that mainnet and testnet already have specified magics, while alts can define their own. Jeff Garzik also suggested using a hash of the coin name to avoid collision, which was met with agreement.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T18:17:37.010232+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

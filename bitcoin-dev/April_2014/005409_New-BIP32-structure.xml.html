@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP32 structure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2014-04-23 17:42:58
+            <br><i>Published on: 2014-04-23T17:42:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_New-BIP32-structure.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005409.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Litecoin developers and slush, it was decided that changing the "Bitcoin seed" constant to something different in BIP32 HMAC would not be a good idea. This is because changing the HMAC constant would not allow for storing one node and deriving wallets for multiple coins at the same time. It was suggested that storing the seed was superior to storing the master node as it is smaller. The solution proposed was to make the seed the "super master" which allows generating the coin-specific masters. The suggestion of using a chain-specific serialization magic was deemed almost the same as the proposed solution, except it lacks a way to encode the "super master." However, it was noted that encoding the seed instead would have the same security properties. There was disagreement about the "cointype" level and whether it breaks anything. It was seen as a clean solution that is forward and backward compatible and does not need any special extension to BIP32. However, it was acknowledged that strictly adhering to BIP32 would be broken. It was also noted that the ability to use the magic in serialization to prevent importing a chain from the wrong coin would be removed if the "Coin seed: " + magic were used instead of "Bitcoin seed," as it doesn't require an extra mapping from cointype to seed strings.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T18:19:01.140037+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
