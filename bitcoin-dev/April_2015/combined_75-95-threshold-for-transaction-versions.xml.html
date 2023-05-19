@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>75%/95% threshold for transaction versions <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2015/007811_75-95-threshold-for-transaction-versions.xml.html">75%/95% threshold for transaction versions</a>
+                        <b>Gregory Maxwell 2015-04-24 20:16:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2015/007800_75-95-threshold-for-transaction-versions.xml.html">75%/95% threshold for transaction versions</a>
+                        <b>Pieter Wuille 2015-04-17 09:02:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2015/007794_75-95-threshold-for-transaction-versions.xml.html">75%/95% threshold for transaction versions</a>
+                        <b>Pieter Wuille 2015-04-16 05:22:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-April/007811.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-04-24T20:16:57+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email conversation between William Swanson and s7r talks about the possibility of altering transaction IDs in Bitcoin transactions. While BIP 62 approach is one way to tackle this problem, another approach is to sign the transaction in such a way that input txids can change without invalidating the signatures. However, not covering the ID allows for transaction replay, which can lead to monetary losses. Moreover, it can result in backward computation of signatures to produce limited covenant-coins. The proposal linked to there is a game of wack-a-mole with assorted masking flags, which doesn't provide tools to address the replay issue. It exposes the sender to replay even in specialized 'contract' applications where "there won't be address reuse" could be a strong assumption enforced by the application.While the number of altered txids in practice is not high, such alterations have happened in the past. Anyone can alter the txid without invalidating it, without mining power, and without access to the sender's private keys. All it requires is seeing a transaction on the network, doing a trivial modification to it, and rebroadcasting it quickly. If the modified version gets mined, it can cause financial loss. Having mining power can help.BIP62 does not make v1 transactions invalid as it is opt-in. The creator of a transaction needs to agree to protect it from malleability, and this subjects him to extra rules in the creation. Forcing v3 transactions would require every piece of wallet software to be changed.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T20:03:22.581336+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

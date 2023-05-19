@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bloom filtering, privacy <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2015/007512_bloom-filtering-privacy.xml.html">bloom filtering, privacy</a>
+                        <b>Gregory Maxwell 2015-02-20 18:20:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2015/007508_bloom-filtering-privacy.xml.html">bloom filtering, privacy</a>
+                        <b>Gregory Maxwell 2015-02-20 17:50:11</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007512.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-02-20T18:20:59+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion revolves around using a full node for merkle paths and transactions for addresses from the UTXO set in the relevant block. The term "UTXO set" is causing confusion as it refers to block-local data, not the complete verification state. Instead of that, there is a scriptpubkey bitmap per block that is committed, and users can request it with confidence. If there are hits, users can request the block with confidence that there was no censoring. It's possible to tree structure additional layers to the bitmap to trade off map size for false request overhead, but it's not clear how much of a win this would be. Additionally, it's possible to extract the txout list for the whole block and commit to that too, so users can request just the outputs and get a smaller, faithful copy. The approach needs a filter set with a lower FP rate. Larger filters mean higher baseline bandwidth, though when users do not reuse addresses and have more addresses than there are txouts in the block, the gap is narrower. The scheme relies on a committed bloom filter, not a committed UTXO set.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T19:49:38.702339+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
