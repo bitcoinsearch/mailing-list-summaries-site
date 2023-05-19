@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>have there been complains about network congestion? (router crashes, slow internet when running Bitcoin nodes)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2014-04-08 16:44:07
+            <br><i>Published on: 2014-04-08T16:44:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005140.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is about the issues that the bittorrent community faced and solved with uTP. One of the problems was a home router crashing or slowing down when its NAT pin-hole table overflows, triggered by many TCP connections. Another issue was a home DSL or cable modem having its send buffer filled up by outgoing data, causing seconds of delay on interactive traffic. The bittorrent community solved these issues with uTP, which uses a congestion window algorithm that allows for better performance. However, adding an own UDP network stack involving a ton of exposed code sounds like a great way to gain inadvertent bugs or backdoors. It is suggested that there doesn't have to be just one network transport for Bitcoin, and it would be great for someone to go build an alternative transport protocol to gateway to and see what useful things they can accomplish.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T18:34:58.672008+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
