@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] [BIP proposal] Dealing with malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2014-02-12 18:03:21
+            <br><i>Published on: 2014-02-12T18:03:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_-RFC-BIP-proposal-Dealing-with-malleability.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004352.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about transaction malleability in Bitcoin, Rune Kjær Svendsen suggests defining a new "canonical transaction hash/ID" (cTxID) that would be a hash of the non-malleable parts of the transaction data. This cTxID would be used internally by clients, making the traditional transaction hash irrelevant for client functioning. However, this solution only addresses some of the problems created by malleability, particularly for more complex transaction protocols. Mutation can invalidate an unconfirmed transaction chain by mutating the parent, breaking any protocol that depends on creating a precomputed locked time refund transaction.Although a canonical ID can prevent some buggy behavior, it does not fix the underlying problem. Alan Reiner suggests encouraging Bitcoin software developers to design their software to use the static ID instead of the full transaction hash. According to him, if MtGox had used these IDs instead of the TX ID, their software would have correctly identified the mutated transactions, and there would be no problem. This is proved incorrect as MtGox was automatically issuing replacement transactions resulting in double payments.If someone tries to replace/reissue/cancel a transaction, they must double-spend the original transaction. If the original transaction has not been conflicted, then it is possible that both the replacement and the original will be confirmed if someone pulls the original transaction out of a hat. It's not safe at any time to look to see if the original has been confirmed yet, and if not reissue because the state of the world could change nano-seconds after you looked. Double-spending the original ensures atomic exclusion, and only one transaction or the other will be confirmed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T18:07:44.839508+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

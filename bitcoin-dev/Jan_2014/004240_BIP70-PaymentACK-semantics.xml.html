@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70: PaymentACK semantics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2014-01-28 13:09:28
+            <br><i>Published on: 2014-01-28T13:09:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_BIP70-PaymentACK-semantics.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004240.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Gavin Andresen and Mike Hearn on Jan 28, 2014, discusses the interpretation of a spec regarding the broadcasting of transactions. The spec does not specify when to broadcast versus when to submit via HTTP. If the wallet software is doing automatic CoinJoin, then typically one or several of the other participants will broadcast the transaction as soon as it is complete. If the spec said that wallets must not broadcast until they receive a PaymentACK (if a payment_url is specified), then you'd have to violate the spec to do CoinJoin. While an ACK cannot prevent transactions from being broadcasted, it can still mean "You're now relieved of the responsibility of getting the transaction confirmed." This is independent of being allowed to broadcast it. Even if you don't care about CoinJoin, not broadcasting the transaction as soon as the inputs are signed adds implementation complexity.If a payment_url is unavailable, users should retry. If they broadcasted, and the payment_url is unavailable, they should retry. Otherwise, the recipient cannot rely on receiving memo and refund address, which would make these fields completely useless. It is suggested not to broadcast if a payment_uri to minimize that risk further. However, there are enough cases where you cannot enforce that anyway.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T18:03:08.561367+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
