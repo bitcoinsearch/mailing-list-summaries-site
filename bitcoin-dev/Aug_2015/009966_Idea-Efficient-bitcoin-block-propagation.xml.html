@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Idea: Efficient bitcoin block propagation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2015-08-06 17:33:49
+            <br><i>Published on: 2015-08-06T17:33:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_Idea-Efficient-bitcoin-block-propagation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/009966.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the documentation of TheBlueMatt relay network was started by Sergio Demian Lerner via bitcoin-dev mailing list. He asked if there was any up-to-date documentation available apart from the source code, which could explain what kind of block compression it is currently doing. Gregory Maxwell responded stating that Bitcoin Core has cached validation for many years now and if not for that and other optimizations, things would be really broken right now. He was also mystified by a lot of the large block discussion, much of it completely divorced from the technology as deployed. Maxwell further explained that the technical/security implications of larger blocks are related to other things than propagation time if people are using the available efficient relay protocol or better. On Wed, Aug 5, 2015, Arnoud Kouwenhoven - Pukaki Corp had stated that he hears that this network solves speed of transmission and thereby (technical) block size issues. Presumably, it would solve speed of block validation too by prevalidating transactions. To this, Maxwell confirmed and said that SPV mining is a bit of a misnomer and it was initially deployed at a time when a single pool in Europe had amassed more than half of the hashrate.VFSSP (validation free stratum subpooling) was easy to implement, and there were practical issues miners have had: miners that run their nodes in far away colocation (>100ms) due to local bandwidth or connectivity issues, relay network hubs not being anywhere near by due to strange internet routing, the CreateNewBlock() function being slow and unoptimized, etc. There are many other things like this-- and VFSSP avoids them causing delays even when you don't understand them or know about them. So even when they're easily fixed the VFSSP is a more general workaround.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T21:14:01.289405+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
