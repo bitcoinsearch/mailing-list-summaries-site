@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>0.7 merge recommendations/status</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2012-03-31 12:28:28
+            <br><i>Published on: 2012-03-31T12:28:28+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/March_2012/combined_0-7-merge-recommendations-status.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-March/001354.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Michael Grønager has suggested pushing libcoin to bitcoin in order to solve some of the problems listed. He has also offered to change the copyright/license if needed. However, it would not be possible to merge anything without a license change. Libcoin is designed with no global thread mutexes and there is no blocking of the main thread due to rpc methods except for a sendto. In addition, a reorganize only locks the main thread for a split second while the final commit is done. Despite liking its design and refactorings, Pieter is not entirely convinced about its thread-safety. He suggests making each publicly accessible method of BlockChain grab either a reader lock (if it's a const function) or an upgradable lock, and take a writer lock in each method that actually performs changes. The libcoin rpc supports keep_alive and pipelining, runs in its own thread but can also run in the same thread as the node, and uses async operation. Ipv6 is easy to implement in libcoin as the CAddress/Endpoint class is implemented as a subclass of boost::endpoint, only thing holding back is deciding on an ipv6 format on IRC. Lastly, Pieter would like to reverse the order of the last 12 bytes in the address db since they are opposite to boost.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T00:34:06.351613+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bootstrapping full nodes post-pruning <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/001523_Bootstrapping-full-nodes-post-pruning.xml.html">Bootstrapping full nodes post-pruning</a>
+        <b>Gregory Maxwell 2012-06-11 20:43:20</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/001519_Bootstrapping-full-nodes-post-pruning.xml.html">Bootstrapping full nodes post-pruning</a>
+        <b>Gregory Maxwell 2012-06-11 15:39:20</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001523.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+    
+    <p><i>Published on: 2012-06-11T20:43:20+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mike Hearn, a former Bitcoin developer, raises concerns about the poor space efficiency and inter-version compatibility problems of Berkeley DB (BDB) files for read only pruned indexes. He also notes that even if a more complex scheme is used, commitments must be in the blockchain, and somebody has to verify that binaries match the source code to prevent software from doing anything malicious. The binaries distributed by bitcoin.org are already compiled deterministically and validated by multiple independent parties, but there will be a downloader tool in the future to check for approvals before accepting an update. This produces a full chain of custody to track actual binaries to specific source code, which can be audited, making substitution attacks detectable. Mike Hearn does not favor unauditable single source material because it greatly increases the attractiveness of compromising developers. If shipping pruned chains was wanted, he would prefer to have a deterministic process to produce archival chains and introduce commitments to them in the blockchain. Then, a client doing a reverse header sync could stop syncing and use the archival chain for points before that. This leaves the distribution of software auditable, and something should be done with service announcements so that full nodes that do not have enough bandwidth can still support syncing without turning off listening.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T01:14:57.122402+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

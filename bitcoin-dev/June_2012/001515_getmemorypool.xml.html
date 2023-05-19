@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>getmemorypool</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2012-06-09 23:10:55
+            <br><i>Published on: 2012-06-09T23:10:55+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_getmemorypool.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001515.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This article discusses Luke Dashjr's getmemorypool/BIP22 pull request which has been open for a long time and has received little discussion. The author believes that having a stable and flexible API for negotiating block generation is important to be standardized. The three subrequests are template, proposal, and submit. The author suggests simplifying the standard by limiting the API to sending only txids in templates and submissions. They go on to address several optional features of the standard, such as coinbase outputs, coinbase input, noncerange limiting, time/*, transactions/add, transactions/remove, and prevblock. The author suggests standardizing on having all transactions be removable (perhaps except those marked 'required') and discarding the other ways of specifying the same behavior. They propose that the standard should be simplified to include only getblocktemplate and submitblocktemplate. The former creates a new block template and returns it with certain fields such as bits, previousblockhash, version, and more. The latter submits an object containing a hex serialized block header, hex serialized coinbase transaction, and a list of txids.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T00:37:00.483027+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
