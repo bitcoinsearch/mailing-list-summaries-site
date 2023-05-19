@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP for Bloom filtering</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2012-10-25 16:56:39
+            <br><i>Published on: 2012-10-25T16:56:39+00:00</i></p>
+
+        
+        
+
+        <li>
+        <a href="/bitcoin-dev/Oct_2012/combined_Draft-BIP-for-Bloom-filtering.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-October/001944.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange, Mike Hearn sends Matt a draft BIP detailing the bloom filtering protocol extension they developed. The protocol has many complexities, including handling premature disconnections without missing blocks, implementing hash functions for the filter, and validating the hash tree. While these components can be implemented in a few lines of carefully constructed library code, the current design causes significant overhead compared to pulling an unfiltered block, rendering it useless for applications that would select a small but not tiny subset of the transactions. Furthermore, the hash function used is not cryptographically strong, making it vulnerable to bandwidth attacks, where someone could use txids and txouts that collide with the maximum number of other existing txouts to waste bandwidth for people.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T15:57:10.344163+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

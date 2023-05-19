@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Public key and signature malleability <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+    <ul>
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2012/001925_Public-key-and-signature-malleability.xml.html">Public key and signature malleability</a>
+        <b>Pieter Wuille 2012-10-20 17:55:43</b>
+        </li>
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2012/001926_Public-key-and-signature-malleability.xml.html">Public key and signature malleability</a>
+        <b>Gregory Maxwell 2012-10-20 18:34:11</b>
+        </li>
+        
+
+        
+    </ul>
+    
+        <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-October/001925.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+    
+    <p><i>Published on: 2012-10-20T17:55:43+00:00</i></p>
+    <hr>
+    <h3> Summary:</h3>
+    <p>OpenSSL, which is used by almost every full Bitcoin node, accepts non-standard encodings for public keys and signatures that fail to conform to SEC and DER specifications. To make the Bitcoin network rules more well-defined and prevent malleability attacks, Pieter Wuille has proposed strict rules for acceptable public keys and signature formats. The proposed rules are already followed by almost all clients and include specific byte requirements for compressed and uncompressed EC points, as well as MSB encoded integers for signatures. Sergio Lerner recently discovered a vulnerability in the S value of the signature, which can be resolved by requiring the lowest bit of the S value to always be even. This would require coordination as no client currently enforces this. Malleability can allow malicious relayers to modify transactions in-transit without invalidating them, leading to wallet software not dealing gracefully with modified versions of transactions accepted in a block. If the rules are adopted, they could first be enabled as checks similar to IsStandard(), making it hard for non-compliant data to get into blocks but still be accepted when they aren't standard. Finally, a BIP could be written and enforced as a network rule when no significant amount of non-standard transactions are seen anymore.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T15:55:18.144220+00:00 </i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
