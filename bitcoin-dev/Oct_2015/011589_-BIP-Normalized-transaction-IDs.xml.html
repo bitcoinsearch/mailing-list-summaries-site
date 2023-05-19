@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-10-21 19:27:54
+            <br><i>Published on: 2015-10-21T19:27:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011589.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email discussion on Bitcoin-dev, Danny Thorpe raises concerns about malicious third parties modifying transactions in the mempool by twiddling opcodes in the signature scripts. However, canonical encoding enforcement has been deployed as a standardness rule to prevent such malleability completely on ordinary transactions. This is an immediate solution that will only allow miners to malleable ordinary payments once they have updated to 0.11.1 or 0.10.3 (or equivalent). The proposal being discussed does not provide an immediate benefit against third party manipulation of transactions in the mempool, but rather addresses multistep contracts and other cases. It does not prevent third party mutation until people change their public keys to a new scheme, which cannot be done until a soft fork is made and settled in the network for which the code has not yet been written. The current timeframe for a soft fork is around a year according to CLTV. Canonical encoding is both sufficient for preventing third party malleability on ordinary transactions and the only option for having an actually immediate benefit. Therefore, it's important to not mix up third party malleability with this work which is important in its own right.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T22:15:52.473191+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

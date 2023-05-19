@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Capacity increases for the Bitcoin system.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-12-09 07:17:08
+            <br><i>Published on: 2015-12-09T07:17:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Capacity-increases-for-the-Bitcoin-system-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011912.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark Friedenbach and Greg Maxwell are discussing the placement of the witness commitment in the Bitcoin blockchain. Friedenbach has asked for data showing that placing the commitment in the last transaction would be disruptive, but Maxwell responds that he has not commented on the transaction output but rather on coinbase outputs and a hard-fork. He explains that using an output in the last transaction would break the assumption that a block can be truncated and still result in a valid block, which is used by some mining setups currently. This is because GBT does not generate the coinbase transaction and so cannot know its size; and you may have to drop the last transaction(s) to make room for it. Maxwell also notes that if the input for that transaction is supposed to be generated from a coinbase output some blocks earlier, then this may again run into hardware output constraints in coinbase transactions. However, creating a zero value output only once and just rolling it forward could likely prevent this issue from occurring.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T22:36:34.644382+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

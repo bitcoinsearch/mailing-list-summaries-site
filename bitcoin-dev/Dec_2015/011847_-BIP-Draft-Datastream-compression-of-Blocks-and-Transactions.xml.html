@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Draft] Datastream compression of Blocks and Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2015-12-02 22:23:47
+            <br><i>Published on: 2015-12-02T22:23:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_-BIP-Draft-Datastream-compression-of-Blocks-and-Transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011847.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lempel-Ziv family of compressors has been used for Bitcoin wire protocol, but it may not be as compact as it could possibly be for mostly binary data and there are opportunities for better compression. The issue is having trust and faith in building a compressor from scratch that will stand up against attack vectors. LZO compressor has been around for 20 years with very few problems and no current issues. Emin Gün Sirer argues the pros and cons of building a custom, Bitcoin-aware compressor that can potentially do significantly better than the existing compressors. Building a custom compressor can lead to much higher compression ratios and free improvements on the table. However, the nature of LZ compressors leads us to believe that it may be difficult to change the wire format later on and all outputs need to be verified separately during processing. A programming challenge or contest would be one of the best ways to find the best possible Bitcoin-specific compressor and bring new programmers into the ecosystem. Multiple compression libraries can easily be supported, although a custom compressor may be too complex to include in the production client right now, it would be good to understand the potential for improvement.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T22:28:01.896253+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segregated Witness features wish list <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2015/011940_Segregated-Witness-features-wish-list.xml.html">Segregated Witness features wish list</a>
+                        <b>Gregory Maxwell 2015-12-10 09:51:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2015/011938_Segregated-Witness-features-wish-list.xml.html">Segregated Witness features wish list</a>
+                        <b>Gregory Maxwell 2015-12-10 08:26:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2015/011962_Segregated-Witness-features-wish-list.xml.html">Segregated Witness features wish list</a>
+                        <b>Pieter Wuille 2015-12-13 18:07:01</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011940.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-12-10T09:51:23+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A bitcoin-developer jl2012 discusses Segregated Witness (SW) and its implementation details in a mailing thread. The consensus among the developers is to implement SW as soon as possible without binding it with any additional script enhancements. SW was designed to make future script changes easier by having 'version' byte(s) at the start of the witness program. If the witness program prefix is unrecognized, it means RETURN TRUE. This captures the intended behavior of OP_VER in the earliest versions of the software while avoiding hard forks. The minimal consensus rule changes needed for segwit soft fork are listed, which include renaming OP_NOP4 as OP_SEGWIT, a script with OP_SEGWIT must fail if the scriptSig is not completely empty, using only one push in scriptPubKey or redeemscript as witness program, and defining version bytes to interpret the serialized scripts. The rules allow segwit inside P2SH but not the other way around. Operations like multiplication and division may be risky over arbitrary bignums. The developer proposes introducing stack flag on every manipulation instruction.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T22:45:35.325104+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
