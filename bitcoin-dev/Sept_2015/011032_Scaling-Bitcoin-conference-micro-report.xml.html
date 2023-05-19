@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scaling Bitcoin conference micro-report</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2015-09-16 21:51:57
+            <br><i>Published on: 2015-09-16T21:51:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Scaling-Bitcoin-conference-micro-report.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011032.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During Scaling Bitcoin, Bitcoin Core developers and contributors discussed a "greatest common denominator" type consensus on block size limit. They talked about the "net-utxo" concept, which calculates transaction size within a block by applying a delta to transaction size based on the amount of data added or removed from the UTXO set. This aligns user incentives with UTXO resource usage/cost. Many developers were interested in accepting a hard fork to modify the block size limit regime to be cost-based via "net-utxo" rather than a simple static hard limit. 2-4-8 and 17%/year were debated as a short term bump - net after applying the new cost metric. However, they did not discuss the hard numbers extensively.The "greatest common denominator" agreement did not seem to be agreeing to an increase that continues over time, but which instead limits itself to a set, smooth increase for X time and then requires a second hardfork if there is agreement on a need for more blocksize at that point. Leaning towards a "if (timestamp > X)" flag day hard fork Y months in the future, they set high bit in version, resulting in a negative number, to cleanly fork away. Miners signal non-binding engineering readiness for a hard fork via coinbase moniker. Some fork cancellation method is useful, if unsuccessful after Z time elapses. Other forks may be signaled via setting a bit in version, and then triggering a forking change once a threshold is reached.Chat participants are invited to reply with their corrections and comments, and this is not a consensus statement or anything formal. This is one of many inputs described at Scaling Bitcoin. Developers and the community should evaluate everything discussed and work towards some concrete proposal(s) that are implemented, tested and simulated in December in Hong Kong.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T21:53:41.483648+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

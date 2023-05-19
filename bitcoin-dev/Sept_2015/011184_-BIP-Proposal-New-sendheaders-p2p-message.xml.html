@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Proposal] New &#34;sendheaders&#34; p2p message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Suhas Daftuar 2015-09-24 18:02:28
+            <br><i>Published on: 2015-09-24T18:02:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011184.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new optional peer-to-peer (p2p) message is being proposed to improve the way blocks are announced on the Bitcoin network. The draft BIP can be found on GitHub and the implementation of the BIP is available on bitcoin's GitHub repository. This p2p message will allow nodes to announce blocks with headers messages rather than with inv's, which will eliminate a round trip in network communication, leading to more efficient propagation of reorgs. The new p2p message is optional, so nodes can continue to use inv messages to announce new blocks. The proposal adds a new message called "sendheaders," which indicates that a node prefers to receive new block announcements via a "headers" message rather than an "inv." Since the introduction of "headers-first" downloading of blocks in 0.10, blocks will not be processed unless they are able to connect to a valid headers chain. In a case where a new block is being announced that builds on the tip, it would be more efficient if the node just announced the block header for the new block, rather than just the block hash, and saved the peer from generating and transmitting the getheaders message. In the case of a reorg, where one or more blocks are disconnected, nodes currently just send an "inv" for the new tip. By announcing headers from the last fork point leading up to the new tip in the block announcement, peers are able to request all the intermediate blocks immediately. The backward compatibility of this proposal ensures that older clients remain fully compatible and interoperable after the change.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T21:57:28.393320+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

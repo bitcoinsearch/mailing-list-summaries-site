@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Weak block thoughts...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-09-27 19:50:22
+            <br><i>Published on: 2015-09-27T19:50:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Weak-block-thoughts-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011198.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev discussion in 2015, Kalle Rosenbaum asked why miners would publish weak blocks. While faster propagation was one benefit, everyone mining a similar block would enjoy the same advantage. The author then proposed an alternative weak-blockless weak block implementation where every N seconds, every miner sends to every other miner what they're working on. Any block found can be referenced to any of these earlier worklists. It was explained that no one else is harmed by not sending theirs, and the transmission costs would be negligible. However, anyone could DOS attack it unless an identity-based access control system was layered onto it. Weak blocks add hashcash as a rate limiting mechanism to solve this problem - a coordination-free lottery weighed by hash-power decides who can transmit. If someone doesn't participate in the lottery and shares their solutions, there is no major harm for other users as they will choose a somewhat lower weak-block threshold to get updates at the desired rate than they would otherwise. Miners transitively relay other parties' blocks even if they don't help compared to the weak blocks already relayed because relaying helps the network, and if they don't, they may end up orphaned because of propagation delays suffered by their parent block.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T21:56:02.849294+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

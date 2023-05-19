@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>What Lightning Is <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2015/010116_What-Lightning-Is.xml.html">What Lightning Is</a>
+                        <b>Anthony Towns 2015-08-10 21:19:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2015/010113_What-Lightning-Is.xml.html">What Lightning Is</a>
+                        <b>Anthony Towns 2015-08-10 21:02:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2015/010098_What-Lightning-Is.xml.html">What Lightning Is</a>
+                        <b>Pieter Wuille 2015-08-10 17:14:26</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010116.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-08-10T21:19:01+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The conversation on the Bitcoin-dev mailing list is focused on the user experience of using the Lightning Network to make payments. The process involves opening a payment channel with a counterparty and waiting for sufficient confirmations before the channel becomes usable. To pay for goods or services, the user swipes their phone over an NFC device or scans a QR code displayed by the merchant's POS device. A dialogue pops up on the phone asking the user to confirm the payment, and once confirmed, both the user's phone and merchant's POS device display a confirmation message.The backend process involves the merchant passing on their identity and public key, an amount, and a hash for the payment. The user's phone goes online to see if a route to the vendor can be worked out and prepares a lightning transaction to the vendor, signed with the corresponding lightning channel keys, using the hash the merchant provided and sends it through one of the channels the user already has open and funded (at >$5.20 worth of bitcoins). The transaction makes its way through the lightning network, and the confirmation makes its way back. However, the exact time taken for this process is not clear yet.Although the Lightning Network has the potential to facilitate fast, secure, and low-cost Bitcoin transactions, there are potential issues such as disputes over payments, unroutable transactions, and high fees. Additionally, maintaining and managing the payment channels could be complex, requiring attention to issues such as channel capacity, closing the till at the end of the day, resetting channels, handling refunds, and ensuring channel keys/secrets are secure. Despite these challenges, the proposed system of sending payments through payment channels that are updated with every transaction could allow for quick and cheap transactions.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T21:28:45.424565+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
