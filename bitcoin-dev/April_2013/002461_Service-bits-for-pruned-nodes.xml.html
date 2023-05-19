@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Service bits for pruned nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2013-04-28 15:51:55
+            <br><i>Published on: 2013-04-28T15:51:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2013/combined_Service-bits-for-pruned-nodes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002461.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille, a Bitcoin Core developer, has proposed pruning nodes that do not keep historic blocks around. In order to ensure that new and old nodes can find peers to synchronize from, he has suggested adding two extra service bits to the P2P protocol. The first bit, NODE_VALIDATE, would relay and validate blocks and transactions but would only answer getdata requests for recently relayed blocks, transactions, and mempool transactions. The second bit, NODE_BLOCKS_2016, could be queried for the last 2016 blocks without guarantee for relaying or validating new blocks and transactions. The third bit, NODE_NETWORK, would imply NODE_VALIDATE and guarantee availability of all historic blocks. The idea is to separate the different responsibilities of network nodes into separate bits so they can be implemented independently. Wuille monitored the frequency of block depths requested from his public node and discovered that 2016 nicely matches the set of frequently-requested blocks. He plans to write a BIP to formalize this proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T16:48:52.883991+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

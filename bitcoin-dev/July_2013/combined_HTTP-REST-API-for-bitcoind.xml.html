@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTTP REST API for bitcoind <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2013/002975_HTTP-REST-API-for-bitcoind.xml.html">HTTP REST API for bitcoind</a>
+                        <b>Pieter Wuille 2013-07-23 10:36:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2013/002973_HTTP-REST-API-for-bitcoind.xml.html">HTTP REST API for bitcoind</a>
+                        <b>Pieter Wuille 2013-07-23 10:27:35</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2013/002972_HTTP-REST-API-for-bitcoind.xml.html">HTTP REST API for bitcoind</a>
+                        <b>Pieter Wuille 2013-07-23 10:19:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2013/002969_HTTP-REST-API-for-bitcoind.xml.html">HTTP REST API for bitcoind</a>
+                        <b>Pieter Wuille 2013-07-23 10:06:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2013/002962_HTTP-REST-API-for-bitcoind.xml.html">HTTP REST API for bitcoind</a>
+                        <b>Pieter Wuille 2013-07-23 09:42:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2013/002961_HTTP-REST-API-for-bitcoind.xml.html">HTTP REST API for bitcoind</a>
+                        <b>Pieter Wuille 2013-07-23 09:37:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2013/002966_HTTP-REST-API-for-bitcoind.xml.html">HTTP REST API for bitcoind</a>
+                        <b>Pieter Wuille 2013-07-23 09:56:02</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002975.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-07-23T10:36:46+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion primarily revolves around the implementation of User Experience Transaction Output (UXTO) and some of its associated issues. The use of trusted servers for sweeping paper wallets is being debated, with Pieter opposing the idea of reference client endorsing it due to security risks. There is a suggestion to make decentralized solutions more convenient rather than relying on unauthenticated data.The difference between script-indexed and address-indexed has been discussed, with the latter being favored over former as the effort needed to maintain authenticated trees by all full nodes would be trivial. Security issues can be mitigated by trusting the REST server and applying link-level security. However, this approach can lead to reliance on third-party indexing and defeat the purpose of decentralization.The problems associated with existing paper wallets are identified, including the issue of not being able to sweep those and loss of coins due to an involuntary fee. It is suggested that infrastructure should be encouraged that doesn't require trusting a third party. The discussion also touches upon the storage requirements for maintaining history and how fully verifying yet partially pruning nodes can be a better solution.Pieter Wuille explains that the block chain is not involved in verifying transactions; instead, it serves as a historical record for other nodes and wallet rescans. He further adds that the UTXO set is the state required to validate blocks and transactions, and that blocks can be viewed as authenticated patches to the UTXO set. During validation, "undo data" is stored so that the process can be reversed in case of reorganization.An important point he makes is that SPV (Simplified Payment Verification) nodes should not rely on unauthenticated UTXO set data since it's easy to fake and therefore impossible to guarantee that a particular output isn't spent yet. Several safeguards can reduce this risk, such as combining unauthenticated UTXO sets with merkle paths for outputs that credit the user, but even these are not foolproof. Finally, Pieter mentions that while there is no index maintained by default that allows an SPV client to trace the providence of any transaction without needing to maintain the entire blockchain, enabling -txindex since 0.8 will enable the feature.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T17:10:30.166657+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

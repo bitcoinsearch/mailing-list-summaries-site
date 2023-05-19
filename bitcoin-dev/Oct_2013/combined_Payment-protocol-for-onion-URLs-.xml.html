@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment protocol for onion URLs. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2013/003456_Payment-protocol-for-onion-URLs-.xml.html">Payment protocol for onion URLs.</a>
+                        <b>Gregory Maxwell 2013-10-26 03:31:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2013/003459_Payment-protocol-for-onion-URLs-.xml.html">Payment protocol for onion URLs.</a>
+                        <b>Gregory Maxwell 2013-10-26 04:06:48</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003456.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-10-26T03:31:05+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The payment protocol lacks the ability for a tor hidden service site to fully use its authentication capabilities as they are unable to obtain SSL certificates. A solution proposed is to pack a tor HS pubkey into a self-signed x509 certificate with the cn set to foooo.onion and specify in the payment protocol an additional validation procedure for base32.onion hosts that just has it hash and base32 encode the pubkey (as tor does). This would give us a fully supported option which is completely CA free and would work only for tor sites. It would be trivial to add this code, and if there is support, it can be made into a standard feature.The x.509 in the payment protocol itself is for authentication and non-repudiation, not confidentiality. It is used to sign the payment request so that later there is cryptographic evidence in case of a dispute. The payment protocol is extensible, and it would be nice to have a way to support namecoin-provided keys too. However, this will require a fair amount of code and will not be widely used. Tor onion support, on the other hand, would require only a relatively few lines of code since it could just be the existing x.509 mechanism with just a simple special validation rule for .onion, plus a little tool to repack the keys. The tor onion support could work seamlessly with tor hosts and would only work for tor sites.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T17:38:09.229002+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

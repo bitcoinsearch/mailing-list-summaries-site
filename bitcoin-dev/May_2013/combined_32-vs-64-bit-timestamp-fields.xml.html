@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>32 vs 64-bit timestamp fields <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2013/002553_32-vs-64-bit-timestamp-fields.xml.html">32 vs 64-bit timestamp fields</a>
+                        <b>Pieter Wuille 2013-05-09 11:12:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2013/002547_32-vs-64-bit-timestamp-fields.xml.html">32 vs 64-bit timestamp fields</a>
+                        <b>Pieter Wuille 2013-05-09 01:13:39</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002553.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-05-09T11:12:48+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a discussion between Peter Todd and Pieter, Pieter proposes a well-defined 64-bit timestamp for each block, but only putting the lowest 32 bit in the header. This would be under the condition that there is never a gap of more than 136 years between two blocks. The actual 64-bit timestamp can be deterministically derived from the header by prefixing it with the lowest 32-bit value that does not cause the result to violate the at-least-above-the-median-of-the-previous-11-blocks rule. Jeff Garzik chimes in, stating that it's unlikely that the block header format will be broken since it would invalidate all mining hardware. He also mentions that 32 bits is plenty of precision, and even 16 bits would do assuming there's never more than a 65535s (about 18 hours) gap between two blocks. Pieter responds by saying "meh" and that there's no need for such a change.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T16:58:07.442904+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Service bits for pruned nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2013-04-28 19:50:22
+            <br><i>Published on: 2013-04-28T19:50:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2013/combined_Service-bits-for-pruned-nodes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002466.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation from 2013, Mike Hearn discussed the idea of nodes picking their own ranges to keep rather than having fixed intervals. The most recent data is important for reorganization and also meshes well with actual demand. Therefore, whatever is done for historic data, the most recent data should be treated specially. However, it's important that data can be split into ranges because otherwise, nodes may choose not to serve historic data in order to save storage space. This could result in too few copies of the historic data being available on the network.The probability for older blocks is fairly uniform after the most recent 4000 blocks, so dividing load for older blocks based on the "N most recent" data would not work well. Instead, simple ranges quantized to groups of 100 or 1000 blocks could work better. However, this may not come in the first cut and would require new addr messages.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T16:49:51.098389+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

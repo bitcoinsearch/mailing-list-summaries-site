@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Some current turbulence on the Bitcoin network: DB corruption errors on start from Bitcoin-qt / Bitcoind <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2013/003233_Some-current-turbulence-on-the-Bitcoin-network-DB-corruption-errors-on-start-from-Bitcoin-qt-Bitcoind.xml.html">Some current turbulence on the Bitcoin network: DB corruption errors on start from Bitcoin-qt / Bitcoind</a>
+                        <b>Gregory Maxwell 2013-09-09 08:53:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2013/003236_Some-current-turbulence-on-the-Bitcoin-network-DB-corruption-errors-on-start-from-Bitcoin-qt-Bitcoind.xml.html">Some current turbulence on the Bitcoin network: DB corruption errors on start from Bitcoin-qt / Bitcoind</a>
+                        <b>Gregory Maxwell 2013-09-09 23:25:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2013/003234_Some-current-turbulence-on-the-Bitcoin-network-DB-corruption-errors-on-start-from-Bitcoin-qt-Bitcoind.xml.html">Some current turbulence on the Bitcoin network: DB corruption errors on start from Bitcoin-qt / Bitcoind</a>
+                        <b>Gregory Maxwell 2013-09-09 09:25:09</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-September/003233.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-09-09T08:53:01+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin-qt / Bitcoind nodes have a problem with coming back up after a restart and report an error message that says "*** coin database inconsistencies found" and prompts to rebuild the block database. Reindexing will not solve the issue, so users should say no to this prompt. To work around the problem, users need to specify the command-line or configuration file argument "-checklevel=2" to Bitcoind or Bitcoin-qt. This problem is caused by 0.8.0 and only affects local nodes, but it requires a software update to fix completely. The problem will persist until no more than 288 blocks after 256818 unless another trigger transaction is added to the blockchain. A patch has been developed, but developers need to review it before applying it. Users can refer to <a href="https://bitcointalk.org/index.php?topic=290922.msg3117923">https://bitcointalk.org/index.php?topic=290922.msg3117923</a>#msg3117923 for instructions on performing the workaround in Windows.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T17:31:04.489533+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
