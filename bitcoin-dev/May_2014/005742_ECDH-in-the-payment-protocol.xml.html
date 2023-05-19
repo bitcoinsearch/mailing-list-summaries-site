@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>ECDH in the payment protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2014-05-09 18:38:22
+            <br><i>Published on: 2014-05-09T18:38:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2014/combined_ECDH-in-the-payment-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005742.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation from May 2014, Bitcoin developer Peter Todd discusses his idea for a payment system that would eliminate edge cases and allow for proof of payment. Currently, every payment ties up txouts, making it impractical to base atomicity of payments on whether or not the payee broadcasts the transaction. Todd's proposed solution involves signed PaymentACK messages and scriptSig-less Bitcoin transactions with byte size and sigop count limits. The sender would send the payment to the receiver before signing the transaction, and the receiver would only ACK if the transaction satisfies the request, is within time limits, and isn't unlikely to confirm. If the sender likes the ACK, he can either send the full transaction or broadcast it himself after obtaining an ACK. This system would completely remove the chance that the Bitcoin transaction gets broadcast without the receiver liking it and is compatible with multiple payments in one transaction. However, there are still issues with the system, such as the possibility of the sender withholding the signed transaction or the receiver claiming to have never received it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T18:51:03.910167+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

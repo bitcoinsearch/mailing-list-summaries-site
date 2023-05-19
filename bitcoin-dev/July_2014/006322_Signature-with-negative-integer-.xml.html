@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Signature with negative integer?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2014-07-19 07:03:35
+            <br><i>Published on: 2014-07-19T07:03:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006322.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email dated July 18, 2014, Richard Moore asked for help to explain a transaction with the ID tx 70f7c15c6f62139cc41afa858894650344eda9975b46656d893ee59df8914a3d. This post was well-timed as there was another thread on BIP0062, which was relevant to this issue. It is an example of how "over-permissiveness" in interpreting invalid encoding in OpenSSL, a cryptographic library, can lead to unexpected normative rules in Bitcoin. While modern releases of Bitcoin core will no longer relay or mine them, they are still valid in blocks if they show up.BIP62 proposes soft-forking changes that would strictly limit the DER encoding to avoid ambiguity. If adopted by network implementations, existing weird transactions could be grandfathered in on a txid-by-txid basis. Implementations could use different DER decoding code without the risk of consensus inconsistency, as long as it uses functional identical der decoding to what BIP62 requires.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:09:33.246422+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

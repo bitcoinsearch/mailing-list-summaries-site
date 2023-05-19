@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SCRIPT_VERIFY_STRICTENC and CHECKSIG NOT <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006873_SCRIPT-VERIFY-STRICTENC-and-CHECKSIG-NOT.xml.html">SCRIPT_VERIFY_STRICTENC and CHECKSIG NOT</a>
+                        <b>Pieter Wuille 2014-11-06 10:51:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006872_SCRIPT-VERIFY-STRICTENC-and-CHECKSIG-NOT.xml.html">SCRIPT_VERIFY_STRICTENC and CHECKSIG NOT</a>
+                        <b>Pieter Wuille 2014-11-06 10:47:29</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-November/006873.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-11-06T10:51:14+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a thread on November 6, 2014, Pieter Wuille and Peter Todd discussed the implementation of the STRICTENC flag in Bitcoin. The STRICTENC flag was designed to make pubkey formats that were not recognized by Bitcoin act as though they were invalid signatures, instead of failing the transaction. Todd found that this allowed mempool garbage transactions that would never be mined. Wuille agreed with Todd's suggestion to change the implementation of STRICTENC to either fail unrecognized pubkeys immediately or fail the script if the pubkey is non-standard and signature verification succeeds. However, Wuille noted that this change would make existing outputs difficult to spend, and it could not be made into a consensus rule as it may make existing P2SH outputs/addresses unspendable.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T19:29:12.108683+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>testnet-seed.bitcoin.petertodd.org is up again <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005927_testnet-seed-bitcoin-petertodd-org-is-up-again.xml.html">testnet-seed.bitcoin.petertodd.org is up again</a>
+                        <b>Gregory Maxwell 2014-05-30 16:03:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005926_testnet-seed-bitcoin-petertodd-org-is-up-again.xml.html">testnet-seed.bitcoin.petertodd.org is up again</a>
+                        <b>Pieter Wuille 2014-05-30 15:59:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005923_testnet-seed-bitcoin-petertodd-org-is-up-again.xml.html">testnet-seed.bitcoin.petertodd.org is up again</a>
+                        <b>Pieter Wuille 2014-05-30 15:24:15</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005927.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-05-30T16:03:09+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In May 2014, Andreas Schildbach suggested teaching the seeder or plain bitcoind how to write a zone file and then use matured DNS servers to serve this zone. However, this approach was previously used, and it produced fairly bad load imbalances, especially since some resolvers only pass on a single result. Matt's implementation is doing this approach, which Pieter thought was a good thing as it provided more diversity. Additionally, Robert McKay suggested an option to the seeder for non-matching requests, forward to another DNS server at IP-PORT, so you could cascade them. On debugging his DNS settings, Alex Kotenko approached Pieter for help as he had set up DNS seeds himself but couldn't figure out why nslookup testnet-seed.alexykot.me failed. Robert McKay thought that the problem was with his suggestion to use bind forwarding. Bind strips off the authoritative answer bit in the reply, causing the recursor to go into a loop chasing the authority server. He wasn't sure if this could be fixed without hacking the bind src.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T18:57:38.141535+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

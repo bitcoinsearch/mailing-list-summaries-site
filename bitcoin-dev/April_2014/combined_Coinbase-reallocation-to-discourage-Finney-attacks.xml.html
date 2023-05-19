@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Coinbase reallocation to discourage Finney attacks <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005500_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-24 09:25:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005451_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-23 20:24:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005423_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-23 18:57:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005402_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Pieter Wuille 2014-04-23 15:41:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005631_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-29 14:21:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005496_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-24 08:19:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005473_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-23 21:39:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005462_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-23 20:53:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005435_Coinbase-reallocation-to-discourage-Finney-attacks.xml.html">Coinbase reallocation to discourage Finney attacks</a>
+                        <b>Gregory Maxwell 2014-04-23 19:47:46</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005500.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-04-24T09:25:02+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email conversation, Mike Hearn and Luke Dashjr discussed the possibility of implementing a system in which miners could confiscate coins from double-spent transactions. While Dashjr suggested that miners should have the power to blacklist certain transactions or blocks produced by others, Hearn argued against it, stating that it would allow a majority cabal to use it to deprive a minority outsider of some or all income without risking disrupting the network.Instead, Hearn proposed a simple mechanism that would prevent forming a quorum on the decision to revoke the coinbase while allowing only a small number of paid reordering transactions per block. However, the incentives for this proposal appeared to be very hard to analyze. He also disagreed with Dashjr's assertion that the root of their disagreement was whether the block chain algorithm left by Satoshi was somehow immutable and itself the end, or whether it was just a means to an end and therefore an algorithm that can be tweaked and improved.The issue of dishonest miners and double-spending in Bitcoin has been discussed among members of the community. Trust in mining is limited, and any effort to increase it is doomed to fail. To stop GHash.io, the largest publicly identified mining pool, someone would have to take away their hardware or change the Bitcoin protocol to make their hardware useless. Accepting zero-conf inherently involves risk, but businesses balance risks and operate despite them.A mechanism where miners can vote to penalize other miners if they seem to allow too many double spends has been proposed. However, this is a rather coercive feature decision mechanism that gives the highest hash-power bidders control even when their interests may be unaligned with the population that owns and uses bitcoin in general. Making really distributed systems that work in a complex world is hard.It would be easier to declare miners as trusted parties, but they aren't individually trusted or even trustworthy. An interesting experiment suggested is a transaction "proof of publication" chain, which could add each transaction when it is received. The use of a fast confirmation share-chain independent from Bitcoin could provide a useful service of demonstrating that some chunk of hash power was currently working on including a particular set of transactions.A tradeoff that is better suited to low-value retail transactions could be achieved by other chains with different parameters, although a choice of tradeoffs could be very useful. Increasing the block speed cannot help past the point where the time starts getting close to the network diameter; you simply cannot tell what a consensus of a group of nodes is until several times the light cone that includes all of them. This means that if the latency or data rate requirements of the share chain are too large relative to ordinary mining, it may create some centralization pressure.A Finney attack is where an attacker attempts to mine a block with a transaction paying them and quickly makes a transaction spending that coin to someone else, then releases the block after they have taken an irreversible action. There is no consensus mechanism for mempools, so they are sometimes inconsistent all on their own. A proposed protocol takes some funds and assigns them to a 2 of 2 multisig with oneself and Oscar. Later, instant payments can be made with Oscar signing up until the refund time comes close to anyone who trusts Oscar to never double spend.Proposals that overly depend on colluding miners to behave in very specific ways are just a way of saying blockchain sucks unless miners turn themselves into a trusted third party. Thus, adding a little bit of Mastercard to transactions where Mastercard is really what people want is much more preferred than turning mining- and thus Bitcoin itself- into Mastercard, especially since miners are self-selecting parties to act as trusted agents. Strong zero-conf security is not a part of what many people think of when they think of Bitcoin's characteristics, but there are ways to improve it that do not involve asking miners to participate in a majority vote to take away funds from people.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T18:48:09.066117+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

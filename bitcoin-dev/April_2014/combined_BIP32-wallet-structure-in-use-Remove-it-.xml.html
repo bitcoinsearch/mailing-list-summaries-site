@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP32 &#34;wallet structure&#34; in use? Remove it? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005543_BIP32-wallet-structure-in-use-Remove-it-.xml.html">BIP32 &#34;wallet structure&#34; in use? Remove it?</a>
+                        <b>Gregory Maxwell 2014-04-25 15:46:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2014/005582_BIP32-wallet-structure-in-use-Remove-it-.xml.html">BIP32 &#34;wallet structure&#34; in use? Remove it?</a>
+                        <b>Pieter Wuille 2014-04-26 13:41:56</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005543.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-04-25T15:46:15+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In this email exchange from 2014, Jim expresses concern about the potential loss of intra-client HD compatibility for BIP32 wallets. He suggests creating a lowest common denominator or "HD Basic" that all wallets can agree to support to prevent vendor lock-in and help entry-level users. However, Pieter disagrees, stating that wallet interoperability at this level is not possible unless it's an explicit compatibility feature. The structure of the derivation defines and constrains functionality, and there are many other things that go into making a wallet portable between systems. Pieter acknowledges that a compatibility mode could be supported, but he doubts it would be widely used since the decision to use that mode comes at the wrong time and heavily constraining functionality in order to get another result is too high. Pavol Rusnak agrees with Pieter and suggests that defining a way to import an unknown wallet is nonsense since it's impossible without knowing its structure, especially when multiple chains are combined for P2SH usage. However, Rusnak proposes defining something like "BIP44 import-compatible" that guarantees not losing any funds when imported even though the application doesn't support all of BIP44 features. Similar things could be done for other purpose types. Overall, the consensus is that wallet interoperability at this level is challenging, and complete wallet metadata must be considered for true portability.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T18:49:42.563956+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

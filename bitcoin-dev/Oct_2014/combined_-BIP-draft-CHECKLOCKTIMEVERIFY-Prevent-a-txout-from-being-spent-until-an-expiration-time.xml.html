@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP draft] CHECKLOCKTIMEVERIFY <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2014/006715_-BIP-draft-CHECKLOCKTIMEVERIFY-Prevent-a-txout-from-being-spent-until-an-expiration-time.xml.html">[BIP draft] CHECKLOCKTIMEVERIFY - Prevent a txout from being spent until an expiration time</a>
+                        <b>Gregory Maxwell 2014-10-09 06:28:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2014/006717_-BIP-draft-CHECKLOCKTIMEVERIFY-Prevent-a-txout-from-being-spent-until-an-expiration-time.xml.html">[BIP draft] CHECKLOCKTIMEVERIFY - Prevent a txout from being spent until an expiration time</a>
+                        <b>Gregory Maxwell 2014-10-09 06:40:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2014/006683_-BIP-draft-CHECKLOCKTIMEVERIFY-Prevent-a-txout-from-being-spent-until-an-expiration-time.xml.html">[BIP draft] CHECKLOCKTIMEVERIFY - Prevent a txout from being spent until an expiration time</a>
+                        <b>Gregory Maxwell 2014-10-03 16:17:48</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-October/006715.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-10-09T06:28:19+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email conversation on October 9, 2014, Adam Back mentioned that the existing script level nlocktime could do everything in some sense with a complexity cost, which often requires extra dependent transactions and work-around malleability until it is fixed. Peter Todd asked if anyone could think of an example of a complex transaction use-case that is affected by malleability which cannot be fixed by CHECKLOCKTIMEVERIFY. Matt Whitlock suggested that a new opcode replace the top stack item with the block height of the txout being redeemed, but this would not be soft-forking compatible and would be unsafe as it risks creating weird pressures around immediate block admission since a one additional block delay could forever censor such a transaction. Avoiding these issues is a conscious design in OP_CHECKLOCKTIMEVERIFY.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T19:20:21.660749+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Malleable booleans <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2014/006736_Malleable-booleans.xml.html">Malleable booleans</a>
+                        <b>Pieter Wuille 2014-10-14 02:34:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2014/006737_Malleable-booleans.xml.html">Malleable booleans</a>
+                        <b>Gregory Maxwell 2014-10-14 02:45:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2014/006743_Malleable-booleans.xml.html">Malleable booleans</a>
+                        <b>Pieter Wuille 2014-10-14 18:54:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2014/006739_Malleable-booleans.xml.html">Malleable booleans</a>
+                        <b>Gregory Maxwell 2014-10-14 07:52:44</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-October/006736.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-10-14T02:34:16+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>While working on a BIP62 implementation, Pieter Wuille discovered an additional type of malleability in the interpretation of booleans. Any byte array with non-zero bytes is interpreted as true and anything else as false. The code for dealing with booleans is not consistent, which means that scripts using booleans as inputs will be inherently malleable. To fix this, Pieter suggests changing BIP62 to state that interpreted booleans must be of minimal encoded size in addition to numbers. This change would affect the inputs to OP_IF and OP_NOTIF, inputs to OP_BOOLAND and OP_BOOLOR, and the resulting final element on the stack for validity. Peter Todd points out that some non-standard scripts on mainnet have opcodes that appeared to be attempts to solve this issue with variations of the following: DUP IF 1 EQUALVERIFY ELSE 0 EQUALVERIFY ENDIF. Pieter's goal is to have the property that for every possible script, there is an equivalent one that is non-malleable. A decent argument for doing this is that if a script author fails to properly 'bool-ize' every boolean-using path that can have non-minimal encodings in normal execution, one can always create an nVersion=1 transaction manually to spend the output, preventing funds from getting lost. Meanwhile, in the general case of a component script author having the canonical bool testing in every boolean-using opcode saves a lot of bytes.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T19:25:00.563331+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

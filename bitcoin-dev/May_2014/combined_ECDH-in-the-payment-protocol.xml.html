@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>ECDH in the payment protocol <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005742_ECDH-in-the-payment-protocol.xml.html">ECDH in the payment protocol</a>
+                        <b>Pieter Wuille 2014-05-09 18:38:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005739_ECDH-in-the-payment-protocol.xml.html">ECDH in the payment protocol</a>
+                        <b>Pieter Wuille 2014-05-09 15:50:33</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005742.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-05-09T18:38:22+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>On May 9, 2014, Pieter Todd expressed his doubts about practicality of atomicity payments on the Bitcoin network due to change. He suggested that instead of a full Bitcoin transaction, a Payment message should contain a scriptSig-less Bitcoin transaction and a byte size limit with a sigop count limit. The sender sends such a Payment to the receiver before signing the transaction and the receiver only ACKs if the transaction satisfies the request, is within time limits, and is unlikely to confirm. Together, this means that a paymentACK and a confirmed matching Bitcoin transaction can count as proof of payment. Pieter Todd also believed that stealth addresses and the payment protocol both have their use cases and that they don't overlap. In pretty much every other case, communicating directly with the receiver has benefits. Negotiation of the transaction details, messages associated with the transaction, refund information, no need to scan the blockchain for incoming transaction, and the ability to cancel if either party doesn't agree. Instead of adding stealth functionality to the payment protocol as a last resort, Pieter would rather see the payment protocol improve its atomicity.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T18:51:48.094395+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

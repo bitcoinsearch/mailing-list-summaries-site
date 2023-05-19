@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Squashing redundant tx data in blocks on the wire <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2014/006391_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html">Squashing redundant tx data in blocks on the wire</a>
+                        <b>Gregory Maxwell 2014-07-31 21:29:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2014/006320_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html">Squashing redundant tx data in blocks on the wire</a>
+                        <b>Gregory Maxwell 2014-07-19 06:48:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2014/006315_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html">Squashing redundant tx data in blocks on the wire</a>
+                        <b>Gregory Maxwell 2014-07-19 01:25:44</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2014/006291_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html">Squashing redundant tx data in blocks on the wire</a>
+                        <b>Gregory Maxwell 2014-07-17 23:34:21</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2014/006395_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html">Squashing redundant tx data in blocks on the wire</a>
+                        <b>Gregory Maxwell 2014-07-31 23:18:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2014/006393_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html">Squashing redundant tx data in blocks on the wire</a>
+                        <b>Gregory Maxwell 2014-07-31 21:51:23</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006391.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-07-31T21:29:40+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The topic of discussion is a problem similar to set reconciliation, where one peer has a set of transactions and another peer has a different set. The focus is on minimizing data transfer while optimizing round complexity. A proposal to use forward error correction (FEC) to transfer with low data transfer and negligible probability of needing a round-trip was mentioned. However, there is overhead involved, and it may not be the best solution. Another suggestion was to keep at least the last N sent in each direction to bound memory usage. The FEC still allows filling in missing transactions without knowing in advance what will be missing. There is also a discussion about the benefits of implementing FEC-based mempool synchronization separately from channel-memory based index-coding. Communication overhead of transmitting a transaction list is discussed, but it can be communicated in a space roughly equal to the size of the difference in sets plus coding the permutation from the permissible orderings. The FEC can still fill in the missing transactions without knowing in advance what will be missing. Finally, the idea of using part of a cryptographic permutation as the key is presented, which means that for unknown transactions, the transmission of the new unknown keys is always goodput, which doesn't add overhead.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T19:04:25.492871+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
