@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[ANN] High-speed Bitcoin Relay Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2013-11-06 23:35:34
+            <br><i>Published on: 2013-11-06T23:35:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2013/combined_-ANN-High-speed-Bitcoin-Relay-Network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003606.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The relay nodes in the Bitcoin network verify transactions by piping them through a bitcoind before relaying them. Additionally, bitcoinj does SPV-validation for blocks to reduce timing issues, although it is possible to create a block that passes SPV validation but causes a denial-of-service (DoS) score. However, miners are unlikely to do so because it would cost them an entire block's worth of profits. In case of a problem, addnode can be adapted to allow higher DoS scores for individual nodes.In a discussion between Matt Corallo and Tier Nolan, the former noted that relay nodes perform some data verification to prevent DoS attacks, but they do not fully verify the data they are relaying to maintain fast relay speeds. As a result, miners should never build a block on top of a relayed block without fully validating it with their own bitcoin validator. Nolan raised concerns about disconnects due to misbehavior, as standard nodes receiving invalid blocks/transactions from a relay node would disconnect. He suggested assigning another bit in the services field as "relay" to indicate that the node does not perform any checking. Connects to relay nodes could then be command line/config file only to prevent peers from connecting to them.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T17:43:31.915643+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

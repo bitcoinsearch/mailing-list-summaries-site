@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Feedback requested: &#34;reject&#34; p2p message <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2013/003480_Feedback-requested-reject-p2p-message.xml.html">Feedback requested: &#34;reject&#34; p2p message</a>
+                        <b>Gregory Maxwell 2013-10-28 09:32:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2013/003496_Feedback-requested-reject-p2p-message.xml.html">Feedback requested: &#34;reject&#34; p2p message</a>
+                        <b>Gregory Maxwell 2013-10-30 17:13:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2013/003475_Feedback-requested-reject-p2p-message.xml.html">Feedback requested: &#34;reject&#34; p2p message</a>
+                        <b>Pieter Wuille 2013-10-28 03:02:18</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003480.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-10-28T09:32:08+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The bitcoinj library receives bug reports about transactions not propagating, as it currently sends transactions to only one peer and watches it propagate. If the selected peer refuses the transaction, it never gets propagated. The failure to reject a transaction does not necessarily mean that it will be forwarded. Nodes may use priority queued rate limiting for relaying, which can cause a transaction to fall out of memory pool before it is sent to other peers. The absence of rejection is not a reliable indicator of forwarding. Categories related to protocol, core principles, and policy rules are discussed, including failed deserialization, script evaluation fail, outputs larger than inputs, outputs not found or already spent, and non-standard policies. Gavin Andresen proposes adding a one-byte machine-readable HTTP-like status code, but a specific list of reject categories needs to be decided upon.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T17:39:31.015408+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

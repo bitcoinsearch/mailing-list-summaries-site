@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An idea for alternative payment scheme</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2014-01-03 18:30:38
+            <br><i>Published on: 2014-01-03T18:30:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004007.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange, Nadav Ivgi suggested a payment scheme using key derivation where the payer would derive the addresses instead of the payee. The payee would publish their master public key and the payer would generate a random "receipt number" to derive an address and make payment. The payer would then send the receipt to the payee who would derive a private key with it and add it to their wallet. In response, another wild idea was introduced where the payee publishes two public keys PP and PP2 and the payer picks a k value for signatures. The multiplier of PP2*k is paid to pubkey PP+n with r in the first signature or in an OP_RETURN additional output if none of the txins are ECDSA signed. The payer advises the payee that PP+(pp2_secret*r) is something that can be redeemed. The advantage of this method is that if the payer's computer crashes after making the payment, the funds are not lost, and it remains confidential. However, the particular way specified breaks using deterministic DSA unless an OP_RETURN is used. These schemes allow the first round of communication to be broadcast while still preserving privacy.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T17:58:37.881033+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

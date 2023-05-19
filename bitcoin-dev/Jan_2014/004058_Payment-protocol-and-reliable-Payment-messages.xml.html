@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment protocol and reliable Payment messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2014-01-13 16:43:41
+            <br><i>Published on: 2014-01-13T16:43:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_Payment-protocol-and-reliable-Payment-messages.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004058.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the use cases for stealth addresses, Pieter brings up the issue with the "payment_url" field in BIP70. The current specification says that it is a secure location where a Payment message may be sent to obtain a PaymentACK. However, the fact that this field is optional renders the "memo", "refund", and "merchant_data" fields useless as merchants cannot rely on them. Thus, there is a need to provide an alternative. Pieter suggests getting rid of these fields altogether and just sending the transaction. However, he also notes that having bi-directional communication in the protocol is one of the nicest things the payment protocol can add. He proposes formulating the field as "location where a Payment message must be attempted to be sent to", and storing the message in the client if it fails to send. For anonymous senders, not sending the Payment message could result in funds being transferred without a way to know who to refund it to if something goes wrong. Pieter believes that having bi-directional communication would prevent this scenario. As an optimization, Pieter suggests that if a payment_url is present, the payment should only be sent there and not broadcasted on the P2P network to minimize the risk of the transaction confirming without the payment being received.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T18:00:25.100478+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
