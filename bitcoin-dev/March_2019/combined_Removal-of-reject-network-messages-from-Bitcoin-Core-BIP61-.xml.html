@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removal of reject network messages from Bitcoin Core (BIP61) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016760_Removal-of-reject-network-messages-from-Bitcoin-Core-BIP61-.xml.html">Removal of reject network messages from Bitcoin Core (BIP61)</a>
+                        <b>Gregory Maxwell 2019-03-12 22:14:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016730_Removal-of-reject-network-messages-from-Bitcoin-Core-BIP61-.xml.html">Removal of reject network messages from Bitcoin Core (BIP61)</a>
+                        <b>Gregory Maxwell 2019-03-08 00:52:56</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016760.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2019-03-12T22:14:10+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion in the bitcoin-dev mailing list revolves around the handling of reject messages and their importance. Andreas Schildbach emphasizes that without reject messages, software must rely on timeouts for reception of network confirmations, which is not reliable. The rejection causes are unstable and unreliable due to the validity criteria being unable to be tested independently. Rejection on low fee only occurs when the node's mempool is full. Output already spent is indistinguishable from a missing parent. Invalid signature error states are often not very useful. The idea is to take reject messages seriously but not overrate the lack of them. However, current code handles these two cases well. The user asks for pointers regarding where the code handles reject messages in Android Bitcoin Wallet and BitcoinJ but couldn't find any except for logging exceptions.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T19:59:03.416120+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

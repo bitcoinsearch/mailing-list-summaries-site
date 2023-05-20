@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Getting around to fixing the timewarp attack.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2018-08-24 09:35:11
+            <br><i>Published on: 2018-08-24T09:35:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2018/combined_Getting-around-to-fixing-the-timewarp-attack-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016320.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin's non-overlapping difficulty calculation has been vulnerable to gaming since 2012 due to inaccurate timestamps. This vulnerability can be fixed with a soft-fork that further constrains block timestamps, and several proposals have been suggested. A demonstration of timewarp was put early in the testnet3 chain for people to test mitigations against it. The risk of deploying these mitigations would be minimal and several proposals are fully compatible with existing behavior and only trigger in exceptional circumstances. However, a majority hashrate is required to fix this vulnerability which could be easily blocked if someone started using it. To determine the new difficulty, it is supposed to compare the timestamps of block (2016n - 1) with block (2016n - 2017). An off-by-one bug makes it compare with block (2016n - 2016) instead. A naive but perfect fix is to require every block (2016x) to have a timestamp not smaller than that of its parent block. However, a chain-split would happen even without any attack unless a super-majority of miners are enforcing the new rules. The best way is to do it with something like BIP34, which also requires new pool software.A weaker version of this fix involves requiring the timestamp of block (2016x) not to be smaller than its parent block by t-seconds, with 0<t<2 hours. A mandatory upgrade of pool software is required for this fix. Pool software upgrade is not mandatory for segwit. Gregory Maxwell via bitcoin-dev suggested asking the list if anyone else was aware of a favorite backwards compatible timewarp fix proposal they wanted to point out before dusting off his old fix and perhaps prematurely causing fixation on a particular approach.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:35:11.964392+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

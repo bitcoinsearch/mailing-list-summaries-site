@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Should Graftroot be optional? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016049_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Pieter Wuille 2018-06-01 00:25:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016019_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Pieter Wuille 2018-05-24 01:58:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016016_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Gregory Maxwell 2018-05-23 23:45:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016172_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Anthony Towns 2018-06-27 07:29:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016137_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Gregory Maxwell 2018-06-20 14:30:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016028_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Johnson Lau 2018-05-25 10:14:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016027_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Johnson Lau 2018-05-25 09:46:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016020_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Gregory Maxwell 2018-05-24 02:08:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016006_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Pieter Wuille 2018-05-22 18:17:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016086_Should-Graftroot-be-optional-.xml.html">Should Graftroot be optional?</a>
+                        <b>Pieter Wuille 2018-06-06 17:04:23</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016049.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-06-01T00:25:04+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin developers are discussing the practical deployment of Taproot and Graftroot in the bitcoin-dev mailing list. The discussion revolves around whether Graftroot should be optional or not. Pieter Wuille argues that Graftroot is a simple optimization and should always be permitted as other alternatives are less efficient or private. He also clarifies that these concerns apply only to a new hypothetical Taproot/Graftroot output type. Natanael suggests that allowing for circumventing the rules governing a P2SH address could break the purpose of the fund, but Wuille points out that accountability wouldn't exist regardless of Graftroot. Greg argues that being able to delegate is strictly less powerful than signing an arbitrary transaction instead. ZmnSCPxj explains that making outpoint binding optional would be more useful.The concept of graftroot-like delegation to existing and new P2PK and P2PKH UTXOs with a softfork has led to a debate about whether or not graftroot should be optional. Some concerns were raised about blind signature schemes being broken, but these concerns were later rescinded by the same individual who raised them. It was concluded that there is no need to explicitly enable or disable the Graftroot spending path as being able to delegate is strictly less powerful than signing an arbitrary transaction instead.The email thread discusses whether it is safe to always permit both types of script spending paths or if an explicit commitment to whether Graftroot is permitted is necessary. Taproot and Graftroot have different trade-offs, where T outputs can be derived non-interactively from key and scripts, while G outputs need an interaction phase where the key owner(s) sign off on the potential script spending paths. Given Taproot/Graftroot's primary advantage is increasing fungibility by making all outputs look identical, it seems good to discuss potential reasons such outputs couldn't or wouldn't be adopted in certain applications. The discussion highlights some concerns regarding accidental signing of a script, which might have broader consequences. In a multisignature setting, the ability for a subset of participants to remove others from the set of signers is a concern. The email thread suggests that Graftroot delegation is not "strictly less powerful" than just using a normal transaction because Graftroot enables the delegation in a way such that the delegation itself cannot be fixed in the chain. However, the author of the email believes that this has no practical implications. The email thread also discusses that if we can construct a transaction with Graftroot signature data, it will introduce malleability. The created outpoint will be different in both cases, which means that a chain of dependent unconfirmed transactions may be broken by giving one participant the ability to choose between Graftroot delegation or actual spending. In conclusion, the email thread suggests that Taproot/Graftroot's primary advantage is increasing fungibility by making all outputs look identical, and it seems good to discuss potential reasons such outputs couldn't or wouldn't be adopted in certain applications.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T16:27:40.639326+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

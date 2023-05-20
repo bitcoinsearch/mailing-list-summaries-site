@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Getting around to fixing the timewarp attack. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016316_Getting-around-to-fixing-the-timewarp-attack-.xml.html">Getting around to fixing the timewarp attack.</a>
+                        <b>Gregory Maxwell 2018-08-20 20:14:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016320_Getting-around-to-fixing-the-timewarp-attack-.xml.html">Getting around to fixing the timewarp attack.</a>
+                        <b>Johnson Lau 2018-08-24 09:35:11</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016316.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-08-20T20:14:50+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin's non-overlapping difficulty calculation is vulnerable to gaming with inaccurate timestamps, which could increase the rate of block production beyond the system's design. A soft-fork that further constrains block timestamps could fix this vulnerability. Several proposals have been suggested but not implemented yet. A demonstration of timewarp was put early in the testnet3 chain to let people test mitigations against that. However, it requires a majority hashrate and could easily be blocked if someone started using it. The risk of deploying these mitigations would be minimal as several proposals suggested are fully compatible with existing behaviour and only trigger in the presence of exceptional circumstances such as a timewarp attack. Before implementing any fix, the list was asked if anyone else was aware of a favourite backwards compatible timewarp fix proposal they wanted to point out. The best way to fix the off-by-one bug is to do it with something like BIP34, which also requires new pool software. A weaker version could require the timestamp of block (2016x) not smaller than its parent block by t-seconds, with 0.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T17:35:35.927928+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

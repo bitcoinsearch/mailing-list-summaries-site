@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-12-23 04:26:59
+            <br><i>Published on: 2018-12-23T04:26:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016585.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email conversation, Bitcoin Core developer Johnson Lau raised the question of whether OP_CODESEPARATOR would be useful under taproot. Lau suggests that CODESEPARATOR is primarily useful with conditional opcodes (OP_IF etc), which are mostly replaced by merklized scripts. Without conditionals, committing to the (masked) script seems to provide everything you can do with codeseparator. If you don't commit to the (masked) script, don't have conditionals, and don't have codeseparator, then you cannot make a signature distinguish which alternative script it's intending to sign. Taproot is a proposed protocol upgrade for Bitcoin that aims to enhance privacy, security, and flexibility of the network. Under this new protocol, OP_CODESEPARATOR may not be very useful. In fact, if no one needs CODESEPARATOR, it might just be disabled, making the validation code a bit simpler. However, even if it was disabled, it could be re-enabled fairly easily in a new script subversion if needed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:09:35.300349+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

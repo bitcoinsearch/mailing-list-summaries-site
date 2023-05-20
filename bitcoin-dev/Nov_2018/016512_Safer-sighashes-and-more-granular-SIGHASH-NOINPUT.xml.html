@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2018-11-28 08:40:34
+            <br><i>Published on: 2018-11-28T08:40:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016512.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A developer named Bob McElrath recently shared his experimental wallet that implements Bitcoin Covenants/Vaults using "Pay-to-Timelock Signed Transaction" (P2TST). The concept is to deposit funds to an address for which the private key is unknown and construct a second transaction sending it to a timelocked staging address with a private key, along with an IF/ELSE condition. One must delete the private key of the deposit address or generate a signature directly using a RNG. This construction of covenants/vaults requires NOINPUT, as standard sighash's commit to the txid, which in turn commits to the address, which commits to the pubkey, resulting in a circular dependency on the pubkey. Sipa's proposal, bip-schnorr, is compatible with this vaulted construction by using SIGHASH_NOINPUT | SIGHASH_SCRIPTMASK to remove the scriptPubKey/redeemScript from the sighash, thus removing the circular dependency.McElrath believes that covenants could be made using OP_CHECKSIGFROMSTACK or OP_PUSHTXDATA. He also expressed excitement to combine the above idea with Taproot/Graftroot/g'Root.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:59:16.782953+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

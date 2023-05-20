@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Analysis of Bech32 swap/insert/delete detection and next steps</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2019-12-09 22:31:13
+            <br><i>Published on: 2019-12-09T22:31:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2019/combined_Analysis-of-Bech32-swap-insert-delete-detection-and-next-steps.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017521.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter has written a detailed analysis of Bech32's detection abilities, examining how it behaves in the presence of substitution errors, swapping of characters, insertions, and deletions. He has found that inserting or deleting a 'q' right before a final 'p' is the only deviation from the expected "at-most-1-in-a-billion" failure to detect chance, at least when restricted to the classes of errors analyzed with various uniformity assumptions. He also suggests updating BIP173 to include the insertion weakness as an erratum and amending segwit addresses to be restricted to only length 20 or 32. Additionally, he proposes defining a variant of Bech32 with the modified constant so that non-BIP173 uses of Bech32 can choose a non-impacted version if they worry about this class of errors. Finally, Pieter believes that the impact on production systems will be minimal, as many wallets already do not accept unknown witness versions in outputs, and it gives us probably years to adapt.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T21:22:08.490182+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

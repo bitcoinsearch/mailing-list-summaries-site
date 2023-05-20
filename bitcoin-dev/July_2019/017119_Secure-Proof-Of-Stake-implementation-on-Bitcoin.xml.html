@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Secure Proof Of Stake implementation on Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kenshiro [] 2019-07-11 15:16:40
+            <br><i>Published on: 2019-07-11T15:16:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017119.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer of the message suggests that Proof of Stake (PoS) implementation is an eco-friendly and ethical alternative to Proof of Work. The writer believes that PoS can be 100% secure against all 51% history rewrite attacks if correctly implemented. The writer proposes two improvements over a standard PoS protocol like PoS v3.0 to achieve this goal. The first improvement is hardcoded checkpoints, which means each Bitcoin Core release should include a hardcoded checkpoint with the hash of the current block height at that moment. This simple measure protects the blockchain up to the last checkpoint, preventing any Long-Range attack.The second improvement is moving checkpoints, where nodes only allow chain reorganizations not deeper than N blocks. If N is 10 blocks, then the nodes ignore any hard fork starting at any block under nodeBlockHeight - N. This fully protects nodes that are online and updated. Nodes that are not fully updated need some extra rule to be protected between the last hardcoded checkpoint and the current blockchain height. This extra rule could be connecting to a block explorer to download the hash of the current block height or ask some trusted source like a friend and enter the hash manually. After being fully updated, the user can always check that they are in the correct chain checking with a block explorer.The writer concludes that someone could have 99% of the coins and still would be unable to use the coins to do any history rewrite attack. The attacker could only slow down the network not creating their blocks or censor transactions in their blocks.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:38:56.182419+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Witness serialization in PSBT non-witness UTXOs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-08-13 20:39:38
+            <br><i>Published on: 2018-08-13T20:39:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2018/combined_Witness-serialization-in-PSBT-non-witness-UTXOs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016297.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The bitcoin-dev mailing list recently discussed a proposal to update the BIP174 specification regarding non-witness UTXOs. Currently, the specification requires that these transactions be serialized in network format. However, Pieter Wuille brought up two issues with this approach. Firstly, even if the transaction being spent has a witness, it is not relevant to PSBT. Secondly, "network format" is ambiguous and could cause compatibility issues in the future.Wuille suggested that the specification should be updated to require non-witness UTXOs to be serialized without witness. If this is not possible, then the specification should explicitly state whether or not the witness is required. Andrew Chow also weighed in on the discussion, proposing that the non-witness utxo should just be "witness or non-witness" serialization. It was mentioned that two years from now, nothing will write the witnesses, and the requirement to support reading them could be dropped. Overall, the group seems to agree that the specification needs to be clarified for forward compatibility and maintaining compatibility with existing signers.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:33:13.826425+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

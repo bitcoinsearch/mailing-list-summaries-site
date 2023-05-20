@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2020-04-22 16:50:46
+            <br><i>Published on: 2020-04-22T16:50:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017768.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange, Olaoluwa Osuntokun and Matt Corallo discussed the limitations of Bitcoin contracts with nested trees of transaction to confirm. They also talked about how mempool-watching could be used as a mitigation measure against attacks on Lightning nodes. There was disagreement on the complexity of mempool-watching and the requirements for lightning nodes that seek to be part of the public routing network with a desire to forward HTLCs. Osuntokun suggested that mempool-watching is less involved and could resolve issues like eliminating the commitment fee guessing game, allowing users to pay less on force close, and reliably enforcing multi-hop HTLC resolution. Corallo proposed pre-signing all HTLC output spends instead of making the HTLC output spending more free-form with SIGHASH_ANYONECAN_PAY|SIGHASH_SINGLE. However, Osuntokun pointed out that this would require an overhaul in the channel state machine to make presenting a new commitment take at least two phases.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T22:07:43.029781+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

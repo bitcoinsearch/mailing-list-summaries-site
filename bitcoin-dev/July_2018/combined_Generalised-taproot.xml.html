@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalised taproot <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2018/016249_Generalised-taproot.xml.html">Generalised taproot</a>
+                        <b>Anthony Towns 2018-07-13 01:51:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016461_Generalised-taproot.xml.html">Generalised taproot</a>
+                        <b>Pieter Wuille 2018-10-24 02:22:24</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016249.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-07-13T01:51:57+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a recent email thread among Bitcoin developers, Gregory Maxwell raised concerns about the usefulness of recursive taproot structure in an upcoming protocol upgrade called Taproot. Taproot is designed to embed spending conditions into the public key and has been praised for its privacy benefits since all spending conditions are hidden behind the public key. Andrew Poelstra responded to Maxwell's concerns with a detailed solution using Pedersen Commitments.Poelstra's proposed solution involves using two secrets and three public keys to hide spending conditions until they are met. This provides more privacy than the basic taproot structure. According to Poelstra, this solution could potentially be more efficient than the merkle tree structure of taproot in cases where the common case is to spend with conditions.Another Bitcoin Core developer, Pieter Wuille, proposed a new construction called g'root. This construction aims to offer an easy way to construct a soft-fork-safe cross-input aggregation system and is based on recursive Pederson commitments. Spending conditions are policies that take the form of "sign with public key A and additionally satisfy script S." Each condition is associated with a point P = A + s*G2, where G2 is a second independent generator for the curve, and s=H(S).A scriptPubKey (or redeemScript in case of P2SH) can either directly be a spending condition P or a P2C derivation of a spending condition and an alternative. That alternative can either be another P2C derivation ("recursive Taproot"), or a Merkle tree of disjunct spending conditions. These developments in the Bitcoin protocol upgrade show promising progress towards improving privacy and security for Bitcoin users.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T17:29:19.960050+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

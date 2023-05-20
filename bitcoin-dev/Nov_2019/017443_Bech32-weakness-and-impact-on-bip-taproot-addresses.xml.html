@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bech32 weakness and impact on bip-taproot addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2019-11-07 22:35:42
+            <br><i>Published on: 2019-11-07T22:35:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Bech32-weakness-and-impact-on-bip-taproot-addresses.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter, a developer of bitcoin, has posted a message on the Bitcoin-dev mailing list addressing a mutation weakness in bech32. Specifically, when a bech32 string ends with a "p", inserting or erasing "q"s right before that "p" does not invalidate it. While insertion/erasure robustness was not an explicit goal, this is very much not by design, and this specific issue could have been made much less impactful with a slightly different approach. The mutation weakness has little effect on the security of P2WPKH/P2WSH addresses, as those are only valid for specific lengths. However, Pieter is concerned that this property may influence design decisions around bip-taproot, as was brought up in the review session past Tuesday. In the current draft, witness v1 outputs of length other than 32 remain unencumbered, which means that for now such an insertion or erasure would result in an output that can be spent by anyone. If that is considered unacceptable, it could be prevented by outlawing v1 witness outputs of length 31 and 33.Pieter apologizes for not catching this issue earlier and asks for thoughts from the community regarding preventing such issues in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T21:04:16.410716+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

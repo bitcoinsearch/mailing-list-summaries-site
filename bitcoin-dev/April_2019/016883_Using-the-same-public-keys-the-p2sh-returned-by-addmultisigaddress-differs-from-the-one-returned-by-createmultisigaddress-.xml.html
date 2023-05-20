@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using the same public keys, the p2sh returned by `addmultisigaddress` differs from the one	returned by `createmultisigaddress`</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Chow 2019-04-19 14:30:03
+            <br><i>Published on: 2019-04-19T14:30:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016883.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Michele Federici wrote to the bitcoin-dev mailing list, stating that he was working on a function to derive the pay-to-script-hash from a multisig script and noticed a discrepancy between `addmultisigaddress` and `createmultisigaddress` methods. He checked his implementation and found it was correct, but his output address was different from the `addmultisigaddress` output. However, when he tried the `createmultisigaddress` method, using the same public keys, the output matched his. The `redeemScript` was the same for both methods, only the addresses were different. The reason for this discrepancy is due to the address types in use. `addmultisigaddress` uses the default address type of the wallet, which is p2sh-segwit. On the other hand, `createmultisig` uses a default address type of legacy. To have `createmultisig` get `addmultisigaddress`'s result, one needs to add the string "p2sh-segwit" to the end of the command. Similarly, to have `addmultisigaddress` get `createmultisig`'s result, one needs to add the string "legacy" to the end of the command.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:10:57.724197+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

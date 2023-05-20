@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safety of committing only to transaction outputs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2019/016963_Safety-of-committing-only-to-transaction-outputs.xml.html">Safety of committing only to transaction outputs</a>
+                        <b>Johnson Lau 2019-05-23 20:54:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2019/016975_Safety-of-committing-only-to-transaction-outputs.xml.html">Safety of committing only to transaction outputs</a>
+                        <b>Johnson Lau 2019-05-25 07:53:34</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016963.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2019-05-23T20:54:01+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion is about an approach that only allows witnesses to commit to transaction outputs, but not inputs. Currently, there are three active proposals for this function, which would prevent redirecting payment. On the other hand, not committing to any input means the witness is replayable without the consent of the address owner. CAT/CSFS could be used for customized sighash policies. However, chaperone signatures should be opt-in, and there are cases where they may not be wanted. Proposed mechanisms to improve safety include OP_CHECKINPUTSHASHVERIFY and OP_CHECKFEEVERIFY. The former checks that the hash of the inputs is a particular value, and the latter allows an explicit commitment to the exact amount of fee limits replay to txns which were funded with the exact amount of the prior.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T20:33:25.609138+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

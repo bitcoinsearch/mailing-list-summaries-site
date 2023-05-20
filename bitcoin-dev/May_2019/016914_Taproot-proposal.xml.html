@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2019-05-06 17:57:57
+            <br><i>Published on: 2019-05-06T17:57:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Taproot-proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016914.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter, a Bitcoin developer, has shared two BIP drafts proposing a Taproot softfork. The proposal includes several ideas such as making all outputs and cooperative spends indistinguishable from each other, using Merkle branches to hide unexecuted branches in scripts, enabling wallet software to use key aggregation/thresholds within one input through Schnorr signatures, improving the signature hashing algorithm, replacing OP_CHECKMULTISIG(VERIFY) with OP_CHECKSIGADD, using tagged hashing for domain separation, and allowing extensibility through leaf versions, OP_SUCCESS opcodes, and upgradable pubkey types. The BIP drafts can be found on Github, along with an initial reference implementation of the consensus changes and preliminary construction/signing tests in the Python framework. The consensus changes are around 520 LoC, excluding the Schnorr signature module in libsecp256k1. However, not all ideas are incorporated, and some can be implemented separately without loss of effectiveness, such as integrating SIGHASH_NOINPUT, which is being worked on as an independent proposal. The document explains basic wallet operations but does not standardize more complex constructions or define extensions to PSBT (BIP174).</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:20:23.022552+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

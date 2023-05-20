@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Signet <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016737_Signet.xml.html">Signet</a>
+                        <b>Matt Corallo 2019-03-08 20:20:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016767_Signet.xml.html">Signet</a>
+                        <b>Anthony Towns 2019-03-13 03:23:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016734_Signet.xml.html">Signet</a>
+                        <b>Karl-Johan Alm 2019-03-08 05:54:46</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016737.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2019-03-08T20:20:49+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Matt Corallo suggested making the signature an optional addition to the header, so that you can have a "light node" that doesn't download/verify sigs and a full node that does. This proposed change would add a p2p service bit to say "send me signatures if you have them / I can send you signatures", which changes the p2p encoding of the header from (ver, prev, mrkl, time, bits, nonce) to (ver, prev, mrkl, time, 0, nonce, bits, sig), and change header processing to ignore headers from nodes that don't have the service bit set. Karl-Johan Alm proposed a network called "signet," which is a complement to the existing testnet. Signet is completely centralized, and blocks are signed by a specific key rather than using proof of work. It has many benefits, such as being more predictable than testnet, allowing for global testing, being more stable than testnet, and being easy to spin up new signets for public tests. Anyone can create a signet at any time, simply by creating a key pair and creating a challenge (scriptPubKey). The proposal is to create a default persistent "signet1," which can be replaced in future versions if needed. The key holder would be someone sufficiently trusted in the community, who would be willing to run the system (block generation code, faucet, etc).</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T20:00:27.429154+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

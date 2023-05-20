@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Witness serialization in PSBT non-witness UTXOs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016295_Witness-serialization-in-PSBT-non-witness-UTXOs.xml.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Pieter Wuille 2018-08-13 18:56:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016297_Witness-serialization-in-PSBT-non-witness-UTXOs.xml.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Gregory Maxwell 2018-08-13 20:39:38</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016295.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-08-13T18:56:41+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Pieter Wuille, a Bitcoin developer, raised two issues with the current specification of BIP174. The first issue is that non-witness UTXOs should be serialized without witness, even if the transaction whose output being spent has a witness, since it is immaterial to PSBT. The second issue is that "network format" is ambiguous and could include new types of witnesses introduced in a future softfork, which is unnecessary and would break compatibility with existing signers. Pieter suggests updating the specification to state that non-witness UTXOs must be serialized without witness or explicitly specifying with or without witness. Another suggestion is to require reading either but only writing without the witness, as it is likely that nothing will write the witnesses two years from now. Andrew suggested maintaining compatibility by requiring "witness or non-witness" serialization for non-witness UTXOs.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T17:33:33.986423+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

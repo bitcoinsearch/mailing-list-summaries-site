@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_ANYPREVOUT proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-05-10 20:38:04
+            <br><i>Published on: 2019-05-10T20:38:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_SIGHASH-ANYPREVOUT-proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author has shared a BIP draft that enables SIGHASH_ANYPREVOUT and SIGHASH_ANYPREVOUTANYSCRIPT on top of taproot/tapscript. The author expresses less confidence in ANYPREVOUT's readiness for implementation and deployment than in taproot's, as the former can cause unforeseen problems despite having been around for years. The author suggests requiring an additional regular signature to accompany every ANYPREVOUT signature to limit possible negative impacts. However, this assumption may not survive adversarial reality, and the author is still hopeful that publishing the best they have is helpful even though it may not be good enough. The BIP draft and a sample implementation based on the taproot branch are available via links provided by the author. The implementation includes interesting features such as how to upgrade tapscript's existing opcodes for new SIGHASH methods or potentially a new signature scheme, a new elliptic curve, or other public key schemes. It also demonstrates a cheap way of using the taproot internal key as the public key for CHECKSIG operations in script. Additionally, there are two variants of ANYPREVOUT: ANYPREVOUT and ANYPREVOUTANYSCRIPT, which seems useful for eltoo. Lastly, the BIP attempts to describe the security implications of ANYPREVOUT-style signatures.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:28:06.963316+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

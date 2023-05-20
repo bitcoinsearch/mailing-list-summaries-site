@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Burying CSV and segwit soft fork activations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> John Newbery 2019-08-16 15:23:37
+            <br><i>Published on: 2019-08-16T15:23:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017266.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The activation height of a consensus change is considered historic fact once it has been activated and buried by sufficient work, regardless of the exact activation method. In cases where the cause of activation is undecidable, simplifying implementation by hard-coding the activation height can be beneficial. This was done for the 3 ISM soft forks in BIP 90 and for P2SH and segwit script enforcement. The burying of deployments provides benefits such as simplified consensus code and performance and code structure benefits. Recently, Bitcoin Core PR 16060 was merged, which buries the CSV and segwit activation heights to 419328 and 481824 respectively. However, this change could potentially cause a non-backwards compatible change and a chainsplit between pre-0.19 nodes and 0.19 nodes in the event of a re-org below the BIP9 segwit LOCKED_IN height. This would require redoing over 93% of the total work ever committed to Bitcoin mining. While this proposal could theoretically result in a consensus split, it is highly unlikely, and any such circumstances would raise fundamental concerns about the security assumptions of Bitcoin. More details can be found in the 'Considerations' section of BIP 90.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:55:11.463486+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Miniscript</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2019-08-19 23:17:21
+            <br><i>Published on: 2019-08-19T23:17:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017270.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Miniscript is a language for writing Bitcoin Scripts in a structured way, enabling analysis, composition, generic signing and more. It is a joint project between Pieter Wuille, Andrew Poelstra and Sanket Sanjalkar. Using Miniscript it's possible to write descriptors for addresses for scripts that implement things more complicated than multisig. Additionally, it makes it possible to make software that can deal with the composition of policies, compile complex spending policies to efficient scripts, and figure out under what necessary and/or sufficient conditions a script can be satisfied. Moreover, given signatures for a sufficient set of keys (and hash preimages, if needed), it generically constructs a witness for arbitrary scripts, without metadata apart from the script itself and public keys appearing in it. This means generic PSBT signers are possible for this class of scripts. Furthermore, it computes the bounds on the size of a witness for arbitrary scripts and performs static analysis to see if any of Script's resource limitations (ops limit, stack size, ...) might interfere with the ability to spend. There are two implementations of Miniscript: a C++ one and a Rust library. The implementations are a work in progress, but through large scale randomized tests, the developers have confidence that the language design and associated witnesses are compatible with the existing consensus and standardness rules. Miniscript is designed for Bitcoin as it exists today (primarily P2WSH) and does not need any consensus changes. However, the developers plan to extend the design to support future script changes Bitcoin may include.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:55:38.545248+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

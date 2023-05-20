@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base64-encoded descriptors <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2019/017535_Base64-encoded-descriptors.xml.html">Base64-encoded descriptors</a>
+                        <b>Andrew Chow 2019-12-26 05:18:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2019/017529_Base64-encoded-descriptors.xml.html">Base64-encoded descriptors</a>
+                        <b>Chris Belcher 2019-12-24 17:06:01</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017535.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2019-12-26T05:18:00+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The proposal of encoding Bitcoin descriptors has been made due to concerns that users may be unwilling to use or be confused by the syntax of descriptors. The idea is to encode it in some way to make it look like a magic string that they need to handle as one unit and not be intimidated by. Base64 was suggested, but there are concerns with it because it is not good for double-click copy-pasting. Alternative encoding methods like Bech32 or Base58 could be used instead. The checksum scheme of Base64 is not defined, while Bech32 and Base58 already have their own checksum schemes. Descriptors have their own BCH code for descriptor checksums optimized for their length and character set, so it can be repurposed to be used with whatever encoding scheme is chosen provided that the encoding's character set is covered by the descriptor checksum character set. The descriptors contain parenthesis and commas which stop highlighting by double-clicking, making it hard to copy-paste them. Base64 encoding will solve this problem, but there is a concern about the descriptor checksum. If there's a typo in the base64 text, then that could decode into multiple character errors in the descriptor, which might be problematic for the checksum. A solution could be to base64 encode the descriptors without the checksum, then attach the checksum to the end of the base64 text.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T21:26:31.534250+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

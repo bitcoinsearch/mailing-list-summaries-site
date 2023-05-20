@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-06-20 22:05:52
+            <br><i>Published on: 2019-06-20T22:05:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017036.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Russell O'Connor expressed his thoughts on OP_SECURETHEBAG and mentioned that he does not see any reason to complicate the spec to ensure the digest is precommitted as part of the opcode. He suggested that it could be simulated with an ANYPREVOUT (NOINPUT) sighash using "CHECKSIG" instead of constructing a Hash_BagHash for the script. The script would calculate an ANYPREVOUT sighash for SIGHASH_ANYPREVOUTANYSCRIPT | SIGHASH_ALL and calculate a signature sig = Schnorr(P,m) for some pubkey P, and make the script "CHECKSIG". This method loses the ability to commit to the number of inputs or restrict the nsequence of other inputs but is otherwise similar to constructing Hash_BagHash. Both scripts are automatically satisfied when revealed with the correct set of outputs and don't need additional witness data. To construct "X" via script instead of hardcoding a value because it got you generalised covenants or whatever, one can get the same effect with CAT, LEFT, and RIGHT. The process involves constructing Y in much the same way as X, but then turning that into a signature using pubkey P=G and nonce R=G. One needs to calculate s=1+hash(G,G,Y)*1, and there are overflow issues that can be worked around either by allowing different locktimes or using more complicated scripts.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:36:38.838950+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

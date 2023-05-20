@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer NOINPUT with output tagging</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2018-12-20 18:04:37
+            <br><i>Published on: 2018-12-20T18:04:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Safer-NOINPUT-with-output-tagging.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016574.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the process of setting up, updating, and closing a Lightning Network channel using eltoo. The setup involves creating a setup transaction with a 2-of-2 multisig output, followed by an update transaction that translates this to a two-branch output for updates or settlements. The settlement transaction reflects the initial state of the channel and includes the refund in case of one party disappearing right away. Updates involve creating new update transactions with identical output scripts to the trigger or update_0 transaction, which requires adding a CSV. Collaborative close is always simple, while unilateral close involves broadcasting the trigger and the latest update_n transaction, waiting for the CSV timeout to expire, and then sending the settlement transaction. In the worst case scenario, there are four transactions involved, but if no one is cheating, only three transactions are needed. It's a tradeoff between having a larger on-chain footprint and putting a fixed lifetime on the channel for the refund case if one party disappears right away.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:55:55.526499+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

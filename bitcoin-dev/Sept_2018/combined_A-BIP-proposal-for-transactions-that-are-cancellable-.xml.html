@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A BIP proposal for transactions that are &#39;cancellable&#39; <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2018/016371_A-BIP-proposal-for-transactions-that-are-cancellable-.xml.html">A BIP proposal for transactions that are &#39;cancellable&#39;</a>
+                        <b>Matt Corallo 2018-09-06 16:33:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2018/016368_A-BIP-proposal-for-transactions-that-are-cancellable-.xml.html">A BIP proposal for transactions that are &#39;cancellable&#39;</a>
+                        <b>Matt Corallo 2018-09-06 13:31:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2018/016367_A-BIP-proposal-for-transactions-that-are-cancellable-.xml.html">A BIP proposal for transactions that are &#39;cancellable&#39;</a>
+                        <b>Gregory Maxwell 2018-09-06 15:16:34</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016371.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-09-06T16:33:38+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The proposal being discussed involves extending OP_CSV and/or OP_CLTV to allow for negative values. This would enable a multisig option with a locktime pre-signed transaction which is broadcastable at the 24-hour mark and has different spendability. This approach avoids introducing reorg-induced invalidity, which can lead to the destruction of coins even without any dishonest actions by the coins' prior owner. The proposed extension to OP_CSV and/or OP_CLTV has been considered before and determined to be harmful due to the potential for non-monotone validity events in the coins' recent history. Bitcoin already addresses this issue for recently generated coins by not permitting their use for 100 blocks. There has yet to be an argument for a use case for non-monotone validity that still sounds useful once the negative effects are addressed. The authors of the proposal argue that their approach can increase fairness for users and be more cost-effective than a Replace-By-Fee transaction if users want to modify a payment. However, there are concerns that the proposed approach could introduce potential risks, such as the need for Bob to check the Blockchain in case he needs to publish a proof-of-fraud and the requirement of adding extra funds to the transaction to account for penalization. The existing design of CLTV/CSV was carefully constructed to avoid situations where a transaction could go from valid to invalid based on time.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T17:43:42.303879+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

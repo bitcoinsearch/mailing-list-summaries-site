@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Schnorr and taproot (etc) upgrade</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2018-12-18 10:00:59
+            <br><i>Published on: 2018-12-18T10:00:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Schnorr-and-taproot-etc-upgrade.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016567.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, several developers discussed the possibility of disabling CHECKSIG and CHECKMULTISIG in favor of using CHECKDLS, CHECKDLSVERIFY, and CHECKDLSADD. This change would result in copy-pasting script templates from v0 to v1 failing because they use different opcodes. Additionally, they discussed popping the stack after OP_CLTV and OP_CSV, which would save one weight unit per OP_CSV. However, this change could cause issues for constructions that avoid the DROP. The developers concluded that changing the rule from "one true stack item" to "empty stack" could make more sense for CLTV/CSV. They acknowledged that fixing these issues creates further tech debt but did not have strong opinions on the topic.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T19:38:11.796030+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

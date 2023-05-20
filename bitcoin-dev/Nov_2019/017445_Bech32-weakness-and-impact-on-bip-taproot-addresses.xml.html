@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bech32 weakness and impact on bip-taproot addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2019-11-08 00:41:54
+            <br><i>Published on: 2019-11-08T00:41:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Bech32-weakness-and-impact-on-bip-taproot-addresses.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017445.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A vulnerability has been discovered in the bech32 address format, where inserting or erasing "q"s before a final "p" does not invalidate it. While this issue was not by design and may influence design decisions around bip-taproot, it has little effect on the security of P2WPKH/P2WSH addresses as those are only valid for specific lengths. If unencumbered witness v1 outputs of length other than 32 are outlawed, this could prevent such an insertion or erasure from resulting in an output that can be spent by anyone. However, rather than addressing this issue with a consensus/standardness fix, it is suggested to redefine bech32 to not allow such addresses. Alternatively, making them non-standard could be a softer approach in preparation for a future accepted softfork.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T21:04:30.657161+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

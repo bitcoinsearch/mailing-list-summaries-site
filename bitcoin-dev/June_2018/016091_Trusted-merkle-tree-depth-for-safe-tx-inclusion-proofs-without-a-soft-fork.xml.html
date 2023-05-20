@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trusted merkle tree depth for safe tx inclusion proofs without a soft fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2018-06-07 17:13:11
+            <br><i>Published on: 2018-06-07T17:13:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016091.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin merkle tree algorithm fails to distinguish between inner nodes and 64 byte transactions, which causes a potential problem for tx inclusion proofs. An odd-numbered inner/leaf node is concatenated with itself and hashed twice, fixing the depth of all leaves in the tree. To avoid this vulnerability, a known depth of the merkle tree can be compared to the length of the merkle path. Saving the depth prior to pruning the block contents would allow for completely safe verification of tx inclusion proofs without a soft-fork and storing this data in the block header database would be simple. Additionally, this protection makes for a fairly simple addition to any lite client protocol. Assuming a valid Tx, an attacker could create a transaction that committed to a transaction that was not in fact in the blockchain, with approximately 60 bits of brute-forcing. However, there are free choice bits such as prevhash, prev_n, seq, nValue, pubk, and nLockTime that can be used to limit the number of bits to be brute-forced to 61. Furthermore, if inflation is not controlled, brute force becomes trivial, and it is possible that other cryptocurrencies have this vulnerability.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:00:11.271572+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

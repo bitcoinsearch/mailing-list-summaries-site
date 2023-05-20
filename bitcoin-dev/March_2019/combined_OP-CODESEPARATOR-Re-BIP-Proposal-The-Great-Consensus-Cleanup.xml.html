@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016722_OP-CODESEPARATOR-Re-BIP-Proposal-The-Great-Consensus-Cleanup.xml.html">OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup</a>
+                        <b>Matt Corallo 2019-03-07 19:50:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016758_OP-CODESEPARATOR-Re-BIP-Proposal-The-Great-Consensus-Cleanup.xml.html">OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup</a>
+                        <b>Matt Corallo 2019-03-12 21:08:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016733_OP-CODESEPARATOR-Re-BIP-Proposal-The-Great-Consensus-Cleanup.xml.html">OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup</a>
+                        <b>Matt Corallo 2019-03-08 18:35:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016762_OP-CODESEPARATOR-Re-BIP-Proposal-The-Great-Consensus-Cleanup.xml.html">OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup</a>
+                        <b>Gregory Maxwell 2019-03-13 00:54:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016752_OP-CODESEPARATOR-Re-BIP-Proposal-The-Great-Consensus-Cleanup.xml.html">OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup</a>
+                        <b>Matt Corallo 2019-03-12 02:23:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2019/016736_OP-CODESEPARATOR-Re-BIP-Proposal-The-Great-Consensus-Cleanup.xml.html">OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup</a>
+                        <b>Matt Corallo 2019-03-08 20:14:02</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016722.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2019-03-07T19:50:52+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion in this context revolves around the OP_CODESEPARATOR mechanism in Bitcoin. This allows users to sign for a specific branch in scripts with multiple conditions. However, it represents a significant vulnerability in Bitcoin today, and no practical use-case for the mechanism has been found so far, except for one example of making SegWit scripts slightly more efficient in TumbleBit.The proposal is to remove OP_CODESEPARATOR due to its non-standard nature and vulnerability risks. However, concerns have been raised about the potential impact on users who may have existing transactions reliant on this feature. In response, suggestions have been made to increase the weight of transactions with OP_CODESEPARATOR, limit the number of executions per script, or put it in a deprecated state for some time.It has also been noted that extensive research has unearthed zero users relying on the feature, and caution should be taken to avoid confiscating user funds. Non-standardness is not an excuse to take other people's tied-up funds and destroy them permanently. Still, non-standardness can make soft-forking something out safer by derisking miners not upgrading right away and signal something that may be a candidate for soft-forking out so that we get feedback.While arguments on both sides hold merit, it's worth considering what would benefit the system most, reduce potential risks, and allow efforts to be allocated elsewhere. Finding another way to fix the vulnerability that limits the risks of destroying other people's money while ensuring that users who rely on OP_CODESEPARATOR are not adversely affected is crucial. Any new proposals must not render some transactions unspendable and add implementation complexity.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T19:57:58.337497+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

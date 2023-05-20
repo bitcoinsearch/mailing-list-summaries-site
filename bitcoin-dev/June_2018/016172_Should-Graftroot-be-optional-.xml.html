@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Should Graftroot be optional?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-06-27 07:29:09
+            <br><i>Published on: 2018-06-27T07:29:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_Should-Graftroot-be-optional-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016172.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On May 31, 2018, Pieter Wuille via bitcoin-dev shared an argument by Greg stating that Graftroot does not need to be optional because being able to delegate is strictly less powerful. aj suggests implementing a method that makes this explicit. This method involves a graftroot input having at least two items on the witness stack, a signature, a script (S), and possibly witness elements for the script. The signature has a SIGHASH_GRAFTROOT bit set. To validate the signature, a virtual transaction is constructed. If the signature is valid, the virtual transaction is discarded, and the script and witness elements are checked against the original transaction. This approach would make it clear that graftroot is a simple optimization rather than changing the security parameters. However, there are some caveats to consider, such as disallowing signatures with SIGHASH_GRAFTROOT from being used in signatures in scripts, using SIGHASH_NOINPUT (or similar) in conjunction to allow graftroot delegation prior to constructing the tx, and ensuring locktime/csv checks in the script S behave sanely.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T16:22:16.152629+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

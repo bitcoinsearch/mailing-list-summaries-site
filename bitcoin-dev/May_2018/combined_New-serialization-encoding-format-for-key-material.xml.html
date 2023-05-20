@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New serialization/encoding format for key material <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016043_New-serialization-encoding-format-for-key-material.xml.html">New serialization/encoding format for key material</a>
+                        <b>Gregory Maxwell 2018-05-30 14:08:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016152_New-serialization-encoding-format-for-key-material.xml.html">New serialization/encoding format for key material</a>
+                        <b>Pieter Wuille 2018-06-23 19:49:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016112_New-serialization-encoding-format-for-key-material.xml.html">New serialization/encoding format for key material</a>
+                        <b>Pieter Wuille 2018-06-13 02:44:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016066_New-serialization-encoding-format-for-key-material.xml.html">New serialization/encoding format for key material</a>
+                        <b>Pieter Wuille 2018-06-03 19:23:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2018/016065_New-serialization-encoding-format-for-key-material.xml.html">New serialization/encoding format for key material</a>
+                        <b>Jonas Schnelli 2018-06-03 16:51:09</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/016043.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-05-30T14:08:08+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a discussion on bitcoin-dev mailing list, a proposal to add birthday and gap limit to keys was discussed. However, it was pointed out that adding birthday to keys would break the basic property of visually comparing two keys to determine if they are same. It was also mentioned that different wallet software could set different birthday/gap limits which would create different xpub/xprv for the same set of mathematically derived individual keys, thereby removing decoupling between key and wallet metadata.Regarding error correction in codes designed for length 341, Russell O'Connor presented the trade-off between code length and recovery properties. He suggested supporting multiple checksum variants to cater to varying user storage mediums. Later, Pieter presented some numbers showing the number of correctable errors including errors inside the checksum characters themselves. He provided reference source code for constructing any of these codes. Jonas Schnelli expressed interest in constructing a code + implementation for these.Pieter raised concerns about the use of Bech32 for error correction, stating that it can only efficiently correct one error up to length 1023. Instead, he suggests designing other base32 BCH codes with different properties. He provides examples of codes designed for lengths 93 and 341 which can correct multiple errors with varying numbers of checksum characters. Pieter offers to construct a code and implementation for any of these if there is interest.Jonas Schnelli shares a BIP proposal for bech32-based keys and provides reference C code. Feedback is welcome.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T16:34:24.166429+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

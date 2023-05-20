@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2018-06-19 17:16:51
+            <br><i>Published on: 2018-06-19T17:16:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016134.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread from Bitcoin-dev focuses on the Partially Signed Bitcoin Transaction (PSBT) standard, which is used for offline signing of Bitcoin transactions. The discussion covers various aspects of the PSBT structure, including global and per-input items such as BIP-32 paths, redeem scripts, and witness scripts. The discussion also touches upon the ambiguity of the sighash type and the skipping of records with unknown types. One topic of discussion is whether the PSBT standard should prioritize space conservation over clarity and ease of use. Suggestions are made to simplify signers and avoid duplication in the case of key reuse by making the PSBT format a transaction plus per-input and per-output extra fields. Another suggestion is to introduce a flag to define if a record is optional in case a signer encounters an unrecognized record.To manage the data needed for signing a transaction, separate scopes are needed as some information is global while others are per-input. This can be achieved through a global scope for the transaction itself and everything else per-input and per-output. The email suggests using varint for the field, allowing the creation of namespaces for future extensions by using one byte as a namespace identifier and one as a field identifier.The email also discusses the unique transaction record, which can either be added as an exception or encoded separately outside the normal records to make it clear that it is always required. One suggestion is to encode the full public key and chaincode of the parent/master instead of just the 32-bit fingerprint or master xpub. This change permits signers to have thousands of master keys, index their master keys by whatever they like, and protect a single private key.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:05:14.960601+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
