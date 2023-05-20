@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why is deriving public key from the signature not used in Segwit? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015648_Why-is-deriving-public-key-from-the-signature-not-used-in-Segwit-.xml.html">Why is deriving public key from the signature not used in Segwit?</a>
+                        <b>Gregory Maxwell 2018-01-24 11:35:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015646_Why-is-deriving-public-key-from-the-signature-not-used-in-Segwit-.xml.html">Why is deriving public key from the signature not used in Segwit?</a>
+                        <b>Gregory Maxwell 2018-01-24 10:31:35</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015641_Why-is-deriving-public-key-from-the-signature-not-used-in-Segwit-.xml.html">Why is deriving public key from the signature not used in Segwit?</a>
+                        <b>Gregory Maxwell 2018-01-24 04:25:28</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015648.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-01-24T11:35:49+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Aymeric Vitte asked about the presence of pubkey in a specific transaction scriptSig and was informed that it was present in the scriptPubKey of vout 0 of another transaction, which it is spending. He also highlighted the fact that pubkey is now present even for standard p2pkh transactions whereas this was not the case previously. However, he did not receive an answer regarding the reason behind this change. Артём Литвинович asked about the rationale behind having both public key and signature in Segwit witness. The question was whether it was done for security, performance, privacy or something else. It was explained that leaving out the public key would have saved 33 bytes per signature but it is slow to verify, incompatible with batch validation, doesn't save space if hashing isn't used, and is potentially patent encumbered.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T05:03:22.330358+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

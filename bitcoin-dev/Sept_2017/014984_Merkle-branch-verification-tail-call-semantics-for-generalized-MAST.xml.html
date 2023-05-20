@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Merkle branch verification &amp; tail-call semantics for generalized MAST</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2017-09-12 08:55:59
+            <br><i>Published on: 2017-09-12T08:55:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Merkle-branch-verification-tail-call-semantics-for-generalized-MAST.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014984.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark Friedenbach apologizes for the delay in responding to emails due to a cold. Johnson Lau had pointed out that tail-call execution semantics require "unclean stack", which is invalid in BIP141. A new witness version could be used instead of an "unclean stack". The current SigOp counting method used by Bitcoin is flawed and should move to a single linear metric that combines all factors with appropriate coefficients. A better way of handling this problem, which works for both SigOps and HashOps, is to have the witness commit to the maximum resources consumed by validation of the spend of the coin. Maintaining static analysability for global limit(s) is important to prevent attacks on relay and mining nodes. Re-evaluating whether we should be counting SigOps other than for legacy consensus rule compliance is possible. Witness script versioning is fully compatible with P2SH and BIP173. The minimal BIP114 could be really simple, like hiding scripts in a hash. A repository containing the latest implementation of BIP 114 can be found on GitHub.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T03:42:32.588061+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

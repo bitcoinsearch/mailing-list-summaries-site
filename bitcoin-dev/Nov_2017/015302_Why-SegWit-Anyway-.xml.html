@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why SegWit Anyway?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2017-11-20 17:45:18
+            <br><i>Published on: 2017-11-20T17:45:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Why-SegWit-Anyway-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015302.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A user on the bitcoin-dev mailing list asked why the format of transactions needs to be changed for SegWit, and suggested computing the Transaction ID (TxID) in the same way the hash for signing the transaction is computed. However, this would not work due to different SIGHASH flags resulting in multiple ways to hash a transaction. Changing the definition of TxID would require a hardfork change, meaning everyone would need to upgrade or a chain split would occur. Instead, it is possible to use “normalised TxID” (BIP140) as a softfork solution to fix the malleability issue. BIP140 does not change the definition of TxID, but rather uses the normalized txid (i.e. txid with scriptSig removed) when making signatures. This approach does not have the side-effect of block size increase like segwit (BIP141), but makes the UTXO set permanently bigger as the database needs to store both txid and normalized txid.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:21:59.802265+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

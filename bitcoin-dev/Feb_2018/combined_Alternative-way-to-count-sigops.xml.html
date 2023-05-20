@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Alternative way to count sigops <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2018/015764_Alternative-way-to-count-sigops.xml.html">Alternative way to count sigops</a>
+                        <b>Johnson Lau 2018-02-16 22:49:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2018/015765_Alternative-way-to-count-sigops.xml.html">Alternative way to count sigops</a>
+                        <b>Gregory Maxwell 2018-02-17 02:33:32</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015764.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-02-16T22:49:17+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The current method of counting signature operations (sigops) in Bitcoin is not accurate and does not account for all factors, leading to overestimation of costs and potential for DoS attacks. BIP114, taproot, and other second-generation script proposals allow for static sigop counting, but this may not be feasible as more complicated script functions are introduced. A new proposal suggests counting actual sigops at execution and ensuring that the number of executed sigops multiplied by 50 does not exceed the size of the input. This would provide a per-input limit to avoid unexpected DoS attacks while allowing for more complex scripts. The relay node can determine if a transaction spends too much CPU power by examining its size and terminate script execution early if necessary.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T05:14:05.136065+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

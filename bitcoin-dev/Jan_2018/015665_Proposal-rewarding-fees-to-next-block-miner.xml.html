@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: rewarding fees to next block miner</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-01-27 19:06:41
+            <br><i>Published on: 2018-01-27T19:06:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Proposal-rewarding-fees-to-next-block-miner.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015665.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Miners can include transactions paying fees via alternative mechanisms, such as direct payment to miner outputs or completely out-of-band. Therefore, they might not pay attention to internal fees at all and would prefer to use bypass fee mechanisms. This has been supported by miners since 2011. As a solution, Nathan Parker proposed rewarding the fees of the current block to the miner of the next block, discouraging flooding blocks with fake transactions. However, filling blocks with real transactions paying real fees is still encouraged because miners could potentially claim the reward. To implement this in a backwards-compatible way, miners should set an anyone-can-spend output in the coinbase transaction of the block. The miner of 100 blocks after the current one can then add a secondary transaction spending this block's anyone-can-spend coinbase transaction, thus claiming the funds and transferring the block reward of a block X to the miner of block X+100. A possible downside is that when the fork is activated, the miners won’t get any reward for mining blocks for a period of 100 blocks.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T05:04:21.470608+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

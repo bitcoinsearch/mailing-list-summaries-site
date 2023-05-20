@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>{sign|verify}message replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2018-03-26 08:53:23
+            <br><i>Published on: 2018-03-26T08:53:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2018/combined_-sign-verify-message-replacement.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015848.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on bitcoin-dev, Karl Johan Alm proposed to write a replacement for the message signing tools that are currently broken for all but legacy 1xx addresses. The proposal is to add a new structure called SignatureProof which is a simple scriptSig & witnessProgram container that can be serialized and passed out from/into the signer/verifier. However, Pieter Wuille suggested adding more logic to deal with softforks and compatibility. A solution could be to include a version number in the signature which corresponds to a set of validation flags. This way, when the version number is something a verifier doesn't know, it can be reported as inconclusive. RPC commands such as sign and verify are discussed, with the suggestion to extend the existing signmessage/verifymessage RPC to fall back to the existing signature algorithm for legacy addresses while using the script-based approach for all others. In response to a suggestion by Alm, Pieter stated that the prehashed option isn't needed since it could be used to trick someone into signing off on an actual transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T05:17:26.909252+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

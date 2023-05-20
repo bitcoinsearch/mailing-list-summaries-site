@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot: Privacy preserving switchable scripting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-01-23 22:22:29
+            <br><i>Published on: 2018-01-23T22:22:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Taproot-Privacy-preserving-switchable-scripting.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015632.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, Gregory Maxwell debated the use of public keys vs. pubkey hashes in the Taproot proposal. Anthony Towns questioned if paying directly to a pubkey rather than a pubkey hash would be detrimental to Bitcoin's resistance against quantum attacks. Maxwell was skeptical that hashing provided any meaningful quantum resistance and regretted introducing the concept in the first place. He argued that addressing quantum resistance specifically would be more effective. Towns pointed out that individuals could choose not to reuse addresses currently, but this may not be possible with Taproot. Even using "X + H(X|script)g" with X being a random point could end up attackable. Additionally, if people currently reusing addresses cycle funds through quickly, they may simply stop doing so when quantum attacks become feasible. However, holding funds in reused addresses long-term would pose a greater problem. Maxwell argued that when collision resistance is needed (as in the case of Taproot), there is no space savings in the txout from hashing, so there is an argument for using the public key directly. Direct SPK use is also advantageous for efficiently ZKP over the UTXO set for private solvency proofs, but it isn't mandatory.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:48:24.953785+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

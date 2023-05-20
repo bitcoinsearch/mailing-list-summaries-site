@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New difficulty algorithm needed for SegWit2x fork?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Scott Roberts 2017-10-09 21:26:50
+            <br><i>Published on: 2017-10-09T21:26:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015166.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin difficulty algorithm is not ideal, and a fork may occur if miners prioritize profit over security. If 90% of hashrate goes toward using SegWit2x, BTC would face 10x delays in confirmations, negatively affecting its price relative to BTC1. This situation could lead to miner abandonment and potentially cause an oscillation between the two coins worse than what BCH is experiencing. The solution proposed is a hard fork to implement a new difficulty algorithm that uses a simple rolling average with a smaller window. Additionally, the reward should be adjusted based on recent solvetimes to keep the coin issuance rate on schedule. The recommended difficulty algorithm for Bitcoin is Zawy v6, which has been modified for Bitcoin. The algorithm keeps negative solvetimes to correct bad timestamps and avoids temptation to use next_D = sum(last N Ds) * T / [max(last N TSs) - min(last N TSs]. The constants until the next hard fork are set as T=600 and N=30 for the averaging window, X=5 for the size of sudden hashrate changes expected as multiple of base hashrate, limit = X^(2/N) to limit rise and fall to protect against timestamp errors and manipulation, and adjust = 1/(1+0.67/N) to keep avg solvetime on track for small N. The difficulty algorithm begins with avg_ST=0 and avg_D=0 and goes through the N most recent blocks to calculate the average SolveTime and Difficulty. If avg_ST exceeds T*limit or is less than T/limit, it is adjusted accordingly.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:08:37.539243+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

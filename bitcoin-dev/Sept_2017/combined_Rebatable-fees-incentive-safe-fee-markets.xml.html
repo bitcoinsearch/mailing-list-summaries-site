@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Rebatable fees &amp; incentive-safe fee markets <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2017/015108_Rebatable-fees-incentive-safe-fee-markets.xml.html">Rebatable fees &amp; incentive-safe fee markets</a>
+                        <b>Anthony Towns 2017-09-29 04:45:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2017/015097_Rebatable-fees-incentive-safe-fee-markets.xml.html">Rebatable fees &amp; incentive-safe fee markets</a>
+                        <b>Matt Corallo 2017-09-29 01:53:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2017/015132_Rebatable-fees-incentive-safe-fee-markets.xml.html">Rebatable fees &amp; incentive-safe fee markets</a>
+                        <b>Gregory Maxwell 2017-09-30 08:54:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2017/015128_Rebatable-fees-incentive-safe-fee-markets.xml.html">Rebatable fees &amp; incentive-safe fee markets</a>
+                        <b>Gregory Maxwell 2017-09-30 00:47:54</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015108.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-09-29T04:45:56+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A proposal to redesign Bitcoin's fee market has been put forward by researchers from Israel's Technion and Hebrew University. The proposed system would be based on the "pay lowest winning bid" model, where all transactions pay only the smallest fee rate paid by any transaction in a block. This is different from the current "pay your bid" model. Under the new system, users would set their bids truthfully to exactly the amount they are willing to pay to transact. The authors suggest that this would reduce strategic bidding behaviour and improve the auction process.One of the main advantages of the proposed system is that it would allow for rebateable fees in Bitcoin transactions. This means that users could pay a reasonable fee for quick confirmation without relying on CPFP (child pays for parent) or a trusted fee estimator. A transaction can specify both an implicit fee and one or more explicit rebateable fees. The fee rate of a transaction is the combined implicit and rebateable fee divided by the transaction size/weight.Under the proposed system, the smallest fee rate of any non-coinbase transaction is the marginal fee rate for the block and is included in the witness for the block. The verifier checks that each transaction provides a fee greater than or equal to the threshold fee rate, and at least one is exactly equal to the marginal rate. The miner is allowed to claim subsidy plus the miner's fee tally plus the explicit fee tally for themselves in the coinbase.In summary, all transactions have the same actual fee rate under the proposed system, which is equal to the minimum fee rate that went into the creation of the block. This is basically the marginal fee rate for transaction inclusion. While some have questioned its real-world usefulness, the proposed system could result in higher mining revenue.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T04:07:11.767398+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

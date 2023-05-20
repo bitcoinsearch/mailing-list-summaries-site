@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Compact Client Side Filtering for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2017-11-09 23:44:07
+            <br><i>Published on: 2017-11-09T23:44:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_BIP-Proposal-Compact-Client-Side-Filtering-for-Light-Clients.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015273.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The developers of the Bitcoin Improvement Proposal (BIP) have made changes to the BIP based on feedback received during real-world testing. The full commit history of the BIP draft can be found on GitHub. The changes include an alternative, more efficient mapping and using the 6th service bit instead of the one previously chosen. Several typos were fixed, and test vectors in CSV files were included in the latest version of the BIP. However, the size of the test vectors was too large to include in-line within the document, so they were temporarily put in a distinct folder. The team behind the BIP proposed a new light client BIP for consideration. It describes a specification for the much-discussed client-side filtering reversal of BIP-37. They implemented a new light-client mode that uses client-side filtering based on Golomb-Rice coded sets. Lightning Labs proposed a new method for enabling a light client mode for its Lightning network, using Golomb-coded sets (GCS) and Neutrino, a new Bitcoin light client protocol developed by Lightning Labs aimed at improving user privacy. Light clients fetch filters and query them locally, only fetching blocks from any source once the light client deems it necessary. The proposal specifies a fixed false-positive rate, and one specific area of feedback requested is parameter selection. The proposal specifies P = 1/2^20 for false positives, and Alex Akselrod has created a JS calculator to explore the effect of tweaking the false positive rate. Karl Johan Alm has done extensive analysis of his own, focusing on a distinct encoding type. Laolu Osuntokun has provided stats detailing the total index size, as well as averages for both mainnet and testnet. Overall, the changes made to the BIP and the proposals for a new light client mode aim to improve efficiency and user privacy. With the use of GCS and Neutrino, Lightning Labs hopes to enable support for mobile devices.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T02:38:52.950401+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

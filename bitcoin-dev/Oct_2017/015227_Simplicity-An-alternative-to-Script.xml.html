@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Simplicity: An alternative to Script</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2017-10-30 23:29:28
+            <br><i>Published on: 2017-10-30T23:29:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Simplicity-An-alternative-to-Script.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015227.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent bitcoin-dev email thread, Matt Corallo asks how to deal with "jets" in Bitcoin and proposes that discounted jets be used for scripting. There are many ways to use simplicity, an inherent feature of the language, which could involve defining a collection of high-level operations and combinators at the level of things in Bitcoin Script and making an interpreter that implements these operations as discounted jets and ONLY these operations at all. This would functionally create a system like Bitcoin Script but with a pretty much perfectly rigorous formal specification and highly amenable to the formal analysis of smart contracts written in it.To make simplicity useful, a good collection of high-level functions and mid-level functions would be needed to make a wide space of useful but general software possible and high performance. However, this requires enough experience with simplicity to know what the requisite collection of operations would be. One challenge is not having a clear mental model for how nominal validation costs are allowed to be before there is a negative impact. There are three related ideas around consensus discounted jets: script-root jetted or not in an implementation, known and standard in the P2P network, and a particular jet discounted and what are the discounts. A script-versioning mechanism can provide a straightforward way to upgrade discounted cost tables in a compatible way. Another potential tool is the idea of sunsetting cost limits that sunset, where after a certain amount of time, the limits go away with an assumption that updated limits have been softforked in that activate at that time and themselves expire in N years. However, these options exist independently of simplicity. Simplicity is a rigorous base from which we could potentially use to build whatever future direction of script we like out of, by itself it doesn't mandate a particular depth or level of adoption. To get there we'll have to prove in practice that this is workable, Roconnor's SHA2 implementation in simplicity is proven to implement the same function that a C implementation implements, but there will need to be more.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:11:08.316211+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

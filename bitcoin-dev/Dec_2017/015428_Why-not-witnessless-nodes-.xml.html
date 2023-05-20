@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why not witnessless nodes?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2017-12-18 20:42:34
+            <br><i>Published on: 2017-12-18T20:42:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_Why-not-witnessless-nodes-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015428.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Bitcoin-dev mailing list, Kalle Rosenbaum asked why a full node that does initial block download must also download witnesses if they are going to skip verification anyway. He proposed the concept of witnessless nodes, which would only be witnessless for blocks up to X and would not download witnesses but instead send witnessless blocks to peers. This would allow witnessless nodes to sync faster, provide full service to SPV wallets and local wallets, serve blocks to other witnessless nodes with the same or higher assumevalid block, and potentially even serve blocks to non-segwit nodes. However, there is a concern that implementing witnessless nodes could divide the network in two parts, one witnessless and one with full nodes, with few connections between the parts. It is important to verify the witness root hash because a bad peer may send invalid witnesses during initial block download, and if the witness root hash doesn't actually commit to them, the node will get banned by peers requesting the blocks from it because it sends garbage. Therefore, downloading witnesses allows nodes to send witnesses to others without getting banned.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:33:41.080108+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

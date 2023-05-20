@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal - Dandelion: Privacy Preserving Transaction Propagation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2018-06-12 01:05:14
+            <br><i>Published on: 2018-06-12T01:05:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-proposal-Dandelion-Privacy-Preserving-Transaction-Propagation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016109.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev thread, Pieter Wuille and Bradley Denby discussed the behavior of Dandelion nodes. They agreed to make descriptions for the intended node behaviors more clear in the BIP. Malicious nodes can exploit Dandelion routing decisions based on self-reported features to launch serious deanonymization attacks. Therefore, they recommend not allowing fee filters from peers to influence the choice of route. Wuille suggested automatically fluffing or applying fee filters in the stempool to prevent the tx from propagating in stem phase. Wuille proposed that most full nodes on the network use feefilter while only light nodes and blocksonly nodes generally use Bloom filters. Dropping stem transactions that would otherwise be sent to a Dandelion peer which fails its filter and relying on embargo seems fine. The reference implementation adds any mempool transactions to the stempool but not vice-versa so that the stempool becomes a superset of the mempool.Regarding stem orphans, one way to deal with this issue would be to re-broadcast all previous Dandelion transactions that have not been fluffed after Dandelion route shuffling. A second option is to wait for the fluff phase to begin, at which point the orphans will be resolved. Another option is to remember which peer each stempool transaction was forwarded to. They also discussed preferred connections and found that making Dandelion routing decisions based on claims made by peer nodes can cause problems. Therefore, they recommended against biasing the peer selection code. They planned to prioritize writing up a clearer spec for node behavior in the BIP.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T03:00:00.106722+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

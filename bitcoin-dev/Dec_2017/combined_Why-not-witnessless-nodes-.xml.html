@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why not witnessless nodes? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015428_Why-not-witnessless-nodes-.xml.html">Why not witnessless nodes?</a>
+                        <b>Gregory Maxwell 2017-12-18 20:42:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015415_Why-not-witnessless-nodes-.xml.html">Why not witnessless nodes?</a>
+                        <b>Kalle Rosenbaum 2017-12-18 08:32:23</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015428.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-12-18T20:42:34+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email to the bitcoin-dev mailing list, Kalle Rosenbaum expressed his confusion regarding why a full node that does initial block download must also download witnesses if they are going to skip verification. He hypothesized that downloading witnesses is important to be able to send them to other nodes and verify the witness root hash of blocks. However, Rosenbaum suggested implementing "witnessless nodes" that could choose not to download witnesses and instead send only witnessless blocks to peers up to a certain point (X) before fully verifying everything thereafter. These witnessless nodes would be able to sync faster by downloading less data to calculate their UTXO set, potentially serving blocks to non-segwit nodes and providing full service to SPV wallets and local wallets. Rosenbaum questioned whether implementing witnessless nodes risked dividing the network in two parts, but ultimately asked what reasons there were not to implement such nodes.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T04:34:10.977941+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

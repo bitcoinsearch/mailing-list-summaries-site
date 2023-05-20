@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot: Privacy preserving switchable scripting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-01-23 06:44:19
+            <br><i>Published on: 2018-01-23T06:44:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Taproot-Privacy-preserving-switchable-scripting.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015619.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about merkelized scripts on bitcoin-dev, Gregory Maxwell proposed using a tweaked C to produce P for the key to be published. This would create a pay-to-contract construction that is hardened against attacks. The proposal involves paying to a scriptPubKey of Taproot supporting version and EC point P. However, there are concerns about paying directly to the pubkey instead of the pubkey hash, as it may be a step backwards with regard to resistance to quantum attacks against ECC. It is noted that paying direct to pubkey does not make pay-to-taproot cheaper than p2wpkh, as the extra bytes in the scriptPubKey would need to be compensated for by reducing the witness. It is suggested that "S" could include a version that could be bumped to add new features to the script, but left hidden within the hash. Despite these concerns, the proposal is generally well-received.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:49:07.076838+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

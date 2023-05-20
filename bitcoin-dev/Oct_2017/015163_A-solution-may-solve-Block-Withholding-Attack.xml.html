@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A solution may solve Block Withholding Attack</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> 潘志彪 2017-10-03 15:52:16
+            <br><i>Published on: 2017-10-03T15:52:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015163.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A solution to the Block Withholding Attack, based on an idea from Aviv Zohar, has been proposed to work for Bitcoin. The solution involves changing the difficulty algorithm, using a new_diff equation that divides DIFF_1 by the absolute value of the target minus an offset value. This offset is similar to a uint256 in Bitcoin and must be between network_hash_begin/end or miner_hash_begin/end. The offset_hash value is put as a tx hash at the beginning of the array of hashes making up the merkle root hash. When mining pools send a job to miners, they include the PoW hash range for miners to submit valid shares. The network_diff is much higher than the miner's diff, so it's impossible for cheat miners to find out which share could make a valid block. Two problems with this solution are that it requires a hard fork and would render existing ASIC DSHA256 chips useless, but new ASIC chips could be created based on the existing technology.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:08:08.339032+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

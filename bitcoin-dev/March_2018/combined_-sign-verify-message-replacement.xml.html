@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>{sign|verify}message replacement <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015848_-sign-verify-message-replacement.xml.html">{sign|verify}message replacement</a>
+                        <b>Pieter Wuille 2018-03-26 08:53:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015821_-sign-verify-message-replacement.xml.html">{sign|verify}message replacement</a>
+                        <b>Anthony Towns 2018-03-14 16:12:11</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015848.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-03-26T08:53:23+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A proposal to replace the broken message signing tools for all but legacy (1XX) addresses using a script based approach has been suggested. A new structure - SignatureProof, which is a simple scriptSig & witnessProgram container that can be serialized has also been proposed. However, more logic is needed to deal with soft forks and compatibility regarding the verification of fixed, consensus or standardness flags. One solution would be to include a version number in the signature that corresponds to a set of validation flags, allowing inconclusive reports when versions are unknown. RPC commands, sign and verify have been suggested to generate and execute signature proofs respectively. Additional feedback on the proposal is welcome. The danger of using prehashed messages was also highlighted along with the potential for soft forks to make old nodes accept invalid message signatures as valid. It was suggested that old nodes check for the standardness of spending scripts and report non-standard scripts as invalid or highly questionable to prevent confusion.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T05:18:01.750996+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

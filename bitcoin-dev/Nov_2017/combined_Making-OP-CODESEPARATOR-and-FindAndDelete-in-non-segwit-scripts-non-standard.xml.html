@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015292_Making-OP-CODESEPARATOR-and-FindAndDelete-in-non-segwit-scripts-non-standard.xml.html">Making OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard</a>
+                        <b>Johnson Lau 2017-11-15 18:02:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015321_Making-OP-CODESEPARATOR-and-FindAndDelete-in-non-segwit-scripts-non-standard.xml.html">Making OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard</a>
+                        <b>Matt Corallo 2017-11-27 21:33:37</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015318_Making-OP-CODESEPARATOR-and-FindAndDelete-in-non-segwit-scripts-non-standard.xml.html">Making OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard</a>
+                        <b>Matt Corallo 2017-11-27 16:33:07</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015292.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-11-15T18:02:48+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Johnson Lau has proposed to make OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard. The proposal can be found at <a href="https://github.com/bitcoin/bitcoin/pull/11423.">https://github.com/bitcoin/bitcoin/pull/11423.</a> The author argues that FindAndDelete() is one of the most useless and complicated functions in the script language, which is omitted from segwit but still needs to be supported in non-segwit scripts. Disabling both guarantees that scriptCode serialized inside SignatureHash() must be constant. Non-segwit scripts also use a FindAndDelete()-like function to remove OP_CODESEPARATOR from scriptCode. However, in BIP143, only executed OP_CODESEPARATOR are removed so it doesn’t have the FindAndDelete()-like function. OP_CODESEPARATOR in segwit scripts are useful for Tumblebit so it is not disabled in this proposal. A softfork could be used to remove FindAndDelete() and OP_CODESEPARATOR from non-segwit scripts and completely remove FindAndDelete() from the consensus code later by whitelisting all blocks before the softfork block. The first step is to make them non-standard in the next release.Mark Friedenbach disagrees with this proposal because it has the potential of destroying value and is something that we have only done in the past either because we didn’t understand forks and best practices very well, or because the features (now disabled) were fundamentally insecure and resulted in other people’s coins being vulnerable. He thinks that making these features non-standard may be a good idea to further discourage their use.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T04:21:21.149955+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>how to disable segwit in my build?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2017-07-13 01:48:26
+            <br><i>Published on: 2017-07-13T01:48:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2017/combined_how-to-disable-segwit-in-my-build-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014773.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email discussion, Dan Libby expressed his desire to have some of the more recent features without activating SegWit until he chooses to do so. However, this terminology isn't quite precise. The options available are that miners or mining pool owners can signal support for SegWit activation while running nodes can choose to enforce or not enforce the additional consensus rules associated with SegWit. It is the latter option that Dan is talking about. Activation is the collective action of the Bitcoin ecosystem to start enforcing the SegWit consensus rules after a sufficient majority of miners are signaling support. To disable enforcement of SegWit rules, even if a majority of mining power signals activation, one can change the code and recompile it. For instance, by changing the nTimeout setting for DEPLOYMENT_SEGWIT from 1510704000 (Nov 15, 2017) to 1493596800 (May 1, 2017, already expired). However, this may cause an individual to risk accepting blocks that nobody else in the network will accept, opening them up to a higher risk of double spends. Additionally, it may cause them to be unable to peer with SegWit-enabled nodes after SegWit is activated if their node is rejecting blocks with witness data because they think SegWit is not enabled while others think it is enabled. To avoid such complications, one would also need to stop setting the NODE_WITNESS p2p bit which might be possible by setting the nTimeout above to 0 instead of just a date in the past. Finally, when asked how to avoid unwanted side-effects, Andrew Jones explained that the unwanted side-effects are precisely the reasons not to do it. If one doesn't understand what they are, they won't be able to avoid them.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T03:22:13.149313+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

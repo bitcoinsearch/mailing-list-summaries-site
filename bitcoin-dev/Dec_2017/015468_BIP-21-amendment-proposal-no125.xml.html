@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP-21 amendment proposal: -no125</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2017-12-23 16:25:08
+            <br><i>Published on: 2017-12-23T16:25:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015468.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A recent pull request has been submitted that would turn on Replace-by-Fee (RBF) by default. This has triggered some discussion, and to ease the transition for merchants who are reluctant to see their customers use RBF, a no125=1 flag was suggested by Matt Corallo. When this flag is set, wallets should not use RBF, regardless of their default, unless the user explicitly overrides the merchant's preference. Luke Dashjr objects to this suggestion, stating that there is no reason to ever avoid the RBF flag and he is not aware of any evidence that it reduces risk or prevents double spending. Peter Todd seconds this objection, but adds that there are some legitimate reasons why people use non-RBF transactions, such as selling BTC based on an incoming transaction which will need to be converted to fiat. If people want to overpay on fees to do so, there is no reason not to let them, including if the merchant is willing to Child Pays for Parent (CPFP) to do so. Todd anticipates very low usage of the no125=1 flag, but supports including it nonetheless. If things turn out differently with merchants reducing the usability of BTC without taking over the CPFP responsibility, the option could imply receiver-pays-fee, but there is no reason to overcomplicate it yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:36:27.622836+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

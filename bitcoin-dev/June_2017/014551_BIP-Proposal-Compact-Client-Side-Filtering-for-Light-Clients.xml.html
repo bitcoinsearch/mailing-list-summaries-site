@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Compact Client Side Filtering for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2017-06-09 03:50:37
+            <br><i>Published on: 2017-06-09T03:50:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2017/combined_BIP-Proposal-Compact-Client-Side-Filtering-for-Light-Clients.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014551.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the bitcoin-dev mailing list, Olaoluwa Osuntokun proposed a new light client BIP that allows clients to download only block and filter headers if they don't care about historical blocks. Tomas van der Wansem suggested another light client type which would allow each client to receive, for each transaction in each block, the TXID (uncompressed), the spent outpoints (with TXIDs compressed), and the pubkey hash (compressed to a reasonable amount of false positives). This proposal would not require download from genesis and would be about 2-2.5x as big per block as Osuntokun's proposal. Van der Wansem claimed this proposal comes with rather different security characteristics and could verify the TXIDs against the merkle root with a much stronger (PoW) guarantee compared to the guarantee based on the assumption of peers being distinct which Osuntokun's proposal makes. However, Osuntokun pointed out that their proposal only makes a "one honest peer" assumption, similar to other operating modes. Van der Wansem also asked why making the outpoints and pubkey hashes weakly verifiable was beneficial. Osuntokun didn't understand the question and asked for elaboration. Van der Wansem questioned whether compressing away information to verify the merkle root was worth it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T02:43:07.416224+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

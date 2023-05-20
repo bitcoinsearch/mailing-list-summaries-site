@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot: Privacy preserving switchable scripting <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015632_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Anthony Towns 2018-01-23 22:22:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015629_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Gregory Maxwell 2018-01-23 21:38:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015620_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Gregory Maxwell 2018-01-23 13:15:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015619_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Anthony Towns 2018-01-23 06:44:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015616_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Matt Corallo 2018-01-23 02:51:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015663_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Matt Corallo 2018-01-27 17:23:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015661_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Gregory Maxwell 2018-01-26 21:34:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015634_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Gregory Maxwell 2018-01-23 22:45:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015627_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Matt Corallo 2018-01-23 21:23:21</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2018/015614_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>Gregory Maxwell 2018-01-23 00:30:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2018/015703_Taproot-Privacy-preserving-switchable-scripting.xml.html">Taproot: Privacy preserving switchable scripting</a>
+                        <b>ZmnSCPxj 2018-02-05 09:27:07</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015632.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-01-23T22:22:29+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The bitcoin-dev mailing list has been discussing the implementation of taproot and merkelized scriptPubKeys (MAST) in Bitcoin. The main concern is whether paying directly to a public key instead of a public key hash would be a step backward regarding resistance to quantum attacks against ECC. Gregory Maxwell argues that hashing provides little quantum resistance, and there is an argument to use the public key directly when collision resistance is needed for taproot. Direct SPK use is also advantageous for efficiently ZKP over the UTXO set with private solvency proofs.Anthony Towns raises concerns about paying directly to a public key, suggesting it is not enough to make pay-to-taproot cheaper than p2wpkh. He suggests adding a small penalty/discount to align with economic incentives. The discussion concludes by agreeing that indistinguishable contracts for privacy preservation are essential. It is proposed to tweak C to produce P, which is the key we'll publish, and then pay to a scriptPubKey of [Taproot supporting version] [EC point P].The proposal for Taproot, a special delegating CHECKSIG, allows a top level "threshold-signature OR arbitrary-conditions" to be made indistinguishable from a normal one-party signature without any overhead at all. This construction enables the largest possible anonymity set for fixed party smart contracts by making them look like the simplest possible payments. It allows participants to jointly form a 2 of 2 signature, and spend as if it were a payment to a single party.The discussion on the use of merkelized scriptPubKeys is focused on efficiency and privacy. The author suggests using a special delegating CHECKSIG called Taproot that can make threshold-signature OR arbitrary-conditions look indistinguishable from a one-party signature with no overheads. An example is given where a coin can be redeemed by two parties, Alice and Bob, or by CSV-timelock and Bob. It is noted that interesting scripts have a logical top-level branch that allows satisfaction of the contract with nothing other than a signature by all parties, and other branches would only be used where some participant is failing to cooperate. Contracts with a fixed finite participant set can be represented as an OR between an N-of-N and more complex contract. The special case of a top-level "threshold-signature OR arbitrary-conditions" can be made indistinguishable from a normal one-party signature.The use of merkelized scriptPubKeys is driven by efficiency and privacy concerns. A suggestion has been made to make contracts indistinguishable from normal one-party signatures to increase anonymity sets. This can be achieved with Taproot, a special delegating CHECKSIG. The verification computational complexity of signature path is obviously the same as any other plain signature.Lastly, the email thread mentions recursive Taproot and the idea of supporting additional simple preconditions, such as CSV/CLTV predicate, for nesting interior nested keys, but questions whether there are other simple predicates that cover a lot of cases. Taproot composes well with whatever other merkelized script system is used, as the S can be whatever kind of data is wanted, including the root of some tree.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T04:55:18.097330+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
