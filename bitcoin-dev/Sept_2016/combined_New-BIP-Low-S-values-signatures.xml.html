@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP: Low S values signatures <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2016/013006_New-BIP-Low-S-values-signatures.xml.html">New BIP: Low S values signatures</a>
+                        <b>Johnson Lau 2016-08-16 10:10:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013098_New-BIP-Low-S-values-signatures.xml.html">New BIP: Low S values signatures</a>
+                        <b>Johnson Lau 2016-09-02 08:28:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2016/013040_New-BIP-Low-S-values-signatures.xml.html">New BIP: Low S values signatures</a>
+                        <b>Johnson Lau 2016-08-17 12:43:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2016/013012_New-BIP-Low-S-values-signatures.xml.html">New BIP: Low S values signatures</a>
+                        <b>Johnson Lau 2016-08-16 17:46:11</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013006.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-08-16T10:10:01+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin Core developers have released a new BIP (Bitcoin Improvement Proposal) that aims to reduce transaction malleability through the use of low S value signatures. The proposal means that every signature passed to OP_CHECKSIG, OP_CHECKSIGVERIFY, OP_CHECKMULTISIG, or OP_CHECKMULTISIGVERIFY, to which ECDSA verification is applied, must use a S value between 0x1 and 0x7FFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF 5D576E73 57A4501D DFE92F46 681B20A0 (inclusive) with strict DER encoding. The implementation will be deployed by "version bits" BIP9 using the same parameters for BIP141 and BIP143. The BIP9 start time will be midnight TBD UTC (Epoch timestamp TBD) and BIP9 timeout will be midnight TBD UTC (Epoch timestamp TBD). The reference client has produced compatible signatures since v0.9.0, and the requirement to have low S value signatures has been enforced as a relay policy by the reference client since v0.11.1. As of August 2016, very few transactions violating the requirement are being added to the chain.In addition, every non-compliant signature can trivially be converted into a compliant one, so there is no loss of functionality by this requirement. The proposed changes to the Bitcoin transaction validity rules in BIP 146 aim to fix signature malleability related to ECDSA signature encoding. Signature malleability refers to the ability of any relay node on the network to transform the signature in transactions, without access to relevant private keys.The proposed rules aim to address the remaining known sources of malleability in ECDSA signatures, such as inherent ECDSA signature malleability and malleability of failing signature. To fix this, new rules are applied such as LOW_S, which requires that the S value inside ECDSA signatures is at most the curve order divided by 2. Additionally, NULLFAIL requires that if an OP_CHECKSIG is trying to return a FALSE value to the stack, the relevant signature must be an empty byte array.If an OP_CHECKMULTISIG is trying to return a FALSE value to the stack, all signatures passing to this OP_CHECKMULTISIG must be empty byte arrays. The proposed changes also include NULLDUMMY as part of the softfork, which fixes malleability related to the extra stack element consumed by CHECKMULTISIG(VERIFY).</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T23:41:48.229422+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

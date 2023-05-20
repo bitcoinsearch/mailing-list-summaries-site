@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segwit Upgrade Procedures &amp; Block Extension Data <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2016/012313_Segwit-Upgrade-Procedures-Block-Extension-Data.xml.html">Segwit Upgrade Procedures &amp; Block Extension Data</a>
+                        <b>Pieter Wuille 2016-02-01 16:55:03</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2016/012311_Segwit-Upgrade-Procedures-Block-Extension-Data.xml.html">Segwit Upgrade Procedures &amp; Block Extension Data</a>
+                        <b>Anthony Towns 2016-01-30 15:48:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2016/012310_Segwit-Upgrade-Procedures-Block-Extension-Data.xml.html">Segwit Upgrade Procedures &amp; Block Extension Data</a>
+                        <b>Anthony Towns 2016-01-30 15:32:26</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012313.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-02-01T16:55:03+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Peter Todd, a Bitcoin developer, has proposed changes to the upgrade procedures associated with segregated witnesses. He suggested adding a new service bit NODE_SEGWIT or bumping the protocol version to connect only to peers with segwit support. However, he noted that this issue will arise again in future soft-forks which add additional data. To counter this problem, he proposed making witness data more extensible and flexible using Unvalidated Block Extension Data. To further address the issue of relaying additional data in future upgrades to Bitcoin following SegWit, the author suggests using a modified coinbase witness to include this extra data, with three possible commitments: segwit, prevblockproof, and fraudproofs. This would involve removing the current restriction that the coinbase witness contain exactly one 32 byte value. The contents of the coinbase witness would be hashed (e.g., as a merkle tree) and committed in place of the current nonce commitment.The author questions whether this approach makes sense but sees it as logical to include proof information in the coinbase witness. Pieter Wuille, another Bitcoin developer, also suggested changing fHaveWitness flag for each connection to a NODE_WITNESS service bit.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-19T23:05:14.039234+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

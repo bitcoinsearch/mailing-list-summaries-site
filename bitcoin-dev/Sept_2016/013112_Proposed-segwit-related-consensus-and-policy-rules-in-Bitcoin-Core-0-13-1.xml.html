@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed segwit related consensus and policy rules in Bitcoin Core 0.13.1</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2016-09-10 09:29:50
+            <br><i>Published on: 2016-09-10T09:29:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013112.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There are multiple pull requests for segwit related consensus and policy rules. It is important to note that a script spendable in a pre-segwit system may not necessarily be spendable as a segwit script due to notable differences between the two. Test your segwit system on testnet with standard rules turned on and a small amount of money after segwit is activated on mainnet. Segwit (BIP141) fixes transaction ID malleability, but it is still possible for a relay node to insert arbitrary data to the witness without invalidating the transaction. NULLDUMMY, MINIMALIF, and NULLFAIL aim to fix this type of problem. NULLDUMMY has been implemented as a policy for over a year and a softfork is proposed in 0.13.1, while MINIMALIF and NULLFAIL are new policies proposed for 0.13.1 and may become softforks in the future. Script designers should pay attention to these potential softforks to avoid creating unspendable scripts.BIP147 "NULLDUMMY" softfork (for both segwit and pre-segwit scripts), "MINIMALIF" minimal OP_IF/NOTIF argument (segwit scripts only), and "NULLFAIL" null signature for failed CHECK(MULTI)SIG (for both segwit and pre-segwit scripts) are the three policies being discussed. Additionally, a resources limit for P2WSH is proposed with witnessScript.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:54:32.257879+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segwit Upgrade Procedures &amp; Block Extension Data</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2016-01-30 15:32:26
+            <br><i>Published on: 2016-01-30T15:32:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2016/combined_Segwit-Upgrade-Procedures-Block-Extension-Data.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012310.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email thread on the bitcoin-dev mailing list, Peter Todd suggested adding a new service bit, NODE_SEGWIT, and/or bumping the protocol version so that outgoing peers only connect to peers with segwit support. He also noted that future upgrades to add new block data would have a similar relaying problem all over again, and proposed some solutions. One proposal was to remove the restriction that the coinbase witness contain exactly one 32-byte value. Another proposal involved hashing the contents of the coinbase witness as a merkle tree and committing them in place of the current nonce commitment. This approach would allow commitments to be ordered arbitrarily and cleaned up with infrequent hard forks. The proposals were discussed in a PR on the segwit branch, where there was also a proposal to have the coinbase witness include the merkle path to the segwit data.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:04:30.704730+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

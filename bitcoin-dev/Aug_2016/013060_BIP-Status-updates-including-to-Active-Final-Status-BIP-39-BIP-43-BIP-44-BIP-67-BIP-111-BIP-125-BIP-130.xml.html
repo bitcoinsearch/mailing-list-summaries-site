@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Status updates (including to Active/Final Status) - BIP 39, BIP 43, BIP 44, BIP 67, BIP 111, BIP 125, BIP 130</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2016-08-24 08:34:20
+            <br><i>Published on: 2016-08-24T08:34:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_BIP-Status-updates-including-to-Active-Final-Status-BIP-39-BIP-43-BIP-44-BIP-67-BIP-111-BIP-125-BIP-130.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013060.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a forum message, Kenneth Heutmaker raises concerns regarding the broken state of Simplified Payment Verification (SPV) wallets that don't have bloom filtering detection. SPV wallets connect only to nodes that support bloom filtering and when they don't get updates, the wallet becomes outdated. This has caused panic among less technical users who end up rescanning the blockchain and losing their transaction history. The NODE_BLOOM bit is suspected to be the culprit, but there are currently almost no nodes on the network that support bloom off. However, there are many fake nodes that exist solely to monitor transactions, and while they do not implement enough protocol to support scanning or transaction relay, it's important to remember that peers on peer-to-peer networks cannot always be trusted to be cooperative. Therefore, implementations need to work hard to be robust to abusive peers, but due to the design of bloom filtering, it isn't always easy or even possible to be robust.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:50:05.705451+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

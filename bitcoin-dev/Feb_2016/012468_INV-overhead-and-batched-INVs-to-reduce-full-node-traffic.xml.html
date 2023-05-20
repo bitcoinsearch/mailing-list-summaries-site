@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>INV overhead and batched INVs to reduce full node traffic</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2016-02-26 05:56:56
+            <br><i>Published on: 2016-02-26T05:56:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012468.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jonathan Toomim, a Bitcoin developer, suggested implementing an option for batched INV (inventory) on the Bitcoin network that would increase efficiency by including the hashes for two transactions in one IP packet. This would increase the INV size to 229 bytes for 64 bytes of payload, resulting in an 88.8% marginal efficiency increase for each hash after the first. He believed waiting and accumulating several hashes together before sending as a batched INV could reduce Bitcoin node traffic by a factor of 2. However, this suggestion was found to have already been implemented since the early days of Bitcoin. The batching feature was temporarily affected between the 0.10 and 0.12 versions but has been fully functional again, with one INV now managing to batch many transactions effectively. The average batching size is about 5 seconds long and usually contains around 10 transactions per INV, as seen from debug measurements. While tweaking the system may improve efficiency, it is not expected to change the asymptotic efficiency of the network.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:12:24.889725+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

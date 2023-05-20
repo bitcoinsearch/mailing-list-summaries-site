@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP draft: HTLC transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2016-08-17 10:00:37
+            <br><i>Published on: 2016-08-17T10:00:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013036.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On July 20, 2016, Sean Bowe requested feedback for Hash Time-Locked Contract (HTLC) transactions in Bitcoin. These scripts allow payment for the preimage of a hash, with CSV/CLTV being used to recover funds if the other party is uncooperative. However, because HTLCs hash the top item on the stack, scriptSig's that satisfy them are malleable. Peter Todd noted this issue and stated that it can be resolved by using one of two scripts. Both scripts are compatible with Todd's proposal for fixing the OP_IF/NOTIF malleability in segwit ("MINIMALIF"). The overall witness size is the same for these scripts as they were for Luke Dashjr's original script, although the new ones are one byte larger if MINIMALIF is not enforced. It should be noted that the OP_DROP after TIMEOUTOP is missing in Luke's script.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:48:25.783882+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

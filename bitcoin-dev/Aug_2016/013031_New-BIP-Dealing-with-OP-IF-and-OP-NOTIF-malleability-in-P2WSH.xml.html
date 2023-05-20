@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP: Dealing with OP_IF and OP_NOTIF malleability in P2WSH</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2016-08-17 03:02:53
+            <br><i>Published on: 2016-08-17T03:02:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_New-BIP-Dealing-with-OP-IF-and-OP-NOTIF-malleability-in-P2WSH.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013031.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev discussion, Russell O'Connor expressed concern regarding the effectiveness of fighting script malleability. However, the goal is to protect as many common scripts as possible. BIP146 (Low S values signatures) will eliminate all malleability for P2WPKH. Furthermore, BIP146 + null dummy value for CHECKMULTISIG ("NULLDUMMY") will eliminate all malleability for simple multi-sig in P2WSH and BIP146 + NULLDUMMY + minimal IF argument ("MINIMALIF") will eliminate malleability for any Lightning Network scripts that the author is aware of. The plan is to implement MINIMALIF as a relay policy first and enforce the softfork after further risk assessment. Peter Todd suggests an alternative approach, which may be a separate CHECKBOOLVERIFY opcode that fails unless the top item on the stack is a minimally encoded true or false value, to allow script writers to opt into this behaviour. Although all Lightning Network scripts are already compatible with MINIMALIF, if people want to have the original OP_IF behaviour, a simple way would be using "0NOTEQUAL IF". However, this works only if the argument is a valid number and one may also use alternative code to replicate the original behaviour.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:45:30.828765+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

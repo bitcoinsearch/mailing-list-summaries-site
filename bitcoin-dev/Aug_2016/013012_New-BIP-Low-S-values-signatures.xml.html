@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP: Low S values signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2016-08-16 17:46:11
+            <br><i>Published on: 2016-08-16T17:46:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_New-BIP-Low-S-values-signatures.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013012.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On August 16, 2016, Luke Dashjr and Johnson Lau via bitcoin-dev had a discussion regarding the ECDSA verification process applied to signatures passed to operators such as OP_CHECKSIG, OP_CHECKSIGVERIFY, OP_CHECKMULTISIG, or OP_CHECKMULTISIGVERIFY. These operators perform ECDSA verifications on pubkey/signature pairs and iterate from the top of the stack backwards. However, if the signature does not pass the IsLowDERSignature check, the verification fails. Dashjr points out that the IsLowDERSignature function in Bitcoin Core is not directly called, but he will clarify this.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:40:32.418329+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segwit Upgrade Procedures &amp; Block Extension Data</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2016-02-01 16:55:03
+            <br><i>Published on: 2016-02-01T16:55:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2016/combined_Segwit-Upgrade-Procedures-Block-Extension-Data.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012313.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread on the bitcoin-dev mailing list, Peter Todd discussed upgrade procedures associated with segregated witnesses. He suggested adding a new service bit such as NODE_SEGWIT and/or bumping the protocol version so that outgoing peers only connect to peers with segwit support. However, this fix doesn't address the problem of relaying more block data in the future, which will require another soft-fork upgrade. This means that even systems like the relay network will have to upgrade, even if they don't care about the contents of blocks. To address this problem, Todd proposed making the witness data more extensible. He suggested using unvalidated block extension data, which would involve a backward-incompatible change to the current segwit change. The coinbase scriptSig would get a second number push that points to a 32-byte hash H. H is the root of a Merkle tree, whose leaves are the hashes of the coinbase witness's stack items. No restrictions would be placed on the rest of the stack items, allowing for future commitments. Todd also addressed concerns about miners using arbitrary data for non-Bitcoin purposes by suggesting a merkelized key:value mapping with collision-resistant IDs as keys.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:04:06.004338+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

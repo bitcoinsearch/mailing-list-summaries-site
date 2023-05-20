@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Compact Block Relay BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2016-05-08 03:24:22
+            <br><i>Published on: 2016-05-08T03:24:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Compact-Block-Relay-BIP.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012630.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Matt Corallo, a bitcoin developer, has proposed a solution called Compact Block Relay BIP to address the issue of block propagation in Bitcoin's network. Jonathan Corgan commented on Corallo's proposal and suggested that nodes should announce new blocks equally to all nodes and individual nodes can respond with a request of either a 'compact' or a normal block. In response, Corallo explained that nodes don't need to predict much in advance, and the cost for predicting wrong is zero if your peers receive blocks with a few hundred ms between them and you haven't set the announce bit on more than a few peers. The intended use-case is to set the bit on peers which recently provided you blocks faster than other peers, up to only one or three peers.Corgan also suggested detecting if remote nodes support compact blocks, for the purpose of requesting a compact-block, can be done either via a network-bit or just a protocol version. However, neither service bits nor protocol versions are particularly well-suited for this purpose, according to Corallo. Corallo explained that short transaction IDs are used to represent a transaction without sending a full 256-bit hash. They are calculated by: single-SHA256 hashing the block header with the nonce appended (in little-endian), XORing each 8-byte chunk of the double-SHA256 transaction hash with each corresponding 8-byte chunk of the hash from the previous step, and adding each of the XORed 8-byte chunks together iteratively to find the short transaction ID. Finally, Corgan suggested to acknowledge more contributors to the document but Corallo stated that Greg was the only large contributor to the document. The work is based on a protocol recommendation he wrote up several years ago.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:21:52.600532+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
