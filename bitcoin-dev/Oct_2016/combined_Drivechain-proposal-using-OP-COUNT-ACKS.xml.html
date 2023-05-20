@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Drivechain proposal using OP_COUNT_ACKS <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2016/013261_Drivechain-proposal-using-OP-COUNT-ACKS.xml.html">Drivechain proposal using OP_COUNT_ACKS</a>
+                        <b>Johnson Lau 2016-10-25 17:45:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2016/013259_Drivechain-proposal-using-OP-COUNT-ACKS.xml.html">Drivechain proposal using OP_COUNT_ACKS</a>
+                        <b>Johnson Lau 2016-10-24 17:37:12</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-October/013261.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-10-25T17:45:20+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion revolves around the proposed implementation of a softfork to add a new opcode OP_COUNT_ACKS that will be used to count the number of acknowledgement messages in a block. One developer suggests using an unused code instead of OP_NOPx as it's reserved for simple codes that don't write to the stack. They also suggest keeping OP_ACT_COUNT easily countable for block sigop limit. Another developer suggests not replacing "(witversion == 0)" with "((witversion == 0) || (witversion == 1))" as there are only 16 available versions, and we need a better way to coordinate the use of new witness version. BIP114 suggests an additional field in the witness to indicate the script version.It's suggested to move the script version to witness as it's cheaper, and the major witness version could be reserved for fundamental changes in language. The coinbase space is limited to 100 bytes, so any additional consensus critical message should go to a dummy scriptPubKey like the witness commitment. The use of an OP_RETURN output is recommended, but it shouldn't be mandatory. The space for acknowledge and proposal has been seen as a benefit by other developers since it prevents hundreds of sidechains from being offered, which might hurt solo miners.The discussion also covers the validity of an ack-poll, whether it's valid only for one transaction or not, and if the data can be pruned after spending. It's clarified that there is no ack-poll data stored except for the coinbase field cache, which periodically cleans itself by using a FIFO approach. If the target transaction of an ack-poll is never confirmed on the blockchain, the data of the poll needs to be kept forever. Finally, the risk of invalidating a block due to the proposed softfork is discussed, and it's assumed that transactions redeeming a script using OP_COUNT_ACKS would be non-standard.Sergio Demian Lerner, co-founder of RSK, has published a BIP proposing the use of drivechains in RSK. The aim is to add risk-less Bitcoin extensibility through sidechains/drivechains. The proposal suggests using a federated approach until it can be implemented in Bitcoin. The full BIP and reference implementation can be found on GitHub.OP_COUNT_ACKS is a new segwit-based and soft-forked opcode that counts acks and nacks tags in coinbase fields, pushing the resulting totals in the script stack. The system was designed to ensure interoperability with scripting system, zero risk of invalidating a block, no additional computation during blockchain management and re-organization, no change in Bitcoin security model, bounded computation of poll results, strong protection from DoS attacks, minimum block space consumption, and zero risk of cross-secondary chain invalidation. The proposal contains a detailed explanation on how these goals are achieved.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T00:05:25.194271+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

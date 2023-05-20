@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Changing the transaction version number to be varint</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2017-01-26 12:57:32
+            <br><i>Published on: 2017-01-26T12:57:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2017/combined_Changing-the-transaction-version-number-to-be-varint.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013492.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On January 20th, 2017, Tom Zander proposed introducing a new transaction format for Bitcoin. He suggested that from a certain block height, bytes 2, 3, and 4 of the current transaction format be labeled as unused. From that same block height, the interpretation of the first byte would be as varint. Additionally, only transactions that do not lie about their version number (version 1) would be valid. However, some issues were raised with this proposal. Firstly, it would require a hardfork, as existing nodes would not be able to deserialize the transaction. Secondly, using non-version 1 transactions is permitted since v0.1, and version 2 transactions are already used due to BIP68. Finally, if the proposal only affects network transfer, it would be considered a p2p protocol upgrade and not a softfork nor a hardfork. The three ways to introduce new transaction formats include: through a softfork, which makes old clients blind to the new format; through a hardfork, which forgets the old clients and requires new clients to understand the new format; or p2p only, which won't affect consensus. Regardless of the method chosen, one could introduce whatever new format they want.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T00:35:08.254192+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
