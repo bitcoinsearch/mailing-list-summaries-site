@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless WatchTowers?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2018-04-16 19:52:04
+            <br><i>Published on: 2018-04-16T19:52:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001194.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Lightning-dev mailing list, ZmnSCPxj asked for ways to implement a trustless WatchTower system. He expressed concern that providing enough information to the WatchTower for creating a justice transaction might lead to the WatchTower collaborating with the counterparty to steal channel funds. The only safe way to implement such a system is to generate a fully-signed justice transaction immediately after every commitment transaction is revoked and transmit it to the WatchTower. The WatchTower would have to store each justice transaction it received without being able to compress it or use various techniques to store data efficiently. In this approach, node software should keep around those transactions until some process has ensured that the WatchTower has received the justice transactions. Laolu explained that instead of transmitting the entire justice transaction, the client simply sends out the latest items in the script template and a series of signatures for the various breach outputs, which forces the server to reproduce the justice transaction that satisfies the latest template and signature. The current implementation goes back to the ol' "encrypted blob" approach, where the outsourcing protocol is not so coupled with the current commitment protocol. The internal payload can be typed, allowing the server to dispatch the proper breach protocol based on the commitment type. The blob approach can also support a "swap" protocol required for commitment designs that allow for O(1) outsourcer state per-client.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:09:34.541481+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP sighash_noinput</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-07-03 23:45:22
+            <br><i>Published on: 2018-07-03T23:45:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2018/combined_BIP-sighash-noinput.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-July/001345.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Peter Todd, a well-known Bitcoin developer, expressed his concern about the name `SIGHASH_REUSE_VULNERABLE` and how it doesn't accurately describe what the flag does. In an email thread on July 3rd, 2018, he argued that making signatures replayable is equivalent to omitting the identification of the specific coin being spent from it. Todd's argument stems from the fact that the `SIGHASH_REUSE_VULNERABLE` flag allows for signature malleability which could potentially lead to double-spending attacks. He believes that this vulnerability arises due to the reuse of signatures across different transactions, thus allowing for the same coins to be spent multiple times. However, not all developers agree with Todd's assessment. Some argue that the `SIGHASH_REUSE_VULNERABLE` flag is necessary for certain use cases such as Lightning Network channels. These channels require the reuse of signatures in order to perform multiple micro-transactions without incurring high fees. Overall, there seems to be a debate within the Bitcoin community regarding the necessity and potential vulnerabilities of the `SIGHASH_REUSE_VULNERABLE` flag. While some believe it is a necessary feature for certain use cases, others, like Peter Todd, argue that it poses a significant risk for double-spending attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:21:43.224203+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

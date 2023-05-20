@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BOLT3: Commitment Transaction Outputs is weak to malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2017-11-29 09:22:22
+            <br><i>Published on: 2017-11-29T09:22:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000810.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>According to bitnodes tracker, most upgraded nodes are running a bitcoind version >= 0.14 with segwit widely deployed, making it a safe assumption that most miners are already running with the standard malleability reducing policy that shipped in that version. There is still a possibility of a contract breach if the Eve's first element of Eve's witness stack pushes the fee rate of Alice's justice transaction to an "insufficient" range and the justice transaction is delayed excessively. To counteract this issue, Lnd has plans to implement a scorched earth policy when responding to on-chain contract breach event. With this policy, once justice transaction punishing the violator of the contract has been broadcast, for each block it doesn't confirm in, the fee on the transaction will gradually be bumped up using RBF. The additional fee would be drawn from the violator's settled balance in that state. Assuming that rational miners accept the higher fee transaction (and the violator isn't colluding with miners), then the justice transaction will make it into the block before the transaction breaching the contract. In an attempt to counteract this, the violator may try to use CPFP to anchor the transaction into the chain with a more attractive fee package. However, in order to beat this strategy, they must spend a total amount of fees that is greater than the current cumulative fee rate on the justice transaction. If they do so, they'll either end up net negative, or fail to profit (as they'll also bleed away all their funds).The vindication strategy described requires the justice transaction to signal RBF. This serves as another reason to signal RBF in justice transactions. It addresses Dorier's malleability concern and also further stacks the incentives against attempting a contract breach. Dorier had raised concerns over the Commitment Transaction Output script being weak to malleability, which can be used to delay confirmation of the revocation. However, he suggested that enabling RBF of the Penalty transaction so Eve transaction would be replaced by the initial one would fix the situation and does not require lots of development. There is a policy rule called SCRIPT_VERIFY_MINIMALIF by jl2012 which was merged into v0.15.1 that fixes this issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T07:52:13.899717+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

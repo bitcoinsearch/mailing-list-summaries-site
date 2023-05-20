@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_TRUE standard? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/015939_Making-OP-TRUE-standard-.xml.html">Making OP_TRUE standard?</a>
+                        <b>Olaoluwa Osuntokun 2018-05-09 22:06:03</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/015937_Making-OP-TRUE-standard-.xml.html">Making OP_TRUE standard?</a>
+                        <b>Johnson Lau 2018-05-09 20:19:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/015935_Making-OP-TRUE-standard-.xml.html">Making OP_TRUE standard?</a>
+                        <b>Johnson Lau 2018-05-09 17:56:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/015932_Making-OP-TRUE-standard-.xml.html">Making OP_TRUE standard?</a>
+                        <b>Olaoluwa Osuntokun 2018-05-09 00:24:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/015931_Making-OP-TRUE-standard-.xml.html">Making OP_TRUE standard?</a>
+                        <b>Rusty Russell 2018-05-08 23:57:11</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015939.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-05-09T22:06:03+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network is experiencing difficulties predicting future fees. To resolve this issue, Rusty Russell suggested adding a 546 satoshi OP_TRUE output in commitment transactions to use minimal fees and rely on Child Pays for Parent (CPFP) to offset CSV delays on outputs. However, due to a raw 'OP_TRUE' being non-standard, it must be P2SH-ed at the moment. Johnson Lau suggested using "ANYONECANPAY" approach instead, which would allow more inputs for fees without asking for any protocol change. He also recommended having a more flexible SIGHASH system in the long-term to add more inputs and outputs easily. Peter Todd discussed that a zero-fee tx with exactly one OP_TRUE output won't get relayed even with CPFP, due to the fact that package-based transaction relaying has not yet been implemented. There were also discussions about UTXO pollution and a CPFP anchor softfork. Finally, there was a question about downsides of using P2WSH instead of P2SH.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T08:18:25.908429+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

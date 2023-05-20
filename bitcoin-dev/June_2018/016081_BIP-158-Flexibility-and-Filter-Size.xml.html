@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 158 Flexibility and Filter Size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2018-06-06 01:12:55
+            <br><i>Published on: 2018-06-06T01:12:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-158-Flexibility-and-Filter-Size.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016081.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin Improvement Proposal (BIP) draft for multi-layer multi-block filters was previously discussed a year ago, but it is not currently being talked about as the team is in the process of removing unnecessary items or filters. They have now reached a point where they cannot remove any further items without making the filters less useful. Once this stopping point has been reached, widespread deployment can begin. Regarding future extensions, BIP 158 already defines custom filter types, and BIP 157 allows filters to be fetched in batches based on block height and numerical range. The latter feature could potentially be modified to return a single composite filter rather than several individual filters. A concern raised by Matt Corallo in a previous discussion was the size of the filters, which could make SPV clients less willing to adopt BIP 158 instead of the existing bloom filter garbage. He suggests exploring ways to split out filters to make them less bandwidth-intensive, such as providing filters for certain script templates. One potential solution that has been suggested is the idea of multi-block filters, where light clients would download a pair of filters for blocks X..X+255 and X+256..X+511. They would then check if they have any matches and grab pairs for any that matched. This has the added benefit of allowing a slightly higher false positive rate for bigger ranges, because the probability of a specific entry having a false positive in each filter is empirically independent. Riccardo Casatta also raises a question about whether not asking all filters is leaking information.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:32:42.670603+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
