@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Stroll through Fee-Bumping Techniques : Input-Based vs Child-Pay-For-Parent</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-07-08 11:17:16
+            <br><i>Published on: 2021-07-08T11:17:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_A-Stroll-through-Fee-Bumping-Techniques-Input-Based-vs-Child-Pay-For-Parent.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019243.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email to the bitcoin-dev mailing list, Antoine Riard proposed a new sighash malleability flag called SIGHASH_IOMAP. This flag could allow transaction signers to commit to a map of inputs and outputs, which would allow for a more streamlined process and potentially redirect an overflowed fee value to an outgoing output. However, there are some potential issues with this approach that Riard addresses. Firstly, allowing partially overlapping sets of outputs could lead to theft. Secondly, a range specification or whole bitfield is much heavier than an extra bit to add to the sighash. Lastly, specifying lots of different ways of hashing the outputs can lead to quadratic behavior. To avoid these issues, Riard proposes a new approach where the tx is treated as being distinct bundles of x-inputs and y-outputs, using the annex for grouping since it is committed to by signatures. He suggests introducing a new SIGHASH_GROUP flag that commits to each output i, start num_outputs, signature, which would let you combine x-input and y-outputs fairly safely. Riard notes that without something like this, it will be very hard to incorporate fees into eltoo with layered commitments. As a new sighash mode, it would make sense to include it as part of ANYPREVOUT to avoid introducing many new "unknown key types".</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T03:16:28.202809+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

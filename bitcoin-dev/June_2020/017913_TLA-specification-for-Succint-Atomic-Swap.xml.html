@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>TLA+ specification for Succint Atomic Swap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dmitry Petukhov 2020-06-01 11:38:54
+            <br><i>Published on: 2020-06-01T11:38:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017913.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author has completed the specification of the Succint Atomic Swap contract in TLA+. The specification covers all relevant behaviors of the participants and even has an option to enable 'non-rational' behavior, so that transactions punishing bad behavior can be utilized. The model is capable of exhaustively checking safety properties, such as no participant being able to take both coins, unless explicitly specified circumstances exist, and temporal properties, such as the contract always ending up in an explicitly specified 'finished' state. Additionally, the model can show hyperproperties, such as which transactions can ever be confirmed in at least one execution path, max/min/avg values for various stats, etc. However, automatic checking of hyperproperties is not yet available. The model has some limitations, like only having one miner and not modeling fees and mempool priorities. Despite these limitations, the author believes that TLA+ is a suitable tool for specifying and checking smart contract specifications. The goal of creating this specification was to evaluate the suitability of TLA+ for modeling smart contracts in UTXO-based blockchain systems. The author hopes that this specification can be used as a basis for other contracts and increase interest in using formal methods in this area.The author did not make specific effort to factor out generic logic into separate modules, but expects to further understand what is really generic and what should lay with concrete contract logic through the design and analysis of various contract specifications. Lastly, thanks were given to Ruben Somsen for designing the contract and providing helpful descriptions and diagrams that made it possible to create this formal specification.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T23:21:34.062306+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

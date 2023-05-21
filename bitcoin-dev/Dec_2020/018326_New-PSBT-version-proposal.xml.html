@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New PSBT version proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Chow 2020-12-23 21:30:04
+            <br><i>Published on: 2020-12-23T21:30:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2020/combined_New-PSBT-version-proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018326.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Andrew Chow has proposed changes to the current version of Partially Signed Bitcoin Transactions (PSBT) to address its deficiencies. The changes include adding inputs and outputs in a proper way to allow PSBT to properly support them. The new version, PSBT v1, will have all input and output data for each map, disallowing PSBT_GLOBAL_UNSIGNED_TX and including new fields like PSBT_GLOBAL_TX_VERSION, PSBT_GLOBAL_PREFERRED_LOCKTIME, PSBT_GLOBAL_INPUT_COUNT, PSBT_GLOBAL_OUTPUT_COUNT, PSBT_IN_PREVIOUS_TXID, PSBT_IN_OUTPUT_INDEX, PSBT_IN_SEQUENCE, PSBT_IN_REQUIRED_LOCKTIME, PSBT_OUT_VALUE, and PSBT_OUT_OUTPUT_SCRIPT.These changes will allow PSBT to be used in the construction of transactions, and inputs and outputs can be added as needed. However, signatures must not be invalidated while adding new inputs and outputs. Finalizers must choose the maximum of all the *_LOCKTIME fields to choose the locktime for the transaction. There will be two lock time fields, one for a time-based lock time, and the other for height-based lock time.Andrew Chow clarifies that it is possible to downgrade and upgrade PSBTs between the two versions once all inputs and outputs have been decided and that compatibility with PSBTv0 is maintained. A new global field, PSBT_GLOBAL_UNDER_CONSTRUCTION, will signal whether inputs and outputs can be added to the PSBT. Chow also addresses concerns about backward compatibility and explains that these changes are necessary and backward-compatible.As the changes disallow the PSBT_GLOBAL_UNSIGNED_TX field, PSBT v1 needs the version number bump to enforce backward incompatibility. Once the inputs and outputs of a PSBT are decided, a PSBT could be "downgraded" back to v0 by creating the unsigned transaction from the above fields and then dropping these new fields. If the list finds the changes reasonable, Andrew Chow will write a PR to modify BIP 174 to incorporate them.Ultimately, adding new features while maintaining compatibility is key.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T00:09:06.890490+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

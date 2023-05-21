@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019500_Removing-the-Dust-Limit.xml.html">Removing the Dust Limit</a>
+                        <b>Pieter Wuille 2021-09-30 22:07:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2021/019333_Removing-the-Dust-Limit.xml.html">Removing the Dust Limit</a>
+                        <b>Anthony Towns 2021-08-12 22:03:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2021/019308_Removing-the-Dust-Limit.xml.html">Removing the Dust Limit</a>
+                        <b>Matt Corallo 2021-08-08 21:14:23</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019500.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-09-30T22:07:08+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a bitcoin-dev thread, Jeremy suggested removing the dust limit from Bitcoin. However, some members of the community disagreed. David Harding noted that every additional output added to the UTXO set increases the amount of work full nodes need to do to validate new transactions, which contributes towards centralization of mining. Pieter agreed with David's point and argued that having a relay policy that avoids economically irrational behavior makes perfect sense. He also voiced hesitancy towards using colored coin protocols on the Bitcoin chain as it may worsen the system's scalability properties. Regarding the trim-to-dust evaluation in HTLC, Antoine Riard pointed out that it doesn't match the lifetime of the HTLC. However, Pieter explained that determining the cost for creating and spending the utxo should be done each time you update the channel commitment. If fees rise above a certain level, then it becomes an uneconomic output. The dust limit only prevents people from creating outputs that would be irrational if they only required a pubkey reveal and signature to spend. Matt Corallo suggested that instead of removing the dust limit, we should consider drastically increasing the 3 sat/vByte basis of the dust limit to something more like 20 sat/vB since the size of the UTXO set is a fundamental scalability constraint of the system. The limitations of the dust limit were also discussed, such as its impact on lightning channels and colored coin protocols. In conclusion, the significant costs to every miner and full node operator are the main reasons why the dust limit cannot be removed entirely.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-21T03:27:31.047279+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

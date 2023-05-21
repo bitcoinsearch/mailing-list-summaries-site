@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Delegated signatures in Bitcoin within existing rules, no fork required</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2021-03-10 23:55:43
+            <br><i>Published on: 2021-03-10T23:55:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018615.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developers, including Jeremy Rubin, Nullc, and Sipa, are aware of a technique called script delegation in Bitcoin that allows for the delegation of a UTXO to a specific instance of a script without modifications to Bitcoin. Rubin created a brief explainer to document the technique since it is not widely known. The process involves creating a transaction with an output D that has the script S using an arbitrary coin B or scanning the chain for any UTXOs bound to S. Then, using UTXO A, one signs a transaction with two inputs, one being D, and SIGHASH_NONE, which signs all inputs but none of the outputs. This effectively delegates the control of the holder's coin to the specific instance of the script S, allowing the script to authorize almost any transaction they want. Advanced topics include revocation, cross-input delegation, partial spending authorizations, delegation after time, multiple delegates, sequenced contingent delegation, CTV-specific P2SH non-coin delegation, and redelegation, among others.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T01:57:03.714833+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

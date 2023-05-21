@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Clarification on the use of getblocktemplate RPC method.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Rosset 2021-09-09 12:54:18
+            <br><i>Published on: 2021-09-09T12:54:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019425.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the post has recently become interested in the bitcoin protocol and has been using GNU guile scheme to experiment with it. However, the author has run into inconsistencies with the documentation found on <a href="https://en.bitcoin.it/wiki/Getblocktemplate">https://en.bitcoin.it/wiki/Getblocktemplate</a> regarding the creation of the templates merkle root. According to the author's understanding, a coinbase transaction should have the transactions data concatenated before creating the merkle root. But getblocktemplate does not have a json cointbasetxn field, leaving the author unsure how to create a coinbase transaction without that. The author has provided links to a test template response data and a modified version of the merkle python reference script found on the wiki page. Using these resources, the author has been able to create a merkle root with the hash c5fff939f628a04428c080ed5bd7cd9bc0b4722b2522743049adb18213adf28a but minus the coinbase transaction. The author is attempting to replicate this hash using the test data in guile but would like to sanitize this so that they are using a coinbase transaction and making sure the python and guile merkle roots match.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T04:10:16.619840+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

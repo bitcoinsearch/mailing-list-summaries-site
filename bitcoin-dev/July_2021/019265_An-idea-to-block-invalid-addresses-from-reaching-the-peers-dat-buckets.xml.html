@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An idea to block invalid addresses from reaching the peers.dat buckets</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ali Sherief 2021-07-12 23:33:16
+            <br><i>Published on: 2021-07-12T23:33:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_An-idea-to-block-invalid-addresses-from-reaching-the-peers-dat-buckets.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019265.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>According to a post on bitcointalk.org, someone is spamming the bitcoin network with addr message pointing to invalid addresses and ports, which is causing issues with the peers.dat file and corresponding memory structure. The custom record type used in peers.dat makes it difficult to parse and determine specifics of IP addresses listed. However, the author suggests implementing changes to prevent this kind of attack from happening in the future. One solution is to change the AddrDb updating functionality so that it does not add nodes that are unreachable due to "connection refused" errors. These addresses can be stored in a new, separate database-like file or augmented in the peers.dat file under a new entry type. Invalid nodes can be immediately flushed from memory to avoid processing them. The check for unreachable nodes will only be made the first time the node is seen in the wild, to avoid blocking nodes that go offline. A new ZMQ message can also be created to send the node's list of ignored addresses, facilitating other nodes discovering blocked nodes. The author suggests introducing a new file or command-line/config option called "ignorelist" or something with a list of subnets that will not be read into the AddrDB buckets in any case. This would work differently from the banlist, which is used to block peers that send invalid messages, not peers that are unreachable. The author of the post is Ali Sherief.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T03:18:37.336291+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

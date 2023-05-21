@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Force to do nothing for first 9 minutes to save 90% of mining energy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Michael Fuhrmann 2021-05-14 21:41:23
+            <br><i>Published on: 2021-05-14T21:41:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018932.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin miners are required to create blocks every 10 minutes on average, however, they continue to mine for the remaining 9 minutes after a block has been found. This raises the issue of pre-mining during this time. Two possible solutions have been proposed: The first proposal involves implementing a global network timer that sends a salted hash time code after 9 minutes which enables validation by nodes. This solution might be the most difficult to implement.The second proposal is easier to attempt and involves mining jobs before 9 minutes having a higher difficulty of 10 (or 100 or just high enough) times. This would provide an incentive to wait until the 9 minutes have passed since the downside of mining before then would be too high. The bitcoin network would then get a "pulse". While there may be other problems associated with these ideas, finding a working solution could help address the energy concerns of the industry without compromising robustness.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T02:29:44.783332+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

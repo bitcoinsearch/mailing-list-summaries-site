@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot Fields for PSBT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Chow 2021-06-22 21:22:28
+            <br><i>Published on: 2021-06-22T21:22:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2021/combined_Taproot-Fields-for-PSBT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019095.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This proposal introduces a new BIP that defines additional fields for Taproot support in PSBT. The existing PSBT fields are unable to support Taproot, so new fields must be defined to allow PSBTs to carry the information necessary for signing Taproot inputs. The proposed fields include Taproot Key Spend Signature, Taproot Script Spend Signature, Taproot Leaf Script, Taproot Key BIP 32 Derivation Path, Taproot Internal Key, and Taproot Merkle Root. Similarly, the per-output types include Taproot Internal Key, Taproot Tree, and Taproot Key BIP 32 Derivation Path.The proposal also recommends using PSBT_IN_WITNESS_UTXO instead of PSBT_IN_NON_WITNESS_UTXO for Taproot inputs because a Taproot signature will commit to all of the amounts and output scripts spent by the inputs of the transaction, thus preventing any potential attacks involving an updater lying about the amounts in an output. The proposal is a draft and is licensed under the 2-clause BSD license. The compatibility of this proposal with the existing PSBT format is ensured as it is designed to be extensible, and old software will ignore the new fields. Test vectors are yet to be determined.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T02:45:24.329882+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

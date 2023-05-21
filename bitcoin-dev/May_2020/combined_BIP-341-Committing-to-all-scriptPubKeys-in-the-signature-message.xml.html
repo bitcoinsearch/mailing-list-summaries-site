@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP-341: Committing to all scriptPubKeys in the signature message <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2020/017849_BIP-341-Committing-to-all-scriptPubKeys-in-the-signature-message.xml.html">BIP-341: Committing to all scriptPubKeys in the signature message</a>
+                        <b>Pieter Wuille 2020-05-11 22:12:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2020/017813_BIP-341-Committing-to-all-scriptPubKeys-in-the-signature-message.xml.html">BIP-341: Committing to all scriptPubKeys in the signature message</a>
+                        <b>Anthony Towns 2020-05-02 14:26:02</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017849.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2020-05-11T22:12:33+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin developers are discussing a proposal to commit to every spent scriptPubKey and therefore every element of the TxOut instead of just the amount. The purpose is to make it possible for signers to determine whether they can safely sign with just O(1) information per input. This approach would not increase the per-signature hashing while retaining the ability to cache information across BIP141/BIP341. However, coinbaseness and height are things currently kept track of in the UTXO set but have low utility and slow down review. Committing to the signature hashes for key-path spends is not extensible with future soft forks; thus, it's essential to get these things right from the start.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T23:16:50.755183+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

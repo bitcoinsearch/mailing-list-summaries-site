@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PSA: Taproot loss of quantum protections</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-03-15 23:19:22
+            <br><i>Published on: 2021-03-15T23:19:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_PSA-Taproot-loss-of-quantum-protections.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018647.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A debate on the existence of a slow quantum computer arose in an original thread several years ago. However, the broader point was about the address reuse issue and the fact that there are limited solutions using the existing hash-indirection. On March 15th, Karl-Johan Alm explained that any QC issues in Bitcoin need to be solved in another way, as relying on the existing hash indirection would not be practical. The important difference between using hashes and naked pubkeys is that with hashes, an attacker has to race against the spending transaction confirming, whereas with naked pubkeys, the attacker doesn't have to wait for spend to occur, which drastically increases the available time to attack. In a scenario where it may initially take months to break a single key, anyone with a hashed pubkey would be safe, assuming no address reuse. Super Secure Exchange X with an ultra-cold 38-of-38 multisig setup using Taproot would have a timer ticking since the attacker needs to find only a single privkey like with any old P2PK output.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T01:58:58.876459+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

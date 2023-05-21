@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>TAPLEAF_UPDATE_VERIFY covenant opcode</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-09-10 07:42:19
+            <br><i>Published on: 2021-09-10T07:42:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2021/combined_TAPLEAF-UPDATE-VERIFY-covenant-opcode.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019429.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The safety of the control byte is being questioned and it's asked if recursively applying a rule could burn out path E beyond the 128 Taproot depth limit. The fix for this would be to do a key path spend and rebalance the tree, or have X replace itself with (X, (X, A)) to keep the tree height at O(log(n)). Approving to burn E is possible as long as you have the key path. It's also asked if C = 4 is stable across all state transitions, and it seems that the location of C would not be stable across transitions. Dropping a sibling without replacing it or dropping the current script would mean that the only remaining ways of spending would be that script and the key path. If you want a utxo where some script paths are constant, don't construct the utxo with script paths that can modify them. The merkle path will always change unless you have the exact same set of scripts. The "lexical ordering" makes it commutative, so H(A,B) = H(B,A).</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T03:44:08.836668+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

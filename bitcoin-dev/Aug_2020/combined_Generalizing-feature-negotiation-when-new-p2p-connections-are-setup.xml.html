@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalizing feature negotiation when new p2p connections are setup <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018084_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Suhas Daftuar 2020-08-14 19:28:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018127_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Matt Corallo 2020-08-21 22:16:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018123_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Matt Corallo 2020-08-21 20:45:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018101_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Matt Corallo 2020-08-18 18:25:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018133_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Suhas Daftuar 2020-08-24 09:44:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018112_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Anthony Towns 2020-08-21 02:36:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018098_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Matt Corallo 2020-08-18 17:26:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018097_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Matt Corallo 2020-08-18 14:59:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018092_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html">Generalizing feature negotiation when new p2p connections are setup</a>
+                        <b>Suhas Daftuar 2020-08-17 20:40:02</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018084.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2020-08-14T19:28:41+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Bitcoin protocol has evolved to include many different clients with varying features, which the original protocol is inadequate in capturing. The Bitcoin network has always expected clients to ignore unknown messages, so it makes sense to have an explicit negotiation phase where clients send a list of features they support before verack. This will allow for consistency and avoid any network splits that may occur due to incompatible clients being upgraded over time.A proposal was made by Suhas Daftuar to codify the idea that Bitcoin network clients should ignore unknown messages received before verack, and a draft of the proposal is available on Github. Eric Voskuil responded, stating that ignoring unknown messages is not good protocol design, but rather changes to version negotiation should be made to determine the set of valid messages. The only limitation presented by versioning is that the system is sequential, but this can be resolved by making new features optional at the new protocol level, allowing each client to limit its communication to the negotiated protocol and ignore unsupported/disabled features.Matt and Jeremy have also proposed different ideas for how to negotiate features between nodes. Matt suggests continuing the current pattern of sending a message indicating support for a given feature and building additional messages for feature negotiation as they become necessary. Jeremy proposes using HANDSHAKEACK instead of VERACK and adding a SYNC message to allow multi-round negotiation.Despite some disagreements among developers about the best approach, the proposal remains valuable for future protocol upgrades that would benefit from feature negotiation at the time of connection. It would make sense to have an explicit negotiation phase - after version and before verack, just send the list of features that you support to negotiate what the connection will be capable of. The exact way this negotiation occurs doesn't matter much, but sending it as a stream of messages which each indicate support for a given protocol feature perfectly captures the pattern that has been used in several recent network upgrades, keeping consistency.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T23:46:34.649354+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

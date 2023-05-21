@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Thoughts on soft-fork activation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2020-07-14 09:37:30
+            <br><i>Published on: 2020-07-14T09:37:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2020/combined_Thoughts-on-soft-fork-activation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018043.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developers are discussing the best way to activate soft forks in future. Two proposals have emerged as plausible, including a recent update to BIP 8 by Luke and an approach based on a more complicated and slower method described by Matt in January. The main difference between the two is that the BIP 8 approach has a relatively short time frame for users to upgrade if mandatory activation is desired without a supermajority of hashpower enforcing the rules, while the "decreasing threshold" approach provides a longer timeline. The design constraints that developers want include a quick activation if everyone cooperates and no one objects, no obvious exploits, and plausible contingency plans in place to discourage people from using the attempt to deploy a new soft fork as a way of attacking bitcoin. They do not want to ship code that causes people to fall out of consensus in the event that things do not go smoothly. Developers are leaning towards using BIP 8 with mandatory activation disabled in bitcoin core, but prepared to update the BIP 8 parameters to allow mandatory activation in bitcoin core if there are no reasonable objections and strong support for activation after nine months. They also want to change the decreasing threshold proposal to be compatible with BIP 8 and keep it maintained as an extra contingency plan. In addition, they will support miners coordinating via BIP 91 to bring activation forward or de-risk BIP 8 mandatory activation as an alternative contingency plan. Developers hope activating taproot will go smoothly, but they are not 100% sure of it. Starting with something simple and being ready to adapt if/when things start to go weird seems like a good approach.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T23:37:07.665574+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

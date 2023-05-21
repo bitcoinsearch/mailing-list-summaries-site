@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reorgs on SigNet - Looking for feedback on approach and parameters</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-09-15 15:24:43
+            <br><i>Published on: 2021-09-15T15:24:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2021/combined_Reorgs-on-SigNet-Looking-for-feedback-on-approach-and-parameters.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019463.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange on September 13th, 2021, Anthony Towns discussed the design analysis that went into the decision to choose blocks by signature rather than entirely by proof-of-work competition. He explained that the main reason for this change was to ensure that blocks are chosen by a signature with minimum changes to the existing system. Additionally, he stated that keeping a ten-minute-average between blocks is still necessary for integration testing across many services, as significant surges of blocks could cause uninteresting bugs. He also mentioned that it would be easy enough to change things to target an average of 2 or 5 minutes, but then you would need to propagate that logic back into your apps that would otherwise think 144 blocks is around about a day.The conversation continued with a discussion around the inconsistency of block times in testnet3 and how software failing to keep up at all can be issues. Anthony suggested that doing blocks exactly every 10 minutes could solve these problems, but it wouldn't be a huge win, and it would make it hard to test that things behave properly when blocks arrive in bursts. The email exchange concluded with a humorous remark from Anthony, stating that nobody is trying to sell the user on a subscription plan to using signet; rather, products should be built with target users in mind.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T03:33:28.611896+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for new &#34;disabletx&#34; p2p message <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2021/018340_Proposal-for-new-disabletx-p2p-message.xml.html">Proposal for new &#34;disabletx&#34; p2p message</a>
+                        <b>Suhas Daftuar 2021-01-06 16:35:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2021/018349_Proposal-for-new-disabletx-p2p-message.xml.html">Proposal for new &#34;disabletx&#34; p2p message</a>
+                        <b>Anthony Towns 2021-01-14 06:46:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2021/018347_Proposal-for-new-disabletx-p2p-message.xml.html">Proposal for new &#34;disabletx&#34; p2p message</a>
+                        <b>Anthony Towns 2021-01-14 05:32:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2021/018346_Proposal-for-new-disabletx-p2p-message.xml.html">Proposal for new &#34;disabletx&#34; p2p message</a>
+                        <b>Matt Corallo 2021-01-13 06:40:03</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2021/018526_Proposal-for-new-disabletx-p2p-message.xml.html">Proposal for new &#34;disabletx&#34; p2p message</a>
+                        <b>Anthony Towns 2021-03-02 16:31:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2021/018367_Proposal-for-new-disabletx-p2p-message.xml.html">Proposal for new &#34;disabletx&#34; p2p message</a>
+                        <b>Suhas Daftuar 2021-01-19 19:19:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2021/018348_Proposal-for-new-disabletx-p2p-message.xml.html">Proposal for new &#34;disabletx&#34; p2p message</a>
+                        <b>Matt Corallo 2021-01-14 05:39:16</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018340.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-01-06T16:35:11+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A proposed Bitcoin Improvement Proposal (BIP) by Suhas Daftuar suggests adding a new, optional peer-to-peer (p2p) message called "disabletx" to facilitate low-resource connections on the Bitcoin network over which only block-related data are relayed. This is aimed at strengthening a node's robustness against network partitioning attacks and reducing an adversary's ability to learn the complete network graph. Currently, software has been deployed that initiates such connections using the BIP37/BIP60 "fRelay" field in the version message to signal that transactions should not be sent initially. However, since this field is not a permanent setting for the lifetime of the connection, a node receiving an inbound connection with transaction relay disabled cannot distinguish between a peer that will never enable transaction relay and one that will.The proposed specification of the disabletx message includes that it is defined as an empty message where pchCommand == "disabletx," and nodes implementing this BIP must have their protocol version set to 70017 or higher. If a node sets the transaction relay field in the version message to a peer to false, then the disabletx message may also be sent in response to a version message from that peer if the peer's protocol version is >= 70017. If sent, the disabletx message must be sent prior to sending a verack.A node that has sent or received a disabletx message to/from a peer must not send certain messages to the peer, including inv messages for transactions, getdata messages for transactions, getdata messages for merkleblock, filteradd/filterload/filterclear, and mempool. The proposal was discussed on IRC recently, and the mention of addr-relay in the BIP about tx-relay seems to have drawn some critique.Nonetheless, the author believes that dropping mention of addr-relay from the BIP would be logical as it is currently purely local policy. The proposal does not affect non-listening nodes running with -connect to one/more preselected peers as they do not send disabletx generally because they want transactions. Furthermore, the proposal will not prioritize existing outbound connections to encourage the use of more blocksonly nodes on the network.However, in the case of block-relay-only connections, the author plans to increase inbound slots to accommodate additional disabletx peers, to facilitate an eventual increase in the number of outbound block-relay-only connections that Bitcoin Core would initiate by default. The proposed changes include only initializing the transaction relay data structures after the `version` message is received, and only if fRelay=true and NODE_BLOOM is not offered on this connection.Nodes with protocol version >=70017 that do not implement this BIP would not receive transactions from peers sending the disabletx message (provided that BIP 37 or BIP 60 has been implemented). This BIP's recommendations for software to not relay addresses is intended to be interpreted as guidance in the absence of any future protocol extension to accommodate existing software behavior.The proposal of sending a 'disabletx' message to disable transaction relay for specific nodes was discussed. The proposal was supported by some and challenged by others who suggested that there should also be an option to disable address relay in such cases. However, the author of the proposal argued that disabling address relay should not be included in the proposal as it is unnecessary for the current use cases. They plan to use an address relay protocol extension in the future to govern address relay.Lastly, the interaction between fRelay and bloom disabling was also discussed, and it was found that bloom filter support is (optionally) indicated via a service bit (BIP 111), so one could assume that they know whether they are supported as soon as they receive the VERSION line.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-21T00:36:07.868358+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 118 and SIGHASH_ANYPREVOUT <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018079_BIP-118-and-SIGHASH-ANYPREVOUT.xml.html">BIP 118 and SIGHASH_ANYPREVOUT</a>
+                        <b>Matt Corallo 2020-08-11 00:14:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018077_BIP-118-and-SIGHASH-ANYPREVOUT.xml.html">BIP 118 and SIGHASH_ANYPREVOUT</a>
+                        <b>Matt Corallo 2020-08-06 15:58:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2020/018039_BIP-118-and-SIGHASH-ANYPREVOUT.xml.html">BIP 118 and SIGHASH_ANYPREVOUT</a>
+                        <b>Anthony Towns 2020-07-09 22:30:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2020/018038_BIP-118-and-SIGHASH-ANYPREVOUT.xml.html">BIP 118 and SIGHASH_ANYPREVOUT</a>
+                        <b>Anthony Towns 2020-07-09 21:40:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018075_BIP-118-and-SIGHASH-ANYPREVOUT.xml.html">BIP 118 and SIGHASH_ANYPREVOUT</a>
+                        <b>Matt Corallo 2020-08-04 13:10:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2020/018069_BIP-118-and-SIGHASH-ANYPREVOUT.xml.html">BIP 118 and SIGHASH_ANYPREVOUT</a>
+                        <b>Richard Myers 2020-08-03 19:27:13</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018079.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2020-08-11T00:14:29+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email conversation between Anthony Towns and Christian Decker is about updating BIP 118 to include ANYPREVOUT bip. The updated BIP text is available on GitHub for discussion, but tested code is not yet available.Issues with HTLC security were discussed, specifically relay-based attacks. ZmnSCPxj suggested dropping channels on-chain early to allow for leeway in bumping up fees for the commitment transaction. Matt added that placing commitment transactions in mempools may put HTLC security at risk. Instead, ZmnSCPxj proposed monitoring on-chain events instead of mempool events and implementing scorch-the-earth, keep-bumping-the-fee strategies.In a discussion on Lightning-dev mailing list, ZmnSCPxj proposed a Decker-Russell-Osuntokun construction with a single internal Taproot pubkey for a channel between two parties, A and B. The funding outpoint would be spent with a taprooted P and a single tapscript `OP_CHECKSIG`. Update transactions would be signed with the internal taproot pubkey using `SIGHASH_ANYPREVOUTANYSCRIPT`, while each update transaction would have monotonically-increasing `nLockTime`. State transaction would be signed with the internal taproot pubkey using `SIGHASH_ANYPREVOUT` committing to a unique script.There was also a discussion about a feasible attack vector involving broadcasting different old transactions to the victim and miners separately. However, this attack vector could be fixed by monitoring on-chain events and ignoring mempool events in a Lightning universe utilizing primarily `SIGHASH_NOINPUT`-based mechanisms.Richard raised questions related to privacy and signing session requirements.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T23:34:51.400673+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

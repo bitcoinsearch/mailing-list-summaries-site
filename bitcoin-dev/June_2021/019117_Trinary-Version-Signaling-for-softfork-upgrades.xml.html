@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trinary Version Signaling for softfork upgrades</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2021-06-26 20:21:52
+            <br><i>Published on: 2021-06-26T20:21:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019117.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to solve the problems faced by both sides in the recent controversy over upgrade mechanisms for the taproot upgrade. The proposal suggests using trinary version signaling instead of binary signaling, which allows for three signaling states: actively support the change, actively oppose the change, and not signaling (default state). This approach can release non-contentious upgrades much quicker with a lower percentage of miners signaling support while also incentivizing lazy miners who oppose the change to update their software to signal opposition. For contentious upgrades, miners who oppose the change are encouraged to update their software to a version that can actively signal opposition to the change. The higher the threshold necessary to lock in the upgrade, the more opposition there is. In case no one signals opposition, a 60% threshold should be relatively safe because it is a supermajority amount that is unlikely to change significantly very quickly. This proposal gives an incentive for "lazy" miners to upgrade if they actually oppose the change while at the same time allowing these miners to remain lazy without slowing down the soft fork activation much. The proposal recommends discussing new soft fork upgrade mechanisms when there are no pressing soft fork upgrades ready to deploy. Delaying discussions until the need arises will only cause contention again like it did with taproot. The author welcomes comments on the mechanism either as comments or github issues on the proposal repo itself.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T02:54:20.887756+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

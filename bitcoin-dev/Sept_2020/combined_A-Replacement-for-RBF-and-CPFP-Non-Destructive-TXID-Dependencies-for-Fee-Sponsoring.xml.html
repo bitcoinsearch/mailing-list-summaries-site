@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2020/018195_A-Replacement-for-RBF-and-CPFP-Non-Destructive-TXID-Dependencies-for-Fee-Sponsoring.xml.html">A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring</a>
+                        <b>Suhas Daftuar 2020-09-22 18:05:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2020/018168_A-Replacement-for-RBF-and-CPFP-Non-Destructive-TXID-Dependencies-for-Fee-Sponsoring.xml.html">A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring</a>
+                        <b>Jeremy 2020-09-19 00:51:39</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018195.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2020-09-22T18:05:13+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The post discusses a proposal that would require Sponsor Vector TXIDs to be in the block of a transaction, which goes against the principle of a valid transaction remaining valid unless inputs are double-spent. The author suggests new policy rules for existing types of transaction chaining as an alternative approach. This change allows third parties to participate in fee bumping; however, it introduces the possibility of third-party griefing.To address some issues with the original proposal, the author suggests an alternative suggestion where sponsor vectors point to input outpoints instead of txids. In addition, the post mentions the Bitcoin Improvement Proposal (BIP) that proposes an abstracted primitive mechanism for expressing non-destructive dependencies on specific transactions.The BIP aims to increase fees to confirm transactions in the mempool and prevent known mempool attacks and vulnerabilities such as transaction pinning. It provides design motivations and an analysis of the potential attack vectors. The proposal also suggests future policy work to enable sponsors to be queried and tracked for transactions that have too low fees to enter the mempool.A reference implementation demonstrating these rules is available but has not been carefully audited for correctness. Rational miners may wish to permit multiple sponsor targets or sponsoring transactions, but they are not required for the mechanism to work.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T23:53:13.612513+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

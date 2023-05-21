@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalizing feature negotiation when new p2p connections are setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2020-08-18 14:59:00
+            <br><i>Published on: 2020-08-18T14:59:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2020/combined_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018097.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin is no longer a homogeneous network of one client - it is many, with different features implemented in each. The Bitcoin protocol hasn't (fully) evolved to capture that reality. Initially, the Bitcoin protocol had a simple numerical version field, but that is wholly impractical for any diverse network. Bitcoin protocol changes have, many times in recent history, been made via new dummy "negotiation" messages, which take advantage of the fact that the Bitcoin protocol has always expected clients to ignore unknown messages. Suhas Daftuar proposed feature negotiation to take place prior to the VERACK message being received by each side. In his email to the bitcoin-dev list, he asked for feedback as to whether that proposal was problematic, and he did not receive any responses. Since then, the implementation of BIP 339 has been merged into Bitcoin Core, though it has not yet been released. In thinking about the mechanism used there, Suhas thought it would be helpful to codify in a BIP the idea that Bitcoin network clients should ignore unknown messages received before a VERACK. He proposes a draft of his proposal available here.Suhas believes that if software upgrading past protocol version 70016 was already planning to either implement BIP 339 or ignore the wtxidrelay message proposed in BIP 339, it would not create network split concerns in the future. When they propose future protocol upgrades that would benefit from feature negotiation at the time of connection, it would be nice to use the same method as proposed in BIP 339 without even needing to bump the protocol version. Suhas is looking forward to hearing whether this is problematic so that they can be careful about how they deploy future p2p changes to avoid disruption.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T23:44:08.716777+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

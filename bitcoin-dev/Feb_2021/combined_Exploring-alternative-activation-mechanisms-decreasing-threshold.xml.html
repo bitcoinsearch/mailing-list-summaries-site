@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Exploring alternative activation mechanisms: decreasing threshold <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2021/018511_Exploring-alternative-activation-mechanisms-decreasing-threshold.xml.html">Exploring alternative activation mechanisms: decreasing threshold</a>
+                        <b>Anthony Towns 2021-03-01 14:33:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018490_Exploring-alternative-activation-mechanisms-decreasing-threshold.xml.html">Exploring alternative activation mechanisms: decreasing threshold</a>
+                        <b>Matt Corallo 2021-02-28 02:38:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018476_Exploring-alternative-activation-mechanisms-decreasing-threshold.xml.html">Exploring alternative activation mechanisms: decreasing threshold</a>
+                        <b>Gregorio Guidi 2021-02-25 22:33:25</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018511.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-03-01T14:33:33+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The bitcoin-dev community has been discussing the activation of Taproot, specifically an either/or option, LOT=false or LOT=true. However, there is a new proposal called "decreasing threshold activation" that offers a third possibility. This method starts with a high threshold for activation in the first year and gradually reduces it over time until it reaches a very low threshold in the final period.The advantages of this approach are numerous. Firstly, it is relatively conservative at the beginning and easy to implement, requiring no parameters to set. Secondly, it avoids the extra code required for the MUST_SIGNAL period, which eliminates the risk of reorgs and involuntary forks around activation. Furthermore, this approach removes motivation to create UASF clients that force activation.On the other hand, decreasing threshold activation pushes activation further into the future when it is less safe. The consensus is that it is better to avoid scenarios that lead to chaos and loss of funds. Forced-signaling or any form of signaling does not guarantee the safety of using a soft fork. Pieter's post highlighted the security of soft forks while waiting some time after a fork and examining upgrade patterns across the network before considering a fork safe.Another option to avoid ambiguity and political posturing is to commit to the activation on-chain. However, delaying activation until any potential NDAs expire may not be plausible. It is important to note that decreasing threshold activation is proposed as a solution to the dichotomy between LOT=false and LOT=true. It works similarly to BIP8 but with a gradually reducing threshold on each period in steps of 24 blocks (~1,2%). In conclusion, the Bitcoin community is debating the activation of Taproot with various options being discussed. Decreasing threshold activation offers a conservative and easy-to-implement approach that mitigates the risk of reorgs and involuntary forks around activation. However, it also pushes activation further into the future when it is less safe. Other options such as committing to activation on-chain or delaying activation until any potential NDAs expire are also being considered. The consensus is that it is better to avoid scenarios that lead to chaos and loss of funds.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-21T01:16:40.835238+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
