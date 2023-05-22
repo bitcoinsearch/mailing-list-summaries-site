@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV Signet Parameters <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2022/020234_CTV-Signet-Parameters.xml.html">CTV Signet Parameters</a>
+                        <b>Anthony Towns 2022-04-20 02:31:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2022/020268_CTV-Signet-Parameters.xml.html">CTV Signet Parameters</a>
+                        <b>Anthony Towns 2022-04-22 00:58:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2022/020245_CTV-Signet-Parameters.xml.html">CTV Signet Parameters</a>
+                        <b>Anthony Towns 2022-04-21 05:03:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2022/020244_CTV-Signet-Parameters.xml.html">CTV Signet Parameters</a>
+                        <b>Anthony Towns 2022-04-21 02:36:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020234.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2022-04-20T02:31:07+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A recent discussion on the Bitcoin development mailing list focused on the readiness and activation of new features such as CTV and Taproot. The lack of practical exploration of CTV raised concerns about its complexity, which could be simplified while still getting all of its benefits. For a consensus system, learning in public is required to determine whether a change is worth the risk it imposes.One participant expressed concern over the lack of third-party experimentation with Jeremy Rubin's CTV signet. However, as of April 21st, there have been around 2,200 transactions on CTV signet, including 317 CTV spends. None of them have been bare CTV or via P2SH, but three have been via taproot and 314 via P2WSH. All the scripts used take the form: [PUSH 32 bytes] [OP_NOP4] [OP_DROP] [OP_1]. There are no demos of Jamesob's simple-ctv-vault which uses a P2WSH of "IF n CSV DROP hotkey CHECKSIG ELSE lockcoldtx CTV ENDIF," nor any examples of "this CTV immediately; or if fees are too high, this other CTV that pays more fees after X days." There are also no examples of two CTV outputs being combined and spent in a single transaction. Further, none of the transactions have nSequence set meaningfully, but most seem to set nSequence to 0x00400000.The author suggests that instead of counting unique spends and use cases, it's more important to evaluate whether transactions can be made using the new feature with bitcoin-cli or other libraries and if prototypes of major use cases have been developed. They note that while there were sufficient demos for Taproot, they're not confident about those for CTV. Moreover, the continual push to rush activation doesn't increase their confidence either. The discussion also highlights the need for an unbiased observer to evaluate the readiness or acceptability of ANYPREVOUT, TLUV, and CTV. Finally, the discussion touches on technical aspects such as the CLEANSTACK rule, which evaluates anything that is not false as CastToBool(), and the MINIMALIF rule, which requires using exactly 1 or 0 as the input to IF. Overall, the discussion emphasizes the importance of public experimentation and evaluation before locking in activation dates and metrics for evaluating worthiness of new proposals. The bar should be constantly moving, and we should keep raising it.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-22T19:29:23.873808+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

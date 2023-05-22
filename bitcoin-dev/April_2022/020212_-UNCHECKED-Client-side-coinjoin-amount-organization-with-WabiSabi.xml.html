@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>***UNCHECKED*** Client side coinjoin amount organization with WabiSabi</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Max Hillebrand 2022-04-09 06:21:06
+            <br><i>Published on: 2022-04-09T06:21:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020212.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The developers of the Wasabi wallet recently published an article detailing their CoinJoin algorithm, which aims to improve the privacy of Bitcoin transactions. The protocol handles input registration and output selection in a unique way. Input registration is limited by a maximum suggested input value and is not complete until all users have registered their inputs. Users choose their inputs without knowing what other users have already registered. Outputs are selected based on a Schelling point among users where clients generate a list of standard denominations to register.These denominations are determined by a deterministic frequency table based on inputs, which are decomposed into standard denominations. The client then takes its input sum and brute-force decomposes it into all possible groups of likely denominations. A shorter list of output amount groups is then shuffled, and one is randomly picked to register non-deterministic denominations. The article goes on to discuss the difficulty of organizing client-side coinjoin amounts and explains the current approach taken in the Wasabi Wallet's third release candidate. The wallet randomly selects between 1-10 coins to register, with a preference towards 1 if the wallet has less than 35 utxos and 10 if it has more than 125 utxos. Coins are selected based on anonscore loss, with groups created based on consolidation penalty. Groups are removed if they contain many coins from the same transaction, and the input group with the lowest weighted anonscore cost is picked. There may be randomness in the final group selection, without suffering too much anonscore consolidation penalty.Additionally, the article provides some results of simulations using the current algorithm. For example, with 50 inputs and 15 users, the median out anonsets were 3.5, and the median leftovers were 481. With 300 inputs and 70 users, the median out anonsets were 9.6, and the median leftovers were 394. Links to the Wasabi 2.0 release candidate, input selection code, amount decomposer code, and decomposition simulation are provided as well. Finally, the author questions whether further ambiguity should be added at extra blockspace cost. The article provides an in-depth look at the CoinJoin algorithm and its implementation in the Wasabi wallet, shedding light on the importance of privacy in Bitcoin transactions and the challenges involved in achieving it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T19:23:37.286477+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

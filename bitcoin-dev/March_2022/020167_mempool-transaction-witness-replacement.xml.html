@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>mempool transaction witness-replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Larry Ruane 2022-03-22 19:04:26
+            <br><i>Published on: 2022-03-22T19:04:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020167.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been put forward for Bitcoin Core mempool to replace an existing transaction with one that has the same txid, but a sufficiently smaller witness and thus a higher feerate. The proposal is miner-incentive compatible meaning miners would prefer to mine a transaction with a higher feerate, however, there are concerns around code complexity cost and transaction-relay DoS. A potential advantage of this change is that it may provide a defense against a mempool pinning attack. Bip125 allows an incoming transaction to replace one or more existing conflicting transactions if certain DoS-mitigation conditions are met. Witness-replacement is similar to RBF, but differs in a few ways. With witness-replacement, it's not necessary to evict mempool descendant transactions because their inputs' txid references to their parent who is being replaced remain valid. Signaling isn't required by witness-replacement since the outputs can't change. This could be a per-node setting, but it's desirable for the node network to agree on relay policies.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T18:38:27.489784+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

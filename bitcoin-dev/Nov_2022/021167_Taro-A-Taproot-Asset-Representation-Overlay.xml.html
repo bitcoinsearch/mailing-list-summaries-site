@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taro: A Taproot Asset Representation Overlay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2022-11-05 00:35:53
+            <br><i>Published on: 2022-11-05T00:35:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Taro-A-Taproot-Asset-Representation-Overlay.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021167.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the "utxo teleport" scheme, Laolu raises concerns about the soundness of the scheme and its ability to transmit "ownership" to a UTXO. They argue that by the time the transaction hits the chain, the UTXO may no longer exist, raising questions about the fate of the asset. Laolu provides an example of a scenario where a channel closes before a transfer is committed to a UTXO, resulting in the UTXO no longer existing when the transaction hits the chain. Laolu contrasts the utxo teleport scheme with Taro's state transition model, which they argue is fully bound to a single synchronization point: a normal Bitcoin transaction with inputs consumed and outputs created. This ensures re-org safety traits similar to regular Bitcoin transactions and it is not possible to send to something that won't ultimately exist, as sends create new outputs just like Bitcoin transactions. Additionally, anything that can be done with Bitcoin/LN applies to Taro's state transition model.Laolu points out that the utxo teleport model would not be a great model for anchoring assets in channels either, as it lacks the serialization of events/actions the blockchain provides. They also note that the teleport model requires an OP_RETURN or additional out-of-band synchronization to complete the transfer, while Taro's model creates an on-chain taproot output that directly creates the new asset anchor/output, allowing the receiver to look for that address on chain just like a normal on-chain transaction. In summary, Laolu argues that while the utxo teleport scheme may have flaws, Taro's state transition model offers greater re-org safety and serialization of events/actions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T18:46:11.640275+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

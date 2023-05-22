@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Vaulting (Was: Automatically reverting (&#34;transitory&#34;) soft forks) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2022/020299_Vaulting-Was-Automatically-reverting-transitory-soft-forks-.xml.html">Vaulting (Was: Automatically reverting (&#34;transitory&#34;) soft forks)</a>
+                        <b>Matt Corallo 2022-04-23 18:24:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2022/020284_Vaulting-Was-Automatically-reverting-transitory-soft-forks-.xml.html">Vaulting (Was: Automatically reverting (&#34;transitory&#34;) soft forks)</a>
+                        <b>Russell O&#39;Connor 2022-04-22 17:25:12</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020299.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2022-04-23T18:24:01+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion on bitcoin-dev mailing list revolves around the security assumptions of CTV-based vaults. The concern raised is that an attacker who steals the hot key can wait for the user to unvault their funds and then race/outspend the user's transaction with their own, which is expected to happen in the dark forest. However, a key security assumption of the CTV-based vaults is that you must not withdraw more in one go than your hot wallet risk tolerance. This attack isn't worse than simply stealing the hot wallet key immediately after a withdraw. There are some frustrating limitations like rotating all of your CTV outputs if you ever get a hot wallet key stolen, and your CTV outputs must never be any larger than your hot wallet risk tolerance amount. The simple-ctv-vault design is considered a good benchmark for evaluating covenant proposals because it is simple and has high utility for many users of Bitcoin. However, there are no implementations, tooling, and in some cases even complete specifications available currently. The unvault step is critical because it allows detecting unexpected behavior. If an attacker had stolen the hot wallet keys, their only choice to succeed in the theft is to trigger an unvault. But, it's not the attackers' only choice to succeed. They have the option to wait for the user to unvault their funds of their own accord and then race/outspend the user's transaction with their own. In MES vault design, the destination address is included and committed to by the unvaulting step, but this can only be achieved with a less constrained design for covenants. The damage from a hot key theft could be more contained under some circumstances using a CTV vault, but the value of the CTV vault should not be overstated. Moreover, the issues already noted by the document regarding fee management would likely also benefit from a less constrained design for covenants.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-22T19:39:15.760697+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

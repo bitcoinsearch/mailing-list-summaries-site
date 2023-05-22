@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Thoughts on fee bumping</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James O&#39;Beirne 2022-02-10 19:40:22
+            <br><i>Published on: 2022-02-10T19:40:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_Thoughts-on-fee-bumping.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019879.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of fee-bumping and dynamic fee management in Bitcoin has been a topic of much discussion lately. Gloria's recent post on the subject highlights current issues and proposals to improve the situation, but some are troubled by the increasing complexity of both the status quo and proposed remedies. The author presents several design principles motivated by the quality of end-user experience, constrained to obey incentive compatibility, including the aim that purely additive feerate bumps should never be impossible, the bandwidth and chain space consumed by a fee-bump should be minimal, special transaction structure should not be required to bump fees, and feerate bumps should be able to come from anywhere.The author favors an approach like the transaction sponsors design proposed by Jeremy in a prior discussion back in 2020, which allows feerates to be bumped after a transaction's broadcast, regardless of the structure of the original transaction. There were objections noted, such as the potential for a pinning-like attack and breaking the classic invariant, but the author suggests ways around these shortcomings. The use of CPFP in the long-term also risks needless chain waste. While a soft-fork would be required for this approach, the author believes it is worth considering to clean up the essential process of fee management. The current complexity in fee management feels untenable, and as evidenced by recent discussion, fees are an increasingly crucial part of the system.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T17:21:39.541672+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

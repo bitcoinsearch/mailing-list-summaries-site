@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On the regularity of soft forks <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2021/019542_On-the-regularity-of-soft-forks.xml.html">On the regularity of soft forks</a>
+                        <b>Anthony Towns 2021-10-14 23:52:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2021/019720_On-the-regularity-of-soft-forks.xml.html">On the regularity of soft forks</a>
+                        <b>Keagan McClelland 2021-12-31 03:10:48</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019542.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-10-14T23:52:07+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A recent discussion on bitcoin-dev has raised concerns about bundling too many soft fork features in a single release. AJ suggested that changes to Bitcoin's codebase should be implemented as infrequent soft forks with a batch of features rather than frequent ones with minimal features. However, another contributor argued that bundling proposals can make the review process harder and reduce the number of qualified reviewers for each specific proposal.It was also noted that introducing consensus changes before community consensus is reached can lead to network splits and disagreements on how to activate, resist, or even abandon the change. Additionally, introducing one consensus change can limit the ability to introduce another later. Therefore, it is crucial to consider the synergies between proposals and whether they should be bundled together. While some combinations can be beneficial, it is not always wise to bundle flawed proposals to ensure everyone is equally happy or miserable.The example of bundling schnorr, Taproot, MAST, OP_SUCCESSx, and CHECKSIGADD together was given because of their synergies, while nulldummy soft-fork (bip 147) was deployed concurrently with the segwit soft-fork (bip 141, 143) to reduce the overhead of two sets of activation signalling to one. It was also noted that the implementation code for nulldummy had already been merged and applied as relay policy well before activation parameters were defined, let alone becoming an active soft fork.Overall, it is suggested that frequent but strictly sequenced soft forks can be less damaging to consensus than infrequent ones with too many features bundled together. Nonetheless, the protocol adopting a tendency to activate unrelated proposals in bundles is considered a recipe for disaster. Allowing Core or any other client to cut a release of the software with the parameters bundled into a single release is a significantly more palatable state of affairs, as signaling and activation can still be pipelined. However, disagreements and forks are an inherent part of Bitcoin. They should be sequenced so that people can decide which sides of the forks they want to follow and the economic reality can reorganize around that.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-22T16:06:22.046177+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

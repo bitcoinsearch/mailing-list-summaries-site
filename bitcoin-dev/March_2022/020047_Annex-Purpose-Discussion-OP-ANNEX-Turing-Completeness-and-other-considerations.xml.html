@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Annex Purpose Discussion: OP_ANNEX, Turing Completeness, and other considerations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-03-05 05:59:24
+            <br><i>Published on: 2022-03-05T05:59:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_Annex-Purpose-Discussion-OP-ANNEX-Turing-Completeness-and-other-considerations.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020047.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin development mailing list has been discussing the Annex in Bitcoin, which is a way to include additional information in a transaction that can be analyzed immediately and unconditionally without knowing anything about the UTXO being spent. The annex can also be used for optimizing SIGHASH_GROUP, allowing a group of inputs to claim a group of outputs for signing.The Annex can be encoded in a simple way using a tag/length/value scheme or the list encoding from Lisp scripting language. It can be used to change the consensus interpretation of a transaction and validate a zero-knowledge proof. To access individual entries from the annex, a different approach may be necessary, as introducing OP_ANNEX may require. It commits to the signature, making it important to know what the annex will contain before signing since some entries in the annex may not be able to be calculated by other parties. Having a way to specify locktimes in the annex can solve this CLTV problem. However, having signatures in both COLD_LOGIC and HOT_LOGIC with different costs could create issues. The "add cost" use of the annex is only talked about hypothetically and is not needed in reasonable scripts with today's opcodes.Cross-input signature aggregation requires everyone to agree on the message they're signing in the first place. Therefore, OP_ANNEX should be soft-forked out, reserved until we can find a way of using it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T18:05:57.339361+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Vaulting (Was: Automatically reverting (&#34;transitory&#34;) soft forks)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2022-04-23 18:24:01
+            <br><i>Published on: 2022-04-23T18:24:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Vaulting-Was-Automatically-reverting-transitory-soft-forks-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020299.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses concerns related to the security assumptions of CTV-based vaults. The author suggests that if an attacker steals the hot key, they can wait for the user to unvault their funds and then race or outspend the user's transaction with their own. This is what is expected to happen in the dark forest. The security assumption of CTV-based vaults is that one must not withdraw more than their hot wallet risk tolerance. However, this attack does not make the situation any worse than simply stealing the hot wallet key immediately after a withdrawal. The drawback of this attack is that if the hot wallet key is stolen, all CTV outputs must be rotated, and CTV outputs must never be larger than the hot wallet risk tolerance amount. These limitations are frustrating but not security limitations. Additionally, there are issues related to fee management that would likely benefit from a less constrained design for covenants. The author notes that they have always been in favor of a less constrained covenant design for ten reasons, but it is a separate topic from the current discussion.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T19:38:08.124419+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

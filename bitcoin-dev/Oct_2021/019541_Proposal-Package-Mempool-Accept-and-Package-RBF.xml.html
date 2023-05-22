@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Package Mempool Accept and Package RBF</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> darosior 2021-10-14 10:48:55
+            <br><i>Published on: 2021-10-14T10:48:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019541.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses decisions that require input from developers on whether to start with multiple-parent-1-child or 1-parent-1-child and if it is acceptable for the child not to have conflicts with mempool transactions. The writer of the email points out that package relay can be useful for better user experience of CPFP, specifically in a scenario where a wallet manages coins that can only be spent using pre-signed transactions. The pre-signed transactions are pre-signed with a fixed feerate, which may be below the mempool minimum fee at the time of broadcast. This is where multiple-parents-1-child packages come into play as they allow for batching of child-fee-paying transactions. Finally, the writer did not come up with a reason for dropping the rule regarding conflicts with mempool transactions, but individual submission can be used to replace the child and the child itself does not conflict anymore if the parent needs to be replaced.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T15:56:27.151773+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

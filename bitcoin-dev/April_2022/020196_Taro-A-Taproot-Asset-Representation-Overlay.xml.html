@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taro: A Taproot Asset Representation Overlay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2022-04-05 15:06:03
+            <br><i>Published on: 2022-04-05T15:06:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Taro-A-Taproot-Asset-Representation-Overlay.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020196.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Laolu, a Bitcoin developer, has announced the creation of a new protocol called Taro. Taro is a Taproot Asset Representation Overlay that allows for the issuance of normal and collectible assets on the main Bitcoin chain through the use of the Taproot script tree to commit extra asset structured metadata based on a hybrid merkle tree. This merkle tree combines the properties of a merkle sum tree with a sparse merkle tree, enabling easily verifiable asset supply proofs and efficient proofs of non-existence. Taro asset transfers are embedded in an overlay transaction graph that uses a chain of asset witnesses to track the transfer of assets across taproot outputs. Taro also has a scripting system that allows for programmatic unlocking and transfer of assets. In the first version, the scripting system is a recursive instance of the Bitcoin Script Taproot VM, meaning anything that can be expressed in the latest version of Script can be expressed in the Taro scripting system. Future versions of the scripting system can introduce new functionality, such as covenants or other updates.The Taro design supports integration with the Lightning Network (BOLTs) as the scripting system can emulate the existing HTLC structure, allowing for multi-hop transfers of Taro assets. The protocol recognizes "assets at the edges," meaning only the sender and receiver need to know about and validate the assets. This deployment route eliminates the need to build an entirely new network and liquidity for each asset. Instead, all asset transfers will utilize the Bitcoin backbone of the Lightning Network, generating more routing revenue for the Bitcoin backbone nodes.The set of BIPs for Taro is a multi-part suite that includes the main Taro protocol, the MS-SMT structure, the Taro VM, the Taro address format, the Taro Universe concept, and the Taro flat file proof format. All of these BIPs can be found on the GitHub page.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T18:45:34.077414+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

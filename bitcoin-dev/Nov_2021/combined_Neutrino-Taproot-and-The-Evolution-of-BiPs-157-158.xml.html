@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Neutrino, Taproot, and The Evolution of BiPs 157/158 <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2021/019589_Neutrino-Taproot-and-The-Evolution-of-BiPs-157-158.xml.html">Neutrino, Taproot, and The Evolution of BiPs 157/158</a>
+                        <b>Olaoluwa Osuntokun 2021-11-04 22:01:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2021/019590_Neutrino-Taproot-and-The-Evolution-of-BiPs-157-158.xml.html">Neutrino, Taproot, and The Evolution of BiPs 157/158</a>
+                        <b>Olaoluwa Osuntokun 2021-11-04 22:07:52</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019589.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-11-04T22:01:13+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>On the Neutrino testnet, a faulty heuristic in the client code caused nodes to reject a filter as invalid due to a taproot input transaction. Although clients can ensure that all the pkScripts of outputs have been inserted, they cannot do the same for inputs, which is why the heuristic was added in the client code. This issue was mitigated by a patch that has been put in place. The problematic heuristic has also been removed in a pull request that will be included in lnd 0.14 and has been tagged with neutrino 0.13. To ensure smooth handling of the Taproot upgrade on mainnet, users can upgrade to 0.14 (when released) or apply a small patch. It is recommended to extend the filter header guides alongside these upgrades.BIP 158/157 may evolve post-taproot by creating new segwit-only filters with re-parameterized fp rates, creating filters that include witness data to allow matching on internal/external keys, adding a new protocol extension to btcd to allow nodes to fetch block undo data, and making further progress towards a proposal that allows filters to be committed either as a soft-fork or a "velvet fork."</p>
+        <hr>
+        <p><i>Updated on: 2023-05-22T16:15:59.713276+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
