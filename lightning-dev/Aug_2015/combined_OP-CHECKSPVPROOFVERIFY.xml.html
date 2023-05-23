@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_CHECKSPVPROOFVERIFY <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2015/000090_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Eric Lombrozo 2015-08-01 04:29:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2015/000097_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Rusty Russell 2015-08-01 11:01:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000082_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Rusty Russell 2015-07-30 01:19:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000085_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Eric Lombrozo 2015-07-30 06:38:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000080_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Eric Lombrozo 2015-07-29 22:28:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2015/000098_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Eric Lombrozo 2015-08-01 11:04:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000076_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Eric Lombrozo 2015-07-29 09:08:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000078_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Joseph Poon 2015-07-29 19:54:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000081_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Eric Lombrozo 2015-07-29 22:46:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000088_OP-CHECKSPVPROOFVERIFY.xml.html">OP_CHECKSPVPROOFVERIFY</a>
+                        <b>Eric Lombrozo 2015-07-30 12:18:42</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000090.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2015-08-01T04:29:24+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin developer Eric Lombrozo has proposed a new idea to incentivize nodes to serve Simplified Payment Verification (SPV) clients. The proposal involves outsourcing SPV proofs from one node to another, creating a more concrete and quantifiable incentive system. The use of OP_CHECKSPVPROOFVERIFY in the Lightning Network was discussed to allow outsourced SPV proofs over LN but avoiding its use on the blockchain itself.To implement this proposal, Eric provided a script for the ProverSig + VerifierRevocation || ProverSig + SPV proof || VerifierSig + timeout output. Commitment transactions are created between two parties, Prover and Verifier, who then need to negotiate how they split the risk since sending the proof on the blockchain is expensive. After creating the commitment transactions, they would exchange revocations and negotiate settlement transactions.However, Rusty Russell suggested that a merkle tree calculation could be open-coded using OP_CAT and OP_HASH256 instead of a new OP. Eric Lombrozo was not entirely clear on how to use OP_CAT. It should also be noted that using P2SH has its limitations due to the disabled OP_CAT and the transaction length limit.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-23T18:50:20.244653+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A state machine.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jasper Hugunin 2015-09-02 19:36:44
+            <br><i>Published on: 2015-09-02T19:36:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2015/combined_A-state-machine-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000181.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jasper proposed an alternative to the high/low priority problem where Alice and Bob agree on a new update that combines both updates. The protocol can only handle one update at a time but the update doesn't have to happen one-way. This would be similar to TCP Simultaneous Open/Close. So Alice and Bob would exchange PKT_SIMULTANEOUS_ACCEPT containing signatures, and then exchange PKT_SIMULTANEOUS_COMPLETE containing revoking pre-images.  Jasper thinks that this avoids either deadlock or livelock and does not require duplicating states for priority. Rusty Russell suggested allowing CMD_CLOSE at any time except when already closing. He also fixed a bug with declining HTLCs and updated the tester to track htlcs. Rusty Russell also discussed the difficulty in knowing which bugs will lose money and which can be ignored. They also discussed adding a current time field to UPDATE_ADD_HTLC so clock sync problems can be defused earlier and the possibility of making time sync part of the p2p protocol.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T19:38:30.423172+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Breach of contract?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joseph Poon 2015-07-26 14:57:53
+            <br><i>Published on: 2015-07-26T14:57:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2015/combined_Breach-of-contract-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000065.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Christopher Jamthagen expresses concern over the design of HTLCs and how they can be invalidated. According to a whitepaper, if three days have elapsed, the clearing process is invalidated and both parties must not attempt to settle or claim payment after three days. However, there is nothing stopping Bob from taking the HTLC output when Alice is forced to broadcast the commitment transaction, even if it is supposed to be null and void. Joseph Poon responds by explaining that the design of HTLCs has a contestation period built-in where the party broadcasting the Commitment Transaction must wait before the payment goes back to themselves. He also mentions the implications of Rusty's dual anchor/funding version which requires both OP_CLTV and OP_CSV. Furthermore, using OP_CSV for HTLC without a transaction chained two levels deep will require greater time delay between each hop in the payment to account for the relative time it takes to prove whether the Commitment has been revoked. This increased time creates a tradeoff where each channel participant (for every hop) must watch the blockchain at a more frequent interval as the OP_CSV value is linked to the payment. On the other hand, with a SIGHASH_NOINPUT (or similar) model having transactions two-deep, this contestation period can be independent of the actual HTLC payments. In effect, the first transaction spending from the HTLC validates whether the preimages are known, the second is whether the Commitment itself is invalidated. With separated anchor/funding, those two steps are combined inside the Commitment Transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T18:41:22.529667+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

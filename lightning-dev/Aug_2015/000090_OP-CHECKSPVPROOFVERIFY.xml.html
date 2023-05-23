@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_CHECKSPVPROOFVERIFY</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2015-08-01 04:29:24
+            <br><i>Published on: 2015-08-01T04:29:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2015/combined_OP-CHECKSPVPROOFVERIFY.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000090.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses minor script corrections, with a focus on creating commitment transactions and scripts for Prover and Verifier parties. The Prover wants to receive one currency unit from the Verifier for an SPV proof, but due to its high cost, they need to negotiate how to split the risk. They create commitment transactions with different signatures, timeouts, and revocation possibilities. A script for [ProverSig + VerifierRevocation || ProverSig + SPV proof || VerifierSig + timeout] is introduced, which uses OP_IF and OP_ELSE statements. It checks if the hash of the public key equals a given value, then verifies the signature. Alternatively, it drops three stack items and verifies the signature or checks the locktime. To redeem this output using the SPV proof, the Prover uses OP_CHECKSPVPROOFVERIFY OP_DROP.Once the commitment transactions are created, the Verifier receives the SPV proof, and both parties negotiate settlement transactions and exchange revocations. Eric Lombrozo suggests using the OP_CHECKSPVPROOFVERIFY OP_DROP script command to incentivize nodes to construct SPV proofs, but Rusty Russell notes that OP_CAT is disabled, and the txlen limit may pose a problem.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T18:46:24.368209+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

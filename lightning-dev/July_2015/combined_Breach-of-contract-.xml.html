@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Breach of contract? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000064_Breach-of-contract-.xml.html">Breach of contract?</a>
+                        <b>Christopher Jamthagen 2015-07-25 20:59:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000067_Breach-of-contract-.xml.html">Breach of contract?</a>
+                        <b>Rusty Russell 2015-07-27 01:50:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000073_Breach-of-contract-.xml.html">Breach of contract?</a>
+                        <b>Rusty Russell 2015-07-28 01:38:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000077_Breach-of-contract-.xml.html">Breach of contract?</a>
+                        <b>Joseph Poon 2015-07-29 19:50:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000083_Breach-of-contract-.xml.html">Breach of contract?</a>
+                        <b>Rusty Russell 2015-07-30 02:33:21</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000065_Breach-of-contract-.xml.html">Breach of contract?</a>
+                        <b>Joseph Poon 2015-07-26 14:57:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2015/000070_Breach-of-contract-.xml.html">Breach of contract?</a>
+                        <b>Joseph Poon 2015-07-27 19:37:57</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000064.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2015-07-25T20:59:16+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In July 2015, Rusty Russell, Christopher Jamthagen, and Joseph Poon had a conversation about Hashed Time-Locked Contracts (HTLCs) used for Lightning Network payments. The discussion revolved around the Lightning Network's script and its implications. Christopher Jamthagen raised concerns about the receiver of the HTLC not being able to use the pre-image to spend the output. Joseph Poon explained that outputs redeemable by A must be delayed and there needs to be some contestation period for one's own HTLC when one is redeeming funds.Rusty Russell agreed but suggested that an additional delay may be over-engineering. The scripts in version 0.1 were discussed, and Poon pointed out that they were missing a delay and that requirements for HTLCs need to be OP_CSV delayed. However, there was concern that constantly watching the blockchain would be necessary, which could lead to Bob losing money if he isn't paying attention, and doubling the HTLC timeouts has some implications.It was also noted that doubling the HTLC timeouts could result in higher fees but might bias towards less graph centralization. The design of HTLCs has a contestation period built-in where the party that broadcasts the commitment transaction must wait before the payment goes back to them. Theft of the HTLC via broadcast of expired commitments can be mitigated by having some funds in reserve available on one's channel balance to ensure honesty.Finally, Russell clarified that HTLC-TIMEOUT is an absolute time/block, not relative. Therefore, OP_CHECKLOCKTIMEVERIFY is a no-op for old HTLCs, and if A broadcasts, they need to wait to spend. This model is a good stop-gap before a real malleability fix.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-23T18:44:11.176419+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

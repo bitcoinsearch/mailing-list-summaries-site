@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment Re-routing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-06-27 05:30:53
+            <br><i>Published on: 2015-06-27T05:30:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2015/combined_Payment-Re-routing.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-June/000008.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network is a payment channel that allows transactions to be made instantly and cheaply. However, questions have been raised about security when rerouting payments. For example, if A wants to make a payment to E but finds a payment channel route through A->B->C->E, but C becomes unresponsive before the full payment has been made, A may want to re-route the payment to avoid delays. If A re-routes the rest of the payments through A->B->D->E, can't C reveal the pre-image to B, who then reveals it to A? This would effectively steal an extra 0.01 BTC from Alice and give it to E, and C and E could have been colluding to do this, splitting the profits.To solve this problem, each message needs a separate preimage. The simplest method is for E to provide A with (say) 100 hashes to use as she wishes. However, in practice, producing 100 preimages is pretty easy using crypto rather than hashes. For example, hashing a per-payment secret + counter.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T17:53:22.761714+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

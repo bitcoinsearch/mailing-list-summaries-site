@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Loop attack with onion routing..</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-08-21 02:22:54
+            <br><i>Published on: 2015-08-21T02:22:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2015/combined_Loop-attack-with-onion-routing-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000143.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Joseph Poon and Rusty Russell regarding a potential attack on the network, they discuss a feature that could be defined as an attack. The issue arises when a payment is routed back to another channel owned by the same node, and R is refused to be disclosed. This forces all nodes in the path to lock up N bitcoins, making good transactions take longer and becoming more diffuse. To mitigate this risk, intermediate nodes should offload their HTLCs to third-party channel liquidity providers. Mallory may attempt to tie up the AliceBob link, so Carol can take the HTLC to be Alice->Carol->Bob, clearing the AliceBob link. Rusty suggests peeling the onion for slow payments to produce disincentive, which could potentially leak less information. If unacceptable risk levels occur, onion protocol deprecation will ensue, leading to no financial privacy. The trade-offs of having both options available create emergent cartelization incentives. A possible solution to all this is funds sent to each participant with multiple signatures for different times of disclosure of R. AJ assumes similar per-hop contracts but Rusty prefers to simplify the first attempt. It makes sense to begin with a "per hop maxdelay" before closing channels and sending them back if they fail to complete or routefail.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T19:35:16.031668+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

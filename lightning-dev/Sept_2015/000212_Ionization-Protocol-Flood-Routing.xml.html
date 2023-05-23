@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ionization Protocol: Flood Routing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Amos Bairn 2015-09-23 04:28:06
+            <br><i>Published on: 2015-09-23T04:28:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2015/combined_Ionization-Protocol-Flood-Routing.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000212.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a mailing list conversation between Rusty Russell and Amos Bairn, they discuss a possible solution for efficient route finding while maintaining anonymity in a network. One of the problems with having the whole network use the same set of beacons at the same time is that the nodes will get overloaded. To solve this, each user can pick their own set of beacons at random, but the beacon set should be large enough so that any two users are likely to share a few. This way, all nodes can share the load evenly. The size of the beacon set needed should be something on the order of the square root of the number of nodes. Rusty suggests an alternate scheme which involves randomly choosing a dozen "beacon" nodes (using proximity to the SHA of latest block hash or something) and having everyone propagate the cheapest route to and from those nodes. To receive a payment, B picks a few beacon nodes at random and sends those routes (beacons -> B) to A. Presumably, A knows its route to all the beacon nodes and thus can choose the best. There are some details to consider such as how many beacon nodes to choose, how long before a beacon becomes active, how long before a beacon node is invalid, how to avoid fake beacons, and how to update beacon routing.Although Amos Bairn thought of a scheme for flood-based route finding that would allow efficient route finding while keeping the shape of the network hidden and giving onion-like anonymity, he realized that it had a trivial denial of service attack that could render it a non-starter.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T20:19:18.133040+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
