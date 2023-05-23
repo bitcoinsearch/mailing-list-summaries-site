@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-03-21 11:55:22
+            <br><i>Published on: 2019-03-21T11:55:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001931.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email thread, ZmnSCPxj and aj discussed different ways to enforce CLTV in Bitcoin transactions. One option is to sign with NOINPUT, NOSCRIPT, and codeseparatorpos=1 which allows binding to any prior update transaction; this option works for an update transaction spending previous update transactions. Alternatively, signing with codeseparatorpos=-1 and NOINPUT but committing to the script code and nSequence (for the CSV delay) allows binding to only that update transaction, so it works for the settlement transaction. In both options, two pubkeys, two sigs, and the taproot point reveal are required. ZmnSCPxj notes that shared keys differ in the two branches above, and if you're not committing to the script code, separate keys are necessary to ensure that any settlement transaction can't be used with any update transaction. However, if you're committing to the script code, each settlement sig is already only usable with the corresponding update tx, so there's no need to roll the keys. The update sig requires the CLTV, and one way to do that is using codeseparator to distinguish between the two cases.Aj suggests another approach where locktime is always required, i.e., OP_CHECKLOCKTIMEVERIFY OP_DROP OP_CHECKDLSVERIFY  OP_CHECKDLS and update transactions set their timelock, while settlement transactions set an absolute timelock, relative timelock via sequence, and commit to the script code. However, BIP118 doesn't have the flexibility to commit to the script code without also committing to the input transaction and scriptpubkey, making A_s_i and B_s_i key rolling necessary.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T01:58:27.561308+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

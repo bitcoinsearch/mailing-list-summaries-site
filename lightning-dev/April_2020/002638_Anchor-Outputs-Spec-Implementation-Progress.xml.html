@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Anchor Outputs Spec &amp; Implementation Progress</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2020-04-17 03:07:37
+            <br><i>Published on: 2020-04-17T03:07:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2020/combined_Anchor-Outputs-Spec-Implementation-Progress.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002638.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, Olaoluwa Osuntokun addresses concerns about the new commitments being more expensive. However, he points out that while the new default commitment weight is slightly higher, both parties are able to recover the extra anchor cost of 660 satoshis if they chose. In addition, force cases in the ideal case are only due to nodes needing to go on-chain to sweep HTLCs, so the extra bytes may be dwarfed by several HTLCs. Though the extra cost may seem large when looking at a 1 sat/byte commitment transaction, fees today in the system are on the rise.Osuntokun also discusses UTXO bloat and explains that using two anchors with their special scripts allows anyone to sweep these outputs several blocks after the commitment transaction has confirmed. This is better than re-purposing the to_remote output as an anchor, which only allows a single party in the channel to spend that output to remove its impact on the UTXO set. As for reducing a CSV delay to the to_remote party, Osuntokun suggests leaving this thread open to a comprehensive solution, as the dual anchor format is fully decoupled from the rest of the commitment. Overall, Osuntokun believes that the few hundred satoshis increase in cost for the new commitments isn't worth arguing about. He also notes that reducing the diff in such a change shouldn't be the main focus, as the vast majority of the effort is in the upgrade itself.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T03:00:22.841048+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

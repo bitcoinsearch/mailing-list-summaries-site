@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-10-01 15:59:29
+            <br><i>Published on: 2019-10-01T15:59:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002189.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A recent renewed interest in eltoo and clean abstractions for off-chain protocols has led Christian Decker to revisit the "sighash_noinput" proposal (BIP-118) and AJ's "bip-anyprevout" proposal. The open questions that remain to be addressed are general agreement on the usefulness of noinput/ anyprevoutanyscript/ anyprevout, strong support or opposition to chaperone signatures, and the same for output tagging/ explicit opt-in. AJ thinks an important open question missed from this list is whether we really understand the dangers of noinput/anyprevout-style constructions. Regarding the first 3.5 q's, there is general agreement on the usefulness of noinput/ anyprevoutanyscript/ anyprevout, weak opposition for requiring chaperone sigs, and mixed (weak) support/opposition for output tagging. AJ's current thinking is that anyprevout signatures make the address you're signing for less safe, so being able to guarantee that an address can never be signed for with an anyprevout signature is valuable. Receiving funds spent via an anyprevout signature does not involve any qualitatively new double-spending/malleability risks, and output tagging is unnecessary. AJ suggests having a public testnet with fake exchanges/merchants and scheduled reorgs to demo every weird noinput/anyprevout case anyone can think of to work out if any extra code/tagging/whatever is needed to keep those fake exchanges/merchants from losing money. It would also be good to write up the weird cases found in a wiki or paper so people can easily tell if something obvious was missed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T02:15:33.530879+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

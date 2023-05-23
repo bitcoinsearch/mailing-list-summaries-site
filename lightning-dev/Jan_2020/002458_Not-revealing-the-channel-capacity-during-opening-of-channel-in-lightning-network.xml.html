@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Not revealing the channel capacity during opening of channel in lightning network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2020-01-27 14:41:58
+            <br><i>Published on: 2020-01-27T14:41:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2020/combined_Not-revealing-the-channel-capacity-during-opening-of-channel-in-lightning-network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002458.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning-dev mailing list, participants debated whether it is necessary for nodes to have confidence in the locking of funding transactions. While proof of funds locked is currently required for DoS resistance, other methods could be used instead. Nodes need the outpoint of the funding transaction to verify that a channel announced by the nodes is actually locked on the Bitcoin mainchain. If this information is not verified, nodes can cheat others into believing that a particular transaction is confirmed when it is not. The channel capacity is broadcasted in the `channel_announcement` message in the `short_channel_id` field which includes the block number, transaction number, and vout. Even when amounts are never explicitly mentioned, the blockchain can be queried to find out the channel capacity because Bitcoin does not allow confidential transactions. Discussion also centered around whether revealing channel capacity publicly during the opening of a channel in the lightning network is necessary or poses a risk. It was suggested that not revealing the capacity publicly but providing only a range proof of the attribute could potentially make channels susceptible to channel exhaustion attack or a particular node might be targeted for node isolation attack.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T02:56:52.027345+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

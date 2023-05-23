@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-03-18 06:38:56
+            <br><i>Published on: 2019-03-18T06:38:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001917.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the possibility of using tagged outputs in taproot addresses. The idea is to add a "plus" option to the tagged output, which would allow for noinput sigs for them. The concern is how to bind update 3 to the funding tx output that is not tagged. The solution presented is having two sigs for each update tx, one with NOINPUT and a previous update tx as its input and one with SINGLE|ANYONECANPAY sig and the funding tx as input. The approach would require more storage and communication requirements, but it has three potential gains: making NOINPUT safer, giving fewer hints that you're using eltoo, and putting less data/computation load on the blockchain. Output tagging can already indicate the usage of NOINPUT, so it seems like the second benefit probably won't exist. Using a key path spend (without a script) is probably going to be cheaper on the blockchain though. However, requiring a non-NOINPUT signature seems like a better approach since it reduces a unilateral close to only being special due to the settlement tx having a relative timelock. It also reduces the number of signatures required from 1+n signatures per update today to 4+n signatures if using scriptless scripts. An alternative proposed is to add a trigger transaction that needs to be published in a unilateral case, but that'd increase the on-chain footprint. The extra latency introduced by the interactive signing protocol for muSig could also be a hit, particularly if multiparty channels with many participants are involved, rather than just two.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T01:59:24.946114+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

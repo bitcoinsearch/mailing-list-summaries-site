@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A proposal for up-front payments.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2020-02-23 09:08:01
+            <br><i>Published on: 2020-02-23T09:08:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_A-proposal-for-up-front-payments-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002561.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange between Rusty Russell and AJ proposes a new payment scheme for the Lightning Network. The proposed scheme involves increasing payments as the route extends to ensure scaling with distance, and adding a grace period to the payments to avoid gumming up the network. However, there are privacy issues associated with this approach. The proposed solution is for D to inform E that they need to pay 4msat per minute after a grace period of 65 seconds if they want to receive an HTLC. The sender, A, can choose whatever fees they like, but if they set the fee too high, it may be more likely that intermediate nodes will abort the HTLC before it reaches its destination. AJ suggests using a dynamic grace period, which requires a shorter grace period the more active HTLCs are in the system. This would prioritize more efficient routes and increase the resources needed to maintain an attack if the network is under attack. Additionally, AJ proposes that the sender-initiated upfront fee could interact nicely with the grace period. Finally, the email exchange discusses the need for a different protocol for HTLC forwarding, involving a ping-before-commit, which avoids the case where B has disconnected. In conclusion, while the proposed payment scheme has some challenges, it still appears to be worth brainstorming out.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T02:21:25.897422+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

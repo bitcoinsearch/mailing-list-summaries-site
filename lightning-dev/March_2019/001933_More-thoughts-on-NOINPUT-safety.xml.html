@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-03-22 02:58:46
+            <br><i>Published on: 2019-03-22T02:58:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001933.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent conversation regarding the use of codeseparator for enforcing timelocks in Lightning Network transactions, ZmnSCPxj suggested an alternative method of requiring locktime using OP_CHECKLOCKTIMEVERIFY and OP_DROP. He also proposed using OP_CHECKDLSVERIFY and OP_CHECKDLS for update transactions with a set timelock. Settlement transactions would have an absolute or relative timelock via sequence and commit to the script code. However, ZmnSCPxj expressed concern about the lack of OP_CSV in the settlement branch. The issue of relative timelocks was addressed by refusing to sign a settlement transaction that doesn't have the timelock set. This would make the use of OP_CSV redundant. The conversation also touched on the concept of offchain transactions and how they are affected by settlement transactions. Specifically, if an update transaction is placed on-chain, it is not immediately spendable by the corresponding settlement transaction due to BIP-68 being enforced by consensus.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T01:57:56.497380+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

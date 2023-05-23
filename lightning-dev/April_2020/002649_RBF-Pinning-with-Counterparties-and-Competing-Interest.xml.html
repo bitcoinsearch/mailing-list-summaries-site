@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2020-04-22 16:56:38
+            <br><i>Published on: 2020-04-22T16:56:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002649.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development discussion, ZmnSCPxj identified a severe issue in the current Lightning protocol. He explained that in today's Lightning protocol, a counterparty could steal funds by spending an HTLC using the preimage with a low-fee, RBF-disabled transaction if the commitment transaction was broadcasted. After a few blocks, the original sender of the HTLC could claim the HTLC from the receiver via the timeout mechanism, and then the initial receiver could get the HTLC-claiming transaction mined via some out-of-band agreement with a small miner, which would leave the intermediary party (the one who initially received the HTLC) short the HTLC value. ZmnSCPxj suggested that adding an "RBF-enabled" requirement to the `OP_CHECKSEQUENCEVERIFY` clause in the hashlock branch might be sufficient to prevent this attack. However, he also noted that adding children or parents that are not RBF-enabled could break this prevention method. Additionally, ZmnSCPxj pointed out that sheer economics, rather than RBF or relay, could cause vulnerabilities in the system. To prevent the issue, B should ensure that the HTLC-Timeout has been committed on-chain before the L+1 deadline. However, B is currently using a pre-signed HTLC-timeout, which prevents them from RBF-ing the HTLC-Timeout transaction. Therefore, ZmnSCPxj suggested allowing B to add fees to HTLC-Timeout by adding an RBF carve-out output or using `SIGHASH_NOINPUT`. This would enable B to exponentially increase the fee as L+1 approaches and prevent C from stealing the HTLC value. However, this only delays the bidding war. C can still bribe a miner to censor the confirmation of HTLC-Timeout between L and L+1. Thus, letting B bump the fee on HTLC-Timeout is precisely the mechanism needed to set up a bidding war between C requesting miners to censor and B requesting miners to confirm. ZmnSCPxj also suggested that Decker-Russell-Osuntokun could sidestep this issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T03:27:50.324564+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

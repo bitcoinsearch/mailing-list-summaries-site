@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2019-10-25 17:30:41
+            <br><i>Published on: 2019-10-25T17:30:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002248.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the possibility of relaxing the Carve-Out rule for on-chain contracts, which currently requires at least one non-CSV output per party. Johan Torås Halseth suggests changing the rule to allow for more robust CPFP (Child-Pays-For-Parent) of Lightning commitment transactions by requiring only that the last transaction in a package of dependent transactions have no more than one unconfirmed parent. Matt Corallo questions how this would change anything since the current rule already allows for adding inputs/outputs as long as there is an output available without any descendants. Rusty Russell proposes a simplified RBF (Replace-By-Fee) where transactions can be replaced if the new transaction has a higher feerate and is in the first 4Msipa of the mempool, and the old transaction isn't. The discussion also touches on potential spamming issues with the proposed changes and the need for marking unilateral close transactions. There are concerns about the potential impact on the mempool acceptance code in bitcoind, but it's noted that evicting transactions based on feerate when the max mempool size is met should handle this.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T01:42:50.718704+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
