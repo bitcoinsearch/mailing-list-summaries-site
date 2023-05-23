@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Maintenance service for Lightning Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kumaigorodskiy Anton 2016-03-25 21:21:20
+            <br><i>Published on: 2016-03-25T21:21:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2016/combined_Maintenance-service-for-Lightning-Network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000502.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author is interested in adding Lightning Network (LN) to their Bitcoin wallet and has been contemplating how it could work for end users. They explain that a payment sender needs at least three pieces of "core" data before interacting with LN, including the required hash of R-value, a list of "full node" URLs where the receiver currently has open channels, and a list of receiver IDs for each "full node." Additionally, the sender may want optional metadata such as name, picture, and address. To avoid confusion, the "Lightning address" and QR-code approach won't work as R-value should be unique. The "core" data should come directly from the receiver's device, either via the internet or locally through Bluetooth, WiFiP2P, NFC, etc. The author notes that the sender needs a way to verify that the receiver is who they say they are, which means resistance to MITM and identity theft, plus some kind of "name authority" to validate metadata. Therefore, LN users should be able to generate stable identities on their devices using EC25519 keys because of their small size and applicability for both encryption and signing. The author suggests that there has to be a service parallel to LN that can transfer "core" data in encrypted form (easy because identities are pubKeys), perhaps store requests for some time if the receiver's device is offline, optionally act as a third-party watcher for broadcasted commitment transactions, and finally, act as "name authority" for users who supplied some metadata along with their public keys. In conclusion, the author asks if their ideas make sense or if they are off somewhere for some reason.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:15:27.443367+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

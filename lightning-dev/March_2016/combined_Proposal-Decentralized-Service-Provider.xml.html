@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Decentralized Service Provider <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/March_2016/000488_Proposal-Decentralized-Service-Provider.xml.html">Proposal: Decentralized Service Provider</a>
+                        <b>Samuel Kremser 2016-03-11 08:49:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2016/000492_Proposal-Decentralized-Service-Provider.xml.html">Proposal: Decentralized Service Provider</a>
+                        <b>Rusty Russell 2016-03-16 02:40:26</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000488.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2016-03-11T08:49:49+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Samuel Kremser proposed a Decentralized Service Provider (DSP) to grant end users access to the Lightning Network without validating the Blockchain or worrying about closing times of channels. End users would enjoy the benefit of having much larger channels which allows them to send and receive more money, since all users of one DSP would share their channel(s). Each DSP consists of several entities that manage Bitcoin deposits and withdrawals, the Lightning Network Channel(s), and communication with end users and the Lightning Network in a collaborative way. Deposit addresses for the DSP are multi-sig addresses, so that a majority of a DSP's entities is required to sign withdrawals. In case both sides of the Lighting Network channel are DSPs, the majority of both DSP's entities need to sign.Due to this multi-sig construction, a single entity of a DSP couldn't steal the end users Bitcoins. It would actually require the majority of entities of one DSP to collaborate to steal the end users money. DSP's entities communicate with signed messages with their end users and with each other, so everything is provable. Whenever some entity of a DSP is acting malicious, the other entities of that DSP can decide to exclude this entity from this DSP by transferring control of the managed Bitcoins and channels to some new multi-sig address(es)/channel(s) that doesn't require the malicious acting entity's signature. Another advantage of DSP's would be that fewer channels are required, since not every end user needs his own channel. Thus DSPs could save even more space on the Blockchain than Lightning alone.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-23T23:08:37.986874+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

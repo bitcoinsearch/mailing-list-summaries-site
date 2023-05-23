@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Protocol for multiple in-flight updates.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-02-02 01:18:17
+            <br><i>Published on: 2016-02-02T01:18:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_Protocol-for-multiple-in-flight-updates-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000421.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context presents a strawman protocol that addresses the need for a more sophisticated approach to overlapping requests, particularly when pipelining requests. The protocol involves each side maintaining two sets of proposals, one for adding to their htlcs and another for removing from their htlcs. To add an HTLC, one sends a proposal, which can be declined or accepted. If accepted, it is added to the proposals. On the other hand, if one wants to close an HTLC, they send fulfill/timeout/fail, which cannot be declined, and add to their proposals.To simplify the protocol, one always tells the other side what the next revocation hash will be as part of finalizing a commit transaction. If there are no outstanding add requests, one can send commit messages, which include signature of current state, including proposals. If one receives commit_accept with signature and their old revocation preimage, it commits proposals and sends update_commit_complete with old revocation preimage. However, if it receives an update_commit message (conflict!), it commits proposals to the current state, re-sends update_commit with the current state plus proposals or commits proposals to the current state and sends update_commit_accept.Packets involved in the protocol include update_add_htlc, update_decline_htlc, update_accept_htlc, update_fulfill_htlc, update_timeout_htlc, update_fail_htlc, update_commit, update_commit_accept, and update_commit_complete. The author acknowledges that the protocol is complex and welcomes suggestions for improvement.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:27:16.827321+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

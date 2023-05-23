@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Probing final receiver with refund timeout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-03-22 01:14:15
+            <br><i>Published on: 2016-03-22T01:14:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2016/combined_Probing-final-receiver-with-refund-timeout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000499.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mats Jerratsch proposes a proposal for the Lightning Network. The proposal consists of three steps. Firstly, each node publishes its MIN_TIMEOUT. Secondly, the payer sums the MIN_TIMEOUT to the payee and adds some random value (keeping it under the max value allowed by protocol) to give the initial HTLC timeout. Finally, the payer puts the 'expected_timeout' in each layer of the onion by subtracting the last hops' MIN_TIMEOUT from the initial timeout. In an example provided by Mats Jerratsch, say maximum allowed timeout is 20 * 12 hours, and route is: A (12 hours) -> B (6 hours) -> C (6 hours) -> D (4 hours). Initial timeout has to be at least 12+6+6+4 == 28 hours, plus some padding for transmission delays, say 29 hours. It picks a random timeout between 29 and 240 hours, say now+100 hours, and onion looks like: [A: now+100 [B: now+88 [C: now+82 [D: now+76]]]]. Mats Jerratsch suggests to use MIN_TIMEOUT as the minimum time deducted each hop and add some randomness into it. Two values are needed in the onion object: (1) the value expected to receive and (2) the value used for the next hop (and therefore the (1) value of the next hop). This can be saved in a less redundant way. Rusty asks if the randomness adds anything useful and Mats Jerratsch suggests he needs another coffee to see it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:38:43.408979+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
