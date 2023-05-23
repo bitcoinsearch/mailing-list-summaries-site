@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH v3] daemon: encrypted communication (version 3)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-10-27 19:48:52
+            <br><i>Published on: 2015-10-27T19:48:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2015/combined_-PATCH-v3-daemon-encrypted-communication-version-3-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000299.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the encryption of packets in a protocol, Mats Jerratsch suggests that the 'totlen' field may not be necessary as replay protection is already provided by AES-CTR. The idea behind 'totlen' was to provide replay protection by keeping track of the total data transmitted and comparing it with the value sent from the other party. However, as AES-CTR has a dedicated counter in the IV that keeps track of all messages in each direction, replayed messages are unable to be decrypted because the IV is incorrect. While it's true that 'totlen' is not required for replay protection, the protocol still requires some level of replay for robustness when nodes crash. Currently, there's a FIXME in the code for this case. Although combining the counter and length may be overkill, Rusty thought it was a cute idea.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:15:25.370273+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

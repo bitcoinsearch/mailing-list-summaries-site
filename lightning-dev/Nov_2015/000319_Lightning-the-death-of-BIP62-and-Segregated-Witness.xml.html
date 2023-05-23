@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning, the death of BIP62, and Segregated Witness</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tadge Dryja 2015-11-19 19:12:24
+            <br><i>Published on: 2015-11-19T19:12:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2015/combined_Lightning-the-death-of-BIP62-and-Segregated-Witness.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000319.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network, a proposed implementation of micropayment channels to scale Bitcoin transactions, requires an upgrade to the current protocol for reliable spending from unconfirmed transactions. While BIP62 addresses many vectors for txid malleability, it is not helpful in the context of lightning channel creation since ECDSA sigs are inherently malleable. For this purpose, sighash_noinput can provide a solution as input txids are not signed, and if they change, the spending transaction can be modified while leaving counterparty signatures intact. A new "testnet-L" is being planned to test malleability mitigation out. The soft-fork plan involves having the scriptPubKey as just the 20-byte hash of the redeem script and the scriptSig of the spending input empty, with the actual scriptSig, containing the redeem script and signatures, contained in a separate Merkle tree committed elsewhere in the block. Meanwhile, the hardfork variant involves sticking the signatures in another parallel merkle tree, allowing for the validation of everything else without downloading the signatures.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:37:15.962678+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

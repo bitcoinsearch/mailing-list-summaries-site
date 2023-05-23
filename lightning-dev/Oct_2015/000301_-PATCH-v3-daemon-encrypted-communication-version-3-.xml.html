@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH v3] daemon: encrypted communication (version 3)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-10-27 20:40:47
+            <br><i>Published on: 2015-10-27T20:40:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2015/combined_-PATCH-v3-daemon-encrypted-communication-version-3-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000301.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell, a developer, explains in an email how unknown protobuf fields are handled in the protocol. The even numbered fields are required and must be understood by all implementations. If they are not, the implementation should abort. On the other hand, odd numbered fields are optional and can be ignored by existing implementations. Rusty also suggests using protobuf field numbers to deliberately break backward compatibility in future versions of the protocol. For example, adding a new field for non-bitcoin transactions would require understanding it, and thus be an even numbered field. In contrast, an optional new field would be an odd numbered field. An analogous idea is OpenPGP’s “critical bit” which indicates that if the software doesn’t understand the packet, it should consider the signature invalid.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:14:34.717216+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

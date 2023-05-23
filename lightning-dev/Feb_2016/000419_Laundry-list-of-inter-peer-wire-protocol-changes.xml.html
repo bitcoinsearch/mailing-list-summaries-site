@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Laundry list of inter-peer wire protocol changes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Fabrice Drouin 2016-02-01 16:18:21
+            <br><i>Published on: 2016-02-01T16:18:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_Laundry-list-of-inter-peer-wire-protocol-changes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000419.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On January 27th, 2016, Rusty Russell shared his views on the inter-node protocol for Bitcoin's Lightning Network. He proposed to finalize the "1.0" version of the protocol, using c-lightning as the basis and highlighting differences with lnd. The email listed various changes and proposals for the protocol. One of the first points of discussion was whether to use protobufs or open-coded structures. While lnd uses its own open-coded protocol, Rusty suggested that protobufs would be a better choice due to their ease of extension with new fields. However, fixed-length blobs, such as keys, signatures, and hashes, present a challenge when using protobufs. Rusty also proposed adding a length word prefix to the initial key exchange between nodes, allowing for future extension. Additionally, he suggested implementing HTLC pipelining to increase throughput, although this would add complexity to the protocol. Lastly, Rusty addressed the use of shachain versus elkrem for generating revocation secrets. Both methods are used to minimize storage and computation for old commitment transactions, but elkrem is easier to understand. Fabrice also expressed his preference for shachain over elkrem, although he did not specify why.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:06:30.436223+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

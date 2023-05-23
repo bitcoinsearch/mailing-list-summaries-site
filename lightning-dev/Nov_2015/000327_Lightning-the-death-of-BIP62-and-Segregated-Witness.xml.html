@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning, the death of BIP62, and Segregated Witness</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-11-20 00:45:51
+            <br><i>Published on: 2015-11-20T00:45:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2015/combined_Lightning-the-death-of-BIP62-and-Segregated-Witness.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000327.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author, Tadge Dryja talks about BIP62 and its limitations in addressing vectors for txid malleability, especially third-party malleability. The context of lightning channel creation is not helpful since ECDSA signatures are inherently malleable. However, the deployable lightning model used single-sided funding to overcome this issue. To reliably spend from unconfirmed transactions, Segregated witness can be used but it requires a large hard-fork change. The proposal is to soft-fork it in. Another solution proposed by the author is sighash_noinput which can accomplish spending from unconfirmed transactions as input txids are not signed. The author hopes to start a new "testnet-L" similar to testnet3, with this sighash type so that malleability mitigation can be tested out.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:34:04.961736+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

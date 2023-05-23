@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Laundry list of inter-peer wire protocol changes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2016-01-27 07:00:53
+            <br><i>Published on: 2016-01-27T07:00:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2016/combined_Laundry-list-of-inter-peer-wire-protocol-changes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-January/000409.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses proposed changes to the Lightning Network protocol. One suggestion is the use of open-coded messaging instead of protobufs or JSON encoded objects. Another suggestion is implementing a length prefix for initial key exchange and other packets. Additionally, the author recommends designing an equivalent testnet. There is also discussion about the complexity of HTLC pipelining and the potential adaptation of protobufs.Regarding security and efficiency, the Lightning Network protocol includes several features such as exchanging two sets of version bits during the initial handshake after key setup. The protocol also uses AES/HMAC-SHA256 or Chacha20/Poly1305 for wire protocol crypto and separate encoding streams for packet lengths to make traffic analysis harder. Shachain and elkrem are tools used to generate revocation secrets to minimize storage and computation for old commitment transactions. The protocol can allow re-anchoring of channels to add or remove funds, and multi-sig transactions can enable escrow-style services by allowing more than one signature on commit transactions. However, there is debate over the use of R value vs. a keypair scheme to decorrelate transactions. The author encourages individuals to clone the lightning-core repository and write up their specifications for easier commit once discussion is done. Other potential areas of discussion include connection/node failures and designing for various node failure modes.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:04:28.065308+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

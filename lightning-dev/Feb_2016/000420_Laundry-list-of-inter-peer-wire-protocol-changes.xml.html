@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Laundry list of inter-peer wire protocol changes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-02-02 01:11:36
+            <br><i>Published on: 2016-02-02T01:11:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_Laundry-list-of-inter-peer-wire-protocol-changes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000420.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread, Rusty Russell is discussing the use of a binary format for encrypted messages instead of a text-based one like JSON. He suggests using protobuf as a good choice for this. However, to keep the JSON users happy, he plans on providing a binary with crypto and generated JSON interface. Rusty also discusses two changes in the protocol: length prefix for initial key exchange and HTLC pipelining. The former refers to using a length word before exchanging a 33-byte EC key for DH, which will allow extension later if needed. For the latter, lnd's protocol supports multiple in-flight HTLC negotiations, which increases throughput but adds complexity. Lightning-c uses a simple one-at-a-time scheme with alternating priority. Lastly, Rusty mentions the use of shachain vs elkrem for generating revocation secrets for old commitment txs. He likes both but prefers shachain and plans on writing a better explanation for it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:06:50.229317+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

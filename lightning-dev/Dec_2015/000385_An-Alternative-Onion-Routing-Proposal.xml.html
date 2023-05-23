@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An Alternative Onion-Routing Proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-12-15 02:30:52
+            <br><i>Published on: 2015-12-15T02:30:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2015/combined_An-Alternative-Onion-Routing-Proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-December/000385.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Olaoluwa Osuntokun explains Sphinx, a protocol for onion routing with extremely small mix-headers. If we assume a maximum diameter of 20 hops and a 16-byte MAC, then a full onion blob weighs in at only 705 bytes, which is four times smaller than the current proposal. Alice computes all the blinding factors and shared secrets upfront to create the mix-header for each hop using the derived hop shared secret to derive subsequent decryption and MAC keys. The formula for computing the size of a mix header for a given hop count and security parameter is (ignoring the final message size): p + (2r + 2)s, where p = public key size (in bytes for DH each hop), r = the max number of hops, and s = symmetric key size (in bytes). The original version of Sphinx was designed with anonymous mailing in mind, so the final mix-header to the destination node includes a final destination email-address (k-bits), and an Identifier (k-bits) used to generate reply messages back to the sender. If we remove these from the mix-net, we save 2k-bits arriving at a new formula to compute the mix-header size: p + (2rs). With this size reduction, the base64 encoding of a mix-header for two hops can fit entirely into a tweet. Olaoluwa Osuntokun, Tadge Dryja, and Joseph Poon are planning on publicly releasing their in-progress implementation of Lightning at the end of December.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:55:28.522200+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>How to exchange of Revocation preimage atomically ?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tadge Dryja 2015-11-24 03:14:16
+            <br><i>Published on: 2015-11-24T03:14:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2015/combined_How-to-exchange-of-Revocation-preimage-atomically-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000335.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the context, Nicolas Dorier asked about a potential attack in the Lightning Network where both parties must revoke their previous transaction states and share their revocations but someone has to go first. Tadge replied that there's not really an attack since every update of a channel state has an initiator. All the payments are "push" payments; if Alice wants to allocate more to Bob, she initiates, and if Bob wants to allocate more to Alice, he initiates. With revocations, the user initiating the channel state change goes first. It is not atomic so the payer goes first. In the case where Alice sends more coin to Bob, Alice signs new state, sends half signed tx to Bob. Bob signs new state, sends half signed tx to Alice. Alice revokes old state by sending preimage to Bob. Bob revokes old state by sending preimage to Alice. If Bob fails to perform the last step, the payment can be considered to not have gone through. But Bob doesn't have much motivation to fail there. He can leave the channel in an indeterminate state by failing to revoke with Alice, but that indeterminate state is worse for him than a fully determined state where he has more money.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:41:04.788702+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
