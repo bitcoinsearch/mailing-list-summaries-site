@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On mempool policy consistency <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2022/021141_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Anthony Towns 2022-11-02 03:07:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021135_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Suhas Daftuar 2022-10-31 13:02:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021125_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Suhas Daftuar 2022-10-27 17:35:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021116_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Anthony Towns 2022-10-26 23:52:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021133_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Anthony Towns 2022-10-30 02:40:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021132_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Anthony Towns 2022-10-30 02:24:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021131_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Anthony Towns 2022-10-30 01:02:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021124_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Anthony Towns 2022-10-27 17:21:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2022/021123_On-mempool-policy-consistency.xml.html">On mempool policy consistency</a>
+                        <b>Anthony Towns 2022-10-27 15:37:27</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021141.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2022-11-02T03:07:45+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin Core's latest release candidate has sparked a debate on whether to enable full replace-by-fee (RBF) on the network. The current BIP 125 regime allows users to opt-in to RBF, and enabling full RBF would only be beneficial if RBF users were still denied the benefits of RBF due to the existence of other transactions that don't opt-in. Some argue that miners should have the ability to change the code in meaningful ways, while others believe that developers and node operators do not need to support every use case that some individual might find rational at some point in time.The article suggests that what multiparty protocols need is some sort of "maximal RBF" network policy, which guarantees that a transaction that should be desirable for a miner to mine would always get to a miner and be considered for inclusion in a block, no matter what the state of node's mempools on the network. There are limitations to RBF as we know it today. Offering the option of non-replacement signaling may give useful information to the network or recipient for how to interact with such a transaction. Predicting user behavior in this way is beyond the scope of what protocol developers can do, and instead, the article suggests adding non-interfering use cases to what the network supports.Suhas Daftuar argues against enabling users to disable policy restrictions on v3 transactions, claiming that allowing for multiple descendant v3 transactions would harm the integrity of the system by making unenforceable promises and giving too much power to the recipient. He believes that user choice should be respected but acknowledges that if users are relying on v3's policy restrictions for security, then this is an unstable model that will eventually get broken.The recent proposal to deprecate opt-in RBF in favor of full-RBF has raised concerns about the differences between node policies supported by different nodes running core. Experts believe that driving competent design rather than lazy first thing that works is necessary, especially when it comes to neutral technical criteria like the amount of network-irrelevant data stuffed in transactions. It remains unclear whether a non-negligible amount of hashpower intends to use priority in their transaction selection. If a significant proportion does, then it makes sense to support disparate use cases rather than trying to break someone else's use case. The recent proposal will set a precedent for Bitcoin Core to differentiate its mempool policies.The debate regarding the Full RBF option on Bitcoin Core's GitHub repository has sparked a discussion about relay/mempool policy. While some developers argue for more customizable policy options, others believe in designing a single policy that works for everyone and the ecosystem as a whole. The decision on how to proceed with Full RBF will have significant implications for how Bitcoin Core approaches relay/mempool policy going forward. Balancing flexibility and standardization in mempool policies is essential.Individuals are discussing having different policy rules for Bitcoin nodes, with some suggesting an overlay network that follows the same policy rules as regular Bitcoin nodes. On the other hand, others believe that a one-size-fits-all approach to policy rules is better for achieving decentralization/censorship-resistance, privacy, and efficiency. In a recent email exchange on the Lightning Development mailing list, participants discussed the controversy surrounding Replace-by-Fee (RBF) in Bitcoin. Some believe that opt-in RBF isn't enough to prevent malicious double-spending, while others believe the controversy surrounding RBF is unnecessary and has been blown out of proportion. The discussion also touched on other controversial issues like data carriers, zeroconf, and more OP_RETURN data bloats. The discussion revolves around allowing transactions to propagate through the Lightning Network node, which may help prevent pinning attacks and improve compact block reconstruction and set reconstruction with erlay. However, it may increase centralization pressure on mining and pose privacy concerns.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-22T22:41:18.729623+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

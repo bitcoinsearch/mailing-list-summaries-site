@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>What has the Taproot Annex ever done for us ?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-10-10 06:11:47
+            <br><i>Published on: 2022-10-10T06:11:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020991.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Recent developments in Eltoo Lightning channels have suggested using the Taproot annex as a transaction endpoint to store specific protocol payloads. However, some use-cases, such as SIGHASH_GROUP/SIGHASH_BUNDLE, require an extension of transaction fields beyond the nSequence field's 32 bits of space. The Taproot soft fork introduced the annex, a tagged element within any SegWit v1 spends, reserved for future extensions. This proposal introduces a Type-Length-Value format for the annex field, which is backward-compatible and easy to parse.The proposal seeks feedback on the TLV format's interesting direction and suggests more advanced design questions concerning policy/consensus rules to prevent DoS attacks. The annex field could be accessible to Script programmers through PUSH_ANNEX_RECORD.Several potential use-cases could be served by the annex, such as per-input lock-time, commitment to historical block hash, groups of inputs/outputs, and vectors of scriptPubkeys/amounts. These are mostly whiteboard ideas, and further research and development work is needed before the annex can be considered ready for activation.The proposed Type-Length-Value format for the annex field could harmonize its usage by applications only leveraging policy-only enforcement of the field without having ulterior consensus validation nullifying or interfering with its use. Interested parties can find a WIP implementation and a BIP available on Github.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:31:00.985890+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

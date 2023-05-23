@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Draft: Revocable Proof-of-Burn Transaction Template</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Велеслав 2022-08-25 19:24:16
+            <br><i>Published on: 2022-08-25T19:24:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020896.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Veleslav has proposed a new Bitcoin Improvement Proposal (BIP) for creating revocable proof-of-burn transactions. The proposal aims to standardize RPoB transactions, making them consistent, efficient, reliable, and interoperable. This would be achieved using a new transaction version number, which will allow future extensions. The proposal integrates bitcoin proof-of-burn with a revocation mechanic, critical for many applications. The BIP proposes specifying a taproot public key in the op_return payload and an output for revocation to satisfy requirements. It also considers operating under SPV assumptions, ease of implementation, and future extendability.The proposed RPoB transaction involves burning bitcoins by sending them to an output that is provably unspendable, demonstrating a commitment to the network. The BIP specifies several requirements for RPoB transactions, including the use of a new transaction version, hash puzzle for revocation, and a signature to prevent replay attacks. Additionally, the revocation output must be of zero value, and the public key script must be a standard P2TW output.RPoB transactions consume block space but provide a secondary proof-of-burn that takes advantage of the limited and contested block space. The proposal increases the demand for the blockchain and transaction fees, critical for the long-term health of the network. The proposed RPoB transaction has no compatibility issues with existing structures, making it a suitable application layer structure without any preexisting deployment.Appendix 1 discusses alternatives to blockchain-based proof-of-burn, such as proof-of-work and proof-of-payment. Appendix 2 highlights how using a blockchain allows for trust calculations transferring proof-of-burn into a "default trust" value, making networks resistant to distributed denial of service attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:09:24.406958+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

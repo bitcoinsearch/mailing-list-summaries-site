@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A method for BIP322 signing delegation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ali Sherief 2022-08-14 04:25:33
+            <br><i>Published on: 2022-08-14T04:25:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020853.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to solve the delegation problem in BIP322. This solution is built on Jeremy Rubin's transaction delegation post and allows a person to delegate signing to another person. This delegation can be useful for various purposes such as Lightning Network, CoinJoin, Mixers, and Silent Payments. The delegation works by signing a preliminary transaction with specific inputs and outputs. The signed message includes the Message, Address, and Signature. BIP322 specifies that the signature is just the raw transaction format of "to_sign". The address used can represent a kind of company; it can represent a channel, a coinjoin, or a silent payment. Bech32 is used to encode the "address" to make it look like a real address. The advantages of this scheme include privacy, arbitrary number of delegations, and delegated signatures can wrap Full and Full with UTXOs signing formats. There are no disadvantages to this scheme. The FAQ section clarifies how the delegation works, how to differentiate between non-delegated and delegated signatures, and how to verify a delegated BIP322 transaction if the address-hash is private. The proposal is cc'd to Kalle for consideration.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:00:11.086107+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

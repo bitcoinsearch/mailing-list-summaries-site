@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless Address Server – Outsourcing handing out addresses to prevent address reuse</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2022-10-02 22:48:21
+            <br><i>Published on: 2022-10-02T22:48:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020967.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Bitcoin-dev mailing list, Ruben Somsen proposed an alternative mitigation to prevent transaction replay attacks. He suggested requiring the sender to reveal their intended transaction to the server prior to receiving the address. This would not be a privacy degradation since the server could already learn this information regardless. If the transaction doesn't get sent, any subsequent attempt to reuse one of the inputs should either be temporarily blacklisted or responded to with the same address that was given out earlier.In response, Dave proposed an alternative method. Instead of maintaining a database of inputs that should be blocked or mapped to addresses, the spender should submit to the server a valid transaction paying a placeholder address and in return receive a guaranteed unique address. They can then broadcast a transaction using the same inputs to pay the guaranteed unique address. If the server doesn't see that transaction within a reasonable amount of time, it should broadcast the transaction paying the placeholder address. This makes it cost the same to them whether they use the unique address or not.Dave believes that his proposal is essentially the BIP78 payjoin protocol without any payjoining going on. BTCPay already implements BIP78, as do several wallets, and he thinks it satisfies all the design constraints described by Ruben.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:29:42.415730+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

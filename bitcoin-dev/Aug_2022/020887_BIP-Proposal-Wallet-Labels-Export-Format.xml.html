@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Wallet Labels Export Format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Craig Raw 2022-08-24 09:18:43
+            <br><i>Published on: 2022-08-24T09:18:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020887.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed BIP (Bitcoin Improvement Proposal) aims to provide a format for the export and import of labels from a wallet in a standardized way. While transferring access to funds across wallet applications has been made simple through standards such as BIP39, wallet labels remain siloed and difficult to extract despite their value, particularly in a privacy context. The proposed format is a simple two-column CSV file with the reference to a transaction, address, input or output in the first column and the label in the second column. The full text of the BIP can be found on Github. The motivation behind this proposal is to make the import and export of labels as widely accessible as possible by using the comma-separated values (CSV) format, which is widely supported by consumer, business, and scientific applications.The order in which the records appear in the CSV file is not defined, and the first line in the file is a header that should be ignored on import. The first field in the record contains a reference to the transaction, address, input or output in the wallet. This is specified as one of the following: Transaction ID (txid), Address, Input (rendered as txid), Output (rendered as txid>index or txid:index). The second field contains the label applied to the reference. Exporting applications may omit records with no labels or labels of zero length. CSV files exported should use the .csv file extension. To reduce file size while retaining wide accessibility, the CSV file may be compressed using the ZIP file format, using the .zip file extension. Importers following this standard must refuse to import .zip files encrypted with the weaker Zip 2.0 standard. The textual representation of the wallet's extended public key (as defined by BIP32, with an xpub header) should be used as the password. When importing, a naive algorithm may simply match against any reference, but it is possible to disambiguate between transactions, addresses, inputs and outputs. The proposal provides test vectors that represent a wallet label export. There is no reference implementation available at the moment. Feedback on the proposal is appreciated.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:07:31.399559+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

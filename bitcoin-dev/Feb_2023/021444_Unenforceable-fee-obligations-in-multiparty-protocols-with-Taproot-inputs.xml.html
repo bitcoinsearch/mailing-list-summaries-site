@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unenforceable fee obligations in multiparty protocols with Taproot inputs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Yuval Kogman 2023-02-07 02:49:28
+            <br><i>Published on: 2023-02-07T02:49:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2023/combined_Unenforceable-fee-obligations-in-multiparty-protocols-with-Taproot-inputs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021444.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a multiparty transaction, Mallory can unfairly extract a fee contribution from other parties by using a larger than estimated signature. This is possible because Taproot spends have variable sizes depending on the path used. To perform this attack, Mallory registers a P2TR output with a large script spend path as an input into the transaction with a fee obligation calculated based on a key spend. Once all other participants have provided signatures, Mallory can use the script spend path, which effectively steals a fee from other parties. There are several mitigations that can be implemented to prevent this type of attack. All parties could negotiate a series of transactions ahead of time at a lower feerate to establish a minimum feerate that Mallory can force. Enforcing a minimal weight for all non-witness data in the transaction before it is considered fully constructed can limit the effectiveness of the attack. In a centralized setting with BIP-322 ownership proofs, the server can reject signatures that do not exercise the same spend path as the ownership proof. Publicly verifiable protocol transcripts and ring signatures from keys used in the transaction or its transcript committing to the new proposed transaction can provide weak evidence for the honesty of the peer. These proofs can be more compelling to entities that have participated in transcripts or proximal transactions. Increasing costliness by requiring a minimum feerate for the previous transaction or a minimum confirmation age can make such attacks less lucrative. Signature ordering can also be used to require signatures from potentially exploitative inputs ahead of legacy or SegWit v0 ones, determined based on reputation or costliness.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T23:34:51.896782+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

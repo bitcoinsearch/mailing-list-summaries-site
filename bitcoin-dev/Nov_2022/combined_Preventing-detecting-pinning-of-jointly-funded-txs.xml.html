@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Preventing/detecting pinning of jointly funded txs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2022/021142_Preventing-detecting-pinning-of-jointly-funded-txs.xml.html">Preventing/detecting pinning of jointly funded txs</a>
+                        <b>Anthony Towns 2022-11-02 03:52:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2022/021171_Preventing-detecting-pinning-of-jointly-funded-txs.xml.html">Preventing/detecting pinning of jointly funded txs</a>
+                        <b>Anthony Towns 2022-11-07 11:46:28</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021142.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2022-11-02T03:52:09+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The bitcoin-dev mailing list has been discussing the issue of privacy in joint funding protocols. One solution proposed is to invest in hash power to confirm transactions within a day. Another approach relies on the assumption that most nodes and hashrate will accept a transaction if all collaborators are honest and don't create conflicting transactions. This would require querying anonymous bitcoin nodes to detect double spend races and find the transaction blocking the joint funding protocol.To improve privacy, transaction broadcasts may be made more private through Tor/i2p or Dandelion. However, there is also the risk of mempool filters that can identify peers and lead to sybil attacks. The discussion suggests deploying a distributed monitoring system for network mempools to detect conflicting spends of multi-party transactions.The discussion also focuses on the potential issues with coinjoin anonymity protocol. Assigning blame reliably among a set of trust-minimized joint funding protocol participants poses challenges. The group can be halted by two double-spends from two sybil participants. It is better to exclude cheaters and split the remainder into two groups until reaching a more reasonable group size of perhaps 10 or 20.Overall, the discussion highlights the various challenges and potential solutions for enhancing privacy and security in Bitcoin transactions, including investing in hash power, querying anonymous nodes, and using distributed monitoring systems. However, there is also a constant need for vigilance and adaptation to counter potential attacks by malicious actors.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-22T22:46:35.783679+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

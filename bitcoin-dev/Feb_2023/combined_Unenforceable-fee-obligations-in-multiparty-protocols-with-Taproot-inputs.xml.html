@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unenforceable fee obligations in multiparty protocols with Taproot inputs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2023/021460_Unenforceable-fee-obligations-in-multiparty-protocols-with-Taproot-inputs.xml.html">Unenforceable fee obligations in multiparty protocols with Taproot inputs</a>
+                        <b>Anthony Towns 2023-02-11 05:14:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2023/021462_Unenforceable-fee-obligations-in-multiparty-protocols-with-Taproot-inputs.xml.html">Unenforceable fee obligations in multiparty protocols with Taproot inputs</a>
+                        <b>Anthony Towns 2023-02-12 06:47:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2023/021444_Unenforceable-fee-obligations-in-multiparty-protocols-with-Taproot-inputs.xml.html">Unenforceable fee obligations in multiparty protocols with Taproot inputs</a>
+                        <b>Yuval Kogman 2023-02-07 02:49:28</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021460.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2023-02-11T05:14:55+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>There is a bug in Taproot that allows the same Tapleaf to be repeated multiple times in the same Taproot, potentially at different Taplevels incurring different Tapfee rates. The countermeasure is that you should always know the entire Taptree when interacting with someone's Tapspend. Fix for the bug is to sign the entire tapbranch instead of the tapleaf. Some people highlighted minor problems with the last email. In Taproot, if you want to prevent signatures migrating to another branch or within a branch, you can use the CODESEPARATOR opcode which was redisigned in Taproot for exactly this purpose. Tapleaf hash is always covered by the signature (though not in some ANYONECANPAY proposals) so you can never migrate signatures between tapbranches. Since Taproot spends have variable size which depends on the path being used, the last such input to be signed in a multiparty transaction can always use a larger than estimated signature to unfairly extract a fee contribution from the other parties to the transaction (keeping the absolute fees the same and reducing the feerate for the transaction). This effectively steals a fee from other participants. The mitigations for this include RBF, enforcing a minimal weight for all non-witness data in the transaction before the transaction is considered fully constructed, trusted coordinator, reputation, increasing costliness and signature ordering.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-22T23:35:14.069078+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

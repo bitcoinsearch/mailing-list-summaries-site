@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On mempool policy consistency</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-11-02 03:07:45
+            <br><i>Published on: 2022-11-02T03:07:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_On-mempool-policy-consistency.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021141.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The bitcoin-dev mailing list recently discussed the use of zero-confirmation (0-conf) transactions, which allow users to send small amounts of Bitcoin without waiting for confirmation. Some users are exploiting 0-conf services through a process called "out-bidding" to retrieve funds they sent in error. While this is not a legitimate use case, it is rational. However, developers and node operators do not have to support every use case that someone might find rational. Miners also have an incentive not to make full replace-by-fee (RBF) available since it would reduce fee income from on-chain transactions and may cause investors to sell. Miners can still adopt additional patches if they want unusual functionality, but there is no evidence that they want this option. Removing full RBF from the software reduces the chance that miners will adopt an additional patch. Forcing miners to honor fees left on the table with respect to 0-conf or forcing them to run a custom patchset to go around it is a step backward. There are better ways to handle RBF policy while still giving people notice about changes.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T22:07:34.070077+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

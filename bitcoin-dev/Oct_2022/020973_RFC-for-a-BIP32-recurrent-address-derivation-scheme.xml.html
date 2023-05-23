@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC for a BIP32 recurrent address derivation scheme</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> El_Hoy 2022-10-04 19:08:34
+            <br><i>Published on: 2022-10-04T19:08:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020973.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread consists of Eloy proposing a scheme that would allow for recurring payments using a single offline interaction, which Ruben acknowledges as an improvement over the status quo and notes his own similar proposal. The proposed scheme follows the structure described in BIP44, with the addition of a "contact" level to represent a contact address for the recipient. Bob can use Carol's contact address to generate multiple derived addresses for multiple recurring payments to her, without revealing any information on-chain. Eloy notes that while there are mentions of such a scheme, there is no framework to ease its usage and add interoperability between different implementations. He proposes a BIP to make it easy for developers to implement and users to use. The advantages of this scheme against silent payments or BIP47 are that it requires only one-time interaction and should be easier to implement on both parties involved. Regarding the "contact" level, Ruben notes that it needs to be defined deterministically, and if Bob defines it for Carol, then deterministic recovery of payments won't be possible without also backing up how it's defined. Ruben also points out that the gap limit needs to be kept in mind, and suggests defining a low default gap limit for these xpubs since there should be no reason to expect the same sender to leave any gaps. Overall, the proposed scheme is a positive solution to the issue of having to use a new address for every transaction, making it uncomfortable to make recurring payments. It allows for privacy and easy labeling of payments received, with the added advantage of choosing to send payments using multiple outputs.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:30:37.135151+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

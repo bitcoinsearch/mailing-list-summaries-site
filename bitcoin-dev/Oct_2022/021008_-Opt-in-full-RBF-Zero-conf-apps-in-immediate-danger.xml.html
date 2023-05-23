@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[Opt-in full-RBF] Zero-conf apps in immediate danger</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-10-13 04:35:22
+            <br><i>Published on: 2022-10-13T04:35:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_-Opt-in-full-RBF-Zero-conf-apps-in-immediate-danger.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021008.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On October 12, 2022, Pieter Wuille via bitcoin-dev proposed a step towards getting full RBF on the network by allowing experimentation and socializing the notion that developers believe it is time. However, there seems to be confusion regarding what exactly they believe it is time for. There are two possibilities: (a) to start deprecating accepting zeroconf txs on mainnet over the next 6, 12, or 18 months or (b) to start switching mainnet mining and relay nodes over to full RBF.As far as experimentation goes, the default option for enabling RBF is still false, which means it's unlikely to get non-opt-in RBF transactions relayed or mined anywhere, even on testnet or signet. If experimentation is the goal, making the default true for testnet/signet could be useful. However, meaningful experimentation may be difficult while fees are low, and there is often no backlog in the mempool, especially on testnets.If the goal is to socialize the idea of zeroconf deprecation and provide businesses with a real deadline for migrating away from unconfirmed txs if the risk of being defrauded concerns them, then enabling experimentation on testnets and not touching mainnet until a later release seems appropriate. This is similar to activating soft forks on testnets before activating them on mainnet.However, if the aim is to socialize the idea of relaying and mining full RBF txs on mainnet starting now, then enabling the option would change things almost immediately on the network at large. It would take only 5% to 10% of blocks including full RBF txs and knowing some IP addresses to addnode so that your txs relayed to those miners to repeatedly defraud businesses accepting unconfirmed txs. If core devs are advocating for full RBF, and a patch to enable it is included in a bitcoin core release, some small pools may start trying it out, leading to the aforementioned situation.Most of the network not relaying full RBF txs is inconvenient for protocol developers who would like to rely on it, but it's fine for an attacker. This situation means the business you're trying to trick has less chance of noticing the attack before it's too late because they'll be less likely to see the conflicting tx via both their node or public explorers.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:33:23.246550+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

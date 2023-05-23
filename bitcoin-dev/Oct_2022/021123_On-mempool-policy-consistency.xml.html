@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On mempool policy consistency</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-10-27 15:37:27
+            <br><i>Published on: 2022-10-27T15:37:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_On-mempool-policy-consistency.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021123.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses several aspects of Bitcoin Core and its policies. The first part talks about how the user is fine as long as they have a path from their node to a miner that will accept it. It also mentions that replacement is not only a question of "will my transaction propagate" but also, "will someone else's transaction propagate, invalidating mine". The second part talks about how people were creating bare multisig utxos, which is "bad" in two ways: you're only committing to the data and that data is only interesting to you, not everyone else. Hence the -datacarriersize limitation that limits you to about 2.5 "dataN" entries per tx ("we'll prevent your tx from propagating if you do much more than publish a hash") and hence at least the potential for doing the same for baremultisig in general.The third part talks about how zeroconf users rely on there *not* being a path from someone else's full RBF node to a full RBF miner. This is why I think RBF is so controversial in general. Likewise OP_RETURN has had its own "controversies" to some extent, too. It also mentions that unexpected RBF can cause you to have less money than you expected; whereas more OP_RETURN data just bloats the blockchain, and losing money that you thought was yours is definitely more painful than more spam.The fourth part discusses how past patterns cannot be easily applied here and this does not necessarily show a different "direction" in thinking about mempool policy in general. If we're not applying past patterns, then this is a different direction in how we're thinking about things than what we did in the past.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T22:17:20.582411+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

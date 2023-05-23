@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing BIP-125 Rule #5 Pinning with the Always-Replaceable Invariant</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Suhas Daftuar 2022-11-07 21:21:11
+            <br><i>Published on: 2022-11-07T21:21:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Removing-BIP-125-Rule-5-Pinning-with-the-Always-Replaceable-Invariant.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021177.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Replaceability Invariant is a proposed solution to the pinning problem caused by Rule #5 of BIP-125, which limits the number of original transactions and their descendant transactions that can be replaced and evicted from the mempool to 100 transactions. The proposal seeks to ensure that all transactions in the mempool are always replaceable, thus removing the need for this rule. The Replaceability Invariant involves maintaining an integer, nReplacementCandidates, for each transaction, which is incremented by 1 for each unconfirmed parent when a non-conflicting transaction is accepted into the mempool. Conflicting transactions do not require verification as the invariant has already guaranteed that every transaction in the mempool is replaceable. When a block is mined, the nReplacementCandidates of all unconfirmed transactions remains unchanged because a confirmed transaction cannot spend an unconfirmed txout. A special case is required to handle reorgs that change a transaction from confirmed to unconfirmed, where setting nReplacementCandidates to MAX_REPLACEMENT_CANDIDATES would suffice. The proposal also acknowledges that diamond tx graphs are even more unusual than unconfirmed children, and there's no reason to accommodate them.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T22:47:41.334255+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
