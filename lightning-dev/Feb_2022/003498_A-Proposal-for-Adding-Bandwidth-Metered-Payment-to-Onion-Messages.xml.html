@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Proposal for Adding Bandwidth Metered Payment to Onion Messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2022-02-24 01:20:28
+            <br><i>Published on: 2022-02-24T01:20:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2022/combined_A-Proposal-for-Adding-Bandwidth-Metered-Payment-to-Onion-Messages.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003498.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network has proposed a new way to compensate nodes for forwarding onion messages, which aims to address issues such as unsolicited messages, lack of compensation for forwarded messages, and lack of rate limiting. The proposed system involves a two-phase onion messaging session creation process in which the sender purchases forwarding bandwidth from intermediate nodes and requests session creation with the receiver in a single atomic step. Once successful session creation is achieved, the sender can use the purchased bandwidth to send messages to the receiver.To compensate nodes for forwarding messages, the proposal suggests using AMP to extend push payment to a receiver for the purchase of bandwidth sessions. Nodes add a new TLV (Type-Length-Value) to their node announcement to express a new fee rate for forwarding messages and also include a feature bit to indicate that they only accept payment for forwarding. Additionally, a 32-byte session identifier is transmitted to each intermediate hop using a new TLV within the existing HTLC (Hashed TimeLock Contract) onion blob.The proposed system expands the scope of LN to support pseudonymous messaging and arbitrary data transfer across the network. Two new TLVs have been added to the node_ann message to allow nodes to express their willingness to forward messages and how much they charge per byte and per block for forwarding. During session creation, the sender creates new onion_session_id's for all nodes in the messaging route it doesn't already have an active session with. To initiate session creation, the node sends an AMP payment to the receiver that drops off the proper fee to each intermediate hop along with the proposed onion_session_id. Session creation is rejected if the receiver chooses to fail back any of the AMP HTLC splits. Once a session has been finalized, the sender can use it to send messages to the receiver. When forwarding onion messages, nodes check that the session hasn't expired and the session also has enough bandwidth left. The proposal adds some per-session state to nodes being paid to forward onion messages, but it is minimal and can be compensated for in pricing.The proposed system supplements the existing fee revenue of nodes, potentially making it more sustainable to run a Lightning node.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T17:09:26.313599+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

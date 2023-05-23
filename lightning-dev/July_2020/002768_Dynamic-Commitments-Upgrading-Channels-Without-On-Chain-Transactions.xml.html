@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dynamic Commitments: Upgrading Channels Without On-Chain Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2020-07-21 22:55:54
+            <br><i>Published on: 2020-07-21T22:55:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2020/combined_Dynamic-Commitments-Upgrading-Channels-Without-On-Chain-Transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002768.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the Bitcoin-dev mailing list sparked an idea of upgrading from a Poon-Dryja channel to a Decker-Russell-Osuntokun ("eltoo") mechanism. However, due to the way `SIGHASH_ANYPREVOUT` will be deployed, it is not possible to upgrade seamlessly. A potential solution would involve creating an upgrade transaction that is a cut-through of a mutual close of the Poon-Dryja and a funding open of a Decker-Russell-Osuntokun. Once signed by both parties, the participants can keep the upgrade transaction off-chain and treat the funding outpoint of the upgrade transaction as the "internal funding outpoint" for future Decker-Russell-Osuntokun updates.Although this solution has limitations such as the fact that since the on-chain funding outpoint remains a Poon-Dryja, it can still be spent using a revoked state, it also has some benefits such as bounding the information liability of the upgraded channel and retaining the channel's short-channel-id, which may be useful since a provably-long-lived channel implies both channel participants have high reliability. Additionally, if the channel is later mutually closed, the upgrade transaction, being off-chain, never needs to appear on-chain, potentially saving blockchain space. Those wishing to retain a revocation based commitment invalidation model may instead opt to upgrade to something like the current best successor to the OG Poon-Dryja revocation mechanism.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T13:56:37.096732+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

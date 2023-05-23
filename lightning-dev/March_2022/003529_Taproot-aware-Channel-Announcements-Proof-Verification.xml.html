@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot-aware Channel Announcements + Proof Verification</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2022-03-23 22:30:40
+            <br><i>Published on: 2022-03-23T22:30:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2022/combined_Taproot-aware-Channel-Announcements-Proof-Verification.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003529.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, Olaoluwa Osuntokun raises the question of whether the proof and verification process should strongly bind to the Lightning Network context. Currently, nodes use two bitcoin keys to construct a P2WSH multi-sig script and verify that the script matches what has been confirmed on chain. With Taproot, the output is just a single key, so there is a concern about maintaining the same level of binding. In response, David A. Harding points out a significant difference between P2WSH and P2TR: with P2WSH, if someone wants to fake the creation of a channel by making their change outputs OP_CMS(2-of-2) with themselves, they pay for that deception by incurring extra fee costs at spend time due to the need to provide more witness data over plain single-sig. With P2TR/MuSig2, they can make their change outputs MuSig2(2-of-2) with themselves without incurring any additional onchain spend costs. Laolu agrees that 100% maintenance of the same level of binding for pure Taproot channels may not be possible, but suggests that validators verifying the final key derivation can still effectively restrict the type of outputs used to advertise channels.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T17:20:07.911789+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

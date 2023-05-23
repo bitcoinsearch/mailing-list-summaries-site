@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Turbo channels spec?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-07-01 18:07:29
+            <br><i>Published on: 2021-07-01T18:07:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003095.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell, a member of Lightning-dev mailing list, proposed a new feature to allow zeroconf channels. This comes after Roasbeef pointed out that not all implementations accept them. The proposal suggests assigning a new feature bit "I accept zeroconf channels" and if both parties accept it, update_add_htlc can be sent before funding_locked without causing any issues. However, there is a different threat model between someone spending dual-funded or push_msat balance vs classic channel-funding balance, so it may make sense to negotiate this per-direction in the channel init message(s). Nodes are advised not to forward HTLCs from an unconfirmed channel unless they have explicit reason to trust that node. The proposal is a simple change which would create a new set of channel types and Rusty plans to draft something this week.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T15:21:26.756181+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

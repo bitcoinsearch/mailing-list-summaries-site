@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Proposal for Adding Bandwidth Metered Payment to Onion Messages <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2022/003498_A-Proposal-for-Adding-Bandwidth-Metered-Payment-to-Onion-Messages.xml.html">A Proposal for Adding Bandwidth Metered Payment to Onion Messages</a>
+                        <b>Olaoluwa Osuntokun 2022-02-24 01:20:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2022/003525_A-Proposal-for-Adding-Bandwidth-Metered-Payment-to-Onion-Messages.xml.html">A Proposal for Adding Bandwidth Metered Payment to Onion Messages</a>
+                        <b>Olaoluwa Osuntokun 2022-03-23 00:25:40</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003498.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2022-02-24T01:20:28+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network protocol has undergone an update to enable nodes to receive compensation for forwarding onion messages on the network. This new feature supplements existing fee revenue, making it more sustainable for individuals or entities to run a Lightning node. This compensation is dependent on the demand for forwarding bandwidth by wallets, services, and applications. To initiate this process, the sender creates new `onion_session_id`'s for all nodes in the messaging route it doesn't already have an active session with and sends an AMP payment to the receiver along with the proposed `onion_session_id`. Once a session has been confirmed, the sender can use it to send messages to the receiver. Nodes forward onion messages that include the session ID and check that the session hasn't expired and that the session has sufficient bandwidth available.A proposal has been made to address issues such as spamming, lack of compensation for forwarding, and rate limiting. This proposal adds an explicit onion messaging session creation phase and provides a way for nodes to be compensated for their bandwidth allocation during that session. The node_ann message will include two new TLVs which allow nodes to signal their willingness to be paid for forwarding onion messages and specify their pricing. The HTLC onion blob will also be extended to include a new TLV for tendering paid onion message session creation. This proposal expands the scope of LN beyond a decentralized p2p payment system and enables various use cases like streaming video transfer, network tunneled VPNs, large file downloads, and popcorn time. However, there may be some trade-offs, including adding a small amount of per-session state to nodes that want to be paid to forward onion messages. The multi-hop invoice fetching rate may be limited for some nodes to prevent overloading them, and there is a discussion about whether tightly coupling an invoice/offer to a single node is compatible with the multi-node receive architectures that some services are beginning to deploy. Overall, this proposal offers a way to address issues while enabling more functionality in the LN protocol.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-23T17:15:27.531899+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

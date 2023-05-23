@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Simplified (but less optimal) HTLC Negotiation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-04-24 04:20:44
+            <br><i>Published on: 2021-04-24T04:20:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2021/combined_-RFC-Simplified-but-less-optimal-HTLC-Negotiation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003011.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell prefers alternation over reflection, as it is more optimal than reflection for optimized implementations and fits better with the existing implementations. In particular, a simple implementation never sends a commitment_signed until it receives "giving way" so it doesn't have to deal with orphaned commitments. A more complex implementation sends opportunistically and then has to remember that it's committed if it loses the race. Such an implementation is only slower than the current system if that race happens. The state machine here is really not that big - while simplifying it where possible is nice, ripping things out to replace them with fresh code (which would need similar testing) is probably not the most obvious decrease in complexity.The issues discussed in the thread are great for fuzzing, according to a previous meeting. A fuzzer which aggressively tests for precisely these types of message-non-delivery-and-resending production desync bugs has been in use for several years, but quickly exhausted the bug fruit after forcing several rewrites of parts of the state machine. The state machine here is not that big, although simplifying it where possible is desirable.Rusty Russell has been revisiting the issue because it makes things like splicing easier: the current draft requires stopping changes while splicing is being negotiated, which is not entirely trivial. With the simplified method, you don't have to wait at all. It is unclear how much more complicated this is than having an alternation to updates and pausing HTLC updates for a cycle or two while splicing is negotiated. However, a similar update-stopping process for shutdown already exists, though it doesn’t include restarting.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T14:42:15.045286+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

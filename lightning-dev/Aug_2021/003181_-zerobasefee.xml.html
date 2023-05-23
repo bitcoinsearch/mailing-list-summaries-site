@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>#zerobasefee</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-08-16 02:21:52
+            <br><i>Published on: 2021-08-16T02:21:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_-zerobasefee.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003181.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is about the base fee in lightning routing algorithms. Anthony Towns argues that having a base fee makes the algorithm slow, but the real problem is that it has a multiplicative effect as you split payments. The base fee denominated in sats also changes in value as the bitcoin price changes. However, this isn't a protocol issue and implementations can automate it without issue. The cost for nodes is mostly a function of HTLCs, not the value. The cost to nodes is largely the liquidity required per node. For many HTLCs forwarded today, the liquidity on a channel isn't much, so for many HTLCs forwarded today, per-payment costs mirror the cost to a node much better than some proportional fees. It is argued that the base fee is already distorting the fee structures on the network away from the costs of node operators. Instead, we should investigate how we can apply the ideas here with the more complicated fee structures we have. Fee structures should be simple and match reality, allowing node operators sufficient flexibility to capture their costs. Anthony Towns suggests that experimental plugins can do whatever they want. But long term, he thinks the base fee is an entirely unhelpful complication that will eventually just be hardcoded to zero by everyone, and eventually channels that propose non-zero base fees won't even be gossiped.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T15:46:18.844483+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

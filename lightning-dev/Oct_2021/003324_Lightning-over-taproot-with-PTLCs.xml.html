@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning over taproot with PTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-10-19 04:16:13
+            <br><i>Published on: 2021-10-19T04:16:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_Lightning-over-taproot-with-PTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003324.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses ways to improve the Lightning Network's payment forwarding system with low latency. The proposed solution involves two channel parameters: payment delay (PD) and channel recovery delay (RD). If an old state is published, the recovery delay will correct it. However, if an active state includes a payment that has been forwarded, the shorter payment delay may be used to forward the payment claim details back. The goal is to allow for safe payment forwarding without requiring an additional round-trip back for acknowledgement.The email then goes on to provide an example of how payments are currently forwarded and how they could be forwarded optimally. The optimal forwarding would require 0.5 round-trips as opposed to the current 1.5 round-trips. The proposed solution suggests lifting the HTLC out of an in-flight transaction into a balance transaction, which Bob can post within the payment delay period, and revealing secrets prior to the payment timeout.However, this proposal adds complexity and kills some of the elegance of the original protocol. Alice needs to prevent Bob from posting the "low-latency" tx if he doesn't react within the payment delay period, which can be achieved through a signature from Bob. The proposal also makes the system more separable by adding a feature bit to allow nodes to not implement low-latency payments, particularly if they're not usually forwarding payments or are only connected to nearby nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T16:20:49.728626+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

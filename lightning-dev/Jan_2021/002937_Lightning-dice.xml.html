@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning dice</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-01-25 11:34:30
+            <br><i>Published on: 2021-01-25T11:34:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002937.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author proposes a rough design for a gambling system similar to Satoshi Dice, which would be provably fair on the Lightning Network once PTLCs exist. The security model of the system is such that if the casino cheats, it can be proven but there is no way to get just rewards through the proof alone. The author explains that not guaranteeing the payout cryptographically allows both bets to be sent over Lightning and not reserve funds for the lifetime of the bet. This approach is more friendly to the Lightning Network and requires less capital to run than other methods. The first step in setting up the wager involves Bob the better and Carol the casino agreeing to a standard bet with a 1.8% chance of winning and a 50x payout, with up to 200 satoshi stake (10k satoshi max payout). The bet is implemented as Bob and Carol both picking random numbers (b and c, respectively), and the winner being decided based on the relationship between those numbers. Two messages are used to initiate the bet: m1, which specifies the amount owed by Carol to Bob provided certain conditions are met, and m2, which specifies the values of b and c chosen by Bob and Carol.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T14:36:32.437567+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
