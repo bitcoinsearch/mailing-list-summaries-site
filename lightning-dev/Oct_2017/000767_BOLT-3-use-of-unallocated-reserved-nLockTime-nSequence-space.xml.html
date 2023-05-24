@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BOLT 3 use of unallocated/reserved nLockTime &amp; nSequence space</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-10-16 09:41:29
+            <br><i>Published on: 2017-10-16T09:41:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-October/000767.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark Friedenbach, a protocol engineer, discovered that BOLT 3 uses a technique to encode the commitment transaction number split across the transaction’s nLockTime and input’s nSequence number. This method utilizes 7.34% of the currently unallocated but usable space in nLockTime and 0.78% of unallocated but usable space in nSequence. However, Mark points out that this use of reserved space may not always be available for future protocol upgrades. He suggests those involved in crafting the BOLT 3 specification propose allocating this space for data storage to protect it from future changes while informing the wider developer community of reserved space usage.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T02:37:08.424917+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

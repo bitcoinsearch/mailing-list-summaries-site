@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Consideration for user-facing interface</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2017-05-25 03:04:25
+            <br><i>Published on: 2017-05-25T03:04:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000728.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed user interface for a mainstream Lightning-enabled wallet would have three tabs: On-chain, In-transit, and On-Lightning. Coins in the On-chain view would be grouped by PKH that unlocks the UTXO and show an estimate of the fee required to add that UTXO as input to a transaction. The In-transit tab would contain a list of funds that are "in-transit," including funding and commitment transactions. The On-Lightning tab would allow users to send On-Lightning, generate an LN invoice, and transfer funds from on-Lightning to On-Chain. The software would keep track of which LN nodes the user usually pays On-Lightning and prioritize making channels to those nodes when moving funds from On-Chain to On-Lightning. It would also perform random channel opens to reduce LN centralization. If the software cannot find routes below the user-specified maximum percentage of total routing fees, it would offer to increase this temporarily for this payment. Finally, HTLC preimages sent by update_fulfill_htlc can serve as receipts, and the payer can give this preimage to the payee as proof-of-payment. A list of such receipts should also be archived by the software, and the user can selectively burn some receipts.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:58:31.421963+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
