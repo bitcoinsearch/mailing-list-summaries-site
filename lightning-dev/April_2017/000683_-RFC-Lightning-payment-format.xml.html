@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Lightning payment format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2017-04-29 00:57:32
+            <br><i>Published on: 2017-04-29T00:57:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2017/combined_-RFC-Lightning-payment-format.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-April/000683.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of this post shares a draft format for requesting lightning payments, along with an incomplete implementation available on GitHub. The representation size ranges from approximately 181 characters upwards, and the author suggests that at least five of those characters could be squeezed out if necessary. However, Bech32 only guarantees to detect three errors at these lengths (beyond 1024 it's only one), so the signature is the final error detection.The author points out an optimization for the common case: using the 8-byte chanid (stealing 1 bit) to compactly refer to the destination. This is shorter than a full 33-byte pubkey, relying on the fact that the network topology is well-known. The author says they use these same style of IDs in the channel announcement messages already.In conclusion, the author welcomes both bikeshed comments and more substantive feedback.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:17:06.219421+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

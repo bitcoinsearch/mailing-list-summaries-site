@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Anchor transaction for no expiration channels without segwit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nicolas Dorier 2017-02-10 05:13:50
+            <br><i>Published on: 2017-02-10T05:13:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2017/combined_Anchor-transaction-for-no-expiration-channels-without-segwit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-February/000677.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation between Christopher Jämthagen, Nicolas Dorier and Tier Nolan discusses the possibility of creating anchor transactions for indefinite channel lifetimes without segwit. The proposed solution involves two transactions to be confirmed but with indefinite channel lifetime or one transaction to be confirmed with a definite channel lifetime. There is still uncertainty about which option would be best from the user perspective as channel renewal can be done in the background. Two-layer HTLCs need malleability fixes or workarounds to avoid excessive timeouts. Additionally, symmetrically funded channels require four 1BTC outputs and are slightly smaller than two single funded channels. The proposal includes TX1 for initialization of the channel and TX2 to be nTimelocked after bounty's expiration. The two should be signed by Alice and Bob before broadcasting TX1. If TX1 is mutated, both parties should abort and spend their timeouts to recover their funds.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:58:03.321670+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

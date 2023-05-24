@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Channel top-up</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2017-05-04 10:39:30
+            <br><i>Published on: 2017-05-04T10:39:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000696.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Christian Decker proposed a mechanism called splice-in/-out to solve the problem of topping up the funds in a channel. The mechanism involves creating a new 2-of-2 output and letting it confirm before asking the counterparty to collaborate in closing the channel by spending the funding transaction (TX) output and the prepared top-up output into a new 2-of-2 output. The settlement transaction is automatically the funding transaction of the new channel. This method allows for on-chain transactions directly from funds locked in a channel without the need for confirmation. It also eliminates the need to drain HTLCs before performing a splice operation. Christian is seeking feedback and comparisons with another proposal he presented at the Scaling Bitcoin workshop.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:33:20.558522+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

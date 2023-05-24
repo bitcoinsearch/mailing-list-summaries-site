@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Lightning payment format <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000712_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-05-09 01:37:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000714_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Christian Decker 2017-05-09 08:22:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000719_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-05-10 01:52:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000686_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Olaoluwa Osuntokun 2017-05-01 18:03:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000688_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-05-02 00:40:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000706_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-05-06 04:08:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000690_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Pierre 2017-05-02 16:11:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000691_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Fabrice Drouin 2017-05-03 15:37:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000694_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-05-04 04:39:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000710_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Christian Decker 2017-05-08 11:25:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000730_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Olaoluwa Osuntokun 2017-05-28 18:42:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000731_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-05-29 10:48:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000695_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-05-04 04:42:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/April_2017/000683_-RFC-Lightning-payment-format.xml.html">[RFC] Lightning payment format</a>
+                        <b>Rusty Russell 2017-04-29 00:57:32</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000712.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2017-05-09T01:37:28+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network is a second-layer solution for Bitcoin that aims to improve the scalability and speed of transactions on the network. One aspect of this technology that has been under development is the payment request format. Recently, Rusty Russell and Olaoluwa Osuntokun have proposed improvements to the format.Their suggestions include using a tag-based payment request format and replacing chanID with the compressed serialized public key to optimize the size of signatures in payreqs. However, some are hesitant to make this change due to concerns about network propagation time and reliance on a full view of the network. Another proposal they suggest is using Bech32 as a serialization format for invoices. This would allow for easy decoding, but some argue that the added checksum is not necessary for such long payment request strings.In the latest update, the payment request now includes an expiry time in seconds, and there is an example encoder/decoder available which supports the format, including fallback addresses. The developers have also included a timestamp and expiry date in the latest version of the protocol to help users enforce payment deadlines. Additionally, the developers are working on a shared payment request format to improve efficiency and extensibility. Rusty Russell has also shared a draft format for requesting payments via lightning network and an incomplete implementation on Github. The signature is over the human-readable part and data in 5-bit bytes. Overall, these improvements aim to enhance the Lightning Network's payment request format with better efficiency and extensibility, while also considering concerns around network propagation time and reliance on a full view of the network. An incomplete implementation has been provided in the examples.sh file, with different scenarios for sending payments, including one with extra routing info to get to a specific node. The lightning-address.py file includes the code for encoding and decoding the payment request.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-24T01:20:36.583866+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

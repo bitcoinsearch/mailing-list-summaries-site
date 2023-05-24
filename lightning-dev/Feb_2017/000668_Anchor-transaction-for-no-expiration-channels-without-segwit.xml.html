@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Anchor transaction for no expiration channels without segwit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2017-02-06 20:02:03
+            <br><i>Published on: 2017-02-06T20:02:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2017/combined_Anchor-transaction-for-no-expiration-channels-without-segwit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-February/000668.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On February 6th, 2017, Nicolas Dorier suggested to the Lightning-dev mailing list that a second timeout was unnecessary in a specific scenario. He explained that TX2 would only be signed by Bob if he received the second output of TX1. Alice must have a fully signed version of TX2 before the timeout expires, otherwise Bob can reclaim TX1/1 once the timeout expires and refuse to sign TX2. However, if Alice has a signed version of TX2, she can broadcast it and immediately close the channel (claiming TX1/0), then claim TX1/1 once the previous transaction is accepted. Dorier noted that Bob need not worry about Alice closing the channel with TX2.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:58:45.496574+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

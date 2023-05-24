@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Analysis: alternative DoS prevention concept</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-11-14 04:08:27
+            <br><i>Published on: 2016-11-14T04:08:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2016/combined_Analysis-alternative-DoS-prevention-concept.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-November/000650.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>David A. Harding and CJP were discussing a solution for the denial-of-service (DoS) mode, in which an attacker sends many large transactions to themselves over a long route and lets them time out, resulting in a lot of funds being locked up. CJP suggested that nodes require either a fast commit or roll-back within a short amount of time or a proof that another channel was closed. However, this proposal would limit the freedom in channel design to a space that can be understood by all nodes in the network, thus interfering with the vision of a heterogeneous network. David reasoned that this proposal does not necessarily require a homogeneous network since only direct peers need to receive a commit, roll-back, or channel close proof. However, the proposal is still incompatible with crossing networks because the risk is now borne by the node doing the crossing and its neighbor. As a result, Alice will always have to close with Bob, and Bob may charge an exchange premium for this risk, increasing the overall risk to the network since the attacker does not have to close their own channels.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:47:17.791391+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

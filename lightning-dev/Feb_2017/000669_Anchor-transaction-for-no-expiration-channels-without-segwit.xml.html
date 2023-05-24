@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Anchor transaction for no expiration channels without segwit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nicolas Dorier 2017-02-07 02:39:53
+            <br><i>Published on: 2017-02-07T02:39:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2017/combined_Anchor-transaction-for-no-expiration-channels-without-segwit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-February/000669.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around a proposal to create a time-locked transaction. The proposed solution is for TX2 to be nTimelocked after the bounty's expiration. If Alice sees Bob not signing it, she can reclaim the bounty fast. If Bob signs it, Alice cannot broadcast it immediately. Nicolas Dorier suggests that there is no need for a second timeout. TX2 would be signed by Bob only when he could get back the second output of TX1. However, Alice must have a fully-signed version of TX2 before the timeout finishes. If she doesn't, Bob can reclaim TX1/1 once the timeout expires and refuse to sign TX2. Alice needs a signed version of TX2 to broadcast it and immediately close the channel (claiming TX1/0). Once accepted, she can then claim TX1/1. Overall, the proposal aims to create a secure and efficient time-locked transaction system.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:57:09.485422+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
