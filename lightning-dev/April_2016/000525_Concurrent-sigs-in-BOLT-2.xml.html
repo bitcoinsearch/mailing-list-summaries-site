@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Concurrent sigs in BOLT #2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-04-30 05:45:27
+            <br><i>Published on: 2016-04-30T05:45:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2016/combined_Concurrent-sigs-in-BOLT-2.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000525.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the possibility of nodes getting stuck in an infinite loop while sending each other new HTLCs instead of immediately sending a new SIG, Rusty Russell explains that as long as an HTLC is committed to by both sides, it's locked in. He also notes that until then, the receiver cannot offer it onwards. Furthermore, a node must estimate the deadline for successful redemption for each HTLC it offers and should not offer a HTLC past the deadline. With regards to whether it should be specified that the only valid answer to a signature is either a signature (if there are outstanding changes) or a revocation, Rusty believes that you should be able to pack in as many updates between signatures as you want.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:28:05.270090+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

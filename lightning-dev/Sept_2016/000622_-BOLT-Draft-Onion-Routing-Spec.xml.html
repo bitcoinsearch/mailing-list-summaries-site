@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BOLT Draft] Onion Routing Spec</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-09-27 01:47:44
+            <br><i>Published on: 2016-09-27T01:47:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2016/combined_-BOLT-Draft-Onion-Routing-Spec.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000622.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning-dev mailing list, Olaoluwa Osuntokun and Rusty Russell addressed issues regarding channel identification and proof sizes. Osuntokun pointed out that using blocknum+txnum to identify a channel does not account for the possibility of a single transaction which opens multiple channels concurrently. To remedy this, an extra byte or two would need to be added to encode the output index of the channel within the transaction. Additionally, identifying channels based solely from blockheight+offsets conjures up some re-org safety concerns. On the other hand, the compactness is worth it. Russell commented that the proofs are larger, requiring each ID to have a merkle proof (12 x 32 bytes) plus the funding tx (227 bytes), pubkeys (66 bytes), and a signature of the ID using those pubkeys (128 bytes). Christian Decker joined in, suggesting a passive rotation scheme would be superior due to the bandwidth savings of pushing the onion key rotations to the edges themselves. But as there is no passive scheme for forward secrecy, there is no need to rotate keys in that case. Russell suggested enumerating the different secrets they need to protect and separating commit keys from identity key allows nodes to post-hoc announce channels by associating them with the public identity. Separating onion privkey allows rotation, but only if there is forward secrecy. The comms symmetric key should also be rotated with forward secrecy.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:07:08.371838+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

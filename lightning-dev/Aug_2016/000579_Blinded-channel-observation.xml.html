@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blinded channel observation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-08-12 03:47:52
+            <br><i>Published on: 2016-08-12T03:47:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2016/combined_Blinded-channel-observation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-August/000579.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning Network development mailing list, Joseph Poon and Rusty Russell discussed different schemes for reducing space and communication requirements per new commitment transaction. The most efficient scheme uses shachain/elkrem, SIG_NOINPUT, and a MAST scheme which places two scripthashes into the scriptpubkey, but using this scheme would prevent the watcher from using the elkrem/shachain space-savings themselves. Revealing the preimages seems like another win, but it would require changing at least one key in some way to avoid guessable prior commitment txs, which means sending that key to the watcher to store, costing as much as they save using shachain/elkrem. Sharing HTLCs across transactions could also reduce N to the "number of new HTLCs" instead of "number of HTLCs," but no good solutions were presented. In regards to whether an HMAC-of-tx should be used instead of just the txid, there was some confusion over what an HMAC-of-tx would gain.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:15:53.883277+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

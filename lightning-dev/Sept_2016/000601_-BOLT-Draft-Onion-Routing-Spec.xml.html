@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BOLT Draft] Onion Routing Spec</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2016-09-02 12:08:22
+            <br><i>Published on: 2016-09-02T12:08:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2016/combined_-BOLT-Draft-Onion-Routing-Spec.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000601.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The developers are discussing the onion routing protocol and are close to merging their implementation into the lightningd node. They agree on the spec for the most part, but some issues need to be addressed later or in other specs, such as key-rotation policies, backlog of seen shared secrets, and payload formatting. The pressing issue is the use of HMAC and what it should include. Covering the entirety of the packet, including payloads, has advantages, but it creates a rendezvous problem when the recipient provides part of the onion. Payload sizes should be kept fixed at 20 bytes for per-hop and 1024 bytes for end-to-end payloads. It might be worth making the payloads flexible using a generic encoding such as JSON or msgpack since they want to add and remove bits and pieces. A process for upgrading spec drafts needs to be established.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:58:18.825154+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

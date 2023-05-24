@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd: Re:  Routing &amp; Beacons</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-04-26 00:43:41
+            <br><i>Published on: 2016-04-26T00:43:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2016/combined_Fwd-Re-Routing-Beacons.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000521.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a mailing list conversation, Rusty Russell discusses the use of "landmarks" instead of "beacons" in payment channels. When asked if all payments go through selected beacons nodes, Rusty confirms that to a first approximation, it is true, however, if the route goes in and out of the same channel, it can be eliminated. They also discuss the pulse protocol, which is based on beacons and updates routing tables but doesn't require all messages to go through the beacons. The source doesn't know the route beforehand, but it puts less pressure on beacons. When Laurentmt asks about an update strategy for routing tables, Rusty says they haven't decided yet, but thoughts are welcome. When discussing the two variables that determine the best route: capacity of channels at time t and fees charged by nodes, Rusty suggests that payments are generally smaller than channel capacity and that pricing information is dynamic and needs careful thought. Rusty's current idea involves ratelimiting pricing updates and phasing price changes over time. There is also the question of how to handle false advertising, with Rusty suggesting that you should be able to broadcast the response from a node that refuses to route your payment. If one node signs an invalid message, it can be blacklisted temporarily.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:26:27.197790+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

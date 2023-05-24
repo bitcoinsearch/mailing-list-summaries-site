@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Channel refill</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kumaigorodskiy Anton 2016-05-09 16:45:07
+            <br><i>Published on: 2016-05-09T16:45:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2016/combined_Channel-refill.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-May/000534.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network has some limitations, including the inability to receive a single payment larger than the amount currently locked in a channel. Additionally, one cannot make payments once their side of the channel balance reaches zero. To address these issues, the solution has been to open another channel or transfer bitcoins directly. However, an alternative solution could be to implement a "channel refill" procedure. This process would involve using the same pair of commit_keys resulting in a second utxo on anchor address. A separate "refill commitment tx" is created which does not invalidate the current "main commitment tx." Once the on-chain refill transaction reaches the required depth, a new "main commitment tx" is created that takes into account the new utxo, and the old "main commitment tx" as well as the "refill commitment tx" are invalidated. One advantage of the refill method over creating a new channel is that overall channel capacity would grow each time, meaning that after several refills, no more may be needed for an extended period.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:41:19.671916+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

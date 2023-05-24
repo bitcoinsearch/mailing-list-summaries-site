@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Concurrent sigs in BOLT #2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pierre 2016-04-24 19:29:22
+            <br><i>Published on: 2016-04-24T19:29:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2016/combined_Concurrent-sigs-in-BOLT-2.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000520.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author is trying to understand how to handle concurrent signatures and proposes using an ordering system to resolve conflicts when they occur. The proposed solution involves having two nodes agree on which signature is "greatest" and then having the node that sent the lesser signature immediately resend a new signature including all pending changes. An example scenario is provided where Node A and Node B have conflicting staged changes, but agree to use SIG B0 as the "greatest" signature and proceed with a new signature encompassing all changes. The example concludes with SIG A1 being sent from Node A after the conflict has been resolved.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:27:18.852485+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

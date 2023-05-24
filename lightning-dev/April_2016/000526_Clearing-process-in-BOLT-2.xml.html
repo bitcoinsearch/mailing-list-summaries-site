@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Clearing process in BOLT #2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-04-30 10:11:34
+            <br><i>Published on: 2016-04-30T10:11:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2016/combined_Clearing-process-in-BOLT-2.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000526.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation about Lightning Network (LN) protocol, Rusty Russell discussed issues with the clearing process as described in BOLT #2. There was a contradiction between §4.1 and §3.3. The former stated that a node must respond with update_fail_htlc to any HTLC received after it sent close_clearing, while the latter listed three reasons for removing an HTLC: it has timed out, it has failed to route, or the R pre-image is supplied. In this version of the protocol, an HTLC can only be accepted, then committed, then removed, meaning there is no way to decline an HTLC. A sender could only fail the connection instead of declining it. Additionally, if the sender of a close_clearing message subsequently receives an update_add_htlc, there is no way to tell if the other party had received the close_clearing prior to sending the HTLC since update_add_htlc message doesn't have an 'ack' field. To address these issues, Rusty outlined some changes to the protocol. For example, he suggested that 4.1 should say: "A node must fail to route any HTLC received after it sent close_clearing." Also, he added that a node must acknowledge the previous `update_revocation` (if any) in the `update_commit` message. A node should fail the connection if it receives an `update_commit` which does not acknowledge its previously sent `update_revocation`. Lastly, a node must not send out a message with an `ack` field lower than any previous `ack` field.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:31:33.126708+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
