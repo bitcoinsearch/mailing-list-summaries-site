@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>type,len,value standard <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001627_type-len-value-standard.xml.html">type,len,value standard</a>
+                        <b>Christian Decker 2018-11-15 20:12:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001605_type-len-value-standard.xml.html">type,len,value standard</a>
+                        <b>Conner Fromknecht 2018-11-15 06:49:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001607_type-len-value-standard.xml.html">type,len,value standard</a>
+                        <b>ZmnSCPxj 2018-11-15 07:39:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001609_type-len-value-standard.xml.html">type,len,value standard</a>
+                        <b>ZmnSCPxj 2018-11-15 09:45:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001620_type-len-value-standard.xml.html">type,len,value standard</a>
+                        <b>Rusty Russell 2018-11-16 00:25:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001604_type-len-value-standard.xml.html">type,len,value standard</a>
+                        <b>ZmnSCPxj 2018-11-15 04:54:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001614_type-len-value-standard.xml.html">type,len,value standard</a>
+                        <b>Conner Fromknecht 2018-11-16 00:12:45</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001627.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-11-15T20:12:53+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Lightning developers are proposing a feature called "type,len,value" to ensure backward compatibility while transitioning to additional fields in the future. The proposed sequence includes `type,len,value` where each `type` must be unique and in ascending order. The proposal suggests using varint for `len`, and there were discussions about odd `type`s depending on message context. A separate BOLT document was proposed for `type,len,value` to specify the general TLV definition. However, sub-TLV structures were briefly mentioned but not deemed necessary. The proposal aims to simplify coding by always sending optional fields even if the remote doesn't understand them.ZmnSCPxj proposed a solution for keeping track of the minimum allowed type in a naive parser. Some concerns need addressing, such as whether `type` should be one byte or two and if another name such as `key` would be more appropriate since `type` is already used for messages. It is still unclear whether odd `type`s are allowed or not, and it is unknown whether `len` should be one byte or two. There is also a suggestion to make a separate BOLT for `type,len,value`, which other messages can refer to. Lastly, there is a proposal to use varint for the maximum message size of 65KB, with a max of 2 bytes, and the total value derived from the first and second bytes. This could be included in a section or part of the t-l-v BOLT.The email thread also discusses the length of `type`, whether it is necessary to crash and burn when an even `type` is found, and the length of `len`. Overall, the proposal aims to allow for future expansion while maintaining backward compatibility among intercommunication structures such as messages and invoices.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-25T17:10:40.027443+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

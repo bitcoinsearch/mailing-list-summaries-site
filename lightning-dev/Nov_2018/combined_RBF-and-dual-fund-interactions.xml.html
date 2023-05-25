@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF and dual-fund interactions <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001636_RBF-and-dual-fund-interactions.xml.html">RBF and dual-fund interactions</a>
+                        <b>Rusty Russell 2018-11-20 02:36:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001631_RBF-and-dual-fund-interactions.xml.html">RBF and dual-fund interactions</a>
+                        <b>ZmnSCPxj 2018-11-17 13:54:12</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001636.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-11-20T02:36:24+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a Lightning-dev post, it has been suggested that RBF and dual-fund have some complex interactions. The situation arises when a liquidity provider owns a single UTXO containing its entire funding. If a customer purchases liquidity less than the total money of the liquidity provider, the funding tx has a change output that goes to the liquidity provider. Suppose, while the funding tx is unconfirmed, another customer appears and purchases liquidity. Now, if the first customer gets tired of waiting for a confirmation on its funding tx and RBF its funding tx, the second customer funding tx is removed from mempools since its root was replaced. This creates an attack vector where the second customer can gather all its dust and give a very low fee, creating a large tx that has too low feerate to be mined but too large total fee to get over the RBF rule 1. Instead of providing change outputs for liquidity providers, it has been suggested to require that liquidity providers cannot have a change output on the funding tx. Here, the liquidity provider will have to create a transaction from its single UTXO to two UTXOs, only one of which is actually added to the channel, and the other being the liquidity provider change output. This allows a second output that is not dependent on the funding tx, and which allows the two customers to RBF independently of each other. However, this approach increases blockchain usage.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-25T17:23:39.541125+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

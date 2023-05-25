@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Splicing Proposal: Feedback please!</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-10-24 06:36:52
+            <br><i>Published on: 2018-10-24T06:36:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2018/combined_Splicing-Proposal-Feedback-please-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001476.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning developers have been discussing the addition of a splice feature to the protocol, which would allow nodes to add or remove liquidity from channels without closing them. The developers have now proposed a design for the splice feature which includes a distinct message that references an active channel ID and a splice channel ID for the pending splice. The proposal also suggests adding a splice-reject message/error code to signal when a local tolerance for the number of pending splices has been reached. The developers have also discussed the need for both parties to send channel updates with the option_channel_moving bit set and continue to keep the channel in their routing table. Additionally, the developers have suggested allowing both sides to modify parameters such as CSV param, reserve, max accepted HTLCs, max HTLC size, etc., as the size of the channel is either expanding or contracting. The developers have also discussed the benefits and drawbacks of resetting the revocation sequence post-splice, but ultimately decided against it due to the current atomicity perspective. Finally, the developers have considered the potential scalability issues with increasing the maximum values of these parameters.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T14:10:38.202226+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

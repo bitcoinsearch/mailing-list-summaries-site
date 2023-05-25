@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH] First draft of option_simplfied_commitment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-11-22 05:12:54
+            <br><i>Published on: 2018-11-22T05:12:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_-PATCH-First-draft-of-option-simplfied-commitment.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001656.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Matt Corallo and Rusty are discussing a proposed change to the Bitcoin protocol. The proposal involves using CSVs in HTLC output scripts. Specifically, the non-revoked branch of the HTLC output script would include `1 OP_CSV OP_DROP`. Additionally, the HTLC-Success tx and self-generated fulfillment tx would require nSequence = 1. Rusty suggests a new RBF rule where if a transaction has a feerate that is twice the current package rate, it can be accepted, overriding RBF rules 3, 4 & 5. This proposal would simplify the process and reduce blockchain spam. Rusty plans to debate this on bitcoin-dev.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T17:35:16.884751+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

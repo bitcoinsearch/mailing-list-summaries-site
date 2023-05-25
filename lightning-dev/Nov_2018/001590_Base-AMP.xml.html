@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base AMP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-11-14 00:13:30
+            <br><i>Published on: 2018-11-14T00:13:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Base-AMP.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001590.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a proposal shared on Lightning-dev, ZmnSCPxj suggests a new method to support Base AMP. However, Rusty Russell argues that the complexity of this proposal outweighs its benefits for now. Instead, he suggests sticking with BOLT #4 which defines the per hop data structure for payments. He proposes defining bit 0 of `flags` as `incomplete_payment` in BOLT #4 and allowing it only for final nodes who put it in their BOLT11 field. BOLT #11 is also updated to include a variable `data_length` for features supported for receiving payments and specifies that unknown odd bits set in the `9` field should be ignored by the payer. Additionally, writers are encouraged to use the minimum possible `data_length` for fields `x`, `c`, and `9`, and omit them entirely if possible.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:31:14.106992+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

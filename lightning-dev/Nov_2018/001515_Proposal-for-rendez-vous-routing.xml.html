@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for rendez-vous routing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-05 08:11:58
+            <br><i>Published on: 2018-11-05T08:11:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Proposal-for-rendez-vous-routing.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001515.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between CJP and Rusty Russell about proposal on merchant forward service using rendezvous routing, CJP raised concern that Bob might be excluded from the side of the network with the more harsh regulatory conditions if it is widely known that he provides this forwarding service. Rusty agreed that this is a concern, as it allows somebody to notice such use of rendezvous routing. Rusty also mentioned that while this is allowed within the protocol and existing node software do not particularly care, it is important to check if forwarding nodes are currently cool with such weird forwarding requests. Rusty proposed a design for a "merchant forward" service using stuff they have today where Alice wants to remain anonymous even from the lightning network and Bob's node offers a forwarding service. Alice pays Bob (base + percentage?), gives a path Bob->Alice, and Bob gives Alice a short-channel-id (BobAliceSCID) and privkey to use (BobAliceSecretKey). Anything sent from Bob to this short channel id and pubkey is in fact forwarded via a new HTLC to Alice. The payer doesn't even know this arrangement exists: it looks exactly like Alice has a private channel with Bob. The minor downside is that because they conflate invoice keys (Alice needs) and onion keys (Bob needs), Bob can now issue invoices as Alice which is not very useful, but it is an argument for a separate invoice key in future.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:13:05.541305+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

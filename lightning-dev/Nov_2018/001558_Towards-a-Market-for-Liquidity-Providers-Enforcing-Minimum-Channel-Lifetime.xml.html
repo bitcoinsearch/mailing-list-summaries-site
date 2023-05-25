@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Towards a Market for Liquidity Providers -- Enforcing Minimum Channel Lifetime</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-12 00:15:47
+            <br><i>Published on: 2018-11-12T00:15:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Towards-a-Market-for-Liquidity-Providers-Enforcing-Minimum-Channel-Lifetime.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001558.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Pierre and ZmnSCPxj revolves around adding an additional CLTV constraint that determines the minimum channel lifetime. It is mentioned that parties have to exchange the first commitment txes before the funding tx is published, which means the absolute CLTV delay would not really constrain the duration of the channel as the timer starts running before the channel is created. However, it is argued that if the funding transaction gets confirmed and it is possible for one party to broadcast the commitment transaction, then the same analysis applies. It is noted that the initiator of the channel pays onchain fees and controls how fast or slow the time is between both parties agreeing to a specific CLTV blockheight to when the channel opens. Any discrepancy between the time they agree and the time the channel gets confirmed and starts its onchain lifetime is equivalent to one party shutting down its node for that duration. The possibility of lowballing the onchain fee for the funding transaction and doubling-spending only one's own inputs to invalidate the funding transaction is discussed, which would mean Licky loses all ability to earn. The time from when both sides agree to open the channel and exchange signatures for the funding transaction to the time the funding transaction confirms may be sensitive due to the possibility of one side unilaterally RBFing their inputs.The contract in full is then provided: Mercy agrees to pay N satoshi to Licky, Licky agrees to have L satoshi locked for use in the channel until block height B, either side may void this contract by paying a miner fee until the funding transaction confirms, and Mercy is responsible for getting the funding transaction confirmed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:55:21.034498+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

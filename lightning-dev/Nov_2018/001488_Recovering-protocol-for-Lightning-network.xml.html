@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recovering protocol for Lightning network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2018-11-01 10:26:09
+            <br><i>Published on: 2018-11-01T10:26:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Recovering-protocol-for-Lightning-network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001488.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Margherita Favaretto, a member of the Lightning Network community, recently attended "LightningHackdayNYC" where she discussed and refined her project on creating a recovering protocol for Lightning Network. She has created a GitHub project where she welcomes feedback and comments on her draft research. Her aim is to solve the issue of false positive nodes in the Eltoo mechanism, which does not cover the case where the other node doesn't share the last transaction, but instead an older one that is more favorable for its balance.Her solution involves using other connected nodes as a backup for the most recent status. For each transaction between node A and B, A sends an encrypted information regarding the last commitment transaction with B to C and vice versa. This enables A to retrieve the information from the other connected node if it loses the last transactions, allowing it to update the status. Margherita believes this idea can solve the current lack in Eltoo and is keen to analyze it further in the next few days. Johan, another member of the community, suggested that Margherita should look into "data loss protection" as defined in the BOLTs, which is similar to her proposal, as well as watchtowers and static and dynamic channel backups.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:01:41.234329+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC: simplifications and suggestions on open/accept limits.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-11-01 01:03:19
+            <br><i>Published on: 2018-11-01T01:03:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_RFC-simplifications-and-suggestions-on-open-accept-limits-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001487.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Gert-Jaap Glasbergen has shared his opinion on the removal of htlc_minimum_msat. He believes that it is the only protection measure against producing trimmed HTLCs and should not be removed. He recommends setting the safe default above the dust limit to prevent trusted in-flight payments that can't be enforced on-chain. While non-dust outputs may still be uneconomic to collect, he suggests varying the definition of "dust" with fees. He also suggests defining minimum_depth per chain instead of a fixed number in the standard. Gert-Jaap proposes adding either transaction_min_msat_multiple or accept_subsatoshi to enable users to opt-out of parts below 1000 msat that cannot be enforced on-chain.Rusty agrees with Gert-Jaap's suggestion about minimum_depth being chain-dependent but disagrees with opting out of parts below 1000 msat. Rusty thinks that it would render one inoperable in practice since fees are frequently sub-satoshi. He believes that on-chain enforcement is not a panacea as probabilistic payments can still be gamed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T14:35:43.944728+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

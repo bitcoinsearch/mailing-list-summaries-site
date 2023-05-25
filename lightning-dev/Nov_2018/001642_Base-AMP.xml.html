@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base AMP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-11-21 00:29:43
+            <br><i>Published on: 2018-11-21T00:29:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Base-AMP.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001642.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>René Pickhardt via Lightning-dev has proposed adding a base AMP proposal to BOLT04 and BOLT11. The proposal contains some verification, clarification, and proposing of an algorithm for executing multipath payment. René suggests that the receiving node signals support for Base AMP by setting a feature bit in the BOLT11 String. The sending node signals a multipath payment by setting a feature bit and using the same `amount to forward` value in the last hop of the onion for all paths. René also clarifies that senders MUST NOT create paths that would have to be merged by intermediary nodes and proposes specifying an algorithm for executing a multipath payment. An algorithm such as the divide and conquer scheme is suggested. However, Rusty does not think that the divide and conquer scheme is useful and suggests using more random split instead. They also propose adapting a convention for a lower limit at which they disable the channel if they can't forward. This gives a better starting point for AMP.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:33:53.202368+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

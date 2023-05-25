@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for updateable / revokable proofs of payment <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001506_Proposal-for-updateable-revokable-proofs-of-payment.xml.html">Proposal for updateable / revokable proofs of payment</a>
+                        <b>ZmnSCPxj 2018-11-05 01:20:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001504_Proposal-for-updateable-revokable-proofs-of-payment.xml.html">Proposal for updateable / revokable proofs of payment</a>
+                        <b>CJP 2018-11-04 21:08:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001516_Proposal-for-updateable-revokable-proofs-of-payment.xml.html">Proposal for updateable / revokable proofs of payment</a>
+                        <b>CJP 2018-11-05 08:23:10</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001506.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-11-05T01:20:51+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>BOLT11 payment request is an option contract that binds the payee to the terms and conditions in the description if payment is made. However, there is no identification of the payer in the contract, leading to ambiguity in obligations. To resolve this issue, two-way communication is necessary.The proposal suggests a method for a contract update format that includes new obligations of the two parties to each other, a secure hash of the previous contract version, and signatures from both parties. The contract update format covers various scenarios, such as full refunds, partial refunds, or changes in conditions without a change in payment.For a contract update to be valid, the signatures must correspond to the pubkeys in the original contract, be valid signatures on this contract, have valid previous contracts in the chain (except for being invalidated by contract updates), have no known valid contract replacing it, and have a corresponding payment preimage provided when including a payment hash.The original contract differs from the contract update in that it does not have a previous contract version, a set of pubkeys is provided, and only the payee has obligations, so the payee never needs to receive a signature from the payer. Whenever one payee has obligations to another, the pubkey of the party with obligations must be verified through some PKI.There is conceptual similarity between an updateable proof of payment and a payment channel.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-25T15:21:33.094924+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

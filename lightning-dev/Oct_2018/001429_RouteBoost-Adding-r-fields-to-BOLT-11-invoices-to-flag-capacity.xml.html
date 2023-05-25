@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RouteBoost: Adding &#39;r=&#39; fields to BOLT 11 invoices to flag capacity</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-10-08 05:16:19
+            <br><i>Published on: 2018-10-08T05:16:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2018/combined_RouteBoost-Adding-r-fields-to-BOLT-11-invoices-to-flag-capacity.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001429.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent post, Matt Corallo expressed the need for clarity on the appropriate usage of the r= field in Lightning Network invoices. Initially, Corallo had implemented it such that if an invoice had an r= field, any publicly discovered last-hop routes would be ignored since the r= data is most likely more up-to-date than any public route rumor information. However, he wonders if it's only used as a hint and only one or two out of potentially many channels are included in it, that may make little sense. Originally, there were two proposed uses of r=: for payments via unannounced channels and for routing hints for nodes which don't have a complete topology. Corallo recommends that the payer should prefer to use the final hops specified in r fields over other equivalent routes it knows. He notes that r can provide zero-or-more full routes, not just a single hop as is done here. However, there's no reason to believe that the invoicer has more knowledge about all but the last hop. Corallo suggests that the appropriate guidance should be something like "SHOULD prefer to use invoice-r=-provided-hints over publicly-discovered routes however MAY use other last-hops in case a substantially better route is known." It's important to note the weasel word "equivalent" here, as biases against these could arise from fees, timeouts, or even privacy concerns. Finally, Corallo admits that he hasn't implemented this yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T13:57:33.585005+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

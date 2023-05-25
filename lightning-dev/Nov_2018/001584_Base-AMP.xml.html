@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base AMP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-13 22:39:05
+            <br><i>Published on: 2018-11-13T22:39:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Base-AMP.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001584.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread between Johan and ZmnSCPxj discusses the concept of merge nodes, which wait for the entire payment to be available and committed to as HTLCs before making claims. They assume that proof-of-payment is valuable and if the ultimate payee has not received all payments, it would be irrational to claim a partial payment since it would release the proof-of-payment for a value less than the value implied by the invoice. Similarly, intermediate nodes should forward a value only if it's greater than the current total value merging into it and it has assurances it can claim all values in a commitment transaction. This atomicity is economically rational and not information theoretically atomicity. Johan suggests renaming non-atomic payments and ZmnSCPxj proposes a `multipath_merge_per_hop` type to support Base AMP, allowing arbitrary merges of paths but not arbitrary splits, which may not be safe. The proposal defines the contents of the hop and specifies that the receiver must impose a reasonable timeout for waiting to receive all component paths and fail all incoming HTLC offers for the payment hash if they have not totaled equal to intended_total_payment. The sender must use the same payment_hash for all paths of a single multipath payment.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:30:54.125163+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

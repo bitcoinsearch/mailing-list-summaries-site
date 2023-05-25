@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recovering protocol for Lightning network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Margherita Favaretto 2018-10-31 23:58:57
+            <br><i>Published on: 2018-10-31T23:58:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2018/combined_Recovering-protocol-for-Lightning-network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001485.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Over the weekend, Margherita Favaretto participated in "LightningHackdayNYC", where she discussed her project of realizing a recovering protocol for Lightning Network. She has created a project on GitHub to share her research and welcomes comments and feedback. Eltoo is already solving part of the problem by allowing nodes to share the last status of the channel; however, it does not cover the case where the other node shares an older transaction that is more favorable for their balance. Margherita's project aims to solve this specific issue and make the protocol more solid to face completely the case of a false positive node. Her idea is to use other connected nodes as a backup for own recent status. For each transaction between two nodes connected to a third node, A sends an encrypted information about the last commitment transaction with B to C, and for each commitment transaction with C, A sends an encrypted information about the last commitment transaction with C to B. This way, if A loses the last transactions, she may ask for the information from the other connected node and update the status. Margherita believes that this idea can solve the current lack in Eltoo and plans to analyze it further. She invites thoughts and suggestions for proceeding in the wisest way and finding a solution that can also cover all needs. If anyone is interested in this research, she is open to sharing more details about the design of her idea and collaborating to work together.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:02:20.008828+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

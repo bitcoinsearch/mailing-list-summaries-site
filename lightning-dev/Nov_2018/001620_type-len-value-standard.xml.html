@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>type,len,value standard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-11-16 00:25:34
+            <br><i>Published on: 2018-11-16T00:25:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_type-len-value-standard.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001620.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Conner Fromknecht and ZmnSCPxj, several key points have been raised regarding the use of the `type,len,value` sequence in BOLT messaging. It has been accepted that each `type` in this sequence must be unique, and repeated fields should be serialized under a single root key. However, it is unclear whether the `type`s must be in ascending order, as this has not been explicitly accepted or rejected. There is some debate over whether the `type` should be one byte or two; while ZmnSCPxj leans towards one byte, there is agreement that if a message has 256 optional fields, it may be time to consider a new message type altogether. Similarly, there is discussion over whether the `len` should be one byte or two, with the suggestion of using varint as a compromise.The question of whether odd `type`s are acceptable has also arisen, with the answer depending on the specific context of the message. For gossip messages, optional fields need to remain optional for backwards compatibility, but link-level messages can be gated by feature bit negotiation, with deviations resulting in disconnection. Finally, there is a proposal to create a separate BOLT for `type,len,value`, which other messages and so on could refer to. Although the specifics of what sub-TLV structures would look like have not been fleshed out, the general TLV definition belongs in BOLT #1, as it is short.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T17:07:31.760204+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

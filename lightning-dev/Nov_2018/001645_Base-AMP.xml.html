@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base AMP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-21 02:54:28
+            <br><i>Published on: 2018-11-21T02:54:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Base-AMP.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001645.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to Rusty, ZmnSCPxj has suggested that `amt_to_forward` is not being played with as it retains its previous use. The pre-AMP specification states that for non-final nodes, `amt_to_forward` is the value to forward to the next node and that incoming_htlc_amt - fee >= amt_to_forward should be checked. For final nodes, `amt_to_pay` is the value intended to reach it and incoming_htlc_amt >= amt_to_pay must be checked. In Base AMP, if incomplete_payment flag is not set, final nodes must check incoming_htlc_amt >= amt_to_pay. If incomplete_payment flag is set, final nodes must claim HTLCs only if sum(incoming_htlc_amt) >= amt_to_pay where sum(incoming_htlc_amt) is the total incoming_htlc_amt for all incoming HTLCs terminating at this final node with the same payment_hash. ZmnSCPxj suggests that perhaps two fields, `amt_to_pay_for_this_partial_payment` and `amt_to_pay_for_total_payment`, should be used instead for AMP.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:32:17.269569+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

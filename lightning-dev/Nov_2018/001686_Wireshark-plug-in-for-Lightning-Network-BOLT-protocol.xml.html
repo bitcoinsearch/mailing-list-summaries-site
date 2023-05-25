@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Wireshark plug-in for Lightning Network(BOLT) protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> daniel 2018-11-28 05:10:22
+            <br><i>Published on: 2018-11-28T05:10:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Wireshark-plug-in-for-Lightning-Network-BOLT-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001686.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Nayuta team is developing a Wireshark plug-in for the Lightning Network (BOLT) protocol. The alpha version can decode some BOLT messages and currently works for Nayuta's implementation (ptarmigan) and Éclair. To make interoperability testing less time-consuming, the team proposes that every implementation has a compile option which enables an output key information file. By following this key log format, KeyLogSecretFactory can be reused instead of implementing ClightningSecretFactory. In response to the proposal, Tock203 noted that ~/.lightning/keys.log will contain the last sk only, and lightning-dissector cannot decrypt .pcap files that contain both messages before key rotation and messages after key rotation. He recommends following the suggested key log format to support decrypting such .pcap files. Christian Decker wonders if it would be possible to query a command line program or a JSON-RPC call to get the secret so that it could be added to the `listpeers` output. Tock203 responds that they implemented the latter scheme, and lightning-dissector already supports key rotation. The current design writes 16byteMAC & key of "first BOLT packet" whenever key rotation happens (nonce==0). When reading a .pcap file that starts with a message whose nonce is not 0, the messages cannot be decrypted until the next key rotation occurs.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T14:48:10.501567+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

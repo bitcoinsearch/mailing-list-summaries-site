@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH] First draft of option_simplfied_commitment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2019-11-19 13:46:23
+            <br><i>Published on: 2019-11-19T13:46:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2019/combined_-PATCH-First-draft-of-option-simplfied-commitment.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002337.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the post has gained a better understanding of dust limits and their impact on anchor outputs in Lightning Network (LN). They believe that dust limits are unlikely to increase unless the BTC/fiat price drops so low that UTXO-filling attacks become more affordable. In such a case, decreasing or removing the dust limit may be necessary, but it would not affect anchor outputs significantly. However, if the BTC/fiat price rises, leading to a lowering of the dust limit, it could be beneficial to lower the anchor size too. Currently, the channel initiator pays for both anchors, which could become expensive due to the rising cost of bitcoin. Therefore, choosing a lower value for anchors within the permitted dust limit would be advantageous.The author suggests creating anchor outputs that are economical to spend and require negotiable output amounts to compensate for fee rate fluctuations, especially if different anchor outputs are used for each channel party. While economical to prevent dust creation, they should also be as small as possible because they represent free money. The writer mentions that users running nodes may prioritize their balance over the quality of the utxo set.The author discusses three scenarios that can lead to unhappiness with hard-coded anchor values: a rise in dust limit, an increase in BTC price causing a decrease in the dust limit, and an increase in fee rates. To keep all options open, the author suggests introducing a new parameter in the channel opening sequence that sets the anchor size. By doing so, changes will not be required if any of the mentioned scenarios occur.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T17:35:50.378731+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

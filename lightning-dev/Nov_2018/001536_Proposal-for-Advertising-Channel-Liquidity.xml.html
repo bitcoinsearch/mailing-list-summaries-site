@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for Advertising Channel Liquidity</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-07 06:17:17
+            <br><i>Published on: 2018-11-07T06:17:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Proposal-for-Advertising-Channel-Liquidity.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001536.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the question of whether a node should be able to request more liquidity than they put into the channel on their half. The concern is raised that allowing the initiator of the request to request for arbitrary capacity could be dangerous. For instance, someone with malicious intent could spin up a temporary Lightning Node, request for incoming capacity with only a nominal fee, and then shut down the node permanently, leaving the funds in an unuseable channel. This also loses potential earnings from the locked-up funds. However, if nodes were obligated to have at least greater capacity tied into the channel, this attack would become more expensive for the attacker as they would also be tying up their own funds. Advertised liquidity creates a market of inbound capacity that any node can take advantage of, reducing the amount of out-of-band negotiation needed to get the inbound capacity that you need. The credit goes to Casey Rodamor for the initial idea.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:21:59.026210+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
