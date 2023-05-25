@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why do we need fee estimation in the protocol? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/May_2018/001272_Why-do-we-need-fee-estimation-in-the-protocol-.xml.html">Why do we need fee estimation in the protocol?</a>
+                        <b>CJP 2018-05-12 20:45:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2018/001276_Why-do-we-need-fee-estimation-in-the-protocol-.xml.html">Why do we need fee estimation in the protocol?</a>
+                        <b>Rusty Russell 2018-05-14 03:51:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2018/001277_Why-do-we-need-fee-estimation-in-the-protocol-.xml.html">Why do we need fee estimation in the protocol?</a>
+                        <b>ZmnSCPxj 2018-05-15 01:03:34</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001272.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-05-12T20:45:15+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A member of the Lightning Network mailing list, CJP, suggested that allowing peer A to determine the fee for their own commit transaction would be a fair solution. Under this proposal, Peer A would pay the transaction fee from its part of the channel funds and could ask Peer B for a signature on an updated "commit transaction A" if they wanted to change the fee. However, Rusty Russell pointed out that this approach creates complications since HTLCs pay their own fees. Laolu Osuntokun proposed always having an "OP_TRUE" output and minimal fees in the spec to simplify the fee problems. ZmnSCPxj added that Eltoo works around this by always being a single input/output pair with SIGHASH_SINGLE|SIGHASH_ANYONECANPAY, allowing fees to be attached later without bloat issues. However, this technique cannot be used in Poon-Dryja even with `SIGHASH_NOINPUT`, since commitment transactions often have multiple outputs.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-25T01:00:28.238987+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

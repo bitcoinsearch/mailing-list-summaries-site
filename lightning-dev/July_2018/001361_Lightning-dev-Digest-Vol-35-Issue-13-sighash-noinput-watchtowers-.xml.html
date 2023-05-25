@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning-dev Digest, Vol 35, Issue 13 (sighash_noinput &amp; watchtowers)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-07-14 00:48:15
+            <br><i>Published on: 2018-07-14T00:48:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2018/combined_Lightning-dev-Digest-Vol-35-Issue-13-sighash-noinput-watchtowers-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-July/001361.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the application of sighash_noinput which allows a reduction in the number of stored signatures as it can spend any uxto with the respective one-use pub key script. However, it is being questioned whether privacy is being traded off in the case of watchtowers as they reveal which states are related. Eltoo is mentioned as it requires SIGHASH_NOINPUT which means that only the latest transaction is needed instead of a penalty tx for every state change. The txid_half + encrypted blob guarantees that nothing is learned about each state and how they relate unless a revocation must happen. On the other hand, it doesn't scale as it requires one blob per outsourced state. Once signatures are reused for multiple states with sighash_noinput, the question arises as to how information disclosure to a third party can be minimized. Although no full design has been done yet, encryption using the txid is suggested as a possible solution. A twist is that the watchtower may need to consider transactions that have already been spent by one or a chain of SIGHASH_NOINPUT transactions, but this is considered easy.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T01:49:02.507694+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

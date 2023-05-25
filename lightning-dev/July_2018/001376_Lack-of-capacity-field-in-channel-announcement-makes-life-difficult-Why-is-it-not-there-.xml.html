@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lack of capacity field in channel_announcement makes life difficult. Why is it not there?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Robert Olsson 2018-07-29 14:16:09
+            <br><i>Published on: 2018-07-29T14:16:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2018/combined_Lack-of-capacity-field-in-channel-announcement-makes-life-difficult-Why-is-it-not-there-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-July/001376.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Christian Decker and Robert Olsson, the topic of including the exact fixed capacity in channel_announcement was brought up. Robert suggested adding htlc_maximum_msat to the channel_update as well, but Christian clarified that the focus was on adding the total channel capacity to the channel_announcement. This would eliminate the need for an on-chain lookup and is a reasonable idea since the channel's capacity is fixed for the existence of the channel. Christian also mentioned that tracking an internal UTXO set allows them to stop asking bitcoind for full blocks just to check a channel's capacity. Overall, including the channel capacity in the announcement would be beneficial for successful routing.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T01:54:33.231175+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Including a Protocol for splicing to BOLT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-07-08 06:38:38
+            <br><i>Published on: 2018-07-08T06:38:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2018/combined_Including-a-Protocol-for-splicing-to-BOLT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-July/001353.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Olaoluwa Osuntokun and Rusty Russell, they discussed the importance of proof-of-payment in a system without intermediaries. Currently, they only have a "proof that someone paid" rather than a proper proof-of-payment, which would include a "proof that Bob paid Carol". While useful for common cases of disputes, it is trivially forgable by payees, making it an unreliable system as their network grows.Osuntokun mentioned that spontaneous payments are amongst the most requested features from users and developers; however, Russell argued that they are terrible for anything but donations. Reusable invoices are vital, but businesses do not want people to reuse old invoices, even if using discrete logarithm methods so it wasn't massively broken. Push-payments was one of the support headaches encountered at the Blockstream Store, and Russell is not eager to repeat it.Russell clarified that while eltoo won't be the end-all-be-all, it will improve things significantly against what they have today, despite its caveats. They also agreed that everything they can do with Schnorr can also be done with ECDSA, but Schnorr should be much easier. Overall, they acknowledged that their current network of early adopters with no significant malicious players will not last and tradeoffs, like everything else, must be made.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T01:40:40.780808+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
