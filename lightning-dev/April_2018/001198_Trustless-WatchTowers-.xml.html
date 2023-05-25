@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless WatchTowers?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Conner Fromknecht 2018-04-17 07:18:49
+            <br><i>Published on: 2018-04-17T07:18:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Trustless-WatchTowers-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001198.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Conner and ZmnSCPxj discuss a potential WatchTower protocol approach for the Lightning Network. Conner suggests that there are still implementation details that need to be addressed before formalizing everything in a BOLT spec. They discuss some of the tradeoffs and compromises involved in the design. ZmnSCPxj shares an "encrypted blob" approach used by watchtowers in 2016, which Conner finds similar to what he was thinking. When asked if there is anything written up formally on the WatchTower protocol used in lnd, Conner replies in the negative but says that he is working on something documenting the approach(es) that end up being solidified. They discuss ways to optimize the set of signatures sent to the watchtower, observing that since the HTLC timeout or success transaction must be broadcast before the attacker can move funds back into their wallet, it is unnecessary to provide both the first-stage and second-stage revocation signatures. The watchtower only needs to act if second stage transactions are confirmed. One approach could be to send signatures for independent sweep transactions, allowing the watchtower to sweep each HTLC output individually. Conner suggests that the ability to sweep each HTLC independently is more-or-less a requirement given the complexity of how the on-chain state-space can manifest. They conclude that when the commitment txid is found on-chain, the WatchTower creates a single main output claim transaction using the 1 or 2 signatures for the main outputs, and for each HTLC outpoint on the commitment transaction, if it gets spent, the WatchTower creates one HTLC justice transaction from the second-stage HTLC transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:23:43.002465+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>High level fee mechanics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-11 03:04:09
+            <br><i>Published on: 2018-04-11T03:04:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_High-level-fee-mechanics.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001156.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The node gossip does not reveal the channel balance of each peer, which is effectively the amount of money each peer owns on that channel. It is because you do not want to report your balance and any changes in it to the entire network. Therefore, you cannot expect to receive such updates from anyone else either. Real-life implementations like c-lightning get payment routes through brute-force trial-and-error. If one channel on a route fails, they mark it as temporarily unusable and plot a new route that does not include that channel. However, you can easily get the channel total capacity for each channel. Each published channel has a short channel id composed of blockheight, transaction index within block, and output index within transaction. This identifies a specific txout on the blockchain you are using. If that txout is unspent, then the value of that UTXO is the total channel capacity. C-lightning records this but does not use the total channel capacity yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T22:03:11.980653+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

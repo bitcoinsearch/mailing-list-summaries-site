@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless WatchTowers?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-16 03:32:43
+            <br><i>Published on: 2018-04-16T03:32:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Trustless-WatchTowers-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001188.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Nicolas Dorier has requested additional hooks in c-lightning for a simple WatchTower system, according to a GitHub issue. However, ZmnSCPxj has expressed concern that the current interface requires a trusted WatchTower, which could potentially lead to the loss of channel funds. ZmnSCPxj suggests that the only safe way to implement a trustless WatchTower is for the node to generate a fully-signed justice transaction immediately after every commitment transaction is revoked and transmit it to the WatchTower. The WatchTower would need to store each received justice transaction without compressing or using various techniques to store data efficiently. This approach would require nodes to keep the transactions until the WatchTower has received them. It is unclear if this has been addressed in BOLT v1.0.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:24:12.488742+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

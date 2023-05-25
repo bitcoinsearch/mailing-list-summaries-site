@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>eltoo Trustless WatchTowers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-05-02 10:43:22
+            <br><i>Published on: 2018-05-02T10:43:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001233.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj proposed a half-baked idea for encrypted-blob, slightly-blinded Decker-Russell-Osuntokun WatchTowers. He observed that update transactions in Decker-Russell-Osuntokun channels have no txid that can be used as key for the encrypted blob. One thing he suggested is to use the trigger transaction, which has a stable txid since its sole input is an ordinary 2-of-2 that is signed with normal `SIGHASH_ALL`. However, this has the drawback that each update of a single channel generates a `(txid[:16], blob)` pair that has the same `txid[:16]` key, letting the WatchTower correlate the timing and number of updates of each of your channels. ZmnSCPxj then proposed to generalize WatchTowers pairs to `(hash[:16], blob)`, where `hash` is the message that is signed in the witness program, not just the `txid`. The same framework can be used for Poon-Dryja and Decker-Russell-Osuntokun WatchTowers. The main loop of the WatchTower (which can watch either Poon-Dryja or Decker-Russell-Osuntokun channels) is now something like: When a block comes in, verify each transaction. If during signature validation, we match the hash of the message being signed to a watched blob `hash[:16]`, we decrypt the blob and proceed to justice depending on the type of the decrypted blob. The above retains the decorrelation property (the WatchTower, given two `(hash[:16], blob)` pairs, cannot know if the two pairs refer to the same channel, or different channels), but only up to a theft attempt.If a theft attempt occurs, then the WatchTower can now correlate the blobs (it might have kept records of when the blobs were given to it, and the decrypted blobs certainly give it history of how much money was allocated to both sides of the channel at that time) to a specific channel. The proposal also requires quite a bit of grinding on the WatchTower, as it has to generate a large number (possibly up to a billion) of possible future update transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T00:54:57.467675+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

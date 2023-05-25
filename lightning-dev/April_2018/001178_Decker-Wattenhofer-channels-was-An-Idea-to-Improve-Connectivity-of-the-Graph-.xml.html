@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decker-Wattenhofer channels (was: An Idea to Improve Connectivity of the Graph)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-13 13:41:32
+            <br><i>Published on: 2018-04-13T13:41:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Decker-Wattenhofer-channels-was-An-Idea-to-Improve-Connectivity-of-the-Graph-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001178.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this communication, ZmnSCPxj seeks clarification on how HTLCs (Hashed Timelock Contracts) are offered under Decker-Wattenhofer Duplex Micropayment Channels. According to ZmnSCPxj's understanding, the transaction sequence under Decker-Wattenhofer construction involves funding, trigger, and invalidation tree(s). The outputs of the final invalidation tree transaction split the funds between the payer and payee in individual simplex channels that make up the duplex channels. However, ZmnSCPxj is uncertain about how HTLCs, which have an absolute timelock, can be made compatible with the relative timelock used by the invalidation tree. ZmnSCPxj contrasts this with Poon-Dryja channels, where the relative-timelock only exists on the claim transaction after a unilateral commitment transaction. HTLCs are offered as outputs of the unilateral commitment transaction, so that the relative-timelock on the main output does not interfere with their normal operation. In contrast, unrevoked HTLC paths that go to oneself have an extra CSV in the HTLC-timeout and HTLC-success paths. Nonetheless, the relative timelock for the HTLC-timeout case is relative to the absolute one that comes first. Finally, ZmnSCPxj expresses concern that the issue of how HTLCs are handled under Decker-Wattenhofer channel factories, which use invalidation trees internally before paying out HTLCs, needs clarification.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:19:30.966268+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless WatchTowers?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-17 06:14:37
+            <br><i>Published on: 2018-04-17T06:14:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Trustless-WatchTowers-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001197.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Conner and ZmnSCPxj is about the "encrypted blob" approach for watchtowers. ZmnSCPxj provides a link to an older mailing list thread that covers a variety of revocation schemes, including the encrypted blob approach. The encrypted blob approach involves sending an encrypted blob with a hint to the watchtower, which can be decrypted by the watchtower to assemble a justice transaction. ZmnSCPxj also shares recent investigations they have been conducting on watchtowers, including observations that can inform an efficient set of signatures to be included in the encrypted blobs. They note that the storage requirement for the watchtower is dominated by the number of HTLC signatures included in the encrypted blob, but suggest that the watchtower only needs to act if second stage transactions are confirmed. They propose a minimal solution that involves sending signatures for independent sweep transactions, allowing the watchtower to sweep each HTLC output individually. This approach is fairly efficient in preventing the attacker entirely from moving funds from the channel into their wallet with respect to the amount of data stored. All in all, the ability to sweep each HTLC independently is more-or-less a requirement given the complexity of how the on-chain state-space can manifest, especially if CLTVs have already expired.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:22:08.243027+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

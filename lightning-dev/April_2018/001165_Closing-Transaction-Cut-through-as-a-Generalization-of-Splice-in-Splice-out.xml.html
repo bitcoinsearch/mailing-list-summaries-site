@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2018-04-11 17:38:47
+            <br><i>Published on: 2018-04-11T17:38:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001165.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal for implementing a more general "cut-through" for a channel close transaction has been suggested. Instead of implementing a splice-in/splice-out, both parties would provide signed normal transactions that spend the outputs and create a new close transaction that cuts through the original close transaction and the additional normal transactions. Both sides could also provide incomplete and unsigned stubs that would be applied to the closing transaction. Inputs in the stubs are added as inputs to the closing transaction, while outputs are added to the closing transaction, drawing from the balance of the party adding the new output. This way, any number of splice-in/-out operations can be performed in a single reseat operation. The generalization is useful if we want to "reseat" a channel to one peer to another peer. For example, if the node keeps payment statistics and notices that the channel with one peer always has a high probability of failing to forward to a destination, then it could decide to close that channel and open a channel to some other peer. This reseat operation could use the closing transaction cut-through to close the channel and open to another peer in a single onchain transaction. The proposal suggests that reseats can be done offchain if both the reseat-form peer and the reseat-to peer and the node belong to the same channel factory.It has been noted that the connection to channel factories is not essential as long as there is an invalidation scheme that allows us to invalidate a prior funding transaction, so reseat can be done without needing a cut-through. To simplify the process, the proposal suggests using tx formatted messages to transport the intent, reconnecting to the idea of cut-through, combining multiple transactions into one. Although this may complicate state tracking, it is believed that eventually, transactions will assume multiple roles anyway.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:09:58.955318+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

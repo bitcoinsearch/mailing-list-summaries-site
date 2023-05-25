@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scriptless Scripts with ECDSA</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-30 04:23:11
+            <br><i>Published on: 2018-04-30T04:23:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Scriptless-Scripts-with-ECDSA.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001222.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj, a contributor to the Lightning Network protocol, has expressed interest in using the SS (scriptless script) and HD (hierarchical deterministic) features for AMP (atomic multipath payments). However, he is uncertain about the compatibility of ECDSA (Elliptic Curve Digital Signature Algorithm) and Bellare-Neven SS and whether it would be easy to switch between them dynamically. Additionally, he questions how well B-N signature aggregation would work for Lightning use cases and suggests that a 2-of-2 with a single signature could help reduce the size of mutual close and commitment transactions.At the Lightning BOLT spec level, ZmnSCPxj suggests the need for a new global feature bit `option_support_scriptless` to support routing of scriptless-script conditional payments, which requires all nodes in the payment route to support this option. He also proposes local-level feature bits for `option_support_scriptless_ecdsa` and `option_support_scriptless_bn`, depending on the ease of translation between ECDSA and Bellare-Neven SS. This affects BOLT11 as it would need to support both `SHA256(secret)` and `secret * G` in invoices. Intra-path decorrelation may also be needed, which requires passing a blinding secret to each layer of the onion in the onion routes.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:30:45.664171+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

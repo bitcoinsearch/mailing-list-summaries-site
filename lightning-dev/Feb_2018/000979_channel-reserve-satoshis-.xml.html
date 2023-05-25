@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>channel_reserve_satoshis?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Cezary Dziemian 2018-02-02 16:48:47
+            <br><i>Published on: 2018-02-02T16:48:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2018/combined_channel-reserve-satoshis-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000979.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context of the email is about opening a Lightning Network (LN) channel and receiving payments without locking funds on the other side of the channel. The sender, Cezary, was initially confused between 'channel_reserve_satoshis' and 'dust_limit'. In response to this, ZmnSCPxj clarified that there is no way to communicate with the other party to ask them to commit money into channels when opening a channel as of BOLT v1.0. This is due to trust issues such as an attacker locking up funds from a victim or knowing how much money the other party has lying around. ZmnSCPxj suggests mitigating such trust issues by disallowing dual-funding by default on the node and requiring explicit permission for multi-funding from a particular peer. Regarding the 'channel_reserve_satoshis' field, ZmnSCPxj explains that it is not used for communicating with the other party but rather for setting the amount that each party should keep on the channel once the channel state has moved from "all of the funds is assigned to the opener of the channel." This is to ensure that theft attempts have a cost and are not costless, thereby preventing attackers from stealing funds with no repercussions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T18:54:38.737301+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

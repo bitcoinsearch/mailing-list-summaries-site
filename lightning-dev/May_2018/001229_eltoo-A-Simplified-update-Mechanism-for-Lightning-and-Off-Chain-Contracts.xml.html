@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>eltoo: A Simplified update Mechanism for Lightning and Off-Chain Contracts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2018-05-01 12:04:51
+            <br><i>Published on: 2018-05-01T12:04:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2018/combined_eltoo-A-Simplified-update-Mechanism-for-Lightning-and-Off-Chain-Contracts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001229.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The paper discusses the use of SIGHASH_NOINPUT in combination with SIGHASH_SINGLE for off-chain transactions. These transactions involve funding, trigger, update, and settlement transactions that are signed with SIGHASH_NOINPUT flags. The update transaction script has two branches: a CSV-encumbered N-of-N "settlement" branch, and a CLTV-encumbered N-of-N "update" branch. The CLTV-encumberance ensures that if a past update transaction is confirmed, we can spend it using any later update transaction, since CLTV uses `stackTop past Unix timestamp so they are not actually time-encumbered.The pubkeys on the settlement branch of each update transaction are different and are derived using any hierarchical derivation method. The pubkeys on the update branch are all the same in all update transactions. This lets any update transaction replace any other update transaction, as long as the CLTV-encumberance is respected. Settlement transactions can carry contracts, which will be affected by the CSV-encumberance of the settlement transaction. Compared to Poon-Dryja (LN-penalty) channels, this approach requires more transactions in the worst-case, but dropping unilaterally on-chain requires the party doing the drop to have some on-chain funds it controls completely, since update transactions do not pay fees by themselves. However, the onchain reserve for paying fees for unilaterally dropped channels might be feasibly smaller than the channel reserve under Poon-Dryja. Like invalidation trees, N-party funds rather than just 2-party funds (channels) can be used.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:52:42.973867+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

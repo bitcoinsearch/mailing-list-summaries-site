@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>channel_reserve_satoshis? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/000977_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>Cezary Dziemian 2018-02-02 13:36:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/000978_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>ZmnSCPxj 2018-02-02 14:07:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/000983_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>ZmnSCPxj 2018-02-04 09:08:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/000984_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>Cezary Dziemian 2018-02-04 11:06:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/000995_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>Cezary Dziemian 2018-02-06 15:28:37</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/000979_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>Cezary Dziemian 2018-02-02 16:48:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/000985_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>ZmnSCPxj 2018-02-04 12:36:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/001003_channel-reserve-satoshis-.xml.html">channel_reserve_satoshis?</a>
+                        <b>ZmnSCPxj 2018-02-07 08:07:15</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000977.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-02-02T13:36:10+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a discussion about the Lightning Network, ZmnSCPxj explained that there is currently no way to communicate with the other party to put funds into the channel. This means that dual-funded channels require trust between both parties, and `channel_reserve_satoshis` is not used for requesting the other party to contribute funds. ZmnSCPxj gave several options for receiving LN payments without locking up funds on the other side of the channel, including publishing node and contact details and using the Blockstream Store route. However, establishing both-side funding channels with 300mBTC on each side without requiring trust to the hub is not possible due to technical limitations and trust issues.ZmnSCPxj clarified the purpose of the `channel_reserve_satoshis` field, which is to prevent costless theft. The field ensures that stealing attempts have a cost, as each party agrees to keep a certain amount of funds in the channel. Additionally, circular superhubs can be used as an emulation of dual-funding channels to improve network connectivity and routing. By joining multiple circular superhubs, one can receive LN payments without locking funds on the other side of the channel.Furthermore, ZmnSCPxj suggested that participating in multiple different circular superhubs is better from a risk perspective than repeatedly opening many channels to the same participant in a single superhub. Currently, c-lightning daemon will reject multiple channel attempts from LND, as dual-funding channels cannot be established since both sides cannot fund channels. However, this functionality may be added to BOLT and implemented in the future.In the meantime, dual-funding channels can be emulated by having some hubbing service make channels to you while you make a channel to some other hub.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-24T18:59:09.677642+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

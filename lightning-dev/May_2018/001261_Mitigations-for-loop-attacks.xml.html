@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigations for loop attacks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-05-09 07:31:56
+            <br><i>Published on: 2018-05-09T07:31:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2018/combined_Mitigations-for-loop-attacks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001261.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj responds to a proposal indicating that it is possible to destroy a node's reputation by routing crap through it. He explains that for this to happen, the reply must be delayed, and to prevent this from happening, nodes can quickly reply with an `update_htlc_fail`. Although a large player could force reputation loss by delaying reply when they receive and having patsy nodes route to them, ZmnSCPxj points out that doing so would make their reputation suffer even more. Furthermore, the proposal is extremely local, and if a particular node isn't connected to another node directly, then it has no opinion about that node. ZmnSCPxj suggests that earning via fees should help provide incentive against "Just `update_htlc_fail`" always. There is some optimal threshold of risk-of-reputation-loss vs. fee-earnings-if-I-forward that is unlikely to be near the "Just fail it" spectrum but somewhere in between. However, the proposal has a significant drawback as the rate at which the sender of the HTLC threatens the node with reputation loss lets them estimate their distance from the ultimate sender of the funds.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T00:45:02.743389+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

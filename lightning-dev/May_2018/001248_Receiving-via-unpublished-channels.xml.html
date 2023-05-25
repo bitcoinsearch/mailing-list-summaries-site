@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Receiving via unpublished channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ueno at nayuta.co 2018-05-08 06:33:53
+            <br><i>Published on: 2018-05-08T06:33:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2018/combined_Receiving-via-unpublished-channels.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001248.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj, a member of the Lightning-dev mailing list, is seeking advice regarding creating invoices with `r` fields. To receive payments via an unpublished channel, it is necessary to know the onLightning fees the other side of the channel wants to charge, but if the channel has not been published, then neither has the channel announcement or update been sent. Therefore, the idea is to send a `channel_update` as soon as the channel is locked in, regardless of whether it is published or unpublished. This approach seems back-compatible because software that does not expect this behavior will simply drop the `channel_update`. ZmnSCPxj asks for feedback from other Lightning Network implementations (lnd, eclair, ucoin, lit) about standardizing this behavior. Additionally, ZmnSCPxj asks what the intended way is to get the onLightning fee rates to put into invoice `r` fields for private routes. Ueno from the ucoin/ptarmigan implementation responds, stating that ucoin/ptarmigan does not support the `r` field yet and only decodes and discards it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:39:46.813313+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

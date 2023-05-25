@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>General questions about channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-01-01 03:00:53
+            <br><i>Published on: 2018-01-01T03:00:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2018/combined_General-questions-about-channels.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000887.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion between ZmnSCPxj and Andy Schroder about the maximum funding size for channels in Lightning Network, it was revealed that the upper 32 bits must be zeroed out for channels with chain_hash identifying the Bitcoin blockchain. This limits the maximum HTLC value to .04294967295 BTC or approximately $10. The reason for this limitation is to simplify the design of software by imposing a limit only under certain conditions while retaining the same format for all coins. Other cryptocurrencies may have different imposed limits when Lightning gets around to those, but for Bitcoin, this limit still stands. When questioned about why bother setting a limit for any cryptocurrency that might use lightning, Andy Schroder referred to a previously covered article which highlighted the need to eventually support other similar cryptocurrencies such as Litecoin. However, it appears that setting this limit is less critical in restraining the network since it is just between peers. There was also a proposal for a "dangerous feature bit" which would avoid this limitation.Further discussion revolved around a feature which allows users to hand all the money to the other side, thus avoiding an initial payment. Although this feature saves time, it is not considered a monumental or required feature and may potentially be dropped in version 1.1 if nobody uses it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T17:10:22.358491+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Commitment delay asymmetry</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2018-04-12 17:04:59
+            <br><i>Published on: 2018-04-12T17:04:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Commitment-delay-asymmetry.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001173.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In BOLT 3, commitment transactions require the to_local output to be time-locked with OP_CSV while the to_remote is a simple P2WPKH. However, this creates incentives for a party that goes offline and forces a unilateral close to not be penalized, while only the broadcasting party is. This becomes problematic in both normal operation and attack scenarios, such as when the other party does not send an update_fail_htlc after it expires. In these cases, a rational node might decide to become unresponsive instead of broadcasting the commitment, with the hope that the other party publishes instead. To address this issue, Jimpo suggests time-locking the to_remote output by the to_remote_delay, making the consequence of an on-chain settlement symmetric. This change would turn the game from chicken to a tragedy of the commons. Further analysis of this proposal can be found in the links provided for chicken and tragedy of the commons.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:12:42.314929+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

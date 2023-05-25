@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proof of payment (Re: AMP: Atomic Multi-Path Payments over Lightning) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/001027_Proof-of-payment-Re-AMP-Atomic-Multi-Path-Payments-over-Lightning-.xml.html">Proof of payment (Re: AMP: Atomic Multi-Path Payments over Lightning)</a>
+                        <b>Corné Plooy 2018-02-13 10:33:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/001028_Proof-of-payment-Re-AMP-Atomic-Multi-Path-Payments-over-Lightning-.xml.html">Proof of payment (Re: AMP: Atomic Multi-Path Payments over Lightning)</a>
+                        <b>ZmnSCPxj 2018-02-13 14:23:37</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2018/001034_Proof-of-payment-Re-AMP-Atomic-Multi-Path-Payments-over-Lightning-.xml.html">Proof of payment (Re: AMP: Atomic Multi-Path Payments over Lightning)</a>
+                        <b>Anthony Towns 2018-02-21 09:19:47</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001027.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-02-13T10:33:50+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The context discusses the need for a stronger payment receipt system to prove that a payer has made a payment to a payee. The current invoicing system is not entirely reliable and can be easily hacked or breached. Several techniques have been introduced to address this issue, including using ephemeral keys in onion packets, atomic access techniques like ZKCP and ZKCSP, and a different signed invoice format. These techniques provide stronger proof-of-payment, making the payment process more secure and reliable.The Lightning-dev mailing list has discussed the use case of atomic payments and the possibility of introducing a new invoice format for partially successful payments. Christian Decker suggested atomic multipath payments with a single secret, and future decorrelation mechanisms to vary the secret, while Corne Plooy proposed a different signed invoice format that includes several payment hashes with their corresponding amounts. This iterative process would allow the not-yet-settled amount to converge to zero.A Lightning developer, Conner Fromknecht, recently questioned the strength of using a signed invoice and preimage as proof of payment since intermediaries could also make a claim. Instead, Fromknecht suggested exploring proofs of stronger statements. Furthermore, AMP currently cannot provide a proof-of-payment, unlike current payment routing that has proof-of-payment, but it is an eventual design goal that would enable use of ZKC(S)P on-Lightning.The payment receipt system is particularly useful when there is a lack of complete trust between the payer and payee, but there is a possibility to go to court. It allows the payer to prove that they paid the intended payee rather than someone else at a later date, including to a third party such as a small-claims court, tax authorities, or a KYC/AML audit. The negotiation process between the two parties is not something that the lightning protocol needs to handle beyond switching to ECC points for payment hashes. It eliminates the need for extensive legal procedures and makes the payment process more secure and reliable.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-24T21:07:15.133667+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

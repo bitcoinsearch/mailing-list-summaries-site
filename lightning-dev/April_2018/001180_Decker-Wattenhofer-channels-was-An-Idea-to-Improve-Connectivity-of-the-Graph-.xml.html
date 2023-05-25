@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decker-Wattenhofer channels (was: An Idea to Improve Connectivity of the Graph)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2018-04-13 20:51:54
+            <br><i>Published on: 2018-04-13T20:51:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Decker-Wattenhofer-channels-was-An-Idea-to-Improve-Connectivity-of-the-Graph-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001180.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Decker-Wattenhofer construction of Duplex Micropayment Channels uses an invalidation tree to split the funds between payer and payee in individual simplex channels. However, this raises concerns about how HTLCs with absolute timelocks are compatible with the relative timelock used by the invalidation tree. To ensure compatibility, the absolute timelocks must be set far enough in the future to commit the latest branch of the invalidation tree on-chain and then commit the HTLC resolution before the HTLC timeout expires. Similarly, Poon-Dryja channels have a relative-timelock only on the claim transaction after a unilateral commitment transaction, and HTLC timeouts also require dropping on-chain to guarantee that all following hops resolve prior to resolving the incoming one. This is significant as it could affect Burchert-Decker-Wattenhofer channel factories, which use invalidation trees internally and come before the HTLCs they eventually pay out to.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:19:47.639577+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

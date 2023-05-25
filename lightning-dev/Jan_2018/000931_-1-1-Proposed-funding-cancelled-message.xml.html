@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[1.1] Proposed `funding_cancelled` message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-01-15 02:14:57
+            <br><i>Published on: 2018-01-15T02:14:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2018/combined_-1-1-Proposed-funding-cancelled-message.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000931.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between two members of the Lightning Development mailing list, the issue of channels timing out was discussed. The lack of a protocol-required minimum timeout was identified as the problem, and one member suggested that it would be useful to have something like "a receiving node MUST keep a channel ready to be used for at least a week prior to funding transaction confirmation." Additionally, a potential problem could arise from a malicious node continuously sending `open_channel` -> `funding_created` with random numbers for transaction ID, which could make the cost of tracking an unopened channel arbitrarily high. To avoid this issue, a node implementation could limit the number of pending channel opens for each peer. The proposed `funding_cancelled` message would allow an honest party to free up the limited resource "number of pending channel opens" without having to wait for the timeout.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T18:20:53.043171+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

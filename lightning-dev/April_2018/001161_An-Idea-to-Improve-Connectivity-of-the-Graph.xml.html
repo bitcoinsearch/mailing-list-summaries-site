@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An Idea to Improve Connectivity of the Graph</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-11 09:40:11
+            <br><i>Published on: 2018-04-11T09:40:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001161.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new technique for creating off-chain transactions called `nSequence`d transactions is described. Only the funding transaction is on-chain, while all other transactions are kept off-chain. This approach uses a sequence of transactions to represent a binary counter and allows for easy incrementation by replacing the appropriate transaction with one that has a different nSequence value. The number of transactions required depends on the size of the counter, but can be up to 33 transactions in sequence for a 32-bit counter. In a unilateral close, all off-chain transactions must be broadcasted sequentially to the blockchain, which can be time-consuming. However, normal operation only requires off-chain transactions, saving blockchain space. The drawback is the large number of transactions required for a unilateral close, compared to the Poon-Dryja approach which only requires two transactions in sequence. For low numbers of updates, a quaternary counter terminating in multiple Poon-Dryja channels can be used. Overall, this technique offers an alternative approach for creating off-chain transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T19:05:57.534191+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

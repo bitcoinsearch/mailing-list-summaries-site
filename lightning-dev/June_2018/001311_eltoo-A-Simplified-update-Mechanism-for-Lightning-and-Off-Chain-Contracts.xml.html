@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>eltoo: A Simplified update Mechanism for Lightning and Off-Chain Contracts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2018-06-19 14:46:32
+            <br><i>Published on: 2018-06-19T14:46:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2018/combined_eltoo-A-Simplified-update-Mechanism-for-Lightning-and-Off-Chain-Contracts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-June/001311.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, David A. Harding raised a question about the certainty of the last agreed-upon state not being replaced. In response, Christian Decker clarified that while it is true that the last agreed-upon state can be replaced in the mempool by paying more fees, it can be ensured that this update doesn't have any effect by binding the next agreed-upon state to it immediately afterwards. This way, even if intermediate updates make it into the blockchain, they will not unlock the intermediate settlement path and the blockchain will be paid with the fees attached to the intermediate updates. Decker also mentioned that anyone can perform rewriting and follow the funding output to know the final update. Therefore, it is essential to ensure finality in case of a cooperative close, and monitoring for old states needs to continue until the final state has enough confirmations to make it immutable. Additionally, in the event of a reorganization that unconfirms the update, additional rewrites may be necessary similar to LN-penalty where it's critical to ensure that the penalty transaction is final and does not get reorged out.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:47:11.466966+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

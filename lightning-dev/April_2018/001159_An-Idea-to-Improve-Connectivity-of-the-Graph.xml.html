@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An Idea to Improve Connectivity of the Graph</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alejandro Ranchal Pedrosa 2018-04-11 08:43:28
+            <br><i>Published on: 2018-04-11T08:43:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001159.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Christian and Alejandro, the former argues that the tradeoff between penaltyless invalidation and long-lasting DMCs is not as bad as people usually interpret. The DMC construction has parameters that allow tweaking the number of invalidations, and with parameters similar to LN, 1.4 billion updates can be achieved, which equals years of operation without needing to re-anchor. However, long-lasting DMCs require either an initial refund transaction with a very distant relative locktime or periodic updates in the form of a refund transaction pointing to a new refund transaction resetting the initial locktime instead of actually refunding. In extreme cases of both approaches, funds may become locked for a significant amount of time without penalizing the unresponsive party, leading to the worst-case utility of the channel decreasing due to accumulative blockchain fees. Alejandro asks whether this is the trade-off being referred to and if any resources exist that tackle this trade-off to obtain worst-case utility similar to that of LN channels.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T19:02:21.256170+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigations for loop attacks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Gough 2018-05-11 00:17:22
+            <br><i>Published on: 2018-05-11T00:17:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2018/combined_Mitigations-for-loop-attacks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001271.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Jim Posen asks for clarification on how normal traffic is directed in a payment routing system. The sender constructs the circuit and routing nodes do not have discretion over which nodes to forward payments to, but they can choose whether to forward or fail. An attacker could perform a loop attack by sending a payment to another node they control and delaying the payment on the receiving end. The attacker could purchase reputation for the sacrificial node by sending them legitimate payments and then use that reputation to delay targeted transactions. However, the hops being attacked are in the middle and faithfully enforcing the reputation protocol, so the receiving node's reputation should be penalized properly, making it unlikely the attack will succeed in a second attempt. Jim had a previous misunderstanding about obscuring collusion by lowering reported risk. Chris Gough helped clear up Jim's confusion.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T00:42:34.965728+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

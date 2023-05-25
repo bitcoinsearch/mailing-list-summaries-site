@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/April_2018/001153_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html">Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</a>
+                        <b>ZmnSCPxj 2018-04-10 09:44:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/April_2018/001165_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html">Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</a>
+                        <b>Christian Decker 2018-04-11 17:38:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/April_2018/001176_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html">Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</a>
+                        <b>ZmnSCPxj 2018-04-13 13:10:56</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001153.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-04-10T09:44:15+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A proposal has been made to implement a "cut-through" transaction instead of implementing a splice-in/splice-out ("channel top-up", etc.) for a channel close transaction. Both sides would provide signed normal transactions that spend the outputs, then they could cooperatively create a new close transaction that cuts through the original close transaction and the additional normal transactions. This generalization is useful if we want to "reseat" a channel to one peer to another peer. A reseat operation could use the closing transaction cut-through to close the channel and open to another peer in a single onchain transaction. Such a reseat operation also seems like a reasonable primitive for Burchert-Decker-Wattenhofer channel factories to offer; reseats can be done offchain if both the reseat-form peer and the reseat-to peer and the node belong to the same channel factory. The connection to channel factories is not necessary, as long as we have an invalidation scheme that allows us to invalidate a prior funding transaction we can reseat without needing a cut-through, just invalidate the funding tx of the old channel and add the funding tx for the new one in the new state. The proposal was presented as an operation to wallet implementers (or advanced users).</p>
+        <hr>
+        <p><i>Updated on: 2023-05-24T23:10:38.659274+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

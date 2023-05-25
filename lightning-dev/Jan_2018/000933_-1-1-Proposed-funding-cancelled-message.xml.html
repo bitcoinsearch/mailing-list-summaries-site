@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[1.1] Proposed `funding_cancelled` message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-01-15 02:53:07
+            <br><i>Published on: 2018-01-15T02:53:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2018/combined_-1-1-Proposed-funding-cancelled-message.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000933.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Matt and ZmnSCPxj, the latter suggested that limiting nodes to 25 channels per peer should keep costs low enough. However, ZmnSCPxj goes on to explain a scenario in which this limit could become problematic. If someone starts opening a channel to another user but pays too low a fee, they may become impatient and bump up the fee, leading the recipient to perceive it as another open channel. This can happen multiple times, meaning that from the recipient's side, it appears as though many channels have been opened even though there is only one. If this happens repeatedly, the available channels for the recipient will quickly be used up, even if they were only intended to be used for several additional channels. To avoid this issue, ZmnSCPxj suggests implementing a `funding_cancelled` feature.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T18:21:18.282093+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

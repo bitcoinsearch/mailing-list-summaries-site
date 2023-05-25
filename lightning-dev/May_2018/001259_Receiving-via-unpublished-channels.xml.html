@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Receiving via unpublished channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hiroshi UENO 2018-05-09 05:55:04
+            <br><i>Published on: 2018-05-09T05:55:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2018/combined_Receiving-via-unpublished-channels.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001259.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a mailing list discussion regarding the implementation of support for `r` field in invoices, ZmnSCPxj explained that in order to receive via an unpublished channel, it is necessary to know the onLightning fees that the other side of the channel wants to charge. A solution to this problem was proposed by sending `channel_update` as soon as the channel is locked-in, regardless of whether it is published or unpublished. This idea was brought up for standardization by all LN implementations, lnd, eclair, ucoin, and lit. The temporary `channel_update` messages are sent after `funding_locked` has been sent by both sides or upon reconnection. However, if the channel is shutting down or has already achieved the announcement depth, then any fee updates would be pointless. C-lightning always sends the `channel_update`. Nayuta-ueno appreciated the response and intends to implement this like c-lightning to ptarmigan.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:41:25.763597+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decker-Wattenhofer channels (was: An Idea to Improve Connectivity of the Graph)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-15 14:04:38
+            <br><i>Published on: 2018-04-15T14:04:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Decker-Wattenhofer-channels-was-An-Idea-to-Improve-Connectivity-of-the-Graph-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001184.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is focused on the use of invalidation tree structure in Burchert-Decker-Wattenhofer channel factories and its impact on HTLC timeout. The suggestion is to terminate these channels into Poon-Dryja channels, which have smaller relative locktimes. This would allow for more frequent updates while keeping the locktimes involved relatively small. The precision is also discussed, suggesting that `cltv_delta` should be larger for channels created inside a channel factory, due to the relative locktime consumed by the invalidation tree structure. Another suggestion made is to not allow channel factories to allow channel reorganization. Instead, funding transactions that fund the entire factory could be confirmed on-chain, followed by an off-chain split transaction (non-timelocked) that funds multiple channels, and finally commitment transactions that spend from the split transaction. In case of a multilateral close where all channel factory owners are available for closing, the split and commitment transactions can be collapsed into a single close transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:20:08.134819+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

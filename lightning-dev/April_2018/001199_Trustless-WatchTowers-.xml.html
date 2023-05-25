@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless WatchTowers?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-17 08:02:43
+            <br><i>Published on: 2018-04-17T08:02:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Trustless-WatchTowers-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001199.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between ZmnSCPxj and Conner, they discussed the possibility of planning a new BOLT document for certain implementation details. However, ZmnSCPxj mentioned that it might be too soon to have a full-on BOLT spec as there are still some implementation details to address before formalizing everything. They plan to write something up in the short-term documenting the approach(es) that ends up being solidified. The discussion also included the potential issue with the confirmation of second level HTLCtxns being separated by arbitrary delays, which can give an attacker total control over when the txns appear on the network. The attacker could iteratively broadcast a single second-level txn, wait for confirmation and CSV to expire, then repeat with another second-level txn. If the watchtower doesn't have the ability to sweep outputs independently, it would have no way to intercept this behavior, and prevent the breacher from sweeping individual HTLCs sequentially. They also discussed separating the commitment outpoints from the HTLCoutpoints in case the commitment txn is broadcasted before the CLTVs expire. It was agreed that it seems necessary and would be a reasonable compromise of the tradeoffs at hand. Overall, they believe that having a solid/workable v0 is important if it is to be deployed, and there are ways to improve on this and make it even more efficient in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:21:07.459457+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

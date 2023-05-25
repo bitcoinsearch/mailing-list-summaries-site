@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>High level fee mechanics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Benjamin Mord 2018-04-12 20:37:17
+            <br><i>Published on: 2018-04-12T20:37:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_High-level-fee-mechanics.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001174.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Benjamin Mord and ZmnSCPxj, they discuss the importance of adjusting Lightning network fees to improve economic efficiency. They note that these prices are a critical signaling mechanism that can impact expected channel lifetime. The paper they reference did not account for the improved efficiency that price adjustment in response to channel state will likely enable. One suggestion is allowing a price exponent which may optionally be set to something larger than 1 to avoid advertising max capacity. Combining nonlinear pricing with the March 19 AMP proposal would greatly improve efficiency. In regards to routing performance and scalability, it may be possible to hint the suitability of a channel for routing in a particular direction without completely leaking balance details by adjusting on-Lightning `fee_base_msat` and `fee_proportional_millionths` of channels. These fees are already propagated using `channel_update`, but no current node software implements this yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T22:02:34.136632+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pinging a route for capacity</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-03-02 07:53:46
+            <br><i>Published on: 2018-03-02T07:53:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2018/combined_Pinging-a-route-for-capacity.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-March/001062.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on AMP (atomic multi-path) was recently held among members of the Lightning-dev community. It was noted that only the source (payer) has the ability to split a payment into multiple smaller payments, as intermediaries may decide to send it to a channel with high fees. The payer will make multiple payments that can only be merged at the destination, each sub-payment having a single route and cannot itself be split unless the payer decides to split. One member suggested using IP-Fragmentation techniques to solve the issue. In IP-Fragmentation, an IP-package is split in order to utilize a link layer protocol that doesn't have enough bandwidth for a larger size package. Similarly, in cases where the capacity of a channel during routing is not high enough, one would have to send the second part of the fragmented package on a different route since insufficient channel balance cannot come out of thin air.The idea was raised to encapsulate the second part of the fragmented payment in a new onion routed package that goes on a detour (using different payment channels) to the original "next" hop and progresses from there as it was originally thought of. However, concerns were raised about the impacts to the HTLC and whether it would actually be possible to fragment a payment that is encapsulated within the onion routing. The timeouts, in particular, would be impossible to handle since at any point the payment should reach the payee within some N blocks and each hop reduces that margin by a small amount.Another member proposed sending a ping over an onion route asking "does every hop have the capacity to send X msat?" Every hop would forward the onion request if the answer is yes or immediately send the response back up the circuit if the answer is no. This should make it quicker to send a successful payment since latency is lower than sending an actual payment. However, the same member recognized that by the same token, it is faster and cheaper for someone to extract information about channel capacities on the network with a binary search.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T21:24:12.531574+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
