@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version bytes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> John Smith 2011-07-08 08:16:46
+            <br><i>Published on: 2011-07-08T08:16:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2011/combined_Version-bytes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000154.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation between Pieter Wuille and Stefan Thomas discusses the standardization of version bytes used by Bitcoin for different applications. The three components that are significant in this regard are network, data class, and version. There is no technical reason why different networks and data classes would require separate version bytes, but it is a good practice to prevent confusion. Bit 16 in the version byte is reserved for alternate chains, and when set, everything is up to the network itself, and no further semantics are defined. When bit 16 isn't set, the rest of the network remains. Testnet already uses version 111, which is not a single bit, but they can use bit 1 for testnet and XOR the rest of the version number with 111 when bit 1 is set. They can also reset testnet by changing its addresses slightly and stating odd=testnet and even=realnet. They have six more bits to play with - 128, 64, 32 and 8, 4, 2. As 128 is used for private keys, they may use (128, 64, 32) for data classes and (8, 4, 2) for versions. In this format, bits 128/64/32 define data class, bits 8/4/2 define version number, and bit 1 defines testnet. This discussion started when Stefan wanted to define a format for master keys from which to derive deterministic wallet keys, and Pieter suggested using data class 192 for that, leaving the lower numbers for more basic data like public keys.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T19:16:26.164541+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

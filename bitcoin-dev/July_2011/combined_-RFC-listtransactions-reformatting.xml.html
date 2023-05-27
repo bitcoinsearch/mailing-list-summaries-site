@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] listtransactions reformatting <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000196_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Luke-Jr 2011-07-16 17:14:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000197_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Stéphane Gimenez 2011-07-16 19:59:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000197_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Stéphane Gimenez 2011-07-16 19:59:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000204_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Gavin Andresen 2011-07-17 03:02:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000198_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Luke-Jr 2011-07-16 20:03:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000198_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Luke-Jr 2011-07-16 20:03:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000204_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Gavin Andresen 2011-07-17 03:02:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000208_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Amir Taaki 2011-07-17 11:53:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000208_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Amir Taaki 2011-07-17 11:53:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000198_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Luke-Jr 2011-07-16 20:03:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000204_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Gavin Andresen 2011-07-17 03:02:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000208_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Amir Taaki 2011-07-17 11:53:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000196_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Luke-Jr 2011-07-16 17:14:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000196_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Luke-Jr 2011-07-16 17:14:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000197_-RFC-listtransactions-reformatting.xml.html">[RFC] listtransactions reformatting</a>
+                        <b>Stéphane Gimenez 2011-07-16 19:59:07</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000196.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2011-07-16T17:14:11+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Bitcoin development mailing list contains several discussions about proposed changes to fix issues with web services being ignorant of generated transactions and the categorization/formatting system for wallets. Gavin Andresen suggests that fixing listtransactions and listreceivedby/etc should be done to credit coin generation transactions to particular addresses/accounts. However, he thinks that changing listtransactions output would not be on the priority list for any web services operators, and instead, they should focus on fixing getbalance and listtransactions performance problems and push-notification of coins received to accounts. Meanwhile, Stéphane proposes that all additions to a wallet should be categorized as "receive" regardless of the transaction type. He also suggests eliminating categories and relying on a "type" field with values of "credit" or "debit". This would allow for additional categories to be added in the future. Stéphane recommends the creation of an official API guide to provide more comprehensive information. In terms of specific changes, the proposed change aims to fix webservices being ignorant of generated transactions by keeping a standard category/format for all similar types of entries. Changes include additions to a wallet, which will always be categorized as "receive," regardless of transaction type, and adding an extra key from "generation" for generated coins. All transactions will have a new key, status, with different values depending on the confirmation stage of the transaction. Finally, it is recommended that people should not be using accounts for receiving funds on merchant sites. Instead, the recommended and safest way to receive funds on a merchant site ATM is to use listreceivedsince called every so often by a cron job. The output is parsed and placed into another table; then another job will go and create a deposit request from that table. Polling listtransactions is less convenient since you always repeat old transactions that you may not need, get generated transactions, and have to pick a good number that goes back far enough but not too far. The {list,get}receivedby* feature should also include generated amounts as there is currently no way to do so, although this issue has not yet been addressed by Stéphane's patch.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-26T19:35:42.400745+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

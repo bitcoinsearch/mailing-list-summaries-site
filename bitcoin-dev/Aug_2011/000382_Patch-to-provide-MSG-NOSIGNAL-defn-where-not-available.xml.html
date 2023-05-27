@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Patch to provide MSG_NOSIGNAL defn where not available</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Venkatesh Srinivas 2011-08-19 13:52:27
+            <br><i>Published on: 2011-08-19T13:52:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2011/combined_Patch-to-provide-MSG-NOSIGNAL-defn-where-not-available.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000382.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The attached patch defines MSG_NOSIGNAL to 0 on platforms where it is unavailable. Previously this definition was only available under __WXMSW__. The patch includes changes to the src/util.h file, adding a definition for MSG_NOSIGNAL if it is not already defined. If MSG_NOSIGNAL is already defined, the patch does not make any changes. Additionally, the patch defines MSG_DONTWAIT and UINT64_MAX for the __WXMSW__ platform. The patch is signed with a PGP signature, which is included as an attachment.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T20:22:33.753155+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

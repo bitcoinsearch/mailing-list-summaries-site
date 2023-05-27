@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BitCoin and MinorFs/AppArmor</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nils Schneider 2011-09-02 22:05:18
+            <br><i>Published on: 2011-09-02T22:05:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000440.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rob Meijer proposed an updated version of MinorFs, a least authority based set of filesystems that could be used by Bitcoin on systems that support AppArmor like Ubuntu and OpenSuse. The purpose is to give pseudo-persistent processes their own private but decomposable and delegatable piece of filesystem storage, which is suitable for applications that want to protect user data such as Bitcoin wallets from malware running under the same UID as that user. Currently, wallet encryption is a simpler solution for end-users than MinorFs. Rob Meijer is trying to get specifications together for rewriting MinorFs in Python that would make it easier and more natural for application developers who want to protect user data. However, there are some concerns about whether MinorFs can work without changes to Bitcoin and if not, what is the minimal amount of changes needed. Additionally, there are questions about whether MinorFs would help secure the wallet on a server, maybe even an insecure VPS. Moreover, there is no guarantee that MinorFs will never corrupt the wallet; hence, it is essential to find out the proper way to do backups. Given that Bitcoin could benefit most from what MinorFs has to offer, Rob Meijer asked Bitcoin developers to think about what attributes from the current granularity level should be kept, what attributes should be dropped, and what properties should be added to arrive at an 'id' that is the best fit for granularity of persistent private storage for Bitcoin. He also welcomes all input that helps him accommodate Bitcoin developer needs so that code to use MinorFs where available can be added to Bitcoin.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T20:36:01.942152+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

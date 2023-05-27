@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Speeding up &#34;getbalance &lt;account&gt;&#34; calls</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jan Vornberger 2011-07-03 16:29:05
+            <br><i>Published on: 2011-07-03T16:29:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2011/combined_Speeding-up-getbalance-account-calls.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000127.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jan, the creator of Instawallet, implemented a suggestion from John Smith to speed up the server. The suggestion involved scanning the wallet every time a block came in or when something changed in the blockchain. This allowed for the accumulation of balances for all accounts in amortized linear time using a hash_map. Jan has created a branch on GitHub with the code for the cache and attached a patch file. He creates a list of all account balances every time a new block comes in or a transaction that affects his wallet appears. The list is stored in a "map," which he chose because he is new to C++ and was unsure what to use. However, since his VPS is low on memory, a tree-based implementation of map was used instead. There are plans to switch to a more recent version of the codebase in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T18:30:09.087820+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

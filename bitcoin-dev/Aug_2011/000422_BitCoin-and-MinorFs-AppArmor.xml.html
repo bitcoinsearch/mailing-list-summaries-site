@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BitCoin and MinorFs/AppArmor</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rob Meijer 2011-08-26 07:48:28
+            <br><i>Published on: 2011-08-26T07:48:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000422.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A few years ago, Rob wrote a set of filesystems called MinorFs. It worked closely with AppArmor to give "pseudo persistent processes" their own private but decomposable and delegatable piece of filesystem storage. Currently, only one perfect fit for MinorFs exists, which is the stack AppArmor/MinorFs/E-language-persistent-application. However, some close fits, like running ssh without a passphrase, require lots of manual fiddling by the user to get working.Rob is trying to rewrite MinorFs in Python in a way that would make it easy and natural for application developers who want their application to protect user data from mallware running under the same uid as that user, such as bitcoin wallets. Currently, minorfs granularity is hard fixed to that of the "pseudo persistent process," and that granularity is determined in the pseudo persistent process link.Using pseudo persistent processes results in file-system storage that follows almost all of the modeling principles of the object capability model. Rob expects that Bitcoin, openssh, chrome, Firefox, or any other application that would benefit from what MinorFs provides will not be rewritten in E. Therefore, the next version of MinorFs should take an approach that better suits common development languages and practices, abandoning the purity of its least authority model.Rob wants Bitcoin developers to think about what attributes from the current granularity level should be kept, what attributes should be dropped, and what properties should be added to arrive at an "id" that is the best fit for granularity of persistent private storage for Bitcoin. He solicits input that helps him help them to get the next MinorFs version.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T20:36:53.288994+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
