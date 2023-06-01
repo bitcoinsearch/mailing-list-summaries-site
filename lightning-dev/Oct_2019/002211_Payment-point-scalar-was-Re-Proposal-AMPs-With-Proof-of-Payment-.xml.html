@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment point+scalar (was: Re: Proposal: AMPs With Proof of Payment)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-10-07 09:00:08
+            <br><i>Published on: 2019-10-07T09:00:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002211.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A community member was contacted off-list to discuss the possibility of implementing 2p-ECDSA instead of waiting for bip-schnorr, which could take several years. However, they acknowledged the concern that this could divert attention from the development of Schnorr-like signatures and taproot. To address this, they suggested using Reference Class Forecasting to predict the time it would take to implement bip-schnorr.The community member also considered the potential benefits of payment points and scalars and whether to implement 2p-ECDSA now or wait for Schnorr-like signatures. They ultimately decided to consider the possibility of implementing 2p-ECDSA but emphasized that this did not mean committing to it. They also pointed out the security drawbacks of 2p-ECDSA and the fact that implementing a decent library for Paillier, which 2p-ECDSA requires, would likely take as much time as implementing a library for SECP256K1, which is used for Schnorr-like signatures.Meanwhile, a new atomic swap mechanism is being developed with a reference implementation from CoinSwapCS. The Schnorr-like part of libsecp256k1 has been in development for five months and is expected to be good enough for Bitcoin mainnet in about one year and three months. In contrast, an implementation using the 2p-ECDSA route would take one year and eleven months for a proof-of-concept reckless mainnet implementation.However, the deployment of points and scalars poses challenges as current channels do not support pointlocked timelocked contracts without closing and re-opening channels. Pointlocked timelocked contracts can be enforced on existing channels once they are supported on-chain. Eventually, multiparticipant signatures will be implemented with a single MuSig signature, slightly reducing the costs of channel closure.Upgrading Poon-Dryja mechanism to use Schnorr-like signatures is also being considered. Poon-Dryja does not need Taproot as pointlocked timelocked contracts can be implemented using pre-signed transactions. However, this would require `NOINPUT` signatures for those transactions, which might require an opt-in hidden via the Taproot mechanism.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-01T18:18:21.068228+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

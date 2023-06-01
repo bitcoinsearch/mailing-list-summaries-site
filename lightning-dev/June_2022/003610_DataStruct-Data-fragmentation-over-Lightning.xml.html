@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DataStruct -- Data fragmentation over Lightning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> George Tsagkarelis 2022-06-16 15:48:26
+            <br><i>Published on: 2022-06-16T15:48:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003610.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This mail proposes a spec for data fragmentation over custom records, allowing for transmission of data exceeding the maximum allowed size over a single HTLC. The purpose of this spec is to define a structure that describes fragmented data, allowing for transmission over separate HTLCs and assisting reassembly on the receiving end. Since these fragments are assumed to be transmitted over Lightning HTLCs, we want to use a compact encoding mechanism using protobuf. The `FragmentInfo` fields describe `fragset_id`, `total_size`, and `offset`. A sender intending to transmit the data to another node should split the bytes of data into fragments, generate an identifier for this data transmission, create a DataStruct instance, encode it to a byte array, and transmit it over the custom records of an HTLC. The receiving node can execute the steps for each received fragment in order to assemble the data. Interoperability could be achieved by different applications utilizing the same TLV as well as data encoding for transmission.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-01T19:06:15.668266+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

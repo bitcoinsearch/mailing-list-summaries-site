@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd: Trampoline Routing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2019-08-05 09:42:30
+            <br><i>Published on: 2019-08-05T09:42:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-August/002108.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the concept of trampoline routing in the Lightning Network. Trampoline routing allows Alice to send a payment to Bob through a trampoline node that she can reach, and the calculation of the rest of the route is deferred to that node. The number of trampoline hops is entirely Alice's choice, and she will choose more than one trampoline hop if she cares about privacy. Trampoline routing increases her anonymity set even if she uses only one trampoline in the end. In the current network conditions, this approach does not require any hierarchy or packet-switching since the routing table is still small. However, if the network eventually reaches a billion channels, some kind of hierarchy/packet-switching will need to be introduced to find a route to any other node.To transfer funds from Alice to Bob using trampoline nodes, Alice sends a payment to RT2 through N3 and puts a peeled small trampoline onion in the payload for RT2. When RT2 receives the payment, he peels one layer of the trampoline onion and discovers that he must forward the payment to Bob, so he finds a route to Bob through N4 and N5 and builds a normal onion to send the payment. In the payload for Bob, RT2 puts the peeled small trampoline onion. When Bob receives the payment, he peels the last layer of the trampoline onion and discovers that he is the final recipient and fulfills the payment.However, important details are left out such as how trampoline nodes specify their fees and cltv requirements and how Alice syncs the fees and cltv requirements for her remote trampoline nodes. Trampoline nodes need to estimate a fee and cltv that allows them to route to almost any other trampoline node, which likely increases the fees paid by end-users. To exchange trampoline fees and cltv, existing gossip infrastructure can be used to exchange a new node_update message, but Alice cannot receive every network update due to bandwidth limitations.A filter system similar to BIP37 can be created where Alice sends gossip filters to her peers, and peers only forward updates that match these filters. The proposed filters are cheap and do not have the issues BIP37 has for Bitcoin because they have a cost for Alice and peers can refuse to serve expensive filters. For technical details, refer to [1]. Feedback on the concept and the gossip and fee estimation parts are welcome.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-01T18:15:55.930332+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
