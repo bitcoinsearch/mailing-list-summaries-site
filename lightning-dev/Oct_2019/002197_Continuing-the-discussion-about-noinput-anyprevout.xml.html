@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-10-03 09:42:00
+            <br><i>Published on: 2019-10-03T09:42:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002197.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about implementing Decker-Russell-Osuntokun or eltoo, ZmnSCPxj proposes using a trigger transaction to separate timeout start and the actual update/settlement pairs. However, another user suggests that a trigger transaction is not necessary for Decker-Russell-Osuntokun and that any update transaction could spend the funding transaction output directly. The conversation then turns to the issue of having a refund transaction without a pre-signed settlement transaction. In this case, the first update and settlement pair can be signed before funding, without the need for noinput/anyprevoutanyscript. The use of output tagging would mandate that the first update must be published so that the funding output is indistinguishable from a normal output. Collaborative closes are still indistinguishable, but unilateral closes require the switch and would be identifiable anyway.The discussion then shifts to whether it's possible to keep outputs as unidentifiable as possible in off-chain payment networks. Although Lightning supports unpublished channels, nodes need to have the option of not announcing their channels to reduce noise in the network. Furthermore, historical channels that have been cooperatively closed are no longer normally gossiped, so the fact that they used to be channels is no longer widely broadcast, and may eventually be forgotten by most or all of the network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:33:58.179608+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

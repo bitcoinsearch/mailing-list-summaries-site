@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2019-10-24 13:49:09
+            <br><i>Published on: 2019-10-24T13:49:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002240.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The recently released RC for bitcoind 0.19 includes a carve-out rule intended to pave the way for more robust CPFP of on-chain contracts (Lightning commitment transactions). The carve-out rule was added in an attempt to use the Bring Your Own Fees strategy using CPFP. An implementation of a new commitment format for this purpose has been worked on and it is suggested that the special case rule should be relaxed a little to avoid adding a 1 CSV to all outputs which would also require changing HTLC scripts to add the CSV delay. Instead, it is recommended that the last transaction added to a package of dependent transactions in the mempool should have no more than one unconfirmed parent. This may allow an attacker to exceed the MAX_PACKAGE_VIRTUAL_SIZE limit in some cases but it is unclear if this poses a problem with the current mempool acceptance code in bitcoind. There have been several changes to the acceptance code and eviction policy since the limit was first introduced. Rusty Russell suggests a simplified RBF where you can replace if the feerate is higher, the new tx is in the first 4Msipa of mempool, and the old tx isn't. Though it allows 100k of free tx spam, it is simple and could be further restricted by marking the unilateral close somehow to say "gonna be pushed" and further limiting the child tx weight.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:33:46.210073+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

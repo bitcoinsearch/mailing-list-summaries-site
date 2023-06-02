@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reason for having HMACs in Sphinx</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> René Pickhardt 2018-11-29 16:32:18
+            <br><i>Published on: 2018-11-29T16:32:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Reason-for-having-HMACs-in-Sphinx.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001694.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning-dev mailing list, participant Corné Plooy questioned the necessity of HMACs in Sphinx and asked what could go wrong if they were removed. Responding to this query, Rene noted that while the mix network can ensure no wrong messages are delivered, it cannot ensure that unseen and unknown messages are not intercepted. He also pointed out that the main use case for HMAC values is the special case of a 0-valued HMAC indicating the end of the route, which he called "silly" and not a cryptographic verification. While the thread model described in chapter 2.1 of the Sphinx paper highlights the need for HMACs to prevent man-in-the-middle attacks, Rene believes that if an attacker speaks the BOLT protocol, they could exchange the entire package and provide a new HMAC as a previous hop could do. Despite this, he agrees with Plooy's criticism and sees no necessity for HMACs since the message is encrypted anyway.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:24:16.320519+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fulgurite: ideas for making a more flexible Lightning Network protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Trey Del Bonis 2018-12-10 03:01:16
+            <br><i>Published on: 2018-12-10T03:01:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2018/combined_Fulgurite-ideas-for-making-a-more-flexible-Lightning-Network-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001733.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion thread revolves around the validation of channel data and how to loosen restrictions on what information is validated. The validation only requires signatures from one or both endpoints proving that both sides of the channel have agreed. For Burchert-Decker-Wattenhofer channel factories, a single channel announcement will be done for all channels within the factory. Each channel within the factory would then need channel updates only signed off by the two direct participants in the channel. When channels within the factory are reorganized, a new announcement will need to be done and signed off on by participants in the factory who performed the reorg.The update mechanism can always cancel any contract if all participants in the updateable cryptocurrency system have agreed. One can consider the fulfillment of the hashlock in an HTLC to actually cancel the contract, and put its fund into whoever fulfilled it. Similarly, if the timelock on an HTLC is about to expire, then both sides can agree to simply cancel it back to the beneficiary of the timelock branch. Under Poon-Dryja there is no CSV requirement, but under Decker-Wattenhofer and Decker-Russell-Osuntokun, this becomes complicated.It is proposed that time-sensitivity be moved to Fulgurite rather than to higher layers. Higher layers could simply be concerned about what contracts it wants to enter into. The higher layer informs the Fulgurite layer of the shortest absolute timelock in each contract it enters into. The Fulgurite layer then returns to the higher layer the latest block height at which it can still safely collapse the Fulgurite system, or an error that the absolute timelock is too near and already not enforceable at the Fulgurite layer. This helps with periodic re-signings and operations like ExpireHtlc should calculate an earlier deadline at which they'd become accepted, and be the thing to actually remove the in-channel HTLC "the right way".</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:42:44.617214+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

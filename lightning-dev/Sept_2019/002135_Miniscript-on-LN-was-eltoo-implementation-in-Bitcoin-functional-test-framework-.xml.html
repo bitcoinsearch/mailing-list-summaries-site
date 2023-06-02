@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Miniscript on LN (was: eltoo implementation in Bitcoin functional test framework)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-09-05 11:29:35
+            <br><i>Published on: 2019-09-05T11:29:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Miniscript-on-LN-was-eltoo-implementation-in-Bitcoin-functional-test-framework-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002135.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the message questions the use of miniscript for Lightning unless they decide to support transporting arbitrary contracts. They argue that it would be easier to have carefully coded SCRIPT to transport HTLCs instead. The author then goes on to discuss the implications of supporting arbitrary contracts over payment channels, including the fact that very few contracts are "routable" and that any absolute timelocks on the contract will imply that the hosting payment channel has a lifetime up to the timelock. Additionally, any contract will automatically get a `|| (A && B)` appended to it where `A` and `B` are the channel counterparties.Of note is that a miniscript compiler would be quite useful if they were to support arbitrary contracts over Poon-Dryja channels. However, under Decker-Russell-Osuntokun, the additional conditions on the arbitrary contract are unnecessary. The forwardability of arbitrary contracts is more difficult to prove, but it may be possible. The author concludes by stating that while the miniscript is more amenable to programmatic analysis, they do not know what property needs to be actually proven in order to prove that contracts can be forwarded somehow.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:11:06.117949+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

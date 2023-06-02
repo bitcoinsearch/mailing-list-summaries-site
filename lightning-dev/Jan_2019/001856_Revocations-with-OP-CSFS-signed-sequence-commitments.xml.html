@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Revocations with OP_CSFS &amp; signed sequence commitments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James Chiang 2019-01-30 22:31:47
+            <br><i>Published on: 2019-01-30T22:31:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Revocations-with-OP-CSFS-signed-sequence-commitments.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001856.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the message is trying to understand how channel commitment transactions can be revoked using op_checksigfromstack(msg, sig, key) and signed sequence commitments. They explain that each state has a commitment c(n, randomness) which is signed by both parties and this signature can be verified with op_csfs(c, sig(A+B), key(A+B)). The sequence n is incremented for each new state. To verify the existence of a newer signed commitment sequence from an older, revoked commitment transaction, an output script can examine op_checksigfromstack(c++, sig(A+B), key(A+B)) where c++ == commitment(n++, r). However, it must also have information about its own sequence number n, so it can verify that this is indeed lower than n++ (current). The author is seeking clarity on how sequence number n is committed to the nth commitment tx and accessible on-stack during script evaluation. They reference Johnson Lao's and Roasbeef's Talk from Scaling Bitcoin at Stanford as a resource for learning more.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:20:16.942695+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

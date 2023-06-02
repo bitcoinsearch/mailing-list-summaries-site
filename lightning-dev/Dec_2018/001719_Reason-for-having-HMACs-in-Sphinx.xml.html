@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reason for having HMACs in Sphinx</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-12-05 00:44:44
+            <br><i>Published on: 2018-12-05T00:44:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2018/combined_Reason-for-having-HMACs-in-Sphinx.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001719.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a post on Lightning-dev, Corné Plooy shares concerns regarding an attack that can guess the final node in a payment route. This attack involves an intermediate node sending a self-written onion packet to the next node in the route, with itself as the final node, and the same amount and payment hash as instructed by the incoming payment. If the attack succeeds, it learns that the next node is indeed the final node. If it fails, the attack is detectable by the next node, which first receives an incoming payment with an unrecognized payment hash, followed by a payment forwarding request with the same payment hash. To prevent this type of attack, Plooy suggests including a shared secret in the onion message to the final node. The payee generates the shared secret and passes it to the payer as part of the invoice. The payer includes the shared secret in the per hop data to the payee. On receiving the incoming message, the payee checks whether the received shared secret corresponds to the generated one. If not, it behaves in exactly the same way as when the payment hash is unrecognized, including timing to prevent timing side-channel attacks.This solution would be an incremental improvement, and Plooy notes that the shared secret does not need to be very large, as the number of attempts per second to guess the shared secret is limited by network latency, bandwidth, and maybe some artificial rate limiting. If an attacker can do 100 attempts per second, then a 32-bit shared secret will take (on average) 248 days to crack, for a single guess of which node is the final node. Additionally, the transaction lock time will likely have expired in the meantime. Rusty suggests using the last 4 bytes of the signature instead of a shared secret.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:23:51.095748+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

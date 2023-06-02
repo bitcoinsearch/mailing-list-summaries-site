@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reconciling the off-chain and on-chain models with eltoo</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-09-06 14:32:38
+            <br><i>Published on: 2019-09-06T14:32:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Reconciling-the-off-chain-and-on-chain-models-with-eltoo.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002137.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email from ZmnSCPxj discusses the concept of offchain transaction cut-through systems and how they can be used to model changes to offchain system states. The process involves sending a transaction that spends a subset of the current state txos to participants in the update mechanism, who then agree on its validity before signing a new state with the spent txos deleted and new txos inserted. Disagreement at this point invites unilateral closure and enforcement of the contract on the blockchain. Relative locktime requirements in contracts do not make sense to maintain offchain, but an absolute timelock can be computed for selecting a relative locktime relative to the current moment. Contracts with timelocks must be enforced on or before the timelock, which is triggered early under Decker-Russell-Osuntokun due to the CSV security parameter. Any transaction intended for transport in an offchain update mechanism under Decker-Russell-Osuntokun needs to be signed under `SIGHASH_NOINPUT`, which is not onerous but involves tradeoffs.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:14:54.331526+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

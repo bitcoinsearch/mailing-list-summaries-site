@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for Stuckless Payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2019-06-25 16:46:38
+            <br><i>Published on: 2019-06-25T16:46:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2019/combined_Proposal-for-Stuckless-Payment.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002034.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the Lightning-dev mailing list revolves around a proposal to add an additional round of communication to avoid wormhole attacks and thus decorrelate payments. While this would increase latency, it would provide a way to "cancel" stuck payments and retry them. The option to make multiple tries in parallel is also discussed as a way to help with latency, if there is enough outbound capacity. The issue of payer anonymity is raised, with a suggestion that the ACK message can be constructed by A and sent via a different route than the *add_htlc* onion packet. This solution would maintain payer anonymity, even if intermediate nodes do not have an incentive to forward ACK messages. The added communication round may allow intermediate nodes to guess the payer's identity, but this information may not be significant enough to pose a problem in practice. Additionally, the use of ACK-key turnaround increases latency further, but stuckless payments could reduce overall latency by making multiple tries in parallel. Finally, the proposal may also solve the "American Call Option" problem where intermediate nodes are unaware that a cross-currency exchange is involved.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:57:18.647423+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

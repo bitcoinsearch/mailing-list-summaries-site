@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reason for having HMACs in Sphinx</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Corné Plooy 2018-12-06 11:51:30
+            <br><i>Published on: 2018-12-06T11:51:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2018/combined_Reason-for-having-HMACs-in-Sphinx.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001725.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context mentions the use of layer 0 and layer 1 in generating shared secrets between payer and payee, with total_decorrelation_secrets being the final secret that cannot be faked by an attacker. The payment hash and ephemeral key generation are unrelated, which allows an attacker to create a new onion packet around the same payment hash using their own ephemeral key pair. Path decorrelation replaces the payment hash/preimage part and makes the attack impossible by coupling the "H"TLC payment secret generation to the onion shared secret generation. This idea is neat but needs further exploration on how it interacts with rendezvous routing. If the sender and receiver each create their own k values for their part of the route, can the receiver-generated onion packet still use points of the form ((I + K[A]) + K[B]), including K values related to the sender side?</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:26:02.006004+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

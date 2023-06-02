@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for Stuckless Payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hiroki Gondo 2019-09-18 10:08:03
+            <br><i>Published on: 2019-09-18T10:08:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Proposal-for-Stuckless-Payment.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002152.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent post, Hiroki Gondo explained how Stuckless Payments can be achieved using HTLC variants that are not compatible with BOLT 1.x HTLCs. The BOLT #3 offered and received HTLC policies were modified by changing `hash160(H)` to `and(hash160(H), hash160(H))`. These changes mean that Stuckless Payments can be implemented without waiting for PTLCs, as previously thought. In a separate discussion, there was concern that intermediate nodes could guess the payer's identity with the added communication round. A solution proposed involved creating an ACK onion packet that is embedded inside the last hop payload of the add_htlc onion packet. This way, D doesn't learn anything about A, and intermediate nodes aren't included in the ACK route so they don't learn anything either. Hiroki plans to consider combining this proposal with AMP and new routing algorithms (Trampoline, Rendezvous) while considering the limitations of the onion packet including new specs under development.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:57:59.399895+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Data piggybacking within the payment_preimage for offline payments in wallets</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> JOSE FEMENIAS CAÑUELO 2018-12-15 11:53:12
+            <br><i>Published on: 2018-12-15T11:53:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2018/combined_Data-piggybacking-within-the-payment-preimage-for-offline-payments-in-wallets.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001743.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed scheme is intended for offline payments, which involves an offline device and an online LN Node sharing a common secret seed. The scheme allows both devices to independently calculate the same per_transaction_secret (PIN), which is encrypted within the payment_preimage by the LN Node and sent to the LN Wallet. Upon payment, the LN Wallet decrypts and shows the PIN to the user, who provides it to the offline device for verification. A standard is needed for every compliant wallet to know how to decode and present this information to the user.For the vending machine, the customer selects a product and reads the QR code shown on the display into her LN Wallet App. The vending machine generates a Transaction_Id, which, along with the product ID and device ID, is provided to the LN Wallet. Using this information and the shared secret seed, the vending machine calculates a unique PIN for the transaction using an HTOP algorithm. With all information plus the shared secret, the payment server at example.com calculates the same PIN number and commands the LN node to create an invoice with the proper payment for the chosen product. The LN node generates a random number, slices it into two parts, and piggybacks the data onto the encrypted PIN, creating the payment_preimage. The OneTimePad is sent back to the LN Wallet before payment, and upon receiving the payment_preimage, the LN Wallet uses the OneTimePad to decrypt the PIN, which is then presented to the user as a six digit numerical PIN. The user inputs this in the vending machine to claim her product.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:56:30.828544+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

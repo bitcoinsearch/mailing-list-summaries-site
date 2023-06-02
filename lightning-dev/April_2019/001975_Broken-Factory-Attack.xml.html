@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Broken Factory Attack</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alejandro Ranchal Pedrosa 2019-04-16 00:14:59
+            <br><i>Published on: 2019-04-16T00:14:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2019/combined_Broken-Factory-Attack.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001975.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the construction of channel factories and the splice-out mechanism that claims to solve a stale factory situation. The writer explains why this mechanism can be easily attacked in what is called the Broken Factory attack. The scenario presented is a factory created between Alice, Bob, Carol, and Dave with channels F_AC, F_AB, F_BC, and F_CD. Suppose Dave cannot update the channel factory; the splice-out mechanism should allow them to do so by redirecting outputs of the channels of the factory to a new factory. However, after creating the new hook, Alice and Bob can update their former channel state and invalidate the state R1_AB, making it older than a new state R2_AB, which invalidates one of the inputs of the new Hook H_ABC, thus proving that the splice-out mechanism is not possible without a race condition.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:22:13.181791+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

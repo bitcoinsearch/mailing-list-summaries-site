@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reconciling the off-chain and on-chain models with eltoo</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-09-19 10:26:13
+            <br><i>Published on: 2019-09-19T10:26:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Reconciling-the-off-chain-and-on-chain-models-with-eltoo.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002159.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj suggests an escape hatch in the scripts that allows to spend any output attached to the settlement transaction by n-1 participants, which could be reclaimed into a new open right away. However, careful design would be required as the entire point of requiring an n-of-n signature is to protect against Sybil attacks. Any m-of-n signatory where strictly m < n can be Sybil attacked, and processing power is cheap nowadays. As such, any multiparty construction when Sybilled, devolves to a 2-of-2 channel. Therefore, the n-1 participants would have to be very limited in what they can do, and if the only "right" the n-1 participants can do is to force the nth participant to claim its funds on-chain, then that is implementable with a transaction doing just that, pre-signed by the nth participant and given to participants 1..n-1. The speaker notes that they do not want to support uncooperative splice-outs, due to their need to either pre-sign a splice-out of the party or encumber whatever they build on top in order to do a fast-reopen. However, they think it's important to explore the available options. The privacy guarantees are identical to Bitcoin on-chain, with the one caveat that we may identify the proposing participant, but this can be defended against by mixing. If later combined with allowing multiilateral kick-out of a member that is unresponsive, each member would have to honestly claim which UTXOs it is interested in keeping after it is kicked out of the membership set, defeating the purpose. The speaker further explains that claiming ownership would involve providing a valid input script that could spend the output under some condition, and others would have to verify this proof-of-ownership before accepting the node's self-splice-out. However, this adds complexity for little benefit.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:16:59.715322+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

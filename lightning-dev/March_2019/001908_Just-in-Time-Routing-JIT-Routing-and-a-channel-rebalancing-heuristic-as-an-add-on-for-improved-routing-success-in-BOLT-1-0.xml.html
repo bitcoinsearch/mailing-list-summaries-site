@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Just in Time Routing (JIT-Routing) and a channel rebalancing heuristic as an add on for improved	routing success in BOLT 1.0</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ariel Lorenzo-Luaces 2019-03-14 13:08:11
+            <br><i>Published on: 2019-03-14T13:08:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_Just-in-Time-Routing-JIT-Routing-and-a-channel-rebalancing-heuristic-as-an-add-on-for-improved-routing-success-in-BOLT-1-0.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001908.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Ariel Lorenzo-Luaces expresses his liking for a proposal that can reduce payment failures and increase privacy through mitigating probing based network analysis. However, he is concerned that this proposal could introduce a vulnerability to a spoofed-payment attack where an adversary could create a malicious payment that's guaranteed to fail for free. This can cause intermediary nodes on the path of the payment before it fails to lose fees due to rebalancing if the rebalancing path's success is not dependent on the original payment's success. ZmnSCPxj suggests considering the rule of when rebalancing would be beneficial to the node. The node is offered a fee amount for forwarding but knows that under current channel states, it will definitely have to fail and earn zero fees. If it engages in JIT-routing, it must pay some fee for the rebalancing operation. The probability of success (success_rate), a value between 0 to 1.0, is the estimated probability that we will succeed the route after we forward it. JIT-routing should only be engaged if offered_fee_amount multiplied by success_rate minus rebalancing_fee_amount is greater than zero. The success rate can be computed statically from some node data, or the node can start with precomputed static information and augment this over time with its own experienced success_rate for all forwards.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:47:16.901072+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reason for having HMACs in Sphinx</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-12-04 10:38:58
+            <br><i>Published on: 2018-12-04T10:38:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2018/combined_Reason-for-having-HMACs-in-Sphinx.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001712.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation with CJP, ZmnSCPxj suggested including a shared secret in onion messages to prevent attacks. However, ZmnSCPxj believes this could be achieved easily by switching to path decorrelation and using points+privkeys instead of hashes+preimages. Path decorrelation involves giving each hop a random point to be added to the next SS "HTLC". The final node needs to be given the total of the scalars of each hop random point along the route, most likely within the last hop of the onion. This way, intermediate nodes along the way cannot guess the shared secret and the final node will give the same error message, i.e. "invoice point not found" for both incorrect scalar totals and "invoice hash"/invoice point errors.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:21:02.890456+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

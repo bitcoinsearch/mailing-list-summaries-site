@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Escrow Over Lightning?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nadav Kohen 2021-02-27 11:05:14
+            <br><i>Published on: 2021-02-27T11:05:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2021/combined_Escrow-Over-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002980.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Nadav shared his thoughts on constructing a negation operation which is composable. He noted that the current NOT operation is not composable, meaning that it is impossible to construct (P_1 AND !P_2) with the existing NOT operation. He also looked at ZmnSCPxj's proposal for escrow contracts and believed that it was essentially just a payment to the seller using the point !(Buyer AND Escrow). Nadav expressed his desire for someone to think of a way to construct some kind of negation operation which is composable in the sense that we can do (A AND NOT B) and/or (A OR NOT B) or the like.Christian Decker responded to Nadav's email and spoke about functional completeness. He noted that any Boolean logic can be expressed using a set of payments in various directions and Barrier Escrows. Christian mentioned that the resulting expressions may not be particularly nice and result in a multitude of payments going back and forth between the participants to represent that logic, but it is possible. The problem should now simply be reduced to finding a minimal representation for a given expression, which then minimizes the funds committed to a particular instance of the expression.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:51:22.403047+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

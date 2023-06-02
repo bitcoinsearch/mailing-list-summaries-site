@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Penalty tx and RBF</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-23 23:17:34
+            <br><i>Published on: 2018-11-23T23:17:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Penalty-tx-and-RBF.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001664.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email, ZmnSCPxj discussed the importance of RBF-able punishment transactions in preventing theft attempts. While the commitment transaction being RBF-able is not crucial, having an RBF-able punishment transaction that spends the commitment transaction is essential. The punishment branch of the commitment script can be spent immediately to confirm the old commitment via CPFP, and it only requires a single signature from one node, making RBF trivial. ZmnSCPxj plans to review c-lightning code to see if onchaind does RBF for breach claim transactions. He vaguely recalls it being brought up some time ago for c-lightning.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:01:18.083179+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

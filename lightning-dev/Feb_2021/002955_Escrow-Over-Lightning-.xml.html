@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Escrow Over Lightning?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-02-11 06:00:58
+            <br><i>Published on: 2021-02-11T06:00:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2021/combined_Escrow-Over-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002955.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email, ZmnSCPxj suggests a new twist to an old idea of smart contracts. The logic of the contract to the seller is represented by 'SELLER && (BUYER || ESCROW)'. However, the simple '&&' is trivial for PTLCs, while '||' requires ECDH and proof that the ECDH was done correctly. Therefore, one possible solution is to invert the logic by making two payments of the same amount. The first payment is from Seller to Buyer, claimable by BUYER && ESCROW key, while the second payment is from Buyer to Seller, claimable by SELLER key. If the Buyer is satisfied with the product, they fail the Seller->Buyer payment after the Seller claims the Buyer->Seller payment, so the Seller is paid and has no more obligations. On the other hand, if the Buyer is dissatisfied, they want the Escrow to judge. If the Escrow judges that the Buyer is right, they reveal the ESCROW key to the Buyer, who then clawbacks the payment to the seller. If the Escrow judges that the Seller is right, they delete the ESCROW privkey ("not ESCROW"), and the Seller->Buyer payment eventually times out, ending the obligation of the Seller. In addition, in the case where the Buyer is satisfied, the Escrow is never involved, and thus does not know about the trade, except that some trade was requested. This even provides a simple BUYER + ESCROW keypair that gives the seller a proof-of-refund, and of course, the simple SELLER gives the buyer a proof-of-payment as well. It only just requires twice as much Bitcoins getting locked.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:48:43.739138+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

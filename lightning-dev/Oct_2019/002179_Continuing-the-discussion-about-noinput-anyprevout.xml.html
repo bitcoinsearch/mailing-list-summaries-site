@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Stewart 2019-10-01 12:23:47
+            <br><i>Published on: 2019-10-01T12:23:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002179.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developer Christian Decker is seeking feedback on several proposals related to Taproot, a privacy and scalability-focused upgrade to the Bitcoin protocol. He has written a post on the Bitcoin-dev mailing list asking for input on the usefulness of three proposals: noinput / anyprevoutanyscript / anyprevout, chaperone signatures, and output tagging.Noinput / anyprevoutanyscript / anyprevout would enable users to spend from any unspent transaction output (UTXO) without revealing which UTXO they are spending from. This proposal could enhance privacy and reduce transaction fees by allowing wallets to consolidate multiple UTXOs into one transaction with lower fees. However, this proposal could lead to fund loss if the signing path that controls an exchange's on-chain funds gets mixed up with the second signing path using SIGHASH_NOINPUT. Chaperone signatures add an additional signature to transactions that use noinput / anyprevoutanyscript / anyprevout. The purpose of this additional signature is to prevent attackers from modifying the transaction in transit. However, adding chaperone signatures may increase computational and storage overhead.Output tagging proposes to make it impossible to send funds to certain types of outputs, such as those used in off-chain contracts. This proposal could help prevent accidental sending of funds to the wrong type of output, but could also harm fungibility by marking outputs used in a contract as such.Decker is asking for feedback on whether these proposals are useful and whether there is strong support or opposition to each proposal. He is also asking whether BIP-118 and bip-anyprevout should be merged, and if there are any other proposals that he has missed. It is important to avoid enabling the rebinding mechanism unintentionally, and NOINPUT MUST NOT be used unless explicitly needed for the application.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:33:12.836079+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

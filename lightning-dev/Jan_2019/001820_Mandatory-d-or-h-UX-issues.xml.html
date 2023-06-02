@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mandatory &#34;d&#34; or &#34;h&#34; UX issues</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Félix-Antoine Paradis 2019-01-15 11:04:56
+            <br><i>Published on: 2019-01-15T11:04:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Mandatory-d-or-h-UX-issues.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001820.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Francis Pouliot is facing UX issues while building the Lightning Network payout feature. He wants to ensure that recipients generate the correct Bolt11 invoice. The "d" and "h" fields are mandatory in Bolt11 which creates a problem for Bitcoin services that are performing payouts or withdrawals. Francis believes that this design of Bolt11 is biased towards merchants as normally they decide on the invoice, but for LN payouts, the sender is the service provider who will be creating the terms of payment. This means that the user will have to manually enter some fields in his wallet. Francis explains the UX issues taking place: a user goes to an app to buy Bitcoin with fiat and opts for LN payout. The app tells the user to make an invoice with msatoshi and description. The user types a description in his wallet, but it may contain a typo or be left blank. When the app tries to pay, they have to decode the bolt11 and compare the "h" or "d" that they instructed the user to create with the decoded bolt11. If they are not the same, they need to instruct the user to create a new bolt11 invoice because the one he created was not correct, which creates an unnecessary requirement for communication, lower payment success rates, and higher abandonment rate.Francis questions if making "d" or "h" mandatory is necessary and suggests leaving business logic to Bitcoin businesses. Olaoluwa Osuntokun replies that it isn't mandatory and can be left blank as none of the existing wallets require users to input a description when they make an invoice. The issue can likely be fixed with a standardized payment protocol, but addressing this issue seems a lower hanging fruit.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:00:56.093995+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

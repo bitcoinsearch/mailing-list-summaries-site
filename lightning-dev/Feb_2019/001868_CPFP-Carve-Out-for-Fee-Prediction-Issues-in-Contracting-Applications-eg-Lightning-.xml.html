@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2019-02-13 04:22:39
+            <br><i>Published on: 2019-02-13T04:22:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001868.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange, Matt Corallo and Rusty outline a lightning close algorithm. The simplified Replace-By-Fee (RBF) suggested by Rusty allows someone 100k of free transaction spam. However, it is simple and can be further restricted by marking the unilateral close as "gonna be pushed" and limiting the child tx weight to 5kSipa in that case. The lightning close algorithm involves giving bitcoind unilateral close, asking for the current expedited fee, giving bitcoind child "push" tx at that total feerate, then checking if the next block contains the unilateral close tx. If not, repeat the process. Despite the possibility of adding RBF, there are issues with block time variance, making it difficult to guarantee top 4MWeight will get confirmed within a few blocks, which is why Rusty has suggested the lightning close algorithm instead.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:31:10.408100+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

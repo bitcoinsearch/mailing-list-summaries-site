@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Multi-frame sphinx onion format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-02-22 15:53:50
+            <br><i>Published on: 2019-02-22T15:53:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2019/combined_Multi-frame-sphinx-onion-format.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001882.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the discussion about how to add Type-Length-Value (TLV) to the onion, Rusty Russell presents two options. The first option involves leaving the existing fields and putting TLV in the padding: short_channel_id, amt_to_forward, outgoing_cltv_value, and padding. The second option is to replace the existing fields with TLV and flag the new format using realm > 0. Russell notes that the length of intermediary hops ends up being about the same for both options. For the final hop, not using short_channel_id saves significant space. Russell suggests voting for making the entire payload a TLV (option 2) since it allows complete redefinition of the payload. He argues that the overhead argument doesn't apply since there is already a 12-byte payload waste, which can still fit in a single frame with option 2. There is also a third option of making the entire payload a TLV-set and using the old payload format as a single TLV-value with 20 bytes of size, which would result in only 2 bytes of overhead compared to the old v0 format. This option can be dropped if another payload format is needed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:39:37.224267+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-22 01:59:14
+            <br><i>Published on: 2019-03-22T01:59:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001932.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses the usage of codeseparator and OP_CSV in settlement transactions. It is suggested that a settlement signature can only take the settlement branch by having a distinct public key for the branch. This would require `A_s` and `B_s` without rolling them for each `i`. The use of `OP_CSV` in the settlement branch of the update transaction outputs allows later update transactions to have higher priority over settlement transactions. It is noted that using codeseparator is not necessary and `OP_CHECKLOCKTIMEVERIFY` can be used instead. Additionally, there is a need for some flag that allows committing to scriptcode even when not committing to input tx or scriptpubkey.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:53:17.199581+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

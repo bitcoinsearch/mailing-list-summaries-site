@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mandatory &#34;d&#34; or &#34;h&#34; UX issues <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2019/001819_Mandatory-d-or-h-UX-issues.xml.html">Mandatory &#34;d&#34; or &#34;h&#34; UX issues</a>
+                        <b>Olaoluwa Osuntokun 2019-01-14 23:38:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2019/001820_Mandatory-d-or-h-UX-issues.xml.html">Mandatory &#34;d&#34; or &#34;h&#34; UX issues</a>
+                        <b>Félix-Antoine Paradis 2019-01-15 11:04:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2019/001832_Mandatory-d-or-h-UX-issues.xml.html">Mandatory &#34;d&#34; or &#34;h&#34; UX issues</a>
+                        <b>Rusty Russell 2019-01-21 05:18:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2019/001818_Mandatory-d-or-h-UX-issues.xml.html">Mandatory &#34;d&#34; or &#34;h&#34; UX issues</a>
+                        <b>Francis Pouliot 2019-01-11 16:37:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2019/001836_Mandatory-d-or-h-UX-issues.xml.html">Mandatory &#34;d&#34; or &#34;h&#34; UX issues</a>
+                        <b>Giovanni P 2019-01-21 11:40:22</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001819.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2019-01-14T23:38:05+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Francis Pouliot, a developer working on the Lightning Network payout feature, is facing UX issues with ensuring recipients generate the correct Bolt11 invoice for Bitcoin services performing payouts/withdrawals. He believes that the design of Bolt11 may have been biased towards merchants and proposes not making "d" or "h" mandatory without breaking anything. This creates a situation where the service provider depends on his user to create a correct invoice before sending him the funds. The issue has been raised at <a href="https://github.com/lightningnetwork/lightning-rfc/issues/541.Francis">https://github.com/lightningnetwork/lightning-rfc/issues/541.Francis</a> elaborates on the UX issues taking place: a user goes to an app to buy Bitcoin with fiat and opts for LN payout. The app tells the user to make an invoice with msatoshi and description. The user types a description in his wallet, but it may contain a typo or be left blank. When the app tries to pay, they have to decode the bolt11 and compare the "h" or "d" that they instructed the user to create with the decoded bolt11. If they are not the same, they need to instruct the user to create a new bolt11 invoice because the one he created was not correct, which creates an unnecessary requirement for communication, lower payment success rates, and higher abandonment rate.Olaoluwa Osuntokun replies that making "d" or "h" mandatory is not necessary and can be left blank as none of the existing wallets require users to input a description when they make an invoice. Rusty suggests using an lninv URL to simplify the process. This issue can be fixed with a standardized payment protocol, but addressing this issue seems a lower hanging fruit.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-02T17:04:28.040610+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

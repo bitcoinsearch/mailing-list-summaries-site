@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unification of feature bits?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2019-01-21 05:28:56
+            <br><i>Published on: 2019-01-21T05:28:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Unification-of-feature-bits-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001831.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the message proposes a concrete plan for feature bits. The first step is to rename 'local features' to 'peer features', and 'global features' to 'routing features.' Secondly, the two types of features should share a number space so that they do not overlap. Thirdly, both the peer and routing features should be put in `features` in node announcements. However, even bits should never be used for peer features. This plan will allow the use of node_announcement as a way to connect to a peer that supports feature X and also as a means to determine whether a node can be used for routing. In addition, DNS seed filtering might support filtering only by pairs of bits in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:09:47.282475+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

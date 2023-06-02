@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Routemap scaling (was: Just in Time Routing (JIT-Routing) and a channel rebalancing heuristic as an add on for improved routing success in BOLT 1.0)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> René Pickhardt 2019-03-29 05:54:01
+            <br><i>Published on: 2019-03-29T05:54:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_Routemap-scaling-was-Just-in-Time-Routing-JIT-Routing-and-a-channel-rebalancing-heuristic-as-an-add-on-for-improved-routing-success-in-BOLT-1-0-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001942.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rene, a lightning developer, suggested a new gossip message and two important things related to channel capacity in the routemap. He advised using a pruning heuristic of deleting channels with low capacity when the routemap memory becomes close to full and keeping channels with large capacity in the routemap as they are more likely to successfully route a payment than smaller channels. Rene also suggested making this process probabilistic rather than deterministic for better results. Furthermore, he recommended extending the local view by tracking the friends of a friend network. He proposed creating a new gossip query message `query_ask_egonetwork` that asks for the egonetwork of a node that includes all the direct friends of a node together with their friendships. The proposal would help nodes to always track their ego network and over time also the edges between them. Additionally, ZmnSCPxj suggested that payee nodes making BOLT1 invoices could provide `r` routes in the invoice, with the given routes being from nodes with high-capacity channels, so that even if the intermediate channels are pruned due to low capacity, it is possible to get paid.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:16:32.359970+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

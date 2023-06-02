@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improve Lightning payment reliability through better error attribution</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-06-15 02:53:16
+            <br><i>Published on: 2019-06-15T02:53:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2019/combined_Improve-Lightning-payment-reliability-through-better-error-attribution.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002026.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network has a problem with accurately reporting payment times due to the potential for nodes to drop previous channel states. A node can only propagate an `update_fail_htlc` if the downstream `update_fail_htlc` has been committed by `revoke_and_ack`. If B sends `update_fail_htlc` to A as soon as it receives `update_fail_htlc` from C, A can use the new A-B channel state on-chain while at the same time C drops the previous B-C channel state on-chain. This causes B to lose funds. For payment fulfillment, `update_fulfill_htlc` is fine without waiting for `revoke_and_ack` since it is always reported immediately upstream anyway. In order to gather more information about these issues before they cause problems for real payments, ZmnSCPxj suggests background probing. While fat errors give more information when a problem happens for a "real" payment, they still degrade user experience. Background probing gives the same information before problems happen for "real" payments.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:44:36.489030+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

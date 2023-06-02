@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_CAT was Re: Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ethan Heilman 2019-10-04 00:48:17
+            <br><i>Published on: 2019-10-04T00:48:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_OP-CAT-was-Re-Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002202.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discussion between Ethan and ZmnSCPxj revolves around the use of OP_CAT in Bitcoin, which allows concatenation of stack values. Ethan believes that enabling OP_CAT could lead to smaller transaction sizes for his proposed protocols on Bitcoin and it would be a valuable opcode. However, there is a challenge with Merkle trees as it becomes difficult to determine if a hash on a Merkle node is the hash of a Merkle subnode or a leaf transaction. ZmnSCPxj suggests implementing tagged SHA256 as a new opcode instead, but Ethan prefers increasing the size of inputs to OP_CAT. In another email, ZmnSCPxj proposes a radical idea to remove SIGHASH flags attached to signatures and replace them with OP_SETPUBKEYSIGHASH. This feature retains the old feature where the sighash is selected at time-of-spending rather than time-of-payment. The proposal also includes adding a new opcode, OP_SETPUBKEYSIGHASH, that works by attaching a byte to public keys to select the sighash algorithm, allowing particular SIGHASH. The signature still commits to the SIGHASH it was created for, making it malleability-safe. The proposed solution removes the problems associated with SIGHASH_NONE and SIGHASH_SINGLE, as they are allowed only if the output specifically says they are allowed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:46:20.362945+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

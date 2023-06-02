@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Multi-frame sphinx onion format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-02-24 17:59:04
+            <br><i>Published on: 2019-02-24T17:59:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2019/combined_Multi-frame-sphinx-onion-format.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001884.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion related to the Lightning Network protocol, ZmnSCPxj proposed a new way to encode the realm 0 byte by creating a special type "0" with a fixed length of 1299 bytes. This would eliminate the overhead of the realm byte and define the next 1299 bytes as the "V". The "V" would consist of 64 bytes of the current hop format, along with 19*65 bytes as the encrypted form of the next hop data. However, another participant in the discussion disagreed with the proposal, stating that it would blur the separation of payload encoding and onion encoding. Instead, they suggested dropping the concept of 65-byte "frames" and using a special length-not-encoded type 255 to declare the HMAC and the rest of the onion packet as the data for the next hop. Regardless, the proposal was not taken seriously.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:39:58.075224+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

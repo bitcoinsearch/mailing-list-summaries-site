@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Routemap scaling (was: Just in Time Routing (JIT-Routing) and a channel rebalancing heuristic as an add	on for improved routing success in BOLT 1.0)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-04-09 10:32:00
+            <br><i>Published on: 2019-04-09T10:32:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2019/combined_Routemap-scaling-was-Just-in-Time-Routing-JIT-Routing-and-a-channel-rebalancing-heuristic-as-an-add-on-for-improved-routing-success-in-BOLT-1-0-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001973.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the Lightning Network Node and how it can prune its routemap. The proposal suggests using a global quadtree to organize the nodes in a tree-like structure, where each bucket represents a view over the union of its four children. Nodes closer to the root are not more important than the leaf nodes, but they may potentially be more optimal. The proposal also emphasizes anonymity by never revealing how much each node actually knows about the network. The nodes that know more about the network are "more important" and should be protected. One way to protect them is to anonymize them. The proposal suggests delegating lookups to some other arbitrary node that it knows is more likely to know the destination. If somebody advertises being in a particular bucket, then they are better informed and have more information on the network. The proposal suggests that nodes do not need to present the real depth at which they keep gossip. Nodes could counterbalance potential DDoS risk with higher routing fees. The buckets closer to the root do not hold any exclusive information. Even if every node in the root bucket is brought down, nodes at depth>=2 will still collectively know the entire network map.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:09:29.675565+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

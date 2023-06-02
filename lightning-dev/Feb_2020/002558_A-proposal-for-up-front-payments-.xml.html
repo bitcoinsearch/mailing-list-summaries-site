@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A proposal for up-front payments.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-02-21 02:05:20
+            <br><i>Published on: 2020-02-21T02:05:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_A-proposal-for-up-front-payments-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002558.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation between Joost Jager and Anthony Towns regarding reversing the direction in which bond is paid to mitigate jamming attack on the Lightning Network. By reversing direction, instead of paying to offer an htlc, nodes will have to pay to receive an htlc. The payments will scale with distance and increase as the route extends further. However, this scheme also has problems with other upfront schemes, such as how does E know to send 4msat per minute? There is a privacy issue with the last node having to pay n msat/minute, where n is the number of hops to have gotten up to the last one. It might make sense for the payments to have a grace period, where if the payment is open longer than 20 seconds, the last node would have to start paying x msat/minute. There may be potential issues with this scheme as an attacker can still bleed satoshis from the node at the end of the route. The attacker can cause C to fail the htlc after 19 seconds for free, but B has to send 1msat to A. To avoid such attacks, a different protocol for HTLC forwarding may be necessary, such as Alice being able to abort the HTLC she was forwarding to Bob to avoid paying fees. This involves sending a half-signed updated channel state back and forth before two parties commit to it. A ping-before-commit has been added to avoid cases where a peer disconnects, and there is an old proposal to fast-fail HTLCs. Bob sends a new message "I would fail this HTLC once it's committed, here's the error," and if Alice receives it before she sends the commitment_signed, she sends a new "unadd_htlc" message first. This theoretically allows Bob to do the same: optimistically forward it and unadd it if Alice doesn't commit with it in time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T21:10:58.387916+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

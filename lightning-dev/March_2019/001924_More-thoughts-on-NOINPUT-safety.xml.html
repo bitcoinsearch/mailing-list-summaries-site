@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-20 07:38:22
+            <br><i>Published on: 2019-03-20T07:38:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001924.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A Lightning Network developer has suggested a change to the network's rules regarding signature hashing. Currently, the rules require that transactions must not use SIGHASH_NOINPUT. The developer proposed changing this rule to require that transactions must have at least one non-SIGHASH_NOINPUT signature. However, there is concern about how this would work with watchtowers. The current plan for eltoo watchtowers involves storing both signatures in a blob sent to the watchtower, but if one of the signatures must be non-SIGHASH_NOINPUT, it's unclear how the watchtower would create such a signature. Another developer suggested that future segwit versions might relax the rule and recommended that any changes to the rules be made through consensus rather than standardness. There was also discussion on the mailing list about the potential problems caused by NOINPUT signatures, including losing funds due to replays, major exchanges banning sending funds to addresses capable of NOINPUT, and the need for safety measures. Some developers are inclined to put more safety measures in place for NOINPUT, while others prefer to keep things simple and practical.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:54:22.943324+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

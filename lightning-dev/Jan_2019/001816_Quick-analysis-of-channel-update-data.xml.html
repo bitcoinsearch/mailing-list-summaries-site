@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Quick analysis of channel_update data</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2019-01-08 23:38:12
+            <br><i>Published on: 2019-01-08T23:38:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Quick-analysis-of-channel-update-data.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001816.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article discusses a scenario where a node in a network receives updates from another node through multiple paths. If a channel of the sender node A is flapping, and it sends out two updates - one disables and the other re-enables the channel, both of which are identical except for timestamps and signature - before the flush interval of the intermediate node B, then both updates get dropped and nothing gets changed. However, if the flush interval of C triggers after receiving the re-enable update, D gets the disabling update followed by the enabling update once C's flush interval triggers again. In such an event, gossip from B to D is saved, but not C to D. In general, there won't be any coalescing of the DOWN/UP combo if it spans gossip flush. To suppress flap, the gossip timer should be set to 90 +/- 30 seconds instead of the standard 60 seconds. If the connection between A-C gets severed between the updates, C and D would learn that the channel is disabled but wouldn't receive the re-enabling update because B has already dropped it. In this case, B needs to remember the last timestamp of the update it discarded and ignore ones prior. To reduce the number of flapping updates, local policies at the senders of the update should be used, rather than building in-network deduplications. The article suggests "eager-disable" and "lazy-enable," where disables are sent right away, and enables are put on an exponential backoff timeout. The routing protocol should also be less chatty. Finally, the article argues that lazy-disable is the current best practice since it assumes that the channel is still advertised as available, while eager-enable is used only when a disable message has been sent.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T16:51:05.433667+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

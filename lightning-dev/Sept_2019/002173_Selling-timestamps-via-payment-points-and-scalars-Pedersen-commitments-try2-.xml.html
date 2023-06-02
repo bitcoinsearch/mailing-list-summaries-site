@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Selling timestamps (via payment points and scalars + Pedersen commitments ) [try2]</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Konstantin Ketterer 2019-09-26 16:51:47
+            <br><i>Published on: 2019-09-26T16:51:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Selling-timestamps-via-payment-points-and-scalars-Pedersen-commitments-try2-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002173.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Konstantin Ketterer suggests adopting OpenTimestamps as a standard, which would save on development work and already familiarize people with it. He explores secp256k1 commitments/sign-to-contract and how they enable free timestamps at no additional cost by tweaking the signature of a normal transaction. In the future, he imagines that nodes such as public lightning routing nodes or submarineswap providers who have to perform transactions will subsidize their transaction fees by selling timestamps. They only need to charge a fee upfront or require some Hashcash-like proof-of-work protection in case of spam. To remove the discrete logarithm security assumption, Konstantin proposes including a hash h( x || r ) of x and r in the hash of the commitment: h( x*H + r*G | | h( x | | r) ). This would make the timestamp remain secure and valid in case secp256k1 breaks. It can't enforce it with payment points and scalars but if the server doesn't include a valid hash, they will never use his services again and can even prove to other peers that he cheated them. If the system is resistant against sybil attacks with something like JoinMarkets time-locked Bitcoins proposal this should work fine. Peter Todd provides feedback to Konstantin's idea and suggests using OpenTimestamps, which does timestamping for free by using giant merkle trees built every second in a scalable way to amortize the cost of the BTC transactions across the entire world's timestamps. Andrew Poelstra has a pull-req to add secp256k1 commitments to OpenTimestamps, which may prove useful to Konstantin in implementing his idea. Peter Todd notes that the OpenTimestamps proof format doesn't depend on the aggregation scheme, so if Konstantin builds the above, it'd be awesome if it produced OpenTimestamps proofs.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:26:23.633416+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

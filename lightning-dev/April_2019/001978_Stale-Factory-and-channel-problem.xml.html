@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Stale Factory (and channel) problem</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-04-16 07:39:48
+            <br><i>Published on: 2019-04-16T07:39:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2019/combined_Stale-Factory-and-channel-problem.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001978.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email to the Lightning-dev mailing list, Alejandro Ranchal Pedrosa discusses the situation of a stale factory or channel. He explains that a stale channel arises when one party needs to sign before their counterparty. Ranchal suggests two possible ways to resolve the issue - create a new refunding or allocation transaction or close the channel/factory by publishing it on the blockchain. Ranchal also highlights that a stale factory is similar to a stale channel but affects a new allocation transaction rather than a refunding transaction. He points out two major differences between the two situations and offers ways to overcome them. In response to Ranchal's email, ZmnSCPxj proposes a mechanism for factories to be single-funded. This construction requires a simple n-of-n at the factory level and allows a node to open multiple channels to multiple other nodes using a single onchain UTXO. The funder of the factory is the factory operator. If the other nodes on the factory wish to create some change at the factory level, they contact the factory operator only. The only factory-level operation allowed in this mechanism is a cooperative close. ZmnSCPxj believes that this mechanism provides some scaling boost until they can determine how best to implement factory-level changes. He suggests that this is still a "factory" of sorts but with only one known-safe operation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:18:57.571392+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

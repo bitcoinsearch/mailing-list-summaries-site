@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Automated Inbound Liquidity With Invoices</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ecurrencyhodler 2019-08-14 05:14:25
+            <br><i>Published on: 2019-08-14T05:14:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2019/combined_Proposal-Automated-Inbound-Liquidity-With-Invoices.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-August/002123.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>One user proposes a way for instant inbound liquidity to be automated via invoices and asks for feedback. The proposal involves embedding the node URI of the invoice creator along with the amount to be routed. A scenario is given where Bob wants to send 100,000 sats and the receiving node has zero inbound liquidity. An invoice is created, which recognizes the lack of inbound liquidity and embeds the URI in the invoice. Bob's wallet sees the invoice and URI, tries to route, and opens a channel and pushes payment when it doesn't see anything. The user can now own and spend 100,000 sats instantly. Certain specifics need to be flushed out, such as the size of Bob's channel, and routing nodes who provide this service can charge a premium. Another user suggests current and practical ways to set up incoming liquidity through on-chain funds, creating a channel to a high-uptime node on the network, and using a submarine swap to buy on-chain funds off-chain. While this requires fees, it gives control over what nodes to make channels with and would be a good investment in future accessibility over the Lightning Network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T19:56:22.497038+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

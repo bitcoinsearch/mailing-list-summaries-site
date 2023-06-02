@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-13 06:41:47
+            <br><i>Published on: 2019-03-13T06:41:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001894.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author discusses the use of NONINPUT signatures in Bitcoin and how they can be used to prevent cheating. They propose an alternative solution that involves requiring every script to have a valid signature that commits to the input, which would cost more than a key path spend. This method would also provide a "PUSH_TAPROOT_KEY" opcode to push the taproot key to stack, saving 33B from pushing P as a literal. The author also discusses the concept of output tagging and suggests that if a NONINPUT sig is restricted and cannot be used to spend an "ordinary" 2-of-2, this is output tagging regardless of the exact mechanism. They propose a solution that would ideally keep historical data of whether on-chain coin was used in Lightning as little as possible, while still allowing for a common cooperative close. To work around this issue, the author suggests adding a "kickoff" transaction that spends the eltoo setup transaction, with the kickoff kept off-chain until a non-cooperative close is needed. However, this would complicate fees. The author concludes by suggesting that alternatives to these proposals may exist.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:53:44.226694+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
