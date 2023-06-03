@@ -11,8 +11,37 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1></h1>
+    <h1>[Proposal] Payment Route Reservation</h1>
     <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> g0b1el 2023-03-02 13:35:38
+            <br><i>Published on: 2023-03-02T13:35:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2023/combined_-Proposal-Payment-Route-Reservation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003872.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email, g0b1el mentioned two additional improvements to the Lightning Network's payment protocol. The first improvement involves nodes on the route receiving the same amount of reservation without the need to put the amount inside the onion. This simplifies rendezvous routing and allows for quicker failure of reservation balances. The onion now only holds the next hop information, resulting in smaller onions. The second improvement eliminates the need for an HTLC onion in the second step as route hops already contain all the necessary information to create HTLCs. The sender only needs to sign the commitment and revoke the state with the first node in the route. This results in an increase in payment latency by just one more call between the route nodes. The proposal can also be found on the mailing list archive if ASCII graphics are not rendering correctly.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T12:09:25.139104+00:00 </i></p>
     
     
 

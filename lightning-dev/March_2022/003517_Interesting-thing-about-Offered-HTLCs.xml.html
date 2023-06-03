@@ -11,8 +11,37 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1></h1>
+    <h1>Interesting thing about Offered HTLCs</h1>
     <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eugene Siegel 2022-03-15 15:26:25
+            <br><i>Published on: 2022-03-15T15:26:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2022/combined_Interesting-thing-about-Offered-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003517.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the Lightning-dev mailing list, the use of Miniscript was suggested to prevent unintended paths in Lightning transactions. Miniscript is a subset of script, but its integration could help avoid surprises and improve security. The discussion also touched upon the issue of offered HTLC outputs and the three claim paths for them. The offering party can claim via the HTLC-timeout case on their commitment transaction with their signature and the remote's signature (SIGHASH_ALL) after the cltv_expiry timeout. The remote party gives them a signature, and after the timeout, the offering party can claim with the remote's signature + preimage, but can only spend with the HTLC-timeout transaction because of SIGHASH_ALL. However, this does not alleviate the offering party's need to respect the CLTV delay, and the offered HTLC timespan cannot be shortened. In case of competing HTLC races, once the absolute timelock is expired, the offering counterparty can compete against the receiving one with a more feerate-efficient witness. The discussion raised the possibility of splitting the Script branches in two tapleaves as a solution to the issue, which would have bip342 signature digest committing to the tapleaf_hash.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:45:10.298559+00:00 </i></p>
     
     
 
