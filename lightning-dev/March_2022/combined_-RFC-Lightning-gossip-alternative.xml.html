@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Lightning gossip alternative <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2022/003471_-RFC-Lightning-gossip-alternative.xml.html">[RFC] Lightning gossip alternative</a>
+                        <b>Joost Jager 2022-02-15 13:45:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2022/003474_-RFC-Lightning-gossip-alternative.xml.html">[RFC] Lightning gossip alternative</a>
+                        <b>Rusty Russell 2022-02-16 02:35:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2022/003478_-RFC-Lightning-gossip-alternative.xml.html">[RFC] Lightning gossip alternative</a>
+                        <b>ZmnSCPxj 2022-02-18 02:33:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2022/003530_-RFC-Lightning-gossip-alternative.xml.html">[RFC] Lightning gossip alternative</a>
+                        <b>Rusty Russell 2022-03-23 23:50:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2022/003496_-RFC-Lightning-gossip-alternative.xml.html">[RFC] Lightning gossip alternative</a>
+                        <b>Rusty Russell 2022-02-20 23:02:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2022/003470_-RFC-Lightning-gossip-alternative.xml.html">[RFC] Lightning gossip alternative</a>
+                        <b>Rusty Russell 2022-02-14 01:41:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2022/003527_-RFC-Lightning-gossip-alternative.xml.html">[RFC] Lightning gossip alternative</a>
+                        <b>Olaoluwa Osuntokun 2022-03-23 01:38:40</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003471.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2022-02-15T13:45:48+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network, a payment protocol built on top of blockchain networks like Bitcoin, is set to be upgraded. The upgrade is designed to simplify gossip and reduce unspent transaction output (UTXO) validation requirements from per-channel to per-node. Rusty Russell, an Australian software programmer and Bitcoin Lightning Network developer, has suggested the upgrade. To achieve this, node_announcement_v2 and channel_update_v2 messages will replace timestamps with block heights. Nodes will send out weekly node_announcement_v2 to prove they own some UTXOs, entitling them to broadcast channels using channel_update_v2. If a channel_update_v2 is received from both peers, it confirms that the channel exists.Nodes do not need to monitor the existence of UTXOs after an initial check, since they will automatically prune them after a week. Taproot proofs are a signature of the v1 output over the `node_id`, `utxo`, and `blockheight` with prefix "lightingtaproot_utxo_proofsig", while legacy proofs are two signatures similar to existing channel_announcement. Node_announcement_v2 are discarded after a week (1000 blocks), and if two node_announcement_v2 claim the same UTXO, the first seen is used, and any others are discarded.The total proved UTXO value is multiplied by 10 to give the "announcable_channel_capacity" for that node. Channel_update_v2 has a capacity, cost, and min_msat, but it is not considered to exist until both peers have sent a channel_update_v2. If a node sets claim, the capacity of the channel is subtracted from the remaining announcable_channel_capacity for that node (minimum 10,000 sats). The proposed upgrade allows "leasing" of UTXOs, where someone can pay to sign their UTXO for your node_announcement, with some level of trust. They could spend the UTXO, which gives you a slow degradation as new nodes don't accept your channels but existing nodes don't check until it's due for refresh. Or they could sign one UTXO for multiple node_announcements, which is why preference is given to the first-seen. However, it's a weekly business so there's an incentive for them not to.Overall, the upgrade simplifies gossip and reduces validation requirements while introducing new features such as leasing of UTXOs and taproot_utxo_delegated_proof where UTXOs can sign over to another key. The proposed upgrade has the potential to make the graph at the edge level far more dynamic.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T07:36:37.362393+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

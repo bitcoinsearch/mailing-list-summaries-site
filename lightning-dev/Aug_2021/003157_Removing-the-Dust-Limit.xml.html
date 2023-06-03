@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2021-08-10 22:37:48
+            <br><i>Published on: 2021-08-10T22:37:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003157.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of "uneconomical outputs" in the Lightning Network (LN) has been discussed, as outputs that cost more to spend than their value pose a problem for LN. Currently, commitment outputs with a value below the transaction owner's dust limit plus the HTLC-claim fee at the feerate agreed upon will be trimmed-to-dust. However, this approach presents limitations as there needs to be an agreement among channel operators on the mempool feerate, which can be difficult to find. Additionally, the trim-to-dust evaluation does not match the lifetime of the HTLC accurately, and this inaccuracy could worsen with the deployment of long-lived routed packets over LN. If LN developers remove feerate negotiation from the trim-to-dust definition to a static feerate, it would likely put higher pressure on full-node operators. Probabilistic payments have been suggested as an alternative approach for handling the problem of payments too small to be represented on-chain. While raising the dust limit can increase the percentage of LN channels' capacity into dust, increases in the minimum necessary feerate also have this effect. Developers have no control over prevailing feerates, so this is a problem that LN needs to address regardless of Bitcoin Core's dust limit. Utreexo was suggested as smarter engineering on the base-layer side, but it does not solve the problem as many nodes, such as miners, will still want to store the full UTXO set and access it quickly. Finally, some operators might be willing to compensate for the "dust" trust vector by relying on a side-trust model. Ultimately, the status quo is deemed adequate for now.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:23:35.819525+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

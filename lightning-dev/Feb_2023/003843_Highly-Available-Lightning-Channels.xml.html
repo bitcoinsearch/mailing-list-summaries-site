@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Highly Available Lightning Channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2023-02-13 14:40:24
+            <br><i>Published on: 2023-02-13T14:40:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2023/combined_Highly-Available-Lightning-Channels.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003843.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Joost Jager and Matt, Joost discusses his expectation that payers on the Lightning Network will become strict about node performance. He suggests that routing nodes may need to operate flawlessly or risk a hefty penalty, such as being avoided for an extended period of time. Joost believes that this will help guarantee competitiveness with centralized payment systems and their ability to process payments quickly.To achieve this level of reliability, Joost proposes extending the `channel_update` field `channel_flags` with a new bit that the sender can use to signal `highly_available`. This flag would allow payers to prefer highly available channels during pathfinding. However, if the routing node returns a failure, a much stronger than normal penalty would be applied. Matt disagrees with this proposal, stating that nodes should measure the network and route over paths that it thinks are reliable for what it wants, robustly over an unreliable network. He argues that we should not expect the Lightning Network to be built out of high-reliability nodes, as this creates strong centralization pressure. Additionally, he believes that with reasonable volume, Lightning today is very reliable and relatively fast, with few retries required.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T11:45:08.634343+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Stateless invoices with proof-of-payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> fiatjaf 2021-09-21 13:05:48
+            <br><i>Published on: 2021-09-21T13:05:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2021/combined_Stateless-invoices-with-proof-of-payment.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003243.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between two individuals discusses the implementation of stateless invoices. The proposal is for the payee to generate a stateless invoice using some secret to compute the preimage upon receiving the HTLC. One way to achieve this is via the payment_secret, which is already an arbitrary invoice id that gets sent as a tlv record.  Implementations should expose a "stateless invoice" API for receiving using the payment_secret and when sending, implementations should attach a TLV record with encoded order details. While 1 is simple to do, 2 requires full network compatibility, but it is much needed; otherwise, the payee has to keep track of all the invoice ids related to the orders they refer to. There are application-specific workarounds that can be applied for 2, such as having a fixed, hardcoded set of possible orders, encoding the order minimally in the payment secret or route hint, storing order details on redis for only 3 minutes, and using lnurlpay to reduce the delay between invoice issuance and user confirmation to zero. A clever workaround was used by fiatjaf on @lntxbot, but it required low-level code in a c-lightning plugin and a hack with route hints since TLV payloads were not an option.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:57:43.213661+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

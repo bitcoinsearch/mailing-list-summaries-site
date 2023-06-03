@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment sender authentication</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2021-12-20 08:01:37
+            <br><i>Published on: 2021-12-20T08:01:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_Payment-sender-authentication.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003430.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between fiatjaf, Peter Todd, and Joost, a temporary solution was suggested for adding additional information to a BOLT11 payment request. The solution can be found in the lnurl-rfc repository, specifically in the 18th file. It involves providing a lone pubkey, a domain-specific pubkey along with a signature of a challenge provided by the receiver, or an unauthenticated name or email. These are then committed inside the BOLT11 payment request using the 'h' tag. However, one concern raised was that the use of a signature could allow the receiver to prove to a third party that the payment was made, which may not be desired for privacy-conscious users. Peter Todd pointed out that Lightning already has sender authentication through the use of a pre-image hash over an authenticated channel. This means that the person who made the payment was the only one who could have realistically done so because they were the only one who knew the pre-image hash. However, Joost clarified that he was looking for a solution that existed entirely within the protocol without using an additional channel. He also noted that routing nodes still learn the preimage hash, but this is solved by the payment secret that is also part of the invoice. Peter Todd warned against going beyond sender authentication as it creates the ability to prove to a third party who made a particular payment, which can raise serious problems in cases like government raids. Joost proposed using diffie-hellman to generate a shared secret, allowing the receiver to make up all the proofs themselves and rendering them useless to a third party.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:02:06.577885+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

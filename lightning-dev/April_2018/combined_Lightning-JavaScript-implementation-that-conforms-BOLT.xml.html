@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/April_2018/001218_Lightning-JavaScript-implementation-that-conforms-BOLT.xml.html">Lightning JavaScript implementation that conforms BOLT</a>
+                        <b>Igor Cota 2018-04-23 06:27:11</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/April_2018/001217_Lightning-JavaScript-implementation-that-conforms-BOLT.xml.html">Lightning JavaScript implementation that conforms BOLT</a>
                         <b>Быхун, Алексей Викторович 2018-04-12 14:39:00</b>
                     </li>
@@ -28,22 +33,17 @@
                         <b>Tyler H 2018-04-23 13:23:34</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/April_2018/001218_Lightning-JavaScript-implementation-that-conforms-BOLT.xml.html">Lightning JavaScript implementation that conforms BOLT</a>
-                        <b>Igor Cota 2018-04-23 06:27:11</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001217.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001218.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2018-04-12T14:39:00+00:00</i></p>
+        <p><i>Published on: 2018-04-23T06:27:11+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>Aleksey Bykhun is looking for a way to run a Lightning Network (LN) node inside a browser. One way would be to implement BOLT protocol from scratch in JS, but he's thinking of a more easy way. He has asked if anyone has succeeded in compiling, for example, c-lightning project under WebAssembly. WebAssembly is a C/C++ compiler that can use the JS-API and work with low-level C functions. There are some things c-lighting does that should stop it from compiling easily. However, there are wrappers for many C-functions by Emscripten lib. Tyler suggested that considering the security situation with browsers, a better approach would be to write an extension that interfaces with a daemon already running on the system through REST or similar. Lightning Charge would help here for c-lightning, or lnd has REST and gRPC built in. The key difference here is key material isn't accessed by the browser and secured by the browser's security, but instead live in the usual directory and the daemon handles it normally. Igor believes that Aleksey's biggest obstacle is probably the fact that c-lightning spawns several processes (subdaemons) and depends on the bitcoin-cli binary for bitcoind RPC. If WebAssembly supports multiple processes (not just threads) that's a good start. There is a c-lightning specific mailing list where Aleksey can find more information.</p>
+        <p>Aleksey Bykhun is seeking suggestions on how to run a Lightning Network node within a browser. One option would be to implement the BOLT protocol from scratch in JavaScript, but the writer is looking for an easier method. Aleksey asks if anyone has had success compiling the c-lightning project under WebAssembly, which can create browser-compatible byte-code. However, some functions that c-lighting uses, such as sockets, may prevent it from compiling easily, although Emscripten lib provides wrappers for many C-functions. Tyler suggests a better approach in an email thread, recommending writing a browser extension that interfaces with a daemon already running on the system through REST or similar. Igor notes that Aleksey's biggest obstacle is probably the fact that c-lightning spawns several processes and depends on the bitcoin-cli binary for bitcoind RPC. If WebAssembly supports multiple processes, that could be a good start. There is a c-lightning specific mailing list available for further information.Tyler suggests using Lightning Charge for c-lightning or lnd, which has REST and gRPC built-in. The key difference is that the key material isn't accessed by the browser and secured by the browser's security, but instead lives in the usual directory and the daemon handles it normally. Aleksey could even bundle the daemon with the browser in a neat package, similar to the Tor Browser Bundle. Overall, the writer is requesting advice on what to look for when trying to run a LN node inside the browser and general feedback on the idea.</p>
         <hr>
-        <p><i>Updated on: 2023-05-24T23:12:24.102016+00:00</i></p>
+        <p><i>Updated on: 2023-06-02T02:44:18.807429+00:00</i></p>
     
 
     

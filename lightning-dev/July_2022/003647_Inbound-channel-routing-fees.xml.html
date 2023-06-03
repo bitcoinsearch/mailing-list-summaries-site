@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Inbound channel routing fees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas HUET 2022-07-01 12:17:07
+            <br><i>Published on: 2022-07-01T12:17:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2022/combined_Inbound-channel-routing-fees.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003647.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on GitHub regarding the Lightning Network, concerns were raised about the lack of balance in network traffic. Specifically, certain nodes receive more than they send, such as merchants, which can lead to a lack of liquidity and failed payments. To incentivize opening channels to these nodes and maintain reliability, the current fee structure rewards routing fees in exchange for onchain fees and locked funds. However, proposed changes to this structure have raised concerns that it could break the incentive and make the network less reliable.One proposed change involves adding inbound fees to compensate for accepting incoming htlc and locking up funds in channels. Some members of the discussion, including Joost Jager, argue that this is fair compensation for the risks associated with accepting incoming funds. However, others, such as Bastien TEINTURIER, argue that this doesn't make sense as the funds on the other side of the channel belong to the peer and not the recipient. Furthermore, allowing inbound fees could permit peers to arbitrarily DoS payments by setting high fees, thereby breaking routing incentives.Despite objections, some argue that rounding up to zero in the case of negative fees, rather than ignoring inbound fees completely, is still a better solution. While path-finding algorithms don't generally support negative fees, the sum of inbound and outbound fees is still positive and therefore not a problem. However, if routing nodes set their policies so that the fees turn out negative, senders can round up to zero and find a path as normal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:35:31.504054+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

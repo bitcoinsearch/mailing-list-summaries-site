@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fee Budgets: A Possible Path Towards Unified Cost Functions For Lightning Pathfinding Problems</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-08-21 02:40:21
+            <br><i>Published on: 2021-08-21T02:40:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_Fee-Budgets-A-Possible-Path-Towards-Unified-Cost-Functions-For-Lightning-Pathfinding-Problems.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003191.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article discusses various aspects of the Lightning Network, a second-layer solution for the Bitcoin blockchain that aims to improve scalability and reduce transaction fees. One important consideration is the cost of failed payments, which can be quantified in terms of the subjective value of Bitcoin used to make the payment compared to the value of the product being purchased. To estimate the probability of payment success, Pickhardt and Richter's 2021 paper proposes a method that can be used as a cost function for pathfinding algorithms.In addition to considering payment success probability, pathfinding algorithms must also factor in actual fees and total cltv-delta, which can be converted into an equivalent amount of BTCs. A rational buyer will only make a purchase if they believe the value of the product being bought is higher than the value of the BTCs they sacrifice to buy it. Therefore, the fee budget for a particular payment is the expected value from acquiring the product minus its price, subjectively determined by the payer, and provided to the C-Lightning payment algorithm.The cost of failure can then be calculated using the formula `fee_budget * (1 - success_probability)`. While this unified cost function cannot be used in existing pathfinding algorithms, the negative logarithm of the probability can be used instead if the `fee` term is small compared to the `fee_budget` term. As a heuristic, fees can be ignored, and only the negative log probability is used after pruning channels whose fees are very high. #zerobasefee is a specialized heuristic that assumes a 1-sat base fee is not negligible compared to the fee_budget and should not be pruned.However, for larger payments, a 1 satoshi base fee may actually be negligible, suggesting that #zerobasefee could potentially be generalized. The article also introduces the concept of alternative pathfinding, where an "aggregate" operation replaces the simple addition traditionally used in pathfinding algorithms. The author suggests that the type should be both Monoid and Ord and provides code examples of how this would look in practice. Ultimately, these considerations can help improve the efficiency and reliability of the Lightning Network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:36:22.899103+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

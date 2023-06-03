@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>In-protocol liquidity probing and channel jamming mitigation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-10-21 10:00:05
+            <br><i>Published on: 2021-10-21T10:00:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_In-protocol-liquidity-probing-and-channel-jamming-mitigation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003333.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A potential downside of a dedicated probe message is the possibility of it being used for free messaging on lightning by including additional data in the payload for the recipient. Though free messaging is already possible via htlcs, a probe message would lower the cost to do so because the sender wouldn't need to lock up liquidity. This could increase the spam potential. It is suggested that the probe message be designed such that it is useless for anything other than probing. However, this may be difficult as the obfuscated 1300 bytes block with the remaining part of the route cannot differentiate between meaningful data and other data. To mitigate this issue, the onion max size for the probe can reduce, making it less usable for remote messaging.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:27:55.965465+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Gossip Propagation, Anti-spam, and Set Reconciliation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Myers 2022-04-22 16:15:13
+            <br><i>Published on: 2022-04-22T16:15:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2022/combined_Gossip-Propagation-Anti-spam-and-Set-Reconciliation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003562.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Alex Myers and Matt Corallo, the topic of rate-limiting and set reconciliation in Lightning Network's gossip protocol was discussed. While Eclair currently does not implement any rate-limiting, Alex suggests that set reconciliation should only be used after a node has fully synced gossip through traditional means such as initial routing sync and gossip queries. However, Matt disagrees with this approach and suggests that a minisketch-based sync should be used for initial sync after restart as it would be more efficient than the current methods. Additionally, Matt argues that a common rate-limit heuristic is needed to ensure efficiency in set reconciliation, especially since the network is constantly growing. While Alex acknowledges the need for tighter rules on rate-limiting, he also notes that the Erlay approach, which maintains a per-peer sketch and associated state for every gossip peer, could be too much overhead to maintain. Nevertheless, Alex will consider Matt's suggestions and experiment with different levers to maintain sync.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:24:05.791253+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

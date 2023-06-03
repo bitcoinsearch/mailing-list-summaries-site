@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>#PickhardtPayments implemented in lnd-manageJ</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2022-05-17 07:23:07
+            <br><i>Published on: 2022-05-17T07:23:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2022/combined_-PickhardtPayments-implemented-in-lnd-manageJ.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-May/003585.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network community is constantly researching and innovating new approaches to improve payment efficiency, lower fees, and enhance scalability. One recent proposal is Carsten Otto's PickhardtPayments, which aims to minimize the number of transactions required for multi-path payments (MPP) while ensuring reliability. The approach uses a novel algorithm that reduces the number of shards needed to complete a payment.Otto's proposal has been submitted for review and feedback from the community. While the code is complex and currently only works with lnd, it has received positive feedback so far, with some calling it a significant improvement over current MPP implementations. René Pickhardt, who co-created the #PickhardtPayments approach, has also shown support for Otto's proposal and is interested in helping with experiments.In the Lightning Network, switching to a minimum-cost flow (MCF) routing algorithm can be useful for relaying large payments that need to be split aggressively to reach the destination. However, it is important to consider whether it is economical to make such payments on lightning, as payments above certain amounts may cost less on-chain than off-chain, depending on the fees. Additionally, the shape of the network should be considered when using an MCF algorithm, as different path-finding algorithms may be needed depending on the location.Eclair has implemented a set of heuristics around channel scoring and a testing system for mainnet usage. They have also been working on channel liquidity estimation for over half a year. However, it is essential to run experiments with enough volume for the data to be statistically meaningful and to use A/B testing.Lastly, the recent implementation of #PickhardtPayments in lnd-manageJ offers a new approach that takes into account liquidity information and uses an optimal minimum-cost flow algorithm to find routes for MPP payments. Although the code is highly experimental, promising results have been seen so far. Links to Otto's proposal, academic papers on the Lightning Network, and relevant forums are provided in his post.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:41:37.473453+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

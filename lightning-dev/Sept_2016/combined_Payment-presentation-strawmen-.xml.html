@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Sept_2016/000606_Payment-presentation-strawmen-.xml.html">Payment presentation strawmen.</a>
+                        <b>Rusty Russell 2016-09-06 00:49:24</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Sept_2016/000610_Payment-presentation-strawmen-.xml.html">Payment presentation strawmen.</a>
                         <b>Ryan Grant 2016-09-10 11:16:07</b>
                     </li>
@@ -38,22 +43,17 @@
                         <b>Christian Decker 2016-09-10 21:36:12</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Sept_2016/000606_Payment-presentation-strawmen-.xml.html">Payment presentation strawmen.</a>
-                        <b>Rusty Russell 2016-09-06 00:49:24</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000610.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000606.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2016-09-10T11:16:07+00:00</i></p>
+        <p><i>Published on: 2016-09-06T00:49:24+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>Fragmented payments in Lightning Network channels pose challenges to accounting procedures. If Alice pays Bob by splitting the payment into multiple channels, Bob may need time-based heuristics to consolidate separate LN transactions. To address this issue, a reassembly protocol support like BIP 70's merchant_data field should be available wherever payments might fragment. This would allow every wallet to help with accounting. A varint could suffice since it's a low-level protocol. The lack of a payment_id could be considered a "don't fragment" request.In response to Ryan Grant's comment on fragmented payments, Christian Decker explains that there is nothing special about splitting a payment using the r-hash implementation. As long as the recipient knows the total amount, they can delay the release of the secret until they receive all funds. Collating partial payments is done with r-hash, and the private key release works similarly. While Lightning theoretically supports arbitrary splitting and merging along the paths of payment, it may not be possible or desirable with Onion Routing.Rusty Russell raises the critical issue of how payee tells a payer how to pay. He presents an ordered wishlist for payment instructions, including minimal state required on the client, minimal network queries required by the client, and minimal state required on the server. Russell suggests three possibilities for presenting payment instructions: Simply present amount and public node address, present one or more chains of channels from landmarks with fee info, or include IDs for each hop in the chain.</p>
+        <p>The discussion revolves around how a payee instructs a payer on making payments through Lightning Network (LN) channels. Rusty presents his wishlist that includes minimal state required on the client and server, minimal network queries by the client, and presentation of a standard QR code for one-way communications. Rusty discusses three possibilities to address this issue, with option C being more scalable and option B working for the first million nodes. It is important to have reassembly protocol support available wherever payments may fragment when using multiple LN channels. A payment_id could be used to identify fragmented payments, which would help recipients join separate LN transactions. Christian Decker explains that there is nothing special about splitting a payment as long as the recipient knows the total amount they should be receiving and can delay the release of the secret until all funds are guaranteed. The partial payments are collated using the r-hash. An error is made by a speaker in the context, but it is unclear what the mistake was. They advise holding onto the r-hash longer, which could refer to a different approach or technique in relation to hashing. Finally, Ryan Grant suggests that fragmented payments made through multiple LN channels are trickier than transactions spending multiple UTXOs. To address this problem, reassembly protocol support should be available, and every wallet should assist in the accounting. Decker notes that theoretically, Lightning would support arbitrary splitting and merging along the payment paths, but it is unclear whether this is still possible when adding onion routing to the mix.</p>
         <hr>
-        <p><i>Updated on: 2023-05-24T00:25:15.644042+00:00</i></p>
+        <p><i>Updated on: 2023-06-02T00:53:02.556767+00:00</i></p>
     
 
     

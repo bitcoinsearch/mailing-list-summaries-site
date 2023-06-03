@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Opening balanced channels using PSBT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ole Henrik Skogstrøm 2021-09-25 12:06:21
+            <br><i>Published on: 2021-09-25T12:06:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2021/combined_Opening-balanced-channels-using-PSBT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003267.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Ole Henrik Skogstrøm has discovered a way of opening balanced channels using LND's psbt option when opening channels, which essentially involves joining funded PSBTs before signing and submitting them. He is wondering whether this is somehow unsafe or for some other reason a bad idea. The balanced-ness of a channel is a transitory state and opening channels like these only serves to allow the channel to start in that state. Olaoluwa Osuntokun responds to Ole's message by explaining that it is generally known that one can use out-of-band transaction construction and the push_amt feature in the base funding protocol to simulate dual funded channels. He further explains that the popular 'balanceofsatoshis' tool has a command that packages up the interaction ('open-balanced-channel') into an easier-to-use format. Osuntokun goes on to say that the balanced-ness of a channel is a transitory state and opening channels like these only serves to allow the channel to start in that state. If fees and channel policies are not set accordingly, then it's possible that a normal payment or balance flow shifts the channel away from equilibrium shortly after the channel is open. Lightning Pool also uses a little trick to allow users to purchase channels that are 50/50 balanced, and also purchase channel leases for a third party (called sidecar channels) to help onboard them onto Lightning.In terms of automating the process, Osuntokun notes that Lightning Pool's process can be automatically batched with other channels created in that epoch and uses traits of the Pool account system to make things atomic. However, if doing so manually, he cautions that by default lnd will only lock the UTXOs allocated for the funding attempt for a few minutes, and therefore, one needs to make sure the process is finalized during that interval or the UTXOs will be unlocked and you risk accidentally double spending yourself.Finally, Ole Henrik Skogstrøm responds by thanking Olaoluwa Osuntokun for his reply and acknowledging that opening balanced channels simplifies things for new routing nodes rather than having to balance them out through fee adjustments when most channels are lopsided. However, he admits that he clearly needs to learn more about this.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:02:07.943464+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

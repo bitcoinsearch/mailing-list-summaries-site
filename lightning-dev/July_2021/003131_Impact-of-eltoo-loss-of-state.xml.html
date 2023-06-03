@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Impact of eltoo loss of state</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2021-07-12 22:20:41
+            <br><i>Published on: 2021-07-12T22:20:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2021/combined_Impact-of-eltoo-loss-of-state.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003131.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jeremy Rubin suggests a solution to fix the lost state issue in blockchain. One way to do this would be to encrypt data in an OP_RETURN for any update transaction for each participant. This way, if there is an update on a state that one doesn't have, they can use their static key to decrypt the relevant data for what PK_si signed off on. Another possible solution is to make the scripts similar to CLTV DROP PKu CHECKSIGVERIFY GETLOCKTIME BIP32DERIVE CHECKTRANSACTIONSIGNEDFROMSTACK, 2016 CSV DROP PK_si CHECKSIG. To upgrade to state M>= N+1, one would have to publish a transaction signed with the BIP32 derived key for that update in the future. The downside is that it results in double publishing of txdata on the chain but ensures data availability.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:09:36.208937+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blind Signing Considered Harmful</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Devrandom 2022-05-10 08:02:35
+            <br><i>Published on: 2022-05-10T08:02:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2022/combined_Blind-Signing-Considered-Harmful.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-May/003581.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between ZmnSCPxj and devrandom, they discussed the requirements for a true validating Lightning signer. ZmnSCPxj suggested that such a signer would need to be a Bitcoin node with active mitigation against eclipse attacks, the ability to monitor the blockheight, and the ability to broadcast transactions. The UTXO Oracle(s) were then mentioned as an alternative option with additional properties that improve on a plain Bitcoin node. These include providing compact attestations that can be checked in an isolated/hardened environment, sending out attestations on a broadcast medium, and covering the current block hash and a commitment for the UTXO set hash. The topic of broadcast was also addressed, with the intention being to have a disaster recovery procedure in place. This would involve the signer sending out a heartbeat if it has a quorum of non-stale oracle attestations and there are no upcoming safety deadlines. The heartbeats form a "deadman's switch" which would alert the operator to take action if needed. Routing nodes were noted as needing to be aware of the on-chain status of incoming channels to avoid an attack scenario where a compromised node lies and tells the signer that the block height is much lower than it really is.The potential exploit of an HTLC being failed and removed on the input before it is removed on the output, leading to a loss of funds, was also discussed. Heartbeats would cease and the operator would manually intervene in this scenario. There is another potential mode where the value of HTLCs in flight is limited, routing is not done, and watchtowers are used instead of the UTXO Oracle component. It was also suggested that UTXO Oracles could be embedded into the network if compact-filters or utreexo roots are committed to in the consensus and SPV-style security is used. However, it is unclear when this might be plausibly deployed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:39:29.413922+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

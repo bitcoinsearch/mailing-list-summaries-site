@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PTLCs early draft specification</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2021-12-08 08:40:35
+            <br><i>Published on: 2021-12-08T08:40:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_PTLCs-early-draft-specification.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003385.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bastien requests a first version of transactions with minimal changes to the transaction structure and update protocol, to ensure agreement and shipping in 2022. A new message in each direction may need to be added to avoid additional round-trips, but it's not that bad since no extra data is being added. ZmnSCPxj suggests adding `SIGHASH_NONE | SIGHASH_NOINPUT` or a similar covenant opcode, such as `OP_CHECKTEMPLATEVERIFY`, without any commitments or an `OP_CHECKSIGFROMSTACK` on an empty message. Alternatively, fast-forwards would avoid this by only changing commitment transactions once enough changes justify collapsing them. Whenever A wants to add a new A->B PTLC, it only changes the tx inputs of the other A->B PTLCs without affecting the B->A PTLCs. Payment forwarding is fast, and the "big" commitment tx is only changed occasionally to clean up claimed and failed PTLCs, moving the extra messages out of the forwarding hot path.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:46:56.788669+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

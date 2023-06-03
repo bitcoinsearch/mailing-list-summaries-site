@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Split payments within one LN invoice</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-12-17 15:06:44
+            <br><i>Published on: 2021-12-17T15:06:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_Split-payments-within-one-LN-invoice.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003424.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between cdecker and ZmnSCPxj, it was mentioned that the `createinvoice` command does almost what is needed, but requires the preimage and stores the invoice in the database. As a result, a `signfakeinvoice` command is required as they cannot know the preimage at invoice creation time, and their invoice database assumes every invoice has a preimage known and recorded in the database. However, if one has access to the `hsm_secret`, they could sign in the plugin itself without needing `lightningd`. The `lightningd` `hsmd` interface includes commands for invoice signing, and `signfakeinvoice` would essentially just expose that interface. A plugin cannot rely on `hsm_secret` existing because the signer might not be emulated in software, but an actual hardware signer that does not keep the secret keys on the same disk. Hence, `getsharedsecret` was created and exposed to consider a future where the HSM is truly a hardware module.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:01:13.277500+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

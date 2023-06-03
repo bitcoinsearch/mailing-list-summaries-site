@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>In-protocol liquidity probing and channel jamming mitigation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-10-15 14:29:15
+            <br><i>Published on: 2021-10-15T14:29:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_In-protocol-liquidity-probing-and-channel-jamming-mitigation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003318.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread on the Lightning-dev mailing list, Joost Jager proposed a combination of two proposals to make probing free and require senders to pay for failed payment attempts. However, a concern was raised about the possibility of malicious routing nodes succeeding in the probe and then failing the payment to collect the failed payment fee. In response, a proposal by ZmnSCPxj was mentioned which suggested reusing the mechanism of sending an onion and getting back an "error" reply, but only accepting a "everything is OK" result from the destination and a "sorry cannot forward" from any node along the path. This way, a malicious node cannot succeed the probe if it has to reach the destination, and a malicious forwarding node would have no incentive to cooperate with the destination to fail the actual payment later just to extract a tiny failure fee.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:27:19.905759+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

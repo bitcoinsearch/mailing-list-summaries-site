@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Gossip Propagation, Anti-spam, and Set Reconciliation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2022-04-24 20:56:33
+            <br><i>Published on: 2022-04-24T20:56:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2022/combined_Gossip-Propagation-Anti-spam-and-Set-Reconciliation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003566.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Rusty Russell and Matt Corallo, they discussed the issue of nodes hitting the spam limit due to rate-limiting. Rusty proposed setting a widely-agreed limit between once per block and every 1000 blocks to avoid aggressive spamming from nodes. However, Matt argued that the sync system should not rely on this number too much. Inconsistent rate-limit policies cause issues during sync and changing the limit would be difficult. They also talked about gossip2 enabling taproot and using blockheight as timestamps, which could support one operation and a direct query op. Additionally, they mentioned how LND nodes had some channels left disabled due to rejecting more than one update per day, and this problem will occur if anyone does ratelimiting unless everyone does. Finally, Matt suggested using an "update-based-sketch" gossip sync approach to reduce the damage caused by inconsistent policies.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:30:08.448203+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

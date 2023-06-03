@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Add support for proxying p2p connections to/from LND</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pierre 2022-09-03 13:09:15
+            <br><i>Published on: 2022-09-03T13:09:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2022/combined_Proposal-Add-support-for-proxying-p2p-connections-to-from-LND.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003683.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a post on the Lightning-dev mailing list, Alex Akselrod from NYDIG discussed ways to harden large LND (Lightning Network Daemon) deployments. Currently, LND must verify the identity of external untrusted peers during the noise handshake before enforcing any potential key-based allow lists. To reduce the attack surface of the main node process, Akselrod proposed separating peer communication into a separate process, similar to CLN's connectd. This would involve multiplexing connections over a single network connection initiated from the node to the proxy. A draft PR demonstrating the core idea has been shared on GitHub. In response to this, Pierre-Marie Padiou from ACINQ commented that their implementation was quite similar to eclair's cluster mode and noted that they also aimed to reduce the attack surface while improving scalability. Their implementation involves having multiple instances of a proxy that can be adjusted without downtime. The proxy also performs preprocessing for gossip, such as keeping an up-to-date copy of the routing table and deduplicating incoming announcements before forwarding them to the backend for verification. Outgoing connections are initiated by the proxy, and incoming connections from Tor are directed to the proxy. A separate key hierarchy is introduced for channel management since the front needs the node key for the secure handshake. They also considered implementing a "lockdown mode" where the front only allows incoming connections from known peers that already have a channel.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:44:07.121910+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

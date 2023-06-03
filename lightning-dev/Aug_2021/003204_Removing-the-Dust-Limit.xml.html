@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2021-08-26 21:21:25
+            <br><i>Published on: 2021-08-26T21:21:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003204.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a discussion at bitdevs in Austin, an interesting point was brought up regarding the dust limit and its impact on network centralization. The cost of maintenance for dust creates a small incentive for miners to mine transactions that use dust outputs with slightly lower fees to reduce future maintenance costs. However, the rational discount would likely be very small. It was suggested that something could be added to the consensus rules to decrease transaction vbytes for those consuming dust outputs, such that the value of removing them from the system is equal to the amount the fee could be lowered for such transactions. This could help avoid a short-term incentive to promote network centralization at the expense of long-term node operator overhead. In response to this argument, it was noted that in the Lightning spec, when an output less than the dust limit would have been created, it is instead put into fees. Thus, the existence of a dust limit might incentivize L2 protocols to have similar rules, where outputs below the dust limit are just given over as fees to miners, making it incentivize-compatible for miners regardless of centralization effects or not.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:16:22.847863+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

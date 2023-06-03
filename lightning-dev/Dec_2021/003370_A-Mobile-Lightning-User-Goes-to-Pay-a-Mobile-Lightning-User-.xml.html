@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Mobile Lightning User Goes to Pay a Mobile Lightning User...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2021-12-03 02:59:40
+            <br><i>Published on: 2021-12-03T02:59:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_A-Mobile-Lightning-User-Goes-to-Pay-a-Mobile-Lightning-User-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003370.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Matt Corallo suggests that PTLCs can be used to solve the problem of correlation in onion routing. He proposes that a random nonce * G should be added by the sender to each PTLC payment, and the recipient should receive a random nonce in the onion. This should be done for every PTLC payment. The hops in bolt12 have unique tweaks derived from the onion share secret which needs to be addressed.In bolt12, there is an added problem for tipping cases where each invoice contains an amount, so pre-printing amountless invoices is not possible. To address this, Rusty suggests a generic authorization mechanism where the offer contains a fallback node. The fallback returns either an invoice signed by the expected node or one signed by itself along with an authorization from the expected node. The authorization may be for a particular offer, amount, or have an expiry. This approach lets users choose their trust model. The fallback node can also provide an onion message notification service when the real node comes back, which avoids polling.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:24:07.122922+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

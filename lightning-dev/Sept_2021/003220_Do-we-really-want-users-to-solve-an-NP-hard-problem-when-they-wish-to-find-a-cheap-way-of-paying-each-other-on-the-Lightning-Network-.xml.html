@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Do we really want users to solve an NP-hard problem when they wish to find a cheap way of paying each	other on the Lightning Network?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-09-02 06:13:04
+            <br><i>Published on: 2021-09-02T06:13:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2021/combined_Do-we-really-want-users-to-solve-an-NP-hard-problem-when-they-wish-to-find-a-cheap-way-of-paying-each-other-on-the-Lightning-Network-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003220.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj proposes a variant of Pickhardt-Richter payments as a bridge from the current Lightning Network with base fee to a future with zero base fee. This variant can be created by adapting the cost function through the use of amountprop_fee and amountbase_fee/min_flow_size, where min_flow_size is a suitable quantization constant. The resulting function is convex and easy to find min-cost flows for it. However, it overestimates the fee for channels with base_fee > 0 and is less accurate the smaller the min_flow_size and the larger the base_fee. Nevertheless, ZmnSCPxj believes that this solution is practical and economics will convince most people to choose zero or low base fees. In another thread, ZmnSCPxj proposed the cost function: fee + fee_budget * (1 - success_probability), which becomes convex if the base-to-prop hack is done on the fee component. This can be made separable by redefining addition but this may break other properties that a mincostflow algorithm needs. The cost unit ends up being millisatoshi, which is attractive since everything should really be in terms of financial units. However, ZmnSCPxj is not sure if this would be workable since there may be a non-linear relationship between probability and fee. ZmnSCPxj also questions the effect of an increase in fee on success probability and vice versa. He proposes that if success probability is high, then the effect of an increase in fee should be larger compared to the effect of an increase in success probability, and vice versa if success probability is low. He is uncertain if neglogprob plus some fee times a conversion factor has that behavior.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:45:30.468144+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

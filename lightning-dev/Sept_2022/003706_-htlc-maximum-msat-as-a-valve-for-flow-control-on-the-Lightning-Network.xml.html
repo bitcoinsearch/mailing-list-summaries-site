@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>`htlc_maximum_msat` as a valve for flow control on the Lightning Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-09-29 03:45:39
+            <br><i>Published on: 2022-09-29T03:45:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2022/combined_-htlc-maximum-msat-as-a-valve-for-flow-control-on-the-Lightning-Network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003706.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about liquidity and payment flow in the Lightning Network, participants debated the concept of "stock of liquidity" as a metaphor for the network's ability to handle transactions. One participant argued that liquidity in the network is guaranteed by the ability to drop to chain and that running out of stock isn't something that gets automatically fixed by someone else coming in and buying something different. The conversation then shifted towards the classification of peers as "mostly a source", "mostly a drain", and "mostly balanced" by forwarding node operators and how CLBOSS should adopt a similar classification system.The importance of channel balance and payment flow in determining profits was also discussed, with the suggestion to monitor profits based on sales rather than rounding errors. The thread also touched on rebalancing channels and the issue of private information, as well as the proposal of an alternative to splicing. Finally, the scenario of unbalanced flows and the role of fees and max_msat were discussed.Another issue facing the Lightning Network is the disparity in fees paid by users due to routing issues and latency. The presence of altruistic users who forward payments for cheap or free, alongside profiteers trying to make a living offering Lightning services, complicates the situation. To address this issue, one proposal is max_msat throttling which avoids channel depletion cases. However, it has flaws and requires continuous payment flow/payment size curve. A token bucket rate limit might suffice per source/destination channel. There is also a need for a mechanism to move funds outside of the Lightning network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:52:00.098394+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

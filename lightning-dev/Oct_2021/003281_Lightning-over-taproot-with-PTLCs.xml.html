@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning over taproot with PTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-10-09 02:27:37
+            <br><i>Published on: 2021-10-09T02:27:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_Lightning-over-taproot-with-PTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003281.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the Lightning Network, it was suggested that transactions should not be put on-chain to avoid implementation complexity in drop-onchain cases. However, this requires calculating fees in advance and not being able to update the transaction without going on-chain. If child pays for parent (CPFP) is acceptable, then fees for the commitment transaction can pay for the transitioning transaction. This method allows the historical longevity of the channel to be maintained, which is a positive indicator of desirability for many pathfinding and autopilot heuristics. A suggestion was made to establish a new taproot-based channel without advertising it, and secretly commit to the PTLCs in the new channel instead of the current one. Once the funding transaction for the new channel is sufficiently buried, it can be advertised instead of the old one, and the old channel can become a shadow channel. This setup allows for funds to be spliced into or out of the shadow channel while retaining the positive longevity heuristics of the public channel. However, this method requires two UTXOs, so another suggestion was made to add a gossip message to validate a new short-channel-id using an old short-channel-id's age.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:18:14.608912+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Feb_2016/000435_Simplified-protocol-for-multiple-in-flight-updates-.xml.html">Simplified protocol for multiple in-flight updates.</a>
+                        <b>Joseph Poon 2016-02-09 01:08:20</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Feb_2016/000436_Simplified-protocol-for-multiple-in-flight-updates-.xml.html">Simplified protocol for multiple in-flight updates.</a>
                         <b>Rusty Russell 2016-02-09 04:30:24</b>
                     </li>
@@ -28,22 +33,17 @@
                         <b>Rusty Russell 2016-02-08 20:17:07</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Feb_2016/000435_Simplified-protocol-for-multiple-in-flight-updates-.xml.html">Simplified protocol for multiple in-flight updates.</a>
-                        <b>Joseph Poon 2016-02-09 01:08:20</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000436.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000435.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2016-02-09T04:30:24+00:00</i></p>
+        <p><i>Published on: 2016-02-09T01:08:20+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>In a discussion between Joseph Poon and Rusty Russell, the former argues that while eliminating acknowledgments would simplify the protocol in adding HTLCs, there are tradeoffs such as uncertainty about whether the other party has received the message. Removing HTLC securely requires removing it, committing to it, and waiting for the other party to revoke prior commitment, but if the success/failure ratio is high enough, it can be worth it. However, this may have disadvantages with intermittently connected nodes as confirmation time windows are smaller for non-responsive payments. Poon also optimizes against payment failure on the add side to avoid re-routing in the opposite direction to do a full cancel with a non-responsive node in multi-hop payments.</p>
+        <p>During a discussion, Rusty Russell suggested that eliminating acknowledgements would simplify the protocol for Hashed Time-Lock Contracts (HTLCs). However, it was noted that this could lead to uncertainty about whether the other party has received the message. Removing HTLCs securely requires removing them, committing, and then the other party revokes the prior commitment. Joseph Poon pointed out that optimizing against payment failure on the ADD side is important as failure may require a re-route in the opposite direction to do a full cancel with a non-responsive node in multi-hop payments. However, Russell was not convinced that the re-route scheme will be used in practice. If both nodes are well-connected, eliminating acknowledgements is more optimal if latency is the primary concern. The Lightning Network payment channel protocol can be simplified by eliminating acknowledgements. Updates are sent through ADD, SETTLE, TIMEOUT, FAIL, and UNADD messages followed by a COMMIT message with a signature. Each side tracks two commit transactions: their own and the other side's. Once the recipient receives the COMMIT message, they commit the updates to their own commit transaction and stage them to the other side's commit transaction. To speed up the process, a non-binding ADD_FAIL message can be added to hint at failing an HTLC as soon as it is committed, allowing the recipient to UNADD if it receives it in time. Fee negotiation can be included in the COMMIT message, with a requested fee rate and a range of acceptable values. In the case of a REJECT message, the fee range can be adjusted and the COMPLETE message can be reattempted. Similar fee negotiation would be required for mutual close.</p>
         <hr>
-        <p><i>Updated on: 2023-05-23T22:34:22.995144+00:00</i></p>
+        <p><i>Updated on: 2023-06-02T00:21:41.499108+00:00</i></p>
     
 
     

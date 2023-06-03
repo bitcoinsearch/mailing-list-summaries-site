@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Dec_2015/000388_Transaction-time.xml.html">Transaction time</a>
+                        <b>Rusty Russell 2015-12-16 00:04:00</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Dec_2015/000391_Transaction-time.xml.html">Transaction time</a>
                         <b>Denis Gorbachev 2015-12-16 05:01:37</b>
                     </li>
@@ -33,22 +38,17 @@
                         <b>Mark Friedenbach 2015-12-16 03:48:59</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Dec_2015/000388_Transaction-time.xml.html">Transaction time</a>
-                        <b>Rusty Russell 2015-12-16 00:04:00</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-December/000391.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-December/000388.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2015-12-16T05:01:37+00:00</i></p>
+        <p><i>Published on: 2015-12-16T00:04:00+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>In this discussion, Denis Gorbachev asks how long it would take for a provider to receive payment in a simple "Consumer - Relay - Provider" setup. Rusty Russell responds by breaking down the steps involved and calculates that it would take 3 round-trip times per hop, resulting in a total of 30 round-trip times for 10 hops. Considering his node latency in Australia, he estimates a worst-case transaction time of 10 seconds. However, Mark Friedenbach notes that the estimation is biased towards worst-case latency/best-case decentralization and expects an average user's experience of a 10-hop payment to be on the order of 1-2 seconds, with inner hops between Tier-1 datacenter nodes primarily based on network proximity. He also mentions that a completely geographically distributed network of last-mile endpoints would have a worst-case transaction time of only about 10 seconds, which is doable for PoS.</p>
+        <p>The article discusses the estimated transaction times for Lightning Networks and the time taken for a provider to receive payment in a simple case of "Consumer - Relay - Provider" (2 hops). The process involves the consumer offering a contract to the relay, who then offers it to the provider. The provider closes the contract with the relay, who then closes the contract with the client. It takes three round-trip times (RTTs) per hop, which means 30 RTTs in ten hops in a large lightning network. With bitcoin node latency averaging at 330ms in Australia, the entire process would take around 10 seconds.Mark Friedenbach and Rusty Russell discuss the estimated transaction times for Lightning Networks via email. Friedenbach notes that some centralization pressure is expected due to the desire for low latency transactions. The average user can expect a 10-hop payment to take between 1-2 seconds, with the inner-hops being primarily between Tier-1 datacenter nodes selected based on network proximity. Payments closer in proximity would take under a second to complete. Russell provides an estimation assuming established channels already exist. He believes that one might expect up to 10 hops in a large lightning network with 3 RTTs per hop. Therefore, it would take approximately 30 RTTs or up to 10 seconds for Provider to receive the payment. A Twitter user, @DenGorbachev, asked a question regarding the time it should take for a provider to receive payment in a simple case of "Consumer - Relay - Provider" (2 hops), but without further details, it is difficult to provide an accurate answer to this question.The Lightning network aims to keep latency low for transactions while remaining decentralized. However, there will still be some centralization pressure due to the desire for low latency transactions. Even a network consisting entirely of last-mile endpoints geographically distributed around the world would only have a worst-case transaction time of about 10 seconds, which is doable for PoS. Rusty Russell estimates that up to 10 hops in a large lightning network could take up to 30 RTTs, which translates to around 10 seconds of transaction time.</p>
         <hr>
-        <p><i>Updated on: 2023-05-23T21:58:19.503230+00:00</i></p>
+        <p><i>Updated on: 2023-06-02T00:09:14.419833+00:00</i></p>
     
 
     

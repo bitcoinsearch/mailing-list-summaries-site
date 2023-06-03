@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Interesting thing about Offered HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-03-07 22:46:07
+            <br><i>Published on: 2022-03-07T22:46:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2022/combined_Interesting-thing-about-Offered-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003507.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Antoine discusses the implications of offered HTLC outputs with Eugene. The offering counterparty spends the offered HTLC output with a HTLC-timeout transaction where the witness is not committing to the spent Script branch intended to be used. SIGHASH_ALL does not alleviate the offering counterparty to respect the CLTV delay and as such, the offered HTLC timespan cannot be shortened. In case of competing HTLC race, once the absolute timelock is expired, the offering counterparty is able to compete against the receiving one with a more feerate-efficient witness. However, from a receiving counterparty safety viewpoint, if you're already suffering a contest, it means your HTLC-claim on your own local commitment transaction inbound HTLC output has been inefficient, and your fee-bumping strategy is to blame. If they think the issue is relevant, Antoine believes splitting the Script branches in two tapleaves and having bip342 signature digest committing to the tapleaf_hash solves it. Meanwhile, Eugene shares his findings on offered HTLCs having three claim paths: the revocation case, the offerer claiming through the HTLC-timeout transaction, and the receiver claiming via their sig + preimage. They note that since the remote party gives them a signature, after the timeout, the offering party can claim with the remote's signature + preimage, but can only spend with the HTLC-timeout transaction because of SIGHASH_ALL. This assumes that the remote party doesn't claim it first. Eugene doesn't see any cases where the offering party would know the preimage AND want to force close, so he thinks it's benign.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:44:46.462686+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

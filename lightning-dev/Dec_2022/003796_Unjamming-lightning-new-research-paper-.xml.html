@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unjamming lightning (new research paper)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Michael Folkson 2022-12-09 10:16:48
+            <br><i>Published on: 2022-12-09T10:16:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2022/combined_Unjamming-lightning-new-research-paper-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003796.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in the email thread centers around the trade-offs between privacy, fees, and success rate when it comes to routing payments on the Lightning Network. There are different goals that users may want to optimize for, such as optimizing for success rate for "live" payments or optimizing for fees for background rebalancing. However, these choices come with tricky trade-offs that need to be navigated, and ideally, the choice of trade-offs should be pushed to the user. The network is willing to pay a cost in routing success to ensure better balance privacy, but if the routing success degrades too much, then the network may not be willing to put up with it. Similarly, not knowing the source of the payment or intermediate nodes on the route can improve privacy, assuming jamming attacks occur rarely. Still, if the network experiences regular jamming attacks, then routing nodes will show more interest in knowing which Lightning nodes they are routing payments for. From a protocol developer perspective, decisions made by developers impact what data can be collected and how easy it is to collect that data. Hence, the protocol developer should leave it to others to make decisions regarding trade-offs. Developers must wrestle with these trade-offs and decide to what extent options can be pushed to the user. Upfront fees are almost essential and help with probing, general spam, and other aspects. Enabling probing via non-HTLC messages and pre-send-probing can avoid paying upfront fees on paths that will fail. There are at least three different routing goals to maximize, privacy, fees, and success rate, and each has its benefits and drawbacks. Choosing to optimize for fees or future privacy is an important thing to allow and make as reliable as possible without charging extra for it. Reputation tokens that can be sold or transferred to an attacker pose a problem and could lead to even worse issues.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T10:34:47.229947+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

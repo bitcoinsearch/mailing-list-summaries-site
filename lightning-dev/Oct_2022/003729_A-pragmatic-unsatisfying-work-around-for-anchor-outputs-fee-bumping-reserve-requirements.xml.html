@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A pragmatic, unsatisfying work-around for anchor outputs fee-bumping reserve requirements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2022-10-27 13:51:05
+            <br><i>Published on: 2022-10-27T13:51:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2022/combined_A-pragmatic-unsatisfying-work-around-for-anchor-outputs-fee-bumping-reserve-requirements.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003729.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network transaction format has been updated to use CPFP carve-out and anchor outputs, allowing nodes to set fees at broadcast time. However, this change presents new challenges as it requires nodes to maintain a reserve of available UTXOs for fee-bumping, which involves complex decisions and dynamic risk assessment. This is frustrating because HTLC transactions should not require external inputs, but decreasing the output amount to set fees does not work well with the revocation mechanism unless fancy new sighash flags are added to Bitcoin. A low-tech solution proposed by Bastien is to have each node sign multiple versions of the HTLC transactions at various feerates, reducing the requirements on the on-chain wallet and simplifying transaction management logic. Although not very elegant, it is a pragmatic approach to increase fund safety for existing node operators and wallets. Bastien has opened a spec PR for this proposal that is currently seeking concept ACKs.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T10:30:40.086621+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PTLCs early draft specification</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-12-07 23:52:04
+            <br><i>Published on: 2021-12-07T23:52:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_PTLCs-early-draft-specification.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003382.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj is discussing a new feature being added to the Lightning Network which requires an additional round-trip for certain transactions. The example given shows that if A wants to sign a new commitment, she cannot immediately send it to B as B can broadcast this new commitment and A would not be able to claim PTLC_BA from B's new commitment since she wouldn't have B's signature for the new PTLC-remote-success transaction. Thus, B needs to send a new message `remote_ptlcs_signed` to A containing his adaptor signatures for the PTLC-remote-success transactions that would spend B's future commitment before A can safely send her `commitment_signed`. Similarly, A must send `remote_ptlcs_signed` to B before B can send its `commitment_signed`. ZmnSCPxj also discusses some alternatives such as `SIGHASH_NONE | SIGHASH_NOINPUT`, like fast-forwards which avoids these changes as it does not change commitment transactions on the payment-forwarding path.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:46:38.637804+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

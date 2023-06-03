@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>#zerobasefee</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Stefan Richter 2021-08-17 10:07:05
+            <br><i>Published on: 2021-08-17T10:07:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_-zerobasefee.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003188.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, ZmnSCPxj suggests that the cost function in actual implementation is already overloaded and that actual implementations will have some kind of conversion between cltv-delta and fees-at-node. He suggests that it may be easier for users to think in terms of "fee budget" instead of risk factor and that algorithms should try to keep costs as low as possible. However, ignoring fees in routing would allow people to take advantage of this. The paper claims to have sent 40,000,000,000msat for a cost of 814,000msat, or 0.002035% fee percentage, far below the 0.5% default maxfeepercent. René is going to publish those results soon. The situation is complex, and if fees are disregarded in routing, an adversary could design a DOS vector by forcing people to go through exponentially many min-cost flow rounds. Optimizing for some cost while staying under a budget for a second cost is weakly np-hard even for the single path case. Including the fees in the cost function appears to be the more holistic approach since min-cost flow algorithms always give a globally optimized answer. While economic requirements are important, engineering requirements are equally important. Matt argues that we may encounter an engineering reason to charge some base fee, so encouraging #zerobasefee now might not be the wisest course of action, as a future engineering problem may need to be solved with non-zero basefee.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:31:15.193597+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

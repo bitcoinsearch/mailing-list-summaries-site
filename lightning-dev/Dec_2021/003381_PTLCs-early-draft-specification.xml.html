@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PTLCs early draft specification</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2021-12-07 13:11:00
+            <br><i>Published on: 2021-12-07T13:11:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_PTLCs-early-draft-specification.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003381.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between t-bast and ZmnSCPxj, it was agreed that PTLC adaptor signatures should be included in the `commitment_signed` message rather than `update_add_ptlc`. However, it was noted that whenever the commitment changes, peers need to create new signatures and adaptor signatures for all pending PTLCs. This includes new pre-signed transactions that spend a PTLC from the remote commitment, which may require an additional round-trip. In a simple example where one pending PTLC exists in each direction, the party making unrelated updates cannot immediately send their `commitment_signed` to the other party, as this would invalidate their ability to claim the PTLC from the other party's new commitment. Instead, the other party must first send a new message (`remote_ptlcs_signed`) containing their adaptor signatures for the PTLC-remote-success transactions that would spend their future commitment. Only then can the first party safely send their `commitment_signed`. This adds one message in each direction but doesn't add more data to existing messages. ZmnSCPxj also noted that fast-forwards could avoid this issue by delaying the change of the commitment tx. Overall, this protocol change simplifies the process and improves efficiency.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:44:04.677913+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

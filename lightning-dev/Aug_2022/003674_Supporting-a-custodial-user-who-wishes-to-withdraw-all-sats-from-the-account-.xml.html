@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Supporting a custodial user who wishes to withdraw all sats from the account...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> René Pickhardt 2022-08-25 15:49:20
+            <br><i>Published on: 2022-08-25T15:49:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2022/combined_Supporting-a-custodial-user-who-wishes-to-withdraw-all-sats-from-the-account-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-August/003674.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>At an event, visitors were gifted 10k sats on a custodial wallet, but some were confused when they couldn't withdraw the full amount due to a required fee. To solve this issue, a proposal has been made for a new flag in invoices called `option_recipient_pays_routing_fees`. This flag would signal that the recipient is willing to pay for routing fees by releasing the preimage even if the full amount has not arrived in HTLCs at the recipient. The workflow would involve creating an invoice with the flag and passing it to the payer, who searches for a payment path to the recipient. The onion is constructed so that the first HTLC will be for the full amount, and following HTLCs will decrease in value for proper compensation of routing nodes. The recipient releases the preimage if the missing sats are within a configurable percentage. The main challenge of this proposal is educating users about two different invoice types. It may be beneficial to have input from the Bitcoin Design community.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:42:35.916431+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

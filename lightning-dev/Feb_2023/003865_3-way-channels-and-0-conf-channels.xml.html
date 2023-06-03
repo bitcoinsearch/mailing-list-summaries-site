@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>3 way channels and 0 conf channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> l0k1 2023-02-23 11:11:49
+            <br><i>Published on: 2023-02-23T11:11:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2023/combined_3-way-channels-and-0-conf-channels.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003865.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context is split into two parts.Part 1:The first part discusses the use case of Indranet, where channel sizes are smaller than normal to transport small payments. The Lightning Network (LN) instance is integrated with the Indra service, and semi-automated creation of channels between relays requires three optimal channels to ensure message layers include special nodes called "seeds." These seeds allow clients to open zero conf, one-way channels for very small balances. The LN mesh in this network is expected to be vast, with all nodes having at least three peers with channels to them. Payments between peers require low latency and do not have fees to simplify route selection.Part 2:The second part talks about the issue of input being signed by one participant, who can sign a different transaction that spends that input differently and bribe a miner to include it in a mined block. This problem cannot be resolved entirely as some confirmed transaction is required to commit the funds to the three participants. ZmnSCPxj signs this message, which includes a public key and digital signature attachments. Furthermore, the discussion aims to explore the use of LN as an anti-spam and anti-sybil rate limiting scheme in a separate peer-to-peer network system. This application could be relevant for various monetized p2p networks where users can anonymously pay other relays to host and deliver content for designated user identities. It also enables this to become a distributed service rather than relying on the trustworthiness of relays.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T12:08:25.008893+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

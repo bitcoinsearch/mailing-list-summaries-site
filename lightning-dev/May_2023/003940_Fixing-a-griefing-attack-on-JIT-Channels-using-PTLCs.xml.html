@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fixing a griefing attack on JIT Channels using PTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> SomberNight 2023-05-09 21:10:18
+            <br><i>Published on: 2023-05-09T21:10:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2023/combined_Fixing-a-griefing-attack-on-JIT-Channels-using-PTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003940.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation with Tony Giorgio, Ben Carman was made aware of a potential griefing attack on LSPs that provide Just-In-Time channels. The attack involves the client receiving payment and then not being able to claim it after the LSP opens a 0-conf channel. This results in the LSP not getting paid and the client getting a free inbound lightning channel. To solve this issue, Ben proposes using PTLCs. Instead of broadcasting the funding transaction to the mempool, the LSP can sign the funding transaction using adaptor signatures locked to the same secret as the invoice. Then, when the client wants to claim the funds, they can do the PTLC dance with the LSP based on the funding transaction. If it all goes as planned, the LSP can give the funding transaction signed using adaptor sigs to the client, who can then decrypt the signatures and broadcast the transaction. This makes claiming the payment and opening the channel atomic, so the client can't grief the LSP. However, ghost43 brings up a concern: what if, after the client has the funding transaction locally, it waits for the PTLC held by the LSP to time out (i.e., days) and then broadcasts the funding transaction? In this case, the LSP could no longer claim the PTLC, and it would have paid for the channel-open. To prevent this, the LSP would have to actively double-spend the channel funding tx given to the client when the PTLC is close to expiring. This double-spending would cost mining fees of course, but perhaps the conflicting tx itself could be useful if the LSP has enough users and high enough traffic.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T13:03:18.937542+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

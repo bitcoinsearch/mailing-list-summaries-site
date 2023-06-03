@@ -19,6 +19,31 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Jan_2018/000940_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
+                        <b>Benjamin Mord 2018-01-16 20:32:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2018/000949_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
+                        <b>Christian Decker 2018-01-18 17:17:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2018/000950_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
+                        <b>Benjamin Mord 2018-01-18 18:10:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2018/000938_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
+                        <b>Benjamin Mord 2018-01-16 19:23:44</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Jan_2018/000944_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
+                        <b>Mark Friedenbach 2018-01-17 04:42:15</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Jan_2018/000939_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
                         <b>William Casarin 2018-01-16 19:58:11</b>
                     </li>
@@ -38,42 +63,17 @@
                         <b>Mark Friedenbach 2018-01-17 23:06:42</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000938_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
-                        <b>Benjamin Mord 2018-01-16 19:23:44</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000944_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
-                        <b>Mark Friedenbach 2018-01-17 04:42:15</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000940_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
-                        <b>Benjamin Mord 2018-01-16 20:32:09</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000949_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
-                        <b>Christian Decker 2018-01-18 17:17:10</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000950_negative-fees-for-HTLC-relay.xml.html">negative fees for HTLC relay</a>
-                        <b>Benjamin Mord 2018-01-18 18:10:53</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000939.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000940.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2018-01-16T19:58:11+00:00</i></p>
+        <p><i>Published on: 2018-01-16T20:32:09+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The Lightning Network has been considering the idea of allowing negative fees for channel rebalancing but this was dropped due to potential complications with routing. However, Christian Decker suggests actively rebalancing by finding cycles and sending payments back to oneself instead.Will argues that negative shadow prices are important for optimality in constrained network markets where flows in opposite directions cancel. Negative fees could be useful when the network becomes too weighted on one side of the graph or when the other side is a non-routable endpoint.The discussion also considers peer-to-peer credit using self-issued IOUs and atomically swapped via a lightning HTLC. While some argue that the protocol should support negative fees, others suggest that it's obscure enough not to be worth the extra effort. However, it was mentioned that wholesale electricity distribution networks use similar techniques.The author believes that there is no technical complexity in allowing signed versus unsigned integers in the protocol and encourages not to prematurely neuter underlying protocol expressiveness. He also mentions that negative fees could be useful when the network becomes too weighted on one side of the graph or when the other side is a non-routable endpoint. In addition, the author suggests changing the topology of the network to remove the cut or balance traffic over it as a better solution. Overall, the discussion revolves around the usefulness of negative fees for channel rebalancing and whether the protocol should support it despite potential complications with routing.</p>
+        <p>The Lightning Network protocol has been under discussion regarding the possibility of allowing negative fees to incentivize unwinding in scenarios where nodes consider it to be cheaper than on-chain rebalancing. Although negative fees were allowed in the original implementation of the protocol, Rusty Russell found this to be a strange idea that complicated routing. However, Mark Friedenbach believes that there are situations where negative fees could be helpful, such as when the network becomes too weighted on one side of the graph or when the other side is a non-routable endpoint. The discussion also highlights the importance of negative shadow prices for optimal constrained network markets, specifically in regard to flows in opposite directions canceling out. The example of FTRs was given to support this point. Benjamin Mord suggests that the decision to treat negative fees as 0 should be left up to individual routing implementations, but he believes that the protocol itself should support negative fees.However, it has been argued that negative fees add unnecessary complexity to routing and can result in less control over the rebalancing process, which can cause losses or forward rejections. Rebalancing can be accomplished by finding a cycle and sending a payment back to oneself, while allowing only positive fees simplifies routing and still allows for active rebalancing. Any other applications can be negotiated out of band or in the onion payload for that node. Overall, while exploring specific applications of lightning to different markets is an opportunity for collaborative and complimentary work, it is important to be careful not to distract the Lightning project from its already ambitious mission.</p>
         <hr>
-        <p><i>Updated on: 2023-05-24T18:39:10.579915+00:00</i></p>
+        <p><i>Updated on: 2023-06-02T01:55:45.301335+00:00</i></p>
     
 
     

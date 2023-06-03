@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Achieving Zero Downtime Splicing in Practice via Chain Signals</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> lisa neigut 2022-06-30 03:06:50
+            <br><i>Published on: 2022-06-30T03:06:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2022/combined_Achieving-Zero-Downtime-Splicing-in-Practice-via-Chain-Signals.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003636.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion, it was suggested that if a chain close is seen along with a gossip message indicating a splice, the gossip should be propagated urgently and widely. However, adding urgency to gossip messages can be difficult to enforce as there is a cost associated with closing a channel which cuts down on the ability to send out urgent messages frequently. Additionally, spamming gossip with splices is expensive. This means that changing the behavior of the secondary information system may be a better approach than embedding the info into the chain.Lisa Neigut expressed confusion as to why on-chain signals are being proposed because it runs counter to the goal of making Lightning's on-chain footprint indistinguishable from any other on-chain usage. She questioned whether there was another reason for suggesting an on-chain detectable signal aside from infallibility. While the severity of a comms failure is minimal with the potential for lost routing fees, she did acknowledge that more robust signaling could be added later if needed.Regarding the "wait N blocks before you close your channels" solution, it was noted that it takes about an hour for gossip to propagate. As such, waiting 12 blocks (or two hours) is a reasonable first estimate. This wait time may be adjusted once real-world experience is gained. It was also mentioned that Alex Myer's minisketch project may improve gossip reconciliation efficiency, making gossip reliability less of an issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:10:32.293403+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

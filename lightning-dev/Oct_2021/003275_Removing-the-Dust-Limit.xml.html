@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-10-08 10:38:50
+            <br><i>Published on: 2021-10-08T10:38:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003275.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, there is a discussion about making all dust transactions invalid by some nodes. The suggestion is to keep them in secondary storage for full nodes and in a separate Merkle Tree for bridge servers. This would enhance the performance even if slightly and be fetched rarely either by a dust sweeping action or a malicious attacker. A threshold could be set to upload the whole dust partition, then keep them there for a while but as a separate partition to exclude them from any caching mechanism after that block. However, this proposal raises concerns about efficiency and security-efficiency tradeoff. The proposal fails to reduce processing compared to the idea of outright making all dust txs invalid and rejecting the block. When considering resistance against attacks, it is helpful to think in terms of worst-case behavior. It is also mentioned that creation of dust is as easy as sweeping them, and nothing prevents a block from creating and sweeping dust. Therefore, such a degenerate block would hit the secondary storage double: one to read and one to overwrite and add new entries; if the storage is large, then the index structure used can also be large, and updates can be expensive there as well. It is emphasized that the cost of fullnodes in the worst case (not average) should not increase; otherwise, it may become feasible for miners to attack SPV nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:21:06.952507+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

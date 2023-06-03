@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taro: A Taproot Asset Representation Overlay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2022-11-05 00:35:53
+            <br><i>Published on: 2022-11-05T00:35:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2022/combined_Taro-A-Taproot-Asset-Representation-Overlay.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003742.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The "utxo teleport" scheme attempts to transmit ownership to an unspent transaction output (UTXO), but there are concerns about its soundness. Once a transaction hits the chain, the UTXO may no longer exist, which raises questions about what happens to the asset. Taro's state transition model, on the other hand, binds everything to a single synchronization point: a normal Bitcoin transaction with inputs consumed and outputs created. This ensures re-org safety traits similar to regular Bitcoin transactions. Additionally, Taro transfers inherit all the capabilities of Bitcoin/LN transactions, such as atomic swaps, splicing, MIMO swaps, on-chain auctions, etc. There is also a drawback to the teleport model, as it either requires an OP_RETURN or additional out-of-band synchronization to complete the transfer. With Taro, sending to an address creates an on-chain taproot output that directly creates the new asset anchor/output. The receiver can look for that address on the chain like a normal on-chain transaction, and obtaining provenance proofs finalizes the receipt of the asset. The send process is fully asynchronous, with the blockchain serving as a synchronization point like a normal Bitcoin wallet. Finally, Laolu questions the efficacy of the teleport model for anchoring assets in channels, where serialization of events/actions is critical.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:18:32.182011+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

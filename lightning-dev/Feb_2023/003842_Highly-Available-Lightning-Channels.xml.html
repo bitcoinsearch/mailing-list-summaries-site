@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Highly Available Lightning Channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2023-02-13 11:45:54
+            <br><i>Published on: 2023-02-13T11:45:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2023/combined_Highly-Available-Lightning-Channels.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003842.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of this post proposes that in order to guarantee competitiveness with centralized payment systems, payers on the lightning network will become very strict about node performance. One way to achieve this is by requiring routing nodes to operate flawlessly, or else apply a hefty penalty such as completely avoiding the node for an extended period of time. The consequence of this is that routing nodes would need to manage their liquidity meticulously because every failure potentially has a large impact on future routing revenue. To avoid a sudden switch to strict penalization, one proposal is to gradually increase the strength of the penalties, so that routing nodes are given time to adapt to the new standards. Another proposal is to extend the `channel_update` field `channel_flags` with a new bit that the sender can use to signal `highly_available`, which would allow payers to decide how to interpret this flag and prefer `highly_available` channels during pathfinding. However, if the routing node returns a failure, a much stronger than normal penalty will be applied. Without shadow channels, it is impossible to guarantee liquidity up to the channel capacity. It might make sense for senders to only assume high availability for amounts up to `htlc_maximum_msat`. A variation on this scheme that requires no extension of `channel_update` is to signal availability implicitly through routing fees. So the more expensive a channel is, the stronger the penalty that is applied on failure will be. Overall, the author believes that implementing some form of a `highly_available` flag could help to get payment success rates up, and the effort required to do so seems limited. However, the proposal does require everyone to move along and leaves no space for cheap routing nodes with less leeway in terms of liquidity. It remains to be seen how this proposal will be received by the lightning network community.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T11:53:47.219387+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
