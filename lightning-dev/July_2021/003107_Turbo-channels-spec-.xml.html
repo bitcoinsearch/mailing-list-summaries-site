@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Turbo channels spec?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2021-07-05 01:21:46
+            <br><i>Published on: 2021-07-05T01:21:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2021/combined_Turbo-channels-spec-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003107.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email thread, Rusty Russell proposed a way to handle zero-confirm channels, which are currently not spec'd. He suggested assigning a new feature bit "I accept zeroconf channels" and negotiating it per direction in the channel init message(s). However, Matt Corallo suggested that until channel_types is fixed, it would be best to keep things simple. He believes that c-lightning will always offer zero-conf channels but implement the "don't route from non-locked-in channels" option, which should minimize risks. For funders, the risk is that the channel never confirms, but they can close onchain if necessary. For fundees or DF channels, the risk is that the funder doublespends, so HTLCs must not be routed out to others unless there's a reason to trust the peer.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T04:27:58.582804+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

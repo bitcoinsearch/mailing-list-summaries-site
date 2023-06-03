@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On massive channel closing and fee bumping</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Devrandom 2020-02-28 20:04:42
+            <br><i>Published on: 2020-02-28T20:04:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_On-massive-channel-closing-and-fee-bumping.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002571.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Gleb Naumenko and Ariard have discussed some aspects of the Lightning Network (LN) implementations in relation to massive channel closing. They discussed how many nodes implement dynamic bumping, time-sensitive and non-time-sensitive transaction broadcasts, game theory, and local policies versus macro considerations.Non-time-sensitive transactions such as normal closing require a non-aggressive fee bump to optimize transaction inclusion versus time-value of money. On the other hand, time-sensitive transactions such as penalty broadcast require an aggressive fee bump to keep the chance of losing one's balance relatively low. The estimate of the global state of fees might be wrong due to fast changes in the global situation. In response, a significant percentage of the balance may need to be burned as a fee rate as the deadline approaches.The bounding dynamic-fees engine can be viewed as a game-theoretic aspect between LN parties and macro-considerations. It is important to prevent miners from exploiting the whole LN network and avoid attackers making any profit. However, it may not make sense to manage macro considerations with local policies if those policies end up being contrary to the self-interest of node operators. If LN has potential local modifications that result in fatal global dynamics, protocol changes should be made to fix local incentives.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:53:47.598869+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

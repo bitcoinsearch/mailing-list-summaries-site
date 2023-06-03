@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Direct Message draft</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> René Pickhardt 2020-02-20 10:01:01
+            <br><i>Published on: 2020-02-20T10:01:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Direct-Message-draft.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002554.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rene approached Rusty Russell seeking advice on how to prevent message spam in the lightning network. Rusty suggested using unreliable messages that forget across restarts and have a limit of 1000 total remembered forwards with random drop. The protocol does not include a method for errors. Rusty had implemented this proposal and even uploaded a patch on GitHub. To facilitate messaging over lightning, Rusty grouped messages into five logical groups. Routing (types `256`-`511`) contains node and channel announcements, as well as any active route exploration or forwarding. Rene asked if Rusty's suggestion could create a fee-free rebalancing protocol and the ability to communicate with nodes beyond peers. Rusty explained that directed messages allow peers to query invoices via existing connections. These messages are not associated with a particular local channel but use Bolt 4 protocol for end-to-end encryption and are unreliable. Each message has an optional reply that is onion-encoded just like HTLC errors.The email thread also discussed the reasonable timeout of HTLC and its subsequent forgetting if not replied. Additionally, the email included a reference to RFC 1950 "ZLIB Compressed Data Format Specification version 3.3". The Lightning-dev mailing list was where this thread was posted.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:47:19.515466+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

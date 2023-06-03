@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Towards more reliable payment path finding via probabilistic modeling the uncertainty of channel balance</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Elias Rohrer 2021-03-18 09:36:23
+            <br><i>Published on: 2021-03-18T09:36:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2021/combined_Towards-more-reliable-payment-path-finding-via-probabilistic-modeling-the-uncertainty-of-channel-balance.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002987.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, Elias Rohrer and René Pickhardt discussed the concept of path finding in the Lightning Network. Pickhardt's research suggests that routing payments along high capacity channels is beneficial and that probabilistic path finding can be used to achieve this. The research recommends sorting paths by their descending success probability during the trial and error payment process instead of using heuristics like fees or route length. Updating probabilities from current failures decreases the number of average attempts and produces a much faster delivery of payments.The uncertainty of channel balance values was found to be the main reason why some payments take several attempts and thus more time. With the help of probability theory, the study was able to define channel success and failure probabilities and similarly (multi)path success and failure probabilities. Other failure reasons could also be included in the probability distributions. Smaller amounts have higher success probabilities, and the success probability declines exponentially with the number of uncertain channels in a (multi)path. Depending on the payment pair, amount, and splitting strategy, it can be decided into how many parts a payment should be split to achieve the highest success probability. In particular, for small amounts, splitting almost never makes sense.In a recent email to the Lightning-dev mailing list, Rene Pickhardt shared some insights on how to optimize the split of uncertain channel balances in the Lightning Network. He stated that an equally sized split is not preferable, as it may lead to suboptimal routing decisions. For example, imagine delivering 100 satoshi through two paths with one uncertain channel each, where the first path has a capacity of 101 and the second has a capacity of 51. Sending 100 satoshi along the 101 capacity channel or splitting 50/50 and sending 50 satoshi along the 51 capacity channel would both be bad decisions. Instead, a split that allocates 67 satoshi to the 101 capacity channel and 33 satoshi to the 51 capacity channel seems more reasonable, with 75/25 being the best solution for such a setting.Pickhardt mentioned that there is more math theory on how to solve the optimization problem in the general case, but he cannot share those results yet. However, he is confident that updates on this topic will be available soon. To learn more about the security and privacy of Lightning Network payments with uncertain channel balances, check out the arXiv paper linked in Pickhardt's email (<a href="https://arxiv.org/abs/2103.08576)">https://arxiv.org/abs/2103.08576)</a>. Additionally, he provided links to Peter Rizun's Lightning critique podcast (<a href="https://www.whatbitcoindid.com/podcast/peter-rizuns-lightning-critique-fud-or-fair),">https://www.whatbitcoindid.com/podcast/peter-rizuns-lightning-critique-fud-or-fair),</a> a Lightning RFC pull request (<a href="https://github.com/lightningnetwork/lightning-rfc/pull/780),">https://github.com/lightningnetwork/lightning-rfc/pull/780),</a> and a lightning-dev mailing list thread (<a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002406.html)">https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002406.html)</a> for further reading.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:52:14.671054+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

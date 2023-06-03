@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Turbo channels spec? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003076_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Bitcoin Error Log 2021-06-29 07:53:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2021/003166_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Rusty Russell 2021-08-12 05:04:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003074_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Rusty Russell 2021-06-29 05:34:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003075_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Bastien TEINTURIER 2021-06-29 07:41:35</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003085_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Bastien TEINTURIER 2021-06-30 07:10:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2021/003107_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Rusty Russell 2021-07-05 01:21:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2021/003128_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Martin Habovštiak 2021-07-12 08:19:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2021/003170_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>ZmnSCPxj 2021-08-14 02:09:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003083_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Rusty Russell 2021-06-30 00:09:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2021/003095_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Matt Corallo 2021-07-01 18:07:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2021/003108_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>ZmnSCPxj 2021-07-05 02:20:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2021/003109_Turbo-channels-spec-.xml.html">Turbo channels spec?</a>
+                        <b>Rusty Russell 2021-07-05 06:38:42</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003076.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2021-06-29T07:53:23+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Rusty Russell, a member of Lightning-dev mailing list, proposed a new feature to allow zeroconf channels. This comes after Roasbeef pointed out that not all implementations accept them. The proposal suggests assigning a new feature bit "I accept zeroconf channels" and if both parties accept it, update_add_htlc can be sent before funding_locked without causing any issues.However, there is a different threat model between someone spending dual-funded or push_msat balance vs classic channel-funding balance, so it may make sense to negotiate this per-direction in the channel init message(s). Nodes are advised not to forward HTLCs from an unconfirmed channel unless they have explicit reason to trust that node.The proposal is a simple change which would create a new set of channel types and Rusty plans to draft something this week.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T04:29:32.952347+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

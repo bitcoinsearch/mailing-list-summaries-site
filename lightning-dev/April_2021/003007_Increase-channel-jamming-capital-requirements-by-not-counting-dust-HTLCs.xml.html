@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Increase channel-jamming capital requirements by not counting dust HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2021-04-23 16:24:26
+            <br><i>Published on: 2021-04-23T16:24:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2021/combined_Increase-channel-jamming-capital-requirements-by-not-counting-dust-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003007.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange between Eugene Siegel and Bastien, the topic of dust HTLCs and commitment transactions was discussed. Bastien explained that dust HTLCs count towards the 483 HTLC limit in order to prevent commitment transactions from growing unreasonably large, which could lead to potential attacks. If these dust HTLCs were not counted and the 483 limit exceeded, it would be difficult to lower fees because some previously dust HTLCs may no longer be considered dust and could push the number of HTLC outputs over the limit. Eugene proposed a simple mitigation strategy to increase the capital requirement of channel-jamming attacks, preventing unsophisticated attackers with low capital from jamming a target channel. He suggested trimming dust HTLC outputs in commitment transactions, but still allowing for 483 non-dust HTLCs per side to be included. This would raise the capital requirement of channel-jamming so that each HTLC must be non-dust, rather than spamming 1 sat payments. Eugene requested other opinions on this proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:57:49.772349+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

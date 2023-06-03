@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Increase channel-jamming capital requirements by not counting dust HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2021-04-26 07:13:00
+            <br><i>Published on: 2021-04-26T07:13:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2021/combined_Increase-channel-jamming-capital-requirements-by-not-counting-dust-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003017.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network specification states that dust HTLCs should not be counted towards the remote's max_accepted_htlcs limit in the remote commitment transaction. Eclair follows this behavior, but it is unclear if LND and other implementations do as well. However, it is important to note that trimmed HTLCs are also excluded from the count, which could lead to issues for nodes with a set max_accepted_htlcs of 483. Bastien Teinturier suggests that this issue can be addressed in LND without requiring a change in the specification. Matt Corallo adds that update_fee messages do not change the dust limit for outputs in a channel. Eugene Siegel proposes a mitigation to increase the capital requirement of channel-jamming attacks by excluding dust HTLCs from the count while still allowing for 483 non-dust HTLCs to be included on the commitment transaction. This would raise the capital requirement for attackers.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:56:56.748907+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

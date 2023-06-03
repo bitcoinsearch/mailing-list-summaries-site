@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Simplified (but less optimal) HTLC Negotiation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-10-15 01:02:13
+            <br><i>Published on: 2020-10-15T01:02:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_-RFC-Simplified-but-less-optimal-HTLC-Negotiation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002846.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about implementing a state-based approach in a project. Bastien Teinturier mentions that once the approach is implemented correctly, it runs smoothly without any need for further changes. However, Rusty argues that a synchronous approach, like the one being discussed, allows for dynamic protocol updates without requiring a "stop and drain" step. For instance, decreasing the number of HTLCs accepted can be done without worrying about any added HTLCs at that moment. This resolves an existing issue with update_fee. Rusty believes that implementing this approach would be simple since it's a subset of state-based approach.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:49:10.917169+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

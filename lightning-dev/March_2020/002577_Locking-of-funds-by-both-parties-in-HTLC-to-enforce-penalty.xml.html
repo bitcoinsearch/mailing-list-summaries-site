@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Locking of funds by both parties in HTLC to enforce penalty</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Subhra Mazumdar 2020-03-06 05:58:36
+            <br><i>Published on: 2020-03-06T05:58:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2020/combined_Locking-of-funds-by-both-parties-in-HTLC-to-enforce-penalty.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-March/002577.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the context provided, the author is discussing the construction of HTLC in Bitcoin Lightning Network. The example given involves two parties, A and B, with a channel in which each party has locked in 0.5 BTC. A wants to transfer 0.1 BTC to B, contingent on the knowledge of R: H=h(R), produced within a locktime of t days. The script output for A involves 0.4 BTC going to A, 0.5 BTC going to B, and 0.1 BTC locked in HTLC between A and B. The author then questions why the terms cannot be set as 0.4 BTC to A, 0.2 BTC to B, and 0.4 BTC to HTLC, where the HTLC output can follow either of the paths: if B produces R within t days, then it gets back 0.4 BTC, else after t days, A can broadcast with 0.4 BTC going to A. This method prevents B from not responding and inducing a potentially griefing attack across a longer path by withholding the solution since it will lose out on 0.3 BTC. Finally, the author raises the question of what could be the problem if the terms of HTLC itself try to enforce a penalty on the counterparty.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:57:37.433789+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

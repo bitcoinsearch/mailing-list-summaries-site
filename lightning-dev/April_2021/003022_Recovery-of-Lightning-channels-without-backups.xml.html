@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recovery of Lightning channels without backups</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2021-04-27 23:36:02
+            <br><i>Published on: 2021-04-27T23:36:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2021/combined_Recovery-of-Lightning-channels-without-backups.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003022.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between two individuals, Rusty Russell expresses his reservations about a proposed method, stating that it removes the ability to update a channel without access to the node's secret key. The proposed method involves keeping the per-channel keys in an HSM and having different keys for DH and channel updates. Russell believes that it would be a perfectly acceptable tradeoff not to use the secret key for gossip and to DH to set up a new peer connection. However, the proposed method may be desirable for those who are concerned about lost data without backups, which poses a greater risk to their funds in lightning. The proposed method also doesn't get rid of temporary_channel_id since the generation_number isn't known until both sides have sent it. This can be addressed through a workaround already in dual-funding. The sender can send an error back indicating what they are up to if they are using the wrong generation. Regarding the "gap" problem, Russell suggests that it is not a big issue as it is possible to scan over large gaps and leave the node on for days. The proposed method involving an encrypted blob served by peers offers another way to do this, although it requires the assumption that at least one peer is honest. Encrypted backups are seen as complementary to this scheme as they allow users to find a peer they have had a channel with and then find others and check against them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:16:21.924837+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

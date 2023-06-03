@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Research on proactive fee free channel rebalancing in the friend of a friend network / and roadmap	for a protocol extension</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-12-23 10:56:29
+            <br><i>Published on: 2019-12-23T10:56:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Research-on-proactive-fee-free-channel-rebalancing-in-the-friend-of-a-friend-network-and-roadmap-for-a-protocol-extension.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002407.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author has proposed an extension to BOLT 07 and BOLT 14 for the implementation of a fee-free rebalancing algorithm across the network. The extension to BOLT 07 proposes a new gossip query and reply system to ask channel partners on which of their channels they want inbound/outbound liquidity, and an optional offer field to state how much they are willing to rebalance. Protection against probing attacks is also needed to ensure the privacy of nodes. BOLT 14 proposes an open transport for fee-free rebalancing or a feature flag to allow nodes to signal if they support fee-free rebalancing. One potential attack vector is identified as circular fee-free payments between two parties, but this can be avoided by making the channel public so that other nodes may block it if they feel it is being abused. The author also discusses how splitting out rebalances from payments may impact privacy, suggesting instead a local-scope broadcast of "I provisionally allow routing via this channel-direction without fees" with a secret claim code, and hiding rebalances in the current onion format. Finally, the author proposes defining a new message for local broadcast of channels that would be nice to balance, adding a new TLV for onions that includes a secret from the previous message, and a new onion failure code that includes a proposed amount.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:31:14.381336+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

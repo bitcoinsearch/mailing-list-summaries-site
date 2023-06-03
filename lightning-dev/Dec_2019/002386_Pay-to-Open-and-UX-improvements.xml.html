@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pay-to-Open and UX improvements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2019-12-17 14:43:46
+            <br><i>Published on: 2019-12-17T14:43:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Pay-to-Open-and-UX-improvements.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002386.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email, Bastien TEINTURIER discussed the issue of temporary trust between users and nodes during pay-to-open experiments with Phoenix. While the UX for newcomers was great, it required trust between the user and the node until the funding transaction is confirmed. The trust relationship appears in two places: the user trusts that the node won't double-spend the funding transaction, and the node trusts that the user will reveal the pre-image after they've been paid. Dave proposed a solution to this problem where a single-show signature would be used to reveal the private key if combined with another signature from the same private key. However, there is no current way to force single-show signatures in Bitcoin and it adds fragility to any setup while making useful features like RBF fee bumping unavailable. Dave suggested an alternative solution by using a signing federation to spread trust around. This doesn't change the need for trust but allows mitigation of user concerns about double-spending since spending funds would require three signatures each from one of five different respected companies who are pioneers of LN, perhaps all in different legal jurisdictions. This would help mitigate user concerns about double-spending. There is also mention of a more practical way to enforce single-show in Bitcoin by using something like OP_CHECKSIGFROMSTACK, which is implemented in Elements, or maybe SIGHASH_NOINPUT/SIGHASH_ANYPREVOUT could be used to enforce single-show with the right script.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:28:56.036135+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

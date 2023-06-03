@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making (some) channel limits dynamic</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2020-10-08 15:56:33
+            <br><i>Published on: 2020-10-08T15:56:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_Making-some-channel-limits-dynamic.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002816.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Bastien TEINTURIER, Antoine and ZmanSCPxj, Bastien expressed his desire to update dynamic channel parameters such as `htlc_minimum_msat` on big channels without having to close the channel and open a new one. He mentioned that there is no need to stop the channel's operations while updating these parameters since they can be updated unilaterally anyway. The only downside is that if the policy is made stricter, the peer may send some HTLCs that will immediately fail afterwards but this is just a minor inconvenience that won't trigger a channel closure. Bastien asked if other implementations besides eclair have specificities that would make this feature particularly hard to implement or undesirable. In response, ZmanSCPxj discussed the complications of an upfront payment system and suggested the idea of a web-of-trust system based on reputation. However, this risks centralization around existing, long-lived nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:16:56.747634+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

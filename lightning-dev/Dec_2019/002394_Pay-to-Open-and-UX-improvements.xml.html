@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pay-to-Open and UX improvements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2019-12-18 10:14:38
+            <br><i>Published on: 2019-12-18T10:14:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Pay-to-Open-and-UX-improvements.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002394.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation revolves around the modification of Tapscript's `OP_CHECKSIG` to prevent double-spending in off-chain protocols that do not require confirmation. Bastien proposed a solution that reads signatures as two 32-byte stack arguments, `R` first then `s`, instead of a single 64-byte stack argument. This modification leverages nonce reuse as a feature to prevent double-spending once a signature has been shared off-chain.To illustrate the use case, a service provider commits to the nonce they will use to spend the output. When they want to start using an off-chain protocol, the recipient can verify that the inputs have the correct format. If the service provider double-spends the inputs, they will be signing a different message with the same nonce, allowing the recipient to extract the private key and spend the UTXO to themselves. However, there were several issues raised during the discussion, such as difficulty recognizing spent UTXOs on-chain, inability to allow key-path spend but revoke this capability once the script has been revealed (off-chain), and difficulty using RBF on transactions that spend this kind of UTXO because it would reveal the private key. One proposal to address these issues suggested using Schnorr signatures, while another suggestion was to enforce that RBF is signalled for every spend of the output. Additionally, adding an output for CPFP could remedy the difficulty using RBF.Another email in the conversation proposes the use of `OP_CAT` to enforce a particular `R`, which would allow for the implementation of single-show signatures. The proposed code assumes that signatures are the concatenation of `(R,s)` and uses `OP_SWAP OP_CAT OP_CHECKSIG` to feed only `s` on the witness stack. Overall, Bastien's proposal has potential for many new use cases and could remove many pain points in Lightning. The email conversation took place on the Lightning-dev mailing list.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:27:08.068171+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-04-22 04:12:59
+            <br><i>Published on: 2020-04-22T04:12:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002640.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Protocol currently faces a severe issue with RBF Pinning HTLC Transactions, allowing a counterparty to steal funds. If B broadcasts the commitment transaction, C can spend an HTLC using preimage with a low-fee, RBF-disabled transaction. After a few blocks, A could claim the HTLC from B via the timeout mechanism, and then after a few days, C could get the HTLC-claiming transaction mined via some out-of-band agreement with a small miner. This leaves B short the HTLC value. One solution is to add a clause in OP_CHECKSEQUENCEVERIFY to prevent C from making an RBF-disabled transaction. However, if the transaction is not in the mempool at all, the vulnerability is not about RBF or relay, but sheer economics.Before L+1, C has no incentive to bid because placing any bid leaks the preimage, which B can use to spend from A. Thus, B should ensure that *before* L+1, the HTLC-Timeout has been committed onchain, which prevents this bidding war from even starting. The issue then is that B is using a pre-signed HTLC-timeout, preventing B from RBF-ing the HTLC-Timeout transaction. Two solutions include adding an RBF carve-out output to HTLC-Timeout at the cost of more blockspace or using `SIGHASH_NOINPUT` to make the C-side signature `SIGHASH_NOINPUT|SIGHASH_SINGLE`. With this, B can exponentially increase the fee as L+1 approaches.C can bribe a miner to prevent HTLC-Timeout from confirming between L and L+1, which is a censorship attack. To solve this, B can bump the fee on HTLC-Timeout, setting up a bidding war between C requesting miners to censor and B requesting miners to confirm. This only delays the war, and C will eventually want to start the bidding war.If both nodes support it, a Poon-Dryja channel can be upgraded without onchain activity to a Decker-Russell-Osuntokun channel. Signed transactions spending the funding tx to a txo that has been set up as Decker-Russell-Osuntokun sidesteps the issue under discussion here.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T00:44:35.136670+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

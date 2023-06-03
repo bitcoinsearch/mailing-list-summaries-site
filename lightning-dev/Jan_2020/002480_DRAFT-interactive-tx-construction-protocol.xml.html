@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DRAFT: interactive tx construction protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> darosior 2020-01-31 11:23:31
+            <br><i>Published on: 2020-01-31T11:23:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2020/combined_DRAFT-interactive-tx-construction-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002480.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the use of JoinMarket's PoDLEs (Proof of discrete logarithm equality) to solve similar problems to those presented in dual-funded channel proposals. The protocol commits to a UTXO and includes proof that the creator of the PoDLE knows the secret key behind it while later being opened to reveal which UTXO the opener allocated. If the opener aborts, then the acceptor can gossip the UTXO and the revealed PoDLE to the rest of Lightning, making it challenging for the opener to reuse the same UTXO to probe other potential acceptors.JoinMarket has also solved the issue of allowing a UTXO to be used at most N times by appending a single byte to something that is hashed and ensuring its value is less than N. In this way, it can only be used from 0 to N - 1, thereby allowing a UTXO to be used at most N times. There is no clear way to determine when to safely delete old PoDLEs; JoinMarket never deletes but might if throughput increases.The use-case presented appears to be quite similar to a PayJoin, where the opener proposes to make a payment to a channel between the opener and the acceptor. The acceptor adds some UTXOs contributing to the payment output, and this mechanism can be later used for channel factories. PoDLE techniques would be useful as well for multi-funded channel factories. It would be a good idea to share PoDLE format with JoinMarket so we can share PoDLE with them. Finally, it is suggested that retaining PoDLE for at least a year or a month or two weeks or so should be mandated in some BOLT spec to slow down probe attempts.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:04:48.272010+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

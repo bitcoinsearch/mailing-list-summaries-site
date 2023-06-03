@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigating Channel Jamming with Stake Certificates</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-11-27 11:18:23
+            <br><i>Published on: 2020-11-27T11:18:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2020/combined_Mitigating-Channel-Jamming-with-Stake-Certificates.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002888.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network community is exploring a new approach to channel jamming mitigation using UTXO ownership proofs, also known as Stake Certificates. These certificates act as a "fidelity bond" for sending HTLCs and do not inflate payment costs for honest users or require trust to work, unlike upfront payment schemes. The main disadvantage of this approach is the novel cryptography required. In the proposed scheme, routing nodes issue Stake Certificates attached to UTXOs to provide credit to LN users. The credit balance would be virtual and only known to the user, while routing nodes would only observe per-UTXO credit balances separately. This approach may provide better economic feasibility and protocol complexity trade-offs than other potential solutions. However, it relies on zero-knowledge proofs of UTXO ownership to preserve privacy, which requires experimental primitives. Various design decisions and questions related to the use of Stake Certificates in LN transactions are discussed in the article. For example, whether credit spending should be gossiped across the entire network or only known to the routing nodes involved in the payment. The authors argue that announcing credit spending to the network results in a privacy leak and imposes bandwidth and CPU overhead on routing nodes. Other design decisions include the best credit-to-value-transferred function, interactivity and lifetime of Stake Certificates, and whether spending a UTXO should reveal all Stake Certificates generated from it.The proposal offers a new approach to preserving privacy in LN transactions, but its feasibility depends on the adoption of zero-knowledge protocols for general statements and the resolution of various design decisions and open questions. The authors encourage the community to discuss the design questions and choose a cryptosystem if they find the proposal interesting. Proof of Work (PoW) is not considered a viable solution due to misaligned trade-offs and impracticality. Secondary markets would still be possible even if acceptable proofs were restricted to only LN channels, but supply would be much smaller. The proposal illustrates how stake-based protocols could solve Sybil challenges in other contexts as well, making it an even more useful discussion. The article provides references and footnotes for further reading.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:04:43.965985+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

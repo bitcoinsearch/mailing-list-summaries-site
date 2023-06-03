@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On the scalability issues of onboarding millions of LN mobile clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Braydon Fuller 2020-05-08 19:33:55
+            <br><i>Published on: 2020-05-08T19:33:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2020/combined_On-the-scalability-issues-of-onboarding-millions-of-LN-mobile-clients.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002696.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On May 5th, 2020 Olaoluwa Osuntokun via bitcoin-dev wrote about BIP 157, which is a protocol that makes serving light clients stateless. This means the full node doesn't need to perform any unique work for each client. The entire protocol could be served over HTTP, taking advantage of all established CDNs and anycast serving infrastructure, which can reduce syncing time and more widely distribute the load of light clients using the existing web infrastructure. With HTTP/2's server-push capabilities, those serving this data can still push out notifications for new headers, etc.Antoine claims that even with cheaper, more efficient protocols like BIP 157, there is still a huge discrepancy between what is asked and what is offered. Assuming 10M light clients, each consuming ~100MB/month for filters/headers, that means there is a demand for 1PB/month of traffic to the backbone network. If you assume 10K public nodes, opting in to signal BIP 157, that's an increase of 100GB/month for each. Which is consequent with regards to the estimated cost of 350GB/month for running an actual public node.The statelessness of compact block filters looks useful. Bloom filters for blocks can be inefficient during a scan with a BIP37 wallet. It's necessary to discard already received merkle blocks as the filter has been updated and the previous results may have missed transactions. Both bitcoinj and breadwallet-core handle it using a similar method. With compact block filters, a separate wallet process (from the full node) can make adjustments necessary to what it needs to filter without having to communicate with the full node. Links to both GitHub repositories for bitcoinj and breadwallet-core are provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:22:21.636926+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Disclosure of a fee blackmail attack that can make a victim loose almost all funds of a non Wumbo channel	and potential fixes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-06-21 03:33:59
+            <br><i>Published on: 2020-06-21T03:33:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2020/combined_Disclosure-of-a-fee-blackmail-attack-that-can-make-a-victim-loose-almost-all-funds-of-a-non-Wumbo-channel-and-potential-fixes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002747.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A vulnerability in the Bitcoin Lightning Network has been disclosed by Rene Pickhardt, a software developer for the network. The vulnerability allows attackers to force users into making payments and can be exploited to blackmail users into paying exorbitant fees. This attack is possible due to the “update_fee” mechanism and unbounded commitment transaction size inflation. One solution to protect users from this attack is to cap commitment size, which would ensure competitive propagation/block selection and limit HTLC exposure. Other solutions proposed include using fee futures, not overpaying fees in commitment transactions, and aggregating HTLCs. However, these proposals also have limitations. For example, carving out output combined with anchor output support on the LN-side won't protect against different flavors of pinning. Also, the attacker can counter the tree structure by pushing multiple HTLCs with the same timelock at the victim. A flat array of outputs is cheaper than a tree. The most compact way to expose the HTLCs is as a flat array, and every tree structure is going to take up more space than a flat array.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:45:17.545125+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

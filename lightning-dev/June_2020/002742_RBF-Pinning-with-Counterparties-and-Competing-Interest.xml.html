@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-06-20 08:54:03
+            <br><i>Published on: 2020-06-20T08:54:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002742.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread, Bastien and David A. Harding are discussing a potential attack on lightning network channels. Bastien had suggested a blind CPFP carve-out trick where an honest counterparty could send a blind child to the attacker if they submit an outdated transaction, potentially gaining access to all of the channel funds. However, David points out that the Bitcoin peer will only relay the blind child if it already has the parent transaction, making the blind CPFP carve-out difficult in practice. In the worst-case scenario, where most miners' mempools contain the attacker's transaction and the rest of the network's mempools contain the honest participant's transaction, there isn't much that can be done. To avoid being in this situation, Bastien suggests having at least some Lightning Network nodes invest in running nodes in mining pools, ensuring that they learn about attackers' transactions and can potentially share discovered preimages with the network off-chain. The recent attacks show that off-chain nodes need to be somewhat heavily invested in on-chain operations.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T00:54:44.452750+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

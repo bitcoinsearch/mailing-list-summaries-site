@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Increase channel-jamming capital requirements by not counting dust HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eugene Siegel 2021-04-23 15:58:18
+            <br><i>Published on: 2021-04-23T15:58:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2021/combined_Increase-channel-jamming-capital-requirements-by-not-counting-dust-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003005.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Eugene, from Crypt-iQ, has proposed a simple mitigation to increase the capital requirement of channel-jamming attacks. This would prevent an unsophisticated attacker with low capital from jamming a target channel. He believes that this mitigation is free and has no downsides besides code-writing. Eugene suggests that in a commitment transaction, dust HTLC outputs should be trimmed. The reason for the 483 HTLC limit each side has in the spec is to prevent commitment transactions from growing unreasonably large and to ensure they are still valid transactions that can be included in a block. If dust HTLCs are not included in this calculation since they are not on the commitment transaction, we still allow 483 (x2) non-dust HTLCs to be included on the commitment transaction. Eugene proposes that there could be a configurable limit on the number of outstanding dust HTLCs, but the point is that it does not affect the non-dust throughput of the channel. This raises the capital requirement of channel-jamming so that each HTLC must be non-dust, rather than spamming 1 sat payments. Eugene is interested in hearing other opinions on his proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:57:28.273234+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

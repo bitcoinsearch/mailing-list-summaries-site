@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making (some) channel limits dynamic</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-10-12 07:43:25
+            <br><i>Published on: 2020-10-12T07:43:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_Making-some-channel-limits-dynamic.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002825.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the proposal of a potentially more efficient but less private routing scheme for Lightning Network payments. The proposal involves using onion routing between intermediate nodes, with HTLC packets openly showing the next destination node. Once all parts reach the destination node, it decodes and turns out to be an onion to be sent to the next destination node, and the current destination node is just another forwarder. The proposal aims to replace Trampoline, which currently uses onion routing between intermediate nodes. The receiver's confidence in the input end of the trampoline node being "nearer" to the payer than itself can be resolved by adding a few nodes that are close to them (or a partial route) to the invoice. It is also suggested that we may not need the onions-per-channel model currently used in the network. The idea is based on the two-layer structure of Tor, where there is a lower-level TCP/IP layer where packets are sent out to specific nodes on the network and this layer is completely open about where the packet should go, but there is a higher layer where onion routing between nodes is used. While this approach has its disadvantages, it could be a useful alternative.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:17:18.180684+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

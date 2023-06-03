@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-06-20 16:01:16
+            <br><i>Published on: 2020-06-20T16:01:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002744.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the potential use of pay-for-signature construction in pointlocked timelock contracts (PTLCs), which involves signing with MuSig(A, B). The idea is that A would offer a fund that can only be claimed by leaking knowledge of 's' behind 's*G'. To do this, A creates a new keypair A[p4s] = a[p4s]*G and puts a fund into it. Then A generates an R[A][p4s] = r[A][p4s]*G, and computes R[p4s] = R[A][p4s] + s*G and s'[A][p4s] = r[A][p4s] + h(A | R[p4s] | m) * a[p4s]. A reveals publicly R[A][p4s], s*G, s'[A][p4s], and A[p4s]. In order to complete the above signature, a third party C has to learn 's' from B. The third party learns about which channel was used but never learns 't' or 'T', providing a privacy bonus.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T00:49:02.476544+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

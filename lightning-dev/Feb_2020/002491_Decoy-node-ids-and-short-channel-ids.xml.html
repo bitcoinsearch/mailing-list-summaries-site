@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decoy node_ids and short_channel_ids</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-02-03 14:06:50
+            <br><i>Published on: 2020-02-03T14:06:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Decoy-node-ids-and-short-channel-ids.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002491.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around ways to achieve privacy by hiding node_id and preventing the linking of multiple HTLCs together. Alice wants to use a different node_id for every invoice to ensure that Carol cannot link the HTLCs together. In order to hide from Bob, Alice can use a different node_id for each channel she opens to Bob and use Tor. The group explores a potential way for Alice and Bob to agree on a set of 256 scids without any additional messages or changes to existing messages beyond a feature flag and a flag in open_channel, but it comes with a computational cost. Instead of keeping a map of 256 scids for each channel, Bob can use a cuckoo filter for efficiency.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:43:18.787587+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

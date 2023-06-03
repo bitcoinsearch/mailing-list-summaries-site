@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning in a Taproot future</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-12-17 15:05:17
+            <br><i>Published on: 2019-12-17T15:05:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Lightning-in-a-Taproot-future.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002387.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network community is considering the implementation of Pointlocked Timelocked Contracts (PTLCs) to replace Hash Timelocked Contracts (HTLCs). PTLCs require all nodes along the payment path to support them. A potential issue with using MuSig, a key feature of Decker-Russell-Osuntokun, is the increased number of communication rounds needed to generate signatures. However, an alternative script path could reduce this, and taproot also provides options for a script path that may allow for a cheaper MuSig spend. The use of a point equivalent to a secret scalar can create "purely scriptless" PTLCs. This method requires a sender buying a secret scalar and knowing the point equivalent to that scalar, as well as a receiver who knows the secret scalar or can learn it.After agreeing on the specifications of the PTLC, A creates a transaction that pays to a MuSig of A and B and shares the txid and output number with the relevant MuSig output. After performing a backout transaction, which has an agreed-upon locktime, A signs and broadcasts the first transaction, wait for it to confirm deeply, and then completes the setup phase for the PTLC. If the agreed-upon locktime is reached, A broadcasts the backout transaction, aborting the ritual. A and B then create a claim transaction, after which A generates an adaptor signature for the claim transaction, revealing the agreed scalar.The article also mentions that the approach could allow existing channels to support PTLCs without closing/reopening, although it may be a bit complicated. Additionally, the author proposes an eltoo-ish approach that would allow for simplified watchtowers. The settlement tx can be simplified, but there may be issues when the absolute locktime is close to the relative locktime. Overall, the author prefers to use Poon-Dryja PTLCs prior to eltoo, scriptless revocation via MuSig(Rn,B) internal keys, support HTLCs via taproot, and optionally allow the use of script paths to minimize round trip delay.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:11:50.552550+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

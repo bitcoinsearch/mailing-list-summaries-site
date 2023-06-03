@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for skip channel confirmation.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-08-25 02:38:15
+            <br><i>Published on: 2020-08-25T02:38:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2020/combined_Proposal-for-skip-channel-confirmation-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002783.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between two individuals, Antoine suggests a mechanism to lower trust in zero-conf channel opener. The local party can be in charge of broadcasting the funding transaction, thus ensuring it's well-propagated across network mempools and then start to accept incoming payment on the zero-conf channel. This would provide game-theory security for zero-conf channels, making it more expensive for a malicious opener to double-spend an HTLC than to pay higher fees for replacing the channel funding tx. RBF is opt-in for Bitcoin Core nodes, making it easy for double-broadcasting for conflicting low-fee RBF-disabled transactions. Thus, it is necessary to trust that the other party does not engage in such practices while offering a channel. It is imperative to note that there is no global mempool, and full nodes will only see transactions with fees higher than what they have in their mempool.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:57:09.541760+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

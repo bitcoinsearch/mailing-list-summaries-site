@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning Mints</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-06-28 15:20:43
+            <br><i>Published on: 2021-06-28T15:20:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2021/combined_Lightning-Mints.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003070.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Chaumian mints are inherently custodial, as the mint issues blinded minted coins in exchange for resources being handed over to their custody. However, Wasabi and WabiSabi avoid this issue by operating the mint as a temporary entity, counterchecked by users of the scheme. In Wasabi, clients register some UTXOs of some common value to the mint, which then issues blind signatures that serve as tokens in a Chaumian mint. In WabiSabi, credentials replace blinded signatures. Nodelets allow multiple users to implement a single node without a central custodian, and may allow for similar flexibility of liquidity if there are enough users, but every action requires all users to have keys online. Nodelets can connect to a coordinator, then "self-mix" their coins, get back new values, and request that some part of their value be sent over the network. Before signing off on the new state of any channel, the actual nodelets check the new state that the coordinator wants them to sign off on, thus preventing custodial risk. Each state update of the channel is created by a Chaumian mint using credentials instead of blinded signatures, then the state update is ratified by the actual nodelets, preventing the Chaumian mint from stealing the funds. Handling forwarding in such a system requires nodelets to leak that they have funds in the outgoing channel in exchange for earned forwarding fees. The node management problem can be solved in software by something similar in purpose to CLBOSS.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T04:14:58.142269+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

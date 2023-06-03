@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Collaborated stealing. What happens when the final recipient discloses the pre-image</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-07-17 08:59:16
+            <br><i>Published on: 2020-07-17T08:59:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2020/combined_Collaborated-stealing-What-happens-when-the-final-recipient-discloses-the-pre-image.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002762.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network considers possession of a preimage as proof of payment, which is stronger evidence than E claiming to not have received anything. The likelihood of guessing the preimage is practically impossible. If E breaches the protocol by giving the preimage to C for free instead of claiming the money from D and settling the HTLC, it will be considered E's problem, and even if D testifies that E never settled the HTLC, it is unlikely that E did not settle the incoming HTLC, as they should only have created a payment hash for which they know the preimage. In such cases, A can provide the preimage, which serves as evidence of payment. In a specific case where one of the forwarding nodes performing the Wormhole attack on a path is the payee itself, what is stolen here is not the payment amount, but the fees that the skipped forwarding nodes should have earned for honestly forwarding. However, this attack is not a concern at a high level. As long as A can acquire the preimage, it has proof of payment, and it is immaterial how A managed to get the preimage. Good invoices signed by E and indicating who exactly is going to get the service or product are important. The wormhole attack can be fixed by using PTLCs and blinding factors. E learns the total of all blinding factors, knows the final scalar, but does not know the blinding factor delta from C to E and thus cannot give C any information on how to claim the funds.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:47:11.543395+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

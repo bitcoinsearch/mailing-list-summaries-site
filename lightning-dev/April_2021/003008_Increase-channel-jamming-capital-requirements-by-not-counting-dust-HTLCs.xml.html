@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Increase channel-jamming capital requirements by not counting dust HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eugene Siegel 2021-04-23 21:44:07
+            <br><i>Published on: 2021-04-23T21:44:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2021/combined_Increase-channel-jamming-capital-requirements-by-not-counting-dust-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003008.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Eugene Siegel and Bastien TEINTURIER, a proposal was made to increase the capital requirement of channel-jamming attacks. The proposal suggested that dust HTLC outputs be trimmed in a commitment transaction to prevent an unsophisticated attacker with low capital from jamming a target channel. The reason for the 483 HTLC limit each side has in the spec is to prevent commitment tx's from growing unreasonably large, and to ensure they are still valid tx's that can be included in a block. If dust HTLCs are not included in this calculation, then it would still allow 483 (x2) non-dust HTLCs to be included on the commitment tx. However, Bastien pointed out that the reason dust HTLCs count for the 483 HTLC limit is because of `update_fee`. If they are not counted and the limit is exceeded, the fee cannot be lowered anymore, which could result in more than 483 HTLC outputs in the commitment and open the door to other kinds of attacks.Bastien also noted that there may be other drawbacks if the proposal is examined enough with an attacker's mindset. Eugene's proposal would raise the capital requirement of channel-jamming so that each HTLC must be non-dust, rather than spamming 1 sat payments. This would prevent an unsophisticated attacker with low capital from jamming a target channel. There were no downsides to the proposal besides code-writing, but Eugene wanted to hear other opinions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:56:38.740661+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

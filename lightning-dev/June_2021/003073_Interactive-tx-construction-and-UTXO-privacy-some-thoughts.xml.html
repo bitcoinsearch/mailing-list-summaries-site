@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Interactive tx construction and UTXO privacy, some thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> lisa neigut 2021-06-29 02:21:58
+            <br><i>Published on: 2021-06-29T02:21:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2021/combined_Interactive-tx-construction-and-UTXO-privacy-some-thoughts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003073.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network dual-funding proposal has received positive reviews from some individuals, but there are still significant objections to the protocol. One major concern is that the collaborative transaction protocol requires sharing one's UTXO set with the channel peer. However, it was noted that in the current opening case, every UTXO in the funding transaction belongs to a single party, so all UTXOs will eventually be publicly associated with a node. In addition, the interactive transaction protocol makes it more difficult for outside observers to tell which UTXOs belong to whom compared to the current protocol.Another objection is that an active prober can use the interactive transaction protocol to discover a wallet's entire UTXO set. However, the PoDLE protocol can make this discovery more costly for potential attackers, and reusing the same UTXO across every open attempt can slow down such attacks. Further measures have been taken to counter these concerns, including modifying the interactive transaction protocol to use batching to transmit input/output sets and allowing multiparty coinjoins on Lightning.While UTXO privacy is important, what is more crucial is not associating one's identity with their Lightning node. It remains unclear whether Taproot scripts will address the issue of on-chain transactions being assignable to a node given gossip data. Overall, best practice is to not tie one's identity to their Lightning node and to reconsider the source of funds used for announced channel opens.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T04:25:48.061795+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-06-22 08:15:37
+            <br><i>Published on: 2020-06-22T08:15:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002753.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj has responded to Bastien's previous message regarding the use of independent pay-to-preimage transactions. While ZmnSCPxj agrees with the technical implementation, they believe there are still some incentive issues that need to be addressed. They suggest that miners who hide the preimage transaction in their mempool must be accomplices with the attacker. However, ZmnSCPxj believes that it is technically possible to do this without miners cooperating with the attacker. The attacker can release two transactions with near-equal fees and release the preimage transaction near miners and the timelock transaction near non-miners. Nodes at the boundaries between these two transactions will receive both but will keep only one based on which transaction they receive first. This boundary between the two transactions is inviolate, and neither can get past it, even if everyone is running unmodified Bitcoin Core code. Although ZmnSCPxj admits that they are not a mempool expert and their understanding may be incorrect.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T00:49:48.611100+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

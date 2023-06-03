@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Hold fees: 402 Payment Required for Lightning itself</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-11-02 14:33:48
+            <br><i>Published on: 2020-11-02T14:33:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2020/combined_Hold-fees-402-Payment-Required-for-Lightning-itself.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002873.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests that an htlc received by a routing node has certain properties, including the htlc amount, forward up-front payment (anti-spam), backward up-front payment (anti-hold), and grace period. The routing node forwards this to the next hop with lower htlc amount, lower forward up-front payment, higher backward up-front payment, and shorter grace period. However, there is an issue related to trustless offchain-to-onchain swaps, where the swap service will generally be forced to pay up the hold fees as claiming the offchain side is dependent on claiming of the onchain side of the trustless swap mechanism which is slow. The hold-fees mechanism cannot be ported over in the onchain side, so the swap service would need to issue a separate invoice to pay for the hold fee for the "real" swap payment. To mitigate against this, a combined mining-fee+hold-fee invoice would have to be issued at the same time as the "real" swap invoice.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:32:15.477703+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

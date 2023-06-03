@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Witness asymmetric payment channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2020-10-08 04:58:04
+            <br><i>Published on: 2020-10-08T04:58:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_Witness-asymmetric-payment-channels.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002812.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Lloyd Fournier has proposed a new protocol for witness asymmetric channels that eliminates per-commitment publication points and enables O(1) storage for 2-of-2 multi-signatures instantiated with or without key aggregation. The new protocol uses what Lloyd calls "revocable signatures" as the main primitive, allowing for O(1) storage complexity in both key aggregated and "multisig" constructions. He proposes replacing the publication point with a static key that remains the same with each commitment transaction. The encryption key for each commitment transaction adaptor signature is (Ra + A) for Alice and (Rb + B) for Bob. The new protocol allows parties to efficiently punish each other if they learn the secret key of the other. Lloyd suggests making changes to the original proposal by having a balance output for Alice as 2-of-2(A, Rb+B), and for Bob as 2-of-2(Ra+A, B). This structure implies that if a party broadcasts a commitment transaction, the other party can take their balance immediately. If a revoked commitment transaction is broadcasted, then the other party can take their output and the broadcaster's output immediately. PTLC outputs and all subsequent transaction outputs simplify to 2-of-2(A,B) on every output.For MuSig, there is still O(n) storage if using key aggregation on the funding transaction output. However, Lloyd proposes a natural way to revoke a key aggregated signature that one helped produce without using adaptor signatures at all - reveal the nonce used to the other party. Only Alice knows sa and only Bob knows sb, but they are both signatures on the same commitment transaction. When revoking the commitment transaction associated with sa, Alice reveals ra to Bob and vice versa. If Alice uses sa after that, Bob can deterministically produce rb' and ra (because each revocation key can be derived from the last) and therefore can produce ra + rb' + H(Ra + Rb' || A + B || m)b. The advantage of witness asymmetric channels using discrete keys over present lightning seems to boil down to a simpler transaction structure (in favour of using more complicated cryptography). However, for key aggregation, there is a measurable improvement in communication complexity: it halves the amount of interactive signatures that need to be computed per payment. The number of signing rounds may be prohibitive anyway for payment applications, so it remains to be seen whether this efficiency can be utilized for payment PTLCs in LN.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:03:12.686278+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

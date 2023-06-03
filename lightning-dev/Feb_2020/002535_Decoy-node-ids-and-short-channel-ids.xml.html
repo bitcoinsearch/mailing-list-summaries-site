@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decoy node_ids and short_channel_ids</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-02-13 04:49:47
+            <br><i>Published on: 2020-02-13T04:49:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Decoy-node-ids-and-short-channel-ids.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002535.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Rusty Russell and Bastien Teinturier, a new technique for improving Lightning Network's privacy was discussed. The scheme is ideal for private channels as well as private routes that can be used for rendezvous. The proposed approach uses `z` to represent a bolt11 letter and TLV inside. Each entry of extra routing information contains one or more `z` fields with the following types: pubkey, short_channel_id, fee_base_msat, fee_proportional_millionths, cltv_expiry_delta, and features. According to the email, this would provide replacement for current route hints, which lack the ability to specify feature bits and are inefficient. Rusty Russell expressed his dislike for his bolt11 format, suggesting that it should start afresh with a TLV-based one, where signature covers the hash of each entry. In the meantime, he proposes using `z` instead. Additionally, he suggests adding a new field to 'funding_locked' called "private_scid" to address the problem of private channels needing a temporary scid. This would be useful if both sides support 'option_private_scid'.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:45:47.968045+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

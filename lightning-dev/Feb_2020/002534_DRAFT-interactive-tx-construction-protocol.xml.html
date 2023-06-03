@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DRAFT: interactive tx construction protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-02-12 23:23:01
+            <br><i>Published on: 2020-02-12T23:23:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_DRAFT-interactive-tx-construction-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002534.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent conversation among niftynei, waxwing and list, the topic of reusing addresses in Bitcoin's Lightning Network was discussed. The concern was that if someone has two UTXOs with the same address and wants to create two different channels with different peers, it would lead to address reuse. However, having 2 utxos locked to the same pubkey will map to a single H2 value, which is used to flag utxo reuse. In response, a member pointed out that with a PoDLE (Proof of Discrete Logarithm Equivalence), the user is proving they have a key for a utxo and the verifier checks that the key provided indeed controls the utxo in question. Whether or not the utxo was added to the signature commitment doesn't add anything to the security of the verification. The team noted that at worse, committing to the wrong utxo might leak other utxos that the initiator controls, if the peer decided to try grinding utxo outpoints on the off chance one matched. Additionally, H2 commits to knowledge of the privkey, not a specific utxo. Finally, it was suggested that the best approach when faced with address reuse would be to spend all UTXOs with the same address together.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:09:24.394567+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

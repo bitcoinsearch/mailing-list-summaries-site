@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Waiting SIGHASH_ANYPREVOUT and Packing Packages <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003058_Waiting-SIGHASH-ANYPREVOUT-and-Packing-Packages.xml.html">Waiting SIGHASH_ANYPREVOUT and Packing Packages</a>
+                        <b>Antoine Riard 2021-06-19 01:34:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003059_Waiting-SIGHASH-ANYPREVOUT-and-Packing-Packages.xml.html">Waiting SIGHASH_ANYPREVOUT and Packing Packages</a>
+                        <b>David A. Harding 2021-06-19 13:36:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003062_Waiting-SIGHASH-ANYPREVOUT-and-Packing-Packages.xml.html">Waiting SIGHASH_ANYPREVOUT and Packing Packages</a>
+                        <b>Michael Folkson 2021-06-21 10:20:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003057_Waiting-SIGHASH-ANYPREVOUT-and-Packing-Packages.xml.html">Waiting SIGHASH_ANYPREVOUT and Packing Packages</a>
+                        <b>Antoine Riard 2021-06-18 22:11:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003061_Waiting-SIGHASH-ANYPREVOUT-and-Packing-Packages.xml.html">Waiting SIGHASH_ANYPREVOUT and Packing Packages</a>
+                        <b>Antoine Riard 2021-06-21 08:13:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003064_Waiting-SIGHASH-ANYPREVOUT-and-Packing-Packages.xml.html">Waiting SIGHASH_ANYPREVOUT and Packing Packages</a>
+                        <b>Antoine Riard 2021-06-24 13:03:21</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003058.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2021-06-19T01:34:28+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Antoine Riard, a developer on the Lightning Network, has identified two safety issues related to Lightning in an email thread. The first issue is the pre-signed feerate problem with future broadcasted time-sensitive transactions, which can result in a loss of funds. The second issue is malicious transaction pinnings, which are attacks against LN nodes. Two potential solutions to the pre-signed feerate issue for Lightning are discussed: package-relay or SIGHASH_ANYPREVOUT. While SIGHASH_ANYPREVOUT is a better long-term solution, package-relay could provide a fallback plan. However, there are concerns about attackers using pinning to force honest users to pay another anyprevout bounty to miners.The email thread also discusses the eltoo proposal, where signing the update transaction with SIGHGASH_ANYPREVOUT lets you attach non-interactively a single-party controlled input at broadcast-time. This should allow the transaction to propagate across network mempools and solve the pre-signed feerate problem as defined in the post. Package-relay is useful for CPFP fee bumping very low feerate transactions received from an external party, but it poses security concerns and requires careful consideration of upgradeability.The proposal recommends the implementation of "package-relay" in Bitcoin Core to allow for more efficient routing of Lightning Network transactions. Anti-DoS measures for package-relay would also need to be considered. The deployment timeline includes early 0.24 or 0.25 for the LN/L2 ecosystem to provide feedback on package API, followed by mempool hardening in early 0.26 or 0.27 for the whole Bitcoin ecosystem to adapt their clients.The conversation encourages open sharing and modification of ideas within the hacker ethos of the community. Dave Harding suggests that more detailed write-ups on these ideas should be published before they are promoted further. It is important to gather diverse in-field authorities' opinions or reason from scratch based on raw, public facts.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T04:11:23.655067+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DRAFT: interactive tx construction protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-01-30 14:38:57
+            <br><i>Published on: 2020-01-30T14:38:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2020/combined_DRAFT-interactive-tx-construction-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002476.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal for avoiding utxo snooping by using transaction chain construction has been discussed. The proposal involves using a signed transaction committed to the channel opening, so the opener doesn't probe gratuitously. A drawback is that anything that is not `SIGHASH_ALL` sticks out in chain analysis. PoDLE (Proof of discrete logarithm equality) as used in JoinMarket is another solution to this problem. It commits to a UTXO without being trivially grindable from the UTXO set and also includes a proof that the creator of the PoDLE knows the secret key behind it. If the opener aborts, then the acceptor can gossip the UTXO and the revealed PoDLE as well to the rest of Lightning, so the opener at least cannot reuse the same UTXO to probe other potential acceptors. JoinMarket has also solved the issue of allowing a UTXO to be used at most N times by appending a single byte to something that is hashed and ensuring its value is less than N. Getting into contact with waxwing / Adam Gibson for this might be useful to fill out how PoDLE works and so on.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:02:23.372820+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

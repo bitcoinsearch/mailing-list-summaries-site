@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for skip channel confirmation.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Roei Erez 2020-08-24 08:16:44
+            <br><i>Published on: 2020-08-24T08:16:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2020/combined_Proposal-for-skip-channel-confirmation-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002780.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author discusses the ability to skip a channel funding transaction confirmation, allowing for a zero-conf channel. They explain that until confirmation, this channel requires trust between its two parties and can put the received funds of the local party at risk, but in some cases, it makes sense to support this behavior. One such case is immediate on-boarding where Bob issues an invoice with a routing hint that points to a fake channel between Bob and a routing node. When Alice pays Bob's invoice, the routing node intercepts the HTLC and holds it, then opens a channel to Bob where Bob has a choice of skipping funding confirmation. Different implementations currently support zero-conf channels in different ways, so the author suggests changes to the funding flow to support it. The proposed changes include sending minimum_depth=0 in the accept_channel message if the fundee wants to skip confirmation, no change in the funding_signed message, and sending funding_locked messages from both parties, with the channel_id derived using a convention agreed on by both. The proposed convention involves using the first 8 bytes of the temporary_channel_id provided in previous open_channel messages to initialize an unsigned integer called shortID and applying a transformation to ensure the block height falls in the range of 100,000 - 2^18+100,000. When the channel is confirmed, gossip messages are re-broadcasted and refer to the confirmed channel_id. The author has created a pull request in LND that implements these changes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:58:23.890239+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dynamic Commitments: Upgrading Channels Without On-Chain Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-08-23 04:26:16
+            <br><i>Published on: 2020-08-23T04:26:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2020/combined_Dynamic-Commitments-Upgrading-Channels-Without-On-Chain-Transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002779.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty, a member of the Lightning Labs squad, has written about making an initial switch over double-opt-in, which would involve adding two new messages: `commit_switch` and `commit_switch_reply`. In terms of etiquette, he suggests retaining the "initiator" only system. If both parties can initiate, then collisions would need to be handled. Rusty also proposes a linear progression of channel types, with type n+1 always preferred over type n, thereby reducing the test matrix at some point by dropping older formats. While inventing a new commitment type numbering scheme is deemed unnecessary, Rusty suggests using existing feature bits and defining what upgrades are permissible. He proposes sending `commit_switch` with features and doing feature matching to determine new features for the channel. Upgrades will be a noop if one requires a feature that the other doesn't offer, or if the combination offers no new features. Rusty outlines the conditions for adding HTLCs after sending `commit_switch`. He proposes upgrading to anchor_outputs in three steps: releasing support for anchor_outputs, supporting upgrading to anchor_outputs, and requiring anchor_outputs, unilaterally closing channels without (ideally very few!). A feature bit for upgrades is needed, and Rusty wonders whether anyone is working on this right now.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:48:15.410574+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

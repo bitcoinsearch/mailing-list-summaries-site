@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Hold fees: 402 Payment Required for Lightning itself</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-10-15 01:49:33
+            <br><i>Published on: 2020-10-15T01:49:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_Hold-fees-402-Payment-Required-for-Lightning-itself.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002847.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Joost Jager explains that hold fees don't need to be symmetric and a new node opening a channel to an established routing node will be forced to pay a hold fee but won’t receive any traffic if it announces a hold fee itself. Reputation building is important for nodes to command hold fees. Routing nodes with a strong relationship may decide not to charge hold fees to each other at all. An attacker can establish channels to low-reputation nodes and then use them to grief a high-reputation node, but LOW-REP can charge an unknown node a hold fee and waive the hold fee for high-reputation nodes. If a node charges hold fees, it needs to be selective with whom it accepts HTLCs from and successful forwards can earn a routing fee compensating for the loss in hold fees. This mechanism can create interesting dynamics on the network and eventually reach an equilibrium that is healthy in terms of decentralization and privacy. However, creating rules for nodes using actual numbers may lead to complexity spiral as different ways of exploitation exist.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:38:22.419019+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

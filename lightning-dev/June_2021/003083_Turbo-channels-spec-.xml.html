@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Turbo channels spec?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2021-06-30 00:09:27
+            <br><i>Published on: 2021-06-30T00:09:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2021/combined_Turbo-channels-spec-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003083.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to Rusty, Bastien Teinturier discusses the `funding_locked` message in Eclair. They send it as soon as they see the funding transaction in the mempool, but Rusty suggests waiting for confirmation before sending it. Rusty proposes that this would still be backward compatible. The `announcement_signatures` message is also discussed, and Bastien asks if it should be deferred until after the funding tx has been confirmed, and what `min_depth` should be used. Rusty responds that it has to be at least 1, and that it is compliant with the spec to wait until `funding_locked` has been sent and received, and the funding transaction has at least six confirmations before sending `announcement_signatures`.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T04:28:39.320782+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Griefing-Penalty: A proposal for mitigating Griefing Attack</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Subhra Mazumdar 2020-05-30 04:18:35
+            <br><i>Published on: 2020-05-30T04:18:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2020/combined_Griefing-Penalty-A-proposal-for-mitigating-Griefing-Attack.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002728.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The authors propose a countermeasure, called the Griefing-Penalty, to mitigate griefing attacks in Bitcoin-compatible payment channel networks (PCNs). The proposed strategy aims to penalize any party attempting to launch a griefing attack on the network, thus disincentivizing adversaries from stalling the network and enforcing good behavior. Under the current specification of the Lightning Network, griefing attacks do not result in any financial loss for the adversary, potentially leading to financial gain out of routing several transactions if a competitor gets eliminated.The Griefing-Penalty introduces an extra round before initiating the lock phase and adds two hashes to the off-chain contract, one for normal payment and one for error, to prevent reverse-griefing. An honest-rational party will follow the protocol unless a strictly more rewarding strategy exists. Any forwarding node increases liquidity on the Lightning Network to capture some of the increased value, directly or indirectly.The Hashed Timelock Contract with Griefing-Penalty (HTLC-GP) is proposed as a payment protocol designed to mitigate loss due to griefing attacks in off-chain contracts. The protocol requires both parties to lock funds, with one party locking the amount to be forwarded and the other locking a penalty to be claimed if they grief. The penalty is proportional to the product of the forwarded amount and the contract expiration time.The HTLC-GP protocol is privacy-preserving, and honest nodes are compensated for any losses due to griefing attacks. The modified contract requires the recipient to lock an additional amount in the contract, which can be used to compensate both the sender and intermediate nodes in case of griefing. If the payment is not resolved within the expiration time, all parties who have forwarded the contract will claim the penalty locked in the contract.In conclusion, the HTLC-GP protocol provides a solution to the problem of griefing attacks in off-chain contracts by penalizing the adversary and compensating all affected parties. The authors suggest that the community review the feasibility of the approach and its implementation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:34:37.948691+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

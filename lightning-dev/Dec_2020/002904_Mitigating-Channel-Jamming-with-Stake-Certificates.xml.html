@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigating Channel Jamming with Stake Certificates</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2020-12-01 17:35:41
+            <br><i>Published on: 2020-12-01T17:35:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2020/combined_Mitigating-Channel-Jamming-with-Stake-Certificates.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002904.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread on the Lightning-dev mailing list, a user named Antoine expresses concern over the "point-to-point property" of authenticating incoming HTLC traffic from neighbors through their expensive channels. They argue that routing nodes are not decisionary of the HTLC traffic going through them and their outgoing traffic might be far superior to their locked channel utxos, requiring them to compensate the HTLC receiver for the difference, leading to fees. They suggest stake certificates overlaying the liquidity effective user with the HTLC sender instead, who should care about using liquidity resources reasonably, rather than routing nodes.ZmnSCPxj responds by discussing "loop attacks," which require that the start and end of a payment are controlled by the same entity. They note that stake certificates make the node itself expensive, preventing single entities running multiple nodes from performing such loop attacks. They also suggest that the existing point-to-point property in the Lightning Network is sufficient to prevent loop attacks and that we should focus on mitigating the effects of incompetence-based non-attacks instead.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:00:57.029328+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

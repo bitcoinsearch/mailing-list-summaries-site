@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Hold fee rates as DoS protection (channel spamming and jamming)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2021-02-11 15:24:05
+            <br><i>Published on: 2021-02-11T15:24:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2021/combined_Hold-fee-rates-as-DoS-protection-channel-spamming-and-jamming-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002961.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the issue of using feerates versus fixed fees in a scenario where a channel is forced on-chain. The concern is raised that if a channel is forced on-chain after an HTLC is offered to another party, the transaction could remain floating in mempools until close to the timeout of the channel, leaving the party who offered the HTLC liable for a large amount of time. In this case, the parameters of the HTLC, including penalties owed by the receiver, would be fixed at the time the channel was dropped on-chain. The simplicity of fixed fees lies in the fact that it bounds the risk that the offering party has in case their outgoing channel is dropped on-chain. On the other hand, variable fees could be capped at a level that is not considered risky but will not fully cover the actual cost of the locked-up HTLC. Additionally, any anti-DoS fee may turn out to be insignificant to the cost of closing and reopening a channel with the state of the mempool these days.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:44:10.235953+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

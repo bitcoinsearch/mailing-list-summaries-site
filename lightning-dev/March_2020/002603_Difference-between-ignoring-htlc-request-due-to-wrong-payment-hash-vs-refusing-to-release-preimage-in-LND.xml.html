@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Difference between ignoring htlc request due to wrong payment hash vs refusing to release preimage in LND</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Subhra Mazumdar 2020-03-24 09:06:28
+            <br><i>Published on: 2020-03-24T09:06:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2020/combined_Difference-between-ignoring-htlc-request-due-to-wrong-payment-hash-vs-refusing-to-release-preimage-in-LND.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-March/002603.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation revolves around the issue of unresolved HTLCs while probing in LND. The process of probing sets up a chain of irredeemable HTLCs, which eventually escrows funds and forces nodes to wait until the HTLCs time out before being able to forward other payments. This can cause a DOS attack on the probe route, giving only one shot at probing before having to wait multiple hours for the HTLCs to expire. The discussion also touches upon the scenario where funds remain locked due to locktime, and the possibility of mimicking griefing attack scenarios in LND. The conversation recommends modifying LND code directly or using plugins in C-Lightning to achieve this.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T00:11:07.694744+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Simplified (but less optimal) HTLC Negotiation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-10-12 23:37:07
+            <br><i>Published on: 2020-10-12T23:37:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_-RFC-Simplified-but-less-optimal-HTLC-Negotiation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002831.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Labs team recently identified another area where the spec is insufficient, even though the HTLC state machine is optimal but complex. A new protocol has been introduced that simplifies things significantly, with only one pair of commitment transactions for any given commitment index and fee changes being deterministic. The new protocol is half-duplex, with each side taking turns, a turn_request and turn_reply message pair allows you to request when it is not your turn. If it's not your turn, it adds 1 RTT latency. On reconnect, you send two flags: send-in-progress (if you have sent the initial commitsig but not the final revocation) and receive-in-progress (if you have received the initial commitsig not not received the final revocation).</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:48:30.166806+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
