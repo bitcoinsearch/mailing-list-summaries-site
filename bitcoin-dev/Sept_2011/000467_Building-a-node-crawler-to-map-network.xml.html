@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Building a node crawler to map network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Steve 2011-09-06 14:17:29
+            <br><i>Published on: 2011-09-06T14:17:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/combined_Building-a-node-crawler-to-map-network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000467.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange, Mike Hearn suggests to a developer that they could experiment with writing a proxy that sits in front of bitcoind and multiplexes connections. The goal is to reduce socket exhaustion as users move to lightweight clients. BitCoinJ uses thread-per-connection so wouldn't do a good job of that right now, but allowing it to use a mix of async io and multi-threading would be a nice improvement. It'd need some changes to bitcoind as well for a really good effort, to allow for IPs to be forwarded. Later on, the developer responds saying that they are not confident enough to submit patches for bitcoinj yet, but building a pool protocol using protobufs and netty could potentially lead to implementing the kind of multiplexing proxy that Mike is talking about. However, the developer is unsure of the use case and whether the goal is to increase the default max connections of 8 without fundamentally altering the bitcoind concurrency model, or to provide capacity for a more hub/client oriented network. If the latter is the case, then this functionality should ideally be native to the client in the long term in the form of NIO.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T18:56:28.061179+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

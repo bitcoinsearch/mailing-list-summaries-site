@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>0.4rc1 known bugs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2011-09-07 15:07:25
+            <br><i>Published on: 2011-09-07T15:07:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/combined_0-4rc1-known-bugs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000478.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On September 6, 2011, Luke-Jr reported a fix for the encrypted-wallet mining issue. The suggested fix is to use unique_coinbase. The code was reviewed but it has not been tested yet. A test plan was created which includes running a clean testnet-in-a-box bitcoind with -keypool=1 and encrypting the wallet. Additionally, running bitcoind getnewaddress until keypool is exhausted, generating blocks via internal miner, verifying coinbase transactions have unique txids even though they pay-to default key, and generating blocks via getwork RPC call are also part of the test plan. This information can be found on a Github pull request created by Luke-Jr which Gavin Andresen commented on.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T18:51:13.212187+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
