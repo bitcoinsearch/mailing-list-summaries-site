@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd: bitcoin scope issue in main.cpp <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000670_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-23 09:56:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000672_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-24 05:02:30</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000681_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-24 18:11:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000671_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>theymos 2011-10-23 20:51:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000671_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>theymos 2011-10-23 20:51:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000681_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-24 18:11:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000671_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>theymos 2011-10-23 20:51:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000676_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>Amir Taaki 2011-10-24 14:31:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000672_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-24 05:02:30</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000681_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-24 18:11:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000672_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-24 05:02:30</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000676_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>Amir Taaki 2011-10-24 14:31:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000670_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-23 09:56:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000676_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>Amir Taaki 2011-10-24 14:31:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000670_Fwd-bitcoin-scope-issue-in-main-cpp.xml.html">Fwd: bitcoin scope issue in main.cpp</a>
+                        <b>John Smith 2011-10-23 09:56:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000670.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2011-10-23T09:56:00+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email exchange between Dean Gores and laanwj at gmail.com, a bitcoin scope issue in main.cpp was discussed. The issue was related to the declaration of "i" and "output" in the same scope within the AcceptToMemoryPool function. The code containing these tricks is disabled, but it still doesn't look good.Theymos stated that it was legal for a scope to define variables with names that conflict with higher-level scopes. John Smith acknowledged that there were "This is legal in C++" tricks used in the bitcoin source code, but if all the tricks were used, it would make the code even less maintainable and readable than it already is. Amir Taaki added his thoughts on various issues with the code, including uninitialized variables and non-virtual destructors. The discussion suggests that there are some questionable coding practices in the Bitcoin source code. It is important for developers to pay attention to variable naming and scope to avoid conflicts and ensure smooth functioning of their code. Proper organization and structuring of code can also aid in identifying and addressing issues more efficiently. In the code snippet provided in main.cpp, there are variables named "input" and "output" that have been declared in the same scope, causing an issue with the AcceptToMemoryPool function. The code block shown appears to be incomplete, ending abruptly at the line "for (int i = 0; i". Without further context or information, it is difficult to determine the root cause of the problem or suggest a specific solution. However, it is likely related to variable scoping or naming conventions within the code. It may be necessary to modify variable names or adjust the scope of certain variables in order to resolve the issue.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-04T20:50:55.434933+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
