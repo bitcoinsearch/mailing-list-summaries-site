@@ -19,8 +19,13 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/July_2018/001380_Measuring-Lightning-Nodes.xml.html">Measuring Lightning Nodes</a>
-                        <b>Christian Decker 2018-07-29 14:35:09</b>
+                        <a href="/lightning-dev/July_2018/001379_Measuring-Lightning-Nodes.xml.html">Measuring Lightning Nodes</a>
+                        <b>Артём Литвинович 2018-07-29 15:36:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/July_2018/001381_Measuring-Lightning-Nodes.xml.html">Measuring Lightning Nodes</a>
+                        <b>Davison 2018-07-29 17:34:20</b>
                     </li>
                 
                     <li>
@@ -39,26 +44,21 @@
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/July_2018/001379_Measuring-Lightning-Nodes.xml.html">Measuring Lightning Nodes</a>
-                        <b>Артём Литвинович 2018-07-29 15:36:45</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/July_2018/001381_Measuring-Lightning-Nodes.xml.html">Measuring Lightning Nodes</a>
-                        <b>Davison 2018-07-29 17:34:20</b>
+                        <a href="/lightning-dev/July_2018/001380_Measuring-Lightning-Nodes.xml.html">Measuring Lightning Nodes</a>
+                        <b>Christian Decker 2018-07-29 14:35:09</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-July/001380.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-July/001379.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2018-07-29T14:35:09+00:00</i></p>
+        <p><i>Published on: 2018-07-29T15:36:45+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>Alex Evanovic asked for suggestions on how to measure the current state of lightning nodes in the Lightning-dev mailing list. Christian, another member of the group, responded by suggesting various aspects that one can measure, such as network topology, monitoring a single node, or the success rate of payments made on the network. Measuring lightning nodes is essential for understanding the performance of the network and identifying areas that need improvement. Swayam expressed interest in measuring the network topology of the lightning network, and Davison suggested looking up information on explorer sites like 1ml.org. Robert Olsson, a Lightning Network developer, has provided a way to access raw graph data from one of his nodes through <a href="https://rompert.com/networkgraph.To">https://rompert.com/networkgraph.To</a> measure the performance of lightning nodes accurately requires a combination of tools, analysis techniques, and expertise in the lightning network protocol. One can use Lightning Labs' LND Dashboard and Node Launcher or third-party solutions such as RTL and ThunderHub. Analyzing the network traffic and node behavior using packet sniffing or other network analysis techniques can provide insights into the data transmitted between nodes and help identify bottlenecks or other network issues impacting performance.To measure the number of nodes and channels in the Lightning Network, one can connect to any LN node and set the initial_routing_sync flag in the init message. Listnodes and listchannels commands with lightning-cli can also be used to query c-lightning nodes. Alternatively, explorer sites like 1ml.com can provide this information without running a node or performing any actions.In conclusion, measuring lightning nodes requires a deep understanding of the network architecture and the tools available for monitoring it. Members of the Lightning-dev mailing list can provide valuable insights and suggestions for those interested in measuring lightning nodes, and there are several ways to measure the number of nodes and channels in the network.</p>
+        <p>To measure the Lightning network topology, one can connect to any LN node and set initial_routing_sync flag in init message, which will prompt the peer to send the whole gossip dump containing node and channel information of every public node/channel. Alternatively, one can use listnodes and listchannels commands with lightning-cli to query their c-lightning node. For those who do not want to run a node or make anything, they can look up on explorer sites such as 1ml.com. If someone wants raw graph data without having a node, they can get it from one of the lnd nodes at <a href="https://rompert.com/networkgraph">https://rompert.com/networkgraph</a>. One can monitor/measure various things like monitoring a single node or success rate of payments performed on the network.</p>
         <hr>
-        <p><i>Updated on: 2023-06-02T03:43:42.786819+00:00</i></p>
+        <p><i>Updated on: 2023-05-25T02:00:54.926134+00:00</i></p>
     
 
     

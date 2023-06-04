@@ -19,8 +19,8 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/April_2018/001176_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html">Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</a>
-                        <b>ZmnSCPxj 2018-04-13 13:10:56</b>
+                        <a href="/lightning-dev/April_2018/001153_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html">Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</a>
+                        <b>ZmnSCPxj 2018-04-10 09:44:15</b>
                     </li>
                 
                     <li>
@@ -29,21 +29,21 @@
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/April_2018/001153_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html">Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</a>
-                        <b>ZmnSCPxj 2018-04-10 09:44:15</b>
+                        <a href="/lightning-dev/April_2018/001176_Closing-Transaction-Cut-through-as-a-Generalization-of-Splice-in-Splice-out.xml.html">Closing Transaction Cut-through as a Generalization of Splice-in/Splice-out</a>
+                        <b>ZmnSCPxj 2018-04-13 13:10:56</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001176.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001153.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2018-04-13T13:10:56+00:00</i></p>
+        <p><i>Published on: 2018-04-10T09:44:15+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>ZmnSCPxj and Christian discuss the connection between channel factories, with ZmnSCPxj suggesting that a way to invalidate a prior funding transaction is necessary for reseat without needing a cut-through. He proposes introducing a `reseatchannel` command at c-lightning RPC level to transfer remaining funds of a channel from one peer to another. The `multifundchannel` creates a new channel factory, while `reseatchannel` is an off-chain channel reorganization request to the factory.The proposed alternative to splice-in/splice-out ("channel top-up") is implementing a "cut-through" for a channel close transaction. Both sides would provide signed normal transactions to create a new close transaction that cuts through the original close transaction and additional normal transactions. This generalization would allow reseating a channel to another peer using the closing transaction cut-through in a single on-chain transaction if both peers and the node belong to the same channel factory.</p>
+        <p>A proposal has been made to implement a "cut-through" transaction instead of implementing a splice-in/splice-out ("channel top-up", etc.) for a channel close transaction. Both sides would provide signed normal transactions that spend the outputs, then they could cooperatively create a new close transaction that cuts through the original close transaction and the additional normal transactions. This generalization is useful if we want to "reseat" a channel to one peer to another peer. A reseat operation could use the closing transaction cut-through to close the channel and open to another peer in a single onchain transaction. Such a reseat operation also seems like a reasonable primitive for Burchert-Decker-Wattenhofer channel factories to offer; reseats can be done offchain if both the reseat-form peer and the reseat-to peer and the node belong to the same channel factory. The connection to channel factories is not necessary, as long as we have an invalidation scheme that allows us to invalidate a prior funding transaction we can reseat without needing a cut-through, just invalidate the funding tx of the old channel and add the funding tx for the new one in the new state. The proposal was presented as an operation to wallet implementers (or advanced users).</p>
         <hr>
-        <p><i>Updated on: 2023-06-02T02:43:44.647317+00:00</i></p>
+        <p><i>Updated on: 2023-05-24T23:10:38.659274+00:00</i></p>
     
 
     
