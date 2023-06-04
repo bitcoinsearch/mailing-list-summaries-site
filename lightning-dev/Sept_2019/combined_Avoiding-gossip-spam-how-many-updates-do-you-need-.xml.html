@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Sept_2019/002149_Avoiding-gossip-spam-how-many-updates-do-you-need-.xml.html">Avoiding gossip spam: how many updates do you need?</a>
+                        <b>ZmnSCPxj 2019-09-15 12:27:11</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Sept_2019/002134_Avoiding-gossip-spam-how-many-updates-do-you-need-.xml.html">Avoiding gossip spam: how many updates do you need?</a>
                         <b>Rusty Russell 2019-09-05 06:59:57</b>
                     </li>
@@ -28,22 +33,17 @@
                         <b>Christian Decker 2019-09-18 13:52:46</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Sept_2019/002149_Avoiding-gossip-spam-how-many-updates-do-you-need-.xml.html">Avoiding gossip spam: how many updates do you need?</a>
-                        <b>ZmnSCPxj 2019-09-15 12:27:11</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002134.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002149.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2019-09-05T06:59:57+00:00</i></p>
+        <p><i>Published on: 2019-09-15T12:27:11+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p></p>
+        <p>A Lightning Network developer has proposed a new method for passively rebalancing channels to help JIT-Routing of nearby nodes by broadcasting a `channel_update` with zero routing fees if there is too much liquidity on one side of the channel. The next release of c-lightning will implement a simple filter to suppress gossip that comes too fast, allowing each message (node_announcement or channel_update) once per day on average, with a burst up to 4 times per day. Other measures include using gossip_queries for backfilling, no longer asking for the last 24 hours of gossip on startup, suppressing duplicate gossip and reply gossip, and issuing "refresh" updates only once every 13 days instead of the current seven.While it is fine to use zero routing fees for rebalancing a channel, it falls outside the scope of `channel_update`s as they are not meant for local communication among a group of nodes. A `local_channel_update` with a small TTL was suggested instead to limit its spread for this kind of communication. The user also advocates for active rebalancing over indirect signaling through negative fees and suggests using local updates as offers for zero-fee forwarding without telling the wider world about the balances in your channel. The user proposes having separate negotiation logic for these scenarios rather than adding more complexity to an already complex set of rules.</p>
         <hr>
-        <p><i>Updated on: 2023-06-02T20:10:45.282991+00:00</i></p>
+        <p><i>Updated on: 2023-06-03T22:28:42.148593+00:00</i></p>
     
 
     

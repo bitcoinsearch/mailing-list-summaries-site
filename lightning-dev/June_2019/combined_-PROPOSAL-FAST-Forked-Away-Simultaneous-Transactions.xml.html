@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/June_2019/002045_-PROPOSAL-FAST-Forked-Away-Simultaneous-Transactions.xml.html">[PROPOSAL]: FAST - Forked Away Simultaneous Transactions</a>
+                        <b>Ugam Kamat 2019-06-26 07:47:12</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/June_2019/002032_-PROPOSAL-FAST-Forked-Away-Simultaneous-Transactions.xml.html">[PROPOSAL]: FAST - Forked Away Simultaneous Transactions</a>
                         <b>René Pickhardt 2019-06-25 11:32:36</b>
                     </li>
@@ -53,22 +58,17 @@
                         <b>Christian Decker 2019-06-28 17:38:47</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/June_2019/002045_-PROPOSAL-FAST-Forked-Away-Simultaneous-Transactions.xml.html">[PROPOSAL]: FAST - Forked Away Simultaneous Transactions</a>
-                        <b>Ugam Kamat 2019-06-26 07:47:12</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002032.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002045.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2019-06-25T11:32:36+00:00</i></p>
+        <p><i>Published on: 2019-06-26T07:47:12+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p></p>
+        <p>A new proposal for the Lightning Network payment protocol involves branching payments. This works similarly to the Spontaneous Payment proposal by packing additional data in unused hops. When pre-images arrive at node D, they are combined using PM = f(P1, P2). The shared secret is created using the ephemeral public key of the sender and private key of Dave. Not all nodes need to support this feature, but those that can handle branching payments can signal using global features.However, there are concerns regarding the probability of transaction failures increasing as the transaction is now dependent on 2/3 branches. To address this issue, Ugam Kamat suggests that not all nodes need to support this feature. The nodes that can handle branching payments can signal that using global features. A loophole in the proposal has been pointed out that could potentially lead to DoS and failure attacks in the channels.The discussion highlights the issue of fork points and join points along a multipart path in a payment system which allows for potential attacks. Two choices have been presented to address this issue, and a plausible solution is suggested to choose the second option and have Eric and Grace coordinate to only take incoming payment if both of them receive it.Christian has proposed a modification to this proposal to allow for variable payloads instead of fixed 65 byte frames. This can be done by repurposing the onion blob in a similar way to Spontaneous Payments with slight modifications. The commitment transactions between nodes A & B, B & C, and C & D now carry only one HTLC instead of two, resulting in lower fees for on-chain settlement and lower routing fees for Alice, as Bob and Charlie would not get to charge for two routings. Overall, further research is required to resolve some issues with proof of payment. However, the proposal offers advantages such as lower fees for on-chain settlements, lower routing fees for Alice, and more HTLCs in flight.</p>
         <hr>
-        <p><i>Updated on: 2023-06-02T19:03:21.650215+00:00</i></p>
+        <p><i>Updated on: 2023-06-03T22:11:35.748804+00:00</i></p>
     
 
     

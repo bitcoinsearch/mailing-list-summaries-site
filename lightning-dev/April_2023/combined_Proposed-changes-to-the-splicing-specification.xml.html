@@ -19,8 +19,8 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/March_2023/003895_Proposed-changes-to-the-splicing-specification.xml.html">Proposed changes to the splicing specification</a>
-                        <b>Bastien TEINTURIER 2023-03-31 09:04:24</b>
+                        <a href="/lightning-dev/April_2023/003897_Proposed-changes-to-the-splicing-specification.xml.html">Proposed changes to the splicing specification</a>
+                        <b>Antoine Riard 2023-04-03 17:01:39</b>
                     </li>
                 
                     <li>
@@ -39,21 +39,21 @@
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/April_2023/003897_Proposed-changes-to-the-splicing-specification.xml.html">Proposed changes to the splicing specification</a>
-                        <b>Antoine Riard 2023-04-03 17:01:39</b>
+                        <a href="/lightning-dev/March_2023/003895_Proposed-changes-to-the-splicing-specification.xml.html">Proposed changes to the splicing specification</a>
+                        <b>Bastien TEINTURIER 2023-03-31 09:04:24</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003895.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-April/003897.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2023-03-31T09:04:24+00:00</i></p>
+        <p><i>Published on: 2023-04-03T17:01:39+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p></p>
+        <p>The Lightning Network team has announced changes to the splicing protocol, allowing users to add or remove funds from a channel without closing it first. The new protocol will simplify the process by using active commitments and sending one commitment_signed message per active commitment in the order that funding transactions were created. Funding amounts exchanged in splice_init and splice_ack will be relative amounts based on each peer's current channel balance. Although implementing 0-conf splicing remains problematic due to the risks of vulnerabilities, the Lightning Network developers are interested in discussing this further. ZmnSCPxj suggests a proposal for cases where an LSP is doing splice-in while the other side is a client of that LSP. This protocol can be applied to splice-in and channel factory construction with the promise that the LSP will do its best to get the transaction confirmed before a future blockheight so that the client can rely on it being confirmed later. However, this proposal is risky for the LSP because the LSP is held liable if the TXID never confirms, leading to lost funds and a destroyed reputation.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T12:31:26.859613+00:00</i></p>
+        <p><i>Updated on: 2023-06-04T04:53:46.721123+00:00</i></p>
     
 
     

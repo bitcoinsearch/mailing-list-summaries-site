@@ -19,6 +19,16 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/May_2019/001994_Eltoo-anyprevout-and-chaperone-signatures.xml.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>ZmnSCPxj 2019-05-16 01:48:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/001996_Eltoo-anyprevout-and-chaperone-signatures.xml.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>Anthony Towns 2019-05-16 15:37:48</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/May_2019/001992_Eltoo-anyprevout-and-chaperone-signatures.xml.html">Eltoo, anyprevout and chaperone signatures</a>
                         <b>Bastien TEINTURIER 2019-05-15 09:23:09</b>
                     </li>
@@ -43,27 +53,17 @@
                         <b>ZmnSCPxj 2019-05-18 16:45:07</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/May_2019/001994_Eltoo-anyprevout-and-chaperone-signatures.xml.html">Eltoo, anyprevout and chaperone signatures</a>
-                        <b>ZmnSCPxj 2019-05-16 01:48:51</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/May_2019/001996_Eltoo-anyprevout-and-chaperone-signatures.xml.html">Eltoo, anyprevout and chaperone signatures</a>
-                        <b>Anthony Towns 2019-05-16 15:37:48</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-May/001992.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-May/001994.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2019-05-15T09:23:09+00:00</i></p>
+        <p><i>Published on: 2019-05-16T01:48:51+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The Bitcoin-dev mailing list saw a discussion on the use of the collaborative path in Taproot, expressing concerns with its compatibility with update_tx. The conversation then moved towards potential optimizations unlocked by taproot/tapscript and a series of eltoo scripts passed around for private discussion. These scripts described an eltoo update transaction, settlement transaction, and HTLC claim/refund transactions that utilized muSig. The proposed UPDATE TX script was estimated to be about 282 weight units total. The conversation touched on various aspects of the proposed scripts, including combining multiple UPDATE TXs and SETTLEMENT TXs, adding fees, and calculating the private key using ECDH between peers to generate the seed. Overall, the scripts were considered more "thought bubble" than draft at the time of discussion.</p>
+        <p>The Lightning Network's Eltoo update mechanism was discussed in several forums and mailing lists, with participants proposing ways to optimize it using taproot/tapscript. One suggestion was to use a shared private key to collapse 1-of-2 multisigs into a single-sig, while MuSig could be employed to reduce the need for `OP_CHECKMULTISIG`/`OP_CHECKSIGADD`. Additionally, there may not be a requirement for an explicit `OP_CHECKSEQUENCEVERIFY`, or separate keys for state and update paths. The chaperone signature was also debated, with suggestions made to modify the update transactions by using the proposed OP_IF/OP_ELSE structure. In this structure, Alice and Bob would exchange their anyprevoutanyscript signatures, and the chaperone signature could be provided by either party at transaction broadcast time. However, the chaperone idea might not play nice with taproot collaborative spends that require anyprevout/anyprevoutanyscript/noinput. ZmnSCPxj questioned the use of the "collaborative path" mentioned in a previous message, which refers to using the taproot-tweaked public key to sign without revealing any scripts. The bip-taproot proposal disallows all `SIGHASH` flags except for the current set of valid ones when using this path, which means it does not include `SIGHASH_NOINPUT`/`SIGHASH_ANYPREVOUT`. Participants suggested that the collaborative path is only useful unless parties are cooperatively closing anyway, since they don't need to require `SIGHASH_ANYPREVOUT` once they agree to spend the funding txo. Finally, Bastien Teinturier discussed the separation between anyprevout and anyprevoutanyscript, noting that it simplifies funding transactions and removes the need for a trigger transaction. However, integrating the chaperone signature is more complicated. Christian Decker proposed using a shared private key to collapse 1-of-2 multisigs into a single-sig, while also acknowledging that the chaperone idea might not be compatible with taproot collaborative spends that require anyprevout/anyprevoutanyscript/noinput. He concluded by noting the importance of ensuring Eltoo can support chaperone signatures, even though it is uncertain if they will eventually be needed.</p>
         <hr>
-        <p><i>Updated on: 2023-06-02T18:37:12.128648+00:00</i></p>
+        <p><i>Updated on: 2023-06-03T21:58:45.358999+00:00</i></p>
     
 
     

@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/April_2023/003905_Splice-Lock-Race-Condition-Solution.xml.html">Splice Lock Race Condition Solution</a>
+                        <b>Dusty Daemon 2023-04-06 16:14:41</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/April_2023/003904_Splice-Lock-Race-Condition-Solution.xml.html">Splice Lock Race Condition Solution</a>
                         <b>Bastien TEINTURIER 2023-04-06 15:49:46</b>
                     </li>
@@ -28,22 +33,17 @@
                         <b>Dustin Dettmer 2023-04-04 19:45:03</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/April_2023/003905_Splice-Lock-Race-Condition-Solution.xml.html">Splice Lock Race Condition Solution</a>
-                        <b>Dusty Daemon 2023-04-06 16:14:41</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-April/003904.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-April/003905.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2023-04-06T15:49:46+00:00</i></p>
+        <p><i>Published on: 2023-04-06T16:14:41+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p></p>
+        <p>Dustin Dettmer has discovered a race condition that can occur during the 'splice_locked' workflow and needs to be addressed. This issue arises if any channel activity occurs between sending and receiving `splice_locked`. The proposed solution involves storing the last_short_channel_id to determine which announcement messages can be safely ignored until sending or receiving `revoke_and_ack`. This would make the protocol and nodes more robust. The ideal solution requires more effort but is critical for implementations to handle correctly to avoid breaking or force closing during the splice lock process. Dustin's solution suggests allowing a certain class of 'stale' messages for a period of time until either mutual_splice_locked or successful commitment_signed/revoke_and_ack round trip in either direction.The solution proposed by Dustin involves temporary storing two items: the `last_short_channel_id` (the pre-splice short channel id) and `splice_await_commitment_success` (a boolean flag). After sending and receiving `splice_locked`, the `last_short_channel_id` should be set to the pre-splice short channel id, and `splice_await_commitment_success` should be flagged as true. If an `announcement_signatures` message is received with an scid matching `last_short_channel_id`, the message should be ignored, and the channel connection should not be aborted. If a `commitment_signed` message is received with the tlv `splice_info->splice_channel_id` set to something other than the successfully confirmed splice channel_id, the message should be ignored.Once `revoke_and_ack` is successfully sent or received, `last_short_channel_id` and `splice_await_commitment_success` should be reset, and normal validation of `announcement_signatures` and `commitment_signed` should resume. This solution solves the race condition while preserving as strict a validation of messages as possible without adding new fields to these messages. Despite being not a protocol issue, this critical detail needs to be handled correctly by implementations to avoid breaking or force closing during the splice lock process.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T12:32:36.532153+00:00</i></p>
+        <p><i>Updated on: 2023-06-04T04:54:37.979447+00:00</i></p>
     
 
     

@@ -19,6 +19,26 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/March_2016/000464_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
+                        <b>Rusty Russell 2016-03-07 23:31:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2016/000470_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
+                        <b>CJP 2016-03-08 07:19:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2016/000480_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
+                        <b>Rusty Russell 2016-03-08 06:02:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2016/000477_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
+                        <b>Nicolas Dorier 2016-03-08 16:38:11</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/March_2016/000459_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
                         <b>Nicolas Dorier 2016-03-07 12:35:30</b>
                     </li>
@@ -58,37 +78,17 @@
                         <b>Rusty Russell 2016-03-09 00:43:36</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/March_2016/000464_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Rusty Russell 2016-03-07 23:31:52</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000470_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>CJP 2016-03-08 07:19:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000480_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Rusty Russell 2016-03-08 06:02:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000477_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Nicolas Dorier 2016-03-08 16:38:11</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000459.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000464.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2016-03-07T12:35:30+00:00</i></p>
+        <p><i>Published on: 2016-03-07T23:31:52+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The proposal is to make RValues of HTLC/Payment channel contracts backward deterministic. This can be achieved by choosing an RValue such that RValue(n+1) = PreImage(RValue(n)), where n is the commitment index. If Alice cheats Bob at a commitment, Bob only has to remember RValue(99) from the 99th revocation. Commitment Revocation is only accepted if RValue(n+1) = PreImage(RValue(n)). A downside is that Alice needs to regenerate all hashes every time she needs a new commitment, but this can be mitigated by her storing some pre-computed values along the path.The conversation between CJP and Nicolas Dorier revolves around deriving R values from a tree structure for larger lightning networks. They discuss how it could work between two nodes, but if different transactions follow different routes, does that mean the tree structure somehow has to be shared across all nodes? Rusty Russell suggests using hashing in the Deployable Lightning paper but didn't actually spell out the idea. Mats Jerratsch chimes in with a scenario where Alice could want to receive more money and accept other payments, but not a particular one. However, by doing so, she would automatically disclose R for any old payment.In a Lightning-dev discussion, Mats Jerratsch questioned the possibility of Alice not wanting to disclose R in case Bob charged her too much fee or paid too little. Rusty Russell clarified that R usually means the chained atomic swap preimage and "revocation preimage" is used for invalidating old transactions. In response to CJP's query about how tree structure works for larger Lightning networks, Nicolas Dorier suggested using hashing, which Rusty Russell affirmed was Adam Back's idea. When Nicolas Dorier shared an idea about one-way deterministic R-value generation, Rusty Russell referred him to ccan/crypto/shachain.There were also some clarifications made regarding R values and commit revocation hash, and the use cases for disclosure of R values. The idea of 'proof-of-payment'/'pay-to-contract' relies on only revealing R for an accepted payment. Knowing R is no longer proof of having made a payment if it is disclosed when the payment isn't in the current commitment. Nicolas Dorier asks why R values are used in the first place without HTLCs. Mats Jerratsch explains further and they discuss the case of a simple bipayment channel, without HTLC in the equation, where all payments are sequential.</p>
+        <p>The Lightning Network's use of R values in bipayment channels without HTLCs is discussed in several email conversations and posts on Lightning-dev. Nicolas Dorier and Rusty Russell discuss the idea of one way deterministic RValue generation, with shachain being a variant that avoids generating millions of hashes. Mats Jerratsch expresses concerns about security implications of disclosing R values for payments not in the current commitment, to which Nicolas Dorier clarifies that Shachain can be used to avoid generating too many hashes in advance. Additionally, the proposal suggests making the RValues backward deterministic. The email threads also highlight nomenclature clashes and limited understanding of the latest developments in Lightning technology.</p>
         <hr>
-        <p><i>Updated on: 2023-05-23T22:59:37.861595+00:00</i></p>
+        <p><i>Updated on: 2023-06-03T16:19:34.727895+00:00</i></p>
     
 
     

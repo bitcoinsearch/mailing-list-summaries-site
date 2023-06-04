@@ -19,8 +19,8 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/May_2020/002715_Miners-Dust-Inflation-attacks-on-Lightning-Network.xml.html">Miners Dust Inflation attacks on Lightning Network</a>
-                        <b>ZmnSCPxj 2020-05-19 00:52:09</b>
+                        <a href="/lightning-dev/May_2020/002714_Miners-Dust-Inflation-attacks-on-Lightning-Network.xml.html">Miners Dust Inflation attacks on Lightning Network</a>
+                        <b>Antoine Riard 2020-05-18 10:28:21</b>
                     </li>
                 
                     <li>
@@ -34,21 +34,21 @@
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/May_2020/002714_Miners-Dust-Inflation-attacks-on-Lightning-Network.xml.html">Miners Dust Inflation attacks on Lightning Network</a>
-                        <b>Antoine Riard 2020-05-18 10:28:21</b>
+                        <a href="/lightning-dev/May_2020/002715_Miners-Dust-Inflation-attacks-on-Lightning-Network.xml.html">Miners Dust Inflation attacks on Lightning Network</a>
+                        <b>ZmnSCPxj 2020-05-19 00:52:09</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002715.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002714.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2020-05-19T00:52:09+00:00</i></p>
+        <p><i>Published on: 2020-05-18T10:28:21+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p></p>
+        <p>The Lightning protocol allows for a floating dust output selection at channel creation, with each party declaring a dust parameter applying to its local transactions. However, the current specification does not enforce or recommend any bound on this value beyond being lower than `channel_reserve_satoshis`. An attack scenario is presented in which Mallory announces a channel to Alice with a dust-limit-satoshi set to 20% of channel value. This allows Mallory to route four dust-HTLCs through Alice and claim ~80% of the channel value, with Mallet claiming the whole set of HTLCs by revealing the corresponding preimage for each. To mitigate this attack, negotiating a new `max_dust_htlc_value_in_flight_msat` enforced by the HTLC recipient can express maximum trust tolerance with regards to dust.It is suggested that setting up an `htlc_minimum_msat` higher than remote's `dust_limit_satoshis` can forbid dust HTLC, but also outlaw low-value payments. Negotiating a new `max_dust_htlc_value_in_flight_msat` enforced by HTLC recipient can mitigate attacks, but it will lead to reduced reliability on micropayments. Even without a spec change, such a setting may be enforced by a forwarding node by refusing to forward an HTLC once a certain level of incoming dust HTLCs are currently in-flight. Adding this to the spec has the advantage that an honest forwarder can hold an HTLC for a while once it notices that the next hop has a bunch of dusty HTLCs in-flight that are beyond the negotiated `max_dust_htlc_value_in_flight_msat`, which might help reliability of micropayments slightly. In a recent message exchange, ZmnSCPxj suggests that state machine shenanigans do not work in preventing irrevocable removal of HTLCs in the incoming channel. The miner can recover funds by closing the outgoing channel. Despite the suggested solution, it seems reliability is still reduced, as the micropayment bandwidth can easily be saturated. A cost on the HTLC holder would make the attack more expensive, but a different order of magnitude may be needed for spam-protection efficiency.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T01:28:07.223745+00:00</i></p>
+        <p><i>Updated on: 2023-06-04T00:21:06.494196+00:00</i></p>
     
 
     

@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Sept_2021/003227_Storing-the-Merkle-Tree-in-a-compact-way.xml.html">Storing the Merkle Tree in a compact way</a>
+                        <b>shymaa arafat 2021-09-11 03:00:12</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Sept_2021/003228_Storing-the-Merkle-Tree-in-a-compact-way.xml.html">Storing the Merkle Tree in a compact way</a>
                         <b>Vincent 2021-09-16 12:37:24</b>
                     </li>
@@ -28,22 +33,17 @@
                         <b>shymaa arafat 2021-09-16 15:05:24</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Sept_2021/003227_Storing-the-Merkle-Tree-in-a-compact-way.xml.html">Storing the Merkle Tree in a compact way</a>
-                        <b>shymaa arafat 2021-09-11 03:00:12</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003228.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003227.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2021-09-16T12:37:24+00:00</i></p>
+        <p><i>Published on: 2021-09-11T03:00:12+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p></p>
+        <p>Shymaa M Arafat has introduced a simple idea to save storage and simplify traversing of the UTXOS Merkle Tree/forest. This method is specially appealing when all trees are full (complete) in the forest but can work for any Merkle Tree. The idea is to use a 2D array with variable row size, which gets rid of all the pointers. R[j] is of length (N/2^j), where j represents the level of the tree. For example, when N=8 nodes, R[0]={0,1,2,...,7}, R[1]={8,9,10,11}, R[2]={12,13}, and R[3]={14}. The total storage needed is just 2N-1 nodes, and there is no need for pointers. Traversing could be done neatly in any direction with the right formula.Shymaa provided pseudo code to fetch proof[i], which involves determining the direction to move, fetching the sibling node, and adding the rest through a loop. This method transforms recursion to an iteration and can work for any Merkle Tree. Vincent replied to a message from Shymaa asking for clarification on where she wants to save space with this compression on the Merkle Tree.The tree can be viewed as a simple complete tree to 1D array with no pointers, as described in lecture 8 at MIT OpenCourseWare. This method saves approximately 76 million * 2 (size of pointer, probably 4 bytes) * ~600MB with almost no effort. Since all trees in Utreexo forest are full binary trees, this method is perfect to use. However, Shymaa suggests putting it in a 2D array to make it easier to handle the indexing math since they traverse in many ways, normally to delete or insert, and the parent siblings for the proofs.The idea proposed by Shymaa solves the issues with storing N internal nodes along with 2N pointers and additional pointers in special leaves nodes to handle different traversing options. Although the Utreexo team may have solved their problem differently, Arafat believes this approach is worth sharing as it can work for any Merkle Tree.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T05:49:03.119467+00:00</i></p>
+        <p><i>Updated on: 2023-06-04T02:18:34.148255+00:00</i></p>
     
 
     

@@ -19,11 +19,6 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/Feb_2020/002529_New-paper-on-ant-routing.xml.html">New paper on ant routing</a>
-                        <b>ZmnSCPxj 2020-02-12 10:47:55</b>
-                    </li>
-                
-                    <li>
                         <a href="/lightning-dev/Feb_2020/002505_New-paper-on-ant-routing.xml.html">New paper on ant routing</a>
                         <b>LEHÉRICY Gabriel 2020-02-06 10:32:50</b>
                     </li>
@@ -31,6 +26,11 @@
                     <li>
                         <a href="/lightning-dev/Feb_2020/002509_New-paper-on-ant-routing.xml.html">New paper on ant routing</a>
                         <b>ZmnSCPxj 2020-02-09 00:57:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2020/002529_New-paper-on-ant-routing.xml.html">New paper on ant routing</a>
+                        <b>ZmnSCPxj 2020-02-12 10:47:55</b>
                     </li>
                 
                     <li>
@@ -51,14 +51,14 @@
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002529.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002505.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2020-02-12T10:47:55+00:00</i></p>
+        <p><i>Published on: 2020-02-06T10:32:50+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p></p>
+        <p>The proposed system aims to address the problem of payment failures during the pheromone phase by forwarding the pheromone to a neighbor only if the channel balance allows the transaction amount to go through. However, there are still some drawbacks to Ant Routing. One limitation is that having a single pheromone seed recognizable for the entire path prevents implementing any kind of path decorrelation. Additionally, routing failures are harder to handle since the payer does not know the whole path to the payee. Moreover, every payment requires a pheromone broadcasted, which negates the big-O scaling achieved by Lightning. In addition, surveillors can easily determine payments and the maximum distance to the destination and likely source with Ant Routing, which is the same as current Lightning. Despite these limitations, the authors claim that their proposed system can handle up to 10,000 transactions per second and may remain practical with certain optimizations.However, the possibility of an intermediate node failing after propagating a pheromone but before it could be routed through must also be considered. If the payer has only one channel, intermediate nodes need to store other pheromones with higher distance counters as well. The proposal upgrades the assumption that "the payee must be online to receive" to "the payee is *contactable by the payer* to receive" since the payee may be online but not contactable due to reasons such as being on an onion service. This means any routing proposal that requires continuous communication between payer and payee makes this assumption unreasonable.Lastly, the proposal suggests using just a one-byte distance counter, assuming that the network graph cannot have a diameter greater than 127 hops. With wraparound, a less than operation based on subtraction modulo 256 can be implemented to determine which of two distance counters is lesser or greater. Overall, the proposal aims to use nodes to triangulate effectively while taking into account the various possibilities of payment failures and communication issues.</p>
         <hr>
-        <p><i>Updated on: 2023-06-02T23:35:07.166885+00:00</i></p>
+        <p><i>Updated on: 2023-06-03T23:42:58.736249+00:00</i></p>
     
 
     

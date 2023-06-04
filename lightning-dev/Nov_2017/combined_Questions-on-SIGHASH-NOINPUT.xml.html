@@ -19,11 +19,6 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/Nov_2017/000776_Questions-on-SIGHASH-NOINPUT.xml.html">Questions on SIGHASH_NOINPUT</a>
-                        <b>Tomas 2017-11-10 12:27:35</b>
-                    </li>
-                
-                    <li>
                         <a href="/lightning-dev/Nov_2017/000780_Questions-on-SIGHASH-NOINPUT.xml.html">Questions on SIGHASH_NOINPUT</a>
                         <b>Tomas 2017-11-13 09:38:41</b>
                     </li>
@@ -38,17 +33,22 @@
                         <b>Rusty Russell 2017-11-15 10:37:22</b>
                     </li>
                 
+                    <li>
+                        <a href="/lightning-dev/Nov_2017/000776_Questions-on-SIGHASH-NOINPUT.xml.html">Questions on SIGHASH_NOINPUT</a>
+                        <b>Tomas 2017-11-10 12:27:35</b>
+                    </li>
+                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000776.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000780.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2017-11-10T12:27:35+00:00</i></p>
+        <p><i>Published on: 2017-11-13T09:38:41+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The discussion on the bitcoin-dev mailing list about using SIGHASH_NOINPUT raises some questions about its potential use in Lightning Network. The concern is that malleability problems could occur with every commitment transaction when using HTLC transactions, which depend on it. It's suggested that SIGHASH_NOINPUT could potentially fix this issue, but it would require separate keys on every output to ensure transactions can't be connected to the wrong outputs. It has been argued that SIGHASH_NOINPUT is important to prevent excessive recreation and routing of punishment transaction to 3rd party monitoring services. Rusty Russell believes that SIGHASH_NOINPUT is a generally nice thing to have, but extremely dangerous if you reuse keys at all. If you reuse addresses, a signed SIGHASH_NOINPUT input can be attached to either one, which may or may not be a problem depending on exact usage.</p>
+        <p>In a recent conversation between Tomas and Rusty Russell, the issue of malleation in commitment transactions was discussed. Rusty explained that malleation is a problem for every commitment transaction that uses HTLC transactions, but suggested that SIGHASH_NOINPUT could be used to work around this issue. However, he pointed out that separate keys are needed on every output to ensure transactions can't be connected to the wrong outputs. Tomas questioned whether the current specification already ensures that every key is only used once. Rusty clarified that while it is true for different commitment transactions, it's not the case for different HTLC outputs attached to the same transaction.Rusty then went on to explain that SIGHASH_NOINPUT cuts the number of updates down by about a factor of 2 under typical use, and it's generally nice to have, though extremely dangerous if keys are reused. If addresses are reused, a signed SIGHASH_NOINPUT input can be attached to either one, which may or may not be a problem depending on the exact usage. Tomas van der Wansem from bitcrust has raised some questions regarding the proposal to use SIGHASH_NOINPUT on the bitcoin-dev mailing list.He first asks if LN's problem of malleated transactions is limited to the punishment transaction, which is the only one that spends an unconfirmed transaction. He wants to know if LN could function with (roughly) the same design without SegWit if SIGHASH_NOINPUT would be in place. Secondly, it was argued on the mailing list that SIGHASH_NOINPUT is important to prevent excessive recreation and routing of punishment transaction to 3rd party monitoring services. Tomas wants to know if this is still important or if other solutions have presented themselves.</p>
         <hr>
-        <p><i>Updated on: 2023-05-24T02:51:24.835090+00:00</i></p>
+        <p><i>Updated on: 2023-06-03T17:41:46.467846+00:00</i></p>
     
 
     
