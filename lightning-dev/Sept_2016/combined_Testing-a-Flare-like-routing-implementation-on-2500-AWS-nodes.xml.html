@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Sept_2016/000623_Testing-a-Flare-like-routing-implementation-on-2500-AWS-nodes.xml.html">Testing a Flare-like routing implementation on 2500 AWS nodes</a>
+                        <b>Pierre 2016-09-27 09:07:59</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Sept_2016/000615_Testing-a-Flare-like-routing-implementation-on-2500-AWS-nodes.xml.html">Testing a Flare-like routing implementation on 2500 AWS nodes</a>
                         <b>Fabrice Drouin 2016-09-20 13:07:14</b>
                     </li>
@@ -48,22 +53,17 @@
                         <b>Pierre 2016-09-18 12:58:03</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Sept_2016/000623_Testing-a-Flare-like-routing-implementation-on-2500-AWS-nodes.xml.html">Testing a Flare-like routing implementation on 2500 AWS nodes</a>
-                        <b>Pierre 2016-09-27 09:07:59</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000615.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000623.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2016-09-20T13:07:14+00:00</i></p>
+        <p><i>Published on: 2016-09-27T09:07:59+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The Lightning Network proposes a routing protocol that utilizes off-chain execution of multiple transactions before being broadcasted to the main blockchain, and Flare is a routing protocol for the Lightning Network. In the implementation of Flare in Eclair, inter-nodes communication only occurs on existing open channels. The team tested the algorithm using a LAN setup with static routes, which may not be representative of a real-world scenario. They found that the modified version of Flare worked on a decent-sized network, but noted several caveats, including poor routing table reconciliation and beacon distances that may not accurately reflect real-world conditions.The authors envisioned that a DHT would act as a substitute for a pure broadcast network, rather than to allow individual nodes to communicate with each other, and HORNET was mentioned as a possible way for nodes to communicate with each other. Gary suggested using modules in Linux iptables that allow simulating packet loss and latencies for negative testing. In another email exchange, Pierre seeks clarification from Viacheslav on how a sender can request a receiver's routing table if they are unable to communicate directly. The assumption is that payment requests would be transmitted off-band, possibly through a QR code on a webpage or similar method.Overall, Flare is a promising routing protocol for the Lightning Network, but there are still some concerns regarding its implementation and potential issues in real-world scenarios. Further testing and development are needed to fully assess its feasibility and effectiveness.</p>
+        <p>Flare is a routing protocol designed for the Lightning Network, aimed at improving routing efficiency. It combines local neighborhood maps and paths to remote beacons to achieve this. A team of developers tested Flare on 2500 AWS nodes and discovered that it worked well, with an 80% chance of finding a route between any two nodes in about 500ms.The developers simplified the neighbor discovery/beacon selection process and the route selection process compared to the original paper. However, they warn that their implementation assumes an undirected graph and one-way channels, which may make finding routes difficult during bootstrapping. The authors of the modified version of Flare note that they envisioned a DHT acting as a substitute for a pure broadcast network to store information such as onion keys and identity keys. They also mention using something akin to HORNET for nodes to communicate with each other without necessarily knowing IP addresses or selected beacons. In conclusion, the developers of the modified version of Flare state that it works on a decent-sized network.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T16:46:41.357024+00:00</i></p>
+        <p><i>Updated on: 2023-05-24T00:31:32.661406+00:00</i></p>
     
 
     

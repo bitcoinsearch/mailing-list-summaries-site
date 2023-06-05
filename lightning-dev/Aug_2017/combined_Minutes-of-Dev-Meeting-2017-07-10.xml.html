@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/Aug_2017/000741_Minutes-of-Dev-Meeting-2017-07-10.xml.html">Minutes of Dev Meeting 2017-07-10</a>
+                        <b>Olaoluwa Osuntokun 2017-08-07 19:25:48</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/Aug_2017/000742_Minutes-of-Dev-Meeting-2017-07-10.xml.html">Minutes of Dev Meeting 2017-07-10</a>
                         <b>Rusty Russell 2017-08-08 00:52:16</b>
                     </li>
@@ -33,22 +38,17 @@
                         <b>Rusty Russell 2017-07-30 05:36:32</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/Aug_2017/000741_Minutes-of-Dev-Meeting-2017-07-10.xml.html">Minutes of Dev Meeting 2017-07-10</a>
-                        <b>Olaoluwa Osuntokun 2017-08-07 19:25:48</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-August/000742.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-August/000741.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2017-08-08T00:52:16+00:00</i></p>
+        <p><i>Published on: 2017-08-07T19:25:48+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>Rusty Russell has provided feedback on discussions related to the Lightning Network protocol. In one discussion, the creation of a dust output in the process of setting HTLC floors in second-level transactions was addressed, making small amounts unusable on the chain. Laolu suggested that the trim output specification should indicate not to create a dust output on second-level transactions. The use of SIGHASH_SINGLE|SIGHASH_ANYONECANPAY instead of using sighash-all on second-level HTLC transactions was also discussed. While this approach may allow for coalescing many HTLC transactions into a single one, it is considered an obscure case and primarily intended for fee bumping. Rusty recorded this information on the project's Wiki page for future reference. Apart from this, a document is provided as a comprehensive guide on how to write and structure a research paper. The document covers all aspects of research paper writing, including selecting a topic, conducting research, organizing ideas, drafting the paper, and revising it. The guide suggests various methods for topic selection, such as brainstorming, mind mapping, and consulting with a professor or librarian. It emphasizes the importance of citing sources correctly and provides examples of different citation styles such as APA and MLA. Additionally, it highlights common mistakes to avoid when writing a research paper, such as using informal language or making unsupported claims. The document also provides guidance on writing style, including tips on sentence structure, word choice, and avoiding plagiarism. The guide further emphasizes the importance of revising and proofreading. It suggests strategies for self-editing, such as reading the paper out loud or getting feedback from peers. Finally, it offers advice on formatting the paper, including guidelines for margins, font size, and spacing. Overall, following the steps outlined in the document can help writers ensure that their research papers are well-organized, well-written, and properly cited.</p>
+        <p>During a discussion among Lightning network developers, the issue of creating dust outputs on second-level transactions was raised. Rusty Russell pointed out that this should be avoided and Olaoluwa Osuntokun suggested adding a "don't create dust output" clause to the trim output spec portion. Additionally, Laolu suggested coalescing many HTLC transactions into a single one using SIGHASH_SINGLE|SIGHASH_ANYONECANPAY to save on-chain footprints and add more fees. Russell agreed that this could work but noted it is an obscure case where many HTLCs need to be closed at once or for fee bumping. The changes have been deferred to 1.1 as the team is in no changes except bug fixes mode.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T17:35:59.166416+00:00</i></p>
+        <p><i>Updated on: 2023-05-24T02:04:04.303602+00:00</i></p>
     
 
     

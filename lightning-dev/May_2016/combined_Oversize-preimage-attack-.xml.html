@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/May_2016/000529_Oversize-preimage-attack-.xml.html">Oversize preimage attack.</a>
+                        <b>Rusty Russell 2016-05-02 05:07:22</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/May_2016/000530_Oversize-preimage-attack-.xml.html">Oversize preimage attack.</a>
                         <b>Olaoluwa Osuntokun 2016-05-02 21:48:19</b>
                     </li>
@@ -28,22 +33,17 @@
                         <b>Rusty Russell 2016-05-02 23:39:10</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/May_2016/000529_Oversize-preimage-attack-.xml.html">Oversize preimage attack.</a>
-                        <b>Rusty Russell 2016-05-02 05:07:22</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-May/000530.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-May/000529.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2016-05-02T21:48:19+00:00</i></p>
+        <p><i>Published on: 2016-05-02T05:07:22+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The post discusses the process of redeeming a preimage by dropping it to the blockchain and sending it directly to a miner, which could create a non-standard transaction that may not propagate. However, Segwit's witness program validation logic enforces a ceiling on the pre-image size by ensuring that each element of the passed witness stack is less-than-or-equal-to the maximum script element size of 520 bytes. Olaoluwa Osuntokun also discusses the requirement of using a 110k preimage to redeem and dropping it to the blockchain, which would create a non-standard transaction. Following this, Rusty plans to modify the HTLC scripts for the first time in a while.Rusty intends to prepend "OP_SIZE 32 OP_EQUALVERIFY" to the scripts, defining the length of a scriptsig that redeems a transaction. This change will prevent an attacker from creating an HTLC that requires a different-sized preimage to redeem and drop the commit tx to the blockchain and redeem it. Additionally, Rusty plans to drop the per-side HTLC limit from 1500 to 450 in BOLT #2, making the protocol simpler. If the limit remained at 1500, stealing the inputs would have cost more than 1 MB, resulting in a non-standard transaction that may not propagate.</p>
+        <p>The author of the email is about to modify the HTLC scripts for the first time in a while by prepending "OP_SIZE 32 OP_EQUALVERIFY". This change means that timing out an HTLC requires a 32 byte value, but it is the simplest and shortest change. Without this change, the length of a scriptsig which redeems a transaction was ill-defined because an attacker could create an HTLC with different preimage sizes that wouldn't work with nodes using wire protocol. Additionally, the per-side HTLC limit will be dropped from 1500 to 450 in BOLT #2. The purpose of this is to ensure that a single "steal" transaction that spends all the inputs is still under 400k cost, simplifying the protocol. A responder on the mailing list mentions that the Segwit's witness program validation logic ensures that each element of the passed witness stack is less-than-or-equal-to the maximum script element size (520 bytes). Therefore, even without the additional OP_SIZE check, Script will enforce a ceiling on the pre-image size. The responder also notes that they have made similar observations about the scripts recently.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T16:26:54.285454+00:00</i></p>
+        <p><i>Updated on: 2023-05-23T23:40:21.904346+00:00</i></p>
     
 
     

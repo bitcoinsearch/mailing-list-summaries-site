@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/lightning-dev/April_2016/000524_Clearing-process-in-BOLT-2.xml.html">Clearing process in BOLT #2</a>
+                        <b>Pierre 2016-04-29 11:38:53</b>
+                    </li>
+                
+                    <li>
                         <a href="/lightning-dev/April_2016/000526_Clearing-process-in-BOLT-2.xml.html">Clearing process in BOLT #2</a>
                         <b>Rusty Russell 2016-04-30 10:11:34</b>
                     </li>
@@ -28,22 +33,17 @@
                         <b>Rusty Russell 2016-04-30 10:15:54</b>
                     </li>
                 
-                    <li>
-                        <a href="/lightning-dev/April_2016/000524_Clearing-process-in-BOLT-2.xml.html">Clearing process in BOLT #2</a>
-                        <b>Pierre 2016-04-29 11:38:53</b>
-                    </li>
-                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000526.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000524.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2016-04-30T10:11:34+00:00</i></p>
+        <p><i>Published on: 2016-04-29T11:38:53+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>During a discussion on the Lightning Network protocol, Rusty Russell addressed issues with the clearing process as described in BOLT #2. The protocol had a contradiction between §4.1 and §3.3, where the former stated that a node must respond with update_fail_htlc to any HTLC received after it sent close_clearing, while the latter listed three reasons for removing an HTLC. In this version of the protocol, there is no way to decline an HTLC, and a sender could only fail the connection instead of declining it. Additionally, if the sender of a close_clearing message subsequently receives an update_add_htlc, there is no way to tell if the other party had received the close_clearing prior to sending the HTLC since update_add_htlc message doesn't have an 'ack' field.To address these issues, Rusty suggested changes to the protocol. For example, he proposed that 4.1 should say: "A node must fail to route any HTLC received after it sent close_clearing." He also added that a node must acknowledge the previous `update_revocation` (if any) in the `update_commit` message and should fail the connection if it receives an `update_commit` which does not acknowledge its previously sent `update_revocation`. Lastly, a node must not send out a message with an `ack` field lower than any previous `ack` field.Pierre, in an email to Bitcoin developers, raised concerns about the clearing process as described in BOLT #2. They noted that there was a contradiction between §4.1 and §3.3 and suggested that 4.1 should state that a node must fail to route any HTLC received after it sent close_clearing. Pierre also pointed out that in this version of the protocol, an HTLC can only be accepted, committed, then removed, and there is no way to decline an HTLC. They also highlighted the issue that if the sender of a close_clearing message subsequently receives an update_add_htlc, there is no way to tell if the other party had received the close_clearing prior to sending the HTLC since the update_add_htlc message doesn't have an 'ack' field.Moreover, Pierre raised concerns about the signature process, as when node A sends an update_commit message to B, there is no way for A to know if B received the update_commit if B keeps sending new HTLCs instead of responding with an update_revocation message. In response, Rusty proposed a patch to clarify that B can't get more than one step ahead. At some point, it has to send update_commit to A, and then A sends update_revocation. While B could ignore update_commit, it cannot send another update_commit before receiving the previous update_revocation.</p>
+        <p>During a discussion about the clearing process in BOLT #2, Pierre raised concerns regarding contradictions between sections 4.1 and 3.3 of the protocol. Rusty clarified that section 4.1 was intended to delay all responses until receipt of `update_commit`. Section 3.3 stated that a node must check that an ID corresponds to an HTLC in its current commitment transaction.Rusty explained that once a node announces it is shutting down a channel by sending a `close_clearing` message, it cannot accept any more HTLCs. A node can still receive them, but the other node might not have received the `close_clearing` yet.Pierre also expressed concern over the inability to decline an HTLC. Rusty explained that there is no harm in signing an offer, but you are just not going to forward or redeem it. Too-many-htlcs is a protocol violation, which should immediately fail such a connection. Additionally, if a sender of a `close_clearing` message subsequently receives an `update_add_htlc`, there is no way to tell if the other party had received the `close_clearing` prior to sending the HTLC since `update_add_htlc` messages do not have an 'ack' field.Rusty also addressed another issue regarding the signature process. When node A sends an `update_commit` message to B, it expects an `update_revocation` rather sooner than later. However, if B ignores the `update_commit` message and keeps sending new HTLCs, there is no way for A to know if B has received the `update_commit`. Rusty clarified that B can't get more than one step ahead.At some point, it has to send `update_commit` to A, and then A sends `update_revocation`. B can keep sending more HTLCs to A, but it cannot send another `update_commit` because it is not allowed to do so before receiving the previous `update_revocation`.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T16:26:13.026660+00:00</i></p>
+        <p><i>Updated on: 2023-05-23T23:35:02.075452+00:00</i></p>
     
 
     

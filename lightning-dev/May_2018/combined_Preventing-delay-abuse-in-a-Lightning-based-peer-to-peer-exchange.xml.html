@@ -19,26 +19,26 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/May_2018/001292_Preventing-delay-abuse-in-a-Lightning-based-peer-to-peer-exchange.xml.html">Preventing delay abuse in a Lightning-based peer-to-peer exchange</a>
-                        <b>Corné Plooy 2018-05-22 14:59:08</b>
+                        <a href="/lightning-dev/May_2018/001294_Preventing-delay-abuse-in-a-Lightning-based-peer-to-peer-exchange.xml.html">Preventing delay abuse in a Lightning-based peer-to-peer exchange</a>
+                        <b>ZmnSCPxj 2018-05-22 22:45:38</b>
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/May_2018/001294_Preventing-delay-abuse-in-a-Lightning-based-peer-to-peer-exchange.xml.html">Preventing delay abuse in a Lightning-based peer-to-peer exchange</a>
-                        <b>ZmnSCPxj 2018-05-22 22:45:38</b>
+                        <a href="/lightning-dev/May_2018/001292_Preventing-delay-abuse-in-a-Lightning-based-peer-to-peer-exchange.xml.html">Preventing delay abuse in a Lightning-based peer-to-peer exchange</a>
+                        <b>Corné Plooy 2018-05-22 14:59:08</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001292.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001294.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2018-05-22T14:59:08+00:00</i></p>
+        <p><i>Published on: 2018-05-22T22:45:38+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>Corné Plooy, in a recent discussion on Lightning-dev, identified the main issue with decentralized crypto/crypto exchange on the Lightning network as participants delaying transactions to speculate on exchange rate changes. The first approach proposed by Plooy involves using a latency monitor service to gather transaction data for building participant reputation, but it was found to be uninteresting due to issues with dealing with reputation in a community of pseudonyms. Instead, Plooy favored the second approach where trading parties delegate the execution of the Lightning transaction to a trusted third party. This eliminates the need for trust between the trading parties and only requires trust in the third party to not cooperate with the other trading party to perform a delay attack. The design is not completely trust-free, but it offers advantages over traditional exchanges since the trusted service provider cannot steal customers' funds, customers can remain anonymous, and the provider doesn't know which asset is traded. Decentralized Lightning-based exchanges may not be competitive for high-frequency or high-volume needs but could have some use for casual users on Lightning. It also eliminates the need for exchanges with large amounts of stored crypto assets, which are attractive targets for hackers.ZmnSCPxj responded to Plooy's post and suggested that exchange delay abuse and the loop attack have the same attack vector, so mitigations for one should apply as mitigations of the other. It may not be necessary for a single Lightning node to have channels for different cryptocurrencies since one node can be used for each currency and higher-level exchange software can do the forwarding. Overall, the proposal offers a promising solution for decentralized crypto/crypto exchange on the Lightning network.</p>
+        <p>The author suggests that the main problem with decentralized crypto/crypto exchange on the Lightning network is that participants can delay transactions to speculate on exchange rate changes. Two approaches have been proposed to deal with this issue. The first approach involves a latency monitor service which can be used as a source of information for building reputation, but dealing with reputation in a community of easily-created pseudonyms has its own set of issues. The second approach delegates the job of executing the Lightning transaction to a trusted third party that prevents cooperation with the other trading party to perform the delay attack. This design is not perfectly trust-free decentralized, but it gains a lot compared to traditional exchanges. It may not be needed to let a single Lightning node have channels for different cryptocurrencies; one node for each currency can be used, and higher-level exchange software can do the forwarding. Decentralized Lightning-based exchange might not be competitive for very high-frequency or high-volume needs, but for casual use by those already on Lightning, it might have some use. This approach eliminates the need for exchanges with large amounts of stored crypto assets, which are an attractive target for hackers.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T19:20:03.066311+00:00</i></p>
+        <p><i>Updated on: 2023-05-25T01:02:09.996796+00:00</i></p>
     
 
     
