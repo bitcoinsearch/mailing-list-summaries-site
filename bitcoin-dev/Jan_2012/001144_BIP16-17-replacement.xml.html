@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP16/17 replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andy Parkins 2012-01-31 16:50:58
+            <br><i>Published on: 2012-01-31T16:50:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2012/combined_BIP16-17-replacement.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-January/001144.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the email expresses nervousness about suggesting an idea for a change in transactions. They suggest that if there are objections to both existing suggestions, perhaps another solution would be better. The proposed idea involves increasing the version number in transactions to create a new transaction structure, dumping the "scriptPubKey" field and replacing it with "hashOfClaimingScript," and adding an "unsignedParameters" array. The hashOfClaimingScript is just the hash of the script that is allowed to claim the output, and before scriptSig is allowed to run, it is hashed and compared against the hashOfClaimingScript. The unsignedParameters block can hold as many signatures as necessary, eliminating the need for OP_CHECKMULTISIG, and the script can specify the signature conditions. The author invites feedback on their proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-05T02:25:56.103821+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

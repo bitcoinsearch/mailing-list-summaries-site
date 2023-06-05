@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Alternative to OP_EVAL</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> roconnor at theorem.ca 2012-01-02 16:42:31
+            <br><i>Published on: 2012-01-02T16:42:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2012/combined_Alternative-to-OP-EVAL.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-January/001023.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In January 2012, Gavin Andresen proposed a new 'standard' transaction type, called "pay to Script hash", which allows users to publish a short "funding address" that is the hash of an arbitrary redemption Script revealed when they spend the funds. The proposal aims to implement this in a backward-compatible-in-the-blockchain way. This new transaction type has a scriptPubKey of HASH160 EQUAL and is redeemed with the same scriptSig as the OP_EVAL proposal. Old clients/miners will ignore and only validate that the hash of the script matches. New clients/miners will recognize the new type of transaction and will perform additional validation. They will fail validation if there were any operations other than "push data" in the original scriptSig. Further, they will deserialize the top (last) item on the scriptSig stack and fail validation if it fails to deserialize properly. Finally, they will run an additional validation on the deserialized script using the remaining items on the scriptSig stack and the deserialized script as the scriptPubKey.The proposal suggests making two amendments to the script. First, make the script: OP_NOP1 HASH160 EQUAL to make it extremely easy to see from the first byte that this is very likely to be a special transaction. Second, if you feel like spending another byte, make the script: OP_NOP1 and assign 1 to this special script, making this case: OP_NOP1 OP_1 HASH160 EQUAL. Amir, an IRC chat participant, described the proposal as a hack, but also noted liking it. This proposal is cleaner than OP_EVAL and more straightforward to implement.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-05T01:25:07.912202+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
