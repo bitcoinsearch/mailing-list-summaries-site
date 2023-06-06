@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Defeating the block withholding attack</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke-Jr 2012-06-03 00:52:14
+            <br><i>Published on: 2012-06-03T00:52:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_Defeating-the-block-withholding-attack.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001506.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Currently, all pools are vulnerable to an attack by an attacker who intentionally withholds shares that could also be valid blocks. A proposed solution is to accept blocks at a lower difficulty N if they are submitted with a candidate for the next block and SHA256(SHA256(NewBlockHash + NextBlockCandidateHash)) meets difficulty M. The relationship between M and N must be comparable to the normal network difficulty. This algorithm should guarantee that every share has an equal chance of being a valid block at the time it is found, and attackers have no way to identify which shares to withhold even while they have full knowledge of the shares/blocks themselves. This solution creates a hard-fork in the blockchain, but since mining continues to use a double-SHA256 on a fixed 80 byte header, existing miners, FPGAs, etc should work unmodified. Poolservers will need to adapt significantly. If this solution solves the block withholding risk, the community may approve a hard-fork to take place 1-2 years from consensus. However, rule changes are not likely to gain enough acceptance among the greater Bitcoin community due to the harm centralized pools can cause to the network's security.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T04:52:52.413123+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

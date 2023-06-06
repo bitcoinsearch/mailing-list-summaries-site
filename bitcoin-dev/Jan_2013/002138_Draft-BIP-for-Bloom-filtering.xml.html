@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP for Bloom filtering</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-01-30 11:09:55
+            <br><i>Published on: 2013-01-30T11:09:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2013/combined_Draft-BIP-for-Bloom-filtering.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-January/002138.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Andreas has uploaded Android builds that use the new bloom filtering and peer selection code, along with dependency analysis of transactions. The performance gain is significant as the app feels dramatically faster to start up and sync. The app syncs on charge, and when opened around lunchtime, it had only 7 hours of data to sync (42 blocks) and it brought up 6 peer connections, found a 0.7.99 node, and synced all in. Matt's latest code has been tested by Andreas, and it seems to work correctly. He had to extend the client a bit to refresh the filter every 25k blocks because eventually, the filter degrades into uselessness, but it did still improve the situation quite a bit. Because it's unit tested, been reviewed by Mike Hearn several times, has an interoperable implementation that has also been tested by Andreas in a build of his smartphone app, it is going to ACK the current code and request that it be merged in to 0.8. Gavin needs to respond to this. The next step after that would be profiling. It's a big performance improvement for SPV clients already, but not as much as anticipated. There's a simple bottleneck or missed optimization somewhere, but that can come post-0.8.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T08:05:16.153181+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

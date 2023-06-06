@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blockchain as root CA for payment protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Timo Hanke 2013-02-09 14:33:25
+            <br><i>Published on: 2013-02-09T14:33:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2013/combined_Blockchain-as-root-CA-for-payment-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-February/002150.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Timo Hanke has drafted a general specification for bitcoin certificates that allow for various payment protocols. The signatures under the certificates are new and they have patched the bitcoind to handle certificates, submit signatures to the blockchain, verify certificates against the blockchain, pay directly to certificates (with various payment methods), revoke certificates. Signatures in the blockchain are stored entirely in the UTXO set which makes signature lookup and verification reasonably fast. When asked why not use namecoin or another alt-chain for this, Timo Hanke says that namcoin tries to solve a different problem, DNS, whereas he wants to establish an identity for a payment protocol. He believes that payment-ids should rely on nothing less than bitcoin's own blockchain because it makes your identity as important (securitywise) as anything else involved in the bitcoin protocol. Timo Hanke thinks namecoin is overkill if you just want to link two hashes together. A single 2-of-2 multisig output would suffice for that. When Peter Todd comments that the UTXO set is the most expensive part of the blockchain because it must be stored in memory with fast access times and that storing this in the spent outputs would be better, Timo Hanke agrees that he is probably right and there doesn't seem to be any type of client out there that would benefit from having to search UTXO only.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T09:55:24.509690+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed new P2P command and response: getcmds, cmdlist</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andy Parkins 2012-06-16 09:54:11
+            <br><i>Published on: 2012-06-16T09:54:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_Proposed-new-P2P-command-and-response-getcmds-cmdlist.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001577.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, Wladimir proposes standardizing the functionality of thin and thick clients without explicitly enumerating everything over the protocol. However, Andy expresses concern that the spectrum of clients will be more diverse than just "thin" or "thick." He suggests making a field that can hold more than just a bit with each value representing a specific set of features. Alternatively, they could enumerate the features instead of defining a specific set of feature-version mapping. Andy believes too much emphasis is being placed on defining a specific set of feature-version mapping, which makes it hard for future clients to implement some features but not all. He also notes that there is no easy way for a node to tell another that it doesn't have the whole blockchain available, so requesting it from it will fail. Wladimir agrees that the interaction between protocol versions and capabilities needs to be defined as well. Both agree that a capability system may be a good idea, but the granularity should be large, not command-level. They also note that the arguments might have changed between protocol versions, so offering "getdata" at protocol version 10 does not necessarily mean the same as offering it at protocol version 11. Finally, they agree that having a system for finding out what peers support makes it far easier to discover peer capabilities.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T05:26:17.938884+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

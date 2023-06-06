@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scalability issues</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> grarpamp 2012-07-27 19:26:35
+            <br><i>Published on: 2012-07-27T19:26:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2012/combined_Scalability-issues.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-July/001752.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation revolves around using a filesystem (ZFS) and the issues with the bdb backend that Bitcoin uses, which performs many I/O operations and writes them synchronously to disk. This process kills the caching provided by the filesystem. To solve this issue, the user needs to figure out how to turn off sync or determine if it is on for everything or just the wallet. It is advised to put ZFS's intent log on a separate SSD-backed device to get fast synchronous writes when running a large database on ZFS. The user suggests that Bitcoin's writes are likely small, so a RAM dev intent would be cheaper and faster than an SSD for that purpose. The discussion also touches on switching the Bitcoin block verifier to use a different style database layout ("ultraprune"), which is smaller, faster, and supports pruning. This approach deletes old blocks, transactions, and coins that have both been validated in the past and fully spent in the future since there is no need to validate further back beyond them unless you're a historian or have some other usage other than casual transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T06:37:46.902441+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

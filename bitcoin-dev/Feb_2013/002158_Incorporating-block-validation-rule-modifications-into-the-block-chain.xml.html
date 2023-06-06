@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Incorporating block validation rule modifications into the block chain</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Raph Frank 2013-02-12 13:49:56
+            <br><i>Published on: 2013-02-12T13:49:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2013/combined_Incorporating-block-validation-rule-modifications-into-the-block-chain.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-February/002158.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The suggestion of making changes to the "hard" parameters within the protocol for Bitcoin has been presented. The proposed method involves adding a new field to the coinbase transaction, and following a specific process for updating the parameters directly. This process would involve a miner proposing a change, with seconding required by at least six of the next ten blocks to prevent proposal death. For the change to be active, 750 of the last 1000 blocks or 950 of any successive 1000 previous blocks must vote yes, while more than 500 of the previous 1000 voting no would result in the proposal's termination.This method could also be used to update NOPs, and signing algorithms could be incorporated. However, this would require a more complex scripting language for defining opcode functions. For each new opcode change, it may be necessary to have a version, with scripts being valid under all versions in the chain so far. Once an op-code is accepted, new client implementations will likely create dedicated functions for performing the calculation. Older clients would have to perform the calculations using the scripting language. These changes could be made based on consensus, following BIP-34 guidelines.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T10:02:42.887408+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

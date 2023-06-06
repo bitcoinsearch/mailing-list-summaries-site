@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>How small blocks make delibrate orphan mining costly</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-02-24 01:06:51
+            <br><i>Published on: 2013-02-24T01:06:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2013/combined_How-small-blocks-make-delibrate-orphan-mining-costly.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-February/002185.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the low-subsidy future, fees will be the primary source of income for miners. This means that in some cases, large miners may intentionally attempt to mine a block that would orphan the current best block to increase their profits. However, this strategy runs into a problem when there are limited block sizes as there is a limit to the number of transactions that can fit into a block. Thus, the best strategy for miners is to accept and move on. There is a way to defeat this strategy which involves using nLockTime by default. Clients should create their transactions with nLockTime set such that only the next block can include the transaction or even farther into the future if the transaction is not time-sensitive. With nLockTime, to get ahead, one needs to mine two blocks, and the first block could only gain the transactions in the block it orphans. This creates more pressure as the block becomes full. Using nLockTime in this way does not harm clients and provides benefits in the future. Clients can protect themselves from any potential loss due to miners' deliberate actions by using nLockTime.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T10:16:32.914755+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

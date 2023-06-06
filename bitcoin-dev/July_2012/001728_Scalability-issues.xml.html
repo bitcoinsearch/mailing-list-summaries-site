@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scalability issues</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> grarpamp 2012-07-23 22:33:24
+            <br><i>Published on: 2012-07-23T22:33:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2012/combined_Scalability-issues.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-July/001728.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context describes a conversation where one person questions the speed of the other person's system in relation to Bitcoin's synchronization process. The second person suggests that their system is 720 times faster than the first person's P4 1.8GHz system due to extra cores helping with disk, crypto, net, etc. The first person expresses doubt about this claim since bitcoin's sync is effectively single threaded. They further explain that they have spent two weeks crunching about the last month's worth of new blocks and their results are reproducible but not believed to be representative. The conversation then shifts to discussing ways to improve sync times for everyone when more transactions start coming in. The second person suggests trying to isolate disk and crypto for better performance and syncing from a local node into tmpfs. However, they also note that using tmpfs can lead to unknowingly falling back to swap instead of core. They also warn against building against BDB later than the recommended 4.8 as there have been performance regressions with later versions.The second person clarifies that they are not bashing anyone or anything, just detailing a stock config that is underwater. They invite others to chime in with their times too if they are using different setups such as Linux/BSD, BTRFS/ZFS, crypto, on i386/amd64. They also suggest that disk is the cheapest and easiest thing for Joe to get and ask people to think about indexing and checkpointing into disk. They question whether Bitcoin is verifying every transaction back to the root, which would seem ridiculous, and warn that the trust model has to change when TiB is filled up.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T06:32:47.031929+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

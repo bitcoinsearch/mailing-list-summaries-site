@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP for Bloom filtering</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-01-11 14:11:44
+            <br><i>Published on: 2013-01-11T14:11:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2013/combined_Draft-BIP-for-Bloom-filtering.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-January/002123.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author conducted initial performance tests on Bitcoin syncing from a local peer. The results indicate that the speed of filtering can be improved when transactions are checked in parallel by multi-threading the filtering process in bitcoind. The author suggests that if this is implemented, a 4-core server would get 4x faster at filtering blocks and could sync at more like 200 blocks per second. Additionally, it is recommended to make the client smarter so that the filter parameters (FP rate) are adapted during the sync process. Another recommendation is to shard the wallet keys over multiple peers for better privacy, and to suck down filtered blocks in parallel from multiple peers for better speed. It is suggested that the last point may be the most important from a practical perspective as it seems the bottleneck for chain sync is now CPU time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T08:08:17.271050+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
