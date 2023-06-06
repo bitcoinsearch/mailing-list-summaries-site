@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Anti DoS for tx replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2013-04-20 20:51:23
+            <br><i>Published on: 2013-04-20T20:51:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2013/combined_Anti-DoS-for-tx-replacement.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002434.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposed sequence for Bitcoin channels was discussed by some individuals. While it did not work on test-net due to a mempool error, it was discovered that the proposal will actually work on Main-Net because non-final transactions are rejected by IsStandard(). This behavior is well-suited for applications that can be reduced to two instances of a transaction, one non-final and one final, which is updated between parties. However, if an attacker waits too long, the user can get their Refund into the mempool and lock out the higher seq version. To prevent this, the nLockTime of the refund can be set several days after the scheduled closing time of the channel. Any malleability weakness in the proposal remains, where the user's refund could still be invalidated by a miner changing the TxID of TX1.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T15:06:06.953358+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

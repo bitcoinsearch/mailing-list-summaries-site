@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC: extend signmessage/verifymessage to P2SH multisig</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Reiner 2013-04-14 18:24:34
+            <br><i>Published on: 2013-04-14T18:24:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2013/combined_RFC-extend-signmessage-verifymessage-to-P2SH-multisig.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002411.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Peter Todd and Alan Reiner discuss the extension of message signing by adding a proper ASCII-armored format to it. The new format will encode the signed message next to the signature, so there's no ambiguity about what was signed. It will be primarily offered as an option for users to copy an ASCII-armored block of text into the client app. The app pops up with a window that says "The following message has a valid signature from address 1XKjf32kJbf...". The format to follow should be RFC2440, section 7 "Cleartext signature framework". This method doesn't need to be done before other signmessage changes. There may be an issue passing \r's through the RPC interface; the RFC specifies CRLF line endings. Alan will lead by example and implement the format in Armory.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T14:57:02.650941+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

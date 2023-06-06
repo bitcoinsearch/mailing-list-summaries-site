@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Vote on the blocksize limit with proof-of-stake voting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Melvin Carvalho 2013-06-10 08:14:01
+            <br><i>Published on: 2013-06-10T08:14:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2013/combined_Proposal-Vote-on-the-blocksize-limit-with-proof-of-stake-voting.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002733.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On June 10th, 2013, John Dillon proposed a Proof-of-Stake voting system for determining the blocksize limit in Bitcoin. This would provide a way to balance the asymmetrical power relationship between miners and other Bitcoin participants in deciding the blocksize. The upper limit on the blocksize would be determined by the median of all votes, where each txout in the UTXO set is one vote weighted by txout value. A txout without a corresponding vote is considered to be a vote for the status quo. Votes would consist of a txout with a specific scriptPubKey and scriptSig. To prevent DoS attacks, only votes with known vote_id's will be accepted, and only for txid:vout's already in the blockchain, and a record of txouts for whom votes have already broadcast will be kept. Miners wishing to increase the blocksize can record these votes and include them in the blocks they mine as required. At the beginning of every year, the value considered to be the status quo resets to the mean of the limit at the beginning and end of the interval. This rolling median and periodic reset process ensures that the limit changes gradually and is not influenced by temporary events such as hacks to large exchanges or malicious wallet software. The voting mechanism can be used for additional votes with an additional vote_id. However, coercion and vote buying are possible in this system. Establishing methods of voting can lead to single points of failure. Unless there's a very good reason not to, we should stick with 1 CPU one vote.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T18:42:08.965627+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

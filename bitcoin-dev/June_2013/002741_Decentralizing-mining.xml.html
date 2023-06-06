@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decentralizing mining</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-06-10 21:09:13
+            <br><i>Published on: 2013-06-10T21:09:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2013/combined_Decentralizing-mining.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002741.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the parts needed for step #1 of the pooled-solo mining mode. The basic idea is that the miner makes two connections: their pool and a local bitcoind. They work on the subset of transactions common to both the pool's getblocktemplate and their local one. If they find a share that doesn't meet difficulty, they hand it over to the pool. For shares that do meet difficulty, they hand it to both the pool and the local bitcoind, with an optimized version possibly having some record of measured bandwidth. To reduce bandwidth, they suggest passing only the block header for normal shares and having the pool randomly pick a subset of transactions to audit. This will work best in conjunction with a UTXO proof tree or by picking whole shares randomly to audit. Persistent share storage will be needed if the connection disconnects. They also discuss the deliberate orphaning of slow to propagate blocks, with nodes passing headers around separately via UDP. When a valid block header is seen whose contents they don't know about, miners should switch to mining empty or near-empty blocks in solo mode that would orphan the still propagating block. For pool work, they ask if eliopool already accepts arbitrary shares and does the correct accounting. They also mention possible protocol extensions. Miner work involves merging the two block templates together to find commonality. There should also be an automatic fallback to local solo mining if the pool can't be contacted, with possible protocol extensions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T18:19:15.314108+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

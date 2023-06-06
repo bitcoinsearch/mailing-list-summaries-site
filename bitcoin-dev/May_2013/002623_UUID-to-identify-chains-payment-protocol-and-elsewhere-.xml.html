@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>UUID to identify chains (payment protocol and elsewhere)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2013-05-20 23:59:39
+            <br><i>Published on: 2013-05-20T23:59:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2013/combined_UUID-to-identify-chains-payment-protocol-and-elsewhere-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002623.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a developer round-table discussion, it was asked if the payment protocol would support alt-chains. Gavin Andresen noted that the protocol has a UTF-8 encoded string identifying the network as "main" or "test". Mark Friedenbach, a proposer of two projects requiring chain/coin identification, believes there needs to be a standard mechanism for identifying chains without maintaining a registry of string-to-chain mappings. He proposes using UUID to uniquely identify any chain by its genesis block. Friedenbach suggests using Version 4 (random) UUIDs, with the random bits extracted from the double-SHA256 hash of the genesis block of the chain. To construct the chain identifier from the serialized genesis block, he provides an example Python code. His proposal aims to avoid issues with alt-chains or colored coins since bitcoin mainnet would be the default. The extra 12 bytes in the identifier would only be a concern for them. Friedrich addresses colored coins in a separate proposal, stating that adopting this method for identifying chains/coins will greatly assist in adopting the payment protocol to colored coins.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T17:38:52.940580+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

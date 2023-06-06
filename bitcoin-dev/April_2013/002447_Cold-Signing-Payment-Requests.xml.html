@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Cold Signing Payment Requests</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2013-04-24 23:01:51
+            <br><i>Published on: 2013-04-24T23:01:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2013/combined_Cold-Signing-Payment-Requests.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002447.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Payment Protocol employs x509 certificates to sign a payment request, making it easier for wallets to display metadata from the cert to the payer instead of the address. However, since payment requests must be generated live, the key used to sign them is exposed to theft similar to a hot wallet. The solution is to sign something once with a key kept offline that verifies the address in the payment request belongs to the payee. This involves using a parent cert kept offline and a child certificate of the parent kept hot on the payment server. Using BIP32, child keys are generated from a public key and chain code, and the remaining less critical data is signed with the child cert's key after signing Kpar with the parent cert's key offline. The payer then verifies Kpar and the address by calculating Hash160(Kpar * I[0:32]). It is not necessary to use BIP32 to calculate I[0:32], which could also just be randomly generated. The idea is to use a 'most trusted' cert offline to sign Kpar once and a 'less trusted' cert to sign the other stuff. However, there is no convention for identifying which cert is which, and a better idea is needed. Nonetheless, if merchants can keep the key signing the address offline, several benefits can be gained.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T15:34:42.091441+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

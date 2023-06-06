@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Optional &#34;wallet-linkable&#34; address format - Payment Protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Reiner 2013-06-19 22:47:22
+            <br><i>Published on: 2013-06-19T22:47:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2013/combined_Optional-wallet-linkable-address-format-Payment-Protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002788.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Jeremy Spilman and Alan, Alan suggests that the creation of new wallet chains is not the only operation needed to achieve the functionality he is requesting. He explains that there are orthogonal use-cases to having a single wallet serve as a single identity that can be used across multiple transactions or services. BIP 32 already specifies how to use the first three tree levels: M/i/j/k, i~wallet, j~Internal/External, k~address. However, the first level is actually type-1 derived, and thus we cannot create an arbitrary number of them without pre-computing them from the offline wallet. Alan argues that even if we assume the simplest case where the first level is actually type-2 derived and it costs nothing to create separate wallets for each contact/party, complexity arises in deciding whether extra wallet chains behave as different wallets or sub-wallets, bundling their balances into a single wallet or displaying them separately, specifying which wallet(s) to spend from, and implementing a multiple-wallet interface to handle cross-wallet spending. Alan proposes an alternative address encoding with a single wallet to support this identity mechanism, making it useful and trivial to implement even in the simplest wallet applications. However, users can still choose to create a separate wallet for certain operations to separate their identities if the software supports multiple wallets.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T18:55:29.325396+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
