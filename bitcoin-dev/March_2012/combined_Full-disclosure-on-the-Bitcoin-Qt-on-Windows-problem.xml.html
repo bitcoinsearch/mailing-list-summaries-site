@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Full disclosure on the Bitcoin-Qt on Windows problem <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2012/001329_Full-disclosure-on-the-Bitcoin-Qt-on-Windows-problem.xml.html">Full disclosure on the Bitcoin-Qt on Windows problem</a>
+                        <b>Gavin Andresen 2012-03-19 16:07:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2012/001329_Full-disclosure-on-the-Bitcoin-Qt-on-Windows-problem.xml.html">Full disclosure on the Bitcoin-Qt on Windows problem</a>
+                        <b>Gavin Andresen 2012-03-19 16:07:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2012/001329_Full-disclosure-on-the-Bitcoin-Qt-on-Windows-problem.xml.html">Full disclosure on the Bitcoin-Qt on Windows problem</a>
+                        <b>Gavin Andresen 2012-03-19 16:07:13</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-March/001329.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2012-03-19T16:07:13+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A bug in Bitcoin-Qt on Windows remained unnoticed for over four months and was found to be in the bitcoin-qt.pro file. The issue was that Bitcoin-Qt on Windows should have been linked with the "mingw" multithreading library and compiled with the -D_MT to turn on support for multithread-safe C++ exception handling in the "mingw" library. This caused problems when two threads throw exceptions at the same time or one thread is interrupted while in a try{} block and then resuming later. Matt Corallo deserves credit for being persistent and finding the bug when investigating hard-to-reproduce reports of Bitcoin-Qt crashing sometimes when run with the -server flag and handling JSON-RPC requests.It is not known if the bug is exploitable, but it would be challenging to craft a usable exploit because it is difficult to trigger the bug reliably. Besides, Bitcoin-Qt has some security-in-depth to prevent this type of bug from becoming exploitable. Though the software industry needs to learn better lessons, there is no such thing as perfect security. It's assumed that devices get compromised, and design should revolve around that assumption.To ensure that there will be no more potential vulnerabilities, developers need to review the code, build process and let them know when they are being idiots. Unfortunately, there seem to be fewer Windows developers willing to help out with Bitcoin than Linux or Mac developers, which is unfortunate since a majority of downloads are Windows users.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-06T03:43:35.353649+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

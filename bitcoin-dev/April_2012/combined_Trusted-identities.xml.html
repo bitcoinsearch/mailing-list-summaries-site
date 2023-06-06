@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trusted identities <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001403_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Vessenes 2012-04-26 17:11:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001404_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Todd 2012-04-26 17:30:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001402_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Todd 2012-04-26 15:49:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001403_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Vessenes 2012-04-26 17:11:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001404_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Todd 2012-04-26 17:30:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001405_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Amir Taaki 2012-04-26 17:59:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001403_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Vessenes 2012-04-26 17:11:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001405_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Amir Taaki 2012-04-26 17:59:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001402_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Todd 2012-04-26 15:49:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001404_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Todd 2012-04-26 17:30:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001406_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Alan Reiner 2012-04-26 18:00:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001402_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Peter Todd 2012-04-26 15:49:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001405_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Amir Taaki 2012-04-26 17:59:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001406_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Alan Reiner 2012-04-26 18:00:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2012/001406_Trusted-identities.xml.html">Trusted identities</a>
+                        <b>Alan Reiner 2012-04-26 18:00:59</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-April/001403.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2012-04-26T17:11:51+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>During a discussion on the Bitcoin network's implementation of replacement transactions, Peter Todd asked about the current status of this feature. Alan replied that it was completely disabled. The discussion then moved on to how transactions with lock-time in the future and non-maximum sequence number will be accepted into nodes' memory pools but will not go into any block until locktime expires. However, the actual "replacement" mechanism is disabled, meaning that although nodes accept the transaction as if it's replaceable, they don't allow it to be replaced, except for one time by injecting a final transaction into the blockchain.Todd suggested a system where Alice could prove her trustworthiness to other users by accepting a cost to herself. This would make sybil attacks more difficult, as pretending to be thousands of identities would require a significant amount of coins. Additionally, Todd suggested that this system could be used to create a distributed anonymizer, where Alice could publish her request to anonymize coins, and other trusted identities could make their bids. If Alice accepts a bid from Bob, she will want Bob to send her the anonymized coins prior to her transaction going through, thus breaking the temporal connection between the transactions.The email also discussed the potential implementation of replacement transactions and questioned whether it was part of the spec unimplemented or deprecated at the time. Todd mentioned that CoinLab should publish a cost metric for subverting transactions with 90% probability, which would help everyone understand what that number is. Furthermore, Peter Vessenes suggested that CoinLab publish a "cost of subverting 1-n transactions with 90% probability" metric to help understand the number. They also discussed the various ways to double-spend in Bitcoin, including using multiple VPSs with different IP addresses and flooding the network faster with multiple nodes. They noted that trusted identities could be used for the Bitcoin flood network, which might prevent sybil attacks and provide guarantees of behavior from nodes. Finally, they inquired about the current implementation of replacement transactions and whether it was unimplemented or deprecated. Todd concluded his email by stating that more difficulty shortens the safe time we can transact large volumes in, which is good for the network.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-06T04:10:53.980363+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP-13</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Michael Grønager 2012-02-20 21:29:57
+            <br><i>Published on: 2012-02-20T21:29:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2012/combined_BIP-13.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-February/001234.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Gavin Andresen and an individual, they discuss how the code will distinguish between a new and old scheme. The old scheme consists of a one-byte-version, 20-byte-hash, and 4-byte-checksum. If a 1 in 256 old address has a first-byte-of-checksum that matches the new address class, the code would compare the 4-byte checksum and assume it is a singlesig address. However, 1 in 2^32 multisig addresses will also match incorrectly, which could be exploited as a major flaw. The individual suggests implementing their idea to solve this issue, but admits that there may already be "version"-collisions since the bitfield interpretation is not well known. They suggest extensions for the next byte if xx10xxxx or xxxx111x, and y=0/1 depending on aesthetics.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T02:59:22.102881+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

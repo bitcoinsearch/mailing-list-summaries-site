@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>getmemorypool BIP process</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke-Jr 2012-03-04 01:04:29
+            <br><i>Published on: 2012-03-04T01:04:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2012/combined_getmemorypool-BIP-process.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-March/001305.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Geir Harald Hansen reported a race condition in long polling currently implemented in pools. Double block changes are common with merged mining. He suggested adding "longpollid" in long poll responses and the last seen longpollid should be included by the client in future long poll requests. Another useful value in the getmemorypool response would be "height" so that the miner can include the correct height in the coinbase. Geir also suggested explaining how target vs. fulltarget works. However, this addition of parameters to getmemorypool itself breaks compatibility with bitcoind 0.5 and using HTTP headers makes it HTTP-specific again. It was recommended that some things should be optional for a client to implement but doing this safely needs some way for clients to communicate capabilities to the server. Finally, it was discussed that "noncerange" is of limited use and there's a good chance of getting the endianness wrong.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T03:19:46.943556+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
