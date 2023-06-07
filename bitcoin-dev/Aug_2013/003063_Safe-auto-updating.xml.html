@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safe auto-updating</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Reiner 2013-08-05 16:47:30
+            <br><i>Published on: 2013-08-05T16:47:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2013/combined_Safe-auto-updating.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-August/003063.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A digital signature should be added to package authentication, instead of just a checksum, to ensure better security. To implement this, a distributor public key can be hardcoded in the software, and client software will only trust signed data from that key. The private key for that data is not kept on the server distributing the signed checksums; it is ideally kept offline. A few times per year when executing an upgrade, the new checksums are signed offline and uploaded to the distribution server. Even if the server is compromised, the client-side software will not accept a bogus checksum because it won't bear the right signature. It would also be good to have some kind of revocation process that can be used in the event of the offline key being compromised. A replacement key cannot be issued as that would defeat the purpose; instead, it would be an irreversible broadcast that would force clients to start rejecting updates from that key. If the key is compromised and it is detected, the revocation can be broadcasted and users will stop auto-updating and be given a warning to manually upgrade the software through trusted channels. This method is not fail-proof but is a decent way to minimize damage if compromise is discovered early enough.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T15:24:32.438217+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

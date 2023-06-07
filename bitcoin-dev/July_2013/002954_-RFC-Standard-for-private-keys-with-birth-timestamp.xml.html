@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Standard for private keys with birth timestamp</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Melvin Carvalho 2013-07-22 15:12:50
+            <br><i>Published on: 2013-07-22T15:12:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_-RFC-Standard-for-private-keys-with-birth-timestamp.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002954.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On July 22, 2013, Pieter Wuille proposed encoding keys data with a birth timestamp using the "@" character. He suggested not incorporating it inside key serialization as birth timestamps are generally a property of an address rather than the key it is derived from. This proposal would be useful for non-extended standard serialized private keys and P2SH addresses. The reason for choosing '@' is that it's not present in the base58, hex, or base64 encodings typically used for key/script data. One downside of this approach is that there is no checksum-protection for the timestamp, but the advantage is increased genericity. Someone on the mailing list suggested looking at RFC 4151, which had an idea on adding time stamps to identifiers. They believed that the sacrifice in opacity did not seem to justify the utility.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T14:13:58.606092+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

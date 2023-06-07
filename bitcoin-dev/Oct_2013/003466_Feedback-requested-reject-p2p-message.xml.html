@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Feedback requested: &#34;reject&#34; p2p message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-10-27 14:32:57
+            <br><i>Published on: 2013-10-27T14:32:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2013/combined_Feedback-requested-reject-p2p-message.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003466.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, the issue is related to bitcoinj getting a small but steady stream of bug reports regarding transactions not propagating. The library picks one peer to send the transaction to and then watches it propagate across the network. However, if that selected peer refuses the transaction, propagation never comes, and currently, there is no timeout to make it retry with a different node. The HTTP status code system is suggested as a solution to this problem. It gives a 3 digit numeric code that is machine-readable and a freeform text note for humans. This system works well because it does not need to account for every possible error, but it gives the other node the most useful information. Humans can puzzle out the meaning of the code, such as "403: values of txid gives rise to dom!" Enums or fixed length strings are not recommended because they make it harder to extend without any benefit. Finally, a link to the October Webinars on Code for Performance is provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T18:38:25.345729+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

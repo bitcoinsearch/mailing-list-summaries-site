@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment Protocol: BIP 70, 71, 72</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-07-31 08:59:37
+            <br><i>Published on: 2013-07-31T08:59:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_Payment-Protocol-BIP-70-71-72.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/003035.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Gavin Andresen has turned the preliminary payment protocol specification into three BIPs, which include Network protocol/messages, MIME types for the messages and bitcoin: URI extension. The wallet-side implementation is expected to be pulled into Bitcoin-Qt soon. There is also a reference implementation of server-side code for generating payment requests in PHP and C++. HD wallets have been shown interoperable, but deterministic wallets and payment protocol are both important. However, it is believed that the payment protocol would be easier to do and would benefit more from a second implementation. The PaymentRequest messages larger than 50,000 bytes should be rejected by the merchant's server to mitigate denial-of-service attacks. It is suggested that the merchant should not assume the merchant_data field is trustworthy, as malicious buyers could rewrite it. The PaymentDetails.payment_url must be secure against man-in-the-middle attacks that might alter Payment.refund_to, but if using HTTP, it must be TLS-protected. In the certificates section, "validation" means verification that it correctly chains to a trusted root authority, where trusted roots may be obtained from the operating system. If there is no operating system, the Mozilla root store is recommended.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T15:02:48.637998+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

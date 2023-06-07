@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Message Signing based authentication</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Melvin Carvalho 2013-11-06 03:01:48
+            <br><i>Published on: 2013-11-06T03:01:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2013/combined_Message-Signing-based-authentication.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003593.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In response to a proposal for replacing passwords with digital signatures, Slush suggests that the message-to-be-signed should be carefully composed to be both structured and human-readable. This includes desired username/identity handler, server identifier (URL), timestamp to prevent replay attack, and server challenge. He also suggests that the same structured data should be a part of an HTML page in some header tag, ideally signed by server certificate to confirm that the request is valid. Slush raises concerns about where the private keys are stored, but suggests that client-side certificates can be used to solve this problem. Slush explains two methods for using client-side certificates: Method 1 involves putting your Bitcoin address in the subjectAlternativeName field of your client-side certificate and looking up some items previously uploaded via a ".well-known" key server. Method 2 involves putting an HTTP address in your client-side certificate, which contains your Bitcoin address and a signed copy of your cert public key or the cert itself. Both methods work, and Slush has been using them for over five years. In celebration of the 5-year anniversary of the Bitcoin whitepaper, a new Message Signing based authentication method is introduced. The authentication works by having the server provide a token for the client to sign, then the client passes the signed message and Bitcoin address back to the server, which validates the message and honors the alias (optional) and Bitcoin address as identification. A proof of concept forum that utilizes this authentication method is provided, which only stores the signed message and Bitcoin address that users provide the first time they use the site. All source code will be available on Github in the next few days.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T18:56:11.776272+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

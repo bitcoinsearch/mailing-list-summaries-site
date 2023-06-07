@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Distributing low POW headers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2013-07-23 11:27:03
+            <br><i>Published on: 2013-07-23T11:27:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_Distributing-low-POW-headers.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002976.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed change to the rules for distinguishing between forks suggests that low POW headers should be broadcast by the network. If a header has more than 1/64 of the POW of a block, it should be broadcast to provide information on which fork is getting most of the hashing power. The fork selection rule for miners should bias towards staying on the fork that has the most hashing power, meaning they might keep hashing on a fork that is 1-2 blocks shorter. This lowers the probability of natural and malicious reversals. To distribute low POW headers, the client needs to maintain a short term view of the entire header tree. The first block header messages that have more than 1/64 of the standard POW requirements would be forwarded. The storage could be limited, and headers could be discarded after a while. This informs clients of forks that are receiving hashing power and could be linked to a protocol version to prevent disconnects due to invalid header messages.To determine the longest chain, each link would get extra credit for headers received. As long as miners keep headers for 30-40 blocks, they will likely have all headers back to any reasonable fork point. This means that the top fork is considered longer, even though it has two less blocks. If 75% of the miners follow this rule, then the top fork will eventually catch up and win, so it is in the interests of the other 25% to follow the rule too. Even if there isn't complete agreement on headers received, the fork that is getting the most hashing will naturally gain most of the headers, so ties will be broken quickly.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T14:27:53.827585+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

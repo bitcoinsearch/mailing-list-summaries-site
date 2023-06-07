@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Feedback requested: &#34;reject&#34; p2p message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-10-27 14:50:37
+            <br><i>Published on: 2013-10-27T14:50:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2013/combined_Feedback-requested-reject-p2p-message.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003468.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoinj, a library used for Bitcoin transactions, has been receiving consistent bug reports where transactions fail to propagate. This is due to the library selecting one peer to send the transaction to and waiting for it to propagate across the network. If that selected peer refuses the transaction, the propagation doesn't occur, and there's currently no timeout to make it retry with another node. However, Luke-Jr suggests that the real bug is that BitcoinJ relies on good behavior from other nodes and advises that handling a peer that doesn't relay a transaction should be expected behavior. Although these nodes are more likely to be broken than malicious, there is no way to diagnose why they are dropping a transaction without explicit error handling. Adding timeouts and other measures may not help if the transactions are being rejected due to a change in network rules.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T18:41:44.267273+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

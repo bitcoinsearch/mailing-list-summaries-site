@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>FYI: pull-tester status</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2013-10-11 06:04:11
+            <br><i>Published on: 2013-10-11T06:04:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2013/combined_FYI-pull-tester-status.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003348.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The pull-tester has been misbehaving since the autotools merge. Some pull-tester features have been turned off until the issues can be fixed. The pull-tester currently cross-compiles windows binaries, compiles linux binaries, and runs unit tests with binaries compiled on linux. However, running unit tests under wine with cross-compiled windows binaries, running the block-chain-compatibility tester, and computing code coverage are all turned off.In the medium-term, upgrades need to be made to the pull-tester environment. Gavin Andresen recommends upgrading the pull-tester machine from Ubuntu 10.04 to 12.04 or creating a new 12.04 virtual machine and moving the pull-tester over to it. Compilers/dependencies also need to be upgraded based on what will be used for the 0.9 release. Additionally, there needs to be an effort to unify the pull-tester and gitian build processes. It is suggested that the pull-tester should run gitian builds to create binaries (that are then tested against the blockchain tester) or that the pull-tester scripts should be gitian scripts, which the pull-tester machine runs inside an LXC container.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T17:34:48.908600+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

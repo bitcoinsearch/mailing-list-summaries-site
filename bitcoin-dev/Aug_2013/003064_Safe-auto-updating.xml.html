@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safe auto-updating</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim 2013-08-05 17:14:00
+            <br><i>Published on: 2013-08-05T17:14:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2013/combined_Safe-auto-updating.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-August/003064.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>One approach to ensure package authentication is to use bitcoin signing on a list of the build artifacts together with their SHA256 hashes. The MultiBit release notes give an idea of how this can be achieved, having machine-readable statements that include a list of files in the build, their SHA256 hashes, and the above bitcoin signed by multiple signatures. Acceptable Bitcoin addresses for signatures would be a whitelist in the client code. Alan Reiner suggests hardcoding a "distributor" public key in the software, where client software will only trust signed data from that key. The private key for that data should not be kept on the server distributing the signed checksums, instead, it should be kept offline. When executing an upgrade, the new checksums are signed offline, and the signed checksum is uploaded to the distribution server. Even if the server is compromised, the client-side software will not accept a bogus checksum because it won't bear the right signature. If you want package authentication, digital signing should be added, not just a checksum. A compromised host can change both the checksum and binaries undetectably. However, if there's a signature made by a key that is not kept on the host, there's no way to fake a valid binary. This was Daniel F's suggestion in response to Wendell's query about the safe way to have an auto-updater in their wallet app. Wendell had suggested placing one server behind a Tor hidden service, whose only function is to output a checksum of the update package. The theory is that if it is well-secured, it will at least be immune to tampering at the physical hosting level. The email thread ends with links to the SQL database version control and Bitcoin-development mailing list.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T15:23:07.125451+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

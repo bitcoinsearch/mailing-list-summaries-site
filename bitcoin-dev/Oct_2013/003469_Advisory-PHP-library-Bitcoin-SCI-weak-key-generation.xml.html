@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Advisory: PHP library Bitcoin SCI weak key generation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andres Home 2013-10-27 22:25:41
+            <br><i>Published on: 2013-10-27T22:25:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2013/combined_Advisory-PHP-library-Bitcoin-SCI-weak-key-generation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003469.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Developers using the Bitcoin SCI library have been advised to review how their software handles private key creation. The library had been using the Mersenne Twister PRNG or the GMP library's PRNG directly to generate private keys, which was somewhat resolved in the most recent version. However, only the createNewMiniKey() function has been updated. It is suggested that even those not using this library check their key generation functions if they do not interface directly with bitcoind. Affected keys have 32bits of entropy, potentially allowing GPU-based attacks on keys in the lower ranges. It is unknown how many keys have been created using either function and there are concerns over the issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T18:50:45.084905+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
