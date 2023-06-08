@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New side channel attack that can recover Bitcoin keys</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Natanael 2014-03-06 10:00:14
+            <br><i>Published on: 2014-03-06T10:00:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_New-side-channel-attack-that-can-recover-Bitcoin-keys.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004536.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>TRESOR is an encryption method that signs on the CPU without touching RAM. There is a discussion on Bitcoin-development mailing list regarding moving signing into kernel and using MTRRs to disable caching entirely for a small scratch region of memory which could work. However, creating a hardened secp256k1 signer implementation in userspace would be preferable. The benefits of branchless implementation in reducing the attack surface are also discussed. To avoid memory timing side-channel, no data dependent loads should be performed, and C or other high-level language cannot write timing sign-channel immune code because the compiler can optimize things in a way that breaks the property. Using a branchless implementation where each phase of the operation executes the exact same code and accesses the exact same stack frames would not be vulnerable to FLUSH+RELOAD.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T04:01:03.866269+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

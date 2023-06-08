@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70 extension to allow for identity delegation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-03-02 10:38:04
+            <br><i>Published on: 2014-03-02T10:38:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_BIP70-extension-to-allow-for-identity-delegation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004481.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a 2014 email exchange, Mike Hearn expressed concerns about the security risks associated with payment processors that allow open signups. He warned that a hacker who compromised a user's computer could sign up for a payment processor under a false identity, and wait until the user made a payment to someone else using the same processor. The hacker could then swap out the real payment request for one of their own, which would look identical to the user's Trezor device. This could be avoided by embedding additional information in the payment request, such as specific fields defined in an extension, which would be reliably shown in the user interface. However, there were difficulties in getting certificate authorities to allow additional fields in certificates, so a simpler solution might be to have a single field containing a delimited key/value string (in JSON format) that could be shown as additional lines of labeled text in the UI. Any additional fields should be hashed using the hash function specified in pki_type and signed by X509Certificates.certifcate private key.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:31:02.499059+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Combining big transactions with hash-only blocks to improve tps.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> bc 2014-01-22 21:06:05
+            <br><i>Published on: 2014-01-22T21:06:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_Combining-big-transactions-with-hash-only-blocks-to-improve-tps-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004187.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author proposes a method to combine big transactions with hash-only blocks to improve the transaction per second (tps). This combines two techniques, one is including only hashes in a block to speed up the network, and the other is using CoinJoin to improve privacy. Keeping only transaction hashes in a block removes redundancy and allows for more consistent bandwidth utilization. Assuming a block size of 1MB and a limit of 50KB for transaction size, it allows for a CoinJoin transaction between 170 participants and an effective transaction rate of 8500 tps. However, CoinJoin requires collaboration between many users in real-time, which can induce delays. The author proposes Jumbo transactions as a fallback where CoinJoin is not applicable. It removes the CoinJoin induced delays while keeping transaction sizes big. The Jumbo pubkey prevents transactions from being modified and can only be accepted or rejected by the miner as a whole, thus limiting discrimination. The proposed methods have benefits and problems, such as increasing anonymity and improving tps but inducing delays for CoinJoin and not mixing coins for Jumbo transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:35:09.599292+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On OP_RETURN in upcoming 0.9 release</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-02-24 22:12:10
+            <br><i>Published on: 2014-02-24T22:12:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_On-OP-RETURN-in-upcoming-0-9-release.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004433.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email dated 24th February 2014, Jeff Garzik suggested a pull request that would reduce the size to 40 bytes. However, he noted that the change in the template matching code did not enforce the most efficient encoding, instead it only limited the number of bytes of data allowed. This meant that even a bare OP_RETURN would be allowed. Jeremy suggested that if they wanted to strictly require no PUSHDATA, they should modify the code as follows: `else if (opcode2 == OP_SMALLDATA) { // small pushdata, = OP_PUSHDATA1 || vch1.size() > MAX_OP_RETURN_RELAY) break; }`</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:20:19.857142+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

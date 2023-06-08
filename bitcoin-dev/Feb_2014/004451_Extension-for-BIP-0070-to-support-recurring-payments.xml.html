@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Extension for BIP-0070 to support recurring payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christophe Biocca 2014-02-25 19:06:20
+            <br><i>Published on: 2014-02-25T19:06:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_Extension-for-BIP-0070-to-support-recurring-payments.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004451.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the protocol for recurring payments and its limitations. One suggestion is to allow a list of timestamps for recurring payments, which would shift the thinking to the merchant platform. Another suggestion is to add daily as an option and specify the recurring cycle as every n*period (one of daily, weekly, monthly, yearly). The current protocol only allows four possibilities for recurrence, which seems restrictive. The amounts are specified in terms of satoshi, and timestamps are UNIX time. The merchant ID namespace is for identifying the merchant, and the subscription ID is for identifying the recurring subscription. There are some concerns regarding the explicit value constraint that max_payment_amount > max_payment_per_period. It is unclear what happens if that constraint is violated. Additionally, it is unclear when the payment should occur given such a contract, such as if it's "monthly" then what day in the month would the payment occur? The comments were moved above the field definitions to encourage people to write enough detail without being put off by line length constraints. It is suggested to talk to BitPay/get Jeff+Stephen involved because they have customers that really want recurring payments, and those guys will have a clearer idea of customer requirements than they do. Some other comments about the bitcoinj implementation specifically include the lack of "wallet directory" concept, and the need to structure the code to allow that. Using a background polling thread is likely not flexible enough, as on some platforms you can't stay running all the time without upsetting people. Wallet apps should have an ability to control wakeup tasks. The BIP 70 is implemented in Bitcoin Core on the C++ side, so that isn't a concern.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T01:57:30.673155+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

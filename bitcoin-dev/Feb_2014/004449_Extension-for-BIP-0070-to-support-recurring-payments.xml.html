@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Extension for BIP-0070 to support recurring payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Drak 2014-02-25 18:40:03
+            <br><i>Published on: 2014-02-25T18:40:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_Extension-for-BIP-0070-to-support-recurring-payments.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004449.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The PaymentFrequencyType enum in the Bitcoin protocol only allows for weekly, monthly, quarterly, and annual payments. The poster suggests that the protocol should allow for more flexible specification of periods, as some payment schemes may be per 4 weeks rather than per month, for example. They also suggest specifying the recurring cycle as every n*period (one of daily, weekly, monthly, yearly) and adding daily as an option, while dropping quarterly since it can be expressed as per 3*monthly. The poster also has several comments on the RecurringPaymentDetails message, including making the RecurringPaymentDetails field optional rather than required, clarifying that amounts are specified in satoshi and timestamps are UNIX time, and documenting implicit value constraints. They also question the use of a "merchant ID" namespace and the purpose of the "subscription ID". Additionally, they ask why there might be >1 contract per payment request and when payments should occur given a contract. Finally, they suggest getting input from BitPay and users who want recurring payments before finalizing the protocol design.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T01:49:05.627485+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

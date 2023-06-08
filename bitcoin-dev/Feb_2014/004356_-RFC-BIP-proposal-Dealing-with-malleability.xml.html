@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] [BIP proposal] Dealing with malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Morcos 2014-02-13 00:39:11
+            <br><i>Published on: 2014-02-13T00:39:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_-RFC-BIP-proposal-Dealing-with-malleability.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004356.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A member of the Bitcoin-development mailing list has suggested modifying signatures to be of the entire transaction as a long-term solution to malleable transactions. The idea is that there would be no need to zero out inputs if the signature were for the whole transaction. However, this would require a hard fork and extracting signatures first may be tricky. Luke-Jr commented on the proposal, stating that using the modified signatures for input selection would be safe, but not for the merkle tree. He even suggested using hashScript as the sole input value to avoid the index, making CoinJoins safe without breaking chains of transactions. Alan Reiner responded, mentioning that changing the protocol to use static IDs is a fundamental change that would never happen in Bitcoin, but could be useful at an application level. Mark Friedenbach added that consensus depending on data which is not hashed in the Merkle structure of a block could be potentially insecure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T02:40:47.872913+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

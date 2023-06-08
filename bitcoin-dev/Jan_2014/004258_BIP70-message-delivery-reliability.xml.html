@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70 message delivery reliability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chuck 2014-01-30 12:03:57
+            <br><i>Published on: 2014-01-30T12:03:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_BIP70-message-delivery-reliability.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004258.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Pieter Wuille and Mike Hearn on January 30, 2014, they discussed how transactions are committed to the wallet in bitcoinj. According to Mike Hearn, the transaction is only committed to the wallet if the server accepts the payment message and acknowledges it. However, Pieter Wuille stated that this is not what is suggested or required by the specification nor is it what bitcoin core master currently implements. If there is a failure submitting or an internal server error, the transaction would not be retried and the UI would show that the payment failed.Pieter Wuille went on to explain that if a user sends a payment message and the server goes silent after receiving it, the user should retry to deliver the message. However, the merchant may broadcast the transaction and force it into the user's wallet without an acknowledgement. It is possible to pay and never receive an ACK.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T02:11:33.170659+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

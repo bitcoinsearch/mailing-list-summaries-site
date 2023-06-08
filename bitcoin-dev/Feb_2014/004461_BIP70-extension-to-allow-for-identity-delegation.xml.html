@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70 extension to allow for identity delegation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-02-28 11:46:49
+            <br><i>Published on: 2014-02-28T11:46:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_BIP70-extension-to-allow-for-identity-delegation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004461.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The implementation of BIP70 has led to the need for identity delegation, which is not included in version 1. This issue mostly affects payment processors, such as BitPay and Coinbase, who have to sign payment requests as themselves. Furthermore, the lack of identity delegation results in a confusing user interface, as the user may think they are paying one entity but their wallet UI tells them they are paying another. The proposed solution involves creating an "extended certificate," which is similar to an X.509 certificate but simpler and Bitcoin-specific. To create this certificate, an ECDSA public key from the payment processor is formatted into an ExtensionCert message, signed using an SSL private key, and added to the X509Certificates message provided by the PP. The PaymentRequest then contains two signature fields for backwards compatibility: one using the PP's SSL cert and the other using the delegated ECDSA key. If there is no X.509 cert available, the pki_type is set to "x509+sha256+excert," and the request is treated as unverified by old wallets. The merchant may choose to set short expiry times for security purposes and upload a new ExtensionCert at the end of each period to quickly reseal the system in case of PP compromise. It was considered to use a User-Agent field to customize the PaymentRequest according to client capabilities but this would not work for non-HTTP requests. Also, creating the extension cert as an X.509 cert may lead to acceptance by a bogus SSL stack that did not check the key usage constraints extension. Therefore, a custom format for the extended certificate was deemed safer.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:31:36.514836+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
