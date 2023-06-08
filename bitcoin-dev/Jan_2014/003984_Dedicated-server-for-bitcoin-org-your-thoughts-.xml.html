@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dedicated server for bitcoin.org, your thoughts?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-01-01 10:02:02
+            <br><i>Published on: 2014-01-01T10:02:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_Dedicated-server-for-bitcoin-org-your-thoughts-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/003984.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer of the given context looked into gitian and noticed that hashes people were signing do not match the hash of the file actually hosted by Sourceforge. However, after talking to BlueMatt and maaku on IRC, it was clarified that the difference is due to Gavin Authenticode signing the executable for Windows. The writer found a Python script named Disitool which can strip the signature, but the hashes still don't match. After building his own gitian build of 0.8.6, he found that there are only two differences between the stripped .exe from SourceForge and the gitian build, which are three bytes specified at offset D8 and an extra byte '00' at the end. The writer suggests patching the signature onto the gitian build or stripping the signature off of the Gavin-signed build to match with the official distro for Windows. The writer thinks that wallet users want to know when an upgrade is available and have the ability to click an update button to get a binary they can trust. Finally, Matt Corallo suggested using gitian-downloader, a system for secure updating, and making actual gitian releases so anyone can use it to verify signatures of downloads.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T22:07:48.235808+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

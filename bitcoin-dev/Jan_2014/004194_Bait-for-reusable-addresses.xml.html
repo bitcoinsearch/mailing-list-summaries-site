@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bait for reusable addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2014-01-24 09:02:18
+            <br><i>Published on: 2014-01-24T09:02:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004194.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Gregory Maxwell proposed an idea for a small token called "bloom bait" that would distinguish transactions which allowed an anonymity set vs filtering trade off. However, bloom bait has more severe privacy problems than the current SPV bloom filtering. It makes the whole network see the relation and requires both a statistical attack and using SPV servers that log data against one's interest. Peter Todd suggested including optional bait in an address that the sender computes H(nonce-pubkey) and then pick one byte at random out of the first 16 and XOR it with the specified bait and store the result in the transaction. An SPV server can now index the bait as it comes in by extracting 16 8-bit keys from each transaction. When the client wants to search for transactions, it can give the server a list of keys it is interested in, including their real key and number of random cover keys. The scheme should be simple enough and easy to implement. However, the big question is how much extra data is needed and what is the chance that this will get turned into miner-committed indexes? In the short term, without miner-commitments, it's just a question of how much extra load we subject servers to. Bloom has some serious scalability problems, though it does do roughly what Peter is proposing. In any case, Peter's "bait" proposal is stealth address-specific, so it's a tradeoff between brittleness - connecting to a malicious peer reveals your wallet - and blockchain stats data.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:13:51.975814+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

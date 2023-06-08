@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Floating fees and SPV clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2013-12-03 11:07:30
+            <br><i>Published on: 2013-12-03T11:07:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2013/combined_Floating-fees-and-SPV-clients.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-December/003773.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The revised spec for PaymentDetails includes an optional uint64 minfee tag with the instruction to pay at least minfee satoshis in transaction fees. Wallet software should add minfee to the user-authorized and paid amount and include it in the transaction created to pay miner's transaction fees. However, wallet software may request the user to pay more if a complex transaction needs to be created or if minfee is not sufficient for the transaction to be accepted by the network. Gavin Andresen states that making it fee-per-kilobyte is not a good idea as users do not care about how many kilobytes their transactions are and will only be confused when asked to pay for a certain amount due to the merchant's lack of knowledge of the paying transaction's kilobytes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T21:32:58.433486+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

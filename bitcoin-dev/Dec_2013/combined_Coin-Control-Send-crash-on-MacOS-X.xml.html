@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Coin Control, Send crash on MacOS X <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003751_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Warren Togami Jr. 2013-12-01 11:05:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003792_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Warren Togami Jr. 2013-12-04 01:57:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003751_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Warren Togami Jr. 2013-12-01 11:05:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003792_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Warren Togami Jr. 2013-12-04 01:57:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003796_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Wladimir 2013-12-04 07:02:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003751_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Warren Togami Jr. 2013-12-01 11:05:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003792_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Warren Togami Jr. 2013-12-04 01:57:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003796_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Wladimir 2013-12-04 07:02:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2013/003796_Coin-Control-Send-crash-on-MacOS-X.xml.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Wladimir 2013-12-04 07:02:48</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-December/003751.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-12-01T11:05:28+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In December 2013, Warren Togami Jr. backported patches from master and Litecoin to create a Bitcoin 0.8 client with more features, which was successful on Linux and Win32. Unfortunately, recently the team discovered a rare crash that can happen on MacOS X involving SendCoinsEntry::clear(). The issue is reproducible on MacOS X 10.9 and 10.6.8.Warren has been unsuccessful at building master due to an unfamiliar build environment and is trying qt-4.8.5 next, but it will be difficult to reproduce the crash. Wladimir suggested removing the setFocus() calls that happen after Send is clicked, and moving them to a separate function "focusPayTo" to resolve the issue. However, this caused another crash within qt. The sender then tried replacing a loop that deletes widgets with ->deleteLater() to avoid any potential crashes caused by deleting a QObject while pending events are waiting to be delivered. Despite these attempts, the program still crashes due to something else within Qt.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-07T21:30:39.978122+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

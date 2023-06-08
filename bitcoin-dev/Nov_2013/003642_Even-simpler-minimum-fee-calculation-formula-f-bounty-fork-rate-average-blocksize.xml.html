@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Even simpler minimum fee calculation formula: f &gt; bounty*fork_rate/average_blocksize</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Michael Gronager 2013-11-13 20:32:59
+            <br><i>Published on: 2013-11-13T20:32:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2013/combined_Even-simpler-minimum-fee-calculation-formula-f-bounty-fork-rate-average-blocksize.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003642.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the "minimum fee" and how to calculate it. The author notes that his work from last week and now is a model that enables miners to easily calculate the minimum fee and which transaction to include to avoid creating an orphaned block. There is a discussion of whether there is linearity between block size and latency, with reference to a paper by Decker et al. The accuracy of the stats is called into question, but they are considered a minimum, with the assumption being that if the orphaned blocks are higher, the fee should go up further. There is also a suggestion to relay all orphaned blocks, with the idea that this will allow for better awareness of orphaned blocks. However, it is noted that this could create an incentive to sybil attack the network and link profitability to high up-front capital investments. Another way to measure latency is suggested, involving setting up a node that only listens but does not relay data. This would allow measurement of the propagation of blocks of different sizes as well as transactions to get a propagation distribution and an average. It is suggested that P2Pool enforce an optimal tx inclusion policy based on a statistical model by including proof of those orphans into the P2Pool share chain. It is also noted that it is never beneficial for the miner to include a transaction with a fee of less than ~0.0004BTC unless it is linked to another transaction that pays an extra fee. The analysis shows that the scalability of bitcoin is directly linked to the network and node latency, with halving the latency doubling the capacity down to the minimum governed by the speed of light.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T20:06:36.288262+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

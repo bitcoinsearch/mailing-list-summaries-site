@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An idea for alternative payment scheme</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2014-01-03 20:23:20
+            <br><i>Published on: 2014-01-03T20:23:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_An-idea-for-alternative-payment-scheme.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004009.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A user named Nadav Ivgi had an idea for a payment scheme that uses key derivation. In this scheme, the payer would derive an address from the payee's master public key using a random "receipt number" and pay to it. The payer then sends the receipt to the payee who derives a private key with that receipt and adds it to his wallet. However, one of the general limitations of this idea so far is that it is not SPV compatible, so the recipient has to test each payment to see if it's one he can compute the private key for. Alternatively, the sender has to send the recipient out of band the derivation key. Another user named Adam mentioned that most of the bitcoin infrastructure is using the bitcoin broadcast channel as the communication channel, which also supports payer and payee not being simultaneously online. He advised being careful not to lose the key because subsequent payer data loss event could lose money for the recipient. He suggested sending the message atomically.Gregory Maxwell introduced an even wilder idea. In his scheme, the payee publishes two public keys, PP, and PP2. The payer picks the first k value he intends to use in his signatures. The payer multiplies PP2*k = n, pays to pubkey PP+n with r in his first signature, or if none of the txins are ECDSA signed, in an OP_RETURN additional output. The payer advises the payee that PP+(pp2_secret*r) is something he can redeem. But this is technically optional because the payee can simply inspect every transaction to check for this condition. These schemes have an advantage over plain payment protocol intended use in that they allow the first round of communication to be broadcast while preserving privacy. Maxwell's scheme has an advantage that if payer drops his computer down a well after making the payment, the funds are not lost, and yet it is still completely confidential. However, there are downsides to this scheme as well. The particular way he has specified this breaks using deterministic DSA unless you use the OP_RETURN. It could instead be done by using one of the signature pubkeys, but the pubkeys may only exist in the prior txin. Also, the private keys for the pubkeys may only exist in some external hardware, where an OP_RETURN nonce could be produced when signing.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T23:27:26.337373+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

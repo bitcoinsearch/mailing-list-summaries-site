@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Floating fees and SPV clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-12-02 14:33:46
+            <br><i>Published on: 2013-12-02T14:33:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2013/combined_Floating-fees-and-SPV-clients.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-December/003763.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in this email thread revolves around the payment protocol and its associated fees. Mike Hearn suggests that senders should not be responsible for attaching fees, rather the recipient should be able to specify the fee or choose the trade-off that works best for them between fee size and speed of processing. In response, Patrick Mead proposes adding a "fee" parameter to the payment URI specification, which would give vendors the responsibility for setting the fee. The customer's UI would show only the total price, including both the transfer amount and the fee, and the vendor would only accept the transaction if the customer uses the right amount and fee. Mike Hearn also suggests that the payment protocol would need some notion of fee, or possibly the ability for a recipient to specify some inputs as well as some outputs. However, he thinks that allowing specification of inputs adds too much complexity in other cases, like when value isn't specified at all. After thinking about it further, Hearn believes it's better to just have a fee field that lets the receiver request the sender to attach the given fee. The outputs would have less value associated with them, so effectively the seller folds the fee into the price. If the seller is charging a round price like 1 mBTC, the user sees "1 mBTC" as the price, even if behind the scenes the created tx only sends 0.99999 BTC. Mead's proposal has pros, including that it could easily be implemented immediately and maintains the distributed nature of the system, but it also has cons, such as requiring the vendor to have sufficient understanding of Bitcoin to make the trade-off and not solving the problem of selecting a fee for transactions between individuals/laymen.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T21:39:10.679206+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
