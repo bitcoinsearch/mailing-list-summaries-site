@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Handling miner adoption gracefully for embedded consensus systems via double-spending/replace-by-fee</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2014-03-22 17:04:30
+            <br><i>Published on: 2014-03-22T17:04:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_Handling-miner-adoption-gracefully-for-embedded-consensus-systems-via-double-spending-replace-by-fee.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004778.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the recent attention on proof-of-publication, focusing on the reduction of OP_RETURN length prior to the 0.9 release to 40 bytes. Peter Todd highlights a security flaw in that OP_CHECKMULTISIG sigops weren't taken into account, which can potentially bloat mempools and make transactions unminable. He suggests ditching bare OP_CHECKMULTISIG outputs, which would require changes and currently only affects Counterparty. Troy Benjegerdes proposes a new coin with an explicit 'data' field of 169 bytes, adding 1 byte to each transaction if unused and providing a small but usable data field for proof of publication. This system may prove more reliable than various hacks to overcome the 40-byte limit in Bitcoin. The email concludes by encouraging the Bitcoin 1% to evaluate the market risk they face from the 40-byte limit and consider implementing some of Todd's proposed alternatives.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T15:35:52.127459+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

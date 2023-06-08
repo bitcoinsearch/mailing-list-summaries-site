@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 70 refund field</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-03-28 11:07:04
+            <br><i>Published on: 2014-03-28T11:07:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_BIP-70-refund-field.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004865.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Modern devices like smartphones and tablets lack swap files to ensure a responsive, fluid UI. However, this design creates ripples that impact everything else, including the inability to store all keys or transactions in memory permanently. While BIP 70 has an expiry field for PaymentRequests to stop loading those keys into RAM eventually, there is no equivalent for refund addresses. The output structure was reused to define refunds, but PaymentDetails were not, making it hard to implement refunds on phones without a time limit. To address this problem, a new refund field embedding a PaymentDetails structure could be added instead of just a list of outputs. Alternatively, a wallet-specific swapping process could be done internally by caching filters for old parts of the key chain on disk and calculating Bloom filters without holding all keys in memory at once. However, the resulting huge Bloom filters would hurt efficiency in other ways, making key expiry fundamental to scalability. Despite the reluctance to redesign this part of BIP 70, adding a refund feature with a time limit seems necessary to avoid wallets having to look out for refunds for payments made years ago.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T16:51:37.737606+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

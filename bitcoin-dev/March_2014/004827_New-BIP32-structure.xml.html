@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP32 structure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Allen Piscitello 2014-03-27 01:13:16
+            <br><i>Published on: 2014-03-27T01:13:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_New-BIP32-structure.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004827.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discussed creating a compatible BIP32 wallet structure for interoperability between different wallets. Mike Hearn proposed a new structure that was agreed upon by himself, Thomas V of Electrum, and Marek of Trezor. The structure is as follows: /m/cointype/reserved'/account'/change/n. Cointype is zero for Bitcoin but can distinguish between keys intended for multisig outputs or more complex transactions. Reserved is for "other stuff". Account keeps separate wallets within a wallet to avoid mixing of coins. Change is 0 for receiving addresses and 1 for change addresses. N is the actual key index. They aim to create a structure where the same seed can be used for all user needs while still allowing some drift between what wallets support. It was acknowledged that metadata may also be needed to encode how keys are meant to be used, but interop between wallets is more important than arriving at the most perfect arrangement.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T16:17:33.432260+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP32 structure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim 2014-03-27 13:58:19
+            <br><i>Published on: 2014-03-27T13:58:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_New-BIP32-structure.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004850.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>BIP32 wallet structure is almost standardized, with MultiBit HD supporting 12/18/24 words but suggesting the use of 12. The UI shows a little combo for seed length, with 12 as the default. New addresses are created on the UI in a panel marked "Request" where the user also types in a QR code label and a note to themselves. This gets stored away as a first-class "PaymentRequest," and the UI suggests that each address is used only once. A timestamp is stored (the number of days since the genesis block) to help wallet restore, but that is SPV specific. Based on a question from Thomas Voegtlin, Mike Hearn explains that 2^128 iterations are not brute-forceable today, and will not be for the foreseeable future. An EC pubkey of length n can be forced in approximately 2^(n/2) iterations, which is why unused addresses (160 bits hash) are better protected than already used ones. However, people tend to believe that a public key of size n requires 2^n iterations. This belief might have been spread by this popular image: <a href="https://bitcointalk.org/index.php?topic=508880.msg5616146">https://bitcointalk.org/index.php?topic=508880.msg5616146</a>#msg5616146.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T16:19:04.290442+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

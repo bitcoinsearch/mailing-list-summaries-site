@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Proposal: Base58 encoded HD Wallet root key with optional encryption</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> William Yager 2014-03-12 20:10:27
+            <br><i>Published on: 2014-03-12T20:10:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_-RFC-Proposal-Base58-encoded-HD-Wallet-root-key-with-optional-encryption.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004639.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Pavol Rusnak and William Yager, they discuss a proposed BIP that uses a bloom filter for plausible deniability and typo checking. The bloom filter is optimized for two elements and has the ability to catch 99.9975% of typos, while allowing for two different passwords. However, Rusnak points out that this isn't true plausible deniability as there's always at least two passwords, even if one is randomly generated. This means that if compelled to decrypt, there's no way to prove that the user actually knows a second password. The conversation then moves onto outsourcing the KDF (key derivation function) and how it would be in violation of the spec if developers used fancier algorithms instead of the ones specified. Yager clarifies that outsourcing here refers to using more powerful devices, like desktop PCs, to do the heavy lifting of key-stretching work without compromising the security of the wallet.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T14:45:21.391931+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

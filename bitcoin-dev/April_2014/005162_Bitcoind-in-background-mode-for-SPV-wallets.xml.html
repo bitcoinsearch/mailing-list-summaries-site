@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoind-in-background mode for SPV	wallets</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2014-04-09 17:38:28
+            <br><i>Published on: 2014-04-09T17:38:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Bitcoind-in-background-mode-for-SPV-wallets.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005162.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in the given context is about the privacy and security of Bitcoin transactions. It is being argued that Bloom filters gives away accurate statistical information about what coins you own to anyone you are connected with which can be used to deanonymize the user even if they do not reuse addresses. Tor is also said to be ineffective against this attack. The solution proposed is partial UTXO set mode, which allows the node to gradually scan backward until block zero and at that point, it has a complete UTXO set and is a full node. The idea is to have a model where the node starts with no data at all, giving SPV security, and then downloading the full blockchain starting from the oldest key birthday the user is interested in. This would give users their transactions with SPV security and full node privacy.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T19:31:42.478119+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Chain pruning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2014-04-10 22:15:15
+            <br><i>Published on: 2014-04-10T22:15:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Chain-pruning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005227.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Bitcoin-development mailing list, Pieter Wuille notes that the removal of checkpoints represents a reduction in security, as we are now trusting that the longest chain with the most proof of work commits to a valid UTXO set at some point in the past. Currently, the Bitcoin code already sets blockchain checkpoints from time to time, guaranteeing that a longer chain starting before the checkpoint will not be accepted suddenly. It is suggested that it could be valid to only store unspent wallets before the last checkpoint, as long as the node performs all necessary checks during the blockchain download process. It would be interesting to be able to verify "unspend wallet accounting" using only that checkpoint data, which the merkle tree can do. This would enable detection of any data corruption or manipulation on the local hard disk. The discussion then ends with an advertisement for Jenkins Continuous Integration and an invitation to start a new project with Jenkins in the cloud. In conclusion, this conversation highlights the ongoing evolution of Bitcoin's security measures and the potential for even greater efficiency in blockchain storage and verification.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T19:34:58.359443+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

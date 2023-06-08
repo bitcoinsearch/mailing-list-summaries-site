@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>sorting public keys for p2sh multisig transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> devrandom 2014-03-12 19:42:44
+            <br><i>Published on: 2014-03-12T19:42:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_sorting-public-keys-for-p2sh-multisig-transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004635.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the standard way of sorting public keys for a p2sh multisig transaction. The serialized script consists of m, n, public key and OP_CHECKMULTISIG. The order of public keys matters because the hash depends on it. There are two types of public keys: compressed and uncompressed. Sorting them as strings, big endian numbers, or little endian numbers yield different results. Alan Reiner's comment suggests using parallel trees to generate P2SH addresses after sorting the keys lexicographically, which probably means sorting as strings. The writer implemented sorting in javascript, where he sorted them as big endian numbers and filled in the 0s. However, he doesn't care which method they use as long as everyone in the Bitcoin world uses the same standard.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T14:58:24.319092+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
