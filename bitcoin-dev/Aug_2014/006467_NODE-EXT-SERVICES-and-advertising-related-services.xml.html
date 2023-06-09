@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>NODE_EXT_SERVICES and advertising related services</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2014-08-08 12:15:19
+            <br><i>Published on: 2014-08-08T12:15:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_NODE-EXT-SERVICES-and-advertising-related-services.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006467.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the implementation of 'getutxos' as an external application or script. However, it is noted that getutxos needs access to the UTXO set which bitcoind already has. Hence, it would be redundant to recalculate it from scratch in an external plugin. The author suggests having useful services like -txindex or the nLockTime storage facility added in such a way. Bitcoind would need a local interprocess message bus for that. The author proposes a simple solution where any program can connect to bitcoind as normal, send "registersrv" with the cookie and a list of command ids it's interested in, maybe a service bit to set, and start receiving those messages wrapped in a new structure. An additional standalone program can then bridge this mechanism to running a shell command for particular messages.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:04:03.866797+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

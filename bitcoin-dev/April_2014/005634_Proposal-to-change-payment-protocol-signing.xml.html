@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal to change payment protocol signing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin 2014-04-29 19:12:49
+            <br><i>Published on: 2014-04-29T19:12:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Proposal-to-change-payment-protocol-signing.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005634.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In April 2014, there was a discussion about clarifying how BIP70 signs payment requests. The issue is what to do with the signature field before signing. The code Mike and Gavin initially wrote does this: request.set_signature(string("")). Gavin proposed that it should be changed to request.clear_signature(). Consensus is the spec should be clarified to match current behavior, so it won't change. There is already a BIP70 in use with over a hundred paid requests. If anyone is implementing or has implemented the payment protocol, they are encouraged to chime in. Gavin wants to change the specification and reference implementation while BIP70 is still a draft. This type of mistake is the reason why BIPs take a while before being declared 'Final.'</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T22:04:47.759442+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

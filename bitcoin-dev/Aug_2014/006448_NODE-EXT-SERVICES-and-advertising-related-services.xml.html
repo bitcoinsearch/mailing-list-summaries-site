@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>NODE_EXT_SERVICES and advertising related services</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2014-08-08 03:38:44
+            <br><i>Published on: 2014-08-08T03:38:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_NODE-EXT-SERVICES-and-advertising-related-services.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006448.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin community does not require all functionality to be built into bitcoind in order to form a decentralized network. BitPay's insight open source block explorer API project requires, and runs on top of, bitcoind. As such, other services are made available to the public at the same IP address as bitcoind. This creates a decentralized network of "anyone running a full node and an insight server", forming a subset of the whole P2P net. By querying any number of insight servers from multiple operators, one can avoid trusting BitPay's insight server, and survey the results.To build this in a generic way, NODE_EXT_SERVICES is advertised via the "addr" P2P message. Nodes that recognize the NODE_EXT_SERVICES bit may connect to that node and query a services list via "getextsrv" P2P message to take further action based on the results. Services may only advertise added services if they are at the same IP address being advertised.Jeff Garzik, a Bitcoin core developer and open-source evangelist, notes that this is not a fully baked proposal but rather a trial balloon to encourage discussion. He also emphasizes that it is unnecessary to implement all services inside bitcoind.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:01:26.646553+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

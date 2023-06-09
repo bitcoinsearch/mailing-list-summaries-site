@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bloom bait</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2014-06-10 13:02:00
+            <br><i>Published on: 2014-06-10T13:02:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2014/combined_Bloom-bait.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/006003.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article describes how disk activity affects the performance of Bitcoin transactions. The author asserts that when nodes act as archival data sources, the page cache pressure is immense. As a result, disks run constantly, impacting all clients, even those downloading only recent blocks. The article suggests that NODE_BLOOM tends to be slower due to the working set almost always being larger than available page cache. This causes disk activity which can cause delays and diminishes the performance of Bitcoin. Additionally, the author argues that prefix filtering may not save any disk seeks, or actively make the issue worse. For instance, filter parts of the chain for this client boil down to a handful of disk seeks at best. However, prefix filtering requires the calculation of a sorted list of all the data elements and tx hashes in the block, which maps to the location where the tx data can be found. These per-block indexes take up extra disk space and, realistically, would likely be implemented using LevelDB. This could slow down block relay and increase pressure on the page cache, making it worthwhile only at some block sizes and client loads.In conclusion, the author suggests that resources such as disk I/O are not presently scarce, so it's better to spend time increasing usage rather than worrying about such resources. The article highlights the importance of avoiding hitting the disk since once you start hitting the disk, you have already lost.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T23:44:48.584610+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

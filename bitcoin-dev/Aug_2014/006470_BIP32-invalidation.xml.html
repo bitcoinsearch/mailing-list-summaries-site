@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP32 - invalidation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pavol Rusnak 2014-08-08 13:19:38
+            <br><i>Published on: 2014-08-08T13:19:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_BIP32-invalidation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006470.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of this post is proposing a change to the BIP32 protocol regarding invalidation of nodes. Currently, the protocol states that if a resulting key is invalid (due to various reasons, such as I_L being greater than or equal to n), one should proceed with the next value for i. However, the author suggests changing this to instead assign I_L := I_L mod n in all three cases (public CKD, private CKD, and master key generation). The rationale behind this change is that it is often difficult at the application level to implement skipping logic when marking a key as invalid. Instead, performing a modulo operation is more straightforward and may lead to more implementations actually checking for invalid keys. The author notes that there are still cases where a key may be invalid (such as when I_L = 0 or ki = 0 or ki = inf), but these have a low probability of occurring. The author asks if anyone has any concerns regarding the security implications of this proposed change.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:07:06.820626+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

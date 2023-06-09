@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP32 structure for P2SH multisig wallets</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Manuel Araoz 2014-04-25 22:27:45
+            <br><i>Published on: 2014-04-25T22:27:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_New-BIP32-structure-for-P2SH-multisig-wallets.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005566.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A team building a multisignature P2SH HD wallet has shared their approach to address generation and transaction signing for a multisig HD wallet, in response to discussions on standardising the structure for branches. The team has made several assumptions, including that N parties want to share an m-of-n wallet, each party must generate their master private keys independently, and multisig P2SH be used for all addresses, among others. They have proposed that they will use BIP43, with levels defined as m / purpose' / cosigner_index / change / address_index, and detail the meaning of each level. The team's high-level description of their wallet involves each party generating their own extended master keypair and sharing the extended purpose' public key with the others, which is stored encrypted. When generating an address, each party can independently generate the N needed public keys. In the receive address case, only one of the n cosigners generates addresses and knows the last used index in his own branch, while in the change address case, one of the n cosigners wants to create an outgoing payment, for which he'll need a change address. When creating a transaction, one of the parties creates a Transaction Proposal which is sent to the other parties who decide if they want to sign it. Once the proposal reaches m signatures, any cosigner can broadcast it to the network. There are still some questions left unanswered by the team, including whether cosigners will be able to generate public keys knowing the extended purpose public key for each copayer, and the benefits of sorting the master public keys before using them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T21:41:50.602119+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

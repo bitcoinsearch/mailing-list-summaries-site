@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Block collision resolution using the DECOR protocol and Bonneau&#39;s Kickbacks problem</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ittay 2014-05-05 20:27:08
+            <br><i>Published on: 2014-05-05T20:27:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2014/combined_Block-collision-resolution-using-the-DECOR-protocol-and-Bonneau-s-Kickbacks-problem.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005705.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Sergio Lerner's proposal to incentivize the inclusion of uncle blocks in the blockchain would work by giving 50% of the block reward to the uncle block, which is added at any time before a coinbase matures. The correct interpretation is that both the parent and uncle would receive 0.5 of the block reward. Although there are concerns about kickback-style attacks and selfish mining becoming more profitable, it is difficult for miners to prevent others from including the uncle block and taking the reward. The attack would be costly and inefficient, with each bribery payment having to be higher than the 5 BTC reward for including the uncle block. In terms of selfish mining, GHOST does not affect it, but DECOR changes revenue collection significantly. DECOR changes the threshold at which selfish mining is profitable but does not completely deter selfish mining, as selfish miners can still cause others to reduce their revenue by having them work on older blocks. However, Ittay Eyal and Emin Gun Sirer believe that selfish miners cannot gain any advantage under the DECOR protocol because blocks that lose the latency race will come back as uncles and still get their share of the reward. Finally, to break ties between blocks A and B, a better approach than hashing the blocks would be to see if H(A||B) > in advance if their block is likely to win a collision.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T22:10:55.309995+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

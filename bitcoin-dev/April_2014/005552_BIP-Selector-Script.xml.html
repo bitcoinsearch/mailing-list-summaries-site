@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP - Selector Script</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2014-04-25 20:02:41
+            <br><i>Published on: 2014-04-25T20:02:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_BIP-Selector-Script.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005552.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On April 25th, 2014, Tier Nolan proposed a Bitcoin Improvement Proposal (BIP) to allow the spender to choose one of multiple standard scripts to use for spending the output. This proposal was required as part of the atomic cross chain transfer protocol so that outputs can be retrieved if the process ends before being committed. The script allows multiple standard scripts to be included in the scriptPubKey and when redeeming the script, the spender indicates which of the standard scripts to use. Only one standard script is actually executed, so the only cost is the extra storage required.Luke-Jr responded to the proposal stating that it looks reasonable from a brief skim over but does not define any use cases. Luke-Jr suggests that one use case should be enough and that the atomic cross chain proposal has been discussed for a while. However, non-standard transactions are hard to get confirmed on other coins, making it difficult to find pools on other chains that have weaker isStandard() checks. As such, a testnet to testnet transfer is currently the best option.Luke-Jr also suggests that secure transfers require fixing the malleability issue but that this is a separate issue. To ensure that clients are interoperable, it may be useful to have a BIP for cross chain transfers in the future. However, if transactions aren't accepted in any chains, everything stalls.In response to Tier Nolan's proposal, Luke-Jr suggests that P2SH should be mandatory after a certain time. It makes distributed verification of the block chain easier since everything needed to verify a script is present in the transaction. A soft fork that expands P2SH functionality would be even better, however, he does not want to let the best be the enemy of the good.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T21:27:56.107862+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

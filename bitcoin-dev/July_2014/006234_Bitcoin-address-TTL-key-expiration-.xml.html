@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin address TTL &amp; key expiration?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2014-07-15 08:20:20
+            <br><i>Published on: 2014-07-15T08:20:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Bitcoin-address-TTL-key-expiration-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006234.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on Bitcoin protocol, Jeff Garzik suggested the idea of limiting the lifetime of a bitcoin address to prevent the accidental sending of bitcoins to a pubkey/pkh after the key has expired. One way to achieve this could be appending "don't permit/confirm after X time/block" to the address which would not be digitally signed but hash-sealed. The best insertion point in the protocol for key expiration is an open question that needs to be addressed. Garzik suggests that adding a flag "no more TxOuts exactly like this [after X block?]" could work. The benefits of implementing this idea include preventing users from accidentally sending to an "expired" TxOut/pkh, discouraging address reuse, and enabling sites that generate lots of keys to rotate ancient keys off their core systems. However, anything that makes a transaction invalid because of the presence of a specific scriptPubKey in a txout has the potential to make a whole chain of transactions become invalid during a reorg. Therefore, it's better to solve the problem at the UI level. Additionally, Bitcoin addresses can be added to OpenPGP keys as signed data with optional expiration times and revocable signatures. This idea should be considered by all payment protocols.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:50:19.866349+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Squashing redundant tx data in blocks on the wire</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kaz Wesley 2014-07-31 22:27:59
+            <br><i>Published on: 2014-07-31T22:27:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006394.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion, Gregory Maxwell and Kaz Wesley debated about solving the problem of transmitting the transaction list. The current protocol involves exchanging information necessary to determine what a peer is missing, but FEC-based mempool synchronization can be implemented which eliminates false positives and offers a finer-grained mechanism for defining what a node can forget from its mempool. Channel memory sparse blocks achieve most of the possible bandwidth savings and when FEC-based mempool synchronization is implemented, its benefits can be applied to the sparse blocks by resetting the channel memory to the mutual mempool state each time mempool differences are exchanged. However, the FEC still lets you fill in the missing transactions without knowing in advance all that will be missing, so the need to solve this problem is not urgent. The suggestion on the network block coding page of using part of a cryptographic permutation as the key means that for unknown transactions, the transmission of the new unknown keys is always goodput and does not add overhead.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:08:30.281011+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

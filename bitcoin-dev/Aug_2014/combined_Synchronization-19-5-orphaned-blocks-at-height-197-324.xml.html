@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Synchronization: 19.5 % orphaned blocks at height 197&#39;324 <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006486_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>mbde at bitwatch.co 2014-08-10 13:42:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006489_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Pieter Wuille 2014-08-10 18:07:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006487_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Bob McElrath 2014-08-10 14:07:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006489_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Pieter Wuille 2014-08-10 18:07:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006486_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>mbde at bitwatch.co 2014-08-10 13:42:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006487_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Bob McElrath 2014-08-10 14:07:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006488_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Jeff Garzik 2014-08-10 14:20:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006486_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>mbde at bitwatch.co 2014-08-10 13:42:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006488_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Jeff Garzik 2014-08-10 14:20:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006487_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Bob McElrath 2014-08-10 14:07:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006488_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Jeff Garzik 2014-08-10 14:20:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006489_Synchronization-19-5-orphaned-blocks-at-height-197-324.xml.html">Synchronization: 19.5 % orphaned blocks at height 197&#39;324</a>
+                        <b>Pieter Wuille 2014-08-10 18:07:54</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006486.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-08-10T13:42:41+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email thread discusses the synchronization issue faced by the user while running a new node. The debug.log file showed an excessive number of orphaned blocks, which was around 19.5% of the total blocks at a height of 197,324. The user was concerned if a malicious party could generate chains of low difficulty blocks to slow down the sync process. Bob McElrath explained that Bitcoin is very sensitive to hardware issues such as single bit flips in memory or computation and suggested running a Python script attached to the email to check for sha256 mismatches. Jeff Garzik, a Bitcoin core developer and open source evangelist, responds to the email thread and notes that the issue is currently being worked on under the category of "headers first synchronization." Until this is completed, he recommends downloading bootstrap.dat via torrent from <a href="https://bitcointalk.org/index.php?topic=145386.0.Orphaned">https://bitcointalk.org/index.php?topic=145386.0.Orphaned</a> blocks are common during synchronization due to broken download logic in the client. They occur when the blocks are further ahead in the chain than where you are currently synchronized. While you're still synchronizing, a peer could send you stale branches with valid proof of work that would be accepted, stored, and processed. However, this must be done early on because once you learn of a good-enough chain, a branch with more proof of work would be required due to heuristics designed to prevent such attacks. A solution to this problem is headers-first synchronization, which verifies the headers in the chain first and then downloads blocks from multiple peers in parallel without regard for order. There is currently a pull request for this solution (#4468), but it is not yet production-ready.The writer is currently synchronizing a new node, and at the progress of a height of 197'324 blocks, they have counted an aweful amount of 38'447 orphaned blocks which is about 19.5%. This seems like a high number to the writer, and they are wondering if it's possible for a malicious party to generate chains of blocks with low difficulty that are not part of the main chain to slow down the sync process. The email provides information on the build and version being used, as well as a compressed debug.log file for further analysis.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-09T02:08:33.639368+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

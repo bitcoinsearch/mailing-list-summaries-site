@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Future Feature Proposal - getgist</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2014-06-05 14:28:04
+            <br><i>Published on: 2014-06-05T14:28:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2014/combined_Future-Feature-Proposal-getgist.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/005963.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Richard Moore, the founder of Genetic Mistakes Software Inc., reached out to the Bitcoin development team with an idea for implementing a getgist() command that would be fully backward compatible. The inputs to getgist() would be similar to getheaders(); version, hash_count, block_locator_hash, stop_hash and an additional field, segment_count. The response would be a normal headers() message, except, not sequential block headers. Rather they would be spaced out, preferably 2000-block-hash-aligned from the first block hash. The correct approach here is header hash-tree commitments which enable compact (logarithmic) SPV proofs that elide nearly all intervening headers since the last checkpoint. Existing methods could be to use checkpoint-ish nodes or bootstrap data files, but these begin relying on semi-cetralizenesses. The proposed method by Richard Moore could vastly increase the speed at which the whole blockchain can have all headers synced.This proposal aligns with BIP 001, which requires emailing the Bitcoin development team to make sure the idea is original and that there aren't other existing means to accomplish what he was thinking. Richard still needs to perform some tests to see what type of speed gains there are, but he suspects it should be segment_count times faster.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T23:41:23.204243+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reconsidering github</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Angel Leon 2014-08-23 11:59:04
+            <br><i>Published on: 2014-08-23T11:59:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_Reconsidering-github.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006564.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion began with Jeff Garzik's comment on Github being too centralized and it would be better if issues and git repo for Bitcoin Core were not on such a service. In response to this, one developer from freenetproject.org, xor, commented that there were no issues with using Git the wrong way or not knowing its capabilities. He further mentioned that Bitcoin has currently 4132 forks on Github, meaning that you can get contributions by pull requests from 4132 developers. However, Troy Benjegerdes expressed his concern about relying solely on Github as it may be tempting to approve an unsigned changeset when in a hurry to release a critical OpenSSL 0day security patch build. He suggested having multiple redundant 'master' repositories run by different people in different jurisdictions that get updated on different schedules, and have all of these people pay attention to operational security. The integrity of Git history should be maintained, and no one should rewrite (rebasing) commit history. Xor explained that Github cannot modify anything, and if they did, the head of the hash-chain would change, and thus the signature would break. People who deal with pull requests should verify tag and possibly even commit signatures carefully, and not accept anything which is not signed. Before deploying a binary, the very same commit which is going to become a binary has to be given a signed tag by the release manager, and by everyone who reviews the code. The person who deploys the actual binary needs to verify that signature.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:21:40.423161+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

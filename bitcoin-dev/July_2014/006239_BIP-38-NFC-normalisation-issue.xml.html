@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 38 NFC normalisation issue</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-07-15 12:03:36
+            <br><i>Published on: 2014-07-15T12:03:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_BIP-38-NFC-normalisation-issue.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006239.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoinj recently added an implementation of BIP 38 to its system, which is a password-protected private key. The third test vector appears broken because it gives a hex version of what the NFC normalized version of the input string should be, but this doesn't match the results of the Java Unicode normalizer. Furthermore, the embedded null in the string prevents Python from printing the names of the characters past it. The proposed action is to remove this test vector since it does not represent any real-world usage of the spec. Alternatively, a different, more realistic test string could be used, such as Zürich or something written in Thai.The passphrase used in the third test vector includes non-standard UTF-8 characters that should be NFC normalized before further processing. However, the "pile of poo" character included in the passphrase is not something a sane user would typically use in a passphrase. While NFC form is meant to collapse certain characters onto their prior code point, feeding the algorithm essentially garbage data makes it unsurprising that different implementations disagree on the outcome.The third test vector includes additional information such as the encrypted key, Bitcoin address, and unencrypted private key (WIF). Nevertheless, given the issues with the test vector, it's questionable whether these additional details are useful in this context.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:58:07.811682+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP draft] CHECKLOCKTIMEVERIFY - Prevent a txout from being spent until an expiration time</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Sergio Lerner 2014-10-01 15:29:48
+            <br><i>Published on: 2014-10-01T15:29:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2014/combined_-BIP-draft-CHECKLOCKTIMEVERIFY-Prevent-a-txout-from-being-spent-until-an-expiration-time.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-October/006664.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal of broadcasting transactions having OP_CHECKLOCKTIMEVERIFY a few blocks after the timeout value is favored. However, if a node broadcasts a transaction with OP_CHECKLOCKTIMEVERIFY and nLockTime equal to the current height and timeout value but is one block behind in the blockchain, the transaction will be rejected and the source will be banned. One alternative suggested was not to ban peers who send transactions that fail to verify OP_CHECKLOCKTIMEVERIFY, but it was not well-liked. Another option would be for the sender to periodically check the height of their peers using the version command to ensure that the transaction with OP_CHECKLOCKTIMEVERIFY is only sent to peers up-to-date with the blockchain. These options were provided by Sergio.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:52:11.280022+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Squashing redundant tx data in blocks on the wire</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kaz Wesley 2014-07-31 20:47:35
+            <br><i>Published on: 2014-07-31T20:47:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006390.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the practicality of set reconciliation for condensed block exchange. It would require a round trip to request missing transaction keys, making it expensive to exchange transactions that are not mutually-known. The approach of remembering what invs have been transmitted both directions along each connection is less elegant but very effective at squeezing bytes and cheap in CPU cycles. There is a wealth of mutual knowledge already available in the current protocol, allowing for the goal of exchanging blocks efficiently by solving an easier problem than its context-less cousin. An implementation of inv-history-tracking uses a 2b/tx alternative to getdata for tx, and a better implementation plus sparseblock messages will be ready soon. This approach has a total vtx transmission size of 2*nTxKnown + 1*nTxUnknown + nBytesTxUnknown, where only a small window of very recent transactions and any transactions that have fallen out of the history limit would be mutually known but not known to be known. Compact descriptions of block tx inclusion and ordering policies could nearly eliminate the overhead for both known and unknown transactions. Efficient mempool synchronization would increase the efficacy of channel-memory sparseblocks. Mempool exchange would enable a node to have one or more "roaming" peer slots, making it difficult to sybil attack a node. If a serious bug or DoS attack caused the network to start to partition itself due to DoS bans, occasional roamers crossing the partition keep both sides generally in sync.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:11:51.018191+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

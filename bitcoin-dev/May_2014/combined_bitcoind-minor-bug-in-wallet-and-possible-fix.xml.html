@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bitcoind minor bug in wallet and possible fix <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005916_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Mark Friedenbach 2014-05-30 00:06:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005917_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Toshi Morita 2014-05-30 00:10:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005915_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Toshi Morita 2014-05-30 00:01:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005915_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Toshi Morita 2014-05-30 00:01:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005917_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Toshi Morita 2014-05-30 00:10:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005916_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Mark Friedenbach 2014-05-30 00:06:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005917_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Toshi Morita 2014-05-30 00:10:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005915_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Toshi Morita 2014-05-30 00:01:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2014/005916_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html">bitcoind minor bug in wallet and possible fix</a>
+                        <b>Mark Friedenbach 2014-05-30 00:06:40</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005916.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-05-30T00:06:40+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In May 29, 2014, Toshi Morita reported a bug he found while running `bitcoind` under `valgrind` to the Bitcoin-development mailing list. The uninitialized variable in question was located in the CWallet class and caused a conditional jump or move depending on uninitialised value(s). This occurred because `nTimeFirstKey` was not initialized when the wallet was instantiated. Toshi provided a fix for the issue in his fork of the code, which involved initializing `nTimeFirstKey` to 0. Mark Friedenbach suggested that Toshi submit a pull request on Github, where it will likely be merged quickly.Further analysis revealed that the error occurred due to `nTimeFirstKey` not being initialized in the source code for bitcoin, as indicated by an error message when running `bitcoind` under `valgrind`. This was identified using Valgrind-3.8.1 and LibVEX, with the code located in the wallet.cpp file, specifically on line 63. The error can be fixed by initializing `nTimeFirstKey` or ensuring it is given a value before use.In addition to reporting the bug, Toshi also included an advertisement for Restlet, a web API service, in his email to the Bitcoin-development mailing list.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-08T23:28:58.567202+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

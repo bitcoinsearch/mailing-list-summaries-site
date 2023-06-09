@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CoinShuffle: decentralized CoinJoin without trusted third parties</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2014-08-11 17:06:48
+            <br><i>Published on: 2014-08-11T17:06:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_CoinShuffle-decentralized-CoinJoin-without-trusted-third-parties.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006494.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the requirement of ensuring validity at a certain level and how it can constrain the use cases of protocol implementations. It is mentioned that parties can generate chained transactions on unconfirmed transactions, which is difficult to do safely in general due to malleability but can be safe or desirable in some circumstances. Clients are recommended to validate the inputs to a shuffle they are participating in, which depends on the client type. For SPV clients without servers, getUTXO can be used or they can verify the validity of the transaction that created the input designated for mixing. A signed transaction that spends the money can also convince even SPV clients that a participant with these inputs is trying to cheat. One issue raised is that lite clients cannot perform this check, making the protocol vulnerable to DoS attacks. An alternative solution is to have participants submit the merkle proof for the input, but this requires inputs to have at least one confirmation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:53:42.567811+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP for geutxos message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-07-10 14:29:12
+            <br><i>Published on: 2014-07-10T14:29:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Draft-BIP-for-geutxos-message.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006212.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A draft BIP for getutxo has been opened up as a protocol extension that performs UTXO lookups given a set of outpoints. The ability to query the unspent transaction output set can be useful for a lightweight/SPV client which does not have the full UTXO set at hand. Two new messages are defined in the specification, "getutxos" and "utxos", with the latter returning the height of the chain at the moment the result was calculated, a block hash of the top of the chain, an array of bytes encoding one bit for each outpoint queried, and a list of result objects (defined below), one for each outpoint that is unspent. Nodes indicate support by advertising a protocol version above 70003 and by setting a new NODE_GETUTXO flag in their nServices field, which has a value of 2 (1). The UTXO set is not currently authenticated by anything, but proposals to resolve this by introducing a new consensus rule that commits to a root hash of the UTXO set in blocks have been made. Future versions of the Bitcoin protocol may also allow the value to be checked.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:45:02.259960+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

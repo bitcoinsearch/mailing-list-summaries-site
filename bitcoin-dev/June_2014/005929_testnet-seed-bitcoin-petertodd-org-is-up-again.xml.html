@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>testnet-seed.bitcoin.petertodd.org is up again</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Kotenko 2014-06-01 09:56:52
+            <br><i>Published on: 2014-06-01T09:56:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2014/combined_testnet-seed-bitcoin-petertodd-org-is-up-again.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/005929.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Alex Kotenko had set up DNS seeds at testnet-seed.alexykot.me and bitcoin-seed.alexykot.me, but there was a problem with the DNS settings that could not be resolved quickly by him and Andreas. The problem appeared to be that he could reach his nameserver and get dnsseed response if he queried it directly, but when he tried nslookup testnet-seed.alexykot.me, it failed, which led him to believe that the problem was with his DNS settings. Robert McKay replied that the problem might be due to the 'aa' flag missing in dig, and suggested suppressing authority records to see if it would work for some resolvers. McKay also mentioned that bind forwarding was stripping off the authoritative answer bit in the reply, causing the recursor to go into a loop chasing the authority server, which returned a non-authoritative answer with itself as the authority again. Alex Kotenko decided to switch to serving only testnet DNS on this server for now since having both DNS seeds running on the same IP address seemed impossible. He planned to later buy a second IP to set up mainnet DNS.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T23:18:29.796449+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

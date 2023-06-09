@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Announcing the Statoshi fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-05-07 20:25:31
+            <br><i>Published on: 2014-05-07T20:25:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2014/combined_Announcing-the-Statoshi-fork.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005722.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around different ways to simplify the installation of all components for Graphite. One possible approach is to export stats over TCP and make them public so that anyone can listen. This would require no setup from the node operators and not much in terms of resources. Google uses this approach by having monitoring servers locate servers of interest via a discovery service, connect to them, and start streaming stats data into a database service that can then be queried later to get graphs. The latter approach appeals more to certain types of people, as monitoring and analysis tends to appeal more to certain types of people than others. The idea is primarily to have an installer for running a (wallet-less) node as an OS background service. Having some statistics available would be worth some extra download size; otherwise, it would be pretty much invisible. Implementing things like web services in C++ is just not realistic given the time constraints and the great already-written code that is out there. As an optional tool, it should be external, not part of bitcoind itself. The chart rendering happens client-side, so the web service just has to collect and provide the data and serve static HTML/JS files.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T22:23:48.054572+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>deterministic transaction expiration</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Flavien Charlon 2014-08-05 17:02:38
+            <br><i>Published on: 2014-08-05T17:02:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_deterministic-transaction-expiration.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006412.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin developers are discussing the implementation of a new script opcode that would allow users to prove their ability or inability to spend funds before or after a given date. This would require the client to revalidate all transactions in its mempool whenever the chain tip changes. While there are risks associated with this, it is not mandatory to use. Additionally, the developers discussed the issue of fee-sniping reorgs and proposed setting nLockTime at current-height + 1 to prevent them. They also suggested implementing #3753 (mempool janitor) in a way that allows transactions with nLockTime to live longer in the mempool than those without, and adding an IsStandard rule rejecting transactions with an nLockTime more than N blocks behind the current tip for some fixed value N. Finally, they proposed expiring things from the mempool in Bitcoin Core as a first step towards this change.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:47:54.963008+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

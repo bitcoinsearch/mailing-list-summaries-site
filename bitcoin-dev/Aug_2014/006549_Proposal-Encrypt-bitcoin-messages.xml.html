@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Encrypt bitcoin messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Cameron Garnham 2014-08-20 05:40:49
+            <br><i>Published on: 2014-08-20T05:40:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_Proposal-Encrypt-bitcoin-messages.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006549.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the implementation of perfect forward secrecy between all nodes by default, as this would increase the cost for any attackers attempting a MITM attack on a large scale. It is relatively cheap to implement and has significant benefits for privacy and security. One participant in the discussion questions the need for encryption, given that the data being processed by the network is known to persistent client nodes. However, it is noted that without encryption, significant amounts of information are leaked to passive attackers tracing the origin of Bitcoin transactions, thus posing a privacy risk. Additionally, upcoming fee estimation implementations are vulnerable to Sybil attacks, so authentication and encryption are necessary to ensure security. The suggested solution involves enabling hidden service support by default, which provides both encryption and reasonably good authentication. There are concerns about the attack surface this introduces, but the suggestion of separating the surface using the standalone Tor binary, which runs under a different user to the Bitcoin Core binary, is put forward. It is also noted that Tor support used in parallel with native connection is ideal for preventing ISP-level targeting and Sybil attacks. Finally, it is mentioned that Bitcoinj has already implemented Tor support for these same reasons.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:13:47.119835+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

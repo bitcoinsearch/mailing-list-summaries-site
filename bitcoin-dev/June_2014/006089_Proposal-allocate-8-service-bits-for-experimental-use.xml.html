@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: allocate 8 service bits for experimental use</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2014-06-17 21:29:07
+            <br><i>Published on: 2014-06-17T21:29:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2014/combined_Proposal-allocate-8-service-bits-for-experimental-use.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/006089.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In 2011-2012, a patch for string-based name extensions was written as an alternative to unreadable bits. However, it was noted that these extensions would not propagate around the network in "addr" messages, unlike service bits. Wladimir J. van der Laan suggested adapting a string-based name space for extensions and proposed adding a command 'getextensions' to query the supported extensions, returning a list of extension strings or (extension, version) pairs. For BIPs, something like 'BIP0064' could be defined, but for experiments, 'experimental-getutxo' could be used. This would give more freedom to alternative implementations to experiment with their extensions and take the political aspect out of P2P network extensions. Unlike with the 64 service bits, there is no real danger of collisions. It also eliminates the need for Bitcoin core to drive what must be supported with increasing network versions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:13:06.766603+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

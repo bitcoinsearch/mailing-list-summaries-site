@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Squashing redundant tx data in blocks on the wire</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2014-07-18 14:53:01
+            <br><i>Published on: 2014-07-18T14:53:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006297.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The majority of transaction data, except for coinbase, is assumed to have been propagated and incentivizing nodes to propagate transactions is a good thing. The only information that needs to be propagated is which transactions a miner is including in their block and the order they are included in. If an agreed-upon canonical ordering existed, shortcuts could be taken in determining the order of transactions. This could be done by selecting a subset of transactions based on miner policy, sorting them with the canonical ordering algorithm, and broadcasting efficiently while assuming most peers already know the set and expect the same order. Another half-baked thought was broadcasted regarding saving bandwidth by letting peers create a very good approximation of a block with just transaction selection policy information.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:11:30.342258+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

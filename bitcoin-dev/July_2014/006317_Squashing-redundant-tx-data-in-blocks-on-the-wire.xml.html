@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Squashing redundant tx data in blocks on the wire</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Emin Gün Sirer 2014-07-19 03:06:21
+            <br><i>Published on: 2014-07-19T03:06:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006317.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about minimizing data transfer in the context of blockchain mining. The round complexity is considered more important as a single round trip time (RTT) is enough to send the whole block on many relevant paths. A proposal to use forward error correction (FEC) for low data transfer and negligible probability of needing a round-trip, with a tradeoff for more overhead for lower roundtrip probability, was suggested. However, FEC schemes are complex and add additional metadata overhead. Set reconciliation is considered near optimal. Yaron's non-interactive scheme is praised for its ability to immediately figure out the delta without further back and forth communication, each requiring an RTT. While there is no horse in this race, multithreading the client is considered the best way to go.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:11:10.323997+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

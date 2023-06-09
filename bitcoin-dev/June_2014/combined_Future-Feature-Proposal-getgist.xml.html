@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Future Feature Proposal <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005960_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Richard Moore 2014-06-04 19:30:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005963_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Mark Friedenbach 2014-06-05 14:28:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005964_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Richard Moore 2014-06-05 17:43:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005963_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Mark Friedenbach 2014-06-05 14:28:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005964_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Richard Moore 2014-06-05 17:43:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005961_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Mike Hearn 2014-06-05 03:42:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005964_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Richard Moore 2014-06-05 17:43:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005965_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Pieter Wuille 2014-06-05 19:34:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005965_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Pieter Wuille 2014-06-05 19:34:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005960_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Richard Moore 2014-06-04 19:30:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005961_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Mike Hearn 2014-06-05 03:42:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005960_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Richard Moore 2014-06-04 19:30:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005961_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Mike Hearn 2014-06-05 03:42:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005963_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Mark Friedenbach 2014-06-05 14:28:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005965_Future-Feature-Proposal-getgist.xml.html">Future Feature Proposal - getgist</a>
+                        <b>Pieter Wuille 2014-06-05 19:34:15</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/005960.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-06-04T19:30:10+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin developer Richard Moore has proposed implementing a new function called "getgist()" to increase the speed at which the entire blockchain can have all headers synced. This proposed method aligns with BIP 001 and allows for compact SPV proofs that elide nearly all intervening headers since the last checkpoint. The response from this function would be a normal headers() message with an additional field, segment_count, and would enable header hash-tree commitments. In an email exchange between Moore and Pieter Wuille, Moore suggests using the name "getcheckpoints()" but found it too lengthy. He mentions using "getheaders()" to quickly grab headers before downloading full blocks, but there is still a case for a "getgist()" call. However, Pieter argues against the use of "getgist()" stating that much of the reference client's design is built around doing as much validation on received data as soon as possible, to avoid being misled by a particular peer.Pieter highlights that based on earlier experimenting with his former experimental headersfirst branch, it's quite possible to have two mostly independent synchronization mechanisms going on. First, asking and downloading headers from every peer, and validating them. Second, asking and downloading blocks from multiple peers in parallel, for blocks corresponding to validated headers. Downloading the headers succeeds within minutes, and within seconds you have enough to start fetching blocks. After that point, you can keep a "download window" full with outstanding block requests, and as blocks go much slower than headers, the headers process never becomes a blocker for blocks to download. Pieter concludes by saying that unless we're talking about a system with billions of headers to download, he doesn't think it's a worthwhile optimization. Therefore, although the proposed implementation of "getgist()" could vastly increase the speed at which the whole blockchain can have all headers synced, it may not be necessary for most systems. Instead, the existing "getheaders()" command can be used to receive a set of headers starting from a point already known, in order, and validate them syntactically and for proof-of-work immediately.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-08T23:42:46.131777+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

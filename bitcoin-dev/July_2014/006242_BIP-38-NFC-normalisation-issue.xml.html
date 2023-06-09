@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 38 NFC normalisation issue</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Michael Wozniak 2014-07-15 13:32:01
+            <br><i>Published on: 2014-07-15T13:32:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_BIP-38-NFC-normalisation-issue.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006242.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On July 15, 2014, Mike Hearn wrote to the Bitcoin Development mailing list regarding an implementation of BIP 38 password-protected private keys in Bitcoinj. Test vector three was causing concern as it contained a non-standard UTF-8 character (pile of poo) which raised questions about practicality. The NFC normalised version of the input string did not match the results of the Java Unicode normaliser and different implementations appeared to disagree on the outcome. Andreas Schildbach suggested that control-characters should be disallowed in passphrases with the exception of emoticons as they are easily accessible on mobile phones. Eric Winer stated that pile of poo is easily accessible on iPhone and Android keyboards but he had not seen the NULL character on any smartphone keyboards.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:55:57.549314+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
