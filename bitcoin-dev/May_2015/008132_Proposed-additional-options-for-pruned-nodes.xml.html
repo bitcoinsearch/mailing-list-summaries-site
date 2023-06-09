@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed additional options for pruned nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2015-05-13 09:34:03
+            <br><i>Published on: 2015-05-13T09:34:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_Proposed-additional-options-for-pruned-nodes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008132.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Daniel Kraft suggested dividing the range of all blocks into intervals with exponentially growing size. A system was proposed where a node would broadcast 3 pieces of information including Seed (16 bits), M_bits_lsb (1 bit) and N (7 bits). The formula used for exponential increase was M = 1 > 2)) * 2.5MB, where groups of 4 were linearly interpolated. The sizes were calculated as Size(0) = 10 MB, Size(1) = 12.5MB, Size(2) = 15 MB, Size(3) = 17.5MB, Size(4) = 20MB, Size(5) = 25MB, Size(6) = 30MB, Size(7) = 35MB and Size(8) = 40MB. A node should store as much of its last start as possible by assuming start 0, 5, and 8 were "hits" but the node had a max size of 60MB. It can store 0 and 5 and have 25MB left. When approaching a transition point for N, a node would select a block height within 25,000 of the transition point and begin downloading the new runs it needs. Decreasing N only causes previously accepted runs to be invalidated.New nodes should use the higher M if they are near a transition point, say within 100,000. This spreads out the upgrade over around a year, with only a small number of nodes upgrading at any time. Finally, Size(255) was calculated using pow(2, 31) * 17.5MB = 35,840 TB.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T20:53:20.020841+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

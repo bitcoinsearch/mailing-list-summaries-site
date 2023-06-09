@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed additional options for pruned nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2015-05-12 20:10:56
+            <br><i>Published on: 2015-05-12T20:10:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_Proposed-additional-options-for-pruned-nodes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008119.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of block sync horizon and cliff in Bitcoin is causing problems for the 90th percentile of nodes that need an average number of X blocks to sync, with semi-pruned nodes needing to keep X blocks after which they must fall back to archive nodes for older data. The demand for recent blocks far outweighs that for old blocks, and there have been suggestions to refuse syncing if data is too old (>2 weeks) and use torrents to download ancient data instead. The security of the blockchain is weakened when attackers can cause a DoS on a small number of nodes, resulting in a network-wide DoS as no one can complete a sync. It has been suggested that this attack is best viewed as a bandwidth exhaustion DoS attack on the archive nodes, as users will go there if they cannot get a copy elsewhere. Allowing incremental ways for people to participate in the network, even if they cannot provide the whole resource, can be useful. Having only two kinds of full nodes, archive and pruned, would result in archive nodes taking up a huge disk and bandwidth cost, whereas if there are fractional nodes, archives take low (er) bandwidth unless the fractionals get DOS attacked.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T20:51:18.986753+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

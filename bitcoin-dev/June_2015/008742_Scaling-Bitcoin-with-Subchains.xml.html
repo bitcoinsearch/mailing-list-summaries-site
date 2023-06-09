@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scaling Bitcoin with Subchains</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew 2015-06-16 15:23:33
+            <br><i>Published on: 2015-06-16T15:23:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Scaling-Bitcoin-with-Subchains.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008742.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The subchain method proposed by Pieter can constrain all the addresses in a wallet to a path of subchains and prove the state of the UTXO database corresponding to the wallet with O(log n) proof. Although some may argue that it is not really a proof as transactions involving sibling chains outside the path of chains are not verified, the protocol is "parent chain always decides in case of conflict". The parent chains have an incentive to be careful with what child blocks they commit to as they will be merge mining the direct child chains. Recursive incentives ensure that the system takes care of itself, reducing the likelihood of errors. Pieter disagrees with the idea of downloading all headers and merely verifying transactions filtered out using their corresponding merkle trees, stating that it would not scale as well as with the tree structure he proposes. In a typical non-mining situation, only headers or full blocks in one path going down the tree starting from the root chain are required, which means O(log n) needs to be stored (headers or blocks). With big blocks, O(n) headers are still needed. Storing full blocks on the chains ensures that the headers of those blocks are validated and all transactions on those blocks are visible, including certain addresses that must stay on those blocks. Filtering out based on addresses or other criteria may result in missing transactions, which could be problematic. The advantages of this system for mining decentralization have also been explained in previous posts.Mike Hearn argues that either one cares about validation and must validate everything or does not care about validation and does not validate anything. However, the point remains that side chains are not a way to scale up.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T21:10:10.326414+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized Transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2015-05-13 12:48:04
+            <br><i>Published on: 2015-05-13T12:48:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_-BIP-Normalized-Transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008141.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal for a BIP to normalize transaction IDs has been suggested in order to address transaction malleability and facilitate higher level protocols. The normalized transaction ID is an alias that is calculated by removing the scriptSig before computing the hash, which ensures that only data whose integrity is also guaranteed by the signatures influences the hash. This would automatically invalidate the signature if anything causes the normalized ID to change. The detailed writeup can be found on GitHub. It is a simple alternative that not only solves transaction malleability but also simplifies higher level protocols as it allows for the use of template transactions upon which sequences of transactions can be built before signing them. Although this proposal requires a hardfork and old clients would not find the prevTx identified by the normalized transaction ID, it seems that hardforks are no longer the dreaded boogeyman nobody talks about. The details of how the hardfork is to be done have been left out, as it does not matter and there may be a good mechanism to apply a bunch of hardforks concurrently in the future. The proposal is not set in stone at this point and improvements are welcome.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T20:56:39.721482+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
