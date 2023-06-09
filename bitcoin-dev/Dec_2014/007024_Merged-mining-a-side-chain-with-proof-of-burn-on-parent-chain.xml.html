@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Merged mining a side chain with proof of burn on parent chain</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tamas Blummer 2014-12-18 16:23:53
+            <br><i>Published on: 2014-12-18T16:23:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2014/combined_Merged-mining-a-side-chain-with-proof-of-burn-on-parent-chain.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-December/007024.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The idea presented by Tamas Blummer for side chains is to use a new mining algorithm that burns Bitcoins to secure them, rather than relying on an external, real-world resource. The proposed method involves a burn transaction that sends at least n satoshis to an OP_RETURN h, with h mod m matching the Bitcoin block hash mod m for the block the burn transaction was mined into. A side chain block header sequence would be accepted as a side chain trunk if a sequence of Bitcoin SPV proofs for burn transactions prove that linked blocks have the highest cumulative burn compared to alternative sequences. The difficulty to mine with burn would be dynamic and imply a floating exchange rate between Bitcoin and the side coin. To contain fork rate, the parameter m would have to be adjusted dynamically, similar to Bitcoin's difficulty. It needs to increase if fork rate increases and decrease if no valid block is burned with Bitcoin blocks. Rational burn miners who frequently face and lose head-to-head runs with competing forks would increase their bet for the next burn cycle. The cumulative burn within an adjustment period (measured in Bitcoin blocks) is expected to rise in the face of high fork rate.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T14:38:02.072871+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

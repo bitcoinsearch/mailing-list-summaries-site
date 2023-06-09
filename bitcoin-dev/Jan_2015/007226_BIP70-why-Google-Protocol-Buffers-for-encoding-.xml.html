@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70: why Google Protocol Buffers for encoding?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Angel Leon 2015-01-28 17:17:54
+            <br><i>Published on: 2015-01-28T17:17:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_BIP70-why-Google-Protocol-Buffers-for-encoding-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007226.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the implementation of BIP70 and whether to allow both serializations or keep it as is. One of the goals of BIP70 was to support TREZOR and similar devices, which requires keeping the amount of code they need to run as small as possible. Doing it the way Nicolas Dorier suggested would mean increasing cost, complexity, and decreasing security. The embedding of certificates in BIP70 has a very good reason as it makes the signed payment request verifiable by third parties. BitcoinJ can use Android, JRE, Windows, and Mac certificate stores, and there is code to do iOS using Apple APIs. WinRT is a minority platform, and platforms that support HTTPS but not certificate handling are rare. There are pros and cons to bundling a custom root store, and Java can do OCSP checks. Implementing an OCSP stapling extension to BIP70 would be a better solution.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:30:07.497216+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

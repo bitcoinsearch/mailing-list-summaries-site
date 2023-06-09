@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70: why Google Protocol Buffers for encoding?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Whitlock 2015-01-19 19:19:50
+            <br><i>Published on: 2015-01-19T19:19:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_BIP70-why-Google-Protocol-Buffers-for-encoding-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007127.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Richard Brady, a user inquired about the reason behind the choice of Google Protocol Buffers for payment request encoding in BIP-0070. Although compact binary encoding is important, there are other standard choices available such as ASN.1, which has been around for decades and even has an XML encoding directly convertible to/from the binary encoding with the schema. In practice, the encoding used in BIP70 doesn't matter much, but it's perplexing that Protobuf re-solves a problem solved 40 years ago by ASN.1. Performance is not a strong driver behind the choice of Google Protocol Buffers since payment requests are not broadcast, and the data is crammed into a binary format before attaching it to a non-binary format. Human readability on-the-wire, availability of open-source libraries and APIs for parsing/manipulating/generating, easy hand-crafting of test messages for debugging, easier-to-read and write standards containing examples, thorough specification by independent standards bodies, and being a family are some great things about protocols/encodings like HTTP/JSON/XML.Richard's background is in SIP/VoIP, and he thinks that could be a fascinating use case for this protocol, which he hopes to work on.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:28:38.633567+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

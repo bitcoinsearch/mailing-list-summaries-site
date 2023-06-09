@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Requiring a miner&#39;s signature in the block header</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ittay 2015-02-12 13:56:02
+            <br><i>Published on: 2015-02-12T13:56:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2015/combined_Proposal-Requiring-a-miner-s-signature-in-the-block-header.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007422.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to require a miner's signature in the block header in order to prevent mining centralization. The proposal suggests that each miner must sign the block header prior to hashing, with the signature included in the data that is hashed. The coinbase for the block must only pay out to the public key counterpart of the private key used to sign the block header. This would make it difficult to form a cooperating pool of miners who may not trust each other, as the block rewards will be controlled by disparate parties and not by the pool operator. However, some argue that this solution would increase technical trust requirements and break P2Pool. Moreover, threshold signatures (group signatures) could probably be used by an actual distrusting pool's miners, making it possible for such a pool to work. For a more general view of nonoutsourceable puzzles, Miller et al.'s paper provides a useful resource. Sirer and Ittay also proposed a similar idea as part of two-phase proof of work (2P-PoW). In 2P-PoW, the first phase involves standard PoW while the second phase requires the signature. This approach allows for a gradual transition from the current PoW to the signature-based one without losing mining power (i.e. security) overnight and slowly phasing out existing hardware and mining datacenters.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T16:46:40.912216+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

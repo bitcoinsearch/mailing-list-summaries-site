@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70: why Google Protocol Buffers for encoding?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2015-01-19 19:38:23
+            <br><i>Published on: 2015-01-19T19:38:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_BIP70-why-Google-Protocol-Buffers-for-encoding-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007131.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the choice of encoding for payment request in BIP-0070. The engineer suggests that there are more "standard" choices available than Google Protocol Buffers, such as ASN.1, which has been around for decades and has an XML encoding (XER) convertible to/from binary encoding (BER/DER). However, the ecosystem surrounding ASN.1 is far less developed and approachable for programmers compared to protobufs. The engineer also points out that wider considerations beyond the low-level specified format need to be taken into account. Another engineer questions the strong driver behind the choice of Google Protocol Buffers for payment request encoding in BIP-0070, suggesting that performance isn't a high priority since payment requests are not broadcast. They argue that protocols/encodings such as HTTP/JSON/XML have many advantages, including human readability on-the-wire, great open-source libraries for parsing/manipulating/generating, easy debugging, easier-to-read standards, thorough specifications by independent standards bodies, and being part of a family of protocols. However, they express interest in watching the payment protocol grow regardless of encoding choice and suggest that it could be a fascinating use case for SIP/VoIP. In conclusion, while ASN.1 is a rigorously defined standard with a long history, the ecosystem surrounding it is less developed and approachable for programmers compared to protobufs. The choice of encoding for payment request in BIP-0070 is questioned, with some arguing that protocols/encodings such as HTTP/JSON/XML have many advantages over binary encodings such as Google Protocol Buffers. Nonetheless, the engineers express interest in watching the payment protocol grow and evolve regardless of encoding choice.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:33:32.018204+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
