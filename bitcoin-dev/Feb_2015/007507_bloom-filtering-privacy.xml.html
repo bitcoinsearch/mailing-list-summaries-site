@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bloom filtering, privacy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2015-02-20 17:43:20
+            <br><i>Published on: 2015-02-20T17:43:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2015/combined_bloom-filtering-privacy.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007507.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the use of UTXO commitments, specifically with Mark's PATRICIA tree system. The process of binary search over block contents raises questions about the need for multiple protocol round trips per synced block and an example run is requested. The discussion then turns to how this interacts with the need to download chains without round-tripping to the remote node for each block, and whether Bloom filtering can be used for performance. The author suggests junking the notion of chain scanning and syncing only headers, using a script->(outpoint, merkle branch) map in LevelDB to quickly pull down relevant UTXOs with paths indicating they existed at one point, while still allowing nodes to withhold evidence that those outputs were spent. The primary advantage of this approach is that it does not require a change to the consensus rules, but there are still unanswered questions about how it interacts with HD lookahead.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T17:32:54.180407+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

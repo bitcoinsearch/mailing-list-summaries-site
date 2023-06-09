@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving resistance to transaction origination harvesting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Justus Ranvier 2015-03-17 16:26:10
+            <br><i>Published on: 2015-03-17T16:26:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2015/combined_Improving-resistance-to-transaction-origination-harvesting.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-March/007715.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests applying Freenet's "Darknet" technique to Bitcoin to reduce privacy leaks due to harvesting attacks. This would involve allowing Bitcoin nodes to create authenticated connections with trusted peers via CurveCP, so that nodes with at least one CurveCP peer only broadcast their transactions to those peers. The use of CurveCP requires both sides of the connection to know each other's long-term public key. To set up a secure connection between their nodes, users would first use an API command to generate their node references and exchange these files, copying them to the ~/.bitcoin/curvecp directory with a .ref extension. Instead of listening both for regular TCP and CurveCP connections on the same port, CurveCP connections would take place on a separate port designated by -bind_curvecp, -port_curvecp, and -externalip_curvecp. This proposal would work along with, or independently of, Tor usage. Currently, the only way to configure a node to submit its transactions anonymously to the network is to make the node non-listening, which means it cannot contribute to the network. The proposal would allow nodes to contribute to the network as listening nodes, while retaining privacy with regards to transactions originating from themselves. CurveCP connections can also be created between full nodes and SPV nodes, in which case transactions originating from the SPV peers would be routed as if they originated from the full node.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T18:53:51.537640+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

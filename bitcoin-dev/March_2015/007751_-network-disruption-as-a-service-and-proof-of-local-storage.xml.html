@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>&#34;network disruption as a service&#34; and proof of local storage</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Robert McKay 2015-03-27 14:32:33
+            <br><i>Published on: 2015-03-27T14:32:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2015/combined_-network-disruption-as-a-service-and-proof-of-local-storage.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-March/007751.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread is about a proposed challenge-response protocol that can be used to prove a node has the entire blockchain. The proposed challenge involves sending a request to a node to send SHA256(SHA256(concatenation of N pseudo-randomly selected bytes from the block chain)). The node must perform random reads from local disk to respond with the correct hash value. The number of blocks to be read is chosen such that it would be infeasible for the node to fetch all of the needed blocks in a short amount of time. The challenge also becomes more difficult as average block size increases. The proposed protocol relies on the lack of a "partial getdata" command in the Bitcoin protocol, meaning that a node cannot ask for only part of a block; it must ask for an entire block. Furthermore, nodes could ban other nodes for making too many random requests for blocks. The email thread discusses improvements to this protocol, including sending the encrypted blocks instead of decrypted blocks and further verification by using a Merkle tree root of hashes. The discussion also touched on the use of spinning media versus SSD for random reads. The proposed protocol does not require every node to implement it, but only nodes that want to prove full-node-ness, such as the ones which want to receive bitnodes subsidy.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T18:40:22.738187+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

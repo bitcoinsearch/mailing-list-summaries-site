@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bloom filtering, privacy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2015-02-20 17:35:47
+            <br><i>Published on: 2015-02-20T17:35:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2015/combined_bloom-filtering-privacy.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007506.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, Adam Back and Mike Hearn discuss the issue of privacy protection in Bitcoin transactions. They discuss the use of bloom filters and how they can be used to compact queries for a set of addresses. However, the main issue with bloom filters is that with reasonable false positive rates, every block will match at least a few transactions, making it necessary to download every block which is not practical. To address this issue, Mike suggests binary searching a set of addresses in the block and then requesting specific addresses, some of which will be false positives. With the bloom commitment and UTXO trie organised commitment, it is possible to verify the positive hits are correct via the merkle path and that the false positives are not being wrongly withheld by obtaining merkle path proof that they are not in the trie.Mike clarifies that while the Bloom filter was intended to improve privacy and still preserve high performance, it requires complicated programming work, including finding out from the OS how much bandwidth is available to play with and doing all the complex tracking to keep one's self in roughly the right place. However, being sufficiently smart in this regard has never come to the top of the TODO list as users are always complaining about other things, so those things get priority.Eventually, wallets need to stop doing linear scans of the entire block chain to find transaction data. The reason wallets are scanning the chain today is that they want to show users time-ordered lists of transactions, but with Subspace and BIP70, it is possible to replace the payments list UI with actual proper metadata that isn't extracted from the block chain, making non-scanning architectures more deployable.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T17:29:44.656210+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
