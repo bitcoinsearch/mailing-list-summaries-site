@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: SPV Fee Discovery mechanism</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2015-06-10 20:26:18
+            <br><i>Published on: 2015-06-10T20:26:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Proposal-SPV-Fee-Discovery-mechanism.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008564.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new method for SPV wallets to learn about fees was proposed, which involves embedding output values into the signed data of transactions and upgrading the P2P protocol to send UTXO data along with transactions when they are relayed. The wallet sets a Bloom filter with an FP rate that ensures it will see a random subset of all transactions being broadcast on the network, and with the extra data, it can calculate the fee paid. Once a transaction broadcast is observed, the wallet includes that tx hash in its next Bloom filter, allowing it to see which block the tx confirmed in. By measuring the time between broadcast and confirmation, the wallet can calculate its own tables of fee paid:time taken. This method eliminates the need to trust miners to publish accurate data but requires significant protocol upgrades and code changes in SPV wallets. Currently, Bitcoin Wallet for Android handles fees by updating a hard-coded value periodically.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T22:46:24.837436+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

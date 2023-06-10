@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Question regarding transactions with NLOCKTIME &gt; 0</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2015-06-21 16:54:08
+            <br><i>Published on: 2015-06-21T16:54:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Question-regarding-transactions-with-NLOCKTIME-0.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008969.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>When a transaction with N_LOCKTIME>0 is created, it won't be relayed until its locktime expires. The wallet holds onto the transaction until it can be confirmed into a block. nLockTime is designed in a way that you need to keep it offline until the locktime expires, then broadcast it and it will be mined and included in a block like a normal tx. This is why Peter Todd and others are working on CHECKLOCKTIMEVERIFY and RELATIVE CHECKLOCKTIMEVERIFY. These are enhancements to basic nLockTime which offers users the guarantee that if you have a transaction with nLockTime, the signer holding the private keys used to sign it cannot sign another one with nLockTime 0 and broadcast it before the locktime for your tx expires. If a transaction doesn't take effect for 10 years and is stored in a block, that block stays on the active list for that period of time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T00:11:08.799923+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

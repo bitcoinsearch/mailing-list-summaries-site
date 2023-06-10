@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP for Proof of Payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Harding 2015-06-16 05:26:03
+            <br><i>Published on: 2015-06-16T05:26:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_BIP-for-Proof-of-Payment.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008723.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Proof of Payment (PoP) feature is a process that enables a wallet to prove to a server that it has the ability to sign a certain transaction. The PoP can be used in various scenarios where it would be useful to prove that you have paid for something without any personal information being involved. An example of this is a pre-paid hotel room where your PoP functions as a key to the door. To generate a PoP, the wallet identifies a transaction T and creates an unsigned PoP (UPoP) for T. The user confirms the UPoP(T), which is then signed by the wallet, creating PoP(T), and sent to the destination in the original request. To validate the PoP, the server checks the format of the PoP, lock_time, number of outputs, and nonce. It also runs the scripts of all the inputs and checks that the txid in the PoP output is the transaction for which proof is requested.The PoP has the exact same structure as a Bitcoin transaction with the same inputs as T and in the same order as in T, but with each sequence number set to 0. There is exactly one output, called the pop output, with value 0. If an input script type is P2SH, any satisfying script should do, just as if it was a payment. The lock_time of the PoP must be set to 499999999 to prevent the PoP from being included in a block, should it appear on the Bitcoin p2p network.The PoP feature eliminates many kinds of vouchers because the money itself can be vouched for, wirelessly, with ECDSA security. Coinjoin or simulfunding transactions wouldn't be PoP-able since no one signer has all the private keys. If you pay for dry cleaning with a shared wallet, a different 1-of-N signer can pick up the clothes with no physical transfer of a claim check, by proving the money that paid for the cleaning was his. Merchants need to ensure that they only accept a PoP provided as a response to their challenge.Security considerations include intercepting and changing parameters in the PoP-request, stealing a PoP, or relying on the transaction id of the outgoing transaction. Proposed changes to the data structure include having only one output, the "pop output," with no outputs from T copied to the PoP, setting the sequence number of all inputs of the PoP to 0, and setting the lock_time of the PoP to 499999999.There are references to BIP0021 URI Scheme and BIP0070 Payment Protocol, as well as a reference implementation available on GitHub. Something like a coffee gift example was also mentioned. The buyer could export the private keys to the beneficiary's wallet after the purchase, by using an 'export gift claim check' function on the spent transaction. Then the beneficiary picks up the coffee (car, concert seats...) just as if they had paid.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T22:26:39.381852+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

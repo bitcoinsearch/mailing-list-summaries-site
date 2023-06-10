@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Miners: You&#39;ll (very likely) need to upgrade your Bitcoin Core node soon to support BIP66</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-06-12 00:40:58
+            <br><i>Published on: 2015-06-12T00:40:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Miners-You-ll-very-likely-need-to-upgrade-your-Bitcoin-Core-node-soon-to-support-BIP66.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008578.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The BIP66 soft-fork has recently passed the 75% support threshold, indicating that 75% of the hashing power has upgraded to support it while 25% of the power has not. Once the hashing power reaches 95%, blocks created by the remaining 5% who have not upgraded will be rejected. It is important for those who operate a pool, solo-mine, or mine on p2pool to upgrade their Bitcoin Core node to support the BIP66 soft-fork; otherwise, their blocks will be rejected. However, if one only sells their hashing power to a centralized pool, they do not need to do anything.To measure BIP66 support, miners who have upgraded set the version field in their blocks to 3, while non-upgraded miners set it to 2. Bitcoin Core measures BIP66 support by counting how many blocks with version >= 3 exist in the blockchain within the last 1000 blocks. If 750 out of the last 1000 blocks support BIP66, blocks with the version set to >= 3 that do not follow the BIP66 rules are rejected. If 950 out of the last 1000 blocks support BIP66, blocks with version >= 3 are accepted.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T22:49:41.664538+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
