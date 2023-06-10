@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP65 / CHECKLOCKTIMEVERIFY deployment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-06-25 22:33:44
+            <br><i>Published on: 2015-06-25T22:33:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_BIP65-CHECKLOCKTIMEVERIFY-deployment.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/009091.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The adoption of BIP66 is close to 95% and will soon be enforced for all blocks. This leads to the consideration of how CheckLockTimeVerify (CLTV) will be implemented, especially given its benefits to scalability solutions such as payment channels. Peter Todd, a co-author of the Version bits BIP proposal, suggests that CLTV should be deployed sooner as the implementation of the BIP proposal will be complex. The CLTV code has been extensively reviewed and tested, including running in production on Viacoin for six months. Peter Todd proposes using the existing median block version mechanism previously used for nVersion=2 and nVersion=3 soft-forks for CLTV. This approach is well-tested and understood, allowing for easy backporting to v0.10.x (even 0.9.x) with low risk for rapid deployment. If another soft-fork is proposed before BIP65 enforcement, nVersion=4 can be set in motion as the median mechanism only requires forks to be serialized in sequence. Multiple soft-forks can be "in-flight" at the same time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T01:03:53.127744+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

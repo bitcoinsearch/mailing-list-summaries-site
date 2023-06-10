@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mempool size consensus + dynamic block size re-targetting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2015-06-24 02:15:55
+            <br><i>Published on: 2015-06-24T02:15:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Mempool-size-consensus-dynamic-block-size-re-targetting.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/009037.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email sent to the Bitcoin-dev mailing list on June 23, 2015, Filipe Farinha proposed a solution for determining the appropriate block size limit for Bitcoin. He argued that the two main proposals at the time - relying on predictions or using a voting mechanism by a limited set of stakeholders - did not take into account real-time changes to the mempool, which there was no consensus on the size of. Farinha suggested that each full-node that broadcasts a new transaction could add a mempool_size field to represent their current view of the mempool. As blocks are mined with this new data, all nodes can quickly reach consensus on the current average/median/etc mempool size and agree on a suitable periodic blocksize "re-targetting" similar to mining difficulty. This way, all full-nodes, not just miners, get to vote with their transactions, making the consensus truly global. Farinha acknowledged that this proposal would come at the expense of some transaction overhead but argued that it would be a more effective approach than changing the blocksize blindly in anticipation of an unpredictable future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T00:45:13.736932+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
