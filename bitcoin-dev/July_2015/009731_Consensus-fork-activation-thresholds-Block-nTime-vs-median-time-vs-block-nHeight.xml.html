@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Consensus fork activation thresholds: Block.nTime vs median time vs block.nHeight</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2015-07-29 20:27:29
+            <br><i>Published on: 2015-07-29T20:27:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Consensus-fork-activation-thresholds-Block-nTime-vs-median-time-vs-block-nHeight.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009731.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author discusses the challenges of defining thresholds for consensus fork activation. They explain that there are three options available, each with its own disadvantage. The options are block.nTime, median time and block.nHeight. The author suggests that nHeight's disadvantage is the least worse but others may disagree. They argue that a solid criteria needs to be established to decide on which option to use.The author goes on to discuss combining the threshold with a miner's "voting" on top of it, and the problems this can present when not being monotonic. They provide examples for using height and median time to address this issue. They also discuss the example of an emergency consensus fork where the previous block index may not be available. The author then provides an example hardfork scenario where miners are allowed to create bigger blocks if the transactions help reducing the size of the utxo. They explain that while block.nTime is available at the block validation level, checking an unconfirmed transaction would require the block.nTime of the next block, which is unpredictable. In conclusion, the author suggests that a uniform threshold mechanism needs to be established instead of using the three options depending on the fork. They express a desire for a more generic solution that can be used for any type of consensus fork.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T04:20:19.727089+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
