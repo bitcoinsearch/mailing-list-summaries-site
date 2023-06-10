@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Electrum Server Speed Test</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Slurms MacKenzie 2015-07-23 15:56:05
+            <br><i>Published on: 2015-07-23T15:56:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Electrum-Server-Speed-Test.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009573.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This article presents a quantitative analysis of Electrum server software's performance under load. The Electrum wallet has distributed servers that are hosted by volunteers without budget. The servers require a fully indexed Bitcoin Core daemon running, and produce sizable external indexes to allow SPV clients to retrieve their history quickly. The author uses logs from the Electrum-server console to determine that it takes this server approximately 3.7 minutes per megabyte of block to process into the index. This trend is consistent through the ten or so blocks the author has in their scroll buffer, indicating that the processing load is approximately the same across blocks. Using the current inter-block time of 9.8 minutes, an Electrum-server instance running on a modest-high end dedicated server can support up to 2.64 MB block sizes before permanently falling behind the chain. The data also shows the size of various files generated during the process, with "electrum" being the largest at 24G, followed by "hist" at 19G, and "utxo" at 3.9G. These figures provide insight into the resources required for operating an Electrum server.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T03:48:23.079037+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
