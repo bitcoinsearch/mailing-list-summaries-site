@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: extend bip70 with OpenAlias</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Riccardo Spagni 2015-07-18 11:40:58
+            <br><i>Published on: 2015-07-18T11:40:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Proposal-extend-bip70-with-OpenAlias.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009474.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The BitcoinJ already has the code that allows DNS lookups via Tor, which provides over 1000 proxies instead of just 56 or 4. Although the bootstrap time for this option is a little high and may be chunky on mobile devices, it is still worthwhile as an option. DNSSEC is also a great option because it prevents resolvers from lying about records. The idea is to make proxying of DNS requests an optional part of the protocol so wallet developers can compete on privacy vs robustness. For Electrum, the default policy would be DNSCrypt with fallback to OpenAlias API pool, which can return DNSSEC data for verification, then fallback to the default resolver. Turning off DNSCrypt would make the default resolver fallback to the OpenAlias API pool. If the API pool is turned off, the default resolver will either work or fail. The default resolver can be set to the OS resolver or custom resolvers such as Google Public DNS.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:33:09.968711+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>About hardware accelerators advantages for full-node (not mining) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2015/009405_About-hardware-accelerators-advantages-for-full-node-not-mining-.xml.html">About hardware accelerators advantages for full-node (not mining)</a>
+                        <b>Alex Barcelo 2015-07-13 12:55:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2015/009407_About-hardware-accelerators-advantages-for-full-node-not-mining-.xml.html">About hardware accelerators advantages for full-node (not mining)</a>
+                        <b>Tier Nolan 2015-07-13 13:47:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2015/009405_About-hardware-accelerators-advantages-for-full-node-not-mining-.xml.html">About hardware accelerators advantages for full-node (not mining)</a>
+                        <b>Alex Barcelo 2015-07-13 12:55:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2015/009405_About-hardware-accelerators-advantages-for-full-node-not-mining-.xml.html">About hardware accelerators advantages for full-node (not mining)</a>
+                        <b>Alex Barcelo 2015-07-13 12:55:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2015/009407_About-hardware-accelerators-advantages-for-full-node-not-mining-.xml.html">About hardware accelerators advantages for full-node (not mining)</a>
+                        <b>Tier Nolan 2015-07-13 13:47:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2015/009407_About-hardware-accelerators-advantages-for-full-node-not-mining-.xml.html">About hardware accelerators advantages for full-node (not mining)</a>
+                        <b>Tier Nolan 2015-07-13 13:47:57</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009405.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-07-13T12:55:14+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The user is considering using a Jetson TK1, a GPU-powered development board, as a power-efficient full node for Bitcoin. They plan to run bitcoind on the Jetson as a node with high performance-per-watt, since a pure-CPU implementation of bitcoind will clog the CPU. The user believes that there are heavy-compute highly-parallel functions that could be outsourced to a GPU and may want to fork and/or contribute to them. However, they are seeking opinions on the idea/configuration before coding a complete mess, as they have more background on parallel programming than on the Bitcoin protocol.The processor load for signature verification involves a hash function call, large number maths, and an elliptic curve operation. The main task is proving that R = u1 * G + u2 * Q, where G is a constant and the rest are different per signature. Some of the core team have created a fast CPU implementation available at <a href="https://github.com/bitcoin/secp256k1.git">https://github.com/bitcoin/secp256k1.git</a>. The longest step is the elliptic curve operation, which takes about 1ms per signature on normal hardware. However, optimized code can make the process faster. There has been discussion about batch verification of signatures, with the potential to compute 16 signatures together. However, it's believed that the benefit of using GPU would be lost due to communication bandwidth. GPU miners typically benefit from needing only minimal information to be sent to the GPU routine.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-10T02:31:37.539372+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

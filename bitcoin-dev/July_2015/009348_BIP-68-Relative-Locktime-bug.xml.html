@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 68 (Relative Locktime) bug</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2015-07-05 17:07:12
+            <br><i>Published on: 2015-07-05T17:07:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_BIP-68-Relative-Locktime-bug.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009348.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to shift the semantics of nSequence in BIP 68 to specify 0 relative locktime instead of 1, as it currently does. This change would allow transactions to have an effective nLocktime without requiring at least one input to be mined ahead of its parent. The proposal suggests using MAX_INT - 1 to specify 0 relative locktime. It is noted that this change would preserve the semantics of transactions that have already been created with the specific nSequence value of MAX_INT - 1. Bitcoin Core may switch to implementing this change for cases where the sequence number field is set to 0.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:09:33.383507+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

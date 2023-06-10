@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 68 (Relative Locktime) bug</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Harding 2015-07-05 16:25:17
+            <br><i>Published on: 2015-07-05T16:25:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_BIP-68-Relative-Locktime-bug.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009347.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to fix an issue with BIP 68's use of nSequence to specify relative locktime. The problem is that nSequence also conditions the transaction-level locktime, which means a transaction cannot have an effective nLocktime without requiring at least one of its inputs to be mined at least one block or one second ahead of its parent. The proposed solution is to shift the semantics so that nSequence = MAX_INT - 1 specifies 0 relative locktime instead of 1. This change will also preserve the semantics of transactions that have already been created with the specific nSequence value MAX_INT - 1. The discussion also includes a request for an example and use cases where there is a need for an enforced lock time in a transaction with inputs that are not confirmed at the time the lock time expires.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:09:25.560691+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

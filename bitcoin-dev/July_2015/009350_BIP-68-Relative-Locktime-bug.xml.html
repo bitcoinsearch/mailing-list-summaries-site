@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 68 (Relative Locktime) bug</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Harding 2015-07-05 19:50:59
+            <br><i>Published on: 2015-07-05T19:50:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_BIP-68-Relative-Locktime-bug.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009350.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Bitcoin-dev mailing list, Tom Harding proposed a fix to the dual effect of nSequence in BIP 68 that prevents a transaction from having an effective nLocktime without also requiring at least one of its inputs to be mined ahead of its parent. The solution involves shifting the semantics so that nSequence = MAX_INT - 1 specifies 0 relative locktime, rather than 1. This would avoid the inversion and put relative locktimes outside the realm of both the MAX_INT and MAX_INT - 1 values. Additionally, it would allow an explicit relative locktime of 0, which would help applications avoid accidentally finalizing the whole transaction when they only meant to not impose a relative locktime on one input. Mark Friedenbach suggested that Bitcoin Core post-0.11 switch to using 0 in the sequence number field instead of MAX_INT - 1 for cases where an effective nLocktime is desired without requiring at least one input to be mined ahead of its parent.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:09:58.535799+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

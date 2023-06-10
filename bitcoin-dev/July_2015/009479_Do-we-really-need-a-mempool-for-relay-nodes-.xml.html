@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Do we really need a mempool? (for relay nodes)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-07-18 18:52:59
+            <br><i>Published on: 2015-07-18T18:52:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Do-we-really-need-a-mempool-for-relay-nodes-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009479.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Relay nodes may not need to keep a record of the transactions they've relayed. Unconfirmed txs spending other unconfirmed txs can be handled by creating packages of transactions, evaluated as a whole. To mitigate DoS concerns, there must be some per-UTXO limit on bandwidth relayed, but this task can be accomplished by simply maintaining some kind of per-UTXO record of bandwidth used. It's easy to limit bandwidth moment to moment by asking peers for highest fee/KB transactions they advertise first, stopping when our bandwidth limit is reached. Removing IsStandard() entirely with the right increasingly expensive "replacement" policy could provide anti-DoS. Miners would still want to have a mempool, but that codebase may prove simpler if it doesn't have to work double-duty for relaying as well.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:57:47.881396+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

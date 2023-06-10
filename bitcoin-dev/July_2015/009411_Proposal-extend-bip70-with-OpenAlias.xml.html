@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: extend bip70 with OpenAlias</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2015-07-13 22:31:36
+            <br><i>Published on: 2015-07-13T22:31:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Proposal-extend-bip70-with-OpenAlias.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009411.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A company called Netki is working on DNSSEC integration with BIP70. The biggest flaw with the suggested idea is that no email provider is going to implement it soon, so hardly anyone will use it. However, every CA allows revoking a certificate issued for an email address if you have access to that email address, and certificate transparency is already working on solving this issue in a scalable manner. If a mechanism that eliminates the CA entirely is still required, there is a better approach that is backwards compatible with existing email providers. This approach involves sending a public key in the subject line to a one-time collector address, which then triggers DKIM signing of the subject line and the From header, binding the public key and email address together via the ESP’s own signing key. The textual email headers can be run through the DKIM validation algorithm in combination with the domain key retrieved via DNS. This scheme does not require the email provider to know or care about Bitcoin, and there are DKIM validation libraries already in existence, so new code required is minimal. However, there is no way to revoke such a “certificate,” and the UX leaves some binary nonsense in the user's sent folder. Finally, a lot of users don’t use emails as identifiers anymore, and in the modern world, people are using their social networking profiles (i.e. Facebook) and phone numbers as personal identifiers.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:31:53.251646+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

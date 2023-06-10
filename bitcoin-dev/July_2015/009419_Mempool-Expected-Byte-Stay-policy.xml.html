@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mempool &#34;Expected Byte Stay&#34; policy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Harding 2015-07-15 00:24:23
+            <br><i>Published on: 2015-07-15T00:24:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Mempool-Expected-Byte-Stay-policy.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009419.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the context is facing a problem with spammers disrespecting their fullnode resources. To tackle this issue, they have made some changes. They have set a maximum size for the memory pool and are allocating space based on a simple rule. The cost to the author of continuing to hold a transaction in the mempool is measured by "expected byte stay." This value is calculated using the product of sizeBytes and expectedBlocksToConfirm(feeRate). When there's not enough space for a new transaction, the author tries to make space by evicting transactions with an expectedByteStay higher than the new transaction. However, the author is not concerned about fees except for their effect on confirmation time, coin age, CPFP, and replacement. A transaction and its dependents are evicted on its two-hour anniversary, whether space is required or not. The latest expectedBlocksToConfirm(feeRate) table is applied to the entire mempool periodically. The author is putting a lot of faith in the new fee estimation, particularly its size independence. However, there is also a possibility of clog-ups by transactions that look like they'll confirm next block but don't due to factors other than fees. The author will update on how the new system works out.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:42:21.237730+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
