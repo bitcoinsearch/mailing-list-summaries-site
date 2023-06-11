@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP: OP_PRANDOM</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matthew Roberts 2016-05-20 10:57:46
+            <br><i>Published on: 2016-05-20T10:57:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_BIP-OP-PRANDOM.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012728.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin has proposed OP_PRANDOM, a new op code that pushes a pseudo-random number to the top of the stack based on the next N block hashes. This new feature will make deterministic, verifiable, and trustless pseudo-random numbers available for use in the Script language possible and would allow for the creation of decentralized lotteries without complicated multi-party computation protocols. The op code could also be used for cryptographically secure virtual asset management such as rewards in video games and other applications. However, there is a risk that a participant in a contract may attempt to bribe a miner for control over the results of the random numbers, which makes the inclusion of multiple block hashes as a source of randomness necessary. The risk approaches zero as N goes up. Since the random numbers are based on a changing blockchain, it's problematic to use the next immediate block hashes before the state is “final.” A safe default for accepting the blockchain state as final would need to be agreed upon beforehand; otherwise, multiple random outputs could become valid simultaneously on different forks. A simple solution is not to reveal any commitments before the chain height surpasses a certain point. Only one version will eventually make it into the final chain anyway. Pay-to-script-hash can be used to protect the details of contracts that use OP_PRANDOM from the prying eyes of miners. However, it is uncertain how secure this new feature is or whether its a good idea so it has been posted for feedback.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:30:38.633906+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

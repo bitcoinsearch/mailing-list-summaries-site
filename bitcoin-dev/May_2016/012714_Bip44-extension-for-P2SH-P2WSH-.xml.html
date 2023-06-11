@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bip44 extension for P2SH/P2WSH/...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aaron Voisine 2016-05-15 17:36:54
+            <br><i>Published on: 2016-05-15T17:36:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Bip44-extension-for-P2SH-P2WSH-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012714.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Daniel Weigl and Aaron Voisine, the idea of using 0x40000000 as the next available number to specify witness addresses was discussed. While it is compatible with existing accounts and wallet layouts, Weigl's concern is that every BIP-compatible wallet in the future would have to implement all legacy derivation and transaction schemes. Voisine agreed that while a segwit only scheme has its advantages, old derivations will still need to be supported for many decades, as people use them to store value long-term. The issue of non-deterministic failure when importing seeds or xPriv/xPub across different capable wallets was also raised. To solve this, Voisine suggested using a new BIP43 purpose number for segwit only wallets, but also specifying 0x40000000/1 for the change/receive index so that the scheme remains compatible with other schemes for upgrading existing wallets in place.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:21:49.772553+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

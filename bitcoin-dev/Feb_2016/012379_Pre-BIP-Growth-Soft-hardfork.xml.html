@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pre-BIP Growth Soft-hardfork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2016-02-07 13:18:52
+            <br><i>Published on: 2016-02-07T13:18:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2016/combined_Pre-BIP-Growth-Soft-hardfork.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012379.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email suggests a specific implementation of the "nuclear option" soft fork, which involves adding fields to header 3 that can be expanded later. This would save having to make the merkle tree a sum tree immediately and allow separate sum-trees for each counter (sigops, block size, tx count, sighash?). The email also recommends having dedicated hard fork and soft fork counters, as well as a field for parallel soft forks. Nodes would react to hard forks by stalling the chain, and the hard fork counter means that the new rules could be that nodes should do that going forward for all new hard forks. If a hard fork happens, transaction processing should be shut down and the user informed. Non-upgraded miners could blacklist the hard forking block and keep mining on their own chain, but users should still be given the option of accepting or rejecting the hard fork.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T03:49:53.659353+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Committed bloom filters for improved wallet performance and SPV security</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> bfd at cock.lu 2017-01-06 02:15:26
+            <br><i>Published on: 2017-01-06T02:15:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2017/combined_Committed-bloom-filters-for-improved-wallet-performance-and-SPV-security.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013437.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the differences between credit card transactions and unconfirmed Bitcoin transactions using an SPV client. Credit cards have the backing of a large institution, giving users more security when making payments. On the other hand, SPV clients require trust that the DNS seed lookup and connection to a random node have not been tampered with. Aaron Voisine argues that accepting gossip information from random peers is still safe because random node operators have no incentive to send fake transactions. While it's not impossible for an attacker to manipulate transactions, it would be difficult and provide no benefit to the node operator. However, Jonas Schnelli disagrees and believes that relying on SPV 0-conf against random peers is fundamentally insecure and could eventually lead to a large-scale fiasco that hurts Bitcoin's reputation and trust from merchants. To eliminate this issue, Schnelli suggests educating users and offering different solutions such as running a full-node or co-using a wallet-service with centralized verification. He also recommends disabling unconfirmed transactions during SPV against random peers and enabling them when using SPV against a trusted peer with preshared keys after BIP150. Lastly, he suggests informing users about the risks involved during low-conf phase (1-5) and the possibility of stopping or redirecting unconfirmed transactions at any time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:55:43.458720+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

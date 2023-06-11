@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP44 &amp; BIP32 chain address look-ahead limits</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jameson Lopp 2016-03-06 20:04:32
+            <br><i>Published on: 2016-03-06T20:04:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2016/combined_BIP44-BIP32-chain-address-look-ahead-limits.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-March/012522.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of Mycelium HD wallet not finding all funds is attributed to an edge case in the BIP44 spec. When the user created 16 transactions, only the last one was confirmed, leaving unused addresses on the internal/change chain. According to BIP44, there need not be a lookahead on internal chains since they receive coins that come from associated external chains. However, this approach can lead to significant gaps in internal chain address usage, and it is recommended to look ahead on both external and internal chains when performing account discovery. Additionally, the recommended look-ahead of 20 may not be safe enough, so it should be raised to 100 or higher. It is also advisable for BIP44 to recommend wallets fill in gaps of unused chain addresses by looking back from the current tip of the internal chain's index when creating a new change address to mitigate the size of gaps caused by failed transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:24:00.420063+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

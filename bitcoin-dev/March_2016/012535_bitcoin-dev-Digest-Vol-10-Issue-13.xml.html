@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bitcoin-dev Digest, Vol 10, Issue 13</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Daniele Pinna 2016-03-09 01:27:22
+            <br><i>Published on: 2016-03-09T01:27:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2016/combined_bitcoin-dev-Digest-Vol-10-Issue-13.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-March/012535.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bob McElrath proposed a simple algorithm called the "critically damped harmonic oscillator" for hashrate rebalancing. This solution is designed to find the first and second derivatives of the hashrate over time, resulting in a damped harmonic oscillator system with two parameters: oscillation frequency and damping factor. The maximum oscillation frequency is the block rate, and any oscillation faster than that cannot be measured by block times. The damping rate is an exponential decay and for critical damping is twice the oscillation frequency. While this solution is a numeric approximation to a differential equation, it provides a zero-parameter, optimal damping solution for a varying hashrate. It is also possible for weak block proposals to get better approximations to the hashrate. Dave Hudson suggests that the community adjust difficulty at each new block using the current method, instead of adopting McElrath's proposal. However, if faster relaxation in case of adversity is required, a weighted average of the previous 2016 blocks could be performed, based on historical interblock timing data. An optimal weighting could then be found to address this issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:29:32.155048+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Draft: Multi-Currency Hierarchy For Use In Multisignature Deterministic Wallets</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kefkius 2016-04-26 23:00:48
+            <br><i>Published on: 2016-04-26T23:00:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2016/combined_BIP-Draft-Multi-Currency-Hierarchy-For-Use-In-Multisignature-Deterministic-Wallets.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-April/012618.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This is a draft of a BIP called bip-kefkius-multicoin-multisig intended to facilitate multi-currency, multisignature wallet management. The hierarchy defined in BIP-0044 places a coin's type level above the level designating account number, which limits the possible implementations of multi-currency, multisignature wallets. This BIP defines a hierarchy based on BIP-0044 for deterministic wallets and is an application of BIP-0043. The hierarchy is defined as follows: m / purpose' / wallet' / coin_type / change / address_index. Purpose is a constant set to 'bip-kefkius-multicoin-multisig'. Wallet is incremented for every wallet made and organizes independent identities within the key space. Coin Type is the BIP-0044 index of the coin being managed, and public derivation is used so that cosigners only need to know one of each other's public keys rather than needing to distribute public keys for each coin. Change uses 0 for public addresses and 1 for change addresses, identical to BIP-0044 behavior, and Address Index increases sequentially as it does in BIP-0044.The examples provided show the path for different wallets, coins, change status, and address indices. The author of this BIP is Tyler Willis, and the status is currently draft.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:47:23.854196+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

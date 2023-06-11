@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Hardfork to fix difficulty drop algorithm</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dave Hudson 2016-03-02 15:48:21
+            <br><i>Published on: 2016-03-02T15:48:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2016/combined_Hardfork-to-fix-difficulty-drop-algorithm.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-March/012496.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Luke Dashjr has raised concerns about the potential for a non-trivial number of miners to drop off the network in July 2016 due to the subsidy halving. This would result in a longer block interval, which could cause the block size limit to be hit much sooner than expected. To alleviate this risk, Dashjr proposes a hardfork to the difficulty adjustment algorithm so it can adapt quicker to such a significant drop in mining rate. However, some have raised concerns about how the difficulty retargeting would be changed and what impact it would have. Without seeing the algorithm proposal, it is difficult to assess the situation. Additionally, the network sees frequent swings of +/-20% in terms of the block finding rate on any given day, while the statistical noise over a 2016 block period can be more than +/-5%. Any change would require a significant period of time before there would be confidence that the hash rate had truly fallen. If the hash rate were to drop by 50%, a similar rapid retarget would be required if it were to increase by a similar amount. Failure to do this would introduce an economic incentive for large miners to suppress the difficulty and gain dramatically larger numbers of block rewards. The current fixed block count per difficulty change prevents this because the daily losses while suppressing hashing outweigh the potential gains when it's re-added.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:16:08.917160+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

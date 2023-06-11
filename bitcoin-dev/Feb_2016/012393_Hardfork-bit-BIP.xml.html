@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Hardfork bit BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> jl2012 at xbt.hk 2016-02-07 19:27:48
+            <br><i>Published on: 2016-02-07T19:27:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2016/combined_Hardfork-bit-BIP.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012393.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread regarding a hardfork bit BIP, Gavin Andresen questions the benefits of the proposal. He states that if there are SPV clients that don't pay attention to versions in block headers, then setting the block version negative doesn't directly help them. However, he believes that SPV clients should follow that and it becomes a self-fulfilling prophecy if they decide not to do so. If the worry is full nodes that are not upgraded, then a block with a negative version number will fork them off the chain, the same as a block with new hard-forking consensus rules would, resulting in a worthless minority chain continuing on with the old rules if there is any hashpower not paying attention. Andresen believes that a planned unknown hardfork is a strong indication that the original chain has become an economic minority, and non-upgraded full node should stop accepting incoming tx immediately. He suggests that a better idea than the proposed BIP would be one that recommends SPV clients to pay attention to block version numbers in the headers they download and warn for soft or hard forks that they don't know about. Block version only suggests softforks, which is usually not a concern for SPV clients; however, an unknown hardfork is a different story as the values of the forks are unknown. Lastly, Andresen agrees that SPV clients should also pay attention to timestamps in the block headers they receive and warn if blocks were generated much slower or faster than statistically likely. Doing this would mitigate Sybil attacks in general.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T03:35:33.264670+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

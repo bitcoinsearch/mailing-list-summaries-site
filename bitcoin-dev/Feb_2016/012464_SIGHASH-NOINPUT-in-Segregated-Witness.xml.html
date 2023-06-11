@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_NOINPUT in Segregated Witness</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joseph Poon 2016-02-26 01:48:07
+            <br><i>Published on: 2016-02-26T01:48:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2016/combined_SIGHASH-NOINPUT-in-Segregated-Witness.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012464.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email chain between Gregory Maxwell and Joseph Poon, they discuss the implementation of a new SegWit script type which would include fees as part of the signature to prevent the need for wallets to download input transactions. The proposed SIGHASH should also ensure safety from design errors and shortcuts. Without input commitments, transactions are replayable, which is a surprising fact to many developers. The fear is that if hardware wallets are forced to continue transferring input transactions to check fees or to use without-inputs, they may choose the latter and leave users exposed to replay attacks. They suggest that the new flag be named SIGHASH_REPLAY_VULNERABLE to emphasize the importance of its implementation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:07:37.963614+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

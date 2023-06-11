@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Committed bloom filters for improved wallet performance and SPV security</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> bfd at cock.lu 2017-01-03 20:24:35
+            <br><i>Published on: 2017-01-03T20:24:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2017/combined_Committed-bloom-filters-for-improved-wallet-performance-and-SPV-security.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013414.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bob McElrath, a member of the bitcoin-dev mailing list, proposed the use of Cuckoo filters instead of Bloom filters to improve the efficiency of light wallets. He explained that an optimal filter is linear in the number of elements it contains for fixed false-positive rate and logarithmic in the false-positive rate. To prevent light clients from downloading more blocks than necessary, the false-positive rate should be roughly less than 1/(block height). If the false positive rate is taken as 1e-6 for today's block height, which is about 410000, the required size of the filter commitment is roughly N log2 H where H is the block height. If Bitcoin had these filters from the beginning, a light client today would have to download about 12MB of data in filters. However, Bob pointed out that this may not be a bandwidth win, though it's definitely a win for computing load on full nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:55:07.390230+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

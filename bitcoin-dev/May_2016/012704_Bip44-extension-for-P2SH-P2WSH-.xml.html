@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bip44 extension for P2SH/P2WSH/...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jochen Hoenicke 2016-05-14 12:15:16
+            <br><i>Published on: 2016-05-14T12:15:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Bip44-extension-for-P2SH-P2WSH-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012704.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Bitcoin-dev mailing list, Daniel Weigl suggested defining a common derivation scheme for BIP44 compatible wallets to handle P2(W)SH receiving addresses with the approaching implementation of SegWit. He asked for feedback from other wallet developers before starting a BIP. The discussion showed that starting a new BIP is a good idea because everyone would do it differently otherwise. Option 1 would have one account that supports both non-segwit and segwit addresses while option 2 would have one p2pkh-only account and one segwit-only account that are completely separate. Jochen preferred option 1 and suggested Aaron's trick to avoid scanning twice the addresses. One disadvantage of option 1 is that a non-segwit wallet would ignore all segwit outputs, which means that the balance it shows is smaller, but this would not lead to losing money except when sweeping the account with a p2pkh-only wallet and then throwing the xprv away. Option 2 could also be done to appear as if it was only one account, but there is no advantage over option 1 in that case.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:22:21.017172+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

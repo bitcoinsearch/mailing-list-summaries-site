@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bip44 extension for P2SH/P2WSH/...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Daniel Weigl 2016-05-15 12:08:14
+            <br><i>Published on: 2016-05-15T12:08:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Bip44-extension-for-P2SH-P2WSH-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012713.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion has taken place regarding the implementation of a new derivation path for wallets that is parallel to Bip44 but with a different purpose. The idea is to allow users to choose which account they want to add, such as a normal account or witness account. The downside of this approach is that every Bip-compatible wallet in the future will have to implement all legacy derivation and transactions schemes. It also does not fail deterministically if one imports a seed or xPriv/xPub across different capable wallets. A solution proposed is to specify the type of address as a bit field flag, with 0x40000000 being the next available to specify witness addresses. This is compatible with existing accounts and wallet layouts, but recovering on non-segwit software will miss segwit receives. P2WSH should probably be handled by another account type and another BIP. While some Bip44 compliant wallets have something in the pipeline, there are no visible results yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:21:41.300011+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

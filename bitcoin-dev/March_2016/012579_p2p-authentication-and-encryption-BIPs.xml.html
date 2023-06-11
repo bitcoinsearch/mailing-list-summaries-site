@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>p2p authentication and encryption BIPs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2016-03-23 21:55:34
+            <br><i>Published on: 2016-03-23T21:55:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2016/combined_p2p-authentication-and-encryption-BIPs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-March/012579.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A developer has submitted two Bitcoin Improvement Proposals (BIPs), which propose the optional encryption of communication between nodes and wallets through Elliptic Curve Digital Signature Algorithm/Elliptic Curve Diffie-Hellman and Advanced Encryption Standard 256. The encryption would not require OpenSSL, and authentication would prevent man-in-the-middle attacks. The proposals suggest that the existing peer-to-peer code be used to connect a wallet to a node, leading to smaller messages that can be wrapped in metadata within message headers to avoid sending predictable content on the wire. Responding peers must ignore any requesting peer after one unsuccessful authentication attempt to avoid resource attacks. To ensure no message is dropped or blocked, communication must be hashed using SHA256, with both parties keeping the context of the encryption session.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:33:40.952781+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
