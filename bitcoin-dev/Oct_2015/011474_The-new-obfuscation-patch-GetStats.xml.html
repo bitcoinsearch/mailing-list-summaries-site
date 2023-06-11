@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>The new obfuscation patch &amp; GetStats</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Daniel Kraft 2015-10-07 17:25:06
+            <br><i>Published on: 2015-10-07T17:25:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_The-new-obfuscation-patch-GetStats.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011474.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of this message is asking about the recently merged "obfuscation" patch that obfuscates the content of the "chainstate" LevelDB by XOR'ing it against a random key. The CLevelDBWrapper's Read/Write methods are handling this, but the author is questioning whether it should also be handled when iterating over the database. Specifically, they are wondering if the obfuscation key should be applied before line 119 in txdb.cpp while iterating over the coin database in CCoinsViewDB::GetStats.The author is seeking clarification on whether or not this was an oversight and if there is a reason why the obfuscation key does not need to be applied during iteration. They are reaching out to the community for help before opening a Github ticket.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:01:03.879931+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Days Destroyed as block selection heuristic</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dave Scotese 2015-09-11 19:26:20
+            <br><i>Published on: 2015-09-11T19:26:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Bitcoin-Days-Destroyed-as-block-selection-heuristic.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/010993.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests a new heuristic for miners to choose between two valid blocks they receive, which is to compare the BTCDD (Bitcoin Days Destroyed) of transactions already present in their mempool and weigh it so that older transactions are more important. This would increase bitcoin stability by making it easier for clients to decide which block is valid when they see two competing with each other, motivating miners to add transactions instead of mining empty blocks, decreasing the utility of any global private network of nodes intended to spread selfishly-mined blocks, and motivating miners to stay well-connected so that they get transactions quickly. The heuristics are most useful when the two blocks are received within a small window of time, opting for the first-seen rule otherwise. It is proposed that this should be set as default behavior since most miners leave the defaults alone, and the benefits don't materialize unless a majority follows the policy. However, the proposal is a policy that everyone would be free to ignore, and it doesn't benefit miners unless they are trying to do selfish mining. Jorge Timón raised concerns regarding how miners would benefit from running this policy, and if they don't use it, users can still benefit from running that policy themselves. He also questioned how one could know which of 2 blocks with the same height is "newer." Christophe Biocca suggested that the risk of double-spending attacks could be eliminated if non-empty blocks are preferred to empty blocks, or only switched if the new block doesn't double spend transactions in the old one.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:19:11.924244+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

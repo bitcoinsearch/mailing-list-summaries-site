@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fill-or-kill transaction</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2015-09-17 19:07:34
+            <br><i>Published on: 2015-09-17T19:07:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Fill-or-kill-transaction.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011043.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the possibility of implementing a fill-or-kill system by exploiting the unused range in Satoshi's implementation of nLockTime. Two new parameters, nLockTime2 and nKillTime, are defined to enable this system. The resolution is four blocks or 2048 seconds, and the maximum confirmation window is 8188 blocks or 16,769,024 seconds. The proposed system can be activated by setting a bit flag in the transaction nVersion. It is noted that the growth of nLockTime will never catch up with nLockTime2. For height-based nLockTime2, the lock time with the new rule must be 1-2048 seconds later than the original rule for every nLockTime2 value greater than or equal to 720,000, making it a soft fork. For time-based nLockTime2, the new rule will not allow confirmation until a specific median time-past, which is also a soft fork. Users can set nLockTime2 and nKillTime values according to their desired transaction confirmation times. However, height-based OP_CLTV is not compatible with nLockTime2, and a new OP_CLTV2 may be needed to verify both nLockTime and nLockTime2. The height-based nLockTime2 will overflow in 55 years, and a hard fork may be needed to implement a better fill-or-kill system.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:43:00.049916+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Proposal] Version bits with timeout and delay.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-09-16 20:19:22
+            <br><i>Published on: 2015-09-16T20:19:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_-BIP-Proposal-Version-bits-with-timeout-and-delay-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011022.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about softfork proposals on the bitcoin-dev forum, Tier Nolan commented that he believes the 75% rule should be maintained as it confirms miners actually meet new rules set by softforks. He also suggested counting blocks instead of days to make monitoring more precise. Rusty Russell replied, agreeing with Nolan's point about confirming miners' adoption of new rules but argued for simplicity in the process. Russell explained that miners are more likely to adopt new rules when they align with already established dates in their calendar. The two then agreed upon a proposal where miners can set a bit and if 75% of blocks of the last 2016 have the bit set, they move to tentative. If 95% of blocks of the last 2016 have the bit set, it moves to locked-in, which is the point of no return. Miners still set the bit, and blocks that do not follow the new rule will be rejected. After 2016 blocks, they go to notice. They discuss the possibility of allocating two bits per proposal to allow miners to vote against forks to recover the bits. However, they also note that this could potentially cause problems with ancient nodes that could fork off the network without detection. Finally, they discuss the effects of soft forks on SPV clients and buggy miners. They recommend that SPV clients monitor the version field and be aware of block forks across activation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:21:24.992555+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

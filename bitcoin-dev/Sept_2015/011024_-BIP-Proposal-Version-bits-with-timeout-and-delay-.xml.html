@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Proposal] Version bits with timeout and delay.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2015-09-16 20:30:27
+            <br><i>Published on: 2015-09-16T20:30:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_-BIP-Proposal-Version-bits-with-timeout-and-delay-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011024.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On September 16, 2015, Rusty Russell sent an email discussing the usefulness of a soft fork and partial enforcement. He stated that he couldn't see a use for it because partial enforcement of a soft fork is pretty useless. However, another participant in the conversation explained that while it isn't useful for actually using the feature, some miners might set the bit but not actually create blocks that comply with the new rule. This would cause their blocks to be orphaned until they fixed it. The conversation then goes on to discuss the timeline for detecting bad implementations and stopping the use of the bit. If support stays between 80% and 90%, it could take more than two weeks. At 75% or higher, checks are made to ensure that blocks with the bit set follow the rule. At 95% or higher, lock-in occurs and there are the same rules as at 75% or higher, but it is irreversible at that point. Furthermore, a timeout is needed to avoid a node forking itself off the network if someone reused a failed BIP bit. The second bit mentioned in the conversation wouldn't be used normally, but rather as a way to kill proposals quickly if they are obviously going to fail. Overall, the email thread discusses the nuances of implementing a soft fork and the importance of ensuring that all nodes on the network are compliant.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:23:30.446027+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

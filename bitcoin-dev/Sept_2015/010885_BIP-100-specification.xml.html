@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 100 specification</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2015-09-03 11:59:01
+            <br><i>Published on: 2015-09-03T11:59:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_BIP-100-specification.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/010885.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the proposed hardLimit for Bitcoin blocks. The current range is set from 1-32MB, and there are concerns about reinstating a legacy limitation by imposing this limit. The message size limit aims to reduce storage requirements per peer and make it harder for a node to support many peers. The suggestion is to use a merkleblock message, allowing receiving parts of a block from multiple sources. Changing hardLimit can be achieved by encoding a proposed value within a block's coinbase scriptSig. Miners vote for the nearest MB, and votes out of range should be clamped. The new hardLimit will be the median of the current hardLimit * 1.2, 20-percentile, current hardLimit/1.2, and 80-percentile. If the raise value is higher than the status quo, then the new limit is set to the raise value; if the lower value is lower than the status quo, then the new limit is set to the lower value. Otherwise, the size limit remains unchanged.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T21:54:38.138129+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

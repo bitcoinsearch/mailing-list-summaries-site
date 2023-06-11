@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dynamic limit to the block size - BIP draft discussion</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Washington Sanchez 2015-09-08 23:11:49
+            <br><i>Published on: 2015-09-08T23:11:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Dynamic-limit-to-the-block-size-BIP-draft-discussion.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/010968.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of this proposal suggests a trigger level for an increase in the block size. This level is set at 60% full to reflect an underlying trend towards filling blocks. Determining the appropriate triggering level is difficult and consists of three parameters: evaluation period, capacity, and threshold. The author selected a period of 4032 blocks, a capacity level of 60%, and a threshold of 2000 blocks or ~50%. If 2000+ nodes have a block size >= 60%, this is an indication that real transaction volume has increased and we're approaching a time where block could be filled to capacity without an increase. The block size increase, 10%, is triggered. A centralized decision was made on the parameters that alter the target difficulty rather than attempt to forecast hash rates based on CPU power. The same approach should be replicated for the block size, and the right variables need to be settled upon. The author believes that this proposal is a good way to do that. Additional calculations show that the proposed block sizes for each year are theoretical maximums if all trigger points are activated, assuming zero transactions are taken off-chain by third-party processors or the LN, and no efficiency improvements. By way of comparison, Alipay processes 30 million escrow transactions per day. This gives us at least 4-5 years to reach the present-day transaction processing capacity of one corporation. In reality, it will take longer as not all block size triggers will be activated. This also gives us at least 4-5 years to develop efficiency improvements within the protocol, develop the LN to take many of these transactions off-chain, and improve network infrastructure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:14:30.269314+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

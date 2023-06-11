@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Torrent-style new-block propagation on Merkle trees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonathan Toomim (Toomim Bros) 2015-09-23 23:12:14
+            <br><i>Published on: 2015-09-23T23:12:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Torrent-style-new-block-propagation-on-Merkle-trees.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011176.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The current block propagation algorithm used by Bitcoin requires a peer to have the full block before it starts uploading to other peers in the p2p mesh, which slows down block propagation. A Bittorrent-inspired algorithm is proposed which splits the transactions into chunks and hashes each chunk. The leeches verify the block header, then request the Nth row of the transaction Merkle tree and a bitfield indicating which of the Merkle nodes the seed has leaves for. They calculate all parent node hashes in the Merkle tree and verify that the root hash is as described in the header. The leeches search their Merkle hash cache to see if they have the leaves for that node already. They begin sharing leaves with each other and upload chunks of data as soon as they get them and confirm both PoW and hash/data integrity instead of waiting for a fully copy with full verification. This algorithm is more complicated than the existing algorithm and won't always perform better in situations where the bandwidth to ping latency ratio is high relative to the blocksize.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:59:54.229474+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

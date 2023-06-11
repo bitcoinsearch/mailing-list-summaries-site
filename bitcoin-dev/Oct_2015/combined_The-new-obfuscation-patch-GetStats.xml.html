@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>The new obfuscation patch &amp; GetStats <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011476_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>James O&#39;Beirne 2015-10-07 23:32:03</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011479_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>Daniel Kraft 2015-10-08 05:14:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011474_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>Daniel Kraft 2015-10-07 17:25:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011477_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>James O&#39;Beirne 2015-10-08 00:29:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011474_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>Daniel Kraft 2015-10-07 17:25:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011474_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>Daniel Kraft 2015-10-07 17:25:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011477_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>James O&#39;Beirne 2015-10-08 00:29:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011476_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>James O&#39;Beirne 2015-10-07 23:32:03</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011477_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>James O&#39;Beirne 2015-10-08 00:29:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011479_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>Daniel Kraft 2015-10-08 05:14:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011476_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>James O&#39;Beirne 2015-10-07 23:32:03</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011479_The-new-obfuscation-patch-GetStats.xml.html">The new obfuscation patch &amp; GetStats</a>
+                        <b>Daniel Kraft 2015-10-08 05:14:50</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011476.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-10-07T23:32:03+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The recently merged "obfuscation" patch for Bitcoin obfuscates the content of the "chainstate" LevelDB by XOR'ing it against a random key. The patch author is questioning whether or not the obfuscation key should be applied when iterating over the database, specifically in CCoinsViewDB::GetStats. The issue has been confirmed as a bug and a fix has been filed on GitHub. James O'Beirne confirmed the bug and will be writing tests to prevent future regressions. Daniel reported the bug and expressed gratitude for the quick fix, planning to submit a patch in case it was an oversight. The patch author suspects that the implementation of GetStats may be dead code and will investigate further. Users of CLevelDBWrapper who go directly for the iterator run the risk of dealing with obfuscated data, which should be remedied.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T00:01:19.853867+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

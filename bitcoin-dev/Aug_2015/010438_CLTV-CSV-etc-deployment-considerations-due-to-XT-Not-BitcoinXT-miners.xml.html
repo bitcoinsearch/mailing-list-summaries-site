@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CLTV/CSV/etc. deployment considerations due to XT/Not-BitcoinXT miners</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2015-08-19 16:32:49
+            <br><i>Published on: 2015-08-19T16:32:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_CLTV-CSV-etc-deployment-considerations-due-to-XT-Not-BitcoinXT-miners.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010438.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list regarding version bits for BIP 65, 68 and other upgrades continues. One proposal is to modify IsSuperMajority to take an optional mask field; in this proposal, bits set in that mask are zeroed for the purpose of the IsSuperMajority calculation. For the current vote, bits 0x20000007 would be masked. To signal support for CLTV/CSV/etc., bit 4 would need to be set, which on Core would mean a minimum version of 0x8, and on XT/not-XT, a minimum version of 0x20000008. However, it is important to note that the vote is still over whether to enforce BIP 65, 68, etc. for blocks with nVersion>=4, so when this all clears up, an additional bit will not have been needlessly wasted. Another proposal suggests using nVersion & 0x8 to signal support while keeping the consensus rule as nVersion >= 4, in order to avoid wasting a bit after the situation has cleared up. However, there were concerns that if XT gets 40% and the BIP gets 55%, then 95% of nodes would accept the upgrade, and version 3 and lower blocks would need to be rejected after that. Additionally, advertising 0x7 for the last 3 bits could lead to XT claiming to support the check locktime verify BIPs even though they don't have the code. A possible solution was proposed that would involve setting N (the height at which the rule is active) one year from now or so, and giving a period of time after lock that bit 8 will be kept and another period where it is guaranteed to be zero. This would allow software that is only watching the bit time to be upgraded and a similar amount of time where the bit is set to zero before it can be reused.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T20:31:27.749200+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

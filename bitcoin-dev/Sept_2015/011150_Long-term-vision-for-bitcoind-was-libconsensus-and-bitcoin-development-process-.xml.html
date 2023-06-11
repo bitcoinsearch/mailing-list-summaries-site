@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Long-term vision for bitcoind (was libconsensus and bitcoin development process)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2015-09-22 18:36:14
+            <br><i>Published on: 2015-09-22T18:36:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011150.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development mailing list, Wladimir J. van der Laan shared his vision for Bitcoind as a P2P node with validation and blockchain store. The idea is that there would be a couple of data sources that could be subscribed to or pulled from. Another contributor agreed with the long-term plan and suggested that it could happen in two steps. The first step would be to move Libconsensus to a subtree, including libsecp256k1 as an internal subtree, while the second step would be to make Bitcoind a subtree of bitcoin-wallet, which already has bitcoin-qt and bitcoin-wallet. It is expected that libconsensus would become C, like libsecp256k1, which is better for proving correctness. Also, upper layers should move to C++11. The basic architecture would be bitcoin-qt on top of bitcoin-wallet, which is on top of bitcoind and friends like bitcoin-cli and bitcoin-tx. Finally, bitcoind would be on top of libconsensus, which would be on top of libsecp256k1.The goal is to maximize the number of people who can safely contribute to the project. The proposed architecture is believed to be what most contributors have in mind for the long term. However, any criticisms to the plan are welcome.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:52:49.713369+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2015-10-19 14:01:04
+            <br><i>Published on: 2015-10-19T14:01:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011563.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Christian has reworked his proposal for normalized transaction ID and is now proposing it as a soft-fork. The new proposal computes the normalized transaction ID by stripping signatures before hashing it, ensuring that any modifications to the transaction still remain valid. This also allows the use of template transactions. Unlike the previous proposal, this one redefines OP_NOP4 with an extensible and parameterized version of signature checking opcodes called OP_CHECKSIGEX. The parameters allow an output with an OP_CHECKSIGEX to be referenced by the normalized transaction ID that created it. However, the normalized transaction IDs are not used in network-level messages. The proposal is implemented by computing the normalized transaction ID when adding it to the UTXO and storing it along with the coin state. While OP_CHECKSIGEX mostly duplicates OP_CHECKSIG and OP_CHECKMULTISIG, Christian is hoping someone could help him refactor the common functionality into reusable blocks. He also finds the process of annotating incoming transactions with their normalized inputs cumbersome. Christian has provided links to the BIP pull request and implementation code. He hopes that this proposal addresses previous concerns regarding hard-forks and welcomes suggestions from the community.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:21:24.318835+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

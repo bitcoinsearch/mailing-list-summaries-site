@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed new policy for transactions that depend on other unconfirmed transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Morcos 2015-10-05 20:02:40
+            <br><i>Published on: 2015-10-05T20:02:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_Proposed-new-policy-for-transactions-that-depend-on-other-unconfirmed-transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011409.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed policy limits on unconfirmed transaction chains in Bitcoin Core were reduced due to the primary vector for mempool clogging or relay fee boosting attacks being large packages of unconfirmed transactions. The existing limits in master and scheduled for release in 0.12 are Ancestor packages = 100 txs and 900kb total size, while Descendant packages = 1000 txs and 2500kb total size. The proposed new limits are Ancestor packages = 25 txs and 100kb total size, while Descendant packages = 25 txs and 100kb total size. These limits are command line arguments that can easily be changed on an individual node basis in Bitcoin Core. However, these are policy limits that affect transactions which depend on other unconfirmed transactions only, and they do not affect how many chained transactions a valid block may contain. Any transaction that was unable to be relayed due to these limits need only wait for some of its unconfirmed ancestors to be included in a block and then it could be successfully broadcast. This is unlikely to affect the total time from creation to inclusion in a block. Finally, based on historical transaction data, the most restrictive of these limits is the 25 transaction count on descendant packages. Over the period of April and May of this year (before stress tests), 5.8% of transactions would have violated this limit alone. Applying all the limits together would have affected 6.1% of transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T19:33:38.486852+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

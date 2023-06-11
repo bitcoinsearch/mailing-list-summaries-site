@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2015-11-05 09:38:03
+            <br><i>Published on: 2015-11-05T09:38:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011664.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation discusses a possible solution to the normalization issue with upgraded and non-upgraded nodes in the Bitcoin network. The proposed solution involves having a connected component of upgraded nodes that relay both the transaction and associated external scripts, which can be piggybacked on top of normal messages. Non-upgraded nodes will read the entire two-part message but only parse the classical transaction, dropping the external script. Validation rules for upgraded nodes will remain the same as before. To commit to the external scripts used during block creation, a new list of signature lists is shipped with the rest of the block following the transaction list, with non-upgraded nodes ignoring it as before. To ensure this solution works, there needs to be a long rollout phase before activation to minimize the chances of a cut in the network consisting of non-upgraded nodes partitioning the network and not forwarding the segregated witnesses. Additionally, the proposal by Peter Todd suggests using preferential peering with other RBF (replace-by-fee) nodes to ensure that at least some full-RBF peers are always connected. This approach could be used similarly in this situation. If everyone agrees that this is a better way to approach the normalization issue, they should start writing it up and see if they can get critical mass behind it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:21:05.358967+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
