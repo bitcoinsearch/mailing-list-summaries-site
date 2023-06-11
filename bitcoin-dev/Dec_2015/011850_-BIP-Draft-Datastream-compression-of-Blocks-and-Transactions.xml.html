@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Draft] Datastream compression of Blocks and Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dave Scotese 2015-12-03 05:52:20
+            <br><i>Published on: 2015-12-03T05:52:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_-BIP-Draft-Datastream-compression-of-Blocks-and-Transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011850.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the idea of using dictionaries that already contain data to compress messages being transmitted. Compressed messages are the same as uncompressed messages, but with the addition of indexing data and compressed data. The receiver must indicate that compressed data is preferred and the height of the latest valid block it holds, and the sender must express the ability to send compressed data. Compressed data can use the first 16,777,215 blocks or the last 4,244,635,647 ending with the block at the tip of the receiver's chain as a dictionary, or it can specify a run of zero bytes. Decompression identifies a block height and adds size bytes from that block to the decompressed data. Step 3.3 of decompression causes an error but could be used to indicate a parameterized dictionary entry. Matt Corallo expressed concerns about adding compression libraries that are directly accessible to the network on financial software, while the author argued that LZO has no current security issues and is configurable by each node operator. The author provided a table showing that as block sizes increase, the performance improvement by compressing data also increases. Compression helps in the transmission of objects, but not in post-processing and validating the block. The only issue that required testing was how much time the compression of data would add to sending the data.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:32:21.691622+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Alternative name for CHECKSEQUENCEVERIFY (BIP112)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2015-11-25 01:14:55
+            <br><i>Published on: 2015-11-25T01:14:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_Alternative-name-for-CHECKSEQUENCEVERIFY-BIP112-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011812.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about finding an alternative name for the opcode CHECKSEQUENCEVERIFY (CSV) in Bitcoin Improvement Proposal 112 (BIP112). From a system developer standpoint, CHECKMATURITYVERIFY ties together the semantics of this opcode with another existing feature in the system (coinbase maturity). However, from an application developer standpoint, the concept of a timelock is more relevant. Maturity is a concept that was introduced for the sake of reducing the disruptive impact of reorgs. Timelocks, on the other hand, are typically used to control when funds can be moved. Eric suggests using RCLTV or RCHECKLOCKTIMEVERIFY as they make the relationship between two opcodes, CHECKSEQUENCEVERIFY and CheckLockTimeVerify (CLTV), more explicit. He also highlights the possibility of adding opcodes that can push values onto the stack with segregated witness. Jorge Timon agrees with Eric and suggests using CMV instead of the check_x_verify naming pattern.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:20:33.751404+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segregated witnesses and validationless mining</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-12-31 23:48:48
+            <br><i>Published on: 2015-12-31T23:48:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Segregated-witnesses-and-validationless-mining.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/012185.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an IRC discussion, there was a debate about what should be required from the current block to calculate the previous block possession proof. The requirement of coinbase outputs restricts some mining setups while requiring a commitment to the current block's transaction outputs restricts tx selection outsourcing schemes. It was suggested that the nonce can be picked arbitrarily and if it is arbitrary then a future soft-fork can add commitments to the current block contents. Thus, the previous block proof can be simple H( + ). Fraud proofs in relation to previous block content proofs were also brought up by Pieter Wuille. If the possession proof is structured as a merkle tree then fraud can be easily proven with a merkle path. Fraud proofs would be a proof that some data is fraudulent or an unmet challenge that some data is correct. If the posession proof is structured as a merkle tree, then fraud can be easily proven with a merkle path. In that model, they'd take the previous block contents and rehash it in its entirety with the nonce.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T02:43:56.057469+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Forget dormant UTXOs without confiscating bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Vincent Truong 2015-12-13 01:00:26
+            <br><i>Published on: 2015-12-13T01:00:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Forget-dormant-UTXOs-without-confiscating-bitcoin.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011954.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The idea of deleting dormant UTXOs in Bitcoin has been discussed as the current threshold for deletion is too low, resulting in people forgetting about their mined bitcoins. To avoid such situations, a higher threshold where the key holder is likely dead, such as 80-120 years, has been suggested to ensure that bitcoins are not lost forever. However, some propose that instead of deleting these dormant UTXOs, they should re-enter the economy as miner fees, with one dormant UTXO mined per block. This would need a hard fork, but could fund cheap transactions indefinitely and incentivize miners to hold copies of dormant UTXOs since they could eventually become theirs. In 2015, the proposal was made to have archived UTXOs, with retrieval from archive costs borne by the UTXO holder instead of the entire storage network. The proposal suggested that dormant UTXOs be those with 420,000 confirmations, after which it will commit to a hash for all UTXOs generated in the block X-420,000. Nodes can safely delete the UTXO records of block X permanently after some confirmations. If a user is trying to redeem a dormant UTXO, they have to provide the scriptPubKey, height (X), and UTXO value as part of the witness, and also provide the Merkle path to the dormant UTXO commitment. It becomes the responsibility of dormant coin holders to scan the blockchain for the current status of the UTXO commitment for their coin, and they may need to pay extra fees for increased tx size. This proposal works without segregated witness, just by replacing "witness" with "scriptSig".</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T02:04:45.914241+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

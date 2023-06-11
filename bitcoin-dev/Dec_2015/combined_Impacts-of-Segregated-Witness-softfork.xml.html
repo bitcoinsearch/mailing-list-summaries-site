@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Impacts of Segregated Witness softfork <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2015/011919_Impacts-of-Segregated-Witness-softfork.xml.html">Impacts of Segregated Witness softfork</a>
+                        <b>jl2012 at xbt.hk 2015-12-09 14:30:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2015/011919_Impacts-of-Segregated-Witness-softfork.xml.html">Impacts of Segregated Witness softfork</a>
+                        <b>jl2012 at xbt.hk 2015-12-09 14:30:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2015/011919_Impacts-of-Segregated-Witness-softfork.xml.html">Impacts of Segregated Witness softfork</a>
+                        <b>jl2012 at xbt.hk 2015-12-09 14:30:23</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011919.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-12-09T14:30:23+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The implementation of Segregated Witness (SW) with a softfork may lead to the breaking of important components of the Bitcoin network that are not consensus critical. This includes the definition of "Transaction ID," which may require dealing with two or three IDs for each transaction. These include backward-compatible txid, witness ID, and global txid. The relay protocols between full nodes must use the global txid to identify a transaction as backward-compatible txid defines only part of a transaction, making them vulnerable to malleability attacks targeting the relay network.Moreover, getblocktemplate needs to be upgraded to handle witness data and witness IDs. Protocols relying on the coinbase tx, such as P2Pool and merged mining, may also be impacted depending on the location of witness commitment. Overall, the implementation of SW with a softfork may require redefining crucial aspects of the Bitcoin network, potentially disrupting various protocols and components. It is important to consider these potential consequences before implementing SW with a softfork in order to avoid negative impacts on the Bitcoin network.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T01:58:25.943699+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

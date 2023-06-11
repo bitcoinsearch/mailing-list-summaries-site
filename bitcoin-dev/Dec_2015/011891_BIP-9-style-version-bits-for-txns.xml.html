@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 9 style version bits for txns</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Priest 2015-12-08 22:27:48
+            <br><i>Published on: 2015-12-08T22:27:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_BIP-9-style-version-bits-for-txns.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011891.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the world of Bitcoin, wallets don't receive transactions from other wallets, nodes do. In the early days of Bitcoin, all wallets were nodes, but now most wallets are just wallets without any specific node. The nature of the work that nodes perform is such that they should broadcast what features they support. Nodes that don't produce blocks are kind of just there, serving whoever happens to connect. Vincent Truong proposed that wallet devs indicate if they are ready for soft forks, hard forks or features by testing them and validating that they don't break their nodes or wallet software. Chris Priest proposed in his Wildcard Inputs BIP that the version field be split into two, with the first 4 bytes used for version number and the second 4 bits used for transaction type. He believes that a new transaction feature should get a new "type" number and that any new feature can't happen until the nodes support it. Vincent Truong suggested extending/copying isSupermajority() for a new secondary/non-critical function to also look for a similar BIP 9 style version bit in txns. If a majority of transactions have been sent and flagged as ready, it would indicate that they're good to go.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:52:30.384549+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

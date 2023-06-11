@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 9 style version bits for txns</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Priest 2015-12-08 19:40:36
+            <br><i>Published on: 2015-12-08T19:40:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_BIP-9-style-version-bits-for-txns.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011886.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author proposed splitting the version field in their Wildcard Inputs BIP, which would separate the first four bytes for the version number and the second four bits for transaction type. They argued that the BIP9 mechanism does not apply to transactions because a block is a collection of transactions that affect many parties, while a transaction only affects at most two parties. Additionally, new transaction features require a new "type" number and cannot happen until nodes support it.Vincent Truong suggested extending/copying isSupermajority() for a new secondary/non-critical function to also look for a similar BIP 9 style version bit in txns. He argued that this would be fair to wallet developers and exchanges as they need to signal if they are ready for a change. If a majority of transactions have been sent and flagged as ready, it would indicate that they are good to go. However, the proposal may be computationally expensive for bitcoin Core to run, but enthusiasts can watch it outside the network. Miners can watch for readiness flagged by wallets before they flag ready, but this requires trusting miners not to jump the gun.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:52:08.954362+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

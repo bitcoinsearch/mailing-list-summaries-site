@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Draft] Datastream compression of Blocks and Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Tschipper 2015-11-30 23:12:24
+            <br><i>Published on: 2015-11-30T23:12:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_-BIP-Draft-Datastream-compression-of-Blocks-and-Transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011837.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin Dev Community has been experimenting and testing with various compression libraries to reduce network bandwidth and improve performance when there is latency on the network. They have drafted a BIP document for compressing blocks and transactions before sending them to reduce daily bandwidth used, speed up data transmission throughout the network, encourage users to keep their nodes running longer, and allow for more peer connections. Compression can be turned on/off using a service bit, and compression library LZO1x will be used. Blocks and transactions will be concatenated together when possible to increase compressibility of smaller blocks, and transactions below 500 bytes will be sent uncompressed unless they can be concatenated. Compression levels can be specified in the bitcoin.conf file, and if compression fails, data will be sent uncompressed. Test results show up to a 20% compression using LZO1x-1 and up to 27% when using LZO1x-999, with a marked performance improvement when there is latency on the network. Most transactions happen to be in the range of 1KB-10KB where they compress well, but don't compress well below 500 bytes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:31:19.573822+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

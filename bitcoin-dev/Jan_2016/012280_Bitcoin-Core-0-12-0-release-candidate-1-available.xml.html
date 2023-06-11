@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Core 0.12.0 release candidate 1 available</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2016-01-25 16:12:01
+            <br><i>Published on: 2016-01-25T16:12:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2016/combined_Bitcoin-Core-0-12-0-release-candidate-1-available.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012280.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the minimum storage quota of 550 MiB required for pruning nodes in Bitcoin. The user questions why this is necessary if block data is not served to other nodes, and suggests that the client could just do transaction verification and relaying, keeping only the blocks being verified on disk. The code comments reveal that the reason for the minimum storage quota is to allow reorgs up to 288 blocks deep even when pruning. Since a full block file chunk is pruned at once, the high water mark triggering the prune must be one 128MB block file plus added 15% undo data, totaling 545MB. Setting the target to greater than 550MB will make it likely that the target can be respected. The PGP signature at the end of the message indicates that the message has not been tampered with and was signed by the sender using their private key.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T03:07:31.299435+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

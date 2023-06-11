@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scaling by Partitioning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Loi Luu 2015-12-09 21:16:00
+            <br><i>Published on: 2015-12-09T21:16:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Scaling-by-Partitioning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011922.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Akiva Lichtner proposed an idea for scaling Bitcoin that involves running more than one simultaneous chain, each defeating double spending on only part of the coin. The coin would be partitioned by radix and to increase throughput, ten parallel chains could be run with each working on a different number. The number of chains could increase automatically over time based on the moving average of transaction volume. Blocks would have to contain the number of the partition they belong to, and miners would have to round-robin through partitions so that an attacker would not have an unfair advantage working on just one partition. Clients would have to send more than one message in order to spend money and client messages will need to enumerate coins using some sort of compression to save space. Loi Luu, one of the authors of the SCP protocol, questioned the proposal and wondered what prior data was needed to validate transactions. They also stated that sharding does not bring any advantage over other techniques to publish more blocks in one epoch. Akiva Lichtner responded that only one partition is involved when a transaction spends a "coin" that ends in "1" and creates a new coin that ends in "1". Since partitions are completely segregated, there is no need for a node to work on multiple partitions simultaneously.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:56:21.864098+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

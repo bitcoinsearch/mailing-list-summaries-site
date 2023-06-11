@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dealing with OP_IF and OP_NOTIF malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> jl2012 at xbt.hk 2015-11-06 08:13:10
+            <br><i>Published on: 2015-11-06T08:13:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_Dealing-with-OP-IF-and-OP-NOTIF-malleability.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011674.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed BIP draft is aimed at making malleability of transactions with OP_IF and OP_NOTIF impossible. The Bitcoin script system's flow control codes, OP_IF and OP_NOTIF, open a source of malleability, which can be altered by a third party without invalidating the transaction. While these codes are not commonly used in the blockchain, more sophisticated functions such as OP_CHECKLOCKTIMEVERITY are being introduced, and the related malleability should be fixed. The proposal serves as a supplement to BIP62 and should be implemented together with other malleability fixes. If the transaction version is 3 or above, the flow control value for OP_IF and OP_NOTIF must be either 0 or 1, or the transaction fails. Compatibility-wise, this is a softfork and the new rules only apply to transactions of version 3 or above, so that transactions created before the introduction of this BIP will still be accepted by the network. An OP_0NOTEQUAL could be used before the flow control code to transform any non-zero value to 1 for people who want to preserve the original behavior of OP_IF and OP_NOTIF. The reference for the proposal is BIP62.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:55:01.192244+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>We can trivially fix quadratic CHECKSIG with a simple soft-fork modifying just SignatureHash()</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> jl2012 2015-12-29 07:47:22
+            <br><i>Published on: 2015-12-29T07:47:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_We-can-trivially-fix-quadratic-CHECKSIG-with-a-simple-soft-fork-modifying-just-SignatureHash-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/012145.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, a user asked whether it is necessary to consider that someone may have a timelocked big tx with a lost private key. Peter Todd responded with a suggestion to tell people not to do this. He proposed a fix for the quadratic CHECK(MULTI)SIG execution time issue by limiting only SignatureHash() to return true if the transaction size is less than or equal to 100KB. This allows for a future soft-fork that properly fixes the hashing issue without limiting all transactions or counting sigops. The advantage of this method is its ease of implementation and quick deployment in case of an attack by a major miner exploiting slow-to-propagate blocks. Todd also provided a link to related discussions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T02:47:31.635147+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

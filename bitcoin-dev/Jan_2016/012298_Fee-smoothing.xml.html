@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fee smoothing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Warren Togami Jr. 2016-01-27 02:45:51
+            <br><i>Published on: 2016-01-27T02:45:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012298.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal to smooth the payout of fees across blocks in order to incentivize decentralization and support the establishment of a free fee market was discussed among members of the bitcoin-dev community. The proposal suggests only paying out 10% of the collected fees in a block to the miner and adding the remaining 90% to the collected fees of the next block, creating a rolling average of collected fees from current and past blocks. The idea is that this would reduce the marginal benefit of including an additional transaction into a block, aligning incentives of individual miners better with those of the whole network, and reducing the disadvantage of mining with a slow connection. However, some members expressed concerns about the proposal. Reducing the marginal benefit of including an additional transaction could increase orphan risk while reducing the reward and create new incentive problems such as mining an empty block to minimize the chance of losing 90% of the fees from the previous block to an orphan. Additionally, if the miner doesn't want to share, nothing stops them from taking payment out-of-band and confirming the transaction with little or no fees visible in the block.Another member suggested smoothing fees between the current and subsequent 5 blocks to reduce the incentive of replacing the current tip and conduct out-of-band payments. Furthermore, the Flex Cap approach was mentioned as a way to align the miner's supply incentives with the global marginal cost. Under the general idea of the Flex Cap approach, block size is no longer fixed but can be bursted higher on a per-block basis if the miner is willing to defer a tiny portion of the current block subsidy to pay out to the miner of later blocks. This temporary limit is never a "wall" that can be hit as miners can choose to burst past it if the cost is worth the reward. The Flex Cap approach has periodic block size retargets to allow for a temporary limit to rise or fall to something resembling actual market demand. Finally, the proposal to smooth the payout of fees across blocks is also suggested as a way to reduce the volatility of income streams for solo miners and decrease the economic pressure to join a large pool. However, another member pointed out that orphan cost is a major reason why pools are attractive.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T03:22:14.578766+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

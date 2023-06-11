@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Confidential Transactions as a soft fork (using segwit) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2016/012194_Confidential-Transactions-as-a-soft-fork-using-segwit-.xml.html">Confidential Transactions as a soft fork (using segwit)</a>
+                        <b>Felix Weis 2016-01-06 15:18:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2016/012194_Confidential-Transactions-as-a-soft-fork-using-segwit-.xml.html">Confidential Transactions as a soft fork (using segwit)</a>
+                        <b>Felix Weis 2016-01-06 15:18:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2016/012194_Confidential-Transactions-as-a-soft-fork-using-segwit-.xml.html">Confidential Transactions as a soft fork (using segwit)</a>
+                        <b>Felix Weis 2016-01-06 15:18:56</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012194.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-01-06T15:18:56+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The proposal suggests an upgrade to Pieter Wuille's segregated witness (segwit) that aims to reduce the blockchain to a utxo changeset while placing cryptographic proofs for inputs into a witness part. The upgrade adds support for transactions with both witnessIns and witnessOuts, as well as introducing three new transaction types: blinding, unblinding, and confidential.Valid blocks containing these transactions must include a mandatory special output in their coinbase transaction and a new special confidential base transaction. Blinding transactions use 0 value inputs and outputs, while the encrypted amounts are stored in the witnessOut part. For blinding, unblinding, and miner fees, a single anyone-can-spend output is used, which will be updated in every block containing confidential transactions.The last output of the blinding transaction script acts as a marker of the transaction being a blinding tx, indicating that a block is invalid if the miner claims the fees for himself instead of putting it into a special coinbase output. Unblinding transactions remove confidential outputs from the utxo set. The outpoint itself is not spendable, but the same block will contain a confidential base transaction created by the miner that will satisfy the amount and p2sh-destination, refunded using GCTXO. Confidential transactions have all inputs and outputs with amount 0 and are everyone can spend V2 segwit, thus valid under old rules. All inputs and outputs have amount 0 and are everyone can spend V2 segwit, thus are valid under old rules. Confidential base transaction is a special transaction in the last position in every block that contains at least one of the new transaction types. Created by the miner of the block and used to do the actual unblinding and redeeming transaction fees for all confidential transactions. There will always be only 1 GCTXO in the utxo set to allow for full accountability for 21 million bitcoin. A block is only valid if all amounts/commitments/range-proofs match. If a miner tries to use GCTXO other than allowed in the single confidential base transaction, it will be orphaned.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T02:56:57.663218+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

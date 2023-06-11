@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dealing with OP_IF and OP_NOTIF malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Oleg Andreev 2015-11-06 09:32:02
+            <br><i>Published on: 2015-11-06T09:32:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_Dealing-with-OP-IF-and-OP-NOTIF-malleability.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011680.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the given context, it is stated that one and zero should be defined as arrays of length one to avoid any possibility of mutation in the transaction. However, this statement contradicts with the previous rule which states that they should be minimally encoded. The minimally-encoded "zero" is an array of length zero, not one. To resolve this contradiction, it is suggested to define explicitly that IF/NOTIF argument must be either a zero-length array or a single byte 0x01. This would ensure that the transaction remains secure and free from any possible mutations caused by changing the length of the array.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:55:57.149834+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
