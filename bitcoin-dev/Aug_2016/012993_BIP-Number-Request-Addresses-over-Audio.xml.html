@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Number Request: Addresses over Audio</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2016-08-11 20:37:04
+            <br><i>Published on: 2016-08-11T20:37:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_BIP-Number-Request-Addresses-over-Audio.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/012993.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation on bitcoin-dev mailing list began when Erik Aronesty asked if there was a BIP for a public seed that could generate new random addresses but cannot easily verify if an address was derived from the seed. Tier Nolan responded that if one takes a public key and multiplies it by a non-random factor, everyone else can figure out the private key, so one needs some way to get k, the random factor, to the recipient without others figuring it out. The system must be interactive or use a shared secret. The scriptPubKey, or an OP_RETURN, contains shared secret information. The address would indicate the master public key, which equals the master private key multiplied by G. The transaction contains k*G. Both sides can compute the shared secret, which is k*master_private*G = master_private*k*G. This adds 34 bytes to the scriptPubKey. However, this method is heavy for scanning transactions sent to someone as one has to check every transaction output to see if it is the given template. It requires approximately one ECC multiply per output and is similar CPU load to what one would need to do to actually verify a block.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:31:30.229125+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

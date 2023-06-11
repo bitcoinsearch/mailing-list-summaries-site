@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd: Re:  Drivechain proposal using OP_COUNT_ACKS</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2016-10-02 23:00:16
+            <br><i>Published on: 2016-10-02T23:00:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2016/combined_Fwd-Re-Drivechain-proposal-using-OP-COUNT-ACKS.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-October/013194.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around a problem with the fungibility of coins generated from transactions. It is mentioned that if a transaction is reorged out during an innocent reorg, then it may never get back in unless it occurs at exactly the same height, which is not guaranteed. The issue with this proposal is that nothing stops users from using OP_EQUALVERIFY and causing their transaction to fluctuate between acceptable and unacceptable, with no party doing anything like a double spend. This poses a major problem with the proposal. Sergio Demian Lerner says that transactions that redeem an output containing (or referencing by means of P2WSH) an OP_COUNT_ACKS are not broadcast by the network and the only parties that can include the redeem transaction are the miners themselves. Therefore he sees no problem that an OP_COUNT_ACKS scriptSig transaction is invalidated after the liveness times expires. If there is no expiration, then polls can last forever and the system fails to provide DoS protection for block validation since active polls can accumulate forever.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T20:19:22.311057+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

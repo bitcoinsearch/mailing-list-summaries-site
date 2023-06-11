@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Implementing Covenants with OP_CHECKSIGFROMSTACKVERIFY</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tim Ruffing 2016-11-04 14:35:51
+            <br><i>Published on: 2016-11-04T14:35:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2016/combined_Implementing-Covenants-with-OP-CHECKSIGFROMSTACKVERIFY.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-November/013273.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The implementation of "opt-in miner takes double-spend" can be done using either OP_CAT or OP_CHECKSIGFROMSTACKVERIFY. By creating an output that is spendable by everyone if it is double-spent with two different transactions, the next miner who mines the double-spent transaction will take all the money. The recipient may accept a zero-conf transaction, knowing that the sender will lose the money when they attempt to double-spend. In the case of OP_CHECKSIGFROMSTACKVERIFY, a case is added to the script that allows spending if two valid signatures on different messages under the public key of the output are given. This implementation is straightforward. OP_CAT can also achieve the same functionality in a simpler way by turning Bitcoin's ECDSA into an opt-in one-time signature scheme. An output that is only spendable using a signature with a specific already fixed first part can be created using OP_CAT. Signing two different transactions with the same r will allow everybody to extract the secret key from the two signatures. However, the drawbacks of this implementation are that every double-spend is penalized, and it is not possible to distinguish between legitimate or illegitimate double-spends. Russell O'Connor has explained how to construct covenants using both these op codes in a blog post at Elements Alpha. Though minor trade-offs exist, the Moeser-Eyal-Sirer vault has been constructed as an example of the construction that works. Any ideas for implementing useful covenants are welcome.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T20:30:50.238365+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

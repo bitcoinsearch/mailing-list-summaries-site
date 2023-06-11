@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Status updates (including to Active/Final Status) - BIP 39, BIP 43, BIP 44, BIP 67, BIP 111, BIP 125, BIP 130</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2016-08-25 07:56:17
+            <br><i>Published on: 2016-08-25T07:56:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_BIP-Status-updates-including-to-Active-Final-Status-BIP-39-BIP-43-BIP-44-BIP-67-BIP-111-BIP-125-BIP-130.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013077.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A user posed a hypothetical scenario on the bitcoin-dev mailing list regarding what would happen if they generated 21 addresses and address0 received funds 180 days after generation while address21 immediately received funds. This would trigger a resize+20 of the address-lookup-window, but the wallet would need to go back 180 days to detect any transactions for address21 in a new lookup-window. This scenario is not unrealistic as a merchant might generate addresses beyond their gap limit and orders get filled at a later date. The lack of consideration for these cases is another issue with BIP44. It was also noted that restoring a wallet in a block-scanning wallet versus Electrum may yield different results due to the scenario described.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:50:24.371094+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

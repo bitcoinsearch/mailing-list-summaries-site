@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed segwit related consensus and policy rules in Bitcoin Core 0.13.1 <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013112_Proposed-segwit-related-consensus-and-policy-rules-in-Bitcoin-Core-0-13-1.xml.html">Proposed segwit related consensus and policy rules in Bitcoin Core 0.13.1</a>
+                        <b>Johnson Lau 2016-09-10 09:29:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013112_Proposed-segwit-related-consensus-and-policy-rules-in-Bitcoin-Core-0-13-1.xml.html">Proposed segwit related consensus and policy rules in Bitcoin Core 0.13.1</a>
+                        <b>Johnson Lau 2016-09-10 09:29:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013112_Proposed-segwit-related-consensus-and-policy-rules-in-Bitcoin-Core-0-13-1.xml.html">Proposed segwit related consensus and policy rules in Bitcoin Core 0.13.1</a>
+                        <b>Johnson Lau 2016-09-10 09:29:50</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013112.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-09-10T09:29:50+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>There are several pull requests for segwit related consensus and policy rules. It is important to note that a script spendable in a pre-segwit system may not necessarily be spendable as a segwit script due to differences between the two. To ensure compatibility, users should test their segwit system on testnet with standard rules turned on and a small amount of money after segwit is activated on mainnet. While Segwit (BIP141) fixes transaction ID malleability, it is still possible for a relay node to insert arbitrary data to the witness without invalidating the transaction. NULLDUMMY, MINIMALIF, and NULLFAIL aim to fix this type of problem. NULLDUMMY has already been implemented as a policy for over a year and a softfork is proposed in 0.13.1, while MINIMALIF and NULLFAIL are new policies proposed for 0.13.1 and may become softforks in the future. Script designers should pay attention to these potential softforks to avoid creating unspendable scripts.BIP147 "NULLDUMMY" softfork is being discussed for both segwit and pre-segwit scripts, along with "MINIMALIF" minimal OP_IF/NOTIF argument for segwit scripts only and "NULLFAIL" null signature for failed CHECK(MULTI)SIG for both segwit and pre-segwit scripts. Additionally, a resources limit for P2WSH is proposed with witnessScript.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T19:59:27.751074+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

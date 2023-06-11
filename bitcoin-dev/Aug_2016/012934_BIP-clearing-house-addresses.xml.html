@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP clearing house addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Johnson 2016-08-04 03:49:26
+            <br><i>Published on: 2016-08-04T03:49:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_BIP-clearing-house-addresses.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/012934.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal of creating a new address type that has a reversal key and settlement layer to revoke transactions was discussed on the Bitcoin-dev mailing list. However, it was pointed out that transactions are not sent from addresses, and nLockTime can be used to prevent unauthorized transactions. In the case of Bitfinex hack, nLockTime could have prevented the hack if BitGo had used it. But, if the offline key of Bitfinex had been compromised instead of BitGo doing the second signature, nLockTime would not have helped. The proposal of a new type of UTXO that is only valid to be spent as an nLockTime transaction was also discussed, but there were concerns about what to do if the keys were compromised and how to stop the attacker from locking the coins up indefinitely. It was suggested that a third distinct key required for the refund transaction that's separate from the keys used to sign the initial nLockTime transaction should be used, and the refund transaction should be able to go to a new address entirely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:17:44.418853+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

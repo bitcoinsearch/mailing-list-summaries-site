@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP: Dealing with OP_IF and OP_NOTIF malleability in P2WSH</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Sergio Demian Lerner 2016-08-18 00:11:16
+            <br><i>Published on: 2016-08-18T00:11:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_New-BIP-Dealing-with-OP-IF-and-OP-NOTIF-malleability-in-P2WSH.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013043.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue at hand is that witness data size is not signed, leading to potential malleability issues and problems for systems with hard limits on the size of witness programs they can accept. A proposed solution is to soft-fork and add an opcode OP_PROGSIZE that pushes the size of the segwit program being evaluated onto the stack, which would allow scripts to take action based on the size. This would prevent an attacker from creating a clone of a transaction with a witness ECDSA signature longer than 0x50 bytes. The discussion also touches on workarounds for current behavior and the need to enforce MINIMALIF in some cases, with the suggestion to make it a relay policy first before considering a softfork.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:44:41.380097+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

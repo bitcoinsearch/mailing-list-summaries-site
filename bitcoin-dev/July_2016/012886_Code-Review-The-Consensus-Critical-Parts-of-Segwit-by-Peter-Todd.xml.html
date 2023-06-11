@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Code Review: The Consensus Critical Parts of Segwit by Peter Todd</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2016-07-04 23:27:15
+            <br><i>Published on: 2016-07-04T23:27:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2016/combined_Code-Review-The-Consensus-Critical-Parts-of-Segwit-by-Peter-Todd.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-July/012886.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the odd result of a transaction spending a witness output with an unknown version, which is valid even if the transaction does not have any witnesses. It has been suggested to leave such an unknown witness program as any-one-can-spend without looking at the witness. The argument for special case P2PKH is that pubkey should be saved to reduce the bytes but 160-bit commitments for multisig may need 256-bit security. However, even shorter hash and pubkey are suggested for storing a small amount of Bitcoin. There is a concern that signatures for new signature hash can be misinterpreted for old signature hash. Tagged hashing is proposed as an excellent way to ensure that signatures cannot be reused in different contexts, and XORing the magic tag prior to using it is sufficient for signature applications. However, this method is incompatible with timestamping schemes like OpenTimestamps that rely on all operations being cryptographically secure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:06:52.508553+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Python test suite failures (was Re: Planned Obsolescence) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013392_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Alice Wonder 2016-12-19 08:13:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013392_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Alice Wonder 2016-12-19 08:13:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013392_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Alice Wonder 2016-12-19 08:13:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013386_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Douglas Roark 2016-12-18 20:51:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013393_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Marco Falke 2016-12-21 18:33:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013386_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Douglas Roark 2016-12-18 20:51:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013386_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Douglas Roark 2016-12-18 20:51:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013393_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Marco Falke 2016-12-21 18:33:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2016/013393_Python-test-suite-failures-was-Re-Planned-Obsolescence-.xml.html">Python test suite failures (was Re: Planned Obsolescence)</a>
+                        <b>Marco Falke 2016-12-21 18:33:14</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-December/013392.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-12-19T08:13:51+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a bitcoin-dev mailing list post, Alice Wonder expressed her frustration with testing errors in Bitcoin Core updates. She almost didn't update to version 0.13.0 because of Python errors in the test suite, which were fixed by following instructions on bitcointalk. However, version 0.13.1 came with new Python errors and she decided not to update at all until the test suite works properly in her CentOS environment. Douglas Roark requested more information about the issues and offered help, suggesting that posting an issue on Github would be useful.Alice explained that the LANG environment variable was the main cause of the problem and she had to set it to "en_US.utf8" before running the test suite for version 0.13.0. However, she noticed that this issue was fixed in version 0.13.1. The errors encountered in version 0.13.1 arose while running the "bitcoin-util-test.py" file, which led to a traceback error. The error message shows that the test failed because it was unable to find the file "./test/data/blanktx.json", resulting in an Error 1. Alice also mentioned that she builds in a clean chroot build environment to avoid linking to non-standard libraries and that normally, the LANG environment variable does not affect software compilation. The error message displayed is from version 0.13.1 of Bitcoin. Specifically, running the "bitcoin-util-test.py" file caused the error. The traceback shows that the issue is with the "bctest.py" file. In particular, the line of code that reads the output data from a file is causing a FileNotFoundError due to the specified file not being found in the directory. This issue was previously known on the master branch. If users encounter similar issues on the current 0.13.2 release candidate, they are advised to report it on the Bitcoin GitHub issues page and include the version of CentOS they are running. Despite these issues, Alice reported that version 0.13.0 worked fine once the LANG variable was set to "en_US.utf8".</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T20:58:18.268245+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Managing block size the same way we do difficulty (aka Block75)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James Hilliard 2016-12-11 20:31:05
+            <br><i>Published on: 2016-12-11T20:31:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2016/combined_Managing-block-size-the-same-way-we-do-difficulty-aka-Block75-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-December/013361.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal of doubling block size every year could cause major problems as miners may max out the blocks they mine to get more transaction fees. This proposal allows for over a 7x increase in block size. The main problem with this proposal is that users have no way to stop miners from continuously increasing block size. The attack on the network is free of cost as miners can create thousands of transactions paying to themselves and not broadcast them to the network. However, if there was a single mining pool which mined most of the blocks, the situation would be temporary and the odds of it happening in the future are very close to zero. Increasing and decreasing the maximum block size dynamically is a self-correcting solution and is preferred than a hardcoded limit as it allows for permanent correction without human intervention. Frequent and gradual changes in maximum block size would allow for seeing any consequences well in advance. Block75 would adjust the block size over time based on the average block size over the last 2016 blocks. Considering topology and bandwidth speed, along with disk space costs, the hard limit maximum block size cannot grow to an unlimited value, and there is also a validation cost in time for each block.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T20:50:24.765212+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

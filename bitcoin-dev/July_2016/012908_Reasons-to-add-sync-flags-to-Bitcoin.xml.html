@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reasons to add sync flags to Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Moral Agent 2016-07-27 14:42:32
+            <br><i>Published on: 2016-07-27T14:42:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2016/combined_Reasons-to-add-sync-flags-to-Bitcoin.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-July/012908.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the proposal has created a repository for sync_flags and has made some changes to it, which can be found in the repo. The author's basic idea is to improve mining decentralization by having all miners begin hashing the next block at exactly the same time. This can be achieved through the use of sync flags, which are messages consisting of a hash of the previous block, a bitcoin address, and a nonce. Miners wait for this flag, and when it suddenly spreads through the network, they can simultaneously begin hashing the next block. The sync flag should not be produced too quickly, and to fund this proof of work, the protocol is modified to demand that the block produced 10 blocks after the sync flag must allocate 25% of the block reward to the address published by the sync flag.The author explains the advantages of sync flags over optimistic mining. Sync flags have several benefits, including reducing variance in mining profitability, reducing or eliminating SPV mined blocks, reducing or eliminating empty blocks, smoothing out resource usage, reducing the latency bottleneck on throughput, making transaction stuffing by miners either obvious or costly, and giving miners something to do while they wait for attractive transactions to appear.The author also addresses concerns about selfish mining, invalid block spam, payout mechanism compatibility with certain mining pools, and the effect of mandatory empty blocks on sync flags. The use of Bitcoin miners for destabilizing purposes can be avoided by mining a sync flag instead. This would put the miners to profitable work while they wait and create a more efficient price discovery mechanism for transactions.Transactions paying high fees would have time to arrive at the marketplace, rather than taking whatever is offered because all the "good" transactions got taken in the prior block. This can be easily done with a soft fork, although a hard fork would be more efficient. The implementation of sync flags using a soft fork can be done by introducing a rule that every block must include a transaction which pays 25% of the block reward to the address given by the 10th previous sync flag and commits to the hash of the 1st previous sync flag.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:11:50.373256+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

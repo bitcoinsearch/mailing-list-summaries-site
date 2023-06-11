@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On-going work: Coin Selection Simulation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Daniel Weigl 2016-09-23 09:35:22
+            <br><i>Published on: 2016-09-23T09:35:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2016/combined_On-going-work-Coin-Selection-Simulation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013148.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A researcher, Murch, has analyzed the Coin Selection problem and re-implemented multiple coin selection strategies of prominent Bitcoin wallets including Bitcoin Core, Mycelium, Breadwallet and Android Wallet for Bitcoin. As part of this research, Murch created a framework to simulate wallet behavior on basis of a sequence of payments. The simulation results are presented in a two-page description along with three figures showing the simulated wallets' UTXO compositions at the end of the simulation. Murch also invited feedback and requested another sequence of incoming and outgoing payment amounts to run the simulation on. In response to Murch's email, Daniel Weigl, from Mycelium, inquired about the behavior of Mycelium coin selection algorithm. Murch clarified that Mycelium selects UTXO in a FIFO approach, but prunes by removing the smallest selected UTXO until the excess beyond the spending target is minimized. This post-selection step seems to be the likely reason for Mycelium's small UTXO build-up. BreadWallet uses a very similar FIFO approach, but doesn't prune which causes their average UTXO set to be much smaller. A balanced approach between these two approaches might be that instead of pruning all small inputs, a few of the small inputs could be allowed to be selected to slowly drain low-value UTXO out of the wallet by spending them over time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T20:05:27.910500+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

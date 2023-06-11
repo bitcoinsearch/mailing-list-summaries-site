@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Capital Efficient Honeypots w/ &#34;Scorched Earth&#34; Doublespending Protection</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2016-08-24 01:46:34
+            <br><i>Published on: 2016-08-24T01:46:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_Capital-Efficient-Honeypots-w-Scorched-Earth-Doublespending-Protection.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013058.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin-based honeypots incentivize intruders to reveal that they have broken into a server by allowing them to claim a reward based on secret information obtained during the intrusion. However, spending a bitcoin can only be done by publishing data to a public place - the Bitcoin blockchain - allowing detection of the intrusion. One private key per server is the simplest way to achieve this, but it is not capital efficient if you have multiple servers to protect. Previously, tree signatures for honeypots were proposed, but they aren't yet implemented in the Bitcoin protocol. However, with a 2-of-2 multisig and the SIGHASH_SINGLE feature, functionality can be implemented with the existing Bitcoin protocol. A pre-signed standard transaction can be used instead to improve on the concept from Todd/Coleman while using non-standard SIGHASH flags. The result looks like two normal transactions created in the process of someone with a standard wallet sending a small amount of funds to an address, followed by sending a larger amount. A subtlety in the two transactions concept is that the intruder doesn't have the necessary private keys to modify the first transaction, which means that the honeypot owner can respond to the compromise by doublespending that transaction, potentially recovering the honeypot while still learning about the compromise. We can use the "scorched earth" concept to improve the credibility of the honeypot reward by making it costly for the honeypot owner to doublespend. Note that as an implementation consideration CHECKSEQUENCEVERIFY can be used to ensure the honeypot output can only be spent with transaction replacement enabled, as CSV requires nSequence to be set in specific ways in any transaction spending the output.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:52:53.408838+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

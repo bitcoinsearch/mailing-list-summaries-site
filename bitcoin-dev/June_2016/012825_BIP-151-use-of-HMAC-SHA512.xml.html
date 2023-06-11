@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 151 use of HMAC_SHA512</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-06-28 02:31:34
+            <br><i>Published on: 2016-06-28T02:31:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2016/combined_BIP-151-use-of-HMAC-SHA512.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012825.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the introduction of SHA512 for encryption key generation using HMAC_SHA512 hash. The left 32 bytes and right 32 bytes of the hash are used to generate K_1 and K_2, respectively. However, the writer questions the necessity of SHA512 in this process and proposes an alternative method of using HMAC_SHA256 hash to generate the header and body encryption keys separately. The proposed method would use ecdh_secret and cipher-type as the key and message parameters for the HMAC_SHA256 function.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T18:53:59.946083+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 151 use of HMAC_SHA512</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2016-06-28 07:19:04
+            <br><i>Published on: 2016-06-28T07:19:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2016/combined_BIP-151-use-of-HMAC-SHA512.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012827.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the use of SHA512_HMAC and suggests using SHA256_HMAC instead. The author questions the weak reason to introduce SHA512 and proposes using two SHA256 operations instead. While SHA512_HMAC is used by BIP32 and most clients will make use of bip32 features, the author believes a single SHA512_HMAC operation is cheaper and simpler than two SHA256_HMAC operations. The current p2p and consensus layer do not use sha256_hmac, and Bitcoin-Core only uses it for HTTP RPC auth and Tor control. The author sees no significant pros or cons for SHA512_HMAC over SHA256_HMAC. A link to the BIP32 specification is also provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T18:52:34.593167+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

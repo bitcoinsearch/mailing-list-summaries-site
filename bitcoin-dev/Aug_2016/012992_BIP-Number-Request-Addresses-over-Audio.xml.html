@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Number Request: Addresses over Audio</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2016-08-11 15:13:19
+            <br><i>Published on: 2016-08-11T15:13:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_BIP-Number-Request-Addresses-over-Audio.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/012992.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin Development Group email thread, Erik Aronesty asked about whether there is any BIP for a public seed that allows someone to generate new random addresses but cannot easily verify if an address was derived from the seed. In response, it was explained that if a recipient can work out the private key by multiplying their master private key by k and k is non-random, then everyone else can figure it out. Thus, a way to get k to the recipient without others figuring it out is needed. One solution mentioned is to use a shared secret, with information about the shared secret included in the scriptPubKey or an OP_RETURN. The master public key would indicate the address and the transaction would contain k*G. Both sides could compute the shared secret, which adds 34 bytes to the scriptPubKey. However, this method is relatively heavy for scanning for transactions sent to you, requiring checking every transaction output to see if it matches the given template, an ECC multiply to compute the shared secret, an ECC addition, and a hash to determine if it matches the public key hash in the output. This process requires approximately one ECC multiply per output and similar CPU load to verifying a block.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:31:08.329849+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

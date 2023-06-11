@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Simple tx ID malleability fix, opcode proposal: OP_TXHASHVERIFY</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rune K. Svendsen 2016-09-17 20:45:17
+            <br><i>Published on: 2016-09-17T20:45:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2016/combined_Simple-tx-ID-malleability-fix-opcode-proposal-OP-TXHASHVERIFY.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013116.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author is proposing a solution to create transactions that are immune to transaction ID malleability. The proposed solution involves introducing an opcode called OP_TXHASHVERIFY, which would only work if added to a scriptSig as the very first operation and would abort if the hash of the transaction with all OP_TXHASHVERIFY operations (including stack push) removed does not match what has been pushed on the stack. To produce a transaction with one or more inputs protected against tx ID malleability, one would first calculate the tx ID of the tx, then for each input they wish to protect, add "0x32 $TX_HASH OP_TXHASHVERIFY" to the beginning of the scriptSig. When evaluating OP_TXHASHVERIFY, a copy of the tx in question is made, and the "0x32 OP_TXHASHVERIFY" sequence is removed from the beginning of all scriptSigs (if present). If the tx copy hash does not match the top stack item, the operation will abort.This solution adds 34 bytes per input and is meant to be a temporary solution until something better becomes available (e.g. Segwit). The proposal is seen as valuable because it allows users to not worry about tx ID malleability. The author asks for feedback on the proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:59:57.040411+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
