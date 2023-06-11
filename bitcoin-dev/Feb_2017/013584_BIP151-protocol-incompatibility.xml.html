@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP151 protocol incompatibility</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2017-02-14 20:58:54
+            <br><i>Published on: 2017-02-14T20:58:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2017/combined_BIP151-protocol-incompatibility.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013584.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is discussing the implementation of BIP151, which improves security in communication between Bitcoin nodes by encrypting messages. The issue raised is that it's not backward compatible, meaning compatibility checks may fail with older versions. However, the BIP is still backward compatible as all SPV clients and full node implementations would still work if BIP151 has been implemented. Encryption negotiation must be done before the version handshake for security, and the requesting peer needs to initiate encryption. If the connecting peer does not request encryption, the responding peer will not enforce or ask for encryption.There is a debate about the interpretation of the terms "requesting" and "responding" peers, but it's clear from the BIP that the request for encryption should come before any other message. Allowing invalid messages in a protocol can lead to protocol incompatibility and encourages DOS attacks. The current flexibility exists because we do not drop unknown messages, but this could be up to the implementation. The purpose of version negotiation is to identify invalid messages, and anything that doesn't match the agreed version is dropped.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:32:13.300556+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

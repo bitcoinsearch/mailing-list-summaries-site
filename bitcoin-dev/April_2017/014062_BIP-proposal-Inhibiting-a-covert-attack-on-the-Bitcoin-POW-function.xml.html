@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal: Inhibiting a covert attack on the Bitcoin POW function</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> praxeology_guy 2017-04-07 08:08:10
+            <br><i>Published on: 2017-04-07T08:08:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_BIP-proposal-Inhibiting-a-covert-attack-on-the-Bitcoin-POW-function.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014062.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>It has been requested to provide more details on the claims made regarding the reverse engineering of the Asic chip. According to gmaxwell, it is possible to set the SHA256 midstate/IV instead of resetting it to the standard SHA256 IV, even in S7 chips. This allows the re-use of midstates, which is a necessary feature for the ASICBOOST optimization to work. The difference between the covert and overt optimization methods is not much from the chip's perspective, as the whole IV/midstate vector can be set. The covert method requires more work than the overt method, where the version bits are just permutated. The covert method requires finding partial hash collisions of the tx merkle root, which could be done at different stages in the mining system. It has been speculated that it could be done in the miner's FPGA. However, it is unclear how gmaxwell or his friend did it, as he currently does not own any mining hardware nor has the time to do it himself.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T23:41:37.006306+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

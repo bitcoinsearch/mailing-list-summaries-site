@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SHA1 collisions make Git vulnerable to attakcs by third-parties, not just repo maintainers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Steve Davis 2017-02-24 23:49:36
+            <br><i>Published on: 2017-02-24T23:49:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2017/combined_SHA1-collisions-make-Git-vulnerable-to-attakcs-by-third-parties-not-just-repo-maintainers.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013621.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The use of SHA1 is considered insecure and relying on it is "hopeless." It is suggested that switching to a new hash function is much simpler than trying to fix the usage of a broken one. A proposal has been made to hash files continuously instead of hashing the intermediate steps, which could make things much more difficult for attackers. However, this trick or similar tricks will not help since even if specific collisions are more difficult to find today, the more files added to the hash, the more freedom given to the attacker. Furthermore, if the original usage of the hash function was vulnerable, then the proposed scheme would also be vulnerable. The question arises about RIPEMD-160, which is the foundation of Bitcoin addresses, and whether it is susceptible to such an attack vector, and what that means for old addresses. Concrete attacks have been discussed but it is uncertain if this is the right place to discuss them.The discussion on the bitcoin-dev mailing list revolves around the optimization of UTXO (Unspent Transaction Output) set solution. Peter Todd asks Bram Cohen about his UTXO commitments scheme and its requirement for random access. Cohen explains that the ordering is by the bits in the hash and technically it's a Patricia Trie. He also mentions that he uses 'merkle tree' to refer to basically anything with a hash root. They discuss the empirical access patterns which are unknown, it requires an extra cache miss per lookup to find the entry number, and there could be no meaningful gains if everything is optimized well enough without it, and it's a bunch of extra complexity. Todd suggests optimizing the plain vanilla UTXO set solution first and then trying the insertion ordering trick as an optimization to see if it's an improvement. Todd concludes that precisely because access patterns in TXO (Transaction Output) commitments are not uniform, from a L1/L2/etc cache perspective alone, TXO commitments will result in better performance than UTXO commitments. Additionally, Todd mentions how this makes transactions smaller in many circumstances: it's just an 8-byte max index rather than a 40-byte outpoint. Finally, they talk about adding the metadata to transactions on the P2P layer in the same way that segwit added witnesses to transactions without modifying how txids were calculated to connect to peers who provide them with TXO index information in blocks and transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:47:10.890382+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

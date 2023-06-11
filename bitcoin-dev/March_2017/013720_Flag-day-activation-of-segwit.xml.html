@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Flag day activation of segwit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David Vorick 2017-03-13 10:35:38
+            <br><i>Published on: 2017-03-13T10:35:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2017/combined_Flag-day-activation-of-segwit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013720.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin community has been discussing ways to activate SegWit, a soft fork that has already received support from the majority of the ecosystem. The problem lies with a few mining pools that are vetoing the activation. While some have suggested a user-activated soft fork (UASF), there is an existing deployment and upgrading would require significant time and resources. Instead, a better option proposed by Shaolin Fry is to release code that causes the existing SegWit deployment to activate without requiring a completely new one. This could be achieved if the economic majority agree to run code that rejects non-signalling SegWit blocks. Then, miners trigger BIP9 activation. Fry drafted a BIP proposal for the community to discuss. Nick O'Dell responded to this suggestion by proposing a counter-fork called "Double UASF". This also uses a BIP9 fork and enforces every rule that UASF enforces, plus one additional rule. If 60% of blocks in any retargeting period signal for Double UASF, any descendant block that creates or spends a segregated witness output is invalid. Double UASF signaling never coincides with UASF signaling because the signaling periods don't overlap. Miners who adopt Double UASF don't need to understand SegWit because all SegWit transactions are banned. Miners don't need to commit to a wtxid structure either. Per BIP 141, "If all transactions in a block do not have witness data, the commitment is optional." SegWit is activated but useless. Miners who do adopt SegWit will lose money as their blocks are orphaned.The delayed activation of SegWit is holding back a raft protocol of innovations such as MAST, Covenants, Schnorr signature schemes and signature aggregation and other script innovations, much of which development work is already done. Historically, P2SH was successfully activated by orphaning non-signalling blocks during the last month of the BIP9 bit 1 "segwit" deployment. By doing the same thing, Fry's proposal will cause the existing "segwit" deployment to activate without needing to release a new deployment.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T22:09:52.334948+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

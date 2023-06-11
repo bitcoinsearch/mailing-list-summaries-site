@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SHA1 collisions make Git vulnerable to attakcs by third-parties, not just repo maintainers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Steve Davis 2017-02-25 21:34:33
+            <br><i>Published on: 2017-02-25T21:34:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2017/combined_SHA1-collisions-make-Git-vulnerable-to-attakcs-by-third-parties-not-just-repo-maintainers.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013638.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the security of RIPEMD160(SHA256(msg)) in relation to bitcoin addresses. Russell O'Connor argues that 160-bits is not sufficient for collision resistance, while Peter Todd acknowledges that P2SH's 160-bits is insufficient in certain use-cases such as multisig. He notes that although one could generate two pubkeys that have the same RIPEMD160(SHA256()) digest, this wouldn't cause harm to the Bitcoin network itself and would only affect the individual who chooses to do so. The issue becomes more problematic for more complex contracts such as building a P2SH 2-of-2 multisig, where if not careful, party A can hand their key over to party B, who may try to generate a collision between their second key and another 2-of-2 multisig where they control both keys. Todd mentions the commit-reveal mitigation, which he believes he was the first person to post on the list. Dave Scotese questions the effect on anyone if RIPEMD-160 collisions are easy and wonders how you'd identify another (or the same) public key with the same bitcoin address. Ethan Heilman argues that SHA1 is insecure because the SHA1 algorithm is insecure, not because 160bits isn't enough.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:49:43.872086+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
