@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Minutia in CT for Bitcoin. Was: SF proposal: prohibit unspendable outputs with amount=0</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2017-09-13 10:03:28
+            <br><i>Published on: 2017-09-13T10:03:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Minutia-in-CT-for-Bitcoin-Was-SF-proposal-prohibit-unspendable-outputs-with-amount-0.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015000.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev email thread, Gregory Maxwell posed the question of whether there is a solution to the problem that pool inputs are non-reorg safe without creating something like a maturity limit for shielded to unshielded. The issue is that CT signatures do not sign which pool input they're using. An implementation could have the exact CT pool input be something miners add; the CT transactions broadcast on the P2P network wouldn't actually need them. Wallets would pick the input at random. This reduces the reorg risk to double-spends. The best solution so far is to support unshielded coins in shielded space too and only transition out of the pool when paying to a legacy wallet. By allowing everyone to "use" CT, even unshielded outputs, it can be ensured that this isn't a problem. Note that the order in which outputs in the pool are spent can be deterministic and constraints can be placed on how miners could txids to make reorgs relatively safe.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:44:17.095293+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

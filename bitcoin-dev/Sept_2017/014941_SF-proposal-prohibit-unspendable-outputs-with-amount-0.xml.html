@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SF proposal: prohibit unspendable outputs with amount=0</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hampus Sjöberg 2017-09-07 09:56:19
+            <br><i>Published on: 2017-09-07T09:56:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_SF-proposal-prohibit-unspendable-outputs-with-amount-0.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014941.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list has raised questions regarding the feasibility of forbidding 0 satoshi outputs and inputs. It was pointed out that this would complicate a divisibility increase softfork, particularly with regards to Felix's confidential transactions. The blinding and unblinding transactions would have to be created with minimal output values. However, it was suggested that a change to the blinding scriptPubKey could allow for the use of 0 value outputs. The pattern used by Felix Weiss' BIP for Confidential Transactions depends on or is tidier with 0-value outputs. It was also noted that as long as unspendable outputs (OP_RETURN outputs for example) are still allowed with amount=0, there should not be an issue for anything. There was a proposal to create a BIP to require at least 1 satoshi per output to prevent spendable outputs with null amounts in them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:06:33.447425+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

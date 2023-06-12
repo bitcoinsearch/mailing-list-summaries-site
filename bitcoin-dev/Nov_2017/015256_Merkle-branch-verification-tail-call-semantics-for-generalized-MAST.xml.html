@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Merkle branch verification &amp; tail-call semantics for generalized MAST</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2017-11-04 07:59:07
+            <br><i>Published on: 2017-11-04T07:59:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Merkle-branch-verification-tail-call-semantics-for-generalized-MAST.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015256.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark Friedenbach has proposed two new script features to be added to the bitcoin protocol, MERKLE-BRANCH-VERIFY (MBV) and tail-call execution semantics. These features will allow script authors to force redemption to use values selected from a pre-determined set committed in the scriptPubKey, while maintaining enhanced privacy and smaller script sizes. MBV also allows the verification of multiple items extracted from a single tree. The implementation of these features is expected to be simple enough, and the use cases compelling enough that we could BIP 8/9 rollout of these features in a relatively short order, perhaps before the end of the year. Friedenbach has written three BIPs to describe these features, including Fast Merkle Trees, MERKLEBRANCHVERIFY, and Tail-call execution semantics.  In addition, Friedenbach modified the hashing function fast-SHA256 to prevent an internal node from being interpreted simultaneously as a leaf. He also changed MERKLEBRANCHVERIFY to have two modes: one where the inputs are assumed to be hashes, and one where they are run through double-SHA256 first. Furthermore, he made tail-call eval compatible with BIP141’s CLEANSTACK consensus rule by allowing parameters to be passed on the alt-stack and restricted tail-call eval to segwit scripts only.Luke Dashjr suggested using `OP_CALCMERKLEROOT OP_EQUAL` instead of `OP_CHECKMERKLEBRANCH` for the first stage. This would be more future-proof since there could more easily be alternatives to `OP_EQUAL` in future script versions. However, he also noted that `OP_ADDTOSCRIPTHASH` may be fatally incompatible with script versioning. Old nodes won't know how to check the witness program, which means an undefined version could be used to bypass the correct script entirely. Therefore, further thought is required on this matter.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:20:53.061242+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

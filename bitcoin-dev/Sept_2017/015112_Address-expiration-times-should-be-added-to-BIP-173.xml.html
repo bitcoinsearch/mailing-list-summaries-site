@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Address expiration times should be added to BIP-173</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Sjors Provoost 2017-09-29 07:18:06
+            <br><i>Published on: 2017-09-29T07:18:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Address-expiration-times-should-be-added-to-BIP-173.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015112.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on Bitcoin development mailing list on Sep 28, 2017, revolved around the idea of baking expiration policy into the protocol. The proposal was to disallow a transaction that gets confirmed too late, thus removing the need for refund logic or asking customers to pay extra. However, there are severe downsides to making this possible as discussed before. It is unclear if it is a peer-to-peer or mempool issue. Once in a block, a transaction does not become invalid later. But, as miners try to find a block and update the timestamp, they would have to toss out the transaction at some point. Another objection is that the soft fork introducing this change would have to use a non-standard transaction type, which would make it difficult for a non-upgraded node to broadcast such a transaction.The discussion also covered the resolution required for setting the expiration time. Hour resolution - 2^24 hours, which equals 1914 years, or month resolution - 2^16 months = 5458 years, were suggested as alternatives to seconds-level resolution. A large range seems more useful than high precision, and relative time makes no sense. It would take five characters to get roughly two-minute resolution that lasts for 100 years. Using another character and a range that won't run out anytime soon would not create a need for more checksum space.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T19:07:01.109375+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

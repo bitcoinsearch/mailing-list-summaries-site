@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SF proposal: prohibit unspendable outputs with amount=0</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2017-09-13 09:24:34
+            <br><i>Published on: 2017-09-13T09:24:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_SF-proposal-prohibit-unspendable-outputs-with-amount-0.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014996.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the implementation of Confidential Transactions (CT) as a softfork in Bitcoin. CT transactions only differ from regular transactions by proving that the sum of input values is greater than or equal to the sum of output values through a CT proof, without revealing the actual sums. To ensure each CT transaction's sum of inputs and outputs is valid, a pool of "shielded" outputs with an unknown value is proposed. There are three main cases for spending these shielded outputs: spending unshielded outputs to CT-shielded outputs, spending CT-shielded outputs to unshielded outputs, and spending CT-shielded outputs to CT-shielded outputs. The third case may result in extra outputs and consume a significant percentage of blockchain space if shielded-to-shielded transactions are common. However, the benefit of this implementation is almost trivial compared to its cost, hence the proposed tradeoff does not make sense.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:07:37.036213+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

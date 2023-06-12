@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: bip32 version bytes for segwit scripts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2017-09-05 10:25:16
+            <br><i>Published on: 2017-09-05T10:25:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Proposal-bip32-version-bytes-for-segwit-scripts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014907.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>BIP32 extended public/private keys have version bytes that are used to indicate the user visible xpub/xprv prefix. The recommendation is to use different version bytes for other networks such as tpub/tprv for testnet. A proposal has been made to use additional version bytes to indicate the type of output script used with the public keys. The proposed prefixes include xprv, xpub, yprv, ypub, zprv, and zpub. The argument against using xpub/xprv serialization as a format for keys is countered by the existence of version bytes and their use to signal whether keys will be used on testnet or mainnet. If the script type is not signaled in the version bytes, wallet developers may resort to using the bip32 child number field in combination with bip43/bip44/bip49. The proposed changes should be user visible because users are exposed to master public keys.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:03:22.110102+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

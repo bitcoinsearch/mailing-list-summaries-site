@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>cleanstack alt stack &amp; softfork improvements (Was: Merkle branch verification &amp; tail-call semantics for generalized MAST)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-09-22 21:11:03
+            <br><i>Published on: 2017-09-22T21:11:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_cleanstack-alt-stack-softfork-improvements-Was-Merkle-branch-verification-tail-call-semantics-for-generalized-MAST-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015039.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The lack of a signed maximum segwit stack size was cited as an objection to segwit by Sergio Demian Lerner last year. While there were other solutions that could have been taken, such as committing to the number of items or maximum size of the stack as part of the sighash data, cleanstack was the approach taken. However, committing to the maximum stack size (in bytes) for an input is tricky and can only be packed in sequence_no with a soft-fork when the transaction version is 2 and lock_time is zero. Transactions with locktime >0 can add a last zero-satoshi output whose scriptPub contains OP_RETURN and followed by N VarInts, containing the maximum stack size of each input. This will normally add 11 bytes or a 2.5% overhead for a 400 byte, 2-input transaction. Instead of including this information in the transaction itself, it can be put in the witness and committed to as part of the witness or at spend time by including it in the data signed by CHECKSIG.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:56:58.578818+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

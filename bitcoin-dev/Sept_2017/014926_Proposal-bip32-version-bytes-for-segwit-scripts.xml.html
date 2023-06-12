@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: bip32 version bytes for segwit scripts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pavol Rusnak 2017-09-06 17:02:59
+            <br><i>Published on: 2017-09-06T17:02:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Proposal-bip32-version-bytes-for-segwit-scripts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014926.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A suggestion has been made by Pavol Rusnak, the CTO of SatoshiLabs on 05/09/17 19:03 in a Bitcoin-dev forum to use a child number field instead of a fingerprint. He believes it would be desirable to use the same seed for all different script formats. If he were designing the serialization format today, he would drop the fingerprint and expand child number to full BIP32 path. The benefit is that depth already exists, so it is known how long the BIP32 path would be. The proposal includes using 4 byte version bytes, 1 byte depth, depth * 4 bytes bip32 path, 32 bytes and 33 bytes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:03:03.465516+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
