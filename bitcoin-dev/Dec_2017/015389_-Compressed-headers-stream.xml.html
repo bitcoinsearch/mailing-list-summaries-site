@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>&#34;Compressed&#34; headers stream</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2017-12-11 22:41:50
+            <br><i>Published on: 2017-12-11T22:41:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_-Compressed-headers-stream.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015389.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On December 11, 2017, Jim Posen proposed a possible implementation of omitting nBits entirely to save an extra 4 bytes. However, this could lead to more complexity as it would leak into the validation code. As a compromise, Posen suggested using one byte to indicate the difference since the last header and stealing bits from the exponent to indicate mode - no change, mantissa offset for small changes, or full difficulty. This approach would support any nBits rule and save three of the four bytes. In terms of parallel header fetching, Posen suggested adding a message where nodes could request the lowest N hashes between two heights on the main chain and receive an array of {height, header} pairs for the N headers with the lowest hash in the specified range. If there is disagreement among peers, it would allow narrowing down on which segment there is disagreement. There is also a method called "high hash highway" that allows compact proofs of total POW.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T15:09:34.120825+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal for Lightning-oriented multiaccount multisig HD wallets</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Simone Bronzini 2017-08-30 12:22:30
+            <br><i>Published on: 2017-08-30T12:22:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2017/combined_BIP-proposal-for-Lightning-oriented-multiaccount-multisig-HD-wallets.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014889.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin Improvement Proposal (BIP) for a new structure to facilitate the management of different multisig accounts under the same master key has been proposed. Multiaccount multisig wallets were little used before, but now that LN is becoming a reality it is important to have a better multiaccount management method to handle multiple payment channels. The draft of the BIP can be found at <a href="https://github.com/chainside/BIP-proposal/blob/master/BIP.mediawiki">https://github.com/chainside/BIP-proposal/blob/master/BIP.mediawiki</a>. Feedback on the proposal is highly appreciated, especially regarding issues such as the coin_type level and SegWit addresses. Regarding the coin_type level, objections have been raised that since this is a Bitcoin Improvement Proposal, it shouldn't care about alt-coins. However, having a coin_type level improves interoperability with multi-currency wallets without any major drawback. Moreover, even a Bitcoin maximalist may hold multiple coins for whatever reason (short term speculation, testing, etc). As for SegWit addresses, mixing SegWit and non-SegWit addresses on the same BIP44 structure could lead to UTXOs not being completely recognized by old wallets. Therefore, two possible solutions have been proposed: create separate purposes for SegWit and non SegWit addresses or create a new level on this proposed structure to divide SegWit and non SegWit addresses. The latter solution would give the option of having a multisig wallet with non SegWit-aware cosigners without having to use two different subtrees. The proposal is a work in progress and feedback is needed before moving on with proposing it as a BIP draft.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T15:15:20.516769+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>&#34;Compressed&#34; headers stream</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2017-08-28 16:26:48
+            <br><i>Published on: 2017-08-28T16:26:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2017/combined_-Compressed-headers-stream.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014878.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email on the Bitcoin-dev mailing list, Riccardo Casatta proposed an optimization for transmitting Bitcoin block headers. The proposal suggests that after the first header, subsequent headers need not transmit the previous hash as the receiver can compute it by double hashing the previous header. This optimization could save about 40% bandwidth in a long stream of headers. Casatta mentions that he believes this optimization could be particularly useful in instances where full node security isn't feasible, such as when dealing with private databases that require timestamping. Casatta also suggests using fixed position chunks to leverage HTTP caching and speed up synchronization for new clients. For example, /headers/2016/0 would return the headers from the genesis to the 2015th header, while /headers/2016/1 would give the headers from the 2016th to the 4031st. Other endpoints could have chunks of 20160 blocks or 201600, allowing a client to fast sync the headers with only about 10 HTTP requests.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T15:09:12.694517+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

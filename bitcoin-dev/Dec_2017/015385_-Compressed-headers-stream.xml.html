@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>&#34;Compressed&#34; headers stream</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2017-12-11 20:40:00
+            <br><i>Published on: 2017-12-11T20:40:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_-Compressed-headers-stream.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015385.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This thread proposes an improvement for light clients at a minimal cost by reducing the number of bytes transmitted in Bitcoin headers. The ideas presented include omitting nBits altogether, including nBits only on headers with a height that is a multiple of 2016, compressing nTime to two bytes, and excluding prev_block. However, it is suggested that excluding prev_block is the best option due to added complexity and coupling together the two layers. Implementing this change raises questions about the best way to do so, with three possible solutions proposed. Proof-of-concept implementations were written up in Core for both omitting prev_block and omitting nBits as well. This optimization could save approximately 40% bandwidth without compressed headers and could be useful for lite-clients and new client synchronization. An HTTP API with fixed position chunks is suggested to leverage HTTP caching and fast sync the headers.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T15:09:22.652504+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

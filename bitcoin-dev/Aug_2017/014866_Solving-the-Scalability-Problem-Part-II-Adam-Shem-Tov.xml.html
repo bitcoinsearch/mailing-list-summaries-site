@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Solving the Scalability Problem Part II - Adam Shem-Tov</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Tamir Shem-Tov 2017-08-26 22:26:15
+            <br><i>Published on: 2017-08-26T22:26:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2017/combined_Solving-the-Scalability-Problem-Part-II-Adam-Shem-Tov.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014866.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal to solve the scalability problem of Bitcoin was made by Adam Tamir Shem-Tov. The proposal involves minimizing the blocks on the blockchain without losing any relevant information. A transaction chain needs to be rewritten, and a special account called the "Genesis Account" will be created, which will have its private and public keys available to everyone but will be blocked from sending or receiving funds in a normal block. The Genesis Account will only be used during the pruning block or Exodus Block, where all funds in the Exodus Block show as though they originated and were sent from the Genesis Account using its private key to generate each transaction. The funds sent must match exactly the funds existing in the most updated ledger in block 1000 (the last block). The next issue is that the number of Bitcoins keeps expanding, so the funds in the Genesis Account need to expand as well. It can be done by showing as though this account is mining the coins, and it will be the only account in the Exodus Block which "mines" the coins and receives the mining bonus. The proposal was discussed in various threads in the past six years, but it has not been acted upon. The proposal aims to fix the problem before storage space becomes too expensive for private citizens to afford, making Bitcoin the worst decentralized or uncentralized system in history.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T15:06:00.029158+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

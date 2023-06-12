@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014819_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Colin Lacina 2017-08-09 18:49:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014821_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Nick ODell 2017-08-09 20:14:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014819_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Colin Lacina 2017-08-09 18:49:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014821_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Nick ODell 2017-08-09 20:14:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014820_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Jonas Schnelli 2017-08-09 19:35:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014821_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Nick ODell 2017-08-09 20:14:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014820_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Jonas Schnelli 2017-08-09 19:35:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014819_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Colin Lacina 2017-08-09 18:49:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014820_Structure-for-Trustless-Hybrid-Bitcoin-Wallets-Using-P2SH-for-Recovery-Options.xml.html">Structure for Trustless Hybrid Bitcoin Wallets Using P2SH for Recovery Options</a>
+                        <b>Jonas Schnelli 2017-08-09 19:35:26</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014819.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-08-09T18:49:59+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The proposed transaction script involves a user signing a transaction with their userWalletPrivKey, authenticating with the server, which then signs with their serverWalletPrivKey. In the event that the server goes rogue and starts refusing to sign, the user can use their userRecoveryPrivKey to send the funds anywhere they choose. When setting up their wallet, users answer basic identity information, set up a recovery password, and/or set up recovery questions and answers, none of which is sent to the server except for the 256-bit hash used to identify the recovery wallet. The server creates a 1025-bit nonce, encrypts it, stores it, and transmits it to the user's client along with the server's recovery private key. The client uses SHA512 on the combination of the identity questions and answers, the recovery password (if used), the recovery questions and answers, and the nonce. It uses the resulting hash to encrypt the serverRecoveryPrivKey, which is then encrypted again for transmission to the server. When the user needs to resort to using the recovery option, they use their information to build their recovery identifier, which the server may optionally request e-mail and/or SMS confirmation for. The user should store the userRecoveryPrivKey in cold wallet storage for security reasons. The userWalletPubKey, on the other hand, is a hot key that is stored on the user's computer, eventually in a browser-based local storage container. In the event that the user forgets their password and loses access to their userWalletPrivKey and recovery key, they can rely on the serverRecoveryPrivKey. During wallet setup, the user provides basic identity information and sets up a recovery password or answers recovery questions. The server does not store any of this information except for the 256-bit hash used to identify the recovery wallet. The server creates a 1025 bit nonce, encrypts it, and transmits it to the user's client. The funds stored in this transaction are protected by the user's identity information and optional recovery password. The server nonce adds additional security by protecting against brute-forcing.However, there are concerns regarding the use of a 1025-bit nonce instead of a (H)KDF for deriving the symmetric key or SHA512 instead of SHA256. This system also has a TORS weakness compared to HWW, where protection during private key creation is ensured. Nick has provided feedback on Colin's proposal, stating that it is a good start but is missing details such as the key used to encrypt the nonce by the server. Nick also questions the recovery questions asked and whether there are any mitigations in place to prevent the server from stealing the wallet using a dictionary of common pet names.The given structure "IF 1 2 CHECKMULTISIGVERIFY ELSE 2 2 CHECKMULTISIG ENDIF" can be used for recovering funds in case of a lost wallet. The userRecoveryPrivKey is used for authentication with the server, and 2FA like Authy or Google Authenticator can be used for added security. During wallet setup, basic identity information is provided along with a recovery password and/or questions and answers, which are not sent to the server except for the hash used to identify the recovery wallet. The server creates a nonce, encrypts it, stores it, and transmits it to the user's client. The client generates the serverRecoveryPrivKey, which is encrypted using SHA512 on the combination of identity information, recovery password, questions and answers, and the nonce. When the user needs to use the recovery option, they hash their information to build their recovery identifier. The server decrypts the saved nonce and the first layer of encryption on the serverRecoveryPrivKey, then encrypts both for transmission to the user's client.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-12T14:51:42.332779+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
