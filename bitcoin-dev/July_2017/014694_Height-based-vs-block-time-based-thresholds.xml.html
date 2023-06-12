@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Height based vs block time based thresholds</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2017-07-05 04:10:43
+            <br><i>Published on: 2017-07-05T04:10:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2017/combined_Height-based-vs-block-time-based-thresholds.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014694.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between shaolinfry and Luke Dashjr, they discussed the use of signaling for activation in BIP 9. Shaolinfry suggested an extra state to require signaling before activation, but this was deemed pointless as miners could just fake signal. However, Luke argued that not having mandatory signal is a serious bug in BIP 9 which is fixed in BIP 148. The absence of mandatory signal makes the activation decisive and unambiguous. It also enables deploying softforks as a MASF, and only upgrading them to UASF on an as-needed basis. Luke has already opened a PR to fix the issues in BIP 9, and it is waiting for shaolinfry's ACK to merge. Additionally, shaolinfry proposed amending BIP 8 to be height-based instead of block time-based. While height-based thresholds are hard to predict in advance due to difficulty fluctuations, there is certainty at a given block height and it is easy to monitor. The proposal for height-based thresholds was originally omitted in the interest of simplicity of review, but now that the proposal has been widely reviewed, it would be a trivial amendment.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T03:18:53.520780+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>UTXO growth scaling solution proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2017-07-21 19:52:45
+            <br><i>Published on: 2017-07-21T19:52:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014810.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made for a soft fork solution to the unbounded UTXO growth problem in Bitcoin. The proposed solution involves considering any UTXO not spent within a set number of blocks as invalid, which would cap the size of the blockchain. However, this means that Bitcoins not spent for a long time would be lost forever, which is difficult for users to accept. To improve the solution, the concept of luster is introduced where UTXOs less than X blocks old have a luster value of 1 and lose their value as they get older. The luster value is then used to compute the amount of Bitcoins that must be burned for a transaction with that UTXO to be included in a block. Coins that are continuously being used in the Bitcoin economy will never lose their luster, but old coins will start to lose their luster until they become valueless. The proposal aims to minimize scenarios where coins start losing their luster and suggests that coins should only start losing it after the lifespan of an average human. The blockchain would store the last 150 years of history as one reasonable option. The block size needed for this solution would depend on the disk size requirement for a full node, and a block size of 1 MB is suggested if we don't want the blockchain to be bigger than 8 TB. The proposal provides a good solution to the UTXO growth problem, and its soft fork nature is a big plus. However, more thought would need to be put into how wallet software can handle this, and how it can work with sidechains.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T03:45:51.367685+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

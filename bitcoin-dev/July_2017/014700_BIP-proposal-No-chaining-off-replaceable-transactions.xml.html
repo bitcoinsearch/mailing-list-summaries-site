@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal: No chaining off replaceable transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rhavar 2017-07-05 13:52:53
+            <br><i>Published on: 2017-07-05T13:52:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2017/combined_BIP-proposal-No-chaining-off-replaceable-transactions.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014700.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread is discussing a proposal for BIP125 transactions, which currently allow users to increase fees of unconfirmed transactions. The issue at hand is that receivers of these transactions may spend from the unconfirmed output, which exposes the sender to having to pay an effectively unbounded amount of money as per the BIP125 rules, or not fee bump at all. This is especially problematic in batched sends where there are multiple independent receivers. To support a healthy fee marketplace, the proposal aims to increase the utility of BIP125 by making transactions that spend an unconfirmed BIP125 output non-standard. This would specify a max chain depth of 1 for any BIP125 transactions. As a result, receivers of BIP125 transactions will need to wait until the transaction has confirmed before spending from it. If senders want to make further transactions before the BIP125 transaction confirms and need to utilize the change of the transaction, they will need to replace the transaction with one that makes the other send in "pass through" style or first finalize the BIP125 transaction and then chain from the spend normally. A rule was suggested that to spend from an unconfirmed BIP125 output, the transaction feerate needs to be higher than its unconfirmed parent's effective feerate, which could potentially solve most of the problematic low feerate sweeps and preserve the ability for receivers to use CPFP if they wish.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T03:16:06.686410+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
