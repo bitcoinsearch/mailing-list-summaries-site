@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Rolling UTXO set hashes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2017-05-16 00:15:58
+            <br><i>Published on: 2017-05-16T00:15:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Rolling-UTXO-set-hashes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014346.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on bitcoin-dev mailing list revolves around the advantages of commitment to UTXO data for lite nodes. The commitment allows lite nodes to download UTXO sets from any full node and verify them by verifying only block headers starting from genesis. However, it requires a consensus change and compact membership proofs for most of the arguments. Pieter has suggested gaining experience with an operation without committing to it before implementing it. For audibility and engineering reasons, the merkle tree root of transactions needs to be in addition to the commitment rather than instead of it. This is because proof of work needs to commit to the witness data. If not, there are chances of DOS attacks where people provide malleated blocks that have invalid witnesses. Another suggestion is to commit to the UTXO of the previous block and the merkle tree root of the transactions in the current block. It is believed that this would help reduce SPV mining as a miner would need to scan received new blocks to create the UTXO set of the previous block. However, it is not confirmed if this understanding is correct or if there are any subtleties missed regarding this approach.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:49:22.258466+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

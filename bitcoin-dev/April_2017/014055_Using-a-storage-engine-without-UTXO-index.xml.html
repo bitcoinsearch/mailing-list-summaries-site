@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using a storage engine without UTXO-index</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tomas 2017-04-07 00:48:52
+            <br><i>Published on: 2017-04-07T00:48:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Using-a-storage-engine-without-UTXO-index.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014055.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, Gregory Maxwell asked about the minimum space required to take a new block from the P2P network and verify its spends. Bitcoin Core requires around 2GB of space for this purpose, along with another 550MB of blocks for reorgs. Bitcrust separates script validation from order validation, requiring ~2GB of outputs for the former and ~200MB for the spent-index and ~500MB for the spent-tree for the latter. The full spend tree currently takes up 5.7GB of space and is not expected to be pruned soon. Additionally, Bitcrust uses a ~1.5GB index for transaction hash to fileptr lookups, which could be made more space efficient.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T23:54:48.219899+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

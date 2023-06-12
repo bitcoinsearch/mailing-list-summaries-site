@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Method for Computing Merkle Roots of Annotated Binary Trees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2017-05-29 16:10:59
+            <br><i>Published on: 2017-05-29T16:10:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_A-Method-for-Computing-Merkle-Roots-of-Annotated-Binary-Trees.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014450.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the security of SHA-256 compression function with chosen initial values in pruned trees, Russell O'Connor put forth a proposal that involved putting the hash of tags into Sha256Compress's first argument. He suggested that this would salvage part of the proposal and avoid the need for SHA256's padding. Peter Todd responded to this by pointing out that what O'Connor proposed was almost the same as using SHA256 directly. However, Todd advised against depending on tags being unique, as it can be challenging to ensure this uniqueness across different systems and could lead to collisions between the sha256 and merkleroot functions. Todd's newer rust-proofmarshal work commitments are only valid for a specific type, and he uses blake2b, which is faster than SHA256 and processes up to 128 bytes of message on each invocation; this hashing algorithm has a large enough block size to fit most use-cases into a single block.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T01:07:15.138219+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Per-block non-interactive Schnorr signature aggregation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2017-05-10 01:59:06
+            <br><i>Published on: 2017-05-10T01:59:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Per-block-non-interactive-Schnorr-signature-aggregation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014306.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal being discussed involves Schnorr signatures and the possibility of non-interactive partial aggregation of signatures on a per-block basis. This would save space and has no apparent security issues, but the idea is still in need of feedback from experts to ensure its safety. The process involves generating private keys and public keys, and then calculating s values for each signature. The unique R values are used to sign and verify [m,P]. While interactive aggregate signatures require co-signers to build an aggregate R value by sharing their own k values and adding them up, non-interactively half of the signature can be aggregated as the s's can be summed up. The main advantage of this approach is that signatures go down to 32 bytes each making it possible to fit more of them in a block. It also takes up less disk and network space. However, the downside is that it may be difficult to cache signatures and quickly validate a block after it has come in. It may not be as bad as it seems because validation given cached signatures looks possible without any elliptic curve operations. The proposal is promising, but further feedback from experts is needed to ensure its safety.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:39:10.308142+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

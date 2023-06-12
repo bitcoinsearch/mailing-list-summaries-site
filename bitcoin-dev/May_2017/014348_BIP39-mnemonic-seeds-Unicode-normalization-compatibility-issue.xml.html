@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP39 (mnemonic seeds) Unicode normalization compatibility issue</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Zach Lym 2017-05-17 17:01:04
+            <br><i>Published on: 2017-05-17T17:01:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_BIP39-mnemonic-seeds-Unicode-normalization-compatibility-issue.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014348.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Zach Lym has raised a concern regarding the Unicode normalization pass in the password section of BIP39, a Bitcoin Improvement Proposal. While the section mandates normalization, it does not prohibit unassigned character points. Zach believes this to be problematic as newer drafts of Unicode could alter the output of normalization passes. If a user assigned a password using a wallet that linked to Unicode 9 but input a code point reserved in Unicode 10, updating the wallet to Unicode 10 could incorrectly remap that code point. Zach also mentions an RFC specifying a different normalization procedure. The links to BIP39, the Unicode report on stabilized strings, and the relevant RFC are provided in the message.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:50:48.513983+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

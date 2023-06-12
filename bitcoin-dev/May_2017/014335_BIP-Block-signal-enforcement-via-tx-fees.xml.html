@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP: Block signal enforcement via tx fees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2017-05-15 01:14:13
+            <br><i>Published on: 2017-05-15T01:14:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_BIP-Block-signal-enforcement-via-tx-fees.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014335.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on versionbits and its behavior after deployment timeout was the subject of communication between Russell O'Connor and Luke Dashjr. It was suggested that a user can add a timeout by bundling a pair of similar transactions, one with the transaction version bits set and another with a locktime set. Later, a proposal by Dashjr suggested adding a subset of nVersion to simplify the process while using fewer precious nVersion bits. The proposal allows specifying a single bit and only supports BIP8/9-style signalling.The proposal's downside is the encouragement of miners to false signal readiness, which undermines both BIP 9 and BIP 8. However, it is considered gentler on miners than a UASF flag day and offers harder-to-game signalling from bitcoin users. False signalling miners have the two-week LOCKIN period to upgrade; otherwise, they could already lose money. Some argue that they are more likely to upgrade when significant parts of the economy have already done so.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:47:00.224595+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

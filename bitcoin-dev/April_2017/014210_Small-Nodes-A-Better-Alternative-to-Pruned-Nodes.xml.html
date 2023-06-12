@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Small Nodes: A Better Alternative to Pruned Nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David Vorick 2017-04-19 17:30:30
+            <br><i>Published on: 2017-04-19T17:30:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Small-Nodes-A-Better-Alternative-to-Pruned-Nodes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014210.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin community is actively searching for ways to increase the number of full nodes on its network. One proposal suggests adding a third mode for nodes, allowing them to signal "I keep the last 1000 blocks". This would be helpful for pruned nodes as they could partially serve historical blocks instead of choosing between serving all historical blocks or none at all. However, this proposal also considers building an external bootstrap service/app for downloading historical blocks from CDNs. The proposal warns against centralizing data distribution through a CDN and suggests using a p2p network, such as Bitcoin's peer network, which is currently the best option for decentralized data distribution.Another proposal suggests a "random pruning mode" for nodes, which stores a random set of blocks and drops random blocks as the node runs out of disk space. However, this proposal has significant disadvantages due to the probability of not being able to download a given block, especially with active adversaries.The Bitcoin community aims to decrease the resource requirements for running a full node, which is essential for decentralization, security, and protection against political interference. By reducing the storage requirements, more people will be incentivized to run their own full nodes and avoid needing to trust others. One conversation discusses the idea of compactly indicating which blocks a node has, allowing each node to store a subset of all the blocks. The proposal meets most of the requirements listed by Maxwell, although it would require downloading blocks from multiple peers. The suggestion is to have a set of eight random peers, which would give a high probability of being able to recover every single block. However, missing even a single block could still be a significant problem. While highly parallel, high-speed downloads are possible with small nodes as well as archive nodes, the proposal would not be a sound idea to ship as default in bitcoin core, as it requires archive nodes to exist and be part of a typical blockchain download. Each node would be recommended to store the last few days' worth of blocks anyway.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:20:42.915149+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Small Nodes: A Better Alternative to Pruned Nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aymeric Vitte 2017-04-17 10:14:25
+            <br><i>Published on: 2017-04-17T10:14:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Small-Nodes-A-Better-Alternative-to-Pruned-Nodes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014189.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made by David Vorick to increase the number of users running full nodes on the Bitcoin network. The proposal suggests the implementation of "small nodes" which would require less than 30GB of disk space compared to the current 100GB+ for an archival node. Small nodes would store only 20% of the blockchain using Reed-Solomon coding to erasure code the block into 256 pieces that are 20% of the size of the block each. Nodes can opt-in to store more than one fragment each, and at five fragments, the node becomes a full archival node. When connecting to new peers, small nodes must know the indexes of each peer, and once it discovers 5 uniques, blockchain download can begin. A good encoder should be able to turn a block into a 5-of-256 piece set in under 10 milliseconds using a single core on a standard consumer desktop. The proposal aims to improve decentralization without putting pressure on archival nodes. However, some concerns have been raised regarding encouraging home users to run full nodes, download time and the concept of archival nodes as a step towards centralization.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:19:11.783948+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

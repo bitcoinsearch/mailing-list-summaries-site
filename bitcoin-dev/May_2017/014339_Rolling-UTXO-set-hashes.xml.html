@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Rolling UTXO set hashes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2017-05-15 23:04:01
+            <br><i>Published on: 2017-05-15T23:04:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Rolling-UTXO-set-hashes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014339.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email contains various use cases for a rolling set hash. One of the use cases is as a replacement for Bitcoin Core's gettxoutsetinfo RPC's hash computation, which currently requires minutes of I/O and CPU. The rolling set hash would make this process instant and make the whole RPC more usable for sanity checking. Another use case is assisting in the implementation of fast sync methods with known good blocks/UTXO sets. Furthermore, the rolling set hash can be used for database consistency checking by remembering the UTXO set hash of the past few blocks and recomputing it based on the database. Additionally, the author suggests a potential "chain-flip" hard fork of block header formats where the UTXO hash, instead of merkle tree root of transactions, is in the header. This would allow lite nodes to download a UTXO set from any full node and verify it by verifying only block headers starting from genesis.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:49:01.086442+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
