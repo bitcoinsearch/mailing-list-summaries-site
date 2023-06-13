@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal: Reserved nversion bits in blockheader <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015804_BIP-proposal-Reserved-nversion-bits-in-blockheader-stratum-mining-configure.xml.html">BIP proposal: Reserved nversion bits in blockheader - stratum mining.configure</a>
+                        <b>Jan Čapek 2018-03-07 15:43:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015803_BIP-proposal-Reserved-nversion-bits-in-blockheader-stratum-mining-configure.xml.html">BIP proposal: Reserved nversion bits in blockheader - stratum mining.configure</a>
+                        <b>Luke Dashjr 2018-03-07 15:48:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015803_BIP-proposal-Reserved-nversion-bits-in-blockheader-stratum-mining-configure.xml.html">BIP proposal: Reserved nversion bits in blockheader - stratum mining.configure</a>
+                        <b>Luke Dashjr 2018-03-07 15:48:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015804_BIP-proposal-Reserved-nversion-bits-in-blockheader-stratum-mining-configure.xml.html">BIP proposal: Reserved nversion bits in blockheader - stratum mining.configure</a>
+                        <b>Jan Čapek 2018-03-07 15:43:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015804_BIP-proposal-Reserved-nversion-bits-in-blockheader-stratum-mining-configure.xml.html">BIP proposal: Reserved nversion bits in blockheader - stratum mining.configure</a>
+                        <b>Jan Čapek 2018-03-07 15:43:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015803_BIP-proposal-Reserved-nversion-bits-in-blockheader-stratum-mining-configure.xml.html">BIP proposal: Reserved nversion bits in blockheader - stratum mining.configure</a>
+                        <b>Luke Dashjr 2018-03-07 15:48:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015804.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-03-07T15:43:49+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email thread discusses two separate proposals related to Bitcoin mining. The first proposal called mining.configure, is a new method for miner configuration that was chosen due to the determinism of expecting the response. This proposal is in response to issues with an existing method, mining.capabilities, which was not being well documented or used. The reasoning behind the new method can be found on Github.The second proposal involves reserving 16 bits of the block header nVersion field for general-purpose use and removing their meaning for the purpose of version bits soft-fork signaling. This would reduce the number of parallel soft-fork activations using versionbits from 29 to 13 and prevent node software from emitting false warnings about unknown signaling bits under the versionbits signaling system (BIP8/9). The proposal cites several example cases that would benefit from using some of the bits from the nVersion field including rolling more bits from nTime and Version-rolling AsicBoost.On March 7, 2018, Btc Drak proposed the second proposal to reserve 16 bits of the block header nVersion field for general-purpose use and remove their meaning for the purpose of version bits soft-fork signaling. The motivation behind this proposal was to enable miners to use some of the nVersion bits for other purposes without generating false warnings about unknown soft forks. This move would reduce the number of parallel soft-fork activations using version bits from 29 to 13 while preventing node software from emitting false warnings. The proposal does not reserve specific bits for specific purposes; any two bits can be used for version-rolling AsicBoost or nonce rolling to reduce CPU load on mining controllers.However, Luke Dashjr responded to Btc Drak's proposal by questioning the need for it and pointing out that the proposal is no different from what Timo and Sergio proposed years ago. He suggested that the current draft integrates their work while not trying to steal credit for it. He also noted that it is not appropriate to begin using a draft BIP on mainnet before any discussion or consensus has been reached, and doing so seems quite malicious. Jan Čapek criticized the reasoning behind the choice of the new method for miner configuration, stating that it was primarily the determinism of expecting the response. He argued that defining the response type would have been a better solution than reinventing it incompatibly for no reason.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-13T00:57:13.887270+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>{sign|verify}message replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2018-03-16 01:59:45
+            <br><i>Published on: 2018-03-16T01:59:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2018/combined_-sign-verify-message-replacement.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015832.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation on the bitcoin-dev mailing list revolves around a potential solution for proving present possession of funds without sacrificing fungibility or hot/cold wallet separation. One proposal suggests using a FORKID in a transaction, allowing for a mempool acceptance test that returns true even if the signature is not valid as per Bitcoin consensus, but only due to the FORKID. This would enable any wallet to support this method with generic FORKID support. Another suggestion is to include time conditions under which the funds may be spent, with an optional nLockTime and nSequence. The default SIGHASH_ALL would likely be used for simplicity, but a byte may need to be appended to the end of the signature for encoding checks to pass. There is some discussion on whether or not the sighash flag affects the outcome of verification.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:00:15.247121+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

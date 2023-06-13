@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Simple lock/unlock mechanism</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> アルム　カールヨハン 2018-03-01 05:11:54
+            <br><i>Published on: 2018-03-01T05:11:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2018/combined_Simple-lock-unlock-mechanism.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015798.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There are discussions within the bitcoin-dev community regarding the possibility of a software-only time-lock vault. One concern raised is that Graftroot may break the system since someone could just sign the time-locked output with a script that has no time-lock. To address this, some suggest making the graftroot key a 2-of-2 muSig with an independent third party that commits to only signing CLTV scripts. However, some argue that this defeats the purpose and that it might be better to use multisig instead and skip the freezing part entirely.Adam Back suggests creating a TX1 with a CSV timelock, discarding privkey A after broadcasting TX1, and using graftroot and privkey B with a script without timelock to spend B. However, this method has a drawback as the robber can force the user to execute step 3 since they have the privkey to B. It is pointed out that deleting keys may be difficult to assure with HD wallet seeds setup-time backup model. Therefore, it is suggested to include as part of 'freezing' a send to a new ephemeral key as 'initialization'. A simpler though less robust model would be to have a third party refuse to co-sign until a pre-arranged time, which would have the advantage of not requiring two on-chain transactions. Some users were hoping for a way to easily lock-up the major portion of their coins. As a sidenote, a security firm could have a service where seeing an unfreeze transaction which the user has told them about without giving a heads up beforehand is equal to alarm going off.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T00:52:33.735748+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

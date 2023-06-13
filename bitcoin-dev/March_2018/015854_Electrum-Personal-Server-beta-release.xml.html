@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Electrum Personal Server beta release</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Belcher 2018-03-29 12:07:04
+            <br><i>Published on: 2018-03-29T12:07:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2018/combined_Electrum-Personal-Server-beta-release.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015854.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Electrum Personal Server is a lightweight implementation of the Electrum wallet server protocol that allows users to point their Electrum wallet at their own full node. It only stores the user's own addresses, instead of every address that was ever used, making it much less resource-intensive than other Electrum servers. The project is now in beta release and has all the essential features including Merkle proofs, deterministic wallets, bech32 addresses, SSL, Core's multi-wallet support, tracking new transactions, confirmations, block headers, and importing addresses.Using Electrum Personal Server is the easiest way to use a hardware wallet backed by your own full node. It is very lightweight and can be part of the solution in putting full node wallets into the hands of as many people as possible. However, it makes tradeoffs, namely losing Electrum's "instant on" feature. There is a caveat about pruning, where Electrum Personal Server obtains merkle proofs using the `gettxoutproof` RPC call. If pruning is enabled and that block has been deleted then the RPC will return null and so the Electrum wallet will display "Not Verified". In most situations, this shouldn't be a problem because Electrum usually only requests merkle proofs for recent transactions and pruning keeps recent blocks. But in the long term, it needs some thought on the best way to fix this. Chris Belcher, the developer, has been thinking about adding code for Bitcoin Core that stores merkle proofs for each of the wallet's own transactions in wallet.dat. Further reading can be found in the links provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:20:31.581493+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

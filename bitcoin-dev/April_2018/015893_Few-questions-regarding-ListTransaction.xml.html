@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Few questions regarding ListTransaction</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Maksim Solovjov 2018-04-11 19:58:45
+            <br><i>Published on: 2018-04-11T19:58:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2018/combined_Few-questions-regarding-ListTransaction.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015893.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the bitcoin-dev mailing list, ZmnSCPxj clarified that miners can ignore nSequence when adding transactions to blocks, and unconfirmed transactions are not recorded in blocks. This means that if there are conflicting transactions with different fees, miners can include the one with the higher fee even if they learned about the other one first. As a result, "full replace-by-fee", where nSequence is ignored for replace-by-fee purposes, is expected to become the norm. The convention of nSequence=0xFFFFFFFF meaning opt-out of RBF is only followed by full nodes running standard bitcoind. Miners can run patched bitcoind that ignores this rule and connect with similar peers who also ignore it. Peter Todd mentioned that his full-replace-by-fee tree ignores nSequence=0xFFFFFFFF and does preferential peering to ensure it's well connected with likewise peers and thus the whole network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:28:48.608422+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

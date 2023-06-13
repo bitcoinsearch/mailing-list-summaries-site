@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Low-bandwidth transaction relay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gleb Naumenko 2018-04-04 02:10:56
+            <br><i>Published on: 2018-04-04T02:10:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2018/combined_Low-bandwidth-transaction-relay.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015869.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Gleb Naumenko, a Bitcoin developer, has proposed a new protocol that would allow public-IP nodes to decrease redundancy while still receiving all transactions. Currently, around 90% of INV messages sent by public-IP nodes are idle duplicates. Naumenko's idea is to have a new node agree on a filter with each of the eight nodes it connects to while joining the network. The new node would then only relay a subset of transactions through certain links, thus significantly decreasing redundancy. Naumenko suggests keeping some redundancy by sending each transaction INV over two links. To make the protocol robust to attacks, Naumenko proposes set reconciliation and rotating filters every N minutes. However, he admits there may be issues with latency. In response to questions about how much bandwidth redundant tx INVs currently consume, Naumenko said that for an average public-IP node, all INVs consume 0.05 Mbps or 540 megabytes per day. He stated that filtering txs through N=2 links would be worth measuring in terms of network propagation, but he did not propose setting filters on inbound peers without further experiments.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:21:08.780333+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

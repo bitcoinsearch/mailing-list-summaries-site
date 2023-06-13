@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal: Reserved nversion bits in blockheader - stratum mining.configure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2018-03-07 15:48:00
+            <br><i>Published on: 2018-03-07T15:48:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2018/combined_BIP-proposal-Reserved-nversion-bits-in-blockheader-stratum-mining-configure.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015803.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On March 7, 2018, Btc Drak proposed a new BIP to reserve 16 bits of the block header nVersion field for general-purpose use and remove their meaning for the purpose of version bits soft-fork signaling. The motivation behind this proposal was to enable miners to use some of the nVersion bits for other purposes without generating false warnings about unknown soft forks. This move would reduce the number of parallel soft-fork activations using version bits from 29 to 13 while preventing node software from emitting false warnings. The proposal does not reserve specific bits for specific purposes; any two bits can be used for version-rolling AsicBoost or nonce rolling to reduce CPU load on mining controllers. Luke Dashjr responded to Btc Drak's proposal by questioning the need for it and pointing out that the proposal is no different from what Timo and Sergio proposed years ago. He suggested that the current draft integrates their work while not trying to steal credit for it. He also noted that it is not appropriate to begin using a draft BIP on mainnet before any discussion or consensus has been reached, and doing so seems quite malicious. Jan Čapek criticized the reasoning behind the choice of the new method for miner configuration, stating that it was primarily the determinism of expecting the response. He argued that defining the response type would have been a better solution than reinventing it incompatibly for no reason.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T00:56:51.408263+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
