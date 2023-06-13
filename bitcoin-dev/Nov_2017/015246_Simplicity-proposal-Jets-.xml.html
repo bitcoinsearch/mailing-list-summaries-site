@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Simplicity proposal - Jets?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adán Sánchez de Pedro Crespo 2017-11-03 00:45:40
+            <br><i>Published on: 2017-11-03T00:45:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Simplicity-proposal-Jets-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015246.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Simplicity programming language uses jets, which are a smart optimization that makes complex Simplicity contracts cheaper to compute. Jets leverage the most important element of the Simplicity Bit Machine: the frames stack. In a Simplicity program, every expression or sub-expression can be thought of as a pure function that results in the active write frame having a different value when applied on a certain initial read frame. If the Simplicity interpreter finds some expression whose result when applied upon a certain read frame is already known, it doesn't need to execute such expression step-by-step once again. Instead, it writes the known result to the active write frame. The interpreter knows the result of applying many common operations on all possible combinations of inputs in the range of 8 to 256 bits at all times. Jets can help make Simplicity programs lighter on CPU usage and can replicate the behavior of complex chunks of Simplicity code with the guarantee that they can't introduce side effects. Interpreter-bundled jets are formally proven. Different sets of jets could make up different single-purpose dialects, just like domain-specific languages bring richer vocabulary and semantics to the bare syntax and grammar of general-purpose languages.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:57:28.235673+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

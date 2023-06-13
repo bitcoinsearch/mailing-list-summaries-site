@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version 1 witness programs (first draft)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2017-10-02 00:45:22
+            <br><i>Published on: 2017-10-02T00:45:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015156.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange, Johnson Lau and Luke Dashjr are discussing various options for allowing further upgrades within v1 witness. The options discussed include minor version in the witness, OP_RETURNTRUE, and a generalized NOP method. Both Johnson and Luke prefer using a minor version in the witness with OP_RETURNTRUE as a fallback option when practical changes are needed. They also discuss allowing signature-time commitment of extra scripts, which can be done through tail-call semantics, scriptWitCode, or extra-data as script in OP_CHECKSIG. BIP114 draft supports both minor version in the witness and extra-data as script in OP_CHECKSIG. They also talk about whether they want to allow static analysis of sigop and how it can be done by adding a separate "executable-witness" array or tagging all witness elements with minor version. However, these approaches would add additional bytes per script reference, which may not be worth the effort to avoid losing static analysis.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:26:17.255122+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

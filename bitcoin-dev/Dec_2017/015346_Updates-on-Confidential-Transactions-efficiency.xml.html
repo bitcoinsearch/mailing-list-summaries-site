@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Updates on Confidential Transactions efficiency</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Poelstra 2017-12-04 17:17:11
+            <br><i>Published on: 2017-12-04T17:17:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_Updates-on-Confidential-Transactions-efficiency.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015346.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Andrew Poelstra has implemented the single-output version of Bulletproofs, a cryptographic proof system that can prove statements about encrypted data, with some performance numbers. The benchmarks were performed on one core of an Intel i7-6820MQ, and reflect verification of a single 64-bit rangeproof. By using GLV endomorphism supported by the curve secp256k1, which libsecp256k1 (supported by Bitcoin) supports but does not enable by default, speedup was observed. It reflects a 3.47x speedup over the verification speed of the old rangeproofs without the endomorphism. Even without aggregation, two rangeproofs are verified nearly 15% faster than verifying one twice. The old rangeproofs require only 128 multiplies for a 64-bit proof, then 256 for two, and so on, while at the same time the new Bulletproofs perform significantly better. The Bulletproof verification process is a recursive process which does not appear to be expressible as a single multiproduct, and in fact it appears to require nearly twice as many multiplications as claimed. There are still a few open issues that Andrew plans to help resolve in the coming month.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:09:41.130024+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

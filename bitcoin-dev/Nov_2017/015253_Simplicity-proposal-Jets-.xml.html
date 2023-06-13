@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Simplicity proposal - Jets?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adán Sánchez de Pedro Crespo 2017-11-03 16:42:38
+            <br><i>Published on: 2017-11-03T16:42:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Simplicity-proposal-Jets-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015253.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Simplicity is a proposal for a new blockchain programming language, which is designed to be more secure and efficient than existing languages. One of the key features of Simplicity is its use of "jets", which are precompiled functions that can be called directly from Simplicity code, rather than being interpreted. This means that Simplicity code can be executed much faster than other blockchain languages, and is less vulnerable to bugs and attacks.Each Simplicity expression can be identified by its MAST root (the Merkle root of all branches in its Abstract Syntax Tree). When the Simplicity interpreter encounters an expression with a jet, it can look for it in a predefined jets dictionary and find the binary for a precompiled, formally proven implementation of a function that is equivalent to the original Simplicity code.Jets are briefly discussed in section 3.4 of the Simplicity proposal document. The idea is that some set of popular Simplicity expressions will be recognized, and when the Simplicity interpreter encounters one of these expressions, it can skip over the Simplicity interpreter and instead directly evaluate the function using specialized C or assembly code. For instance, when the Simplicity interpreter encounters the Simplicity expression for ECDSA verification, it might directly call into libsecp rather than continuing the ECDSA verification using interpreted Simplicity.A user can write a Simplicity script that is roughly equivalent to P2PKH. Regardless of directly writing such script or using a higher level smart contract language, the part in which the hash of the public key is computed can be included from an external library providing hash functions or at least copy and paste such function into the code. Once the MAST for the program is built, such function will be completely replaced by its MAST root which is nothing but a hash.Hampus Sjöberg asked in a mailing list whether the Simplicity code for a jet still needs to be publicly available/visible in the blockchain and if there is any way to mitigate this. Russell O'Connor replied that jets will be explicitly labeled as jets in the commitment. If a user can provide a Merkle path from the root to a node that is an explicit jet, but that jet isn't among the finite number of known discounted jets, it will not be executed. Jets are expected to increase the efficiency of the blockchain language while ensuring its security.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:57:16.760421+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

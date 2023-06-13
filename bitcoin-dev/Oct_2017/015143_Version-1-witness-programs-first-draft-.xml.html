@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version 1 witness programs (first draft)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-10-01 02:23:47
+            <br><i>Published on: 2017-10-01T02:23:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015143.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Luke Dashjr proposed changes to the Bitcoin scripting process, which include introducing minor versions for witnesses, undefined opcodes causing the script to exit with success, and the ability for signatures to commit to additional conditions. The CLEANSTACK rule should be eliminated, and instead, the number of items on the stack should be incorporated into the signature hash. This way, any script with a CHECKSIG is protected from witness extension malleability, allowing for simpler tail-call evaluation as arguments on the alt-stack aren't needed. A new shorter fixed-length signature format has been introduced, eliminating the need to guess the signature size in advance, and all signatures are 65 bytes unless a condition script is included. Additionally, the ability for signatures to commit to additional conditions is expressed in the form of serialized scripts in the signature itself, useful in combination with OP_CHECKBLOCKATHEIGHT (BIP115). However, the last part is not yet deployable as the signature must commit to the script interpreter flags and internal "sigversion" to avoid exploit differences in the various script interpretation modes. Luke acknowledges that this part needs to be resolved before deployment.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:28:15.576637+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

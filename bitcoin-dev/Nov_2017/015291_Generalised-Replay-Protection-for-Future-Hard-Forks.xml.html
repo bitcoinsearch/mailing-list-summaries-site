@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalised Replay Protection for Future Hard Forks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jacob Eliosoff 2017-11-15 05:02:48
+            <br><i>Published on: 2017-11-15T05:02:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Generalised-Replay-Protection-for-Future-Hard-Forks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015291.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in this email thread revolves around a proposal for creating fork-specific addresses to make transactions safer and allow light clients to differentiate between multiple forks. The proposal suggests assigning a unique 'nForkId' to every leaf, which needs to match the 'nForkId' of the software validating it to be considered valid. The proposal faces a dilemma where an LN commitment transaction either has to be given the specific 'nForkId' of the fork it's created on or be given 'nForkId 0,' which has a flaw. To avoid this dilemma, it may make sense to incorporate Luke's OP_CHECKBLOCKATHEIGHT and make the fork ID a (block height, hash) pair rather than just a number. Additionally, using solutions like SIGHASH_BLOCKCOMMIT could be superior in making transactions difficult to circumvent. However, the proposed solution not only adds replay protection but also makes transacting safer overall due to a dedicated address format per fork and helps avoid issues like sending BCH to a BTC address. Every leaf must be assigned a unique 'nForkId,' and transactions are only valid if their 'nForkId' matches exactly the 'nForkId' of the software validating them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:02:41.867195+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

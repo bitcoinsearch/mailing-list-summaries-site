@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version 1 witness programs (first draft)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-10-01 05:04:32
+            <br><i>Published on: 2017-10-01T05:04:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015145.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author argues that the clean stack should not be eliminated in order to allow for the possibility of recursive tail-call for general computation capability in the future. However, committing to the number of witness elements is fully sufficient and eliminates problems of not knowing the actual size in bytes at the time of signing. The clean stack must still exist as policy for future soft-fork safety, but being a consensus requirement was only to avoid witness malleability, which committing to the size of the witness also accomplishes. Other future extensions might also have variable-length proofs. Dashjr suggests that committing to the length of the serialized witness data would be possible since signatures are no longer variable-length. Although CLEANSTACK wouldn't have been checked until after the tail-call in the first draft, eliminating it for other possible future purposes is still useful.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:26:33.622285+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd:  General question on routing difficulties <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015313_Fwd-General-question-on-routing-difficulties.xml.html">Fwd:  General question on routing difficulties</a>
+                        <b>Bryan Bishop 2017-11-25 19:21:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015313_Fwd-General-question-on-routing-difficulties.xml.html">Fwd:  General question on routing difficulties</a>
+                        <b>Bryan Bishop 2017-11-25 19:21:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015313_Fwd-General-question-on-routing-difficulties.xml.html">Fwd:  General question on routing difficulties</a>
+                        <b>Bryan Bishop 2017-11-25 19:21:55</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015313.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-11-25T19:21:55+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email exchange on the Lightning-dev mailing list, Olaoluwa Osuntokun discussed a recent paper on coordinate embedding and distance-vector-like routing systems for payment networks. He concluded that the protocol is better suited to closed-membership, credit networks like Ripple than to LN's open-membership network. LN currently utilizes a source-routed system that requires the sender to know most of the path to the destination, but there are plans to extend Sphinx usage to leverage HORNET so that only nodes seeking to actively serve as channel routers advertise their channels. Osuntokun also proposed adapting the protocol to allow each intermediate node to communicate their time lock and fee references to the sender, but acknowledged that this could increase set up costs and routing failures.The Sphinx protocol has been extended to include a per-hop payload that allows the sender to dictate the structure of the route and the intermediate nodes to authenticate and verify information. These payloads can also be utilized by applications to construct higher-level protocols on top of the system. However, when extended to LN, the core component of the protocol becomes the weakest component as all nodes need to be aware of an identical set of landmarks.Currently, there is no requirement for all nodes to have a globally consistent view of the network. This raises the question of who chooses the landmarks. A desirable property of a routing system for LN is that it has close to zero required initial set up by a central administrator. As all payments must flow through landmarks, they must be well-capitalized, which would cause strong consolidation of the selection of landmarks. Also, if most of the landmarks go down due to hardware issues, DoS, exploited bugs, etc., then the network's throughput instantly becomes crippled.If all payment flow must go through landmarks, and the transfers within the network are relatively uni-directional, then their channels would become unbalanced very quickly. Passive channel rebalancing is possible with source routing, but it doesn't seem possible with distance-vector-like protocols. The value privacy within the scheme seems weak because any protocol that did not broadcast intents to send payments to the world would achieve this trait.Even if the base Bitcoin blockchain masked the values of transfers, multi-hop payment networks could not unconditionally maintain value privacy of channels, making it incompatible. Probabilistically dropping incoming payments could mitigate this, but it would dramatically increase routing failures by senders.In conclusion, there is no one-size-fits-all solution to the routing problem in LN. Instead, several distinct protocols can be deployed based on use-case requirements. The network needs to experiment with additional approaches as the size of the network grows, and the true economic flow patterns emerge after deployment to mainnet.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-12T22:20:27.592108+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

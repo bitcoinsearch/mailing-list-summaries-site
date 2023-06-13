@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Raise default datacarriersize to 220 byte or higher</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> mbde at bitwatch.co 2018-01-04 19:38:23
+            <br><i>Published on: 2018-01-04T19:38:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Raise-default-datacarriersize-to-220-byte-or-higher.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015497.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a mailing list post, dexx proposed raising the default datacarriersize to 220 byte or higher to disincentivize the use of harmful methods to embed data into the blockchain. The proposal is aimed at making OP_RETURN scripts the cheapest way to embed data into the chain. Currently, embedding data with bare-multisig and P2SH can be cheaper in terms of effective transaction size compared to OP_RETURN with a payload limit of 80 bytes. However, both methods have been heavily used by the major two meta-protocols on top of Bitcoin: Omni and Counterparty, but both protocols started to use OP_RETRUN data embedding a long time ago. Despite this, token sends are usually done one by one, each with a single transaction, placing a heavy burden on the whole network when an exchange sends out withdrawals. Solutions for "multi-sends with multi-inputs" are available, and moving destinations into the payload for token sends has also been considered, but more space is needed, otherwise, this solution would be limited to very few recipients. During December 2017, there were roughly 210,000 Omni Layer transactions, with more than 12,000 transactions on peak days, and the numbers are growing. It's assumed that there is a similar number of Counterparty transactions, which most likely benefit from additional payload space too.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:24:25.237387+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

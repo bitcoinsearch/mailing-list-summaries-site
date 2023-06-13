@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why the BIP-72 Payment Protocol URI Standard is Insecure Against MITM Attacks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tomas 2017-09-29 13:14:03
+            <br><i>Published on: 2017-09-29T13:14:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Why-the-BIP-72-Payment-Protocol-URI-Standard-is-Insecure-Against-MITM-Attacks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015118.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There has been a debate on the security of the BIP-70 payment protocol used through BIP-72 URI's. The concern is that payment qr codes do not commit cryptographically to the identity of the merchant, which means hijackers can redirect payments if they can acquire an SSL certificate that a wallet accepts. However, HTTPS is secured under the assumption that certificates are secure. Using the payment protocol simply means paying to a secure endpoint (eg <a href="https://tomasvdw.nl/pay)">https://tomasvdw.nl/pay)</a> instead of an address. There is a concern over the implementation of HTTPS, which incorrectly conflates implementation with specification. An Android Wallet for Bitcoin supports a h= parameter with a hash commitment to what the payment request should be, which is not in the standard itself but widely used by merchants. However, it should become more widespread, as it offers several advantages, including preventing address reuse, dropping the need for mempool synchronization among non-miners, solely as a "notification" mechanism, and improving privacy by allowing light clients to know exactly when a transaction is coming in, so they can efficiently rely on client-side filtering a small set of blocks. In conclusion, the payment protocol is key to scaling, and there is a need to replace BIP-72 with a new BIP, as it is very dangerous.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T19:21:06.420201+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

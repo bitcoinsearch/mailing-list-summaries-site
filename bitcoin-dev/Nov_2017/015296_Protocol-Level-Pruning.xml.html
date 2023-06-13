@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Protocol-Level Pruning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Marc Bevand 2017-11-16 16:56:46
+            <br><i>Published on: 2017-11-16T16:56:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Protocol-Level-Pruning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015296.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developer Marc suggested the concept of protocol-level pruning (PLP) to significantly reduce the size of the blockchain, which could enable on-chain scaling. The idea is to serialize the UTXO set in a standardized way and publish a hash of it in the block header so that the blockchain commits to it. When a new node joins the network, it would download the block headers only, identify the most recent block containing the UTXO set hash, and download the UTXO set from peers. Nodes would serialize and verify that their UTXO set hash matches the one published in the blockchain every 576 blocks. The serialized UTXO set is currently about 3GB, while the blockchain is about 150GB, hence PLP could cut down the amount of data stored by full nodes by a factor of approximately 50. To avoid hashing the entire UTXO set every 576 blocks, the UTXO set serialization could be a sparse merkle tree, allowing for on-the-fly recomputation of the hash as new blocks are mined. While a regular merkle tree could also suffice, sparse merkle trees would be more efficient. With PLP, all full nodes on the network could switch to it, without a need for any node to archive the entire blockchain. However, nodes would no longer be able to handle reorgs that go further back than the last UTXO set hash published on the chain since previous blocks have been discarded. Therefore, keeping around the last N*576 blocks (N=10?) may be a sufficient workaround.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:15:16.227154+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

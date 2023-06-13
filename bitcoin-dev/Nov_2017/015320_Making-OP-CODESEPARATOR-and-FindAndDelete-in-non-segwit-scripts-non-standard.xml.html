@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-11-27 21:06:35
+            <br><i>Published on: 2017-11-27T21:06:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Making-OP-CODESEPARATOR-and-FindAndDelete-in-non-segwit-scripts-non-standard.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015320.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin community has been discussing the removal of OP_CODESEPARATOR and FindAndDelete() from non-segwit scripts. These functions are considered to be useless, complicated, and fall outside of best practices. However, some members of the community have raised concerns about completely removing these features as it may destroy value and potentially leave pre-signed transactions vulnerable. Therefore, making them non-standard is seen as a good first step in discouraging their use and better informing discussions about the possibility of anyone still using them. Matt Corallo suggests that soft-forking behavior into OP_NOPs or nSequence could be useful for making the code more secure, but he strongly disagrees with the idea of only soft-forking out transactions that are "fundamentally insecure" as it would be too restrictive. Instead, we should be willing to soft-fork out things which clearly fall outside of best-practices. Mark Friedenbach also raises concerns about removing these features and suggests that it may not be necessary unless they are fundamentally insecure and vulnerable. Johnson Lau proposes that disabling both functions guarantees that scriptCode serialized inside SignatureHash() must be constant. If a softfork is used to remove FindAndDelete() and OP_CODESEPARATOR from non-segwit scripts, all blocks before the softfork block can be whitelisted to completely remove FindAndDelete() from the consensus code later.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:13:36.787834+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Cash&#39;s new difficulty algorithm</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Scott Roberts 2017-11-03 01:59:47
+            <br><i>Published on: 2017-11-03T01:59:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Bitcoin-Cash-s-new-difficulty-algorithm.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015250.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin cash will implement a new difficulty algorithm with their hard fork on November 13th. Bitcoin may need to hard fork and use a similar algorithm, as the current DA is slow and only sufficient if the coin has the highest hashpower. If SegWit2x manages to be more comparable in price than BCH, hashpower could very well oscillate back and forth between the two coins, causing delays in both of them. The first one to hard fork to fix the difficulty problem will have a large advantage, as evidenced by what happens in alts. BTC developers are recommended to watch what happens as BCH goes live with a much better algorithm, in case BTC needs to hard fork for the same reason and needs a similar fix. The current averaging window for Bitcoin's difficulty algorithm is probably significantly too long (N=144). It uses the following formula: next_D = sum (past 144 D's) * T / sum(past 144 solvetimes). Bitcoin cash's new algorithm uses a nice median of 3 for the beginning and end of the window to help alleviate bad timestamp problems. They also have 2x and 1/2 limits on the adjustment per block, which is a lot more than they will ever need. One of the contenders to the current algorithm is Degnr8's D622 difficulty algorithm, which gives a linearly higher weight to the more recent timestamps. It is recommended that Bitcoin consider using Bitcoin Cash's new algorithm and making it N=50 instead of 144. Any attempts to modify the current algorithm with things like a low pass filter, starting the window at MTP, or preventing negative timestamps will only reduce its effectiveness.  The +12 and -6 limits on the timestamps are sufficient and well chosen, although something a bit smaller than the +12 might have been better.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:00:16.883306+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

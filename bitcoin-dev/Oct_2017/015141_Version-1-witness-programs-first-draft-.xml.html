@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version 1 witness programs (first draft)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2017-10-01 01:13:29
+            <br><i>Published on: 2017-10-01T01:13:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015141.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Luke-Jr has proposed a first draft on Github for a potential next step for Segwit and Bitcoin scripting. The proposal introduces five changes. Firstly, there are minor versions for witnesses inside the witness itself. Secondly, undefined opcodes cause the script to exit with success. Thirdly, if the final stack element is not exactly true or false, it is interpreted as a tail-call Script and executed. Fourthly, a new shorter fixed-length signature format is introduced to eliminate the need to guess the signature size in advance. Finally, signatures can commit to additional conditions expressed in the form of serialized script. The proposal aims to introduce OP_CHECKBLOCKATHEIGHT (BIP 115) early to Bitcoin before any further splits, which hopefully ends the whole replay protection argument. However, the last part of this proposal is complicated as the signature must commit to the script interpreter flags and internal "sigversion," which serve the same purpose. Luke considers that the BIP deployable without resolving this issue. Additionally, there is draft code implementing [the consensus side of] this proposal available on Github.Luke seeks feedback on anything he may have overlooked while proposing these changes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:28:04.284969+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

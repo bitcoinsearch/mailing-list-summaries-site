@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Revised: UTPFOTIB - Use Transaction Priority For Ordering Transactions In Blocks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Damian Williamson 2017-12-17 04:14:39
+            <br><i>Published on: 2017-12-17T04:14:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_BIP-Proposal-Revised-UTPFOTIB-Use-Transaction-Priority-For-Ordering-Transactions-In-Blocks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015417.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Damian Williamson, a member of the Bitcoin Protocol Discussion group, has proposed a solution to fix two major issues with Bitcoin - scaling and transaction confirmation. He argues that the current transaction bandwidth limit is limiting for both miners and consumers. Williamson proposes a solution to ensure transactional reliability and scalability while having each transaction confirm in due time. The proposed method involves assigning a transaction priority to each transaction in the pool, using probability in transaction priority order to select transactions to include in the current block until the target block size is met, and broadcasting the next target block size with the current block when it is solved. This ensures that each transaction has a chance of being included in the block, maximizing transaction reliability and scalability.The proposed solution has several pros, including maximizing total fees paid per block without reducing reliability, providing additional block entropy for greater security, and working all the way out to 30 days or greater. However, there are also cons, including the possibility of initially lowering total transaction fees per block and the need to first program the solution.Williamson suggests that it may be possible to verify blocks conform to the proposal by showing that the probability for all transactions included in the block statistically conforms to a probability distribution curve. He implores the use of some method that validates full transaction reliability and enables scalability of block sizes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:40:19.731209+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

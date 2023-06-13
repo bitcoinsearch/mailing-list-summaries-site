@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Sjors Provoost 2017-11-16 09:27:18
+            <br><i>Published on: 2017-11-16T09:27:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Making-OP-CODESEPARATOR-and-FindAndDelete-in-non-segwit-scripts-non-standard.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015294.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal to remove OP_CODESEPARATOR and FindAndDelete from non-segwit scripts has been put forth by Johnson Lau in the bitcoin-dev mailing list. Mark Friedenbach objects to this proposal as it could potentially destroy value and has only been done in the past either because of lack of understanding or because the features were fundamentally insecure. However, if the proposal is implemented, all blocks before the softfork block can be whitelisted to completely remove FindAndDelete() from the consensus code later. The conservative approach would be to leave the code until the last non-segwit P2SH UTXO from before the soft fork block has been spent, but this may not happen if a private key is lost. Transactions containing these OP-codes could still be considered valid after making them non-standard and removing the code, but some miners may not verify them. A variant of this scenario is proposed where miners put up a large deposit if they mine such legacy transactions, but can lose it if someone else finds the transaction invalid.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:13:48.011326+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

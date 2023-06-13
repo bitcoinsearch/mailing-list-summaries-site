@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version 1 witness programs (first draft)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-10-02 00:35:38
+            <br><i>Published on: 2017-10-02T00:35:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015155.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses three proposals with similar goals but different designs. The first proposal suggests allowing further upgrades within v1 witness by implementing minor versions in the witness. However, this proposal raises concerns about ending up with many minor versions and confusion surrounding the nomenclature. The second proposal suggests using OP_RETURNTRUE, but it is deemed unfit for signature aggregation. The third proposal suggests using the generalized NOP method where users provide the returned value, but it raises issues with VERIFY-type code. Instead of these proposals, the email suggests gate new behavior based on script execution flags, which are set based on the script version. The second question asks whether to allow signature-time commitment of extra scripts. One proposal suggests tail-call semantics with CHECKSIGFROMSTACK, but it only works with specially designed scriptPubKey. The other two proposals suggest using scriptWitCode or Extra-data as script in OP_CHECKSIG. However, the email suggests proposing these as their own script updates instead of creating a complex omnibus overhaul that does everything.Finally, the email addresses whether to allow static analysis of sigop. The email suggests that a v1 witness upgrade should not be coupled with this proposal. Instead, a v1 witness type upgrade should add a proper script version in the witness and remove unnecessary verification rules that hinder progress. For example, the email suggests dropping the CLEANSTACK rule in favor of something else like signatures committing to the witness depth and/or weight. It also suggests dropping the 520 byte push limitation and providing alternatives that support larger serialized proofs.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:28:51.686143+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

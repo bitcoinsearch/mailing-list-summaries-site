@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction Merging (bip125 relaxation)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2018-01-22 20:00:23
+            <br><i>Published on: 2018-01-22T20:00:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Transaction-Merging-bip125-relaxation-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015605.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rhavar via bitcoin-dev proposed an idea to allow users to merge multiple unconfirmed transactions by stripping extraneous inputs and change. However, this is currently not possible because of the bip125 rule which states that the replacement transaction pays an absolute fee of at least the sum paid by the original transactions. If the rule was removed, it would introduce DoS vectors and allow users to push others' transactions out of the mempool. Rhavar also faced difficulty in tracking merged transactions and suggested a possible solution to only consider a transaction replaceable if it has change. However, this solution is limited and complex. Peter Todd questioned Rhavar's statement that most transactions don't have change.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:59:23.189866+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

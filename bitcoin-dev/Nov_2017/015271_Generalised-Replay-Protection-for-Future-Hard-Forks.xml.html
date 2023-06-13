@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalised Replay Protection for Future Hard Forks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jacob Eliosoff 2017-11-09 20:45:43
+            <br><i>Published on: 2017-11-09T20:45:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Generalised-Replay-Protection-for-Future-Hard-Forks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015271.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal being discussed in this context aims to solve the problem of replay protection during hard forks. The solution involves incorporating a fork ID into new address formats like Bech32. Under this solution, a private key in cold storage would remain valid across hard forks, but an address would only be valid for the specific fork ID it was generated for. This makes accidental mis-sends fundamentally impossible since the address contains the identifier of the token that should be sent. However, it is possible to 'mis-receive' if the receiving wallet was not aware of a newer chain and the receiver actually wanted to receive the newer token but instead, their wallet created an address for the old token. The proposal also enables wallets to distinguish between different tokens, which can lead to different implementations by developers. While there may be cases where an address needs to be valid across all chains intentionally (for instance, in cold-storage-type cases), this could be achieved using a special nForkId value, say -1. In conclusion, the proposed solution provides a comprehensive approach to replay protection during hard forks and encourages developers to incorporate fork IDs into new address formats.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:01:51.449909+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
