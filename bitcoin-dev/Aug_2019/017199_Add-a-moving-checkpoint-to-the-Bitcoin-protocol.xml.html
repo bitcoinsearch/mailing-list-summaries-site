@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Add a moving checkpoint to the Bitcoin protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kenshiro [] 2019-08-01 10:17:56
+            <br><i>Published on: 2019-08-01T10:17:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2019/combined_Add-a-moving-checkpoint-to-the-Bitcoin-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017199.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the implementation of a moving checkpoint rule in the Bitcoin protocol and its potential limitations. The concern is raised that the rule should have some limits to allow the network to self-heal instead of relying on humans to detect splits or stop nodes. The suggestion is made that if two forks have a block height difference of 432 blocks (about 3 days) or more, then the moving checkpoint rule is ignored, allowing the network to self-heal in an automated way. This would prevent a history rewrite of more than 24 hours during a 51% attack for three days, giving enough time to change the protocol. However, it is pointed out that a netsplit cannot be detected but only suspected, making manual communication error-prone and centralizing. Stopping nodes during netsplits may also introduce several attack vectors. There is a concern that if a netsplit occurs and the rest of the world lacks the hashpower to assert itself as the proper branch, it may have to delete its local history, which is not a price worth paying to limit reorgs to 24 hours. Alistair Mann, one of the participants, is unconvinced that the moving checkpoint rule would improve Bitcoin.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T20:40:30.487892+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

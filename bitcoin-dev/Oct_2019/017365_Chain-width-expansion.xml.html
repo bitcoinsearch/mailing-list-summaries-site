@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Chain width expansion</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Braydon Fuller 2019-10-04 19:51:26
+            <br><i>Published on: 2019-10-04T19:51:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Chain-width-expansion.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017365.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>David A. Harding raised concerns about a solution proposed by Braydon Fuller to prevent DoS attacks that does not require enabling or maintaining checkpoints and provides improved security. The solution involves expanding the Bitcoin chain. However, David worries that this mechanism could be exploited to keep a node synced to a long-but-lower-PoW chain on a false chain indefinitely, even if it had connections to honest peers that tried to tell it about the most-PoW chain. To illustrate this concern, David gave an example of an attacker eclipsing a target node during the initial block download, where all outgoing peers of the target are the attacker. The attacker then sends a low work chain to the target, which has a total chainwork of 0x09104210421039 at a height of 593,975. This puts the target node in a state of a fully validated low work dishonest chain. When the target node connects to an honest peer and learns about the honest chain, which has a higher PoW, the node may still remain synced to the dishonest chain created by the attacker.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:47:43.930505+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

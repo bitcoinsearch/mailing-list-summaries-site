@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless hash-price insurance contracts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lucas H 2019-10-20 19:45:49
+            <br><i>Published on: 2019-10-20T19:45:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Trustless-hash-price-insurance-contracts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017421.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of this post is proposing a trustless hash-price insurance contract that guarantees minimum profitability of a mining operation in case Bitcoin/hash price goes too low. The main uncertainty the miner is trying to protect against isn't the inefficiency of his new equipment, but how much new mining equipment is being deployed worldwide, which he can't know in advance (as the system is permissionless). There are two different metrics that can mean "profitable" that are getting confused: operational profitability and ROI. The instrument the author describes above protects against the scenario where P > 0, but ROI 0 for all miners using the new equipment. A miner with great confidence that he is running optimal hardware and has optimal electricity and labor costs probably wouldn't be interested in purchasing insurance for a high price, but if it was cheap enough, it would still be worth it. And any potential new entrants on the edge of jumping in would enter when they otherwise would not have because of the decreased costs (decreased risk). It's basically an instrument for guaranteeing a minimum profitability of the mining operation. The insurer negotiates a contract with the miner implemented as a Bitcoin transaction. Inputs: a deposit from the insurer and a premium payment by the miner. Output1: simply the premium payment to the insurer. Output2 - the actual insurance. There are three OR'ed conditions for paying it: A. After expiry date (in blocks) insurer can spend. B. Both miner and insurer can spend at any time by mutual agreement. C. Before expiry, miner can spend by providing a pre-image that produces a hash within certain difficulty constraints. The thing that makes it a hash-price insurance (or option, pardon my lack of precise financial jargon), is that if hashing becomes cheap enough, it becomes profitable to spend resources finding a suitable pre-image, rather than mining Bitcoin. Of course, both parties can reach an agreement that doesn't require actually spending these resources -- so the miner can still mine Bitcoin and compensate for the lower-than-expected reward with part of the insurance deposit. If the price doesn't go down enough, the miner just mines Bitcoin, and the insurer gets his deposit back.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:57:31.501913+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

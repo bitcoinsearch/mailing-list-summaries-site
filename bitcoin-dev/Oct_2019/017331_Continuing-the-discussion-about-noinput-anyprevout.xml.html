@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-10-01 14:26:39
+            <br><i>Published on: 2019-10-01T14:26:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017331.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj proposes a new opcode, `OP_CHECKSIG_WITHOUT_INPUT`, as an alternative to `SIGHASH_NOINPUT` which would ignore any `SIGHASH` flags present on a signature and instead hash the current transaction without input references before checking it against the signature. This would allow for embedding in a Taproot script such as a Decker-Russell-Osuntokun with an internal Taproot point of 2-of-2. However, proposing a new opcode may lead to increased design space and potential bikeshedding. It is important to note that any special script would be supportable by Taproot and already targetable by a Taproot address. The advantage of using a sighash flag is that the spender can specify the flags while an opcode would dictate the signature verification modalities.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:32:36.596346+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

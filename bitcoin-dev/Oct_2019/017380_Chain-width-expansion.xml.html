@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Chain width expansion</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Braydon Fuller 2019-10-10 16:16:16
+            <br><i>Published on: 2019-10-10T16:16:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Chain-width-expansion.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017380.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email sent on October 4th, 2019, Tier Nolan via bitcoin-dev discussed the need for peers to prove their total chain proof-of-work (POW). Currently, it is necessary to receive all of the chain headers to determine, but a succinct chainwork proof would be ideal. Chainwork refers to the sum of the total proof-of-work in a chain. These proofs only require a few headers for common cases and the other cases can be identified. Nolan suggests that things should be limited by peer rather than globally, as there should be enough width available for every active connection. However, this method is susceptible to Sybil attacks. The delay for the next set of headers is based on the chainwork of the last received headers from the peer. The peer could change identity and run into the same limit. The unrequested header rate is tracked per peer. A header chain with more chainwork will be requested at a faster rate than a header chain with less chainwork. The chainwork is compared to the current fully validated chain. Honest peers with more chainwork will have a time advantage over dishonest peers with less chainwork.Nolan gives an example of how this system works. In the case that the initial chain of headers was dishonest and with low chainwork, the initial block download retrieves the header chain from a single loader peer first. Once recent time is reached, header chains are downloaded from all outgoing peers. A single honest peer will have an advantage over many dishonest peers. Thus, there is a security assumption that there is at least one connected honest node.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:46:03.281522+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

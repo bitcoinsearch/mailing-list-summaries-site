@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving JoinMarket&#39;s resistance to sybil attacks using fidelity bonds</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dmitry Petukhov 2019-08-06 20:55:41
+            <br><i>Published on: 2019-08-06T20:55:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2019/combined_Improving-JoinMarket-s-resistance-to-sybil-attacks-using-fidelity-bonds.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017221.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Chris Belcher, a Bitcoin researcher, has suggested a way to prevent the renting out of transaction outputs (TXOs). He proposes that an entity renting out TXOs can revoke their participation in the market through a special signature. This would also mean revoking all other TXOs used alongside it in a bond. Therefore, any entity wishing to spoil an attacker's consolidation via rent could rent out its TXO to the attacker and then revoke it, thereby spoiling the whole consolidated package.Another possible penalty could be that all locked TXOs must be spendable by any key that controls any TXO in the 'bond TXO package'. This could be possible using taproot trees, where each leaf specifies a condition "spendable by the key N". Hence, if an entity locks a TXO, they will have to make their other TXOs spendable by the entity that offered the TXO for locking.However, both scenarios require an off-chain contractual relationship between the parties to work for the attacker. Otherwise, the entity renting out the TXOs can confiscate or spoil the bond of the entity that rented them without repercussions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T20:24:27.052323+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

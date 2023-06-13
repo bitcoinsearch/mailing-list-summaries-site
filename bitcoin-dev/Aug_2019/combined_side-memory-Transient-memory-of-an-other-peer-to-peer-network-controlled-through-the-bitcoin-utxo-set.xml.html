@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>side memory <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2019/017264_side-memory-Transient-memory-of-an-other-peer-to-peer-network-controlled-through-the-bitcoin-utxo-set.xml.html">side memory - Transient memory of an other peer to peer network controlled through the bitcoin utxo set</a>
+                        <b>Tamas Blummer 2019-08-14 02:32:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2019/017264_side-memory-Transient-memory-of-an-other-peer-to-peer-network-controlled-through-the-bitcoin-utxo-set.xml.html">side memory - Transient memory of an other peer to peer network controlled through the bitcoin utxo set</a>
+                        <b>Tamas Blummer 2019-08-14 02:32:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2019/017264_side-memory-Transient-memory-of-an-other-peer-to-peer-network-controlled-through-the-bitcoin-utxo-set.xml.html">side memory - Transient memory of an other peer to peer network controlled through the bitcoin utxo set</a>
+                        <b>Tamas Blummer 2019-08-14 02:32:40</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017264.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2019-08-14T02:32:40+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Blockchain developer Tamas Blummer has proposed a design pattern for peer-to-peer networks, called side memory. The idea behind side memory is to associate data with a unique coin in the UTXO set, limiting the scarcity of Bitcoin. There are several ways to associate data with a UTXO, including requiring more satoshis to be committed. However, nodes of the other network would have to run a Bitcoin node as well to observe changes in the UTXO. To simplify the task, Tamas proposes using time locks and SPV validation. The UTXO committing to associated data would have a relative timelock so that it cannot be spent within n blocks after entering the UTXO set. A network node that originally publishes the data would also send an SPV proof of the inclusion of associated commitment into the Bitcoin blockchain to its peers. Other network nodes would then only need to observe the progress of Bitcoin's header chain to validate the proof before accepting data into their transient store. Nodes that publish new data would have to listen to all blocks after they broadcast the commitment until they see it confirmed and can extract the proof.The network nodes could use IBLTs (Invertible Bloom Lookup Tables) to distribute associated data. Such an associated network would be lightweight since it only observes and stores Bitcoin's header chain and its own peer-to-peer network. Tamas plans to release the code of a network that implements this design pattern with the SPV optimization and IBLTs and is looking for help testing it in a limited deployment before releasing it publicly. This pattern is useful as sybill attack protection of coinjoin networks as time-locked commitments can act as fidelity bonds.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-13T21:00:42.138268+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

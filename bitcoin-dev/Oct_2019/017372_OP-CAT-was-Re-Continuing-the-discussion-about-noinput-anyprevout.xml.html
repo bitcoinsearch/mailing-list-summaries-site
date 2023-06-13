@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_CAT was Re: Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-10-06 08:46:59
+            <br><i>Published on: 2019-10-06T08:46:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_OP-CAT-was-Re-Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017372.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning-dev mailing list, Jeremy had raised a point about constructing midstate using scriptPubKey with SHA256STREAM. However, ZmnSCPxj argued that there is no real advantage of using SHA256STREAM over OP_CAT as both are limited by the size of the script. Additionally, theoretically, `OP_CAT` is less efficient than `OP_SHASTREAM`. This is because `OP_CAT` may lead to possible O( n^2 ) behavior if new backing memory must be allocated elsewhere and the existing data copied. Meanwhile, `OP_SHASTREAM` would not require any copying or new allocations once the stream state is in place. However, it was noted that a sufficiently-limited maximum `OP_CAT` output would be helpful in reducing the worst-case `OP_CAT` behavior but 64 bytes feels too small, especially for Merkle tree proofs.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:41:32.712810+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

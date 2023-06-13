@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Chain width expansion</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2019-10-04 23:31:18
+            <br><i>Published on: 2019-10-04T23:31:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Chain-width-expansion.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017366.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses a proposal to allow peers to prove their total chain proof-of-work (POW) by sending short proofs of height for disconnected headers and asserting the POW for those headers. Each peer could send the N strongest headers for their main chain and prove the height of each one, allowing for estimation of the total chain work as N times the POW for the lowest in the list. This proposal requires a new set of messages to request info about the best chain and allows for checking if multiple peers are on the same chain. The key is to limit things by peer rather than globally, such as splitting the limit to header width between peers and storing the current best/most POW header chain and at least one alternative chain per outgoing peer. Message limiting should also be per peer, as penalizing an honest peer who has just been connected to may not be fair.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:48:08.493582+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

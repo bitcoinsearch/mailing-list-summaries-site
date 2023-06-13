@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-10-03 10:01:58
+            <br><i>Published on: 2019-10-03T10:01:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017345.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal to change the allocation of SegWit v16 for SIGHASH_NOINPUT use, as well as a suggestion for an alternative solution has been made in the bitcoin-dev mailing list. The concerns raised were that an ordinary UTXO might be spent using SIGHASH_NOINPUT, and that a UTXO allocated for SIGHASH_NOINPUT use should look exactly the same as any other SegWit v1 output. The proposed solution is to not allocate SegWit v16 for SIGHASH_NOINPUT use, but instead allocate SegWit v1 Tapscript v16 for SIGHASH_NOINPUT. This way, if ordinary UTXOs are not allocated for SIGHASH_NOINPUT use, they do not commit to any Taproot that has a Tapscript v16 branch, and thus SIGHASH_NOINPUT cannot be used to claim it. Additionally, if a UTXO used for an offchain protocol ends up in a cooperative-resolution state, nobody has to know that a Tapscript v16 branch existed that could have used SIGHASH_NOINPUT. The proposal also addresses privacy concerns by avoiding publicly visible output tagging, which damages privacy. Instead, this would be an invisible tagging since the opt-in to noinput and friends is hidden inside the committed script, which only gets revealed whenever it is actually needed.For eltoo, the funding output would be invisibly tagged, and the cooperative close would use the taproot pubkey, while the uncooperative close, which would require noinput opt-in, reveals the script, proving prior opt-in, and provides a matching signature. Finally, there was a question on whether the alternate proposal would hold better muster and if AJ's alternative pubkey encoding would be required to make the opt-in visible.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:33:50.714389+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

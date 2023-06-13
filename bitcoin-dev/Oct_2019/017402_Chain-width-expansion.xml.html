@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Chain width expansion</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Braydon Fuller 2019-10-16 19:25:31
+            <br><i>Published on: 2019-10-16T19:25:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Chain-width-expansion.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017402.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Joachim Strömbergson proposed a method to generate a longer chain with a slow timestamp increase without increasing difficulty, which would take about 7 minutes of block time seconds for the next retarget period, every 2016 blocks. This approach, however, does not apply under a time warp attack since fake timestamps can be created for all blocks except for those relevant to the retarget calculation. This was in reference to the non-overlapping difficulty calculation and off-by-one bug. The height of the chain can be extended instead of limiting its width, but this method would not be effective unless the timewarp off-by-one bug is resolved. Rate limiting based on chainwork would slow down a timewarped low work header chain, where there would be a maximum rate at which the headers could be sent, around 32KB/s. It would take about a month to send 100GB.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:47:21.661382+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

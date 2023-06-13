@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Add a moving checkpoint to the Bitcoin protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kenshiro [] 2019-07-31 14:53:25
+            <br><i>Published on: 2019-07-31T14:53:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2019/combined_Add-a-moving-checkpoint-to-the-Bitcoin-protocol.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017194.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin protocol discussion, Kenshiro proposed adding a "moving checkpoint" rule to the blockchain similar to that implemented in NXT coin. This rule would allow nodes to ignore any new block below nodeBlockHeight - N, making the blockchain immutable for blocks older than N. However, Alistair Mann raised concerns about how a state-sponsored netsplit lasting longer than N would be handled. Kenshiro responded by stating that such a scenario would be detected by the community well before reaching the reorg limit of N blocks (approximately 24 hours), allowing nodes to stop until the netsplit is fixed. In the unlikely event that no one notices the network split for more than N blocks and there are two permanent forks longer than N, nodes from one branch could delete their local history to join the other branch.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T20:40:58.562640+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

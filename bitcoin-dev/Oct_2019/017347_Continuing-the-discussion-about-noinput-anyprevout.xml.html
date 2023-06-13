@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-10-03 11:08:29
+            <br><i>Published on: 2019-10-03T11:08:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017347.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The bitcoin-dev mailing list has recently seen renewed interest in eltoo, and a proof-of-concept implementation has been established. This has sparked discussions regarding clean abstractions for off-chain protocols, leading to the reconsideration of the `sighash_noinput` proposal (BIP-118), as well as AJ's `bip-anyprevout` proposal. There are several open questions that remain to be addressed, including general agreement on the usefulness of noinput/anyprevoutanyscript/anyprevout, strong support or opposition to chaperone signatures, and the same for output tagging/explicit opt-in. However, an important question that was missed from this list is whether we understand the dangers of noinput/anyprevout-style constructions. The author believes that anyprevout signatures make the address you're signing for less safe and may cause you to lose funds when additional coins are sent to the same address, although this can be avoided with careful handling or by not caring about losing funds in the event of address reuse. He also suggests that being able to guarantee that an address cannot be signed with an anyprevout signature is valuable, so having it be opt-in at the tapscript level is advantageous. Receiving funds spent via an anyprevout signature does not involve any qualitatively new double-spending/malleability risks. Additionally, he argues that output tagging is unnecessary and there is no need for users to mark anyprevout spends as "tainted" to wait for more confirmations than normal before considering those funds safe. The author recommends having a public testnet where every weird noinput/anyprevout case is demonstrated and tested to ensure that all concerns are addressed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:31:07.207757+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

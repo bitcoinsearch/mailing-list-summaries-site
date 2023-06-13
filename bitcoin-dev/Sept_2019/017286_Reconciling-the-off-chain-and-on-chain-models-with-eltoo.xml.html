@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reconciling the off-chain and on-chain models with eltoo</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-09-06 14:32:38
+            <br><i>Published on: 2019-09-06T14:32:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2019/combined_Reconciling-the-off-chain-and-on-chain-models-with-eltoo.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017286.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the concept of transaction cut-through and how offchain systems can be considered a specialization of this. The writer explains that a transaction can be sent to participants which spends a subset of the current state txos. Participants can then agree to sign a new state with the spent txos deleted and the new txos inserted. If there is disagreement, the contract can be enforced on the blockchain. The writer also notes that any contract with a relative locktime requirement would not make sense to maintain offchain, but one can quite easily compute an absolute timelock. Regarding contracts with timelocks, onchain enforcement needs to be triggered early according to the CSV security parameter under Decker-Russell-Osuntokun. However, this is not an issue under Poon-Dryja as the CSV is in a later transaction. The use of 'SIGHASH_NOINPUT' and non-stable txids involved means that any transaction transported in the offchain update mechanism needs to be signed under 'SIGHASH_NOINPUT'. However, the writer notes that this is not onerous. In conclusion, the Poon-Dryja system is not difficult to implement and Decker-Russell-Osuntokun is very cool.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:14:35.263218+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

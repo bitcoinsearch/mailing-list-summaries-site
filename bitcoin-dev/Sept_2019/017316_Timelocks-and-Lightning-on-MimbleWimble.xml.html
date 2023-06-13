@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Timelocks and Lightning on MimbleWimble</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2019-09-19 18:54:34
+            <br><i>Published on: 2019-09-19T18:54:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2019/combined_Timelocks-and-Lightning-on-MimbleWimble.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017316.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent bitcoin-dev mailing list post, ZmnSCPxj discusses Lightning and similar off-chain protocols on MimbleWimble. While the "magical shrinking blockchain" of MimbleWimble eliminates the need to validate already-spent outputs, this creates a problem for validating relative locktimes necessary for off-chain updates and indefinite-lifetime channel constructions. Thus, it is not the lack of SCRIPT that prevents Lightning-over-MimbleWimble, but rather the lack of relative locktime. All practical off-chain updateable cryptocurrency systems require some kind of timeout, which could be implemented as either absolute or relative lock time, but an absolute locktime would limit the lifetime of the channel. MimbleWimble supports 2-of-2 with Schnorr and other homomorphic signatures, which can be used to implement HTLC-like constructs and impose relative locktimes using simple nSequence. MimbleWimble also supports the two-transactions construct for HTLCs hosted inside indefinite-lifetime Spilman channels and Decker-Russell-Osuntokun. While sequence numbers enforce relative timelocks and are described as an independent constraint in BIP68, OP_CHECKSEQUENCEVERIFY is required to enforce them. An alternative presigned nlocktime transaction double spend technique was proposed, but it requires the ability to aggregate signatures across transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:23:50.116641+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

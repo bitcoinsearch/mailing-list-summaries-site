@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Composable MuSig</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2020-02-24 15:30:54
+            <br><i>Published on: 2020-02-24T15:30:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017641.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about preventing repeated signings of the same message and using a "validity" time window so that the amount of state you need to enquire about isn't unbounded. The Drijvers, et al paper is specifically concerned with parallel and aborted signings, where ksums can be used. The more variables an attacker can control, the more "k" lists they can form, and the more likely they can find collisions. To reduce the attack surface, signers should refuse to sign stale or the same messages twice and limit the number of parallel signatures beyond a certain limit.One solution is to add a signature timeout to the message by including a block height. Participants will refuse to sign if that time is too far in the future, is at all in the past, or if a message M is the same as any previous message within that time window. This approach seems to resolve the attacks on 2 round musig. However, Tim Ruffing expressed confusion regarding this proposal and asked for elaboration.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T22:21:27.388109+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

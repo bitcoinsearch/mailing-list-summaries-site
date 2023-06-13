@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bech32 weakness and impact on bip-taproot addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2019-11-07 22:45:02
+            <br><i>Published on: 2019-11-07T22:45:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Bech32-weakness-and-impact-on-bip-taproot-addresses.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017444.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille posted on the bitcoin-dev mailing list about a mutation weakness in bech32, which was discovered some time ago. He explains that inserting or erasing 'q's before the final 'p' in a bech32 string does not invalidate it due to an oversight in the original design. Wuille notes that this has little effect on the security of P2WPKH/P2WSH addresses, as those are only valid for specific lengths; however, this may influence design decisions around bip-taproot. In the current draft of bip-taproot, witness v1 outputs of length other than 32 remain unencumbered. This means that inserting or erasing one character could result in an output that can be spent by anyone. To prevent this, one option is to outlaw v1 witness outputs of length 31 and 33. Wuille asks for thoughts on this issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T22:07:39.817317+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

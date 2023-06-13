@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-10-01 13:31:49
+            <br><i>Published on: 2019-10-01T13:31:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017329.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discussed the proposal to allow rebinding of transactions to new outputs through adding a `sighash_noinput` flag that excludes the output when signing. This feature has the potential to introduce another footgun into the bitcoin protocol with address reuse, and exchanges reusing addresses for cold storage with large sums of money could be vulnerable to replaying signatures on the blockchain until their wallet is drained. However, the proposal may be useful for off-chain protocols like Lightning.During the CoreDev meeting in Amsterdam, there was a discussion on whether to use "noinput" signatures for Taproot. The proposal is to let users spend an output without revealing it as a previous input, which can make Lightning channel updates faster and more efficient. While some people support this proposal, there are concerns about its security, especially if multi-party transactions are involved. In response to these concerns, developers suggested using "chaperone signatures," which are signatures that must be authorized by all parties involved in the transaction. Additionally, the idea of using chaperone signatures to ensure there is no third-party malleability of transactions is proposed. It has downsides such as additional size and protocols can still use a globally known private key. However, it addresses first-party malleability.It is imperative to keep the second signing path that uses `sighash_noinput` separate from the first signing path that controls an exchange's on-chain funds. It is also discussed that some developers may want to use `sighash_noinput` to cheapen or reduce the complexity of making a wallet implementation. This concern can be addressed by making people aware of how the feature should be used.Another proposal to achieve disincentives to non-smart-contract cases is output tagging. Instead of using addresses for taproot v1 outputs, a segwit version 16 v16 would be used that supports taproot. This would have the desired effect of not allowing generic wallets to send to these addresses or users accidentally sending funds to what was supposed to be a one-off script used internally in the off-chain contract.However, output tagging may hurt fungibility as it marks outputs used in a contract and makes them identifiable. Therefore, there have been discussions on creating two domains: one for user-addressable destinations which users can use with their general-purpose wallets and one domain for contracts, which users cannot send to directly.The questions that remain to be addressed are the usefulness of noinput/anyprevoutanyscript/anyprevout beyond eltoo, general agreement on the usefulness of noinput/anyprevoutanyscript/anyprevout, strong support or opposition to the chaperone signatures introduced in anyprevout/anyprevoutanyscript, advantages and disadvantages of output tagging/explicit opt-in, and whether BIP-118 and bip-anyprevout should be merged.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:35:31.397047+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

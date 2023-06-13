@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless hash-price insurance contracts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2019-10-20 16:16:57
+            <br><i>Published on: 2019-10-20T16:16:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Trustless-hash-price-insurance-contracts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017416.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses a trustless insurance contract for miners that guarantees minimum profitability of their mining operation in case Bitcoin/hash price goes too low. The problem is that if hash-rate goes up too much, the miner will have a loss. An insurer can negotiate a contract with the miner implemented as a Bitcoin transaction where they deposit funds and pay a premium respectively. There are three conditions for paying it: after expiry date, both miner and insurer can spend at any time by mutual agreement, or before expiry, miner can spend by providing a pre-image that produces a hash within certain difficulty constraints. The implementation issues arise due to the inability to do arithmetic comparison with long integers >32bit in the script, so the difficulty requirement needs to be hacky. The hashes of one or more pre-images with a given short length are used and the miner has to provide the exact pre-images. The pre-images are chosen by the insurer, and an honesty deposit or other mechanism is required to punish the insurer if he chooses a hash that doesn't correspond to any short-length pre-image. The insurance could end up paying out against realized profit but generally speaking, insuring investment is a zero-sum game. If hashing becomes cheap enough, it becomes profitable to spend resources finding a suitable pre-image, rather than mining Bitcoin. It guarantees a minimum profitability of the mining operation and decreases the costs (decreased risk) for potential new entrants on the edge of jumping in. An analogy would be car insurance, where if you're an excellent driver, you wouldn't be willing to spend a ton of money to protect your car in the event of an accident, but if it's cheap enough, you would.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:57:09.037933+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin vaults with anti-theft recovery/clawback mechanisms</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-08-08 03:03:04
+            <br><i>Published on: 2019-08-08T03:03:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2019/combined_Bitcoin-vaults-with-anti-theft-recovery-clawback-mechanisms.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017237.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread, Sergio Demian Lerner mentioned a proposed "Tick Method" from 2013 and questioned its flaw. ZmnSCPxj responded that the use of `SIGHASH_NONE` for both inputs of the TxOut transactions and txid malleability might be the flaw. To fix these issues, he suggested not using `SIGHASH_NONE` for one of the inputs and requiring a hot privkey to sign with that. The second issue can be fixed by using SegWit outputs.In another part of the email thread, Bryan Bishop discussed the biggest problem with the vault scheme, which is an attacker silently stealing the hot wallet private key and waiting for the vault's owner to initiate a withdrawal from the vault. To mitigate this, it is important to choose a stipend or withdrawal amount per withdrawal period like x% of the funds. This limits the total stolen funds to x%. He also discussed the smallest least invasive soft-fork that would enable a timelock and mentioned several covenant proposals. Additionally, he provided links to related works on the subject.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T20:52:42.495522+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
