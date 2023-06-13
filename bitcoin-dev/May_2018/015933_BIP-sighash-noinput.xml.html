@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP sighash_noinput</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bram Cohen 2018-05-07 20:51:11
+            <br><i>Published on: 2018-05-07T20:51:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_BIP-sighash-noinput.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015933.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses a technical point regarding SIGHASH_NOINPUT. The author suggests that it would be technically simpler to have a boolean specifying whether inputs listed must be all of them or a subset of everything. They also suggest a similar boolean should be made for outputs. The author notes that one could always use SIGHASH_SUBSET and not specify any inputs and achieve the same effect as SIGHASH_NOINPUT. The email then requests BIP editors to assign a BIP number to the SIGHASH_NOINPUT proposal. The author has implemented a hashing implementation in Bitcoin Core, although they do not think it will sail through review and cannot test it now because there is no groundwork on witness V1 scripts. The email concludes with a note that fork coins have used sighash 0x40 as FORKID, which does not conflict with this proposal since the proposal only applies to segwit transactions, which the fork coins have explicitly disabled.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:50:41.564811+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

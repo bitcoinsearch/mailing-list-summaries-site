@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrea 2018-06-27 13:39:02
+            <br><i>Published on: 2018-06-27T13:39:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016174.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion among William, Andrew, and list, it was noted that some types are missing in the global-types definition. The parser must know the number of each map for I/O to use the correct definitions for the types. If not, a parser reading a key-value record does not know whether to read it as per-input type or per-output. To address this issue, one way is to declare the number of maps in advance and ensure they are ordered (inputs first). It was proposed to use two types for this: Number of inputs and number of outputs. For both types, the key is none, and only the type is PSBT_GLOBAL_INPUT_NUMBER = 0x01 and PSBT_GLOBAL_OUTPUT_NUMBER = 0x02 respectively. The value for both types is Varint.William raised a concern about buffer overflows in cases where someone sends a large blob of zeros to an unsuspecting implementation. He highlighted that hundreds of thousands of zero bytes in the input or output key-value arrays could be considered valid since it is just a large array of empty dictionaries. He suggested setting a hard limit on the size of the PSBT to avoid producing very large PSBT with an excessive number of Inputs and Outputs.Regarding the extensibility section, William had a question on whether "different types for the key-value pairs" refers to new types beyond the current global, input, and output types. He also questioned the statement "The number of each map that follows must be specified in the globals section so that parsers will know when to use different definitions of the data types" and did not understand its meaning.Andrea proposed solutions to the issues raised, including using specific types for the number of inputs and outputs, declaring the number of maps in advance, and setting a hard limit on the PSBT's size.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:17:16.312553+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

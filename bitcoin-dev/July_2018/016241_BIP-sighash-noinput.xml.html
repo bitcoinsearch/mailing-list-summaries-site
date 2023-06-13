@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP sighash_noinput</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-07-11 07:43:49
+            <br><i>Published on: 2018-07-11T07:43:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_BIP-sighash-noinput.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016241.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the potential risks associated with using the flag SIGHASH_NOINPUT in Bitcoin wallets. The flag is intended for use in specialty protocols like LN and CoinSwap, and not for general-purpose user wallets. By default, the flag is not set and address reuse is still slightly safe for common usage. Even for LN/CoinSwap/etc., SIGHASH_NOINPUT will be used only in the exact specialty protocol, and not for general wallet usage. Luke Dashjr's wallet explicitly rejects address reuse. While address reuse is not perfectly safe, it can still be widely used in fact. The concern is that if a user imports their address (keys, seeds) to one of the SIGHASH_NOINPUT enabled Bitcoin/LN wallets and signs a transaction, it makes their donate address disabled immediately and may continue to lose coins in the future. Gregory Maxwell suggests that the name of the flag should be changed to "SIGHASH_REPLAY_VULNERABLE" or "SIGHASH_WEAK_REPLAYABLE" to reflect its potential insecurity for traditional applications where third party payments to an address can occur. However, Luke Dashjr argues that address reuse is undefined behavior and nobody should assume that it is safe or works.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:48:35.076581+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

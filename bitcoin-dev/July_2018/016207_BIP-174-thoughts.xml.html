@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> William Casarin 2018-07-05 19:20:32
+            <br><i>Published on: 2018-07-05T19:20:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016207.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The concern raised in this context is regarding the format of PSBT (partially signed Bitcoin transaction). The writer points out that the format is confusing and can only be parsed by deserializing the transaction. They explain that there is no "length" field for the key-value map arrays, which means that the number of kv maps to parse must be counted based on the number of transaction input/outputs. This process is brittle because if a Combiner writes the wrong number of key-value maps that do not align with the number of inputs and outputs in the transaction, then the PSBT will not be able to be deserialized properly, but it will still be a valid PSBT. The writer suggests making changes such as adding an array length prefix or making all (global/input/output) types share the same enum to address this issue. They also suggest making it explicit in the BIP that the number of key-value maps must match the number of inputs/outputs. There is no mention of whether this requirement is implied or not. Overall, the writer's concern revolves around the lack of clarity in the PSBT format, which could lead to errors during parsing and deserialization.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:20:49.364448+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

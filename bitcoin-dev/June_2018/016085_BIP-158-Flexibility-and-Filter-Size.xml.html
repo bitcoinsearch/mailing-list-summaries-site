@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 158 Flexibility and Filter Size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Riccardo Casatta 2018-06-06 15:14:17
+            <br><i>Published on: 2018-06-06T15:14:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-158-Flexibility-and-Filter-Size.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016085.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the multi-layer filtering that could potentially be used in BIP 157/158. The benefits of using a map instead of a filter for the upper layers of the filter are discussed. A simplistic example is provided to show the difference in size between a two-block blockchain with current filters and a two-layer solution. The ratio of coins spent in the same 144 block window is about 50%. If we don't want the full transaction history of our wallet but only the UTXO, the upper layer map could contain only the item which are not already spent in the considered window. The possibility of using ~20 bits anyway for the per-block filters is still open for consideration. Multi-block filters are also suggested as an idea to explore before finalizing the proposal to move forward. The process of removing items or filters that aren't absolutely necessary is ongoing. BIP 158 already defines custom filter types, and BIP 157 allows filters to be fetched in batch based on the block height and numerical range. The latter feature can later be modified to return a single composite filter rather than several individual filters.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:25:56.980823+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

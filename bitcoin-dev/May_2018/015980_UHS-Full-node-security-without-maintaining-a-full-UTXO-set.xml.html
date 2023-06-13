@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>UHS: Full-node security without maintaining a full UTXO set</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Cory Fields 2018-05-17 17:16:46
+            <br><i>Published on: 2018-05-17T17:16:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_UHS-Full-node-security-without-maintaining-a-full-UTXO-set.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015980.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in this context is about reducing the size of a pruned node by 40% and less than 1% reduction in an archive node by storing only hashes of unspent outputs instead of storing all unspent outputs. Gregory Maxwell initially had some doubts regarding the 5% ongoing bandwidth increase, which might not be a win to achieve the above-mentioned reduction. However, he thinks that the overhead is not really 5%, but it's 5% measured in the context of inefficient transaction mechanisms. He believes that it might result in more like a 25% increase if we consider the size of a txn vs size of tx+scriptpubkeys, amounts. Despite this, the implementation could be done without marrying the network to it forever, as it wouldn't change the blockchain data structure. Matt suggested comparing utxo size at each block and over-the-wire size for each block, while Greg pointed out that de-duping benefits are independent of the UHS use-case.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:19:51.186096+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

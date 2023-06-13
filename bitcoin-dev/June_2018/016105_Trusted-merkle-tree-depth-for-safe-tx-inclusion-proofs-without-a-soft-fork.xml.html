@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trusted merkle tree depth for safe tx inclusion proofs without a soft fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Sergio Demian Lerner 2018-06-09 12:51:55
+            <br><i>Published on: 2018-06-09T12:51:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_Trusted-merkle-tree-depth-for-safe-tx-inclusion-proofs-without-a-soft-fork.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016105.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>It has been reported that a SPV (Simplified Payment Verification) wallet can be fooled by an attack, which requires thousands of confirmations. The attack can be performed without a Sybil attack and can impact SPV wallets. The protections that a SPV node should have to prevent such an attack are different and must be considered separately. However, it has been noted that a SPV node can avoid accepting payments if any Merkle node is at the same time a valid transaction, which almost eliminates the problem. It should be mentioned that there is a low probability of SPV Wallet rejecting valid payments. Moreover, an attacker with only 1.3M USD that can brute-force 72 bits can perform the same attack. Hence, no person should accept more than 1M USD using an SPV wallet. However, it has been pointed out that against an SPV wallet, one doesn't need that attack; with that kind of budget, one can fool it by just creating a fake block at far less cost along with a sybil attack. Sybils aren't difficult to pull off when one has the budget to create fake blocks. Additionally, it has been noted that the attack can be repeated. Once the "extension point" block is created, one can attack more and more parties without any additional computation. However, txouts can only be spent once, so one will need to do 2^40 work each time they want to repeat the attack to grind the matching part of the prevout again.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:15:14.493455+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

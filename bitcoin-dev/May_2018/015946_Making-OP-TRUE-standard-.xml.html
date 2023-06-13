@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_TRUE standard?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-05-10 03:07:49
+            <br><i>Published on: 2018-05-10T03:07:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_Making-OP-TRUE-standard-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015946.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A low value OP_TRUE-only script was identified as an example of where the weight doesn't reflect the true cost, causing it to use a UTXO forever while only costing a weight of 4. Johnson's idea is to have a template, such as OP_2-only, that when combined with a 0-value is always valid only if spent in the same block. On the Lightning side, two commitment transaction options were proposed to address this issue. The first option involves using the minimum feerate but always having the above OP_TRUE output, which requires more blockchain space for unilateral closes. The second option stores two versions of a commitment transaction: one with a negotiated feerate without the OP_TRUE output and another with a slightly increased feerate and an OP_TRUE output. At unilateral close, the version with a negotiated feerate is used if possible, but if not, the other version is RBF'd with a higher feerate and CPFP'd on top. There are no legitimate reasons for having multiple dummy outputs.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:08:34.519993+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

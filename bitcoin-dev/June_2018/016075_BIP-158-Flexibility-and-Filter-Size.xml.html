@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 158 Flexibility and Filter Size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2018-06-05 17:22:04
+            <br><i>Published on: 2018-06-05T17:22:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-158-Flexibility-and-Filter-Size.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016075.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The comment is discussing bandwidth gains in Bitcoin filters and how they are not from address reuse, but rather from the observed property that false positives are independent between two filters. The proposal being discussed uses a different type of filter than current filters, which increases in size linearly with the number of elements for a fixed false positive rate. The proposal suggests using a one-layer digest covering 16 blocks to reduce the false positive rate on the digest filters and block filters to around 10 bits per element, potentially saving bandwidth. However, it is not clear whether there will be significant savings unless there is greater duplication of elements in the digest filters. The commenter suggests sticking with block filters for now and considering multi-layer digests later. Appendix A in the linked proposal shows how the false positive rate increases with the number of elements.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:30:31.713168+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

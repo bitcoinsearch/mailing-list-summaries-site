@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Disallow insecure use of SIGHASH_SINGLE</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2018-06-06 00:49:01
+            <br><i>Published on: 2018-06-06T00:49:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_Disallow-insecure-use-of-SIGHASH-SINGLE.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016080.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A developer has proposed a change in the Bitcoin core code that would disallow using SIGHASH_SINGLE without matched output, as it is an insecure signature form that commits to no output while users might think it commits to one. This makes it easier for UTXO of the same key to be stolen in non-segwit scripts. The developer suggests that this unintended consensus behavior should be disabled with a softfork since these signatures are inherently unsafe. However, another developer questions the need for a softfork on security grounds and proposes that it may be better to consider soft-forking the code out on the basis of code complexity instead. He also wonders if the non-standardness of the signature means it is secure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:12:23.453154+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
