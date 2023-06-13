@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP174 extension proposal (Global Type: PSBT_GLOBAL_XPUB_SIGNATURE)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dmitry Petukhov 2019-06-29 04:46:23
+            <br><i>Published on: 2019-06-29T04:46:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_BIP174-extension-proposal-Global-Type-PSBT-GLOBAL-XPUB-SIGNATURE-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017066.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jonathan Underwood raised a question regarding the use of the 'unused' value of 1 for 'm' in the scheme and suggested requiring m=1 for single-sig case. He proposed using 0 as an indicator when there is a serial number following it. However, the response to this suggestion was that 0x00 is single sig or OP_CHECKSIG, while 0x01 is multisig or 1-of-3, 1-of-2 OP_CHECKMULTISIG. The information about whether a redeem/witness script is multisig or single-sig is available in per-output redeem/witness script. Signers can differentiate between multisig/single-sig by looking at the script. They only need to know the total number of keys involved in signing and ensure that this number matches the specifics of the redeem/witness script.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:36:21.574797+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

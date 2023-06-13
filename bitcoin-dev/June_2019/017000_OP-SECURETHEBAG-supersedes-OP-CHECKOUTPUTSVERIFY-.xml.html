@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2019-06-02 14:32:33
+            <br><i>Published on: 2019-06-02T14:32:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017000.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jeremy Rubin has announced the retraction of OP_CHECKOUTPUTSHASHVERIFY in favor of OP_SECURETHEBAG. The new method does more or less the same thing but fixes malleability issues and lifts the single output restriction to a known number of inputs restriction. According to Rubin, OP_CHECKOUTPUTSVERIFY had some issues with malleability of version and locktime, whereas OP_SECURETHEBAG commits to both of these values. It also lifts the restriction that OP_CHECKOUTPUTSVERIFY had to be spent as only a single input, instead committing to the number of inputs which allows for more flexibility while keeping it easy to get the same single output restriction. A BIP is available at <a href="https://github.com/JeremyRubin/bips/blob/op-secure-the-bag/bip-secure-the-bag.mediawiki">https://github.com/JeremyRubin/bips/blob/op-secure-the-bag/bip-secure-the-bag.mediawiki</a> and the implementation can be found at <a href="https://github.com/JeremyRubin/bitcoin/tree/secure_the_bag">https://github.com/JeremyRubin/bitcoin/tree/secure_the_bag</a>. Rubin also asked for discussion on how best to eliminate the PUSHDATA and treat OP_SECURETHEBAG like a pushdata directly.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:14:01.299747+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

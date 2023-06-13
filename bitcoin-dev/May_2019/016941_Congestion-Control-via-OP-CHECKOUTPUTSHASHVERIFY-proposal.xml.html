@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Congestion Control via OP_CHECKOUTPUTSHASHVERIFY proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-05-22 06:04:27
+            <br><i>Published on: 2019-05-22T06:04:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Congestion-Control-via-OP-CHECKOUTPUTSHASHVERIFY-proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016941.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj, a Bitcoin developer, has expressed their opinion on the usage of CoinJoin with a new opcode. They argue that this opcode does not improve CoinJoin significantly because users would only sign off if one of the transaction outputs belonged to them, which is not enhanced by the new opcode. Additionally, using this for congestion control may increase blockchain usage and add unnecessary intermediate transaction outputs during times of congestion. ZmnSCPxj also cannot find a way to implement an offchain update mechanism on top of this opcode, leading them to believe that SIGHASH_NOINPUT should not be replaced. Channel factories created with this opcode do not support updates to the channel structure, and more complex factories cannot be done without a multiparty offchain update mechanism. Lastly, ZmnSCPxj argues that recipients can always destroy their private key after providing a signature and insist on not cooperating to sign using the taproot branch, thus forcing spending via OP_CHECKOUTPUTSHASHVERIFY.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:55:18.766616+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

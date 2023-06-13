@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2019-06-24 22:47:44
+            <br><i>Published on: 2019-06-24T22:47:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017044.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the context disagrees that OP_IF provides composability semantics and suggests that it may be feasible to get rid of it for tapscripts. P2SH and segwit are also noted as breaking this due to the concatenation of two scripts not being the same as them separately. The author believes that OP_SECURETHEBAG's use of pushdata is a backwards compatible hack that can be redefined later on. They suggest two approaches for upgrading the script parser, with the second approach being better in their opinion. This involves creating a new interpreter for Tapscript and cleaning up various semantics such as multibyte opcodes, templated scripts, Huffman encoding opcodes, and OP_IF handling. The author suggests that the architecture of script parser versioning can be non-controversial using tapleaf versions and proposes a proof of concept fork that uses two identical script parsers. Overall, the author's plan involves modifying one of the script versions substantially and making it clear that future script versions can be added easily.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:12:13.689825+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

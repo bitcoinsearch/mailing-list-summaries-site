@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-06-23 13:11:03
+            <br><i>Published on: 2019-06-23T13:11:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017039.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj, in an email to Jeremy Rubin, explained that the commitment of script itself isn't part of OP_SECURETHEBAG and thus cannot create covenants even if it were to pull data from the stack unless some OP_TWEEKPUBKEY operation is added to Script. He suggested that with quining, `OP_TWEAKPUBKEY`, and a `OP_SECURETHEBAG` that gets its argument from the stack, it will be possible to make Turing-complete Bitcoin SCRIPT. The ability to verify the output script being spent creates a contract that ensures that it is paid again (covenants), which in combination with a little more introspection of TX data, allows us to verify the execution of steps of a Turing-complete program. ZmnSCPxj mildly suggested creating a well-designed way of injecting Turing-completeness into Bitcoin SCRIPT behind a Taproot, so that bugs in Turing-complete code at least have a chance to be bugfixed by agreement of the Taproot signing set since it is surprisingly easy to make a language inadvertently Turing-complete. With quining, `OP_TWEAKPUBKEY`, and a `OP_SECURETHEBAG` that gets its argument from the stack, it will be possible to make Turing-complete Bitcoin SCRIPT.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:11:36.684200+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

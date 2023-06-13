@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>IsStandard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aymeric Vitte 2019-05-03 09:51:25
+            <br><i>Published on: 2019-05-03T09:51:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_IsStandard.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016912.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent bitcoin-dev discussion, Aymeric Vitte sought to clarify the standardness of bitcoin scripting. Specifically, he was unsure if nodes would relay non-usual transactions and how to determine what they will accept. The consensus among contributors is that any custom script can be wrapped in P2SH and P2WSH and it will be propagated. P2PKH and P2WPKH cannot have custom scripts. However, once a claim on a modified x-of-3 is propagated, the redeemScript is known and someone can attempt to RBF with a modified witness stack or scriptSig to claim the UTXO. As for BCH, its standardness is unclear since it is based on bitcoin code unless they changed the policy. Contributors were unsure whether the story that nodes would not propagate the fix or that people did not want to take the risk to propagate it was true. Also discussed were SHA bounties which were propagated before `isStandard`, and can still be propagated today if they are wrapped in a P2SH or P2WSH, but the `redeemScript` must be published by some other method or bribed by a miner if it's not time-sensitive. In response to Aymeric’s query, James Prestwich shared a reference for default TX_NONSTANDARD policies in v0.18. He adds that documenting standardness is sisyphean as it varies from version to version. His reference applies only to v0.18 and may already be outdated.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:29:40.353754+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Two questions about segwit implementation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aymeric Vitte 2019-05-26 21:17:30
+            <br><i>Published on: 2019-05-26T21:17:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Two-questions-about-segwit-implementation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016992.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the Bitcoin development mailing list has turned to the topic of an empty scriptPubKey or OP_1 being a use case. Johnson Lau clarifies that an empty scriptSig does not imply segwit input and can still be spent with an empty scriptSig if the previous scriptPubKey is OP_1, which does not allow witness. Similarly, Aymeric Vitte questions the need for "00" in non-segwit inputs as the transaction creator can parse the transaction and associate the correct input to the correct witness data without it. However, Johnson Lau explains that validators have no way of knowing which inputs are segwit-enabled until they look up the UTXO set, so there needs to be a way to tell the validator that "the witness for this input is empty", and it is the "00". The lack of clear documentation on this topic is noted as a concern.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:09:46.765995+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

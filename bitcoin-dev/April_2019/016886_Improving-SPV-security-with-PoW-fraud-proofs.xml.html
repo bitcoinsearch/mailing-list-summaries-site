@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving SPV security with PoW fraud proofs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-04-20 04:45:19
+            <br><i>Published on: 2019-04-20T04:45:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_Improving-SPV-security-with-PoW-fraud-proofs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016886.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion between Ruben and ZmnSCPxj revolves around the validity of UTXO sets and fraud proofs in blockchain technology. While BIP157 manages to function without a commitment, UTXO sets can only be validated by running the entire blockchain as they summarize data in the entire chain. Validation via BIP157 is possible by downloading the block in question, but validation with UTXO sets requires downloading the entire blockchain. Although trusting every peer you have is not omitting the proof is acceptable because it requires one honest peer, peers can be set up to allow hearing of all chains while denying proof of invalidity of some UTXO. This is precisely the "data unavailability claim" that shot down the previous fraud proofs. In combination with BIP157/158, it may be possible to validate UTXO sets if filters contain UTXO spends and a BIP158 filter was committed. However, if new information is added to be committed, it may increase the resource usage of fullnodes. Therefore, it is important to store those commitments in fullnodes to acquire the data being committed to after-the-fact.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:20:05.022068+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

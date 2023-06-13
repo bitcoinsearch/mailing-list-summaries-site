@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pre BIP: Solving for spam and other abuse with an HTLB</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-12 04:14:54
+            <br><i>Published on: 2019-03-12T04:14:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_Pre-BIP-Solving-for-spam-and-other-abuse-with-an-HTLB.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016753.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The HTLB script can be fully written in an HTLC script, but there are additional reasons to consider HTLB for a separate BIP. One such reason is that HTLB over HTLC would improve the anonymity set, making it indistinguishable onchain from other uses of HTLC. However, using a standardized HTLB would reveal the use of HTLB over HTLC instead of hiding it among other HTLC UTXOs. To further improve privacy, the Funding Transaction Pattern can be applied. In this case, Alice would prepare two transactions - one that pays to a 2-of-2 and another that spends that 2-of-2 and pays to an HTLB over HTLC. Alice would provide the second transaction to Bob, who must return a valid signature for that transaction, then place the first transaction onchain. The protocol resumes as normal if both parties agree that the bond can be returned to Alice. They can recreate the second transaction as a normal spend from 2-of-2 to a flat P2PKH of Alice, obscuring that HTLB was used at all.The Funding Transaction Pattern is applicable to all constructions that have a fixed participant set and is effectively "for free" with Taproot. The requirement is the "Taproot assumption," but it is available now even without Taproot.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:39:06.826877+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

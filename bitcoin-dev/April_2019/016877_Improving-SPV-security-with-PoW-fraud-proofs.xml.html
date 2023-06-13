@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving SPV security with PoW fraud proofs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ethan Heilman 2019-04-19 01:13:07
+            <br><i>Published on: 2019-04-19T01:13:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_Improving-SPV-security-with-PoW-fraud-proofs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016877.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, Ethan Heilman proposes a rule for SPV clients to download and validate the "longest chain" up to more than one block greater than the height of the losing chain. This is an improvement over the current SPV security assumption that the chain with the most Proof-of-Work (PoW) is valid. However, ZmnSCPxj points out that every rule can be potentially a loophole by which new attacks are possible. ZmnSCPxj then presents a scenario in which a supermajority of miners control 90% of the mining power and decide to increase inflation of the currency by creating a hardfork. The malicious miners can spend +11% of their mining power ensuring that the honest chain never reaches consensus by continuously forking it and then extend their favored chain using the other 79% of the mining power. This produces a scenario in which users are forced to choose between a stable chain that violates a consensus rule and an unstable honest chain that is completely unusable and which never pays out mining rewards. Furthermore, at around height S+9, the minority miners generate an alternate block at height S+1, causing SPV nodes to download blocks S+9 and S+8 on the longer chain, and see nothing wrong with those blocks. This process can go on for a good amount of time, with rare enough inflation events allowing miners to economically lock in the post-hardfork inflation by spending some coinbases on SPV nodes. This highlights the need for fraud proofs and better SPV security measures.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:16:38.060122+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

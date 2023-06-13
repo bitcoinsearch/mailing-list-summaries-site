@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP174 extension proposal (Global Type: PSBT_GLOBAL_XPUB_SIGNATURE)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonathan Underwood 2019-06-27 09:32:46
+            <br><i>Published on: 2019-06-27T09:32:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_BIP174-extension-proposal-Global-Type-PSBT-GLOBAL-XPUB-SIGNATURE-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017051.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal to implement multisig wallet security with PSBT involves signing all xpubs for a multisig wallet and including them in each transaction. This ensures that all signers are aware of every key involved in the transaction, increasing security for HD wallets. However, the issue of "partial compromise" is also discussed, where one of the keys is stolen, raising questions about how to expire or revoke the key and ensure that signed packages cannot be used by attackers.Jonathan Underwood, Chief Bitcoin Officer at Bitbank, proposed an idea to extend partially signed bitcoin transactions (PSBT) to include metainformation for verifying the authenticity of a particular xpub package. The proposal aims to solve the problem of verifying that an address is not a hacker's address that was swapped in between unsigned transaction creation and first signature. While the BIP32_DERIVATION standard allows verification that an address is from a certain xpub, it cannot verify the signature of the xpub. To solve this issue, Underwood proposes using an auxiliary message that would be signed along with the xpub package and would include specific epoch words that hardware wallets can show prominently before signing. To accommodate such schemes, Underwood suggests extending PSBT as metainformation or using some form of vendor-specific or metainformation-specific PSBT field. This way, each use case can be independently described in its own documentation. Additionally, there is some discussion about the need to include all xpubs to construct P2SH or P2WSH addresses and differentiate between different multisig schemes. Overall, the proposal aims to increase security for HD wallets, but there are still potential issues to consider, such as the possibility of partial compromise and the need for proper key revocation mechanisms.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:33:52.655031+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

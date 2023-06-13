@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PubRef - Script OP Code For Public Data References</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Brooks 2019-07-29 03:07:01
+            <br><i>Published on: 2019-07-29T03:07:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2019/combined_PubRef-Script-OP-Code-For-Public-Data-References.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017184.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, ZmnSCPxj and Mike discussed the potential implications of using the OP_PUBREF4 operation in the blockchain. As it turns out, the short channel ID used by Lightning to refer to channels is similar to the PUBREF proposal, as both use an index of block number, index of transaction, and index of output. While pruning may be necessary for scalability, it can also create a problem if the data in a pruned transaction is needed for a future OP_PUBREF. ZmnSCPxj believes that current applications using txids to refer to previous transactions would not be affected by short-ranged history rewrites. However, since OP_PUBREF would be a consensus rule, a "deeply-confirmed" point that is deep enough for all cases needs to be selected. ZmnSCPxj suggests using 100 blocks, which is considered "deep enough" to risk allowing miners to sell their coins. There is a potential for a targeted attack where a large payout going to a scriptPubKey that uses OP_PUBREF on a recently-confirmed transaction is replaced with one that pays to a different public key via a history-rewrite attack. Such an attack is doable by miners, and if 100 blocks is considered "acceptably low risk" against miner shenanigans, then it might be acceptable for this as well. Although dealing with larger data sets may be challenging, there are other open source projects that have accounted for the real-world limits on computability, such as Apache HTTPD's Bucket-Brigade and leveldb. Pruning can be a real asset for PubRef, but the problem with transaction being pruned is that the data in them might now be used in a future OP_PUBREF.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T20:09:32.409398+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

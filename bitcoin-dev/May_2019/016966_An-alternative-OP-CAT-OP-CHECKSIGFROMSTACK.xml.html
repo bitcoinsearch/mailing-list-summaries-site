@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An alternative: OP_CAT &amp; OP_CHECKSIGFROMSTACK</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-05-24 03:51:13
+            <br><i>Published on: 2019-05-24T03:51:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_An-alternative-OP-CAT-OP-CHECKSIGFROMSTACK.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016966.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Russell O'Connor, a Bitcoin developer, has proposed that Bitcoin Script and language features should be designed to provide general purpose tools rather than specific features. He suggests implementing OP_CAT and OP_CHECKSIGFROMSTACKVERIFY instead of the recently proposed SIGHASH_ANYPREVOUT and OP_CHECKOUTPUTHASHVERIFY, which he believes have limited use cases and complicate the interpretation of Bitcoin operations. OP_CAT concatenates two byte arrays off the stack, while OP_CHECKSIGFROMSTACKVERIFY verifies a bip-schnorr signature on the SHA256 hash of a message popped off the stack along with a pubkey and signature. These two operations enable various applications, including oracle signature verification, amortized secure multiparty computations, and transaction introspection. To use these two operations for transaction introspection, the transaction must be split into three parts, with those parts provided in the witness stack: "data before the field", then "the field", then "data after the field". In addition, a signature for the transaction is required, along with normal `OP_CHECKSIGVERIFY` to ensure that the signature signs the actual transaction. The message to be signed is equivalent to the sighash digest using `SIGHASH_ALL`, allowing SCRIPT to introspect any field of the transactions. By adding these operations, Russell believes that more specialized opcodes can be added in the future as optimizations for popular constructions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:58:17.946783+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

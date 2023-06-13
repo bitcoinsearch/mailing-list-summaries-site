@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PROPOSAL] Emergency RBF (BIP 125)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> rhavar at protonmail.com 2019-06-03 01:49:15
+            <br><i>Published on: 2019-06-03T01:49:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_-PROPOSAL-Emergency-RBF-BIP-125-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017004.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal to modify rules 3, 4 and 5 of BIP 125 has been made by Rusty Russell in the bitcoin-dev mailing list. The new rule proposed is the "emergency RBF" rule which states that if the original transaction was not in the first 4,000,000 weight units of the fee-ordered mempool and the replacement transaction is, rules 3, 4 and 5 do not apply. This modification will make RBF miner-incentive compatible and can be used in adversarial conditions like lightning unilateral closes or without knowing about miner's mempools.However, one common problem with RBF is that low balling fees might lead to stuck transactions when fees suddenly spike. Therefore, it is suggested that even in non-emergency cases, the requirement to increase the absolute fee should be removed as long as the fee rate is increased. This will also make it incentive compatible assuming a reasonable fee-market. Although this may open potential DoS vectors, they are reasonably small.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:23:27.991260+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

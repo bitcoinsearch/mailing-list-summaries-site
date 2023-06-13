@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2019-06-24 18:07:20
+            <br><i>Published on: 2019-06-24T18:07:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017042.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There is a proposal to enable recursive covenants by enabling script E and OP_SECURETHEBAG. However, there is no set of pure extensions to script E that would enable this without introducing more behavior than intended with a new opcode. It is highly improbable or impossible to accidentally introduce more behavior than intended with this design. It is recommended to avoid implementing this unless strongly motivated to permit more flexibility for which opcodes can be added in the future without introducing recursion unless explicitly intended. OP_SECURETHEBAG does not include the script being executed in its hash like ordinary signatures do. The ScriptPubKey is indirectly committed to through the input's prevoutpoint, but Script isn't able to reconstruct this script being executed from the prevoutpoint in tapscript without an implementation of public key tweeking in Bitcoin Script. While OP_CHECKTXDIGESTVERIFY would enable this style of covenants if it pulled data from the stack, the OP_SECURETHEBAG probably cannot create covenants even if it were to pull the data from the stack unless some OP_TWEEKPUBKEY operation is added to Script because the "commitment of the script itself" isn't part of the OP_SECURETHEBAG.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:11:50.113460+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

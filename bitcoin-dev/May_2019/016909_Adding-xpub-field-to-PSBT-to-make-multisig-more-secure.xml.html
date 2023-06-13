@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Adding xpub field to PSBT to make multisig more secure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter D. Gray 2019-05-03 13:29:45
+            <br><i>Published on: 2019-05-03T13:29:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Adding-xpub-field-to-PSBT-to-make-multisig-more-secure.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016909.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Stepan Snigirev has suggested adding xpub field to inputs and outputs metadata in PSBT specs to prevent theft of user funds in multisignature setup. He explained that currently in PSBT there is no way to verify output as a change output in multisig setup, leaving half of the keys in the change address vulnerable to theft by an attacker who can replace them with his own keys and still get the transaction signed. The xpubs can be used to verify that the same xpubs are used for public keys in inputs and outputs. He suggested adding the following key-value pairs to PSBT: Type: BIP 32 public key `PSBT_IN_BIP32_XPUB = 0x10` and Type: BIP 32 public key `PSBT_OUT_BIP32_XPUB = 0x03`. The xpubs in the PSBT would also allow a "trust on first use" which he thinks can be a good feature. Peter D. Gray, the founder of Coinkite, also added to this discussion, suggesting that the xpubs of co-signers must be stored in PSBT-signing devices to safely show an incoming address to the user without a full understanding of the other keys in a "multisig wallet".</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:25:04.733330+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

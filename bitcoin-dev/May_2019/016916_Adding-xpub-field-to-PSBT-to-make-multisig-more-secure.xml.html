@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Adding xpub field to PSBT to make multisig more secure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Stepan Snigirev 2019-05-07 09:23:44
+            <br><i>Published on: 2019-05-07T09:23:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Adding-xpub-field-to-PSBT-to-make-multisig-more-secure.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016916.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests sharing xpubs in the global section of the file, with a restriction that they must only include the hardened prefix of the path. The existing bip32 derivation path included in individual inputs and outputs should be merged in as needed. However, it is not necessary to restrict xpubs to have only hardened derivation. People may want to share non-hardened xpubs with co-signers and keep parent xpub on their watch-only wallet. PSBT-signing devices still need to store the xpubs of their co-signers for safe verification of incoming addresses. The proposal suggests keeping hardware wallets stateless and verifying that xpubs in the inputs and in the change output are the same. As PSBT is a binary format, using the extension serialization format without any encodings makes sense. Keeping the prefix that defines if the key is used for testnet or mainnet may also be useful.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:25:15.895995+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-20 07:38:22
+            <br><i>Published on: 2019-03-20T07:38:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016791.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a post to the Lightning-dev mailing list, ZmnSCPxj proposed that the "must have a non-SIGHASH_NOINPUT" rule would address the first reuse scenario (as well as the second) with eltoo watchtowers. However, this raises questions about how the watchtower can create such a non-`SIGHASH_NOINPUT` signature. Rusty Russell responded that future segwit versions may choose to relax the rule but questioned the necessity of safety measures which don't actually help in practical failure scenarios. In addition, Anthony Towns raised concerns about two fundamental ways NOINPUT could cause problems. The first is that the signature gets applied to an unexpectedly different script, and the second is that naive users do silly things with NOINPUT signatures and end up losing funds due to replays. Rusty Russell expressed his inclination to err on the side of putting more safety measures in for NOINPUT, rather than fewer, but also suggested that the "must have a sig that commits to the input tx" rule could be a standardness rule rather than consensus.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:41:22.339115+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

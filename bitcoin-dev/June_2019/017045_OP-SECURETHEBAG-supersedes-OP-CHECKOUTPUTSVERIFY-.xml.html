@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2019-06-25 17:05:39
+            <br><i>Published on: 2019-06-25T17:05:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017045.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion centers on proposed changes to Bitcoin Core's tapscript implementation. The first suggested change involves updating the tapscript implementation to prepare it for new uses of OP_SUCCESSx and parsing should halt when an OP_SUCCESSx is encountered. This requires GetScriptOp to know what version of script it is expected to be parsing, which could be done by sending down some versioning flags or adding a versioning field to CScript. These changes around OP_SUCCESS should be implemented regardless of whether the proposed change involving OP_SECURETHEBAG is implemented or not.The second proposed change involves patching the parser to handle multi-byte opcodes. Two approaches were considered: adding flags to GetOp or adding a completely new interpreter for Tapscript. The latter approach is likely better as it can clean up various semantics, separate parsing the script from executing it, improve versioning techniques, and be more compatible with templated script. However, it would also increase the amount of code substantially.To implement the second proposal, the plan would involve two components: the architecture of script parser versioning and the actual new script version. The architecture question is more around code structure while the second component would involve modifying one of the versions substantially. Suggestions for cleanups include multibyte opcodes, templated scripts, Huffman encoding opcodes, and OP_IF handling. It is important to note that because future script versions can be added fairly easily, the proposed changes are sufficient.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:12:29.914461+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
