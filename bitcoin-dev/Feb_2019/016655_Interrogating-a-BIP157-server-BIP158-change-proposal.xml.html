@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Interrogating a BIP157 server, BIP158 change proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tamas Blummer 2019-02-05 20:10:09
+            <br><i>Published on: 2019-02-05T20:10:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2019/combined_Interrogating-a-BIP157-server-BIP158-change-proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016655.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Tamas Blummer and Laolu Osuntokun, Tamas argued that the current design choice of filters limits light clients from proving filter correctness. He suggested a change to BIP158 to use spent outpoints and output scripts instead of input and output scripts, which would allow for filter correctness to be proven by downloading only the block in question. The advantages of this approach include a simpler interrogation process for filter servers and the ability for clients to decide on the availability of spent coins without maintaining the UTXO set. Jim Posen suggested three possibilities to address this issue, including introducing a new P2P message to retrieve all prev-outputs for a given block, tracking multiple possible filter header chains, or committing filters into the chain via witness reserved value or coinbase OP_RETURN. However, option 2 was favored as it requires the smallest number of changes and is supported by the BIP 157 P2P protocol as currently written.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T16:57:38.015607+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

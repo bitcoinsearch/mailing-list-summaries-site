@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal - Signatures of Messages using Bitcoin Private Keys</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christopher Gilliard 2019-02-18 23:24:27
+            <br><i>Published on: 2019-02-18T23:24:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2019/combined_BIP-proposal-Signatures-of-Messages-using-Bitcoin-Private-Keys.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016690.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposed Bitcoin Improvement Proposal (BIP) has been written up by Christopher Gilliard regarding signature formats when using Bitcoin private keys. The proposal includes actual code that does verification, but lacks code for signing. ECDSA keys are used to do the signatures, so it is hard to not include anything about keys even though that's not the main topic. The "Background on ECDSA keys" section was mainly meant to give background about what kind of keys Bitcoin uses, for people who already know, they can easily skip this section. The reason for including this data in the header is the same that compressed/uncompressed is included in the header so that you know which type of key the signature is from and you don't have to try all options to see if any matches. This is why Trezor did that way and why it was documented. The proposal was written as suggested in a GitHub issue and is inline with the implementation that Trezor implemented in the above issue. Any feedback would be appreciated. The steps for getting a BIP number assigned or any other process steps required is yet to be determined. Aymeric Vitte asked for a more precise description of the signing/verification process since it is documented nowhere. The use of the speech regarding keys should focus on signatures which are summarized in a vague sentence inspired by the reference [2] with a not very logical link to the next paragraph. The header seems completely of no use especially when you extend to segwit/bech32 since you just have to check that related compressed key matches. Gilliard did not invent any of this, he is just documenting what people actually seem to do because he had to verify signatures as part of a project he's working on. He would have liked to have had this document when he started the project so he thought it might be useful to others since as far as he can tell this was not specified anywhere.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:06:29.467823+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

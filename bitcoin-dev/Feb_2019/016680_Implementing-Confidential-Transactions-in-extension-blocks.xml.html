@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Implementing Confidential Transactions in extension blocks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kenshiro [] 2019-02-14 21:14:03
+            <br><i>Published on: 2019-02-14T21:14:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2019/combined_Implementing-Confidential-Transactions-in-extension-blocks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016680.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Extension blocks can be optional and can offer a variety of functionalities such as Confidential Transactions or smart contracts. Interested nodes would enable these extension blocks while the rest would see only the classic blockchain without extension blocks. The protocol of all existing extension blocks must be understood by miners to verify the legality of transactions from "anyone-can-spend" to a "classic" address.Nodes with all extension blocks disabled would see classic address to classic address transactions as always, classic address to extension block address transactions as "anyone-can-spend," extension block address to classic address transactions as from "anyone-can-spend," and extension block address to extension block address transactions as non-existent since they do not download extension blocks, only main blocks. All coins that are in extension blocks are also in the "anyone-can-spend" address of the main blocks, so basic nodes are aware of the total number of coins and it is safe. For Confidential Transactions specifically, the transaction details would be in the extension block which could have the same size as the main block, making the total size of the blockchain double.This method allows bitcoin to add new features without losing the "store of value" property as the base protocol remains unchanged. It's important to note that there may be technical details that still need to be considered.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:02:07.191510+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

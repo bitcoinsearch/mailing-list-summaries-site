@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removal of reject network messages from Bitcoin Core (BIP61)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aymeric Vitte 2019-03-14 09:46:28
+            <br><i>Published on: 2019-03-14T09:46:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_Removal-of-reject-network-messages-from-Bitcoin-Core-BIP61-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016779.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of a post on the bitcoin-dev mailing list shared their experience of not receiving reject messages for wrong transactions. The author also noted that even valid transactions could receive reject messages, which could be unclear and misleading. They found the feature useful only for debugging purposes. Another user, Dustin Dettmer, suggested a solution to this problem, which involved waiting 16 seconds after the first error message was received before processing errors. This approach works well in testing as newer transaction types generate reject codes 100% of the time. Furthermore, RBF attempts with too small a fee and accidental double spends both generate the same reject code: not enough fee. Dettmer suggested that a new reject code for RBF based on too small a fee would make for a better user experience. Removing reject codes altogether would lead to a worse user experience as users would receive no explanation for why their transaction failed. The author also shared several links related to Bitcoin transactions and wallets.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:15:09.643807+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
