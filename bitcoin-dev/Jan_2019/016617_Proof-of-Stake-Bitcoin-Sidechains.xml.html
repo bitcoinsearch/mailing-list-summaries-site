@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proof-of-Stake Bitcoin Sidechains</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Satoshin 2019-01-22 14:58:25
+            <br><i>Published on: 2019-01-22T14:58:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016617.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent thread on the bitcoin-dev mailing list, ZmnSCPxj proposed using fixed R values to prevent multiple signatures. In response to this, Matt asked how these R values could be derived in a way that is unique for each blockheight but still usable for creating signatures or verifying them. ZmnSCPxj suggested using standard hierarchical derivation and requiring the staking pubkey to be revealed as `staking_pubkey = P + hash(P || parent_R) * G`. To sign for a specific blockheight, one would need to use their public key `P` and the specific `R` value obtained from hierarchical derivation using `parent_R` and the blockheight as an index. The potential downside of this approach is unknown and it is unclear if it adds anything to the blockweight.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T16:40:08.085703+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

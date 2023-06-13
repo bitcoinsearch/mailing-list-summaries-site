@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP for segwit compatibility URIs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Clark Moody 2018-10-18 14:20:45
+            <br><i>Published on: 2018-10-18T14:20:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2018/combined_BIP-for-segwit-compatibility-URIs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016452.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The purpose of this BIP is to enable all users to easily make payments from any wallet, without allowing backward compatibility to be a barrier to segwit adoption. The proposed URI scheme allows for backward compatibility with native segwit (bech32) wallets and legacy wallets (base58). This BIP allows a merchant to preferentially receive payments to a bech32 address, while gracefully allowing older clients to make base58 encoded payments. To future-proof the address changes, a list of addresses can be passed to `addr`. The syntax is bitcoin:[?addr=[,[,]]]. The addresses passed as a comma-separated list to the `addr` parameter are in descending order of preference, with highest first. A consumer of this URI should attempt to understand each address in the list before falling back to the next address and finally to the base address after `bitcoin:`. An example of the syntax would be bitcoin:3xBase58compatibleAddress?addr=fancyFutureEncoding0x01,bech32address1qx01. In this case, the spending wallet would attempt to spend to "fancyFutureEncoding0x01" then to "bech32address1qx01" and finally to "3xBase58compatibleAddress". There are no reference implementations of this BIP yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:05:06.485022+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

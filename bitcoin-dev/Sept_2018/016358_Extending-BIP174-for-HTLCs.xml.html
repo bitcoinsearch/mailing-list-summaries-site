@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Extending BIP174 for HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Bosworth 2018-09-04 03:24:01
+            <br><i>Published on: 2018-09-04T03:24:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2018/combined_Extending-BIP174-for-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016358.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author has been working on HTLC scripts and experimenting with a format tag for BIP 174 to support them. The proposed format involves adding a new input type that defines elements to be inserted in the final p2sh/p2wsh stack such as preimage or refund path flags. The process starts with creating a blank PSBT, updating it with redeem/witness scripts, sighashes, and partial signatures. Additional stack elements are then attached for non-signature elements, followed by finalization to create the final scriptSig and/or witness. Finally, the signed transaction is extracted for broadcast. The author acknowledges that this approach may be overly generic and asks if anyone else has considered using PSBTs in an HTLC context.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T14:47:42.378318+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

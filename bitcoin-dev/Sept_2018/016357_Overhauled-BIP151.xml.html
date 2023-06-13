@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Overhauled BIP151</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2018-09-04 01:37:30
+            <br><i>Published on: 2018-09-04T01:37:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2018/combined_Overhauled-BIP151.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016357.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jonas Schnelli has proposed an overhaul of the BIP151 specification for Bitcoin, which he believes could be further optimized. A new proposal draft is available on GitHub and includes several changes, such as a pure 32-byte-per-side "pseudorandom" key exchange that happens before anything else, the removal of the multi-message envelope, and the introduction of a NODE_ENCRYPTED service bit. The length of a packet now uses a 3-byte integer with 23 available bits, and there is an introduction of short-command-ID, which results in some v2 messages requiring less bandwidth than v1. Schnelli has also suggested the addition of a hybrid NewHope key exchange to make the encryption PQ safe, using TOR's approach and a straight forward implementation from the NewHope team that has been submitted to NIST PQC project. Furthermore, he proposes optimizing the ChaCha20Poly1305 at openssh AEAD, which uses at least three rounds of ChaCha20, by reducing it to two. The proposal resolves bip151's previously-discussed lack of backward compatibility. The only BIP151 implementation Schnelli is aware of is the one from Armory, but bCoin's implementation has been removed. Schnelli hopes to limit discussion on this thread to further ideas for optimization as well as technical details of the published proposal or its implementation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T14:45:20.402691+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

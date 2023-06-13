@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2019-10-28 17:14:38
+            <br><i>Published on: 2019-10-28T17:14:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017439.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about relay cost, Johan Torås Halseth notes that removing all limits would lead to an increase in the amount of data being relayed. Relaxing the rules by allowing a child to be added to each output as long as it has a single unconfirmed parent would only allow for free relay of extra data of the size of the parent. However, if children were limited to 10,000 vbytes each, then almost 400 MB data size could be relayed, which is larger than the default maximum mempool size in Bitcoin Core. It is possible to increase second-child carve-out to nth-child carve-out but care must be taken to choose an appropriately low value for n. For example, BOLT2 places a limit on the number of HTLCs to 483 on each side of the channel (so a total of 966 + 2 outputs) and the worst case free relay to support the current LN protocol would be around 39 MB. Even if the mempool was empty, it would only cost an attacker about 1.5 BTC to fill it at the default minimum relay feerate, allowing them to execute an attack at minimal cost per iteration of paying for a few hundred or a few thousand vbytes at slightly higher than the current mempool minimum fee.However, with the existing rules, they would have to iterate 100 times more often to achieve an equivalent waste of bandwidth, costing them proportionally more in fees. As a result, raising the limits too high could make it significantly more bandwidth expensive for people to run relaying full nodes, thus there is a need to be careful not to raise them so far that attackers can take advantage of the system. Several developers are working on lowering the default minimum in Bitcoin Core, which would make this attack proportionally cheaper.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:50:45.309338+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

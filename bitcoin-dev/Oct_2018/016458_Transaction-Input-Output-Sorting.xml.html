@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction Input/Output Sorting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pavol Rusnak 2018-10-21 21:54:26
+            <br><i>Published on: 2018-10-21T21:54:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2018/combined_Transaction-Input-Output-Sorting.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016458.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email sent to the bitcoin-dev mailing list, Ryan Havar expressed concern over how easy it is to spot the boundaries between different wallets. He cited the way wallets sort transaction inputs and outputs as a major contributor to this problem, with some wallets having a strong preference for deterministic sorting while others object to it due to privacy loss during the transition period and concerns that transactions not compatible with bip69 will stick out heavily in the future. Havar suggests a potential solution of deterministic sorting based on a semi-secret, where wallets would use a standardized sort order based on the semi-secret `sortingSecret = hmac(walletSeed, "sortingSecret")`. The advantages of this approach, according to Havar, include the ability to verify correct sorting externally while appearing totally randomized.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:08:15.190731+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

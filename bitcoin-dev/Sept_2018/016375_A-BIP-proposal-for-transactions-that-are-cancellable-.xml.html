@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A BIP proposal for transactions that are &#39;cancellable&#39;</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alejandro Ranchal Pedrosa 2018-09-07 07:07:25
+            <br><i>Published on: 2018-09-07T07:07:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2018/combined_A-BIP-proposal-for-transactions-that-are-cancellable-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016375.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about a proposal for a new BIP to extend OP_CSV and/or OP_CLTV in order for these to allow and interpret negative values. This way, the ownership of coins can be shared between two parties for a certain period of time after which only one party owns them. The proposed approach avoids introducing reorg-induced invalidity. However, a concern was raised regarding the ability to enforce that the transaction is not used by Alice after the 24-hour timelock, as it requires Bob to check the Blockchain in case he needs to publish a proof-of-fraud and add extra funds to the transaction to account for penalization. An alternative approach suggested by Matt Corallo involves multisig option with a locktime pre-signed transaction which is broadcastable at the 24h mark and has different spendability. The proposal is still under discussion and a BIP is being prepared. A paper discussing the proposal can be found here: <a href="https://hal-cea.archives-ouvertes.fr/cea-01867357">https://hal-cea.archives-ouvertes.fr/cea-01867357</a>.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T14:50:22.448394+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Request: OP_CHECKTXOUTSCRIPTHASHVERIFY <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016449_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>ZmnSCPxj 2018-10-17 05:17:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016451_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>ZmnSCPxj 2018-10-17 10:22:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016448_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>kim juan 2018-10-17 04:26:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016450_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>kim juan 2018-10-17 06:58:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016448_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>kim juan 2018-10-17 04:26:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016449_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>ZmnSCPxj 2018-10-17 05:17:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016448_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>kim juan 2018-10-17 04:26:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016449_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>ZmnSCPxj 2018-10-17 05:17:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016451_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>ZmnSCPxj 2018-10-17 10:22:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016450_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>kim juan 2018-10-17 06:58:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016450_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>kim juan 2018-10-17 06:58:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2018/016451_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html">Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</a>
+                        <b>ZmnSCPxj 2018-10-17 10:22:59</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016449.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-10-17T05:17:15+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email thread discussing Bitcoin scripting, a proposed new opcode, called OP_CHECKTXOUTSCRIPTHASHVERIFY was introduced. This opcode aims to improve security by allowing retroactive invalidation in different and less interactive ways from channels. It essentially enables a transaction output to be spendable only in a predetermined manner. The specification of the behavior of the opcode is P2SH-focused and is unusable for SegWit. However, there are plans to include OP_CHECKSIGFROMSTACK, which could allow covenants more generally with more complex SCRIPT. The proposal aims to provide a deeper defense to deter attacks, particularly if an attack is costly to pull off.A sample use case for the opcode was presented in the email thread where a redeemScript is used to make an output spendable in a predetermined manner. However, there are challenges to generalizing this as a script hash due to cyclic reference. The email concludes by stating that retroactive invalidation protocols, such as HTLC of lightning network, require a primitive opcode to influence how the output can be spent. If implemented correctly, attacks will be less rewarding.It is important to note that the use case presented assumes P2SH is an exceptional case for custodians like e-commerce merchants and exchanges. Recent efforts have been towards making contract execution off-chain. The email also discussed plans to include OP_CHECKSIGFROMSTACK, which would allow for covenants more generally but with more complex SCRIPT. Although the behavior of the opcode is P2SH-focused and unusable for SegWit, it can instead be made a SegWit-only opcode. Another example use case was given in the email thread where Acme has two key pairs, one ordinary and one secure. The private key of the secure pair is only exposed when revoking the transaction of the ordinary pair. The combination of both key pairs as one multisig can spend the output immediately.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-13T15:07:48.558357+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

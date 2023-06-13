@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal to modify POW protocol to improve network decentralization.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Max Hastings 2018-10-30 04:40:54
+            <br><i>Published on: 2018-10-30T04:40:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2018/combined_Proposal-to-modify-POW-protocol-to-improve-network-decentralization-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016465.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The paper proposes a modification to the current Proof of Work protocol used by Bitcoin and other cryptocurrencies that will encourage miners to mine solo or join smaller pools rather than joining the largest pools. Currently, centralized pool mining works by a pool operator hosting a full node, generating a block header for the next block, and distributing it to their pool miners to start hashing. The miners on the pool will occasionally submit what is known as “shares” which is a hash that solves a lower difficulty than what the block needs to be solved, back to the pool operator. Mining share transactions help incentivize miners to mine solo instead of joining a pool while still retaining the same benefits of receiving a continuous stream of small rewards rather than having to mine an entire block. Mining shares also significantly change how consensus happens on the blockchain. A block header contains the Merkle root which contains the transactions that are in a block. Traditionally the block header is backed by 100% of the mining work by the network, but with mining shares, the block header is only backed by a fraction of the total work, precisely 1 / (X + 1). Where X is the total number of mining share transactions required in each block. It will be common to have multiple competing block headers broadcasted shortly after X amount of mining share transactions have been mined.With mining share transactions, users are encouraged to mine solo rather than mining on a pool while still retaining a predictable stream of income. With a more decentralized network, it makes it more difficult for bad actors to attack the network. Mining share transactions modify the proof of work protocol in a way that changes how blockchain consensus happens. Confirmations also have to be measured differently so that users receiving transactions can accurately figure out how confident they should be that their transaction is final. Mining share transactions will increase the security and the integrity of the blockchain network by making it more decentralized.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:10:03.948672+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

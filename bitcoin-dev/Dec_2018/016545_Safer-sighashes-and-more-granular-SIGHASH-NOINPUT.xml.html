@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-12-12 23:49:02
+            <br><i>Published on: 2018-12-12T23:49:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016545.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin developers have proposed adding three new sighash flags and a new opcode. The three new sighash flags are SIGHASH_NOINPUT, SIGHASH_NOFEE, and SIGHASH_SCRIPTMASK. The proposed opcode is OP_MASK which acts as a NOP during execution. The sighash is computed like in BIP143, but if SIGHASH_SCRIPTMASK is present, for every OP_MASK in scriptCode the subsequent opcode/push is removed. However, Johnson Lau questioned why not always perform mask-removal for signing. Rusty Russell clarified that removing OP_MASKs unconditionally would introduce a hole without some explicit flag to say they've been removed.The masked script has reduced security, but this is a tradeoff with functionality. For instance, eltoo cannot work without masking part of the script. However, Johnson Lau was not sure if there is any useful NOINPUT case with an unmasked script. The role of scriptmask in a taproot world was also questioned. Rusty Russell explained that it ensures that the signature is applicable to a specific script branch, not others, assuming one uses the same pubkey in many branches, which is avoidable. Without a concrete taproot proposal, it's hard to make assertions, but if the signature flags that it's using the taproot script, it's no less safe, and more general.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:25:51.017321+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

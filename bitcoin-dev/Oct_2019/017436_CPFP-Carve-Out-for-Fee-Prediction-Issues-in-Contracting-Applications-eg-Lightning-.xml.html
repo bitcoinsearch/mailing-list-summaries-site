@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2019-10-25 07:05:15
+            <br><i>Published on: 2019-10-25T07:05:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017436.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion pertains to the addition of a carve-out rule in the bitcoind 0.19 release, which affects on-chain contracts such as Lightning commitment transactions. The original rule required at least one non-CSV output per party, but the new rule allows for CPFP-ing the commitment as long as there is an output available without any descendants. Johan Torås Halseth suggests relaxing the current mempool limits to avoid the need for adding a 1 CSV to all outputs and instead proposes a new rule where the last transaction added to a package of dependent transactions in the mempool must have no more than one unconfirmed parent. Matt Corallo explains that this would allow adding a large transaction to each output of the unconfirmed parent, which could potentially exceed the MAX_PACKAGE_VIRTUAL_SIZE limit. Rusty Russell suggests a simplified RBF approach that only allows replacement if the feerate is higher, the new transaction is in the first 4Msipa of the mempool, and the old transaction isn't.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:50:01.021538+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

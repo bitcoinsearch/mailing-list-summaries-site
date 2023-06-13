@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2018-12-09 22:41:57
+            <br><i>Published on: 2018-12-09T22:41:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016536.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The topic of discussion in a recent bitcoin-dev email is the issue of "signature covers witness weight." Although signing the witness weight does not completely eliminate witness malleability, it does prevent the worst kind of witness malleability from a user's perspective. This is when malicious relay nodes increase the amount of witness data and decrease the overall fee-rate of the transaction. However, there are questions about how much of an actual problem this is. If a mutated transaction pays at least the incremental-relay-fee below the original transaction, then the original transaction can be rebroadcast as a Replace-by-Fee (RBF) replacement of the mutated transaction, unless the mutated version has been pinned. The incremental-relay-fee is defined as the fee rate used to define the cost of relay and is used for mempool limiting and BIP 125 replacement. There is also a link provided for more information on transaction pinning.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:27:19.679836+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
