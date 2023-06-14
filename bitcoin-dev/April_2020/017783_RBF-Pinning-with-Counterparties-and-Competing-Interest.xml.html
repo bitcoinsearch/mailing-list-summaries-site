@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-04-23 04:50:09
+            <br><i>Published on: 2020-04-23T04:50:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017783.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal by Matt suggests changing the contract text in Poon-Dryja channels to allow B and C to agree and show the preimage of some hash H instead of C claiming with a preimage. B provides a signature spending the hashlock branch, to a transaction with normal payment to C and hook output to both B and C for CPFP. This avoids a pinned transaction issue where B is unable to get its timelock-branch transaction in the mempools of miners. Naively, this may seem strange as it allows an undesirable transaction into the mempool that is difficult to evict. However, the reason behind purposely making eviction difficult is to prevent certain DoS attacks on Bitcoin nodes. The author suggests limiting the size of low fee-rate packages so that mempools drop incoming transactions that extend a low-fee-rate tree of transactions to prevent such attacks instead of retaining the 'cannot evict high absolute fee' rule. This would be workable as a general solution to solve the root cause of this problem.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:33:07.813295+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

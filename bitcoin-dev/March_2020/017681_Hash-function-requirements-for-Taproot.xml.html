@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Hash function requirements for Taproot</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tim Ruffing 2020-03-12 17:04:47
+            <br><i>Published on: 2020-03-12T17:04:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Hash-function-requirements-for-Taproot.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017681.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Lloyd Fournier and Tim Ruffing, Lloyd provides comments on the security of Taproot. Property (2) is difficult to argue as it depends on the multi-party key generation protocol. Taproot is completely broken when combined with a proof of knowledge key generation protocol where along with their public keys each party provides a proof of knowledge of the secret key. Poelstra presented a proof in the ROM for the security of Taproot. It frames Taproot as a way of combining two signature schemes into one public key (in this case Schnorr and Tapscript). Modeling it as a commitment scheme is more natural, but an optimal model would capture both worlds. This includes the attacker signing oracles for the inner and outer key, and a commitment opening oracle. The ability to obtain signatures for the inner key does not help to forge the outer key, and vice versa. The cost of Taproot is mostly borne by theoreticians who can no longer treat a public key ideally but have to consider the implications of it also being a commitment. For the user and Bitcoin as a whole, it offers an overwhelming benefit. In exchange for the complexity it adds to making security claims in the GGM (if using Taprscript and MuSig), it offers exciting new opportunities for non-interactivity and fungibility over what just Schnorr would provide. However, handling the interplay between various crypto components better would improve our understanding and make it easier to judge future proposals on all levels, from consensus changes to new multi-signature protocols, etc.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:00:03.823085+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

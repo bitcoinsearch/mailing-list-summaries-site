@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Signing CHECKSIG position in Tapscript</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2019-11-27 21:29:32
+            <br><i>Published on: 2019-11-27T21:29:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Signing-CHECKSIG-position-in-Tapscript.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017495.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal is to amend the current tapscript proposal that requires a signature on the last executed CODESEPARATOR position. Instead, it is proposed to always sign the position of the CHECKSIG (or other signing opcode) being executed and deprecate CODESEPARATOR. The motivation behind this proposal is to increase robustness against various signature-copying attacks in Scripts that have multiple spending conditions. Bitcoin's signed data only covers which input is being signed, and not the specific conditions being signed for. This leaves room for attacks where there are multiple participants that have signing conditions within a single UTXO. By signing the CHECKSIG position by default, it will automatically enforce conditions with the signature in most cases and reduce the risk of users leaving out CODESEPARATOR for cost savings when it ends up being required for security after all. Signing the CHECKSIG position is not an undue burden on those signers who have no conditions they require enforcement for. In simple Script templates (e.g. those with only one CHECKSIG operation), the signed position will be a fixed known value. Complex Script templates are precisely the situations where one wants to be careful about enforcement of conditions with their signature. Additionally, eliminating CODESEPARATOR removes a fairly awkward opcode from this script version.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T22:43:37.878819+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

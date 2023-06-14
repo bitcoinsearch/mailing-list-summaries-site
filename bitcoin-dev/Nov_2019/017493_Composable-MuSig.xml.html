@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Composable MuSig</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-11-25 11:00:22
+            <br><i>Published on: 2019-11-25T11:00:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Composable-MuSig.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017493.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Nodelets proposal was made on lightning-dev to support protocols that require multiple participants agreeing. The protocol can be implemented using MuSig on the public keys of the participants and one or more of the participants in the protocol is an aggregate, not a single participant. A Lightning Network channel with a MuSig address requires that one or both participants potentially be an aggregate of two or more nodelet participants. The MuSig composition problem arises when there is a possibility that one participant may be equal to another participant. The Schnorr signature scheme involves an entity generating a random scalar for each message and computing R as a product of the scalar and the standard generator point G. At validation, an independent validator recovers e[validator] and computes S[validator]. MuSig under Generalized Schnorr Multisignatures requires validation to remain the same and multiple participants to provide a single aggregate key and signature. Participants generate a random scalar and compute their aggregate public key after exchanging public keys. Signing takes three phases with commitment exchange, R exchange and s exchange, and at validation, the validator knows P, m, and the signature (R, s). The original proposal of MuSig only had two phases, R exchange and s exchange, but two-phase MuSig is potentially unsafe. An earlier phase of exchanging commitments to R was added to ensure security. In the case of two-phase MuSig, one participant can deliberately delay its side of the R exchange and control the resulting sum R by canceling the R of the other participant. Multiple signing sessions can induce one participant to create a signature for a message it might not agree to by using the Wagner Generalized Birthday Paradox attack.The MuSig protocol enables secure multi-party signing in Bitcoin but has potential security flaws when used in composition with other protocols. The original two-phase MuSig protocol is vulnerable to a Wagner attack, which allows an attacker to forge a signature on a message that was not agreed upon by all parties. A proposed solution is the Multi-R proposal, which involves each participant submitting multiple R commitments in phase one and revealing them in phase two.This proposal reduces to the original MuSig protocol when all participants are singletons. Other proposals using Pedersen commitments in phase one have been suggested but are vulnerable to attacks. The addition of an R commitment exchange phase can solve the security flaws of the MuSig protocol.The context also discusses the use of Pedersen commitments in phase 1 of the MuSig protocol, which are found to be insecure as they allow counterparties to control R. ElGamal commitments are suggested as an alternative to prevent B from giving random q[b][i], but it is still possible for B to control R. The protocol involves three phases: R commitment exchange, R exchange and s exchange. B can attack this by delaying its phases and selecting R[selected] before learning R[a]. However, B cannot determine R[target] before selecting R[selected], thus preventing the above Wagner attack schema. It is suggested that ElGamal commitments may work for committing to r * G. The authors of MuSig have been contacted regarding this issue and it is acknowledged that given a knowledge-of-secret-keys, CoSi (and presumably 2-phase MuSig) would be safe.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T22:22:41.446695+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

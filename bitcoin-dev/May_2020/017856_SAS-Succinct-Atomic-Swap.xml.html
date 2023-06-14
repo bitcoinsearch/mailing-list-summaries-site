@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SAS: Succinct Atomic Swap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-05-12 15:05:57
+            <br><i>Published on: 2020-05-12T15:05:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_SAS-Succinct-Atomic-Swap.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017856.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange between Ruben and ZmnSCPxj discusses a proposed CoinSwap model to mitigate the risk of revealing secrets by both Alice and Bob. ZmnSCPxj rejected the model due to the possibility of both Alice and Bob claiming the BTC, leading to claimable LTC by both parties. The revoke transaction was added to invalidate any attempt of Bob to claim the coins and reveal his secret. However, it still means that the incompetence/malevolence of one party can lead to losses for both parties. ZmnSCPxj also explains that even if the shortened refund transaction exists, there is still a risk of revealing both secrets. Without the refund in the proposal, an online Alice needs to be present to ensure it reclaims its funds. Reusing the privkey as the payment secret demanded by the pointlocks is still a significant innovation.In the context of CoinSwap, ZmnSCPxj proposes that a CoinSwap server would provide swapping service to incoming clients. The L1 can be made reasonably close in the future and L2 far in the future, in which case Alice the client can be "weakly offline" most of the time until L2, and even in a protocol abort would be able to recover its funds. If the protocol completes, the server Bob can claim its funds before L1, and can immediately put it in a new funding tx for a new incoming client before L1, which is a fine tradeoff for server Bob since presumably Bob is always online.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:31:17.513469+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

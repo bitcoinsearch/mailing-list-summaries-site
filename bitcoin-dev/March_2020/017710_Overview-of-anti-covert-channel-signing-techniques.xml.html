@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Overview of anti-covert-channel signing techniques</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dustin Dettmer 2020-03-24 14:51:32
+            <br><i>Published on: 2020-03-24T14:51:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Overview-of-anti-covert-channel-signing-techniques.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017710.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, Dustin is explaining to Tim about a technique to protect against the stealing of funds by malicious hardware or software. He mentions that there are some side benefits as well. The storage solution could be any way in which bitcoins are stored, and the technique works regardless. If the SW party is split into two, generator and validator, some useful security properties emerge. The generator creates and passes on receiving addresses and withdrawal transactions while remaining offline, whereas the validator double checks everything the generator did. It works best if the validator is written entirely independently of the generator. The external software runs on a second SW, which is the second stage, and it would work with a non-trivial/random unhardened derivation just fine. K commitment is one of the proposed solutions collected by Peter in the thread. By committing to some k value, the hardware wallet cannot sneak out private keys in the R value.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:53:59.119063+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

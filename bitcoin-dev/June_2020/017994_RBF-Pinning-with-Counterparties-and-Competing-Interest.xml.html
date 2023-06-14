@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-06-22 07:35:20
+            <br><i>Published on: 2020-06-22T07:35:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017994.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the recent attacks on the Lightning Network. Bastien suggests using independent pay-to-preimage transactions as a technical solution to prevent these attacks, but David expresses concerns about the incentives issues associated with this approach, stating that it may lead to miners charging for information about their mempool and increasing centralization. He proposes making pay-to-revealed-adaptor-signature possible using OP_CHECKSIGFROMSTACK as an alternative solution.Bastien agrees with David's concerns about the incentives issues with pay-to-preimage transactions, stating that miners who hide the preimage transaction in their mempool have to be accomplices with the attacker, which may result in a bidding war where honest users would always be the losing party. He suggests that LN routing nodes and service providers should work together to thwart these attacks, as they have a high incentive to do so.David notes that from the perspective of a single LN node, it might make more sense to get the information about attackers' transactions and not share it, increasing its security and allowing it to charge lower routing fees compared to competitors. He also states that off-chain nodes need to be heavily invested in on-chain operations, although he doesn't see how Eltoo can help with this problem.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:39:08.102853+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

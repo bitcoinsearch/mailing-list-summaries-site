@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SAS: Succinct Atomic Swap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2020-05-13 12:33:21
+            <br><i>Published on: 2020-05-13T12:33:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_SAS-Succinct-Atomic-Swap.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017865.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Ruben and ZmnSCPxj, the two discussed potential issues with a proposed Lightning Network protocol. One issue was that if Bob let the refund tx#1 become valid after the completion of the protocol, Alice could broadcast it, causing chaos with both their funds. However, the timelock on the revoke tx is longer than the timelock on refund tx #1, so Alice would just be giving Bob the key to her LTC. Another potential issue was that both Alice and Bob may know all the secrets on the LTC side and end up competing over it. If one party quickly broadcasts a long chain of low-feerate transactions on top of a single output, the output can be "pinned". This is why Lightning decided to use two CPFP outpoints rather than one. Allowing others to add inputs/outputs would introduce malleability. Refund tx #2 and the timeout tx would become invalid. Bob receives a copy of the signed revoke tx at protocol start and cannot safely perform step 2 before getting both signatures for the revoke tx. Spending the revoke tx before the absolute timelock expires is the safest option but Bob should still have backup watchers set up in case they accidentally go to sleep.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:30:08.976338+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

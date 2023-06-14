@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Design for a CoinSwap implementation for massively improving Bitcoin privacy and fungibility</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-06-06 04:25:11
+            <br><i>Published on: 2020-06-06T04:25:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017929.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to Chris, ZmnSCPxj discusses the importance of timeliness for CoinSwap transactions. They suggest using swap-on-pay, where users swap funds before sending them to payees, to prevent sends from being correlated with receives into user wallets. However, ZmnSCPxj proposes an alternative approach called swap-on-receive+swap-on-change. This method involves maintaining two internal wallets - a pre-mix wallet and a post-mix wallet - as suggested by ZeroLink. With swap-on-receive, when a user requests a receive address, the wallet gets it from the pre-mix wallet address. Any unspent funds on pre-mix wallet addresses are automatically swapped into post-mix wallets. When sending funds, the wallet selects coins from post-mix wallets and spends them directly into the payee address. Change outputs do not go to pre-mix or post-mix wallet addresses, but instead go to a 2-of-2 funding outpoint for a new swap immediately. This allows the payee to receive funds quickly without waiting for CoinSwap to complete. However, users must be online to fully receive funds and cannot spend them until they are in the post-mix wallet.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:56:38.294365+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

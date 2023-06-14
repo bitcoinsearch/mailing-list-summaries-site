@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing Single Point of Failure with Seed Phrase Storage</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christopher Allen 2020-02-26 20:26:44
+            <br><i>Published on: 2020-02-26T20:26:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2020/combined_Removing-Single-Point-of-Failure-with-Seed-Phrase-Storage.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017654.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in the email thread is about the limitations of Shamir split backups as compared to non-interactive multisig for transactional recovery. Although Shamir split backups have a place in operational security scenarios, there are vulnerabilities such as restoring keys in one place and denial edge cases where someone can deny knowledge of who gave corrupted share. The best C-library for Shamir sharding of recovery seeds is available at the Blockchain Commons Github, but it requires refactoring to be a standalone library. Air-gapped open-source open hardware for seed creations and Shamir restoration is also being worked on. Verifiable Secret Sharing (VSS) is considered better than Shamir Secret Sharing for seed sharding in the long-term. Bitcoin multisig transactions are recommended as the best solution for self-sovereign recovery of funds. The alpha bitcoin wallet for iOS, FullyNoded 2, supports PSBT and bitcoind descriptor. The SmartCustody book offers current best practices for single seed recovery, and v2 of the book will cover multisign and fiduciary scenarios as PSBT is maturing and more wallets are improving multisig support.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:45:17.344434+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

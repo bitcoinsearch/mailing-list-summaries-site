@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onchain fee insurance mechanism <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2020/017603_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>ZmnSCPxj 2020-02-01 00:39:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2020/017602_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>David A. Harding 2020-01-31 21:01:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2020/017603_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>ZmnSCPxj 2020-02-01 00:39:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2020/017601_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>ZmnSCPxj 2020-01-31 03:42:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2020/017602_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>David A. Harding 2020-01-31 21:01:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2020/017601_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>ZmnSCPxj 2020-01-31 03:42:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2020/017603_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>ZmnSCPxj 2020-02-01 00:39:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2020/017601_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>ZmnSCPxj 2020-01-31 03:42:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2020/017602_Onchain-fee-insurance-mechanism.xml.html">Onchain fee insurance mechanism</a>
+                        <b>David A. Harding 2020-01-31 21:01:29</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017603.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2020-02-01T00:39:36+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>ZmnSCPxj proposed a mechanism for feerate insurance against on-chain feerate spikes in a Bitcoin development discussion. The proposal involves Alice and Ingrid arranging a series of transactions with a specific locktime and sequence, but the plan has a flaw as Ingrid can rescind the pre-signed transactions at any time before confirmation by double spending her UTXO via an RBF fee bump. A patch is suggested that allows the Ingrid-input to be under the control of both Ingrid and Alice using a 2-of-2 mechanism, but this leads to new problems of denial of service. In addition, a possible insurance policy for Lightning channel closures is proposed where Alice prepays Ingrid using a CoinJoined transaction for the combined premium plus Ingrid inputs value locked to Alice && Ingrid. At each commitment transaction signing, there is an additional unencumbered tiny output that Alice can claim immediately. Ingrid and Alice create an insurance transaction with high feerate that spends the tiny output and the Alice&&Ingrid output, deducting the fees from the Alice&&Ingrid output and returning what is left to Ingrid.During LNConf 2019, Jack Mallers presented a proposal for creating a futures market on onchain feerates as he believes hedging of onchain fees is necessary to have a smooth experience interfacing between onchain and offchain. ZmnSCPxj proposes a specific mechanism for fee rate insurance against onchain feerate spikes. This mechanism involves Alice and Bob having a fee insurance provider Ingrid. Ingrid assures Alice and Bob that 600 satoshi is sufficient to confirm the payment from Alice to Bob within 4 blocks. At current block height B, Alice and Ingrid arrange a series of transactions with different locktimes and fees. The transactions are designed such that if the first transaction is included in the next block immediately, then Ingrid can earn the most of the fee paid by Alice. However, if the transaction is not confirmed, Ingrid pays out significantly to ensure the payment goes through. The proposed mechanism cannot be used for Lightning closes as it requires absolute locktimes, which would impose a maximum lifetime on channels. For Lightning closes, a mechanism is required where Ingrid assures Alice and Bob that the close transaction can be confirmed at any time, for only N satoshi.Overall, the proposals aim to create a smoother experience when transferring funds between onchain and offchain. However, the locktime mechanism in ZmnSCPxj's proposal does not add anything to the idea of hedging fees and suffers from incompatibility with some cases where users would be especially eager to obtain feerate insurance. If Alice needs to trust Ingrid anyway, they might as well use an external accounting and payment mechanism.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-13T23:20:25.924889+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

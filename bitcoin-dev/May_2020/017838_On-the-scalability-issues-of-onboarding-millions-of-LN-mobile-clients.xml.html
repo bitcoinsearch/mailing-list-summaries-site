@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On the scalability issues of onboarding millions of LN mobile clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Braydon Fuller 2020-05-08 19:33:55
+            <br><i>Published on: 2020-05-08T19:33:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_On-the-scalability-issues-of-onboarding-millions-of-LN-mobile-clients.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017838.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the potential scalability issues of BIP 157, Antoine argued that even with cheaper and more efficient protocols like BIP 157, there could still be a huge discrepancy between what is asked and what is offered. Olaoluwa responded by highlighting the positive aspect of BIP 157+158's protocol, which would make serving light clients stateless, meaning the full node wouldn't need to perform any unique work for a given client. This makes the entire protocol servable over something like HTTP, taking advantage of all the established CDNs and anycast serving infrastructure. The statelessness of compact block filters can be useful since Bloom filters for blocks can be inefficient, leading to slow scan times. During a scan with a BIP37 wallet, it is necessary to discard already received merkle blocks as the filter has been updated, and the previous results may have missed transactions. Both bitcoinj and breadwallet-core handle this using a similar method. With compact block filters, a separate wallet process from the full node can make adjustments necessary to what it needs to filter without having to communicate with the full node.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:12:51.066664+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Compressed block headers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Robin Linus 2020-05-11 12:26:54
+            <br><i>Published on: 2020-05-11T12:26:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_Compressed-block-headers.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017845.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal for a compressed block header scheme for IBD and block announcements has been made by Will Clark. This proposal is derivative of previous proposals found on the Bitcoin-dev mailing list. The current block headers are 81 bytes each, which can be significantly reduced for low bandwidth nodes who are doing headers-only sync. Clark's proposed specification includes a new data type called `block_header2` which compresses some fields completely and others under certain conditions. The compression results in a maximum reduction from an 81 byte header to best-case 39 byte header. The proposal also includes a bitfield to make parsing of header messages easier and further increase header compression, which adds 1 byte for every block in the chain. A new service bit would be required so that nodes can advertise their ability to supply compact headers. Three new messages would be used by nodes that enable compact block header support: `getheaders2`, `sendheaders2`, and `headers2`. The first header in the first `block_header2[]` vector to a newly-connected client must contain the full `nBits`, `timestamp`, `version`, and `prev_block_hash` fields, along with a correctly populated `bitfield` byte.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:26:42.304891+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

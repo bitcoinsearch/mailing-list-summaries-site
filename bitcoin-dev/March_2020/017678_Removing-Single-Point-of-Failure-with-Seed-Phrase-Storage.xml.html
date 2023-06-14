@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing Single Point of Failure with Seed Phrase Storage</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2020-03-06 11:11:11
+            <br><i>Published on: 2020-03-06T11:11:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Removing-Single-Point-of-Failure-with-Seed-Phrase-Storage.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017678.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the benefits and issues with using Shamir's Secret Sharing as a replacement for paper. While it may be useful for those who want to sign transactions on a single device, they would prefer not to keep their secret backup in a single room/place/device. A concept has been proposed for creating secret shares using paper computers (slide charts), and can be found at <a href="https://github.com/roconnor-blockstream/SSS32/blob/master/SSS32.ps">https://github.com/roconnor-blockstream/SSS32/blob/master/SSS32.ps</a>. This design splits a secret encoded in the Bech32 alphabet into 2-of-n shares. However, there are still more issues that need to be addressed before one could even think about using it for actual valuable data. The proposed method is experimental, and the author has only experimented with encoding and recovering a 10 character "secret" data. It generates 2-of-n shares easily, but recovering the secret data is more work. The error correcting code ought to contain an error correcting code to enable robust recovery. Protecting the secret data is crucial, so checksum BCH code longer than 6 characters should be designed to get strong error-correcting capabilities. While this scheme may be workable for the subset of people that it would appeal to, it requires manual computation, which may lead to errors. The document is open source and available for those who want to tinker with it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:44:52.572500+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base64-encoded descriptors</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> William Casarin 2019-12-25 17:17:18
+            <br><i>Published on: 2019-12-25T17:17:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2019/combined_Base64-encoded-descriptors.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017533.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Chris Belcher, a developer at bitcoin-dev, proposed that descriptors should become the standard for master public keys. However, he acknowledged that one downside is that users cannot easily copy and paste them to make watch-only wallets because the descriptors contain parenthesis and commas which stop highlighting by double-clicking, and the syntax might look scary to new users. An obvious solution would be to base64 encode the descriptors, resulting in a text blob as the master public key without any extra details to bother users. This solution was suggested by achow101 during discussions with Chris. Will, another developer, disagreed with the idea of encoding descriptors as it obfuscates useful information that can be viewed at a glance. Encoding makes more sense if it's non-human-readable binary data that needs to be transferred over a plaintext channel. Will had previously suggested using base58 or base62 +hrp for PSBT in another discussion on bitcoin-dev mailing list, as they are better than base64 for double-click copy-pasting. He preferred bech32, base58, or base62, and felt that encoding of any kind didn't make much sense in this case.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T22:53:21.151546+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

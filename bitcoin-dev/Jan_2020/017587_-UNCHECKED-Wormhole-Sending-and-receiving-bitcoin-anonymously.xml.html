@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>***UNCHECKED*** Wormhole: Sending and receiving bitcoin anonymously</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-01-16 02:11:44
+            <br><i>Published on: 2020-01-16T02:11:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2020/combined_-UNCHECKED-Wormhole-Sending-and-receiving-bitcoin-anonymously.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017587.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposed protocol named Wormhole has been introduced by Max to transfer Bitcoin without the receiver gaining knowledge of the input of the sender and without the sender gaining knowledge of the output of the receiver. The protocol makes use of minor changes to the ZeroLink CoinJoin protocol, utilizing a centralized coordinator who cannot steal or spy. Schnorr blind signatures are used to obfuscate the link between inputs and equal value outputs throughout the ceremony. The coordinator does not gain knowledge that Wormhole is used. The result of the protocol is that A has one 4 bitcoin UTXO with 100 anonset and one 0.5 bitcoin UTXO with 1 anonset, B has one 1 bitcoin UTXO with 100 anonset, and W knows the input and change of A but does not know who controls which equal value output, and W does not know that B has no inputs. The communication between A and B can be done on any suitably private channel, including but not limited to tor, QR codes, SD cards, or carrier pigeon. The communication between A/B and W will be the same as used for the regular zero link implementation, most likely tor. The equal value zero link outputs from A and B have the anonymity set of the total number of equal value zero link outputs in the same transaction. Wormhole breaks the assumption that zero links are a consolidation within the same wallet. It is an interactive protocol with several rounds of communication, so all A and B and W need to be online.The protocol can be used in conjunction with Pay to Endpoint or Knapsack so that A can send a specific amount to B, with part being the equal value zero link output, and part the P2EP change, or Knapsack sub-transaction. Atomic coinswaps with Schnorr adaptor signatures might be integrated, so A input in `CJTX1` "pays" B output in `CJTX2`, but this might require B to know the signature [and thus the input] of A.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:17:15.369649+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

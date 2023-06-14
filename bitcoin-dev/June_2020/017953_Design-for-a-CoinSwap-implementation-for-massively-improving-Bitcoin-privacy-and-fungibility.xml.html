@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Design for a CoinSwap implementation for massively improving Bitcoin privacy and fungibility</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Belcher 2020-06-10 10:15:36
+            <br><i>Published on: 2020-06-10T10:15:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017953.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses the implementation of a new Coinswap protocol. The protocol splits Coinswap into two phases, "channel establishment" and "HTLC forwarding", followed by "HTLC resolution" and "private key handover". The Spilman channel creates a temporary unidirectional time-bound channel, reusing the same timelock as the HTLC that is expected to instantiate. This allows for simultaneous funding transactions without the risk of race loss. However, they still have to wait for deep confirmation before signing contract transactions, and Bob has to wait for the incoming contract transaction before signing its outgoing contract transaction. The scheme breaks private key handover because relative timelocks need to start ticking down only after a contract transaction is confirmed. The proposed alternative, swap-on-receive+swap-on-change, may not be appropriate for every threat model and use case but is useful when Bitcoin is being used more as day-to-day money.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:57:00.523786+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SAS: Succinct Atomic Swap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-06-03 14:36:46
+            <br><i>Published on: 2020-06-03T14:36:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_SAS-Succinct-Atomic-Swap.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017918.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to Dmitry, ZmnSCPxj explains that he has created a version of the TLA+ spec in the 'variant_ZmnSCPxj' branch of the SASwap repo based on Dmitry's suggested variant. However, ZmnSCPxj notes that there is a possible deadlock after step 9 if Bob fails to publish a success transaction in time. This is because both parties would have the ability to invalidate each other's transactions through friendly miners. To avoid this issue, Bob will have a short timeout period after which he will force publication of the success transaction if Alice does not respond in time. ZmnSCPxj notes that running multiple servers who are given copies of the success transaction and which will publish it regardless after a short sidereal time duration can mitigate the risk of accidents occurring due to computer crashes. A dead man switch system can be used to countermand the main server in such a situation. With sufficient distribution, the probability of this occurring can drop to negligible levels compared to other theoretical attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:32:05.937716+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
