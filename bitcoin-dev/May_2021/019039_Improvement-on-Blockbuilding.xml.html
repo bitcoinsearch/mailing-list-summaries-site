@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improvement on Blockbuilding</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2021-05-29 06:32:53
+            <br><i>Published on: 2021-05-29T06:32:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2021/combined_Improvement-on-Blockbuilding.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/019039.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark and Clara have proposed an improvement to the current Bitcoin Core block building algorithm. Currently, Bitcoin Core uses a straightforward greedy algorithm which evaluates each transaction’s effective fee rate in the context of its unconfirmed ancestors. This overlooks situations in which multiple descendant transactions could be grouped with their shared ancestors to form a more attractive transaction set for block inclusion. Their suggested algorithm would also consider such scenarios, resulting in more efficient use of block space. Experimental data shows that their algorithm did better on more than 94% of blocks (99% for times of high congestion). However, Antoine raises some questions and concerns about the proposal. He wonders if CSB feerate performance will improve as transaction graphs with multiple disjunctive branches become more regular in the future, citing examples like OP_CTV's style congestion-tree, LN's splicing or chain of coinjoins. He also brings up the issue of malicious miners using hard-to-traverse CPFP constellations to prevent competitors from assembling block templates or slowing down their computation. It remains to be seen how much CSB makes that kind of DoS possible/efficient. From the point of view of global blockspace demand, if miners generally became DPFA-sensitive, it could encourage creation of additional transactions for the sole purpose of bumping stuck ancestors. As ASB's ancestor set and CSB's candidate set, a fee bidder would have to pay the feerate to cover the new transaction fields, high enough to catch up with the already-present feerate set. It might be more fee-rate efficient to RBF the first child, but there is a replacement feerate penalty to consider.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T22:12:58.327756+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

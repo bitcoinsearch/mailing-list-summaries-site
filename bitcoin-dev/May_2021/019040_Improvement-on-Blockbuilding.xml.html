@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improvement on Blockbuilding</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2021-05-29 15:04:57
+            <br><i>Published on: 2021-05-29T15:04:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2021/combined_Improvement-on-Blockbuilding.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/019040.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin Core block building algorithm may benefit from a suggested improvement that allows multiple descendant transactions to be grouped with their shared ancestors for more attractive transaction sets. This is in contrast to the current straightforward greedy algorithm that evaluates each transaction's effective fee rate in the context of its unconfirmed ancestors. The proposed approach, called Candidate Set-based Block Building (CSB), considers Child Pays For Parent (CPFP) constellations and may improve feerate performance if such transaction graphs with multiple disjunctive branches become regular in the future. However, CSB is more complex and requires more computation which raises concerns about potential DoS attacks. Furthermore, if miners generally became DPFA-sensitive, it could encourage the creation of additional transactions for the sole purpose of bumping stuck ancestors. The full details are available in this document, and experimental data shows that CSB did better on more than 94% of blocks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T22:13:07.669450+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Tweaking tapscript instead of public key</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2021-05-23 17:58:13
+            <br><i>Published on: 2021-05-23T17:58:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2021/combined_Tweaking-tapscript-instead-of-public-key.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/019001.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The question posted on the Bitcoin-dev mailing list inquires about the possibility of modifying a Taproot output without changing its address. The response states that while the P2TR address contains a 32-byte public key used for creating Schnorr signatures or revealing tapscript, changing the spending conditions would require a commitment to be made. Specifically, in the Taproot equation Q = P + hash(P||m)*G, P is hashed together with the message to create a commitment. Attempting to change the message would result in a different commitment, and therefore, the spending conditions cannot be modified without moving the on-chain coins. The original Taproot thread is linked for reference.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T22:12:35.500822+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

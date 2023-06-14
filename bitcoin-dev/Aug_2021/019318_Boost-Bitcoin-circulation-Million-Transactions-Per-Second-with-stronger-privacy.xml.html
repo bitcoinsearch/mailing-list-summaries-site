@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Boost Bitcoin circulation, Million Transactions Per Second with stronger privacy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> raymo at riseup.net 2021-08-09 20:22:57
+            <br><i>Published on: 2021-08-09T20:22:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019318.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange between Raymo and Chris Riley discusses the uncertainty surrounding the potentiality for increasing revenue under Sabu protocol. The upgrade in Bitcoin protocol is expected to eliminate this uncertainty but consensus on implementation changes is required.While the code upgrading wouldn't be a difficult technical issue, the most important thing would be the consensus on implementation. The Stratum protocol could also be changed if there is difficulty in agreeing on a Bitcoin core protocol change.Miners have the incentive to accept the highest fee transaction whenever they see it, but nothing is guaranteed given it is an untrusted network and people could use non-standard rules for selection of what transactions are included in a block. The possibility of miners preferring the highest fee transaction or always keeping the first transaction received and dropping subsequent transactions is still uncertain.The Guarantee Transaction is created based on Main Transaction but there is no relation between them, and either of MT or GT can be broadcasted independently. If Alice breaks her promise and sends the fraudulent transaction to the Bitcoin network, Bob's wallet realizes that she (issuer) is spending the promised UTXO(s) and will send the Guarantee Transaction(s) to the network as a last resort.Miners will face two (or more) transactions which are spending the same UTXO(s), but one of them is paying notably higher Bitcoin transaction fee, thus they choose the highest fee payer transaction, which is the Guarantee Transaction. The miner will put the Guarantee Transaction in the next block and reject the rest double-spend transactions. However, there are some attacks that have very small chances to succeed, but the risk to reward ratio for these scenarios is too high to be considered as a real possible attack threat.Bob needs to be online 24x7 and ensure he is connected to the internet, otherwise, if he loses connection to the internet or energy supply, Alice's attack will succeed entirely with 100% chances. Bob can delegate this task to a doc-watcher, pretty much like watch-tower in Lightning, but due to the small amount of creditor's credits and the fact that this amount is scattered among many different issuers, this part was removed from the original design of Sabu architecture.The email thread also discusses the possibility of a fraudulent attack on Bitcoin's Lightning Network. The attack involves a malicious actor, Alice, using already-spent inputs (UTXOs) to defraud Bob, a creditor, by creating a Sabu-Killing-transaction and a Guarantee transaction. Even with a higher fee in the Guarantee transaction, it is unlikely that miners will drop the Sabu-Killing-transaction from mempool and consider only the Guarantee transaction. This attack has a 99% chance of success. Additionally, the creditor Bob needs to be online 24/7 to prevent the attack from succeeding completely.The email also raises a hypothetical question about how Bob can spend the coins he received and become an issuer in relation to another creditor, Dave. If Alice tries to defraud Bob after he spent his Sabu credit to Dave, Dave would need to hold all parent "guarantee transactions" and watch the network for potential fraudulent transactions that could cancel his credit.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T22:52:14.607408+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

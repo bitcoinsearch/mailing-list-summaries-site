@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_BEFOREBLOCKVERIFY - discussing and opcode that invalidates a spend path after a certain block</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James MacWhyte 2021-06-11 11:12:16
+            <br><i>Published on: 2021-06-11T11:12:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2021/combined_OP-BEFOREBLOCKVERIFY-discussing-and-opcode-that-invalidates-a-spend-path-after-a-certain-block.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019058.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the Bitcoin-dev mailing list, a proposal for an opcode called OP_BEFOREBLOCKVERIFY (OP_BBV) was made. It is similar to other opcodes that have been discussed before such as OP_BLOCKNUMBER. The OP_BBV opcode takes a block height number as a parameter and marks the transaction invalid if the current block being evaluated is greater than or equal to that block height.The motivation behind this proposal is to make switch-off kinds of transactions more economically feasible. With OP_BBV, these types of transactions can be done in a single transaction instead of multiple transactions.Although there are concerns regarding OP_BBV, the author believes they can be addressed. Two concerns raised were the potential DOS vector where malicious actors could spam the mempool with transactions containing this opcode and the possibility of "bad" reorg behavior. Despite these concerns, the author thinks that OP_BBV is safe when it comes to spending paths that expire.Other members of the mailing list raised concerns about potential double-spending attacks using reorgs. However, one member pointed out that such attacks would be costly and uncertain, and that the proposed system would actually be less attractive to double spenders than the current model. They also agreed with the idea of relay rules to protect against reorg double spends.Overall, the proposal for OP_BBV generated a lively discussion within the Bitcoin-dev community, with various concerns and ideas being raised. The context provided also mentioned that the Bitcoin-dev mailing list can be accessed through the bitcoin-dev at lists.linuxfoundation.org address or via the website <a href="https://lists.linuxfoundation.org/mailman/listinfo/bitcoin-dev">https://lists.linuxfoundation.org/mailman/listinfo/bitcoin-dev</a>. An HTML attachment was included in the message, but no further information was given about its contents.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T22:32:32.256033+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
