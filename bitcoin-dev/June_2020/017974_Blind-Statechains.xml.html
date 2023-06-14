@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blind Statechains</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2020-06-12 20:35:37
+            <br><i>Published on: 2020-06-12T20:35:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_Blind-Statechains.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017974.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the implementation of blind signatures in a statechain, which can offer significant privacy benefits but may lead to bloated wallets. The statechain entity (SE) can be engineered to be blind to the transactions it signs, however, this means it cannot enforce rules governing the sequence of backup transactions, so new owners must verify the full sequence of previous owner backup transactions to prevent theft. The original idea was to use the transitory key to derive secrets that blind the signatures, and the SE would store and serve blind signatures. Any new owner would download and unblind/verify them using the transitory key without extensive peer-to-peer transfer. All transactions are exposed to anyone who learns the transitory key, although there doesn't seem to be much to learn from the history of each statechain. A secondary "blinding key" is suggested to avoid changes to the transitory key with each step. In Schnorr signatures, the statechain entity wouldn't even learn the address for the funding transaction, so it wouldn't be able to tell which UTXO it controls by watching the blockchain. However, pruning will be impossible if you don't know when a statechain has been pegged out.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T02:29:48.107045+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

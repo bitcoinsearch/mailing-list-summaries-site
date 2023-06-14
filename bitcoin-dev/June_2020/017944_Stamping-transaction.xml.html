@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Stamping transaction</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mostafa Sedaghat joo 2020-06-09 09:34:57
+            <br><i>Published on: 2020-06-09T09:34:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_Stamping-transaction.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017944.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mostafa suggests decoupling transactions from the block to keep the blockchain size small. However, ZmnSCPxj argues that stamped transactions are not a solution to reduce the blockchain size. The reason why old history is retained is to prove to new nodes that one is the correct owner of the current coins. This is what separates Bitcoin from previous currency systems. Stamped transactions will require a hardfork, which is risky and unlikely to be accepted by everyone. Moreover, validation becomes more expensive as the blockchain grows. ZmnSCPxj proposes using a set of the most recent N block hashes instead of memorizing the last N block hashes. Since stamped transactions have a time-to-live, using a set creates a constant data structure and is good for validation. Stamped transactions are larger and more expensive than unstamped transactions, making them less incentivized. Users may prefer running older versions and never upgrading to the new version that requires stamped transactions. Furthermore, validating the stamp on every node is still a cost, and it is an incentive problem if individual users are not incentivized to use it. Stamping transactions does not help reduce mempool size as resending the transaction with a fresh stamp increases bandwidth usage.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T02:16:10.149426+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

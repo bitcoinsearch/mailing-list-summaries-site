@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Detailed protocol design for routed multi-transaction CoinSwap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-09-05 02:29:18
+            <br><i>Published on: 2020-09-05T02:29:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2020/combined_Detailed-protocol-design-for-routed-multi-transaction-CoinSwap.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018158.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Antoine and ZmnSCPxj, they discussed the current and previous model of transactions involving HTLC-timeout or HTLC-success. ZmnSCPxj described a new technique that could reduce the risk involved in the transaction process. The attack in question was related to private key turnover after hash-lock resolution, which allowed the contract tx to deduct fees from its input to pay for itself. To reduce this risk, ZmnSCPxj suggested swapping A->B->A and then A->C->A, which would limit its funding lockup to one week. Alternatively, takers could pay higher fees for smaller swaps that reduce their lockup risk, or pay less with greater total lockup risk. ZmnSCPxj also proposed exploring this construction further, minus the downside of producing weird spend patterns due to next hop maker bidding with another party.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T03:12:39.077327+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Time-dilation Attacks on the Lightning Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-06-04 02:58:24
+            <br><i>Published on: 2020-06-04T02:58:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_Time-dilation-Attacks-on-the-Lightning-Network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017921.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article discusses an attack on the Lightning Network that targets per-hop packet delay. The attacker routes via the victim, who should have at least two channels with the attacker. However, the existence of offchain-to-onchain swap services means that the attacker needs only build one channel to the victim for this attack to work. The incoming channel need not be directly connected to the victim, and the same attack schema works on the onchain side. The article also suggests running a Bitcoin full node on clearnet while running a Lightning node over Tor as a mitigation strategy to prevent eclipsing of Bitcoin nodes. Eclipsing the Lightning node (but not the Bitcoin fullnode it depends on) "only" loses you the ability to pay, receive, or route but as long as your blockchain view is clear, it should be fine. This would also prevent any correlation between the Lightning node and the Bitcoin node when transactions are broadcast with the attached Bitcoin node. Furthermore, if a node doesn't observe a block within the last 30 minutes, it attempts to make a new random connection to someone in the network. A mitigation to this would be to run a background process which sleeps for 20 minutes, then does bitcoin-cli addnode ${BITCOINNODE} onetry. However, getting a Bitcoin node that is not part of the eclipsing attacker is essential. Lastly, it is suggested that if a Lightning node is behind in its Bitcoin blockchain view but Lightning payments between honest nodes are still flowing through it, this node would have a high routing failure rate. The victim could instead check that the absolute timelocks seem very far in the future relative to its own view of the current blockheight. A forwarding node might want to do this anyway to have an upper bound against griefing attacks. Payments arising from the victim node would definitely increase in failure rate, but this does not help for nodes that are primarily forwarding nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T02:12:42.180472+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
