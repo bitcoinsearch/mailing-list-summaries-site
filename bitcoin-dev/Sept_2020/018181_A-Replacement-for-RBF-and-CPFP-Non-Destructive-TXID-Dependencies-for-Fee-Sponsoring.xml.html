@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2020-09-19 19:46:25
+            <br><i>Published on: 2020-09-19T19:46:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2020/combined_A-Replacement-for-RBF-and-CPFP-Non-Destructive-TXID-Dependencies-for-Fee-Sponsoring.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018181.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion regarding the location of the sponsor vector in a transaction chain A->B->C is being held. The commitment to txid A by the sponsor S_A, where A is unaware of the sponsor has been highlighted. The consensus rules dictate that sponsor commitments are non-rival, and there is no issue in allowing multiple sponsors as long as they have feerate(S*) > feerate(A). However, in the mempool, there may be issues with denial of service as it only allows one sponsor target per input. While the annex is a possible location for the sponsor vector, the witness space is more efficient, but it poses new challenges like specifying the sponsor vector in case of a 2-input transaction. The code has been fixed regarding the number of vectors allowed to be present in a transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:25:38.056716+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

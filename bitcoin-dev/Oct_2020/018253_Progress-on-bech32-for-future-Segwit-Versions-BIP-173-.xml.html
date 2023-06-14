@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Progress on bech32 for future Segwit Versions (BIP-173)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-10-19 00:49:17
+            <br><i>Published on: 2020-10-19T00:49:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2020/combined_Progress-on-bech32-for-future-Segwit-Versions-BIP-173-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018253.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille is considering two options for the future of witness version 1 (v1) receivers. The first option involves continuing to use v1, while the second option requires upgrading to a new version. Currently, no v1 receivers exist, so the question is what software/infrastructure supports sending to v1 and whether they are more or less likely to upgrade than those that don't. If actively developed software currently supports sending to v1, then forward compatibility is not an issue. Choosing option 1 could cause problems if software that supports v1 today doesn't get upgraded, as a trailing typo can create issues for most systems. Option 2 means the systems are likely to fix their errors when someone tries a v1 send, not the first time someone makes a trailing typo.There is no up-to-date overview of where to-future-witness sending is supported, but Bitcoin Core does support sending to v1. However, c-lightning does not allow withdraw to segwit > 0.New witness version/length combinations are only rarely needed, and there are 14 length=32 ones left to pick. Assuming future constructions have something like BIP341's leaf versioning, new witness version/length combinations are only required for changes to the commitment structure of script execution, upgrades to new signing cryptography, and changes to signatures outside of a commitment structure.The change from v1 to a new version is fairly simple, and reference implementations are widely used, so change is not hard once the decision is made. Hopefully, by the time we want to use segwit v2, most software will have implemented length limits so that we won't need any additional consensus restrictions. However, committing to restrictions on future addresses is difficult because it is unclear if a future scheme where we could save (e.g.) 2 bytes will impractical due to encoding restrictions, resulting in unnecessary onchain bloat. There is a fear that upgrading will only get harder over time, and we would instead opt for some kind of backward compatibility hack.In conclusion, Pieter Wuille is looking to determine what codebases/services/infrastructure exists today that supports sending to witness v1 BIP173 addresses. To gather data, Rusty proposes spamming an address from as many things as possible to test which software/infrastructure supports sending to v1.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T16:06:09.733466+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Out-of-band transaction fees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-12-01 16:24:11
+            <br><i>Published on: 2020-12-01T16:24:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2020/combined_Out-of-band-transaction-fees.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018290.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The goal of the conversation is to devise a method that allows someone to pay a fee to get a transaction confirmed without linking other coins to it. CoinJoin-like approach using only L1 and combining fees by a kind of FeeJoin is proposed. The issue with linking is that if the one paying a fee wants to CPFP the transaction, it may need to take another UTXO it controls into the child transaction, thereby linking its "another UTXO" with the "transaction it wants confirmed". However, if multiple such individuals were to CoinJoin their transactions, the linking becomes much harder to trace. The proposed mechanism involves a third-party service that divides its service into fixed-feerate bins. Clients select a preferred feerate bin they want to use. Miners and chain analysis cannot link the resulting transaction as they see only the resulting tx. The end goal should be to improve Bitcoin blockchain layer privacy. It should not matter how this is achieved, whether it involves standardized UTXO sizes or not. The JoinMarket way of CoinJoining does not require any particular standardized UTXO size. The upcoming SwapMarket that Chris Belcher is working on also does not require such a standardized UTXO size, as it is based as well on the JoinMarket technique, where the client can select whatever sizes it wants.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T16:23:30.100854+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

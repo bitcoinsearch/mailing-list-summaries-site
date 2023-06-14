@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Statechain coinswap: assigning blame for failure in a two-stage transfer protocol.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Trevethan 2020-09-21 00:54:47
+            <br><i>Published on: 2020-09-21T00:54:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2020/combined_Statechain-coinswap-assigning-blame-for-failure-in-a-two-stage-transfer-protocol-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018184.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the concept of statecoins, a UTXO that is a 2-of-2 between the owner and SE (the tr*sted signing server) and can be transferred off-chain. The 'statecoin address' changes with each new owner and is used to authenticate owners to the SE and act as proof of ownership on the statechain. The scheme requires trust in the SE to not actively defraud users. It is considered strictly non-custodial but requires trust in the coordinator to not collude with other participants. The thread also includes a high-level description of how blinding can operate to privately swap ownership of statecoins between multiple individuals without revealing the assignment of coins to any particular individual. Participants sign the swap_token with the proof-key of their input coin and generate a new statecoin address to receive the swapped coin, which they blind and sign with the proof key of their input coin. The conductor authenticates each signature and returns these signatures to the participants. The conductor then randomly assigns each address to one of the utxos and requests each participant initiate the transfer to the given address. Atomicity is guaranteed by the SCE. While it is faster and cheaper than on-chain transactions, it is not trust-minimized and has reduced scope for theft compared to a potentially compatible trust-minimized CoinSwap plan.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:17:58.016546+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

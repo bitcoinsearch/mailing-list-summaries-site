@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hugo Nguyen 2021-02-15 08:44:19
+            <br><i>Published on: 2021-02-15T08:44:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018421.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests a mechanism to set up multisig wallets securely. It addresses concerns regarding the tampering of multisig configuration and defines an interoperable multisig configuration format. The Coordinator initiates the multisig setup and determines what type of multisig is used along with encryption, if enabled. The Signer provides its key record and verifies that its XPUB is included in the descriptor record and persists the descriptor record in its storage. The setup process consists of two rounds, where the Coordinator gathers key records from all participating signers and generates a descriptor record, which is simply the descriptor string plus a CHECKSUM, all in one line. Encryption is defined in three modes and the token can be converted to various formats. The key derivation function is PBKDF2, with PRF = SHA512, and the encryption scheme is AES, CTR mode. QR codes can be used by signers to transmit data. The proposal introduces two layers of protection: a temporary, secret token used to encrypt communication between the signer and coordinator and the descriptor checksum and visual inspection of the descriptor itself. Special thanks were given to Dmitry Petukhov, Christopher Allen, Craig Raw, and others for their feedback on the specification.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T17:32:39.079528+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

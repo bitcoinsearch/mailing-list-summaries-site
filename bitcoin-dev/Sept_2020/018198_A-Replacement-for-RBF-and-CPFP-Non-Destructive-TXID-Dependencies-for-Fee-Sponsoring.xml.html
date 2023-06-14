@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dmitry Petukhov 2020-09-24 04:22:56
+            <br><i>Published on: 2020-09-24T04:22:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2020/combined_A-Replacement-for-RBF-and-CPFP-Non-Destructive-TXID-Dependencies-for-Fee-Sponsoring.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018198.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed change to Bitcoin's transaction relay rules includes a mechanism that enables an "inverse timelock" for sponsor transactions. This allows sponsors to broadcast a transaction A and then make a pre-signed sponsor transaction B that sponsors A. The proposal suggests that it is not necessary for a sponsored transaction to be in the same block, but can also be in the last 100 blocks. However, transaction B will become invalid after 100 blocks have passed. If a timelock is placed on B to make it valid after 50 blocks, then it will be valid between blocks 50 and 100 after A has been confirmed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:26:01.300262+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

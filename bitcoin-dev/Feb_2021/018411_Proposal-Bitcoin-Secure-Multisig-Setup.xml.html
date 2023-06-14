@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hugo Nguyen 2021-02-12 17:54:57
+            <br><i>Published on: 2021-02-12T17:54:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018411.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the encryption aspect of a multisig setup. The proposed key derivation function is PBKDF2 with PRF = SHA512, which should be readily available on today's hardware and takes about ~3 seconds to derive the encryption key on an 80Mhz MCU. The password will be replaced with HUMAN_READABLE_TITLE string in ASCII format, minimum length = 8, maximum length = 20, and the nonce will be a 64-bit number. The coordinator and signers agree and exchange these two secrets prior to the setup. The NONCE can be converted to either (a) a 6-word phrase using BIP39 wordlist, (b) a 20-digit decimal number, or (c) a QR code depending on the vendor. This flexibility in the data format allows each vendor to customize the UX based on their respective device capabilities.If there is no need for extra entropy, the HUMAN_READABLE_TITLE string can be fixed, such as "No SPOF" (No Single Point Of Failure). If the coordinator feels that 64 bit of entropy is not enough, they can allow bigger entropy (more than 6 mnemonic words).Dmitry Petukhov questioned if the additional secret defeats the advantage in UX gained by using (relatively) short nonce. He also suggested choosing the number of rounds to use in PBKDF2 instead of using a variable password. Allowing variable iteration count is probably better UX-wise, and the more money at stake, the higher number of rounds could the coordinator choose (taking into account the characteristics of the participant devices).The email also discusses the vulnerability of the previously proposed scheme of ENCRYPTION_KEY = SHA256(SHA256(TOKEN)) to rainbow table attack. It was suggested to make the token even longer, use the mnemoic, or specify a key derivation function suitable for passwords. The approaches can be combined - specify a key derivation function suitable for passwords; via secure channel, share a password and/or the derived key.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T17:32:12.926386+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

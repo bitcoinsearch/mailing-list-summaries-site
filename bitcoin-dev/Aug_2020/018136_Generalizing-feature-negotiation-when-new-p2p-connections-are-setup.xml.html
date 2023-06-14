@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalizing feature negotiation when new p2p connections are setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2020-08-24 19:58:56
+            <br><i>Published on: 2020-08-24T19:58:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2020/combined_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018136.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the benefits of implementing multi-round negotiations in a protocol. The main benefit is not privacy-oriented but instead, it allows nodes to expose functionality only to peers that support other sets of features. This approach can prevent incompatibilities that may arise if a node supports a new feature but not an existing one. For instance, with wtxid relay, a node may want to expose additional functionality after establishing that its peer supports it. However, peers without wtxid relay should not be allowed to use this functionality. Implementing this logic as a post-hoc "advertise all and then figure out what is allowed" approach would require strict consistency between peers of that post-hoc feature availability implication map. Therefore, multi-round negotiations provide an efficient way to ensure compatibility and prevent potential conflicts. Despite its trivially weak obfuscation, it is still worth considering to avoid complicating the protocol unnecessarily.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:05:11.079739+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

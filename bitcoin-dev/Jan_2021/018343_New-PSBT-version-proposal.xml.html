@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New PSBT version proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2021-01-08 00:40:06
+            <br><i>Published on: 2021-01-08T00:40:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2021/combined_New-PSBT-version-proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018343.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange, Andrew Chow proposes adding a new global field to the Partially Signed Bitcoin Transaction (PSBT) format called PSBT_GLOBAL_UNDER_CONSTRUCTION. This field would be used to signal whether inputs and outputs can be added to the PSBT. Rusty Russell suggests that this could be flagged by omitting the PSBT_GLOBAL_INPUT_COUNT and PSBT_GLOBAL_OUTPUT_COUNT fields. However, Andrew explains that those fields are necessary to determine the number of input and output maps in the PSBT. They also discuss the possibility of signed inputs being added to transactions and the complexity of allowing modification of inputs and outputs after the Creator role is done. Rusty suggests adding more data to the PSBT_GLOBAL_UNDER_CONSTRUCTION field to indicate which inputs and outputs are modifiable and what inputs are SIGHASH_SINGLE.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T16:30:41.523813+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

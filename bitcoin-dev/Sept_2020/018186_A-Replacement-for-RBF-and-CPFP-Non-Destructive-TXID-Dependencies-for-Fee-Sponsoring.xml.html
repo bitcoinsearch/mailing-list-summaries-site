@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2020-09-21 14:52:21
+            <br><i>Published on: 2020-09-21T14:52:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2020/combined_A-Replacement-for-RBF-and-CPFP-Non-Destructive-TXID-Dependencies-for-Fee-Sponsoring.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018186.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the issue of concurrent states being pinned in a sponsor mechanism. Bob can broadcast a thousand revoked Lightning Network (LN) states and pin them with low-feerate sponsors, making it impossible for Alice to fee-sponsor them as she doesn't have a global view of network mempools. Due to the proposed policy rule, "The Sponsor Vector's entry must be present in the mempool," Alice's sponsors won't propagate. The proposal suggests that instead of sponsor vectors pointing to transaction IDs, they should point to input outpoints. This mechanism involves Alice and Bob opening a channel with a funding transaction, after which Alice unilaterally broadcasts a commitment transaction with minimal fees. Bob then broadcasts a sponsor transaction with a vector of 0123...cdef:0, and miners can include that sponsor transaction in any block that has a transaction with an input of 0123...cdef:0. This proposal does not require any consensus changes but may not solve RBF transaction pinning or ancestor/dependent limit pinning. Dave mentions that package relay based only on feerate may not solve the issue of RBF transaction pinning and ancestor/dependent limit pinning. However, he acknowledges that package relay has the advantage of not requiring any consensus changes and is useful in fixing other protocol rough edges.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:24:07.514732+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

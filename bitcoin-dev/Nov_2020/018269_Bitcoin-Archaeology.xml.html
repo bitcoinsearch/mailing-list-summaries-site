@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Archaeology</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dan Bryant 2020-11-11 15:06:54
+            <br><i>Published on: 2020-11-11T15:06:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2020/combined_Bitcoin-Archaeology.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018269.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author aims to build the first three versions of Bitcoin (v0.1.0, v0.1.3, and v0.1.5) in a similar vein to the Github Artic Code Vault and the Nakamoto Institute. The original Satoshi posts suggest that the builds could be done using Visual C++ version 6.0 or MinGW and MSYS (which were at v1.0.11). Since most versions of VC 6 have been purged from the internet, the only option left is MinGW which is still up on sourceforge. However, OpenSSL fails to build due to some issues in mk1mf.pl, possibly because of a bad version of perl in MSYS v1.0.11. The author seeks help in recalling the steps to build OpenSSL v0.9.8h in MSYS 1.0.11 and asks if anyone knows where to find a non-sketchy copy of Visual C++ 6.0. The options available are to try to find out how Satoshi did the MinGW OpenSSL build back in 2009, try to do the OpenSSL build through Cygwin which could cross-compile to MinGW at the time, try to do the OpenSSL build through Msys2 with later versions of perl and libc, buy some sketchy version of VC 6 on ebay and try that, patch Bitcoin 0.1.0 to use OpenSSL v1.0.0 where they fixed the perl bug, give up and use a precompiled OpenSSL release or give up and use the Linux build methods introduced in Bitcoin v0.1.6. The author feels that it is important to reproduce these old builds, however, it may seem like a fool's folly. The mk1mf.pl bug seems to be in parsing the list of headers through either the var_add, clean_up_ws, or do_copy_rule subs. The headers and header directories are parsed, but the directories are dropped when building the make rules, causing make to assume all headers are at root, failing the build. There may be a version sed, basename or dirname that is missing in MSYS, but the dependency is yet to be found. The references provided are the Satoshi Nakamoto code repository and the OpenSSL mk1mf.pl file on GitHub.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T16:17:08.263553+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

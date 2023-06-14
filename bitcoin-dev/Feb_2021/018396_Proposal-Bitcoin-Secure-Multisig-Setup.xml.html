@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hugo Nguyen 2021-02-11 13:45:33
+            <br><i>Published on: 2021-02-11T13:45:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018396.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Pavol Rusnak and Hugo Nguyen, Pavol pointed out that the encryption key scheme used might be vulnerable to a rainbow table attack. Hugo agreed and suggested using a different scheme for better security, which involves generating a nonce and using it with HMAC-SHA256 to obtain the encryption key. The description is provided by the user, and the coordinator distributes the description along with the nonces to the signers. However, this new scheme requires a manual entry of shared secrets, which can impact UX. Christopher Allen raised concerns about reusing XPUBs inside different multisig wallets because loss of privacy in one wallet will affect the privacy of other wallets. Hugo agreed with Christopher and said that unique XPUBs should be used for each wallet to firewall them from each other. To address trust issues, Hugo suggested using a shared secret approach where the TOKEN doubles as a session ID to establish a common state on both sides. Pavol also asked about disabling encryption, but Hugo thought that not all use cases might require encryption and making it mandatory could be an overkill.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T17:27:08.230929+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

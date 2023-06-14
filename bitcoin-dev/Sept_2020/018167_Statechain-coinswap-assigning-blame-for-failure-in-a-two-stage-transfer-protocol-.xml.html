@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Statechain coinswap: assigning blame for failure in a two-stage transfer protocol.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-09-16 01:04:29
+            <br><i>Published on: 2020-09-16T01:04:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2020/combined_Statechain-coinswap-assigning-blame-for-failure-in-a-two-stage-transfer-protocol-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018167.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses a high-level description of how blinding can operate for swapping ownership of coins privately. Four individuals (A, B, C, and D) want to swap ownership and signal their participation by signing the swap token with the proof key of their input coin. They then generate new statecoin addresses, which they blind and sign with the proof key of their input coin, sending them to the conductor who authenticates each signature and signs each payload with a blinded signature scheme. The conductor then randomly assigns each address to one of utxo1, utxo2, utxo3, and utxo4 and requests each participant initiate the transfer to the given address. The participants finalize each transfer, and atomicity is guaranteed by the SCE. However, the email also highlights potential issues with the plan, such as requiring trust that the coordinator will not collude with other participants, which may lead to theft. It suggests that the trust-minimized CoinSwap plan by belcher_ is superior and potentially compatible with using watchtowers that can be used for both CoinSwap and Lightning as well.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:18:35.720582+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
