@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Encryption of an existing BIP39 mnemonic without changing the seed</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter D. Gray 2021-05-06 12:56:37
+            <br><i>Published on: 2021-05-06T12:56:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2021/combined_Encryption-of-an-existing-BIP39-mnemonic-without-changing-the-seed.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018891.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Coldcard release now offers a new feature called "Seed XOR" that allows any number of standard BIP-39 compatible seed phrases to be bitwise XOR'ed together to make a new seed. This feature enables the splitting of an existing seed into 2, 3, or 4 new phrases. Additionally, the existing seed phrase can be XOR-in with a new seed phrase to create a new random seed phrase and wallet. The XOR process is simple enough to work out by hand on paper. Checksums on each of the XOR parts protect the final result, and each part is a fully functional decoy wallet. Tobias Kaupat started a discussion about his use case where he wants to save an existing mnemonic for a hardware wallet on a paper backup in password encrypted form. He suggested a solution that involves extracting the related entropy from the existing mnemonic, creating a SHA526 hash (key) from a user-defined password, using the key as input for an AES CTR (empty IV) to encrypt the entropy, and deriving a new mnemonic from the encrypted entropy to be stored on a paper backup. Tobias found an existing solution called "Seedshift," but he considers it less secure and would prefer a solution based on provably secure algorithms rather than a "rot23 derivation."</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:40:25.700503+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An alternative to BIP 32?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2021-03-20 01:32:46
+            <br><i>Published on: 2021-03-20T01:32:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_An-alternative-to-BIP-32-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018701.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Bitcoin-dev mailing list, a user suggested using sha3-256 instead of sha256 for designing an HD wallet. They explained that sha256 is vulnerable to certain attacks such as length extension, which could potentially leak information depending on how things are concatenated. They suggest choosing something where padding doesn't matter.The user also shared a link to an interesting and simple HD wallet design that uses pure ECDSA and SHA-256. They asked if anyone sees any flaws in the design or if it is safe enough to implement and use in practice. The design includes a master public key and child public key derived from it using SHA-256 and a nonce. It also allows potentially unlimited custom derivation paths by using a 256-bit nonce.Overall, the discussion highlights the importance of choosing secure algorithms when designing cryptographic schemes. In this case, the suggestion to use sha3-256 over sha256 may provide better protection against certain attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T19:44:09.262026+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

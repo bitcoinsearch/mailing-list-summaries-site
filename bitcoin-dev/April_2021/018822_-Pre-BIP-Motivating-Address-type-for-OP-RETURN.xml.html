@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[Pre-BIP] Motivating Address type for OP_RETURN</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2021-04-20 15:46:07
+            <br><i>Published on: 2021-04-20T15:46:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_-Pre-BIP-Motivating-Address-type-for-OP-RETURN.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018822.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jeremy Rubin has suggested that an address type should be defined for OP_RETURN. He came across this while writing some code that wanted to handle common classes of user transactions generically. The absence of Address defining OP_RETURN makes it difficult to read a Coin containing OP_RETURN. An Address type would aid in simplifying types for programs. This is a challenge for him as he is building the Sapio compiler and wants all contract compilations to result in an Address, but he needs to support OP_RETURN for various reasons. The counterargument against this is that OP_RETURN, being unspendable and usually proprietary in purpose, should not have an address. Most uses of OP_RETURN are proprietary, so pretending to interpret them would be lying to the user. However, Jeremy argues that Addresses should represent things that people commonly create outputs for, and OP_RETURN is such a thing. Many things are unspendable and we cannot know spendability based on address type. He also suggests some design constraints for the proposed OP_RETURN address type: Should it be human-readable & checksummed or encoded? Should it have a fixed length of max 40-80 bytes or should it support arbitrary length strings? Should it be possible to pay into such an OP_RETURN or should we categorize OP_RETURNS as a non-payable address type?</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:20:49.891392+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

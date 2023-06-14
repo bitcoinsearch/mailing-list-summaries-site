@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP - limiting OP_RETURN / HF</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-04-16 23:52:48
+            <br><i>Published on: 2021-04-16T23:52:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_BIP-limiting-OP-RETURN-HF.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018808.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The message is in response to a suggestion to add limitations on OP_RETURN transactions. The writer argues that users can always encode data inside the values of legacy multi-signature scriptpubkeys and have done so in the past. However, this behavior is problematic because it's indistinguishable from "real" multisignature scriptpubkeys and must be kept in the UTXO set. This differs from outputs using OP_RETURN which are provably unspendable and can be safely omitted from the UTXO set. The writer suggests removing the legacy multi-signature capabilities as well.The writer also explains that the same technique can be used on P2PKH as well - the "pubkey hash" need not be a hash of a public key; it can be a 20-byte commitment or even an ASCII message like "ZmnSCPxj is the best" (20 characters). Additionally, if a 32-byte commitment is needed, a P2WSH would work - again, the "script hash" need not be a hash of a script, it can be any 32-byte commitment. In all these cases, 547 satoshi must be wasted, but that tends to be small compared to tx fees currently.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:09:07.445386+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
