@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A design for Probabilistic Partial Pruning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> eric at voskuil.org 2021-03-01 09:37:06
+            <br><i>Published on: 2021-03-01T09:37:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_A-design-for-Probabilistic-Partial-Pruning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018509.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on Bitcoin-dev mailing list reveals that downloading relevant blocks from one node with gaps in between is possible, as only headers need to be downloaded sequentially. Libbitcoin v4 works on this principle by downloading and storing blocks in parallel. Block gaps are repopulated in case of a restart, and the most responsive nodes are selected based on standard deviation. Slowest peers are dropped, and load is rebalanced to new channels. However, pruning is not done due to its counterproductiveness, complexity, and linear growth of the chain with exponentially falling storage cost.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T18:39:32.236023+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

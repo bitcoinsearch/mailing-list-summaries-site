@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Signature and Script Independent Hierarchy for Deterministic Wallets.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> SomberNight 2021-03-14 15:13:32
+            <br><i>Published on: 2021-03-14T15:13:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_Signature-and-Script-Independent-Hierarchy-for-Deterministic-Wallets-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018660.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Robert Spigler, a developer, has raised concerns about the existing standards for deterministic wallets in an email to the bitcoin-dev mailing list. He argues that there are issues with the current standards and that keys and scripts should not be mixed in the same layer. According to BIP 44/49/84, the derivation path is `m / purpose' / coin_type' / account' / change / address_index`, with per-script derivations made redundant with descriptors. Spigler suggests creating extended private/public keys independent of the script or signature type, defining the following 5 levels in the BIP32 path: `m / purpose' / coin_type' / account' / change / address_index`. Spigler notes that it's crucial to increase the account level for each new wallet joined or private/public keys created, both for privacy and cryptographic purposes. He gives examples such as incrementing the account level before sending a new key record to a coordinator in multisignature wallets and before creating its own single signature wallet. However, by trying to create a standard that mixes discoverable and non-discoverable scripts in the same derivation scheme and incrementing a single index, all scripts become non-discoverable. Even if a user only used singlesig scripts and followed this proposal, during recovery from seed, the wallet would have to check all script types for all account indices. The workaround is to backup both seed words and output script descriptors and keep appending new output script descriptors to existing backups when the account index is incremented. While less user-friendly than backing up just a seed, it is more generic and extendable. Spigler's proposal makes a tradeoff that is easy to miss on first read of the text, so he explicitly points it out for the record.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T19:25:26.146116+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

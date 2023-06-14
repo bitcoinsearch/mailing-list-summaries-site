@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A design for Probabilistic Partial Pruning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Leo Wandersleb 2021-02-28 03:41:06
+            <br><i>Published on: 2021-02-28T03:41:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2021/combined_A-design-for-Probabilistic-Partial-Pruning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018491.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A developer named Keagan McClelland has come up with an idea for a "partially" pruned node to help reduce the load of bootstrapping other nodes and increase data redundancy in the network. Currently, full nodes have two options: either pruning everything except the most recent blocks down to cache size or keeping everything since genesis. However, this proposal would allow a node to randomly prune some historical blocks if it passes some predicate. The uniqueness of the node's hash should ensure that no block is systematically overrepresented in the set of nodes choosing this storage scheme. Once the node's initial block download (IBD) is complete, it would advertise its seed and threshold as a peer service so that nodes could deterministically deduce which of its peers had which blocks.Igor Cota responded to this proposal, suggesting that it may be better for the node to decide on a range of blocks to keep beforehand, rather than making the decision block-by-block. He felt that ranges would better serve other nodes due to the sequential nature of IBD, and it may be computationally lighter as well. He also encouraged Keagan to read Ryosuke Abe's paper proposing a DHT scheme to solve the same problem.Keagan is working on a draft BIP for this proposal, but he is open to feedback on the initial design before going into specification levels of detail. He is looking for thoughts on the protocol design itself and the barriers to putting this kind of functionality into Core.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T18:39:25.333298+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Robert Spigler 2021-04-10 19:32:25
+            <br><i>Published on: 2021-04-10T19:32:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018774.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the bitcoin-dev mailing list, the topic of multisig setup context was raised. The concern is that in the event of a fire where you only recover your steel engraved mnemonic(s), but no longer have the wallet descriptors, you could lose access to your coins. However, it was pointed out that devices need to persist the descriptor, and if they can't comply with this standard, they can't be used securely for multisig. Additionally, there's no reason why the master seed and descriptor both can't be backed up outside of each device. The BIP48 was also discussed as being redundant with descriptors. A proposed updated hierarchy for multisignature wallets can be found on Github. Another concern raised was an encryption convention for the descriptor data since backup location owners cannot spend, but they can view wallet balance/history. It was suggested that Shamir Secret Sharing could be used for this purpose. Finally, the issue of plain text vs binary was addressed with a preference for plain text. Overall, it was agreed that multisig setup context is important and should be taken into consideration when developing multisig setups.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T17:34:35.793501+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

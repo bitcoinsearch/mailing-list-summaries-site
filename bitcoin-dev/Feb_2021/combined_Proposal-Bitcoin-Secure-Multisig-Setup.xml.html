@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bitcoin Secure Multisig Setup <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018764_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Sjors Provoost 2021-04-09 12:07:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018771_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Erik Aronesty 2021-04-10 13:53:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018779_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-04-12 18:45:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018782_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Robert Spigler 2021-04-12 20:43:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018404_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-02-11 22:29:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018407_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Peter D. Gray 2021-02-12 13:48:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018422_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Craig Raw 2021-02-15 13:53:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018388_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 10:05:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018396_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 13:45:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018765_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-09 14:09:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018771_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Erik Aronesty 2021-04-10 13:53:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018775_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Michael.flaxman 2021-04-11 02:34:21</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018776_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-11 16:45:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018778_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-12 17:55:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018400_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 19:11:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018401_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 19:11:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018408_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 16:55:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018409_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-12 17:42:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018410_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-12 17:48:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018411_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 17:54:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018420_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-14 11:28:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018421_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 08:44:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018385_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-08 23:14:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018386_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Craig Raw 2021-02-09 09:33:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018389_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 09:45:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018775_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Michael.flaxman 2021-04-11 02:34:21</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018776_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-11 16:45:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018778_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-12 17:55:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018779_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-04-12 18:45:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018400_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 19:11:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018406_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 12:31:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018407_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Peter D. Gray 2021-02-12 13:48:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018409_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-12 17:42:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018411_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 17:54:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018420_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-14 11:28:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018421_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 08:44:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018422_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Craig Raw 2021-02-15 13:53:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018764_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Sjors Provoost 2021-04-09 12:07:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018774_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Robert Spigler 2021-04-10 19:32:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018777_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Salvatore Ingala 2021-04-12 15:03:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018400_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 19:11:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018401_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 19:11:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018406_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 12:31:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018419_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-14 10:37:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018424_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 16:45:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018385_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-08 23:14:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018386_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Craig Raw 2021-02-09 09:33:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018389_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 09:45:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018390_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 10:58:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018765_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-09 14:09:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018766_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-09 14:54:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018767_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Sjors Provoost 2021-04-09 15:33:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018774_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Robert Spigler 2021-04-10 19:32:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018775_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Michael.flaxman 2021-04-11 02:34:21</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018776_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-11 16:45:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018778_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-12 17:55:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018732_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-05 07:02:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018406_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 12:31:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018407_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Peter D. Gray 2021-02-12 13:48:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018424_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 16:45:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018387_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-02-09 09:38:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018390_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 10:58:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018398_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-11 16:29:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018771_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Erik Aronesty 2021-04-10 13:53:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018401_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 19:11:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018404_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-02-11 22:29:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018410_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-12 17:48:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018419_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-14 10:37:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018424_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 16:45:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018385_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-08 23:14:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018386_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Craig Raw 2021-02-09 09:33:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018387_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-02-09 09:38:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018398_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-11 16:29:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018732_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-05 07:02:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018408_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 16:55:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018409_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-12 17:42:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018410_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-12 17:48:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018411_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 17:54:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018420_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-14 11:28:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018421_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 08:44:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018423_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 14:19:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018387_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-02-09 09:38:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018395_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Pavol Rusnak 2021-02-11 13:25:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018398_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-11 16:29:10</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018766_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-09 14:54:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018767_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Sjors Provoost 2021-04-09 15:33:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018779_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-04-12 18:45:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018782_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Robert Spigler 2021-04-12 20:43:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018404_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Christopher Allen 2021-02-11 22:29:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018419_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Dmitry Petukhov 2021-02-14 10:37:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018422_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Craig Raw 2021-02-15 13:53:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018423_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 14:19:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018388_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 10:05:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018395_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Pavol Rusnak 2021-02-11 13:25:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018396_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 13:45:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018777_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Salvatore Ingala 2021-04-12 15:03:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018732_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-05 07:02:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018764_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Sjors Provoost 2021-04-09 12:07:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018765_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-09 14:09:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018766_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-04-09 14:54:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018767_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Sjors Provoost 2021-04-09 15:33:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018774_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Robert Spigler 2021-04-10 19:32:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018777_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Salvatore Ingala 2021-04-12 15:03:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2021/018782_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Robert Spigler 2021-04-12 20:43:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018388_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 10:05:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018389_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 09:45:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018390_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-09 10:58:06</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018395_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Pavol Rusnak 2021-02-11 13:25:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018396_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-11 13:45:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018408_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-12 16:55:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2021/018423_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html">Proposal: Bitcoin Secure Multisig Setup</a>
+                        <b>Hugo Nguyen 2021-02-15 14:19:14</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018764.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-04-09T12:07:05+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A Bitcoin Improvement Proposal (BIP) called the Bitcoin Secure Multisig Setup (BSMS) has been proposed to establish a standardized process for securely setting up multisig wallets across different vendors. The proposal introduces two layers of protection, including a temporary secret token used to encrypt communication between signers and coordinators, and a descriptor checksum to prevent malicious members from being inserted into the set. However, concerns have been raised about the effectiveness of the proposal in addressing security issues such as xpub validation and risks for stateless hardware wallets.The setup process involves a Coordinator and multiple Signers who use a two-round communication system to set up a multisig wallet. If encryption is enabled, the Coordinator distributes a shared secret or shared secrets to the parties involved for secure communication. Other experts have suggested measures to improve privacy and avoid xpub reuse in Bitcoin multisig accounts. Christopher Allen proposed several best practices to avoid xpub reuse and improve privacy, while Michael Flaxman recommended using a checksum with higher entropy to reduce xpub validation and create a better user experience for signers.Various proposals have been made to address concerns about the vulnerability of the encryption key generation scheme used in BSMS, including using PBKDF2 as the key derivation function or BIP32 seed words list to generate the encryption key. However, these solutions may add complexity and negatively impact multisig adoption if not addressed effectively. In conclusion, while the BSMS proposal aims to address concerns about securely setting up multisig wallets across different vendors, there are still concerns and ongoing discussions about its effectiveness in addressing security issues.In addition to the BSMS proposal, Hugo Nguyen has proposed a solution to address trust issues in the form of a shared secret approach where the token doubles as a session ID to establish a common state on both sides. Dmitry Petukhov has suggested an alternative approach using a key derivation function designed for passwords such as PBKDF2 instead of ENCRYPTION_KEY = SHA256(SHA256(TOKEN)), which could be vulnerable to rainbow table attacks. The BSMS proposal focuses on an interoperable multisig configuration format and outlines an encryption scheme for a setup that involves multiple signers. The proposal introduces three modes of encryption: NO_ENCRYPTION, STANDARD (64-bit nonce), and EXTENDED (128-bit nonce). To ensure maximum security, the proposal suggests two layers of protection: a temporary, secret token used to encrypt communication between the signer and coordinator during setup, and a descriptor checksum and visual inspection to prevent malicious members from being inserted into the set.The document also discusses the importance of multisig setup context and the need for unambiguous formats for wallet ID and policy maps, as well as distinguishing between a "Signer" and a "Signing device." There are concerns about xpub key reuse in multisig transactions, which could be addressed by creating an index using a PBKDF of the Account Policy. Losing multisig setup context is flagged as an issue, particularly if one device is lost in a 2-of-3 setup without metadata. The use of a Coordinator can help mitigate the O(n^2) communication problem and reduce the need for large amounts of sensitive data to be shared by simplifying the setup process. Overall, these proposals aim to provide a secure and efficient method for multiple signers to work together while ensuring the privacy and trust of all parties involved. However, ongoing discussions and further improvements are necessary to address potential vulnerabilities and ensure the effectiveness of these solutions in addressing security issues.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-14T17:44:10.059109+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

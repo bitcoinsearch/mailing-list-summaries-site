@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70 is dead. What now?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Charles Hill 2021-02-19 10:33:45
+            <br><i>Published on: 2021-02-19T10:33:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2021/combined_BIP70-is-dead-What-now-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018446.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Thomas Voegtlin, the creator of Electrum wallet, expressed his dislike for BIP70 protocol due to its complexity and unclear main features. However, he finds one feature useful – the ability to receive signed payment requests when sending Bitcoin to an exchange. He believes that this would provide proof that the exchange requested the transfer and guide users' decision to use that exchange over its competitors. However, he notes that no exchange has implemented this feature due to BIP70 being a terrible standard. Therefore, Thomas is looking for another standard for signed requests, and he would be happy to remove BIP70 support from Electrum if such a standard existed.To address this issue, Chill117 suggested using URL signing scheme with LNURL, which could be repurposed for on-chain payments as well. The scheme involves generating an API key to be shared between a server and an offline device or application. To generate a signature, a random nonce is generated, and a query string is built with various parameters, including custom ones. The payload (the sorted query string) is then signed using HMAC-SHA256 with the API key secret, and the signature is appended to the payload. Chill117 also suggests removing the LNURL-specific parameters and using pub/priv key signing instead of HMAC-SHA256 with a shared secret. This approach is used in the lnurl-auth subprotocol which protects user privacy while allowing verification of signatures.Both Chill117 and Thomas provided links to their respective proposals for more details.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T18:18:15.752228+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
