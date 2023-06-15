@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Packaged Transaction Relay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> alicexbt 2022-09-27 09:29:19
+            <br><i>Published on: 2022-09-27T09:29:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2022/combined_Packaged-Transaction-Relay.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020946.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation on the bitcoin-dev mailing list focuses on package relay in Bitcoin. One of the main issues discussed is stuck transactions resulting from the minimum fee rate policy, which is necessary for DOS protection. Matt Corallo's proposal for pre-signed transactions with low fee rates is also mentioned. Debate arises regarding the complexity of solutions to the problem of CPFP fee-bumping.To address these concerns, a new proposal is discussed for packaging transactions to propagate transactions that are incentive-compatible to mine, even if they don't meet the minimum feerate alone. This approach aims to avoid predictable orphans and create minimal packages. The proposed mechanism for package relay involves an additional INV element type and several guidelines for packages.There is concern about potential bandwidth waste in nodes running with different policy rules, but ways to mitigate this are suggested, including including a hash of the package wtxids along with the wtxid of the child in the initial announcement or limiting the use of v1 packages to transactions with very few parents. The discussion also mentions the use of BIP 152 shortids to save bandwidth in package relay, but there is concern about creating a DoS vector due to the computational complexity of calculating shortids for every transaction in mempools.Overall, there is agreement to eliminate the need for headers and remove fee + weight information from pkginfo to reduce complexity. The conversation also touches on the addition of versioning to individual protocols, reflecting the insufficiency of the initial protocol versioning design. Links to the bitcoin-dev mailing list are provided for further information.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T21:44:09.722070+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

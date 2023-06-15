@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV BIP Meeting #8 Notes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2022-05-12 17:28:39
+            <br><i>Published on: 2022-05-12T17:28:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_CTV-BIP-Meeting-8-Notes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020475.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion about covenants on the Bitcoin development mailing list, it was clarified that a recursive covenant does not necessarily guarantee any particular thing will happen in the future. Both recursive and non-recursive covenant opcodes can be used to guarantee something will happen, but neither necessarily guarantees anything because of the possibility of alternative spend paths. A covenant is not just a promise, but also a restriction. A recursive covenant opcode is one that allows loops in the progression through covenant addresses. This allows for infinite recursion which can be used to return to a previous state, allowing for permanent walled gardens. A covenant in an input script places a requirement/restriction on the output script(s) that input sends to. Pretty much any covenant allows for a chain or graph of covenant-laden addresses to be prescribed, while a "recursive covenant" opcode allows previous nodes in that graph to be returned to such that the states can be looped through forever (which may or may not have some way to exit).One potentially confusing thing about the way covenants are usually talked about is that in technical discussions about the risks of covenants, what is being talked about is not what a particular covenant opcode always does, but rather what the boundaries are on what can be done with that opcode. The consensus among people who care about covenants on this mailing list seems to be that infinitely recursive covenants are not something to be afraid of. However, there may be interest in placing a covenant limit into an opcode to prevent the ability to create walled gardens without eliminating most interesting use cases.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T20:37:54.951013+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

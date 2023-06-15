@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Package Relay Proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> eric at voskuil.org 2022-05-26 02:59:01
+            <br><i>Published on: 2022-05-26T02:59:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_Package-Relay-Proposal.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020522.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a proposal for package relay in Bitcoin protocol. Since packages do not have headers, they require identity in a BIP152 scheme. A Merkle root can be used to uniquely identify the partially-ordered set of transactions, replacing header and blockhash fields. The concern is raised about a dishonest peer announcing a package with false information and whether we should double-check it with other peers or censor that tx from us. The fix for this is to provide fee and weight when announcing the package rather than only being asked for its info. Single tx broadcasts do not carry an advertised fee rate, but 'feefilter' (BIP133) message provides this distinction, which can be interpreted as applicable to packages. Thus, there is no need to send a potentially bogus fee rate with every package. It can only be validated by obtaining the full set of txs. A package is fundamentally a compact block announcement without the header, and once a validated set of txs within the package has been obtained with sufficient fee, a fee-optimal node would accept the largest subgraph of the package that conforms to fee constraints and drop any peer that provides a package for which the full graph does not. The proposed changes to names are sendpkg, MSG_CMPCT_PKG, cmpctpkg, getpkgtxn, pkgtxn. Size is restricted in the same manner as block and transaction broadcasts, by consensus, and count is incorporated into BIP152 as 'shortids_length'. Adding versioning to individual protocols is just a reflection of the insufficiency of the initial protocol versioning design, and that of the various ad-hoc changes to it, including yet another approach in this proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T20:58:40.501961+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

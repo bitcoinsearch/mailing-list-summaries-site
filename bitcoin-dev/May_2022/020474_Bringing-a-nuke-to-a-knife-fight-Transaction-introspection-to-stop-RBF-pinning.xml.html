@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bringing a nuke to a knife fight: Transaction introspection to stop RBF pinning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2022-05-12 13:31:02
+            <br><i>Published on: 2022-05-12T13:31:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_Bringing-a-nuke-to-a-knife-fight-Transaction-introspection-to-stop-RBF-pinning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020474.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is centered around a proposed update transaction that sets the upper bound on the final transaction weight. The proposal includes OPTX_SELECT_WEIGHT to push tx weight to stack and conditionally commit to the change output's scriptpubkey for each contract participant. However, there are concerns about pinning an unsubmitted update[-1] under 25,000 vbytes of junk. It is suggested that raising mempool ancestor/descendant limits might be necessary in the future. One thought is to relative-time lock update transactions' state input by one block to close the vector off, allowing for one "update transaction package" at a time in mempool. The use of ANYONECANPAY-like behavior may not have these issues, such as vault structures. The author also notes that making the 1,000 vbytes limit smaller would limit the amount of pinning possible but also discourage people from holding bitcoins in deep taproot trees or sophisticated tapscripts.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T20:47:17.089138+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

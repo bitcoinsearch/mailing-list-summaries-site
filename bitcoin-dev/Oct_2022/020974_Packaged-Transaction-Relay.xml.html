@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Packaged Transaction Relay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> eric at voskuil.org 2022-10-05 00:01:04
+            <br><i>Published on: 2022-10-05T00:01:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_Packaged-Transaction-Relay.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020974.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion pertains to the proposal of a packaged transaction relay where the sole objective is to propagate transactions that are incentive-compatible to mine, even if they don't meet minimum feerate alone. The proposed protocol change involves minimizing bandwidth waste while reducing latency and allowing an efficient mechanism for the recipient of a transaction to retrieve dependencies.However, the proposal fails to eliminate orphan announcement, prevent packages with insufficient fee from getting stuck in the same manner as txs and results in orphaned package announcements. Due to the resulting orphaning, a node must allow its peer to continue broadcasting unverifiable orphans to it, potentially causing bandwidth DOS. The feasibility of using "feerate" alone as a sufficient predictor of what is in peers' mempools is also questioned.While there may be some situations where a transaction relayer might be able to usefully package up a transaction with its dependencies, it should be helpful to add to the protocol some way for the recipient of a transaction to request the dependencies directly. The proposal's complexity and bandwidth efficiency issues are discussed, and a rational way of reducing the size of the mempool is suggested. The problems of static packaging are also highlighted, and it's suggested that further discussion and understanding of practices on the network are needed before figuring out how best to balance these ideas.Moving on to another context, the message suggests the availability of a draft search algorithm. The algorithm can be found at the provided link, which directs users to the libbitcoin-network wiki page containing information on Iterative Channel Package Computation. It is unclear what the purpose of this algorithm is or how it might be used. However, the use of the term "marginal cost" may suggest that it is related to economics or finance. Despite the lack of clarity, interested individuals can access the draft algorithm via the link provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T21:39:34.999803+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

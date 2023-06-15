@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Speedy covenants (OP_CAT2)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2022-05-11 19:41:16
+            <br><i>Published on: 2022-05-11T19:41:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_Speedy-covenants-OP-CAT2-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020467.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, ZmnSCPxj reminded readers that `OP_CAT` alone does not enable covenants, whether recursive or not. However, it was suggested that using `OP_CAT` in tapscript enables non-recursive covenants, and it is unknown whether it can enable recursive covenants. Andrew Poelstra demonstrated how to use `OP_CAT` to get the sighash value + 1 onto the stack and then use SHA256 to get the signed transaction data onto the stack, which could be used to build functionality similar to OP_CTV through introspection. The missing pieces for enabling recursive covenants involve transforming a scriptpubkey into a taproot address, which involves some tweaking. Poelstra has suggested hijacking the ECDSA checksig operation from a parallel, legacy input to perform this tweaking calculation, but no one has yet achieved this feat.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T20:34:39.644883+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

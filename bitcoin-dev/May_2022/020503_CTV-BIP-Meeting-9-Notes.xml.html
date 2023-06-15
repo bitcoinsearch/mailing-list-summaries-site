@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV BIP Meeting #9 Notes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2022-05-20 23:47:54
+            <br><i>Published on: 2022-05-20T23:47:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_CTV-BIP-Meeting-9-Notes.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020503.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the provided context, ZmnSCPxj discusses the vulnerability of covenant mechanisms to MEV. When asked about which specific covenant mechanisms require large witness data, ZmnSCPxj refers to `OP_CSFS` and `OP_CAT`. These mechanisms require copying parts of the transaction into the witness data to use for covenants, with `OP_CSFS` needing large scripts if used for covenants. However, ZmnSCPxj notes that `OP_CSFS` is not designed for covenants but instead enables them when enough data is thrown at it. To better support recursive covenants, ZmnSCPxj suggests creating an opcode that explicitly supports recursion rather than one that happens to enable it as this would likely require less data to be pushed on the witness stack. The goal is to avoid repetition in the code.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T21:16:42.542512+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
