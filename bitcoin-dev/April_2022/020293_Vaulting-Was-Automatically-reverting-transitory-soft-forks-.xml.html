@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Vaulting (Was: Automatically reverting (&#34;transitory&#34;) soft forks)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2022-04-23 04:56:02
+            <br><i>Published on: 2022-04-23T04:56:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Vaulting-Was-Automatically-reverting-transitory-soft-forks-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020293.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list revolves around the security holes in most vault proposals and potential solutions to them. The primary concern is that if an attacker steals the hot key, they can wait for the user to unvault their funds. One solution proposed by James O'Beirne is the OP_BEFOREBLOCKVERIFY opcode, which automatically swaps control of the UTXO over to the intended recipient after a timeout. Alternatively, OP_POS in conjunction with OP_CD could be used to encode transactions so that the hot key can only spend to the intended recipient. Russell O'Connor points out that the MES vault design includes the destination address committed to by the unvaulting step, but this can only be achieved with a less constrained design for covenants. While the CTV vault may contain the damage from a hot key theft more effectively, it is not without its own issues, such as fee management. The simple and high utility vault design proposed by James O'Beirne serves as a good benchmark for evaluating covenant proposals. However, implementing it in alternatives may be challenging due to incomplete specifications and tooling.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T19:37:11.409461+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taro: A Taproot Asset Representation Overlay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> vjudeu at gazeta.pl 2022-04-05 20:23:05
+            <br><i>Published on: 2022-04-05T20:23:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Taro-A-Taproot-Asset-Representation-Overlay.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020197.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author proposes the idea of implementing "miner-based commitments" in Bitcoin transactions, which would allow for standardized commitments to be made at no additional cost. They suggest that if a user is going to make a transaction only to commit things, then there should be a mechanism for miner-based commitments. The proposal involves tweaking a single public key in the coinbase transaction to fit all commitments in one tweaked key and even making it logarithmic by forming a tree of commitments. The author thinks that standardizing miner-based commitments could be beneficial, for example, to have a sorted merkle tree of commitments. In addition to this proposal, the author also introduces a new protocol called Taro, which allows the issuance of normal and collectible assets on the main Bitcoin chain. Taro uses the Taproot script tree to commit extra asset structured meta-data based on a hybrid merkle tree known as a Merkle Sum Sparse Merkle Tree or MS-SMT. Taro asset transfers are embedded in a virtual/overlay transaction graph which uses a chain of asset witnesses to provably track the transfer of assets across taproot outputs. The protocol also supports integration with the Lightning Network (BOLTs) as the scripting system can be used to emulate the existing HTLC structure. This deployment route means that we don't need to build up an entirely new network and liquidity for each asset, but instead, all asset transfers will utilize the Bitcoin backbone of the Lightning Network. The set of BIPs for Taro is a multi-part suite and includes the main Taro protocol, the MS-SMT structure, the Taro VM, the Taro address format, the Taro Universe concept, and the Taro flat file proof format. All the BIPs can be found in the links provided by the author.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T18:33:20.258464+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Speedy Trial</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Keagan McClelland 2022-04-25 17:26:09
+            <br><i>Published on: 2022-04-25T17:26:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Speedy-Trial.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020329.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>BIP8 is a soft fork activation method that has semi-mandatory signaling during the must_signal period. Only "threshold" blocks are required to signal, so if only a small percentage of miners aren't signaling and the threshold is set high enough, no blocks will be orphaned. The "counter" for bip8 activation is to reject any block during either the started or must_signal phases that would meet the threshold. This approach works the same way with Speedy Trial. Nodes running speedy trial will reorg to follow the resisting chain if it has the most work, whereas nodes running bip8 with lot=true will not reorg to a failing chain unless one group or the other gives up and changes their software. Jeremy Rubin has written code that uses rpc to check the deployment status and reject a block.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T18:00:20.755476+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

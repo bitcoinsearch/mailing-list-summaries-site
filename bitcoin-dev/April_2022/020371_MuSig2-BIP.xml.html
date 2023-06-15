@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>MuSig2 BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Brandon Black 2022-04-28 15:33:42
+            <br><i>Published on: 2022-04-28T15:33:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_MuSig2-BIP.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020371.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Jonas and Brandon discuss a fragment of the BIP that describes a shortcut for a specific signer to send their nonces last. According to Brandon, this feature was added in response to an email he and a coworker sent to Jonas. The idea behind this feature is to simplify the implementation of certain protocols by allowing a signer who will always send their nonce last to fully specify all the new optional arguments without generating real randomness. The modifications required to achieve this include making optional arguments required and composing the extra_in argument of all other parties' nonces. The important property of the last signer's nonce is that any variation in any other party's nonce, or other values that contribute to the challenge, must uniformly randomize the last signer's nonce. The result is that the signer doesn't need to provide randomness and also doesn't have to retain state, making it easier to track, restore, and securely delete secret nonces across a signing session.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T18:49:02.652674+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

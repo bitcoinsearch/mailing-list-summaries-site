@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>ANYPREVOUT in place of CTV</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> darosior 2022-04-25 16:35:14
+            <br><i>Published on: 2022-04-25T16:35:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_ANYPREVOUT-in-place-of-CTV.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020325.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the activation of CTV and SIGHASH_ANYPREVOUT is taking place, with concerns about scarce reviewer time. APO-AS without ANYONECANPAY is used to approximate CTV, but it misses committing to the nSequences hash and number of inputs. Anthony Towns previously compared the two, while Jeremy Rubin pointed out its flaws. The fields covered in the CTV hash are similar to what the ANYPREVOUT_ANYSCRIPT's signature hash covers. However, APO_AS does not commit to the number of inputs and the hash of the inputs' sequences. The current behaviour of ANYONECANPAY can be combined with other signature hash types, making APO_AS mandatory, and to emulate CTV completely, it should be optional. The discussion involves tweaking BIP118 to replace or precede BIP119. Richard Myers believes that both proposals compete for scarce reviewer time and their ordering will depend on priorities. He focuses on BIP-118 as his priority is eltoo. In eltoo commit txs, ANYONECANPAY is always paired with APO-AS, while settlement txs in eltoo use only APO and do not necessarily need ANYONECANPAY. Making ANYONECANPAY the default for APO-AS was a way to add one more sighash flag, but there may be another way to do it. Including SIGHASH_GROUP with APO for eltoo is tempting so that the counter-party who commits a settlement tx can use their settled to_self balance for fees. It is worth discussing how to rejigger the sighash flags to accommodate both APO and GROUP. The BIP-118 proposal would benefit from input from reviewers looking at other protocols besides eltoo.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T19:25:36.681738+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

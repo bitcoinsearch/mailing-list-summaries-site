@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal: Timelocked address fidelity bond for BIP39 seeds</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Belcher 2022-05-15 09:13:39
+            <br><i>Published on: 2022-05-15T09:13:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_BIP-proposal-Timelocked-address-fidelity-bond-for-BIP39-seeds.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020486.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion between Chris Belcher and ZmnSCPxj revolves around the use of fidelity bonds in Joinmarket and Teleport. Chris explains that fidelity bond owners can use them in multiple applications, increasing their left-hand-side value while the right-hand-side value remains constant. He also points out that the privacy of a maker is crucial to maintaining the privacy of its takers as the identity of a maker can be linked across systems, degrading the privacy of both systems. To combat malicious takers aborting at the last step, Chris mentions that joinmarket has implemented podle commitments since 2016, which require attackers to spend money on miner fees to create new UTXOs constantly. Moreover, multiple mixdepths in the joinmarket wallet make it difficult for an attacker to learn all the UTXOs in all five mixdepths necessary for the attack to work. In Teleport, mitigation works differently where takers can only see UTXOs or transactions belonging to makers once they have already confirmed their own transaction. If they were to abort early, they would waste their time waiting for the OP_CSV timeout.Chris warns that linking the identities of JoinMarket and Teleport makers together slightly degrades privacy but needs to be balanced against the privacy loss of leaving both systems open to sybil attacks. Finally, he clarifies that fidelity bond UTXOs are not linked to any resulting coinjoin or coinswaps on-chain.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T20:10:45.165008+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

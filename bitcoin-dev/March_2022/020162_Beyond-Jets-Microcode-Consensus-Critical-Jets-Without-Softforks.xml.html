@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Beyond Jets: Microcode: Consensus-Critical Jets Without Softforks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2022-03-22 16:22:55
+            <br><i>Published on: 2022-03-22T16:22:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_Beyond-Jets-Microcode-Consensus-Critical-Jets-Without-Softforks.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020162.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj discusses the issue of namespace management in Bitcoin Script and suggests that Simplicity would make a better platform due to its narrow interface. However, he acknowledges that there is an issue with microcode introduction outpoints and race conditions between people submitting transactions. ZmnSCPxj clarifies that the use of specific microcodes is opt-in and requires a specific `0xce` Tapscript version along with a hash of the microcode. The only race condition is reorging out a newly-defined microcode which can be avoided by waiting for deep confirmation before using it. Once the microcode introduction outpoint has been confirmed, its meaning does not change. Fullnodes may need to maintain multiple microcodes, which is why creating new microcodes is expensive. The advantage of the microcode scheme is that it allows the size of the SCRIPT to be used as a proxy for CPU load, and CPU load is bounded as long as there are no looping constructs and the number of `UOP_` micro-opcodes is bounded. This means microcode does not require a softfork to modify weight calculations in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T18:18:59.572656+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

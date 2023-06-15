@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Automatically reverting (&#34;transitory&#34;) soft forks, e.g. for CTV</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2022-04-21 05:56:54
+            <br><i>Published on: 2022-04-21T05:56:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Automatically-reverting-transitory-soft-forks-e-g-for-CTV.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020246.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation on Thursday, April 21, AliceXBt asked DavidHarding if it was possible to revert changes made by soft forks that are already activated. Generally, the answer is no since reverting a soft fork without an expiry would be a hard fork. For example, some users do not agree with the witness discount in Segwit transactions, but it is not possible to revert Segwit. However, it is possible to do an additional soft fork to weigh witness data at the full 4 WU/Byte rate or reduce the total weight limit so that non-Segwit transactions can also receive the witness discount.LukeDashjr agrees with a user who commented on the issue with CTV, stating that miners should not have veto power over it. A UASF client compatible with Speedy Trial release for BIP 119 could be a better way to activate CTV. Users can decide whether they want mining pools to make the decision for them or enforce it irrespective of how many mining pools signal for it. LukeDashjr has not seen any arguments against CTV from mining pools yet. However, he notes that there were similar problems with Taproot. Certain people are trying to say that Speedy Trial activated Taproot rather than the BIP8 client, creating confusion and ambiguity. The variant of Speedy Trial being used is the BIP9 variant which has no purpose other than to try to sabotage parallel UASF efforts. It may be better for any Speedy Trial attempts to be rejected by the community and fail outright, including preparing a real counter-softfork to invalidate blocks signaling for it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T19:08:03.566013+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
