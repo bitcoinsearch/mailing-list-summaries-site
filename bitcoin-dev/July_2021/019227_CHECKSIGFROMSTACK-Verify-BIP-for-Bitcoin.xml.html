@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CHECKSIGFROMSTACK/{Verify} BIP for Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2021-07-06 18:21:33
+            <br><i>Published on: 2021-07-06T18:21:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_CHECKSIGFROMSTACK-Verify-BIP-for-Bitcoin.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019227.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on whether to split R or S in the Elements project is ongoing. The author of the message is inclined to go with the CAT option, regardless of whether Bitcoin chooses to split R/S or not. This decision may not be applicable to Bitcoin but it makes sense for the Elements project at this time. Updating CHECKSIGFROMSTACK is a blocking issue for deploying Taproot on Elements, and the author does not think that they will be holding up CHECKSIGFROMSTACK even if it risks being incompatible with an eventual Bitcoin CHECKSIGFROMSTACK. The author suggests going for CAT compatibility, as it will prevent the proliferation of trusted CAT oracles paid for with lightning by people wanting to perform CAT operations. In another message, Jeremy via bitcoin-dev expresses support for OP_CHECKSIGFROMSTACK and lists four options: making a new 64 byte PK standard which is (R, PK), splitting (R,S), different opcodes, or CAT. Option 1 is designed for specific use cases, while option 2 entails an extra push byte for every use. Option 3 wastes opcodes, and CAT has general drawbacks. Before getting too in the weeds, it might be worth listing out interesting script fragments that people are aware of with split R/S so they can see how useful it might be. Several examples of script fragments that use split R/S are listed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T23:58:23.661619+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

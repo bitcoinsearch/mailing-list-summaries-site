@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for a few IANA mime-types related to Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter D. Gray 2021-08-31 19:18:00
+            <br><i>Published on: 2021-08-31T19:18:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2021/combined_Proposal-for-a-few-IANA-mime-types-related-to-Bitcoin.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019388.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The use of UR encoding for PSBT data in a web context, NFC or email is not recommended due to the lack of IANA mime-types for QR codes. Animated QR codes may be the only use case that could justify introducing new technology, such as ByteWords, a unique checksum algo (Xoshiro256), fountain codes (Luby Transform) and CBOR, just to wrap a few k of binary. However, CBOR is still considered to be the best. Christopher Allen notes that many wallet companies are now supporting the UR encoded version of PSBTs, which allows for better QR & Airgap solutions, and also leverages CBOR which is an IETF standard. There is a community of Airgap wallet developers at <a href="https://github.com/BlockchainCommons/Airgapped-Wallet-Community">https://github.com/BlockchainCommons/Airgapped-Wallet-Community</a> and libraries at <a href="https://github.com/BlockchainCommons/crypto-commons">https://github.com/BlockchainCommons/crypto-commons</a>#urs. He suggests registering UR as well, maybe as bitcoin/psbt+ur.Peter D.Gray has proposed registering several MIME (RFC 2046) media types with the IANA, including bitcoin/psbt, bitcoin/txn, and bitcoin/uri. These may be useful for web servers and elsewhere, but their approval by IANA remains uncertain. Other thoughts are provided, such as using optional parameters to indicate base64 or hex encoding and the usefulness of these types in NFC (NDEF records) where shorter length is critical. The current approved MIME types can be found at <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">https://www.iana.org/assignments/media-types/media-types.xhtml</a>.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T01:22:42.662088+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

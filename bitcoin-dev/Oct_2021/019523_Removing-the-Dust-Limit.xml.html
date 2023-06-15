@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-10-07 10:01:53
+            <br><i>Published on: 2021-10-07T10:01:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019523.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about reducing CPU cost, ZmnSCPxj suggests storing dust UTXOS in a separate Merkle tree or structure to avoid burdening the original set. While this technique decreases average CPU cost, it does not reduce worst-case CPU cost and can worsen the worst-case time if the secondary storage sacrifices speed for increased capacity per satoshi. It is important to keep in mind that attacks always target worst-case behavior. ZmnSCPxj draws a parallel to sorting algorithms, stating that quicksort's worst-case time complexity of O(n^2) makes it disrecommended for processing data from external sources. Instead, mergesort or similar algorithms are preferred, as they have an O(n log n) worst-case but generally worse average times than quicksort. Moving unlikely-to-be-referenced data to slower secondary storage that provides more storage per economic unit brings us closer to quicksort-like solutions to be avoided, as it is always the worst-case behavior that is targeted in attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T00:47:16.191447+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

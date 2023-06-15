@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-08-21 03:10:46
+            <br><i>Published on: 2021-08-21T03:10:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019349.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a discussion at the BitDevs in Austin, an interesting argument was presented in favor of removing the dust limit policy. The argument states that the dust limit is a per-node relay policy and that it is rational for miners to mine dust outputs given their lower cost of maintenance. If txn relaying nodes censor something that a miner would mine, users will seek a private/direct relay to the miner, which can be bad for privacy and decentralization. Therefore, the dust limit could cause an incentive to increase network centralization immediately. However, there is a tradeoff between a short-term immediate incentive to promote network centralization and a long-term node operator overhead. It should be noted that in the Lightning specification, when an output would have been created that is less than the dust limit, the output is instead put into fees. This encourages L2 protocols to have similar rules where outputs below the dust limit are given over as fees to miners. Thus, the existence of a dust limit might incentivize miners, regardless of centralization effects or not.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T00:46:45.011184+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

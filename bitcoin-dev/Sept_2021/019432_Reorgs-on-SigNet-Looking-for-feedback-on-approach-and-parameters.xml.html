@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reorgs on SigNet - Looking for feedback on approach and parameters</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Michael Folkson 2021-09-10 13:05:40
+            <br><i>Published on: 2021-09-10T13:05:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2021/combined_Reorgs-on-SigNet-Looking-for-feedback-on-approach-and-parameters.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019432.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal of reorganizing every block, or as often as practical, to allow users to test with reorgs is being discussed. The default Signet was created to resemble mainnet as much as possible, and making it deviate significantly from mainnet behavior may not be necessary. However, some argue that making re-orgs occur more regularly on the default Signet (every 8 hours) seems reasonable. Others feel that this would make the default Signet into an environment for purely testing whether applications can withstand various flavors of edge case re-orgs, and suggest testing normal mainnet behavior first before concerning oneself with re-orgs.A version bit has also been proposed, which introduces a need for users to sign blocks. This added complexity may not be necessary on the default Signet, where block signing is left entirely to the network block signers. Instead, it is suggested that a flag set via a configuration argument, with no-reorgs (or 8-hour re-orgs) as the default, would introduce no additional complexity to the casual or alpha stage tester experience.To move the default Signet in the direction of resembling mainnet even closer, randomly generating batches of transactions to fill up blocks and create a fee market is suggested. This would allow testing of features like RBF and Lightning unhappy paths such as justice transactions and pinning attacks on the default Signet in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T01:31:36.912666+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> shymaa arafat 2021-08-20 05:45:31
+            <br><i>Published on: 2021-08-20T05:45:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019348.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a discussion about the removal of the dust limit at BitDevs in Austin, an interesting point was raised. The argument is that the dust limit is a per-node relay policy and that it is rational for miners to mine dust outputs given their cost of maintenance is lower than their immediate reward in fees. If txn relaying nodes censor something that a miner would mine, users will seek a private/direct relay to the miner and vice versa. If direct relay to miners becomes popular, it is both bad for privacy and decentralization. Therefore, the dust limit, should there be demand to create dust at prevailing mempool feerates, causes an incentive to increase network centralization immediately.The tradeoff is whether a short term immediate incentive to promote network centralization is better or worse than a long term node operator overhead. One individual's take on this is that having a dust limit is worse since it creates an incentive to produce or roll out centralizing software, whereas not having a dust limit creates a mild incentive for node operators to improve utreexo decentralizing software. It was suggested to separate storing of dust and other non-spendable UTXOs so that they do not affect other UTXOs proofs and are not brought into main memory unless called as a TXO. There is uncertainty over the magnitude of the incentives, which does matter. It is hard to quantify the long term perspective of miners incentivized to store small dust UTXOs instead of having their values added to the fee.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T00:48:26.985466+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

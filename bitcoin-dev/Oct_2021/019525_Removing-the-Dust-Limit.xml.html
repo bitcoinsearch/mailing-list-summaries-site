@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> shymaa arafat 2021-10-08 07:44:59
+            <br><i>Published on: 2021-10-08T07:44:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019525.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about making all dust transactions invalid by some nodes, a compromise was suggested to keep them in secondary storage for full nodes and in a separate Merkle Tree for bridge servers. This solution would enhance performance on bridge servers and, since dust transactions usually appear in clusters, they would be fetched rarely on full nodes. The suggestion is that uploading the whole dust partition if they were called more than a certain threshold, say more than one transaction in a block, would avoid DoS attacks. The dust would then be kept there for a while as a separate partition to exclude them from any caching mechanism after that block. The "while" could be a tuned parameter. The proposal would help decrease the amount of dust in the UTXO set. In response to concerns about worst-case behavior, it was noted that attackers would use all transactions in a block to create the worst-case scenario.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T00:47:25.788852+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
