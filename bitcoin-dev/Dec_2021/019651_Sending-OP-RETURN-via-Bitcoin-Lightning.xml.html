@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Sending OP_RETURN via Bitcoin Lightning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2021-12-09 12:56:19
+            <br><i>Published on: 2021-12-09T12:56:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2021/combined_Sending-OP-RETURN-via-Bitcoin-Lightning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019651.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the multisig scheme and Single Use Seals. The author suggests that for on-chain aggregation seals, instead of relying on a single common service provider, it would be better to use multiple aggregation services. This mitigates both availability and censorship risks. However, the other person in the discussion misunderstands the protocol, as seals are trustless with regard to validity, and one can validate any seal regardless of which aggregation service is used. An example is given of an exchange being their own aggregator and not needing multisig, while a customer might use a 3-of-5 multisig since they only do a few transactions a month. Interestingly, it might be worthwhile to run your own aggregator and use multisig in some scenarios. For example, Alice can use a 2-of-3 with two third-party aggregators and her own aggregation chain. If both third-parties are up, she does no on-chain transactions at all; if one third-party is down, she can use her own and the remaining third-party. Thus, she would only do an on-chain transaction to defeat censorship or failure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T03:19:05.557424+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

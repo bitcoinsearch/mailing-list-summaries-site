@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Year 2038 problem and year 2106 chain halting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David Bakin 2021-10-16 20:37:27
+            <br><i>Published on: 2021-10-16T20:37:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2021/combined_Year-2038-problem-and-year-2106-chain-halting.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019554.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin development community recently discussed the possibility of a "wraparound" timestamp issue, where if a series of blocks has a timestamp of 0xFFFFFFFF, it could potentially halt the chain for old clients. The current rules state that the block timestamp may not be lower than the median of the last 11 blocks, may not be greater than the current time plus two hours, and may not be greater than 2^32 (Sun, 07 Feb 2106 06:28:16 +0000). However, if a block with a 0xFFFFFFFF timestamp were to occur, it would violate multiple rules for old clients and potentially lead to a chain halt. One proposed solution is to include an additional rule that requires a 64-bit (or higher) timestamp to be present in the coinbase transaction, with similar rules translated to the appropriate bit size. Another idea is to use a similar scheme for nLockTime, where a 64-bit nLockTime64 could be included in the additional signed block in Taproot SegWit v1 if legacy vnLockTime is at the maximum seconds-timelock possible. However, changing the timestamp datatype could cause hardware incompatibility and require a hard fork, making it difficult to implement. It's worth noting that even if a change like this were made in the next five years, it would be over a decade before any wrapped-around timestamp is legitimately mined, making it unlikely that anyone would still be running incompatible node software at that point. Overall, while the wraparound timestamp issue poses a potential problem, there are possible solutions that could be explored if necessary.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T02:44:37.723776+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

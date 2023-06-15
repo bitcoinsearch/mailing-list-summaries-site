@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Take 2: Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2021-12-08 17:41:34
+            <br><i>Published on: 2021-12-08T17:41:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2021/combined_Take-2-Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019640.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the issue of 0 value outputs in Bitcoin transactions and their potential impact on the mempool. The concern is not if a 0 value output ever enters the mempool, but if it is never spent. However, even if this occurs, miners and users can save it to disk for later use. The proposal suggests creating a utxo with drop semantics, which would expire and become unspendable if not spent in the block it was created. Additionally, the idea of using 0 value outputs solely for attaching fees in the mempool is suggested, with two cases proposed - a bare segwit version and one equivalent to taproot. This approach could efficiently cover OP_TRUE anchors that require a signature as well. While the proposal acknowledges that sponsors may make more sense, expiring utxos do not change as many properties of the tx-graph validation, making it a simpler solution. Ultimately, the goal is to make 0 value outputs inconvenient enough to deter their usage, rather than making them impossible.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T03:24:52.917881+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
