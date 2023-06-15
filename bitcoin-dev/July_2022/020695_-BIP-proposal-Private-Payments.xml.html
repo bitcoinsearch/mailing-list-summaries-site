@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP proposal] Private Payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alfred Hodler 2022-07-11 10:28:40
+            <br><i>Published on: 2022-07-11T10:28:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2022/combined_-BIP-proposal-Private-Payments.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020695.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an update to a previous specification, it has been decided that Bob does not need to watch all address types he's advertising. Instead, when notifying him, Alice will pick one address type out of the ones Bob is advertising and include it in the notification. This means that even if Bob's wallet accepts many address types, he still doesn't have to watch all of them for each Alice. The new payload has been extended to 73 bytes and defined as `BIPXXXX + notification + N_Alice + address_type`, where `address_type` is a single byte containing the desired address type index. This is limited by Bob's payment code and enables Alice to start sending to a different address type by simply re-notifying Bob, who will then switch to a new address type in the case of Alice.Previously, the spec had stated that Alice should construct a 72-byte OP_RETURN output whose value would be set to `BIPXXXX + notification + N_Alice`. The updated spec now includes the `address_type` as well. The value of `XXXX` is to be replaced once a BIP number is assigned.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T22:17:00.675373+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
