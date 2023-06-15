@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>TXHASH + CHECKSIGFROMSTACKVERIFY in lieu of CTV and ANYPREVOUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Rubin 2022-02-08 04:34:30
+            <br><i>Published on: 2022-02-08T04:34:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_TXHASH-CHECKSIGFROMSTACKVERIFY-in-lieu-of-CTV-and-ANYPREVOUT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019872.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Bitcoin-dev mailing list, Russell O'Connor proposed decomposing the functionality of CTV (CheckTemplateVerify) and ANYPREVOUT into their constituent pieces and programmatically reassembling their behavior. He suggested introducing two new opcodes: OP_TXHASH and OP_CHECKSIGFROMSTACKVERIFY. The former would pop a txhash flag from the stack, compute a tagged txhash in accordance with that flag, and push the resulting hash onto the stack. Rusty Russell noted that OP_TXHASH could be further decomposed into OP_TX (which places concatenated selected fields onto the stack) and OP_TAGGEDHASH or just reuse OP_SHA256. O'Connor believes that the difficulties with upgrading TXHASH can be mitigated by designing a robust set of TXHASH flags from the start. These flags would control whether various aspects of a transaction are covered, such as version, locktime, txids, sequence numbers, input amounts, input scriptpubkeys, number of inputs, output amounts, output scriptpubkeys, number of outputs, tapbranch, tapleaf, opseparator value, and sighash flags. To simplify this process, Rusty suggested defining two bits for 14 (and similarly 15), specifying no inputs, all inputs, current input, and popping a number from the stack. Additionally, he suggested pushing SHA256() of scripts instead of scripts themselves to reduce the potential for DoS attacks. Finally, Jeremy noted that this sort of design introduces recursive covenants similarly to how previously described, but he deferred to others on whether this is an issue or not precluding this sort of design.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T15:38:58.237144+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

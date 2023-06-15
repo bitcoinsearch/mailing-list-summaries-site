@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving RBF Policy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2022-01-28 01:35:11
+            <br><i>Published on: 2022-01-28T01:35:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2022/combined_Improving-RBF-Policy.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019820.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The post discusses various issues related to DoS protection, iterative/additive batching, and the use of verifiable delay function in rate-limiting transaction replacement. The first point suggests limiting the amount of work required for replacing a transaction rather than focusing on the number of times a transaction can be replaced or the volume of transactions that can be evicted during a replacement. The second point highlights the benefits of iterative batching, where an organization puts a transaction in the mempool that pays to N users and updates it to N+2, N+2...N+M payouts as they see additional requests for payouts. However, due to the feerate rule, if businesses go from N to N+1, they need to pay 1 sat/byte over the whole transaction, leading to an increase in fees quadratically. One solution to this issue could be to allow relaying "txdiffs" that only require re-relay of signatures + new/modified outputs, not the entire transaction. The third point suggests using a verifiable delay function (VDF) over each of the N COutpoints individually to rate-limit transaction replacement, eliminating the VDF period depending on the feerate increase. A VDF is like proof-of-work that doesn't parallelize, so no matter how many computers you have, it would take about the same amount of time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T16:00:36.742914+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

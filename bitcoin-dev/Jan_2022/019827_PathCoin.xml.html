@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PathCoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2022-01-28 15:27:30
+            <br><i>Published on: 2022-01-28T15:27:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2022/combined_PathCoin.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019827.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>AdamISZ, a contributor to the bitcoin-dev mailing list, shared an idea for creating a toy version of sending a coin like email. He suggested that using signature adaptors and CTV or a similar covenant, a fully trustless transfer of control of a UTXO from one party to another could be created with no interaction with the rest of the group at the time of transfer. However, limitations are extreme and require extensive setup. In the discussion, AdamISZ mentioned the Sabu protocol that had similar goals but was deemed unstable due to game theory and its use of penalties via burn. The penalty via burn to unspendable output is still unstable as there is no incentive for the honest party to punish if the penalty tx destroys all the money. The possibility of bribes also complicates the effectiveness of the system. On the other hand, Lightning has a more stable model in LN-Penalty, as long as 'claiming the whole channel capacity' is enough to be larger than what is stolen. AdamISZ specifically looks for a trustless system with finesse and claims that PathCoin fits this criteria. In PathCoin, penalties are used as disincentives, but the penalty consists of a payment directly from the attacker to the attacked, and that payment is larger than the amount stolen, making it stable. However, he acknowledges that such ideas are imaginative and may require further development.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T15:27:44.082674+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

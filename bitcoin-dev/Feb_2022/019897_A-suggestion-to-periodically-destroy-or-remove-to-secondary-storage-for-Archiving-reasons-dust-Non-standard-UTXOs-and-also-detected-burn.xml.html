@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A suggestion to periodically destroy (or remove to secondary storage for Archiving reasons) dust, Non-standard UTXOs, and also detected burn</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> yanmaani at cock.li 2022-02-13 09:56:21
+            <br><i>Published on: 2022-02-13T09:56:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_A-suggestion-to-periodically-destroy-or-remove-to-secondary-storage-for-Archiving-reasons-dust-Non-standard-UTXOs-and-also-detected-burn.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019897.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a discussion on the bitcoin-dev mailing list, Billy Tetrud brought up the issue of UTXO set size and how it will need to be addressed at some point. He suggested using utreexo or some other accumulator as a solution. Another member of the group proposed using economic incentives to disincentivize the creation of new UTXOs, suggesting that instead of charging a fee based on the byte size of a transaction, a fee could be charged based on (bytes*byte_weight + net_utxos*utxo_weight). For example, if utxo_weight is set to 500, a transaction that creates 2 new UTXOs would cost as if it were 1 KB in size. In contrast, a transaction that consolidates 2 UTXOs into one might even receive a negative transaction fee rebate. This proposal would require lowering the block size cap by max(0, net_utxos_created*utxo_weight), which could be implemented through a soft fork, but may be contentious. It's also important to limit the block size cap at 0, separate from consensus issues, to ensure that users aren't guaranteed to get back whatever they put into it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T16:23:24.923574+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

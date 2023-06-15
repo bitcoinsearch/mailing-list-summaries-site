@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal: Pay-to-contract tweak fields for PSBT (bip-psbt-p2c)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dr Maxim Orlovsky 2022-01-16 17:41:22
+            <br><i>Published on: 2022-01-16T17:41:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2022/combined_BIP-proposal-Pay-to-contract-tweak-fields-for-PSBT-bip-psbt-p2c-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019761.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This document proposes additional fields for BIP 174 PSBTv0 and BIP 370 PSBTv2 that allow for pay-to-contract key tweaking data to be included in a PSBT of any version. The proposal abstracts details of specific P2C protocols and provides universal method for spending previous outputs containing P2C tweaks, applied to the public key contained within any standard form of the scriptPubkey. The proposal introduces a new `PSBT_IN_P2C_TWEAK` field which contains the original key as a field key and the tweak as a field value. P2C-tweaked public keys are already exposed in the PSBT_IN_REDEEM_SCRIPT, PSBT_IN_WITNESS_SCRIPT, PSBT_IN_TAP_INTERNAL_KEY and PSBT_IN_TAP_LEAF_SCRIPT fields. The proposal is compatible with the existing consensus rules and does not require any modifications.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T15:14:53.779089+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>TXHASH + CHECKSIGFROMSTACKVERIFY in lieu of CTV and ANYPREVOUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2022-01-29 15:43:13
+            <br><i>Published on: 2022-01-29T15:43:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2022/combined_TXHASH-CHECKSIGFROMSTACKVERIFY-in-lieu-of-CTV-and-ANYPREVOUT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019833.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange, James O'Beirne and another individual discussed technical debt, the efficiency of CTV versus a more general covenant system, and the long-term implications of design choices. While it only costs a few more weight units to use TXHASH in place of CTV, reversing this is much more expensive. The individuals agree that it's important to think hard about consensus changes but note that no proposal for covenants has been as efficient on-chain and easy to reason about as CTV. There doesn't have to be mutual exclusion in approaches, and the maintenance burden of CTV is low. In short, the primary criticisms of CTV are that push semantics are preferable to verify semantics and that we need parameters to support multiple style hashes. CTV was designed with verify semantics to be NOP compatible, but the use cases for that compatibility are not compelling in a post-tapscript world.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T15:38:26.102337+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
