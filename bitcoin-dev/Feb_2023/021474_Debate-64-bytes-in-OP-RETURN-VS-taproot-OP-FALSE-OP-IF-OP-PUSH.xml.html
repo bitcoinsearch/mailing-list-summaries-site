@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Debate: 64 bytes in OP_RETURN VS taproot OP_FALSE OP_IF OP_PUSH</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Claus Ehrenberg 2023-02-16 19:59:06
+            <br><i>Published on: 2023-02-16T19:59:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2023/combined_Debate-64-bytes-in-OP-RETURN-VS-taproot-OP-FALSE-OP-IF-OP-PUSH.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021474.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev mailing list, Claus proposes to require all data to be in the op_return output and add a required op_return_hash field that is checked by consensus. This will allow nodes to re-validate the chain without having to store/download/look at the contents of op_return data. The benefit of this redundancy is that "content-sensitive" communities can ignore the data they don't like. Aymeric Vitte suggests a workaround for the 80-byte op_return limitation which involves bringing back bitcoin ten years ago. He further adds that if bitcoin folks do not understand the need for a one-transaction storage solution for the future, then let's bring back bitcoin into the past. Russell O'Connor suggests that since bytes in the witness are cheaper than bytes in the script pubkey, there is a crossover point in data size where it will simply be cheaper to use witness data. But he doesn't think it's worth the technical complexity trying to carefully argue a specific limit. Instead, users should decide for themselves how they want to use OpReturn.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T04:14:48.172540+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

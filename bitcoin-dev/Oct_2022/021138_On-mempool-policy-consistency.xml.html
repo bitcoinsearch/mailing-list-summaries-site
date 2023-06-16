@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On mempool policy consistency</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2022-10-31 17:51:10
+            <br><i>Published on: 2022-10-31T17:51:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_On-mempool-policy-consistency.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021138.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread in bitcoin-dev discusses the relay of full-replace-by-fee (full-rbf) transactions by nodes that do not signal it. There are nodes that signal full-rbf and preferentially peer to each other, ensuring good transaction propagation. People can run some nodes with a large number of outgoing peers to make full-rbf work more reliably. A "full-rbf transaction" is nothing special but it replaces a previously broadcast transaction that did not signal replacement. Non-full-rbf nodes will broadcast replacements when they did not receive the first transaction first. Testing full-rbf is problematic as a small percentage of the time, the "replacement" transaction will be the one that gets mined. There is no consensus over the mempool, so adding more configuration options always increases code complexity. However, accommodating both types of transaction policy seems worth it for network participants who rely on both. Since all the machinery to do replacement already exists, adding a full-rbf config flag requires just a single line in the mempool code.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T02:29:36.032945+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

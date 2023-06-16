@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_GROUP vs Ephemeral anchors</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2023-01-12 02:06:21
+            <br><i>Published on: 2023-01-12T02:06:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2023/combined_SIGHASH-GROUP-vs-Ephemeral-anchors.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021335.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The comparison between SIGHASH_GROUP and Ephemeral anchors is a topic of discussion in the bitcoin-dev mailing list. SIGHASH_GROUP allows inputs of a transaction to divide the outputs into non-overlapping groups, while Ephemeral anchors are a relay policy level rule that creates a 0-value output with sPK of OP_TRUE, which is not considered dust if paid 0 fees and relayed with another tx. SIGHASH_ALL can be used instead of SIGHASH_GROUP by creating three transactions and signing them accordingly. However, ephemeral anchors have some limitations compared to SIGHASH_GROUP, such as being unable to duplicate the behavior of two signatures, one using SIGHASH_GROUP and the other SIGHASH_ALL. There are proposed rules for ephemeral anchors, including that a V3 transaction cannot have more than one ancestor, and it must be 0-fee, spent in the same mempool relay package, and nversion==3. Removing or loosening the v3.4b rule could allow ephemeral anchors to provide fees for multiple input/output groups, but it may introduce replacement issues.Overall, ephemeral anchors appear to offer most of the benefits of SIGHASH_GROUP, particularly with the potential to save on costs and consensus changes. The context provided includes a link to a mailing list for Bitcoin developers hosted on the website lists.linuxfoundation.org. The mailing list allows developers to communicate and collaborate on the development of Bitcoin. The email also includes an attachment that appears to be an HTML file, but no information about its contents is given.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T03:55:08.737796+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

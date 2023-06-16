@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A new Bitcoin implementation integrated with Core Lightning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Vincenzo Palazzo 2023-04-30 15:22:01
+            <br><i>Published on: 2023-04-30T15:22:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2023/combined_A-new-Bitcoin-implementation-integrated-with-Core-Lightning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021596.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Vincent, a member of the CLN project, wrote an email to Michael and Lisa discussing the current state of the project. He mentioned that the CLN is nicely decoupled from the block source and that the node runner can choose a block backend that fits their self-sovereignty goals. This allows for a nice separation of concerns where the block source ensures only consensus valid data is delivered to the node while the focus is on processing and reacting to that data. Vincent also mentioned that he has been working on a plugin that allows experimentation with different types of Bitcoin Core node alternatives and supports BIP 157 with nakamoto.Vincent also stated that he plans to allocate some time to work directly on Nakamoto. He suggested that there may be an opportunity to "comingle" the peering of LN gossip and block data networks, which has been suggested several times but never seriously pursued from the LN side. He believes that having the peering functions of bitcoin-core broken out into a more composable/reusable piece may be a good first step here, and as a project would largely be on the bitcoin core side.However, Vincent noted that a missing piece at the moment is a unified approach to fee calculation. This logic is critical for Lightning nodes, so if we don't have a uniform way of estimating fees, it could lead to several issues. He mentioned that the fee estimation problem may have already been solved by Neutrino, but he is not aware of it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T03:56:43.610056+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On mempool policy consistency</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> email at yancy.lol 2022-11-08 14:54:46
+            <br><i>Published on: 2022-11-08T14:54:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_On-mempool-policy-consistency.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021186.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Yancy and Peter Todd revolves around two attack vectors in Bitcoin that prevent the transaction from being mined. The first scenario involves Bob staking liquidity in a payment channel with Alice, who double-spends the same inputs at a low feerate, resulting in a stalemate where neither can spend the UTXOs. The second scenario sees Alice spamming the network with a double-spend wide enough to make it into a block before the network sees the first spend. Yancy suggests using opt-in RBF to resolve the first issue by allowing Bob to create a replacement transaction with enough fee to get back his UTXO. However, opt-in RBF cannot resolve the second scenario as Alice can beat out the alternative by spamming the network. With full-RBF, who saw what transaction first does not matter since the higher fee paying transaction will always replace the lower fee one. Peter explains that the attacks aim to prevent a transaction from getting mined and full-RBF improves the situation even though it may not solve it completely. The limitations in today's mempool implementation can cause certain issues with evaluating which transaction pays the higher fee, but these limitations are likely to be fixable. Even without fixing them, Alice needs more money to pull off these attacks with full-RBF.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T02:20:30.910286+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

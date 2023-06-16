@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On mempool policy consistency</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> email at yancy.lol 2022-10-30 11:06:32
+            <br><i>Published on: 2022-10-30T11:06:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_On-mempool-policy-consistency.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021134.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, Anthony Towns addressed the issue of transaction propagation failure rates. He stated that whether or not a 5% failure rate is terrible depends on how easy it is to retry after a failure and how likely the retry is to succeed. He suggested that it's conceivable for a 5% failure rate to be detectable and automatically rectified, but there's no clear way of doing so efficiently, privately, and in a decentralized manner. David A. Harding shared some napkin math, which showed that if only 30% of nodes have adopted a more permissive policy, lightweight clients would need to connect to over 50 randomly selected nodes to ensure one transaction per year fails to initially propagate. For a more permissive policy adopted by only 10% of nodes, the lightweight client would need to connect to almost 150 nodes. Anthony Towns added that with a target failure probability of 1-in-1e8 and no preferential peering, a majority of listening nodes would need to support the transaction features in most reasonable scenarios.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T02:22:38.462020+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

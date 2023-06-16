@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pseudocode for robust tail emission</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2023-01-02 04:53:39
+            <br><i>Published on: 2023-01-02T04:53:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2023/combined_Pseudocode-for-robust-tail-emission.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021307.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal being discussed is to delay halvings in case of a sudden drop in mining difficulty, which could be better than not delaying it. However, some argue that this solution does not solve the problem well enough and any solution that can solve the problem better would make delaying halvings unnecessary. The concern of hoarding Bitcoin due to old Gresham's law is addressed as it does not apply in this case. Even with zero inflation, it will not cause all Bitcoin to be hoarded, and hoarding is also known as saving, which is not wrong. The spectre of deflation comes from a misunderstanding of deflation and why it happens during bad economic times.A more elegant solution suggested is using a chainwork parameter instead, by comparing the last 210,000 block interval's higher chainwork difference between the beginning and the end of the interval with any other inter-halving interval before to decide whether to do halving or not. This concept complements the missing mechanism of achieving equilibrium regarding costs of security between two parties with opposing interests. It has no hardcoded value of tail emission and is based on a free market. However, some argue that any scheme only acting on the basis of difficulty will not be sufficient, and there is no long term relation between difficulty and any reasonable security target. A change that happens in a fork (soft or hard) periodically might be necessary. The system could be programmed to calculate the difficulty necessary to keep the system secure once the cost in Bitcoin of the security target and the cost in Bitcoin of acquiring a unit of hashrate are input into the code. Once that is in place, the system could automatically adjust the subsidy up or down or adjust the block size up or down to change the fee market to attract more or less miners.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T03:37:52.729941+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

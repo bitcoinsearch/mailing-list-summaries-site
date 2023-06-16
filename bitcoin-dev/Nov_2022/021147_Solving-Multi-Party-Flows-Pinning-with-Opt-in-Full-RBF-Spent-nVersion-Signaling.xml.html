@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Solving Multi-Party Flows Pinning with Opt-in Full-RBF Spent-nVersion Signaling</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2022-11-02 13:58:59
+            <br><i>Published on: 2022-11-02T13:58:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Solving-Multi-Party-Flows-Pinning-with-Opt-in-Full-RBF-Spent-nVersion-Signaling.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021147.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Antoine Riard proposed a new policy for multi-party collaborative flows suffering from a low-cost and high-success DoS vector with asymmetric damages. The issue lies in the fact that participants joining inputs together don't have control or even view of the replacement signaling of any potential double-spend of the other participants inputs. A confirmed transaction is considered to have opted in to allowing replacement of any of its spends, if the last bit of the nVersion field is set. Antoine proposed to mark all coins nVersion fields opting fullrbf as a workaround for contracting protocols wallets. However, this policy bookmarking comes as a protocol fingerprint leak for an observer of the transaction logs. Long-term, the annoying privacy issue and the assumption that any wallet will be a Lightning one could lead to the majority of wallets signaling RBF for their spends. Therefore making those wallets incompatible with zeroconf services, slowly economically outlawing them. From Antoine's perspective, it sounds like an alternative full rbf way forward, where rather than having miners deciding on the policy enforcement, they let the users decide with their coins.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T02:42:54.912208+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
