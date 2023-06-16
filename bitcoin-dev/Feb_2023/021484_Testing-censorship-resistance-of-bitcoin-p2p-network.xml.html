@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Testing censorship resistance of bitcoin p2p network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> vjudeu at gazeta.pl 2023-02-18 09:48:02
+            <br><i>Published on: 2023-02-18T09:48:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2023/combined_Testing-censorship-resistance-of-bitcoin-p2p-network.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021484.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The message discusses the issue of spam in Bitcoin transactions. The current standardness rules allow up to 80-byte pushes, resulting in a little over 1% of spam. By consensus, which allows 520-byte pushes, it is less than 0.2%. To reduce the number of dropping opcodes, people can use "OP_2DROP" instead of "OP_DROP OP_DROP." However, this is not enough to reject an official alternative like commitments. Transactions will still be included in the chain, even if they are spam. Therefore, some kind of pruning is needed to deal with large NOPs in the chain. Switching from witness to non-witness nodes is not an option because it would require additional witness validation and invalidate signatures. One solution is to store the first and last chunk of data and keep the internal state of SHA-256 before entering the last chunk. This way, unused parts can be pruned without invalidating signatures.In response to a comment by Andrew Poelstra, the message also mentions that spammers could provide "FALSE" as a separate witness element rather than being part of the witnessScript. Banning specific script fragments could lead to the use of legitimate cases of "IF ENDIF."</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T15:30:10.441858+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

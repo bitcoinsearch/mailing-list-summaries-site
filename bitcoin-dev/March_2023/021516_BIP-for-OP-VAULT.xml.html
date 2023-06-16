@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP for OP_VAULT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2023-03-02 14:54:31
+            <br><i>Published on: 2023-03-02T14:54:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2023/combined_BIP-for-OP-VAULT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021516.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a replacement for the two opcodes in the current OP_VAULT BIP. The proposed solution is to use `OP_FORWARD_LEAF_UPDATE` as a more generic/composable opcode, which takes a variable number of stack elements. This would allow a TLUV-ish script to be modified safely, using push opcodes to avoid the possibility of adding OP_SUCCESS instructions. The proposal also includes an additional `OP_FORWARD_REFUND` opcode, which allows for refunding values without effectively doubling the delay time. The derived tapscript would be embedded in the output scriptpubkey, and if it does not match, the operation would fail. The email also addresses issues with setting CSV timeout to 0, which would result in it not being satisfiable. Additionally, there is a bonus to introducing withdrawal authorization as part of the construct. Finally, there is a suggestion to use existing OP_VAULT cleverness to accumulate input values into specified outputs, which makes TLUV payment pools possible.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T15:34:20.061094+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Codex32</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christopher Allen 2023-02-19 23:05:12
+            <br><i>Published on: 2023-02-19T23:05:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2023/combined_Codex32.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021490.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Using only upper case alphabets and numbers in codex32, and avoiding most punctuation, can significantly reduce the size of QR codes. The ISO specification, upon encountering lowercase letters, assumes the value to be binary and converts it into a two-byte value, which increases the size of the QR code. However, if codex32 uses only the 45 allowed characters mentioned in the alphanumeric table (<a href="https://www.thonky.com/qr-code-tutorial/alphanumeric-table),">https://www.thonky.com/qr-code-tutorial/alphanumeric-table),</a> and is all uppercase, it becomes a single-byte code that can be compressed. Although it doesn't compress well, it at least does not double the size first. The research conducted by Blockchain Commons on this topic is available at <a href="https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-003-uri-binary-compatibility.md">https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-003-uri-binary-compatibility.md</a>. While a superior QR codec like the one provided by Blockchain Commons or Nayuki.io can do better, many platforms and basic QR codecs will still double the size of the QR if it contains any lowercase letters. In conclusion, using only uppercase alphabets and numbers while avoiding most punctuation in codex32 can significantly reduce the size of QR codes, thereby improving their efficiency.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T15:49:13.727402+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

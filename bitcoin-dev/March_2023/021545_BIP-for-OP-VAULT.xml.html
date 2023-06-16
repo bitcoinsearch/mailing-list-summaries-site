@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP for OP_VAULT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Steve Lee 2023-03-30 00:16:43
+            <br><i>Published on: 2023-03-30T00:16:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2023/combined_BIP-for-OP-VAULT.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021545.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the bitcoin-dev mailing list recently took place regarding the use of opcodes to facilitate parasitical use cases of blockchain. Some developers are exploring the potential of covenants and multisig, while others like alicexbt want Bitcoin to be money as it means different things for people in the world and that is what will make it more widely used.Zac Greenwood expressed his disagreement with using blockchain as a data store for business models and suggested that such efforts should be made less feasible. Another developer, Anthony Towns, proposed new opcodes, namely OP_FORWARD_TARGET, OP_FORWARD_LEAF_UPDATE, OP_FORWARD_SELF, and OP_FORWARD_PARTIAL. These can be used to auction ordinals in a fair, non-custodial, and on-chain manner. The script for this auction involves creating a utxo and committing to the address of the current leading bidder, which can be spent either by raising the bid or if there are no new bids for a day, with the highest bidder winning the ordinal and the funds from their bid going to the vendor's address. Andrew Poelstra has put forward a new proposal for a Bitcoin auction mechanism that is designed to be resistant to MEV (miner-extractable value) attacks. Bidders only pay fees if their bid is successful, and the mechanism uses OP_VAULT and OP_FORWARD_LEAF_UPDATE opcodes coded twice with extra encoding to protect the numbers used. While limited in its functionality, Poelstra suggests that it could be extended for other types of assets, though this may involve building merkle trees and point tweaks beyond what is currently supported. It is important to set the increment value at an appropriate level to avoid griefing from bidders using RBF pinning vectors to prevent higher bids from being confirmed on-chain.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T15:36:35.416660+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
