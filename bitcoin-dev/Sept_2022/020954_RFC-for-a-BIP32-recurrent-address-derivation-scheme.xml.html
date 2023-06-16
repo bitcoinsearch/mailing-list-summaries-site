@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC for a BIP32 recurrent address derivation scheme</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2022-09-29 22:41:29
+            <br><i>Published on: 2022-09-29T22:41:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2022/combined_RFC-for-a-BIP32-recurrent-address-derivation-scheme.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020954.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread on the bitcoin-dev mailing list, El_Hoy proposed a scheme that would make it possible to send recurring payments using a single offline interaction. The proposed scheme follows the structure described in BIP44 and is as follows: master / purpose' / coin_type' / contact' / index. Bob could use the public key generated from Carol's contact address to make multiple recurring payments to her; the contact address is stored off-chain, and anyone inspecting the chain will just see normal transactions on-chain. The proposed scheme has a positive side effect of giving more privacy to Bob by allowing him to choose to send payments to Carol using multiple outputs. Ruben Somsen responded to this proposal agreeing with the general assessment that this is a scheme that seems like an improvement over the status quo. However, Ruben noted that both BIP47 and Silent Payments don't require any interaction with the sender, while this scheme requires one-time interaction, making it not suitable for one-time donations. In addition, Ruben raised concerns about how "contact" is defined and the potential exponential blowup in gap limits if each xpub is allowed to have its own gap limit. It may be necessary to define a low default gap limit for these xpubs and be explicit about how they are used to derive addresses for others.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T00:24:17.241084+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

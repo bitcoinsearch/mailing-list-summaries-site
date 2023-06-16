@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A method for BIP322 signing delegation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ali Sherief 2022-08-19 06:23:38
+            <br><i>Published on: 2022-08-19T06:23:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2022/combined_A-method-for-BIP322-signing-delegation.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020868.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A delegation scheme for privacy purposes has been proposed that utilizes multisig to make the possible delegatees known at signing time. This would replace the message challenge of "to_spend" with a 1-of-N standard P2WPKH multisig, where N is the number of people you want to be able to create the signature, and their respective pubkeys are included in the script. The possible delegatees are fixed at signature creation time and cannot be extended by creating more transactions. The challenge solution in "to_sign" is then replaced with a witness stack containing n ... 1 0. The signature is generated as if it were for a real P2WPKH-multisig transaction.The proposal has some advantages: no recursive transactions, address verification is provable, there is no opcode or new algorithm introduced, so no soft-fork is required, and signature fraud is still impossible to carry out. There is also a major privacy advantage in that only the delegatee who actually signs the message has a revealed public key, the others' are hidden. There are some disadvantages, such as everyone knows the public keys of the delegators, so there is no privacy. However, this is possibly a non-issue in light of the signature fraud problem. Additionally, Taproot is not widely deployed in applications yet. Moreover, some people have suggested writing this delegation scheme in TapScript, which could avoid revealing the unspent public keys. Single leaf k-of-n multisig is functionally identical to "Using a single OP_CHECKSIGADD-based script" described in BIP 0342, footnote 5, but it won't hide the non-signing public keys. That leaves multi-leaf k-of-k multisig, which swells as k increases, but for the purposes of delegation, K will always be 1, because we only utilize 1-n multisig signatures as per the previous message.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T23:44:14.391722+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

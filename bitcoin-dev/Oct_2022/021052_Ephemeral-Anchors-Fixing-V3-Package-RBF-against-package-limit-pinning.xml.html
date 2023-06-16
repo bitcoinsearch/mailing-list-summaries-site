@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ephemeral Anchors: Fixing V3 Package RBF against package limit pinning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2022-10-19 13:22:08
+            <br><i>Published on: 2022-10-19T13:22:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_Ephemeral-Anchors-Fixing-V3-Package-RBF-against-package-limit-pinning.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021052.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A group of individuals were discussing V3 transactions and pinning attacks. Greg Sanders suggested a solution called "Ephemeral Anchors", which involves marking an output as an anchor that must be spent within a V3 package with a 0-fee parent transaction. This method simplifies mempool reasoning and allows anyone to bump the transaction without any transaction key material. The Lightning Carve-out is superseded by this logic, allowing for robust multi-party fee bumping. However, there are concerns about whether allowing non-zero value in ephemeral outputs would open up MEV concerns and how SIGHASH_GROUP like constructs would work.Gloria proposed a solution for ln-penalty, reducing the number of anchors per commitment transaction to 1 and each version of the commitment transaction has a unique party's key on it worked around the problem. Antoine Riard suggested that package relay should be included in addition to package RBF, otherwise if Lightning transactions are still relayed one by one, the version of the commitment transaction won't replace the counterparties's commitments sleeping in network mempools. If non-zero value is allowed in ephemeral outputs, it could modify the incentives games of the channels counterparties.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T01:57:38.176299+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

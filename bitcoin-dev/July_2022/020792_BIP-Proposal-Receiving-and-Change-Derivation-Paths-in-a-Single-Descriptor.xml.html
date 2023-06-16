@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Receiving and Change Derivation Paths in a Single Descriptor</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pavol Rusnak 2022-07-26 21:56:10
+            <br><i>Published on: 2022-07-26T21:56:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2022/combined_BIP-Proposal-Receiving-and-Change-Derivation-Paths-in-a-Single-Descriptor.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020792.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new Bitcoin Improvement Proposal (BIP) has been proposed by Andrew Chow that aims to simplify the representation of descriptors for receiving and change addresses. The proposal allows descriptors to have a single derivation path element that specifies a pair of indexes so that parsers would then expand these into two almost identical descriptors with the difference being that the first uses the first of the pair of indexes, and the second uses the second. This also works for descriptors involving multiple keys where the first element in every pair is used for the first descriptor and the second element of each pair in the second descriptor. The full text of the BIP can be found on GitHub, and an implementation of it to Bitcoin Core is available at GitHub as well. The common use case for this is to represent descriptors for producing receiving and change addresses. Pavol Rusnak clarified whether triplets can also work or if only tuples of exactly two values are supported.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T23:30:56.656003+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
