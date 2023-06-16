@@ -19,6 +19,36 @@
             
                 
                     <li>
+                        <a href="/bitcoin-dev/July_2011/000187_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
+                        <b>Pieter Wuille 2011-07-14 09:10:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000186_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
+                        <b>John Smith 2011-07-14 05:19:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000187_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
+                        <b>Pieter Wuille 2011-07-14 09:10:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000188_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
+                        <b>Matt Corallo 2011-07-14 14:13:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000186_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
+                        <b>John Smith 2011-07-14 05:19:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000186_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
+                        <b>John Smith 2011-07-14 05:19:11</b>
+                    </li>
+                
+                    <li>
                         <a href="/bitcoin-dev/July_2011/000188_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
                         <b>Matt Corallo 2011-07-14 14:13:04</b>
                     </li>
@@ -28,17 +58,22 @@
                         <b>Pieter Wuille 2011-07-14 09:10:42</b>
                     </li>
                 
+                    <li>
+                        <a href="/bitcoin-dev/July_2011/000188_Notifications-from-client-wallet.xml.html">Notifications from client/wallet</a>
+                        <b>Matt Corallo 2011-07-14 14:13:04</b>
+                    </li>
+                
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000188.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000187.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2011-07-14T14:13:04+00:00</i></p>
+        <p><i>Published on: 2011-07-14T09:10:42+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>A proposal has been made to add notifications to the client and wallet so that UIs no longer have to poll for changes. The boost::signal mechanism is proposed which allows decoupled delivery of signals from an object, so multiple other objects can listen in on an event without the emitting object having to care. Specific notifications were then discussed for the wallet and network client. For the wallet, there could be balanceChanged (maybe even per-account), transactionAdded, transactionUpdated (which may include more confirmations), transactionRemoved (for completeness), addressAdded, addressUpdated, addressRemoved and notification. There could also be int askFee for asking user for fee. For the network client, there could be numConnectionsChanged, numBlocksChanged, and notification.</p>
+        <p>The email thread discusses a proposal to add notifications to the client and wallet, allowing for decoupling of UI and core communication. The boost::signal mechanism is proposed as a solution, allowing decoupled delivery of signals from an object. Specific notifications are suggested for the Wallet and Network client, including balanceChanged, transactionAdded, transactionUpdated, transactionRemoved, addressAdded, addressUpdated, addressRemoved, notification, askFee, numConnectionsChanged, numBlocksChanged. The implementation of a central notification interface is also suggested for source cleanup. This would allow for clean separation of pieces and large-scale rewrites without touching anything but the parts being redone. The thread also discusses implementation details and suggestions in detail throughout. Overall, the proposal aims to improve efficiency and functionality within the Bitcoin system.</p>
         <hr>
-        <p><i>Updated on: 2023-05-19T02:39:38.384672+00:00</i></p>
+        <p><i>Updated on: 2023-06-04T17:20:21.358058+00:00</i></p>
     
 
     

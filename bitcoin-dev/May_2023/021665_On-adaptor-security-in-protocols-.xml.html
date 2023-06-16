@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On adaptor security (in protocols)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2023-05-11 11:41:14
+            <br><i>Published on: 2023-05-11T11:41:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_On-adaptor-security-in-protocols-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021665.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On May 11th, 2023, AdamISZ sent an email to Lloyd Fournier discussing a potential variant of the canonical adaptor based swap. He suggests that Alice can encrypt the single-key signature for her payment to Bob with the encryption key being T = sG, where s is the partial signature of Bob on the payout from a multisig to Alice. However, Lloyd points out that Alice could still move the funds even if Bob decrypts and broadcasts by revealing s if she gets confirmed first. He notes that a multisig is always necessary in these situations, but it need not be a key aggregated multisig like MuSig. Lloyd also mentions that there is no useful use of a single signer adaptor signature in Bitcoin without some kind of other spending constraint.On May 8th, 2023, Lloyd and AdamISZ had a conversation discussing the usefulness of single signer adaptors. Lloyd argues that they do provide a way to create enforcement that the publication of signature on a pre-defined message will reveal a secret. He gives an example of holding a secret key for X and creating a signature adaptor with some encryption key Y with message m. If he does not create any further signatures on m, then any signature on m that is published necessarily reveals the secret on Y to him. This property can be useful in practice and has already been used for years by DLCs in production. However, AdamISZ struggles to understand this point and references Dryja's construct and single key Schnorr, stating that they are missing and therefore making them useless. Lloyd clarifies that he was not referencing the DLC oracle attestation protocol but rather pointing out that DLC client implementations have been using single signer adaptor signatures as signature encryption in practice for years for transaction signatures. There are even channel implementations using them as well as atomic swaps doing this.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:08:26.481334+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

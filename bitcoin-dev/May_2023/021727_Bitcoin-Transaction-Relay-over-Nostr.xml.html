@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Transaction Relay over Nostr</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2023-05-30 12:30:51
+            <br><i>Published on: 2023-05-30T12:30:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_Bitcoin-Transaction-Relay-over-Nostr.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021727.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the concept of block templates and weak blocks, and how they could be used to improve the efficiency and profitability of miners. A block template is an ordered list of raw transactions that a full node can validate and calculate fees for, while a weak block is a block whose header doesn't hash to a low enough value to be included in the chain. The suggestion is to use a Nostr relay to relay almost any template that pays more fees than the previous best template for the next block, which would make it easy for external services to build the best possible block using advanced algorithms. Additionally, miners could relay weak blocks through Nostr to full nodes and other miners to compensate for the reduced effectiveness of BIP152 compact block relay caused by custom transactions not seen by typical relay nodes. The anti-dos measures described for both weak blocks and block templates are robust but require a more intelligent nostr relay to enforce. The block template and weak block could both be sent in BIP152 compact block format as a diff against the expected contents of a typical node. Overall, the email suggests that Nostr could provide an interesting playground for experimenting with various relay and mining ideas.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:39:39.980015+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

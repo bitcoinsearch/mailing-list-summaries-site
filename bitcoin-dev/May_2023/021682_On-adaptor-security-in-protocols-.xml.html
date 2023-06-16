@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On adaptor security (in protocols)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> AdamISZ 2023-05-14 08:37:50
+            <br><i>Published on: 2023-05-14T08:37:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_On-adaptor-security-in-protocols-.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021682.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between AdamISZ and Lloyd Fournier, they discuss the usefulness of single signer adaptor signatures in Bitcoin. They conclude that single key signature adaptor in isolation is basically useless in a Bitcoin context but it could be useful in combination with another locking condition on the utxo such as another pubkey lock (e.g. op_checksigadd/op_checkmultisig). They also discuss the canonical adaptor-based swap where Alice can encrypt the single-key signature for her payment to Bob, revealing the partial signature of Bob, on the payout from a multisig, to Alice. However, they also mention that Alice can still move the funds even if Bob decrypts and broadcasts by revealing s if she gets confirmed first. Lloyd states that single signer adaptor signatures have been used as signature encryption in practice for years for the transaction signatures by DLC client implementations and are even used in channel implementations as well as atomic swaps.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:09:34.217537+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

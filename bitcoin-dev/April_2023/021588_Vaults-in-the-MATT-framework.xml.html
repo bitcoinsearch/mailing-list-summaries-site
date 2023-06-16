@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Vaults in the MATT framework</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Salvatore Ingala 2023-04-24 19:37:20
+            <br><i>Published on: 2023-04-24T19:37:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2023/combined_Vaults-in-the-MATT-framework.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021588.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The MATT proposal for smart contracts in Bitcoin has two core opcodes that can be used to create vaults comparable to those built with OP_VAULT. These opcodes enhance Script with capabilities such as deciding the taptree of the output and embedding dynamically computed data in the output. However, further implementation is required since the opcodes only operate on scriptPubkey and not on the amounts.The first attempt at creating a vault using MATT's opcodes involved generalizing two key elements from OP_VAULT's semantics: forcing the script/amount of the next step and storing some data for future Script's access. A contract that represents a vault has alternate_pk, spend_delay, recover_pk, and unvault_pk needed to authorize the unvaulting process. The P2TR structure for [V] (vault) has two scripts - "trigger" and "recover". The "trigger" script requires in the witness an output index and the ctv-hash that describes the withdrawal transaction. That's followed by the unvaulting condition in this example, a simple signature check. The "recover" script doesn't require any signature and it simply forces the output specified in the witness to be a P2TR output with recover_pk as its pubkey. The P2TR structure for [U] (unvaulting state) has two scripts - "withdrawal" and "recover". The "withdrawal" finalizes the transaction, by checking that the timelock expired and the outputs satisfy the CTV hash that was committed to in the previous transaction.Salvatore Ingala, a Bitcoin developer, has shared his thoughts on the potential implementation of vaults in the cryptocurrency network. In his post on the Bitcoin-dev mailing list, he discussed the differences between the current version of OP_VAULT and his proposed improvements. He noted that the "recover" script remains unchanged.Ingala pointed out that unlike the current implementation based on OP_VAULT, the utxos do not have an option to add an additional output that is sent back to the same exact vault. This use case would require a more general way of handling the distribution of amounts than what has been discussed previously. To avoid the need to dynamically create taptrees and replace leaves in the covenant-encumbered UTXOs, Ingala suggests separating the ctv-hash (considered "data") from the scripts in the taptree. This means that the taptrees of [V] and [U] are already set when [V] utxos are created, and only the "data" portion of [U]'s scriptPubKey is dynamically computed. This makes it easier to program "state machines" that control the behavior of coins, including vaults.He concluded by sharing links to relevant documents for those interested in learning more about Bitcoin's vaults and inviting comments on his proposed changes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T17:46:44.551160+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>postr: p2n payjoin using nostr <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2023/021760_postr-p2n-payjoin-using-nostr.xml.html">postr: p2n payjoin using nostr</a>
+                        <b>alicexbt 2023-06-10 22:17:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2023/021766_postr-p2n-payjoin-using-nostr.xml.html">postr: p2n payjoin using nostr</a>
+                        <b>alicexbt 2023-06-12 19:28:47</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021760.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2023-06-10T22:17:24+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A Bitcoin developer has proposed a proof of concept for payjoin(p2ep) that eliminates the need for personal servers, increasing the ease of adoption. The developer's proposal uses common nostr relays between sender and receiver, in contrast to stowaway used by samourai, which relies on servers. The proposal's repository can be found on GitLab, while a demo video is available on YouTube.The email thread discusses the use of nostr npub and relays for payjoin, highlighting the use of SIGHASH_NONE when there is no change in the transaction. However, this method enables the receiver to use the funds however they wish, and anyone who sees the final broadcasted transaction can extract the sender's input for their own purposes. Developers are free to use other SIGHASH flags or default, as there are no incentives for sender or recipient to use RBF and double spend in a payjoin transaction. The email suggests disabling the ability to use mainnet coins directly in the code due to its highly irresponsible nature. Additionally, it warns that this proof of concept is not a proper implementation of a payjoin, even in theory, as it is easy to discern which inputs belong to the sender and receiver respectively in the final transaction. Despite being vulnerable according to Symphonicbtc, use of SIGHASH_ALL by the recipient secures all outputs based on the understanding of SIGHASH flags and a blog post by Raghav Sood.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-16T18:50:39.772314+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

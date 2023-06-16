@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Conceptual package relay using taproot annex</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2023-06-05 07:57:46
+            <br><i>Published on: 2023-06-05T07:57:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021748.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author suggests a potential workaround for the situation where a parent transaction A paying zero sat/b and a fee bumping child transaction B cannot reach miners due to p2p package relay under development. The workaround involves introducing a third transaction C containing transactions A and B in a taproot annex, paying sufficient fees, and using at least one of the same fee contributing inputs as transaction B. Miners can detect transactions A and B in the annex of transaction C and immediately submit them to their mempool as a transaction package. This transaction package (A+B) would then replace transaction C and could be included in a block for mining. It's important to ensure that the combined package of A+B is more attractive to miners than transaction C, which has no extra costs since its fees will never be paid because it has been replaced. If not all miners adopt this incentive-compatible replacement, there's a chance transaction C ends up being mined. In such an event, the operation can be retried with a modified B and C, though the fees paid for the initial transaction C would be forfeited.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:49:51.786385+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

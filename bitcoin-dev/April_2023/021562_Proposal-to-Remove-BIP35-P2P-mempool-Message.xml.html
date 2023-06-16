@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal to Remove BIP35 P2P &#39;mempool&#39; Message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Will Clark 2023-04-18 06:37:45
+            <br><i>Published on: 2023-04-18T06:37:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2023/combined_Proposal-to-Remove-BIP35-P2P-mempool-Message.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021562.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author proposes the removal of BIP35 P2P `mempool` message, which is considered bad for privacy and relatively inefficient for trusted peers. The original intention of the message was to be publicly callable, but it is now gated behind stricter Net Permissions accessible to trusted peers only. An alternative for serving trusted clients could be using the `savemempool` RPC, although it currently has some shortcomings. Dumping and loading a dumped mempool to sync two trusted nodes or bootstrap one node makes more sense via RPC, but there is an argument to be made that syncing via P2P message would be more convenient. The author has a draft PR open for the removal of the mempool message, and before moving forward, they want to ensure that there are no active use cases or technical opposition to its removal. The author requests input on whether there are any parties who still directly rely on the BIP35 P2P `mempool` message and whether there will be any issues or negative consequences resulting from its removal. A quick search of node implementations shows that `btcd`, `libbitcoin`, and `BitcoinJ` all have BIP35 messages specified, but it's difficult to gauge upstream usage by other projects without outreach like this. The removal of the message would provide a small clean-up to the P2P codebase and bring the usual benefits in terms of maintainability.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T17:27:23.947176+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

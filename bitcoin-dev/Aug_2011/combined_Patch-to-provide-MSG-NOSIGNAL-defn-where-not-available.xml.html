@@ -41,9 +41,9 @@
         <p><i>Published on: 2011-08-19T13:52:27+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The attached patch which has been sent by Venkatesh Srinivas, defines MSG_NOSIGNAL to 0 on platforms where it is unavailable. Previously this definition was only available under __WXMSW__. The patch is provided in the form of a diff file and contains changes for util.h file. T* alignup(T* p) function has been defined in the same file. In the updated version, #ifndef MSG_NOSIGNAL has been added along with #define MSG_NOSIGNAL 0. Additionally, #ifdef __WXMSW__ has been used to define MSG_DONTWAIT as 0 and UINT64_MAX as _UI64_MAX. The file has undergone 4 insertions and 1 deletion in total.</p>
+        <p>The patch attached to this context defines MSG_NOSIGNAL to 0 on platforms where it is unavailable. This definition was previously only available under __WXMSW__. The src/util.h file has been modified to add a definition for MSG_NOSIGNAL, but only if it is not already defined. If MSG_NOSIGNAL is already defined, no changes will be made.In addition to defining MSG_NOSIGNAL, the patch also includes definitions for MSG_DONTWAIT and UINT64_MAX for the __WXMSW__ platform. The patch has been signed with a PGP signature, which is included as an attachment.</p>
         <hr>
-        <p><i>Updated on: 2023-05-26T20:22:48.800063+00:00</i></p>
+        <p><i>Updated on: 2023-06-04T18:22:09.289582+00:00</i></p>
     
 
     
