@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Standardisation of an unstructured taproot annex</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2023-06-18 20:40:53+00:00
+            <br><i>Published on: 2023-06-18T20:40:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2023/combined_Standardisation-of-an-unstructured-taproot-annex.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021774.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation between Antoine Riard and Greg Sanders, Antoine proposed an opt-in annex approach for Bitcoin's multi-party protocols. The approach requires every input to commit to an annex even if it is empty, which would protect existing multi-party protocols from being affected. However, this approach would require modifying current Taproot support on the Lightning-side, where all P2TR spends must add an annex and commit to it in the BIP341 signature digest. Greg requested a citation for this approach and stated that people should not be building protocols meant for production on top of undeveloped upgrade hooks. Antoine also proposed limiting the maximum size of the value to 256 bytes to protect opt-in users. However, there is another approach proposed by Joost Jager, which introduces the maximum size/weight of the witness/transaction as a TLV record itself. This branch implementing "only allow tlv record 0" with the TLV format from bips #1381. Joost proposed a restrictive policy that enables annex-vaults and is in line with work already done. The policy includes an opt-in annex, Tlv format, only allowing tlv record 0 - unstructured data, and limiting the maximum size of the value to 256 bytes. However, the limit of 126 bytes in the previous proposal isn't sufficient for these types of vaults. The third presigned tx and/or additional vault parameters could be added using the remaining bytes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-22T01:14:52.608209+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
