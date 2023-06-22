@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Standardisation of an unstructured taproot annex</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2023-06-16 11:26:34+00:00
+            <br><i>Published on: 2023-06-16T11:26:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2023/combined_Standardisation-of-an-unstructured-taproot-annex.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021772.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange, Joost proposes a potential policy for annex-vaults that would be in line with existing work and enable future extensibility. The proposed policy includes an opt-in annex for every input (even if empty), a Tlv format as defined in <a href="https://github.com/bitcoin/bips/pull/1381,">https://github.com/bitcoin/bips/pull/1381,</a> and only allows tlv record 0 - unstructured data. However, there is a limit on the maximum size of the value which is proposed to be 256 bytes to protect opt-in users. Joost notes that the current limit of 126 bytes in <a href="https://github.com/bitcoin-inquisition/bitcoin/pull/22">https://github.com/bitcoin-inquisition/bitcoin/pull/22</a> isn't sufficient for these types of vaults. If there are two presigned txes (unvault and emergency), those signatures would already take up 2*64=128 bytes. Then you also want to store 32 bytes for the ephemeral key itself as the key can't be reconstructed from the schnorr signature. The remaining bytes could be used for a third presigned tx and/or additional vault parameters. Joost asks if there are any practical objections to making the annex standard under the conditions listed above.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-18T12:19:40.338527+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

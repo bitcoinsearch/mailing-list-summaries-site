@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Liquidity griefing for 0-conf dual-funded txs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2023-06-07 09:46:36+00:00
+            <br><i>Published on: 2023-06-07T09:46:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2023/combined_Liquidity-griefing-for-0-conf-dual-funded-txs.xml.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003975.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The introduction of dual funded transactions in lightning has created challenges with protecting against liquidity griefing attacks from malicious peers. The issue arises when a peer goes silent in the middle of an instance of the protocol, locking up liquidity for a small duration. An elegant solution is to never lock utxos used in dual funded transactions, which will automatically re-use the utxos in another instance if a remote node goes silent. However, this solution falls short when using 0-conf, which forces utxos to be locked to avoid accidental double-spending and loss of funds. Nodes offering 0-conf services must ensure that the utxos they use for 0-conf are isolated from those used for non-0-conf to properly lock utxos and prevent accidental double-spending. A "soft lock" can be utilized when selecting utxos for a non 0-conf funding attempt, with 0-conf funding attempts ignoring soft locked utxos while non 0-conf attempts can reuse them. In eclair, opportunistic 0-conf can be used if certain conditions are met, such as receiving `channel_ready` immediately, being the only contributor to the funding transaction, and the transaction not being RBF-ed yet. However, mixing 0-conf and non 0-conf funding attempts can prevent upgrading to 0-conf due to soft locked utxos. A mid-term solution suggested is to use v3 transactions for channel funding and splicing, making them identifiable on-chain. In the longer term, some kind of anti-DoS token will need to be exchanged to avoid these issues, but designing and analyzing such a solution is challenging. It may also be valuable to disable inbound payments or require a longer `cltv_expiry_delta` than usual in case of mempool fee spikes delaying the 0-conf chain confirmation. Long-term solutions to mitigate channel jamming could be deployed by dual-funding market-makers beyond routing hops, utilizing the Staking Credentials framework and privacy-preserving credentials. The dual-funding initiator should pay a fee scale up on the amount of UTXOs contributed and some worst-case liquidity griefing scenario. These solutions could provide good enough protections against liquidity griefing for nodes offering 0-conf services.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-21T01:16:34.825403+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
