@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Deprecating &#34;midstate&#34; in getwork?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Stefan Thomas 2011-09-29 11:48:25
+            <br><i>Published on: 2011-09-29T11:48:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/combined_Deprecating-midstate-in-getwork-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000613.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>BitcoinJS utilizes OpenSSL to calculate midstate, as seen in the code on line 380 of their native.cc file. In a mailing list exchange between developers in September 2011, Nils Schneider proposed removing dependencies on cryptopp in the internal reference miner and instead relying solely on OpenSSL. However, cryptopp was also being used to calculate getwork "midstate," which is redundant and could be calculated from the blockheader. While some expressed concern about losing compatibility with miners, others agreed that deprecating midstate would result in cleaner code. A pull request for marking midstate as deprecated was submitted and can be found at <a href="https://github.com/bitcoin/bitcoin/pull/538">https://github.com/bitcoin/bitcoin/pull/538</a>.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T20:09:55.589534+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

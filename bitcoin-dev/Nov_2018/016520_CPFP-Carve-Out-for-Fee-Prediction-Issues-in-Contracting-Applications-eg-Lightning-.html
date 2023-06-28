@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2018-11-30 19:33:56
+            <br><i>Published on: 2018-11-30T19:33:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2018/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016520.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a proposal to tweak Lightning's commitment transaction to have two small-value outputs which are immediately spendable, one by each channel participant. This would allow them to chain children off without allowing unrelated third-parties to chain children. The proposal aims to address the CPFP security model considerations. However, it is pointed out that this proposal does not change the current status quo where a commitment transaction may remain unable to be broadcast if feerates spike much higher than the feerate negotiated at the time of construction.The proposal suggests a small tweak to the anti-DoS CPFP rules in Bitcoin Core/BIP 125. In the example provided in the email, output Z must be CSV-delayed to make the proposal secure. Otherwise, Alice could use output A to pin the transaction and then "use up" the proposed "last-transaction" rule by spending output Z. This would leave Bob unable to spend output B without meeting the (expensive) RBF criteria.Furthermore, Russell O'Connor argues that the two-output scheme can address the specific attack without tweaking the RBF rules of BIP 125 since it does not involve RBF at all. He provides an example of how a malicious party could attempt to pin a 1k-vbyte unconfirmed transaction using a 10k-vbyte transaction. Bob wants to CPFP to increase the effective fee rate of TX0 to 3sats/vbyte using output B. He attaches a 1k-vbyte transaction, TX2, to output B with a fee of 5ksats. This ought to create a new TX0-TX2 package with a 3sat/vbyte fee rate. However, TX1 has now been excluded from the package containing TX0, but it hasn't been replaced, so the RBF rules from BIP125 don't apply.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:29:17.472047+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

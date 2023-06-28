@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[softfork proposal] Strict DER signatures</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2015-01-25 14:34:08
-            <br><i>Published on: 2015-01-25T14:34:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2015/combined_-softfork-proposal-Strict-DER-signatures.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007206.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Pieter, a developer, is addressing an issue with a function that was originally written for Bitcoin Core v0.8.0. The function was used to enforce non-standardness and not consensus, so there was no need to require maximum length for the R and S arguments. The restriction on total length was required, as BER allowed multi-byte length descriptors, which this function could not parse. Currently, the proposed soft fork distinguishes invalid signatures with overly-long R or S but acceptable R+S size from invalid signatures where R+S is too large. Pieter suggests adding individual R and S length restrictions that would limit them to no more than 32 bytes, excluding the padding 0 byte in front, to standardness requirements. Two options are suggested: add the R/S length restriction rule as a standardness requirement and later include it in a soft fork, or add it to the soft fork now.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T19:41:10.398775+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Trustless WatchTowers?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2018-04-18 10:16:26
-            <br><i>Published on: 2018-04-18T10:16:26+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2018/combined_Trustless-WatchTowers-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001203.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A possible problem has been identified with the encrypted blob approach in Lightning Network. If a potential thief knows the commitment transaction and its ID, which includes the key that is part of the commitment transaction ID in the encrypted blob approach, they can send many (txid[16:], blob) with random blob to the WatchTower(s) that a user is using, causing various issues. The WatchTower would not know if it is the actual user or the thief who has the "right" to provide a given txid[16:]. An obvious solution would be for the WatchTower to charge a tiny amount for each (txid[16:] blob) pairs it keeps. However, since every successful and unsuccessful payment requires two channel updates, invalidating two commitment transactions and requiring two (txid[16:], blob) pairs, the loop can continue until Rusty runs out of money. One way to break this loop would be for WatchTowers to provide a "prepaid watching" service. Rusty can contact two WatchTowers, get invoices for prepaid watching, pay the invoices, get preimages as “tickets,” use the tickets to put blobs from one WatchTower to the other, and have multiple WatchTowers to reduce how much each WatchTower learns about Rusty.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T23:21:45.052932+00:00 </i></p>
     
     
 

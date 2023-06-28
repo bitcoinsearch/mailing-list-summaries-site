@@ -11,41 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Insufficient funder balance for paying fees <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000924_Insufficient-funder-balance-for-paying-fees.xml.html">Insufficient funder balance for paying fees</a>
-                        <b>Pierre 2018-01-12 11:56:39</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000923_Insufficient-funder-balance-for-paying-fees.xml.html">Insufficient funder balance for paying fees</a>
-                        <b>Johan Torås Halseth 2018-01-12 10:32:23</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Jan_2018/000925_Insufficient-funder-balance-for-paying-fees.xml.html">Insufficient funder balance for paying fees</a>
-                        <b>Johan Torås Halseth 2018-01-12 12:41:09</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000924.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2018-01-12T11:56:39+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Johan asked how Eclair and c-lightning handle a situation where Alice is the funder of a channel with Bob, Alice wants to add an HTLC and has just enough balance for it and the extra fee, but at the same time Bob also wants to add an HTLC and sees that Alice has enough balance to pay the fee for his HTLC. They both send the AddHTLC at the same time, but Alice does not have enough balance to cover her own HTLC and fees as well as Bob's, which could violate the channel reserve requirement or deplete her channel completely if the channel reserve is set to 0. Pierre suggested that this situation is similar to the race condition described in BOLT 2, which handling is specified in BOLT 3. The timing of the commit_sig/revoke_and_ack messages matters more than the update_add_htlc messages because of the acknowledgment logic that excludes remote's unsigned updates. Each party will receive a commitment tx with insufficient (possibly zero) fees. According to BOLT 3, they may decide to fail the channel using their previous commitment. Currently, Eclair won't fail the channel, but Pierre thinks they probably should, especially if they are the fundee and would end up with all funds in an unpublishable tx. An appropriate choice of channel parameters could probably reduce the probability of this happening.</p>
-        <hr>
-        <p><i>Updated on: 2023-05-24T18:29:28.223287+00:00</i></p>
-    
-
     
 
     <footer>

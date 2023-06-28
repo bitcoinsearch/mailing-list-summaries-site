@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer NOINPUT with output tagging</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2018-12-21 16:21:42
+            <br><i>Published on: 2018-12-21T16:21:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Safer-NOINPUT-with-output-tagging.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016580.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Christian Decker and Johnson Lau on December 21, 2018, the two discussed the use of OP_CSV (BIP112) in a 2-of-2 branch. Lau argued that it was not necessary to restrict the BIP68 relative locktime since both parties needed to agree on it. Decker agreed, admitting to forgetting about BIP68, but noted that it would save them a few bytes.However, with taproot, the use of BIP68 actually saves more than just a few bytes. For each update, three signatures are made: one SIGHASH_ALL spending the setup TXO with no locktime, one NOINPUT spending a previous update TXO with absolute locktime, and one NOINPUT spending the latest update TXO with relative locktime. The first and third signatures can be signed directly with the scriptPubKey without revealing the hidden taproot script. The second signature is only necessary if someone publishes an outdated update transaction and will reveal the taproot script.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:55:36.597198+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

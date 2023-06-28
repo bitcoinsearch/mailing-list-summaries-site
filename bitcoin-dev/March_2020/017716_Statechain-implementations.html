@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Statechain implementations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-03-26 01:20:47
+            <br><i>Published on: 2020-03-26T01:20:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Statechain-implementations.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017716.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author is starting to work on an implementation of the statechains concept, with particular interest in using the protocol enable the change of ownership (novation) of an individual position in an active discreet log contract (DLC) without an on-chain transaction and without needing the cooperation of the counterparty. The protocol as outlined by Ruben requires features not currently available in Bitcoin, like SIGHASH_NOINPUT, and it is uncertain when this will be added. Therefore, they are looking at variants that would work with current Bitcoin functionality. There are two main modifications they are looking at: Instead of an eltoo-based backup/refund transaction, they propose using a decrementing nLocktime for backup transactions as the output changes hands. The second modification is to use the Decker-Wattenhofer decrementing-nSequence, which although has a limit on the number of updates, does not have a limit on the time that a UTXO is locked in this mechanism. It even allows chaining multiple such mechanisms, which resets all further stages in case of a unilateral close. This multiplies the total number of updates your statechain can have. As the first stage decrements, more stages can be added dependent on it, keeping a total maximum time that a unilateral close will resolve. The original Decker-Wattenhofer paper "Duplex Micropayment Channels" has prettier graphics.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:18:45.189778+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

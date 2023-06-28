@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Congestion Control via OP_CHECKOUTPUTSHASHVERIFY proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-05-25 03:56:22
+            <br><i>Published on: 2019-05-25T03:56:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Congestion-Control-via-OP-CHECKOUTPUTSHASHVERIFY-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016974.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between ZmnSCPxj and Jeremy, Jeremy explains the benefits of using OP_COSHV over pre-signed transactions. He states that using MuSig and other distributed signing solutions are not acceptable for this case as they all require interaction for guarantee of payout. With OP_COSHV Taproot key, a user can request a withdrawal from an exchange which some time later pays out to a lot of people without having to withdraw multiple times and then pay. The exchange doesn't have to know this is what the user did. They also don't have to tell the user the exact inputs they'll spend to them or if they're batched or not. Furthermore, it allows the exchange to take inbound payments to their hot wallet and move them into cold storage with pre-set spending paths. None of this works well with just pre-signing because you need to ask for permission first in order to do these operations, but with OP_COSHV you can do so without needing permission. Jeremy's explanation leads to an objection from ZmnSCPxj who argues that there are certain cases where OP_COSHV is not useful. In CoinJoin, the initial funding transaction must be signed by participants anyways after checking that the output is correct. Any spend that is not a signature spend is going to defeat the purpose of CoinJoin trying to be private by imitating "typical" spends. If `OP_CHECKOUTPUTSHASHVERIFY` path is used, the privacy of CoinJoin is lost by reducing anonymity set. Similarly, in Channel Factories, the initial funding transaction must be signed by the participants anyway after each initial sub-channel initial commitment / initial update+state transaction is signed. In both above cases, the issue of users dropping out during the step of signing the initial funding transaction is unavoidable even with `OP_CHECKOUTPUTSHASHVERIFY`.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:55:07.175643+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

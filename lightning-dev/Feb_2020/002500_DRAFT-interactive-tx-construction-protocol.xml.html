@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>DRAFT: interactive tx construction protocol</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> lisa neigut 2020-02-04 23:22:28
-            <br><i>Published on: 2020-02-04T23:22:28+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2020/combined_DRAFT-interactive-tx-construction-protocol.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002500.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Rusty has suggested improvements to the protocol messages for transactions. This involves adding a serial_id to inputs and outputs, which can also be used for deletions. The addition of each input must have a unique serial id, with no repeated id numbers. Serial ids are used as a sorting heuristic for input ordering in the final transaction, replacing BIP69. Initiator's serial ids must be odd, while non-initiator's serial ids must be even. For output additions, a distinct counter set is used. The serial id is used for ordering the transactions' outputs, replacing BIP69. Input and output removals are identified by the serial id, not by txid and index or output script and amount, respectively. The `tx_complete` type counts total removals from the transaction, and the `tx_sigs` type exchanges the txid in the `witness_stack`, serving as a checksum for the transaction. Witnesses are ordered implicitly by serial_id, and all output scripts must be standard. Other notes include setting nLocktime to 0x00000000, or blockheight-6 if communicated during initiation, choosing serial ids randomly, and flipping the bottom bit of any received inputs before relaying them to a peer for multiparty constructions. Collisions of serial ids between peers is a protocol error.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T23:07:14.854947+00:00 </i></p>
     
     
 

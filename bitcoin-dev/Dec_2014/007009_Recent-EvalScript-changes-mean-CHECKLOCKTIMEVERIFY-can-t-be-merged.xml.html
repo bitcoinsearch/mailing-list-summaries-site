@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Recent EvalScript() changes mean CHECKLOCKTIMEVERIFY can&#39;t be merged</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Cory Fields 2014-12-15 21:19:16
-            <br><i>Published on: 2014-12-15T21:19:16+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2014/combined_Recent-EvalScript-changes-mean-CHECKLOCKTIMEVERIFY-can-t-be-merged.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-December/007009.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email conversation, Jeff Garzik and Cory Fields discuss the challenges of code movement and refactoring in Bitcoin's modularization process. While it was done in separate logical chunks to make review easier, it resulted in a blizzard of new files and data structures, making review difficult and breaking out-of-tree patches. Jeff suggests that if the majority of code movement is done up front, followed by simplifications and data structure work, further patches are easier to review and apply with less impact on unrelated code. However, Cory argues that at the micro level, minor code changes are usually needed to accommodate useful code movement, which makes it hard to justify code movement for the sake of it. He gives an example of a pull request that unchains Bitcoin's openssl wrapper so that key operations can be performed by the consensus lib without dragging in bitcoind's structures. The first commit severs the dependencies while the second commit does the code movement from the now-freed wrapper. Cory finds it hard to come up with a workflow that would handle these two changes as separate events while making review easier. In practice, he believes that it would be a massive headache, with lots in flux and seemingly no benefits until some later date. PRs can't depend on each other because they don't fix issues in a linear fashion, which means that other developers can't depend on them either.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T14:50:47.551742+00:00 </i></p>
     
     
 

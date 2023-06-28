@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>KETAMINE: Multiple vulnerabilities in SecureRandom(), numerous cryptocurrency products affected.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jason Davies 2018-04-10 08:51:51
-            <br><i>Published on: 2018-04-10T08:51:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2018/combined_KETAMINE-Multiple-vulnerabilities-in-SecureRandom-numerous-cryptocurrency-products-affected-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015880.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email, Jason Davies explains his findings on a vulnerability disclosure that did not contain information about the library in question. He reveals that the vulnerability might be referring to a pre-2013 version of jsbn, a JavaScript crypto library which before it used the CSRNG in the Web Crypto API, tried to use nsIDOMCrypto. However, as modern browsers don't have window.crypto.random defined, Bitcoin wallets using a pre-2013 version of jsbn may not be using a CSPRNG when run on a modern browser. Furthermore, even with the latest version (v1.4) of jsbn, it still does not use high-quality entropy for Internet Explorer because getRandomValues is provided under window.msCrypto for that browser. Even though a CSPRNG is used, the library passes the output of the CSPRNG through RC4 which generates biased bits, leading to possible private key recovery. Davies also notes that Chrome used RC4 for crypto.getRandomValues at one point in 2015.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T01:26:06.577010+00:00 </i></p>
     
     
 

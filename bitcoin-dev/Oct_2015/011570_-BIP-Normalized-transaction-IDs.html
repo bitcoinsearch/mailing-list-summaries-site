@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2015-10-20 10:30:33
+            <br><i>Published on: 2015-10-20T10:30:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011570.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread from bitcoin-dev mailing list discusses the normalization process for transaction IDs and its implementation. The normalization involves two steps: stripping the scriptSig scripts in the inputs and replacing the hashes referencing the outputs being spent with the normalized hashes of the transaction that created the outputs. However, the second part is not yet explained in the draft. Non-coinbase transactions cannot be replayed since the normalized transaction still includes a the normalized transaction hashes of claimed outputs, hence any attempt to replay a transaction would fail since the outputs were already spent. For coinbase transactions, multiple transactions can be created with the same hash, relying on BIP 34 to make the coinbase transactions unique except for blocks 91842 and 91880 which are the reason BIP 34 was introduced. The computation of the normalized transaction ID replaces input hashes with their normalized counterpart making a chain of any depth non-malleable. The proposal is recursive in nature and the rule is that txids are what they would have been if n-txids had been used right from the start.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:21:33.416011+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

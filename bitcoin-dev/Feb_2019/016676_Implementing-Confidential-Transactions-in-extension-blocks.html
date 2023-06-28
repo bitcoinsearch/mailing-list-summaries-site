@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Implementing Confidential Transactions in extension blocks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-02-11 04:29:42
+            <br><i>Published on: 2019-02-11T04:29:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2019/combined_Implementing-Confidential-Transactions-in-extension-blocks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016676.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email from ZmnSCPxj discusses the concept of extension blocks. The author argues that fullnodes need to be able to get a view of the UTXO set, and extension blocks make this difficult. They also argue that extension blocks are "evil" soft forks since older nodes are forced to upgrade as their intended functionality becomes impossible. The author believes that a non-extension-block approach is achievable by implementing a globally-verified publicly-visible counter of the total amount in all confidential transaction outputs. This would prevent inflation even if a future quantum computing breach allows confidential transaction value commitments to be opened to any value. However, this approach would require a hard fork. The email also mentions that CT transactions increase the maximum number of transactions per block, but this is not an unalloyed positive because it translates to greater network capacity usage globally on all fullnodes. Finally, the author notes that if there is a software bug in CT, it's impossible to create new coins because the coins move from normal block to normal block as public transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:02:48.377446+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

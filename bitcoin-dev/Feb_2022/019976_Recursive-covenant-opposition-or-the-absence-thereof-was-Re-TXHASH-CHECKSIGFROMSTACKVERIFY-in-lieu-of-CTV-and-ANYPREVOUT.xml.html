@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Recursive covenant opposition, or the absence thereof,	was Re: TXHASH + CHECKSIGFROMSTACKVERIFY in lieu of CTV and	ANYPREVOUT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2022-02-23 11:28:36
-            <br><i>Published on: 2022-02-23T11:28:36+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2022/combined_Recursive-covenant-opposition-or-the-absence-thereof-was-Re-TXHASH-CHECKSIGFROMSTACKVERIFY-in-lieu-of-CTV-and-ANYPREVOUT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019976.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The article delves into the concept of recursive covenants and their role in enabling Drivechains. It begins by questioning the negative perception surrounding Turing-completeness, which necessitates multiple transactions for implementation. The article goes on to explain how recursive covenants can form drivechains, which have been previously overlooked due to associated risks.The article then demonstrates how `OP_TLUV` and `OP_CAT` can be used to build recursive covenants through quining. It further explains how loop variables can be updated within the covenant to modify the script during each iteration. The Drivechain is divided into four parts, and the first three can be easily implemented using a recursive covenant without a loop variable, along with an opcode to restrict amounts.However, the fourth part is more complex and requires a sidechain-to-mainchain peg. The article illustrates how natural numbers can be represented using arbitrary 160-bit numbers or `OP_HASH160`, which keeps track of the total number of votes for withdrawals. The peg-out covenant has three loop variables: `v`, `t`, and `a`, initialized to `Z`, `P / 2`, and peg-out address, respectively. If `v` equals `P/2`, the UTXO can be spent to `a`. If `t` equals `P`, the UTXO can only be spent by being pegged into the sidechain covenant. Otherwise, we check if the witness stack top is true or not; if true, increment `v` and recurse ("vote-for" branch), else just recurse ("vote-against" branch).To fix inter-recursion between the sidechain covenant and the peg-out covenant, the article proposes converting them into a single self-recursive covenant with the same set of loop variables as the peg-out covenant. The context also mentions that the implementation of all components of Drivechain is doable with 'OP_TLUV', 'OP_CAT', 'OP_CTV', 'OP_IN_OUT_AMOUNT' of some kind, including the ability to check the output amount is larger than the input amount, and existing Bitcoin SCRIPT- 'OP_ADD' is not necessary.The article concludes by highlighting the significance of the recursive covenant in enabling Drivechains and how it can be used to implement various components with ease. It further explains the options available when there is no pending peg-out being voted on and when there is one. When 'v' has reached its limit required, 'a' must appear on the second output using 'OP_CTV', while the same SCRIPT with 'v', 't', and 'a' reset to '0' is on the first output. No minimum value is imposed for the first output, and the sidechain commitment is now an 'OP_RETURN' on the third output with no other outputs. Finally, when 't' has reached its limit, 'v', 't', and 'a' are reset to '0', and the sidechain commitment is made.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T16:48:41.038029+00:00 </i></p>
     
     
 

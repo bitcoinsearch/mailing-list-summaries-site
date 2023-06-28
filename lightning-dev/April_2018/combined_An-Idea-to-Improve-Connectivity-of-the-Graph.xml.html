@@ -11,76 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>An Idea to Improve Connectivity of the Graph <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Feb_2018/000991_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>Christian Decker 2018-02-05 13:21:54</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/April_2018/001135_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>ZmnSCPxj 2018-04-05 16:13:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/April_2018/001138_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>Christian Decker 2018-04-06 12:23:45</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/April_2018/001159_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>Alejandro Ranchal Pedrosa 2018-04-11 08:43:28</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/April_2018/001166_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>Christian Decker 2018-04-11 20:15:41</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/April_2018/001167_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>ZmnSCPxj 2018-04-12 00:46:16</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Feb_2018/000987_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>ZmnSCPxj 2018-02-04 21:41:10</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2018/001129_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>Alejandro Ranchal Pedrosa 2018-03-29 15:10:37</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/April_2018/001161_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>ZmnSCPxj 2018-04-11 09:40:11</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Feb_2018/000986_An-Idea-to-Improve-Connectivity-of-the-Graph.xml.html">An Idea to Improve Connectivity of the Graph</a>
-                        <b>Abhishek Sharma 2018-02-04 18:21:48</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000991.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2018-02-05T13:21:54+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>In a discussion on Lightning-dev, Christian expressed concern over state invalidations in Lightning and their unsuitability for multi-party negotiations beyond two parties. This is due to the exponential growth of potential reactions to a party cheating. The Channel Factories paper addresses this issue by using the Duplex Micropayment Channel construction instead of retaliation construction in LN. Christian also raised confusion regarding how misbehavior on one channel could be retaliated against on another channel if they are logically independent. Abhishek Sharma proposed a modification to the Lightning Network that would require fewer open channels. His idea involves three parties committing their funds all at once and moving their funds between the three open channels between them, creating three open channels between each of them with a pre-set capacity.This mechanism can be useful when parties wish to transact but don't have enough funds in the required channel. For example, if parties A, B, C, D, and E have channels and balances as mentioned above, D cannot send E 1.0 BTC without opening a new channel and waiting for the network to verify it. But, A can ask B to move her 1.0 in channel AB to channel AC to enable D to route 1.0 BTC from A to C and finally to E.ZmnSCPxj from Lightning-dev asked for more details on Sharma's idea and Bitcoin transactions involved, comparing it to the Burchert-Decker-Wattenhofer Channel Factories. In response, Christian Decker pointed out a potential issue with the selection of 1 bit sequence diffs in the branching process, which results in a large number of invalidations. He also discussed the toolbox for long-lasting DMCs, including techniques such as using a sequence of `nSequence`d transactions off-chain with a branching factor of 2 or the Poon-Dryja technique.In conclusion, while state invalidations in Lightning may not be suitable for multi-party negotiations beyond two parties, alternative techniques such as long-lasting DMCs and the modification proposed by Sharma can be useful. It's important to consider the trade-offs of each technique and choose the one that fits the specific use case best.</p>
-        <hr>
-        <p><i>Updated on: 2023-05-24T20:34:59.790185+00:00</i></p>
-    
-
     
 
     <footer>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[RFC] [BIP proposal] Dealing with malleability</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Natanael 2014-02-20 07:50:51
-            <br><i>Published on: 2014-02-20T07:50:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2014/combined_-RFC-BIP-proposal-Dealing-with-malleability.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004392.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The use of oracles in P2SH addresses with 2-of-3 signatures requires pregenerating transactions for both outcomes in advance, which the oracle may not want to share before the event occurs. To solve this issue, the oracle can share a transaction hash in advance and provide a Zero-knowledge proof of that transaction's adherence to agreed-upon rules, allowing the full tree of transactions to be pregenerated. The oracle then releases one of the possible transactions after the event occurs, allowing the broadcast of the chosen chain. However, this method becomes impractical when the number of possible outcomes is too high as it would require the generation and storage of a massive outcome tree.Meanwhile, a "only-mine-with-child flag" can address issues with broadcasting pre-generated subchains separately by making parent transactions invalid unless spent together with their dependent transactions. This method requires all miners to respect it at once to avoid network forking. Changes to transaction versions are intended to provide non-malleability guarantees for clients willing to restrict their functionality, but they should not outlaw malleability as there are intended use cases for it. It is also noted that soft forks are easier to implement than hard forks, which would require more extensive modification of software.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T02:44:27.788993+00:00 </i></p>
     
     
 

@@ -11,46 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Do we really want users to solve an NP-hard problem when they wish to find a cheap way of paying each other on the Lightning Network? <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Aug_2021/003203_Do-we-really-want-users-to-solve-an-NP-hard-problem-when-they-wish-to-find-a-cheap-way-of-paying-each-other-on-the-Lightning-Network-.xml.html">Do we really want users to solve an NP-hard problem when they wish to find a cheap way of paying each other on the Lightning Network?</a>
-                        <b>René Pickhardt 2021-08-26 14:33:23</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Aug_2021/003212_Do-we-really-want-users-to-solve-an-NP-hard-problem-when-they-wish-to-find-a-cheap-way-of-paying-each-other-on-the-Lightning-Network-.xml.html">Do we really want users to solve an NP-hard problem when they wish to find a cheap way of paying each other on the Lightning Network?</a>
-                        <b>Orfeas Stefanos Thyfronitis Litos 2021-08-31 09:59:11</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Aug_2021/003210_Do-we-really-want-users-to-solve-an-NP-hard-problem-when-they-wish-to-find-a-cheap-way-of-paying-each-other-on-the-Lightning-Network-.xml.html">Do we really want users to solve an NP-hard problem when they wish to find a cheap way of paying each other on the Lightning Network?</a>
-                        <b>Anthony Towns 2021-08-31 04:01:34</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Aug_2021/003214_Do-we-really-want-users-to-solve-an-NP-hard-problem-when-they-wish-to-find-a-cheap-way-of-paying-each-other-on-the-Lightning-Network-.xml.html">Do we really want users to solve an NP-hard problem when they wish to find a cheap way of paying each other on the Lightning Network?</a>
-                        <b>Stefan Richter 2021-08-31 19:10:40</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003203.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2021-08-26T14:33:23+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Developers have been discussing the optimization of payment flows on the Lightning Network (LN), and there is a concern that finding the cheapest payment flow is an NP-hard problem. The fee function is not linear nor convex, and possible solutions include dropping the base fee or modifying the optimization goal to optimize for reliability instead of fees. Linear approximations could also be used to approximate such problems. René Pickhardt has suggested that node operators should open channels with other nodes who already support zero base fee on their channels, and he will not engage in further discussions on the matter unless substantial new information comes up. Andrew Poelstra proposed a similar approach to what is used in Debian, where users are required to solve an NP-hard problem when they want to find a cheaper way of paying each other on the LN. In some cases, it would fail despite there being a possible successful multipath route, and in other cases, it would choose a moderately higher fee path than necessary. Still, if paying a 0.2% fee vs a 0.1% fee when the current state of the art is a 1% fee, that would be acceptable.ZmnSCPxj and Stefan discussed the possibility of creating a variant of Pickhardt-Richter payments that can adapt to the reality of the current network where `base_fee > 0` is common but is biased against `base_fee > 0`. They suggest using amount*prop_fee + amount*base_fee/min_flow_size as a component of the cost function, with min_flow_size being a suitable quantization constant that could be chosen dynamically. This solution solves the problem of splitting flows into HTLCs and is nicely convex, making it easy to find min-cost flows for it. The smaller the min_flow_size and the larger the base_fee, the less accurate it becomes, but economics will likely convince most people to choose a zero or low base_fee. Overall, this provides a practical solution for the ongoing debate about base fees in Lightning Network.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-04T02:16:08.906677+00:00</i></p>
-    
-
     
 
     <footer>

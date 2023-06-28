@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Committed bloom filters for improved wallet performance and SPV security</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2017-01-04 10:13:02
+            <br><i>Published on: 2017-01-04T10:13:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2017/combined_Committed-bloom-filters-for-improved-wallet-performance-and-SPV-security.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013427.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There is a discussion about implementing spv mode for bitcoin core without using bloom filters. This will be less efficient because it downloads full blocks, but better for privacy. The author of the post wonders if other spv implementations should consider doing the same instead of committing the filters in the block. A question is raised about how to know which blocks are of interest when downloading the whole block instead of only specific transactions. Aaron Voisine responds by explaining that marking a transaction as "pending" is similar to what people with bank accounts are familiar with. He also mentions that the risk of accepting gossip information from multiple random peers is still minimal, and that random node operators have no incentive to send fake transactions.Jonas Schnelli agrees that unconfirmed transactions are important, but not over SPV against random peers. He suggests educating merchants to eliminate the use of 0-conf SPV transactions retrieved from random peers, as this could lead to a large scale fiasco that would hurt Bitcoin's reputation and trust from merchants. Instead, Schnelli recommends different solutions, such as co-using a wallet-service with centralized verification or using watch-only mode. For end-users using SPV software, he recommends disabling unconfirmed transactions during SPV against random peers, enabling unconfirmed transactions when using SPV against a trusted peer with preshared keys after BIP150, showing how to enable unconfirmed transactions if they are disabled, and educating users about the risks during low-conf phase (1-5). Lastly, Schnelli suggests recommending to sacrifice the "incoming funds" feature in SPV wallets for stability and scaling purposes and to use privacy-preserving BFD's.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:59:32.622370+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

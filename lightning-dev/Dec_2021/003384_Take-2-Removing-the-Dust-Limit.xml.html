@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Take 2: Removing the Dust Limit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bastien TEINTURIER 2021-12-08 08:34:32
-            <br><i>Published on: 2021-12-08T08:34:32+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2021/combined_Take-2-Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003384.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation between Bastien and Jeremy on the Bitcoin-dev mailing list, the topic of lightning anchor outputs and their bloat on the utxo set was discussed. The current system uses a 330 sats amount for each commitment transaction's two outputs, but only one output is spent to help confirm the transaction, while the other remains unclaimed. To avoid pinning, it is necessary to have two outputs, with each participant only being able to spend one while the parent transaction is unconfirmed. N-party protocols may require N such outputs. Jeremy brought up a proposal from earlier this year to allow 0 value outputs, which was rejected due to various reasons. However, he believes that with the launch of package relay, a simple carve-out can be implemented by allowing 0 value outputs as intermediate outputs required to be spent by another transaction in order for the creating transaction to be in the mempool. This would not allow 0 value utxos to proliferate long and still be valid to be spent by the fee-paying transaction later. Implementing this as a mempool policy would not introduce any new validation rules and could be helpful for CTV based contracts and spacechains. Jeremy states that this rule presupposes a fully working package relay system and addresses all issues with allowing 0 value outputs for immediately spendable outputs.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T06:50:12.506285+00:00 </i></p>
     
     
 

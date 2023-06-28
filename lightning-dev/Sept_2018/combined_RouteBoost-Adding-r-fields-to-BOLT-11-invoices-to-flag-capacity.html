@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RouteBoost: Adding &#39;r=&#39; fields to BOLT 11 invoices to flag capacity <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2018/001424_RouteBoost-Adding-r-fields-to-BOLT-11-invoices-to-flag-capacity.html">RouteBoost: Adding &#39;r=&#39; fields to BOLT 11 invoices to flag capacity</a>
+                        <b>Olaoluwa Osuntokun 2018-09-29 01:48:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2018/001421_RouteBoost-Adding-r-fields-to-BOLT-11-invoices-to-flag-capacity.html">RouteBoost: Adding &#39;r=&#39; fields to BOLT 11 invoices to flag capacity</a>
+                        <b>Olaoluwa Osuntokun 2018-09-21 23:16:44</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2018/001428_RouteBoost-Adding-r-fields-to-BOLT-11-invoices-to-flag-capacity.html">RouteBoost: Adding &#39;r=&#39; fields to BOLT 11 invoices to flag capacity</a>
+                        <b>Matt Corallo 2018-10-08 04:38:59</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-September/001424.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-09-29T01:48:34+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion on Lightning-dev mailing list revolves around probing a channel's current capacity and ways to protect against it. Laoluwa Osuntokun suggests that the only way to protect instantaneous available bandwidth is to randomly reject packets, even if there is enough bandwidth to accept and forward them. He points out that if a prober learns that you have accepted a packet, then they know you have at least that amount as available bandwidth. Rusty Russell agrees with Laolu and adds that one must have a false capacity floor that varies periodically to protect against this kind of probing. He also mentions that there is no point in probing your own channel, so presumably, users probe someone else's.On a related note, Rusty Russell mentions another change he is considering for c-lightning where `invoice` would automatically append an 'r' field for a channel which has sufficient incoming capacity for the amount using a weighted probability across their peers. This is useful for payment routing and potentially to establish an initial channel. Blockstream Store deliberately doesn't advertise an address anymore to avoid centralization, so this feature could be helpful. Matt asks for clarity on appropriate usage of the r= field, and Rusty suggests that one should prefer to use invoice-r=-provided-hints over publicly-discovered routes, however, may use other last-hops in case a substantially better route is known.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-20T08:42:36.484978+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

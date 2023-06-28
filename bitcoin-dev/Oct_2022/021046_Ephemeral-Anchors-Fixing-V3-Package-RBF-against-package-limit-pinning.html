@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ephemeral Anchors: Fixing V3 Package RBF against package limit pinning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-10-19 00:33:13
+            <br><i>Published on: 2022-10-19T00:33:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_Ephemeral-Anchors-Fixing-V3-Package-RBF-against-package-limit-pinning.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021046.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread discussing efficient mempool design within the constraints of existing Lightning Network protocols, Greg Sanders proposed a policy change called Ephemeral Anchors. This policy involves watermarked outputs that must be spent in V3 packages, with the anchor being marked by the bare script `OP_TRUE`. The proposal has several implications, including allowing any value (even dust) to be included without bloating the UTXO set, and enabling anyone to bump the transaction without key material. Sanders pointed out that V3 transactions may solve rule #3 and #5 pinning attacks under some constraints, but they don't address package limit pinning. He suggested two solutions: expand a carveout for "sibling eviction" or implement Ephemeral Anchors. With sibling eviction, a new child that pays enough to bump spends from the same parent would knock its sibling out of the mempool and take the one child slot. However, this mechanism might lead participants to overbid far beyond the top mempool block fees. Ephemeral Anchors would allow for more robust multi-party fee bumping, superseding the Lightning Carve-out. Change outputs would no longer be pinned, and RBF/CPFP would become more robust. The proposal also magnifies composability of smart contracts by removing the 1 block CSV timelock on outputs in certain situations. However, there are still open questions about whether allowing non-zero value in ephemeral outputs would open up MEV concerns, and whether SIGHASH_GROUP-like constructs would enable uncommitted ephemeral anchors to be added at spend time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T01:57:52.870559+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Interesting thing about Offered HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> darosior 2022-03-11 13:47:00
+            <br><i>Published on: 2022-03-11T13:47:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2022/combined_Interesting-thing-about-Offered-HTLCs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003509.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation between Eugene Siegel and Antoine Riard discusses a potential issue with offered HTLC outputs in Lightning transactions. The offered HTLCs have three claim paths: the revocation case, the offerer claiming through the HTLC-timeout transaction, and the receiver claiming via their signature and preimage. However, the offering party can only spend with the HTLC-timeout transaction because of SIGHASH_ALL, even if they have the remote's signature and preimage after the cltv_expiry timeout. This might not be an issue as there are no cases where the offering party would know the preimage and want to force close. Yet, Antoine suggests that splitting the script branches into two tapleaves and having bip342 signature digest committing to the tapleaf_hash could solve this issue. Eugene also suggests that using Miniscript in Lightning could prevent such surprises and many other potential ones. He plans to post something soon on how to integrate Miniscript in Lightning.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:43:14.874854+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

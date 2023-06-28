@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Thoughts on HTLC Scripts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2015-07-25 05:04:46
-            <br><i>Published on: 2015-07-25T05:04:46+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2015/combined_Thoughts-on-HTLC-Scripts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000063.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Mats Jerratsch is currently working on a Lightning Implementation Client/Server in Java, using bitcoinj as a basic framework. He plans to push it into GitHub within few weeks. Mats had an implementation ready but after reading through Rusty's paper, he threw it off the ship. His previous implementation was based on some trust dependencies and channel transactions were highly asynchronous, meaning that a LN-Network would not be possible. First, Mats wanted to write up his solution for the anchor problem, but then he realized Rusty's solution makes it possible to have channels open indefinitely, while his doesn't. It is important to wait for the anchor tx of the other party otherwise the server has to pay transaction fees for releasing his funds again and again. While implementing the new redeemscripts, Mats noticed there is no delay for the 'HTLC Receiver Redeemscript', when redeeming the contract using R. In response, Rusty said that any output condition which pays to "self" must be delayed so A's HTLC output to A must be delayed, similarly B's HTLC output to B. Rusty also mentioned that he just rewrote his test-cli utils to support dual anchors.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T18:34:57.117156+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>NATPMP and proxy support in libcoin</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Michael Gronager 2012-02-29 13:09:26
-            <br><i>Published on: 2012-02-29T13:09:26+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2012/combined_NATPMP-and-proxy-support-in-libcoin.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-February/001276.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Michael has added NATPMP along with IDG UPnP to libcoin, which enables the setup of port mapping on Apple routers and other routers that support this protocol. The libcoin/bitcoind first tries to set up mapping using UPnP, and if that fails, it resorts to using PMP. It chooses a default lease time of 20 minutes and renews it every 10 minutes. The inclusion of portmapping in libcoin/bitcoind requires only the addition and starting of the PortMapper class. Michael has included relevant portions of miniupnpc and libnatpmp in the coinNAT library to make it easier to build. He has also made an aggressive setting for quitting searching for an IGD device (3 seconds). Michael has added proxy capability to libcoin, and interested parties can view the implementation details in coinChain/Proxy.h. The portmap option is now used instead of the upnp command line option.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T03:29:48.236794+00:00 </i></p>
     
     
 

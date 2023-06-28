@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>#zerobasefee</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-08-25 20:06:09
+            <br><i>Published on: 2021-08-25T20:06:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_-zerobasefee.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003202.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Matt Corallo and Anthony Towns, they discuss the idea of a base fee in the Lightning Network. Towns suggests that node operators should not bother with the base fee, while software developers could offer it as a configuration option or take it into account when choosing routes. Corallo agrees that it is too early to decide on these things, and more research needs to happen on proposed routing algorithms. They also discuss the #zerobasefee movement, which aims to allow people to start using routing algorithms in production that ignore all nodes that do not have a zero base fee and require it to be a routing node. However, Corallo believes that it is premature to reduce base fees to allow for migration to these experimental algorithms. Towns argues that everyone should drop their base fee msat from the default, probably to 0, although anything at or below 10msat would be much more reasonable than 1000msat. He suggests that if people are concerned about wasting resources forwarding super small payments for correspondingly super small fees, they should raise min_htlc_amount from 0 (or 1000) to compensate, instead of raising their base fee. Additionally, he believes that software should dynamically increase min_htlc_amount as the number of available htlc slots decreases, as a DoS mitigation measure. The default base fee should be changed to 0, 1, or 10msat instead of 1000msat. Finally, they agree that deploying new algorithms in production should only be done with a lot of care.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T15:47:36.478478+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

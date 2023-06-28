@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Extension block proposal by Jeffrey et al</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christopher Jeffrey 2017-05-09 00:56:59
-            <br><i>Published on: 2017-05-09T00:56:59+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2017/combined_Extension-block-proposal-by-Jeffrey-et-al.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014285.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The issue of allowing direct exit payment to legacy addresses has been raised, which would cause a permanent invalidation of all child transactions based on the resolution transaction. The proposed solution is to add a maturity requirement for exiting outputs that would be lower than coinbase's 100 block requirement, but this would make non-upgraded wallets unusable and fail to meet the backward compatibility requirement of a softfork. An alternative solution is to move all exiting outputs to the coinbase, which would enforce a 100 block maturity requirement, but this would deteriorate user experience and force everyone to upgrade, essentially becoming a hardfork with soft fork’s skin. It is suggested that a good balance between fungibility and backward-compat would be to switch to witness programs only and require exiting outputs to only be witness programs, which may reduce the likelihood of the legacy wallet issue assuming most segwit-supporting wallets implement a new output maturity rule before the activation of segwit. There is also discussion about whether or not to allow direct exit to legacy addresses, how long the lock-up period should be, and whether or not a new name for tokens in the ext-block is necessary. Ultimately, if malleability is not fixed in the main chain, the ext block would be unsuitable for long-term storage of value.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T23:33:59.467669+00:00 </i></p>
     
     
 

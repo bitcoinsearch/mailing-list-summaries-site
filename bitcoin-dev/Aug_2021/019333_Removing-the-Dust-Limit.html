@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-08-12 22:03:39
+            <br><i>Published on: 2021-08-12T22:03:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2021/combined_Removing-the-Dust-Limit.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019333.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A recent email exchange on the bitcoin-dev mailing list discussed the trim-to-dust evaluation and its relationship to the lifetime of a Hashed Time-Locked Contract (HTLC). The consensus was that determining what is economical for an HTLC should be done each time the channel commitment is updated, rather than once for the contract's lifetime. Dust limits set a fixed size lower limit for outputs at around 305 satoshis for pay-to-witness-script-hash (P2WSH) outputs. However, this limit only applies to outputs requiring only a pubkey reveal and signature to spend. An HTLC that requires revealing a script, two hashes, two pubkeys, a hash preimage, and two signatures with the same dust threshold value for P2WSH of ~305 satoshis would already be uneconomical at about 2.1 sat/vbyte and unviable at 2.75 sat/vbyte.From a Lightning Network viewpoint, the discussion identified solving a price discovery issue as the primary challenge. Specifically, the cost to write on the UTXO set in a distributed system where any deviation from the "honest" price means you trust your LN counterparty more. At these amounts, participants are already trusting their LN counterparty not to unilaterally close the channel at high fees and waste their funds in fees instead of executing a more efficient mutual/cooperative close.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T03:26:45.926828+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

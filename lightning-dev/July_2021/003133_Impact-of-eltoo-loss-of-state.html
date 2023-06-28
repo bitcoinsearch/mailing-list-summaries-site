@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Impact of eltoo loss of state</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2021-07-14 14:44:24
+            <br><i>Published on: 2021-07-14T14:44:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2021/combined_Impact-of-eltoo-loss-of-state.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003133.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, Anthony Towns discusses a scenario where Bob's lightning node crashes while payments are going from Alice to Bob to Carol with eltoo channels. He explains that Carol will reveal the point preimages on-chain via adaptor signatures, but Bob won't be able to decode those adaptor signatures because those signatures will need to change for each state. Even if Bob knows the point preimages, he won't be able to claim the PTLC payments on-chain as he needs newer adaptor signatures that he'll have lost with the state update. For any payments that timeout, Carol doesn't have any particular incentive to make it easy for Bob to claim the refund, and Bob won't have the adaptor signatures for the latest state to do so. However, Alice will be able to claim refunds easily. Towns suggests that nodes should share state on reconnection and always negotiate a mutual/cooperative close if possible to avoid using the eltoo protocol on-chain. If one wants to allow continuing the channel after restoring an old state from backup, they can set the channel state index based on the real time. This way, the first update after a restore from backup will ensure that any old states that your channel partner may not have told you about are invalidated. Nodes can also limit the total value of inbound PTLCs for forwarding that they're willing to accept at any one time. Finally, layered commitments seem to make channel factories complicated. Nobody has come up with a way to avoid layered commitments while Towns wasn't watching.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:10:03.429955+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

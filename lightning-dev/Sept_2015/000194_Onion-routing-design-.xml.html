@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Onion routing design.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2015-09-19 01:44:18
-            <br><i>Published on: 2015-09-19T01:44:18+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2015/combined_Onion-routing-design-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000194.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The message, written by Rusty Russell, contains code for creating a route backwards and calculating its size. The total size is randomly picked between 1024 and 4096 and padded with at least 32 bytes of random padding. Then it is wrapped and encrypted. The purpose of this is to offer protection from guessing the route length. A reader suggests that it would be better to store the expected balance to be forwarded instead of the fee as it would allow the next node to abort the transaction if someone takes too much. Another reader suggests re-padding the onion blob when forwarding to prevent it from dropping below 1024 bytes and revealing the end of the chain. This can be done by adding random bytes or by appending the encrypted bytes from the incoming message. It is noted that this would save on entropy/crypto ops, and a constant message size would leak minimal info.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-18T00:36:30.379930+00:00 </i></p>
     
     
 

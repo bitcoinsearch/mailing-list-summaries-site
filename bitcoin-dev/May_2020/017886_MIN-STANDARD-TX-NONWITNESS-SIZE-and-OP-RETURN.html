@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>MIN_STANDARD_TX_NONWITNESS_SIZE and OP_RETURN</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-05-24 00:52:13
+            <br><i>Published on: 2020-05-24T00:52:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_MIN-STANDARD-TX-NONWITNESS-SIZE-and-OP-RETURN.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017886.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development discussion, Thomas Voegtlin asks why a 60-byte transaction (without witness) is rejected because it's lower than MIN_STANDARD_TX_NONWITNESS_SIZE, which is currently set at 82 bytes. In response to this query, ZmnSCPxj suggests that if they accept a 60-byte tx, then SHA-256 will pad it to 64 bytes, and it may still be possible to mount CVE-2017-12842 attack with 32-bits of work. Therefore, it would seem safer to avoid the area around length 64. It *might* be safe to accept 65-byte or larger, but this does not help Thomas' specific application, which uses 60 byte tx. Greg Sanders adds that the number was picked to protect against CVE-2017-12842 covertly, and provides a link to the update in the text that explicitly mentions this fact. The discussion suggests that lowering the value to 60 may pose security threats and risks, thus keeping the current value of 82 seems more feasible.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:47:06.155277+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

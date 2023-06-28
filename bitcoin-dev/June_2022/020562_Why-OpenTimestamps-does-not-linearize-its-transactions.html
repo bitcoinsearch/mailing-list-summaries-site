@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why OpenTimestamps does not &#34;linearize&#34; its transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> rot13maxi 2022-06-14 12:28:28
+            <br><i>Published on: 2022-06-14T12:28:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2022/combined_Why-OpenTimestamps-does-not-linearize-its-transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020562.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the limitations of OpenTimestamps (OTS) service provided by Bitcoin network. The timestamping service provides a basic function of indicating when a particular content existed, but it does not assure uniqueness or validity of the content. OTS hashes each document hash with private material that has to be publicized separately and any unpublished private material could be an earlier equivalent to a public proof. This means that the service only proves longness of duration but not shortness, and it is possible for people to rewrite history to their stories by republishing other people's documents under different contexts. There are concerns about whether OTS adds transaction history containing its hashes to associated wallets, which may be lost in chain forks. However, the user who reported these issues had always used OTS through the CLI, and storage of the OTS files for later checking had been a problem left to the application. The user requested information about wallets that incorporate OTS. Overall, while OTS provides a useful time-stamping system, it has limitations and other semantics need to be built into systems that rely on timestamps.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T22:13:48.442096+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

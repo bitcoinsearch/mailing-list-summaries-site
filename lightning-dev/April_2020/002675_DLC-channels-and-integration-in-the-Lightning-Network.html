@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DLC channels and integration in the Lightning Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2020-04-29 10:24:25
+            <br><i>Published on: 2020-04-29T10:24:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2020/combined_DLC-channels-and-integration-in-the-Lightning-Network.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002675.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Thibaut, a researcher at Crypto Garage, along with colleagues Ichiro Kuwahara and Takatoshi Nakagawa, has proposed a solution for establishing Discreet Log Contracts (DLC) channels on the Lightning Network. The researchers' motivation for this proposal stems from the fact that currently, once a DLC expires, both parties need to close and open a new one in order to re-enter into a contract. The proposed solution aims to have actual DLC channels where two parties can keep establishing contracts between themselves as long as the balance in the channel allows it, without requiring additional on-chain transactions.The proposed method involves using the Discreet Log Contract (DLC) protocol, which allows for the creation of smart contracts without revealing their terms. These contracts can be used to create sub-channels within a single fund transaction, with the ability to rebalance between channels. The integration of DLC channels in LN involves using a "split" transaction, which spends the output of the fund transaction, and contains a single output for every channel to be created. This split transaction is revokable, allowing reallocation of funds between the channels and opening/closing of channels as desired.The researchers are seeking feedback from the community on the feasibility of the approach they propose. The proposed approach involves using update transactions that are revokable, and a buffer transaction which solves the "free option" problem. The proposed update protocol involves generating the set of transactions for the new contract, sending signatures for the update, CETs and refund transactions between Alice and Bob, revoking the previous update transaction, and signing buffer transactions.In the non-cooperative case, a DLC channel requires five on-chain transactions, while in the cooperative case it's still only two. The revocation mechanism in the split transaction means that twice as many transactions need to be created and monitored. It is suggested that this issue can be removed if rebalancing and/or adding/removing channels are not required. The proposed solution differs from Juraj Bednár and René Pickhardt's Lightning DLC channels in that it can be made standalone and the integration with LN allows for more separation of concerns between the channels.The authors of the proposal welcome feedback on whether this approach is worth pursuing, particularly in light of recent developments in ECDSA adaptor signatures that could enable simpler constructions. They also seek input on how complex it would be to implement in practice. Links to further information on DLC and the proposed approach are provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:07:54.881609+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

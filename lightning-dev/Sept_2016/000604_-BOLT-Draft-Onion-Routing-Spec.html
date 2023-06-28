@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BOLT Draft] Onion Routing Spec</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-09-05 02:25:22
+            <br><i>Published on: 2016-09-05T02:25:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2016/combined_-BOLT-Draft-Onion-Routing-Spec.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000604.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the onion routing protocol, Christian Decker mentions that most of the spec is agreed upon, with some issues to be deferred till later. One of these issues is key-rotation policies. Rusty Russell responds with his thoughts on the costs of key-rotation. He makes some assumptions about using a single pubkey for a node's ID and a medium-scale public network with 250,000 nodes and 1 million channels, where every node knows the entire public network. He calculates that each node would have to keep 22.25MB of data, which includes 33 bytes for each node ID and another 8 bytes per channel to associate channels with IDs. In addition, he says that proofs are larger and require merkle proofs, pubkeys, and signatures of the ID using those pubkeys. This would take up an additional 800M per node for it to completely validate. To address this issue, Rusty suggests using a "comms" key for each node instead of its ID, and having nodes send out a new comms key signed by their ID. This would take up another 33 bytes per node or 8.25MB. To rotate a comms key, they would need the new key, a signature from the ID, and probably a timestamp. Rusty estimates this would take up 25.25MB, which he thinks is not too bad if they rotate daily but possibly problematic if done hourly.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:58:45.031429+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

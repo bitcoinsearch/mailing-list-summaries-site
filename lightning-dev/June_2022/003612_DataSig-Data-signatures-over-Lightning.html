@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DataSig -- Data signatures over Lightning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> George Tsagkarelis 2022-06-17 10:18:34
+            <br><i>Published on: 2022-06-17T10:18:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2022/combined_DataSig-Data-signatures-over-Lightning.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003612.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent post on the Lightning-dev mailing list, George Tsagkarelis introduced two proposed specs for transmitting data over the Lightning Network: DataSig and DataStruct. The former is focused on authenticating data with regards to its source and destination, while the latter concerns the fragmentation of data for transmission. Tsagkarelis argues that pairing payments with other transmission methods is unnecessary because messaging nodes directly is more secure, private, and simple than using out-of-band hybrid solutions. Furthermore, small-footprint data can utilize a handful of HTLCs to reach their destination without being harmful to LN. However, he clarifies that DataStruct does not encourage content streaming over LN, and larger downloads should be done through an out-of-band solution.Regarding DataSig, Tsagkarelis describes the structure as being placed inside a custom TLV record and allowing the receiving end to validate that the data was authored by the source node and meant to be received by the receiving node. His post includes a detailed breakdown of the steps involved in generating and verifying a DataSig. Finally, Tsagkarelis acknowledges that developers and users will ultimately decide what solution best fits their needs.The email proposes a specification for data fragmentation over custom records, enabling transmission of data exceeding the maximum allowed size over a single HTLC using protobuf to describe the structure. The purpose of this spec is to define a structure that describes fragmented data, allowing for transmission over separate HTLCs and assisting reassembly on the receiving end, while the proposed fragmentation structure also allows out-of-order reception of fragments.A sender intending to transmit the data should split the bytes of `D`  into fragments of certain sizes and generate an identifier for this data transmission. For each fragment created, a `DataStruct` instance should be created containing information like version, payload, and fragment, among others. On the other hand, the receiving node can execute several steps for each received fragment in order to assemble the data. It is important to note that there are no specific TLV keys defined for this spec regarding data fragment transmission, and it is the responsibility of the sender to properly coordinate simultaneous transmissions to a destination node by using different `fragset_id` values for each fragment set. Additionally, there is room for optimization in terms of signing larger chunks of data and not each transmitted fragment, transmitting less DataSig instances and leaving more available space for the fragment data.A working proof of concept that utilizes DataSig and DataStruct over single path payments can be found at <a href="https://github.com/GeorgeTsagk/satoshi-read-write">https://github.com/GeorgeTsagk/satoshi-read-write</a>.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:05:28.253517+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

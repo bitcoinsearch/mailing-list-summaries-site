@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>proposal: new opcode OP_ZKP to enable ZKP-based spending authorization</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2023-05-06 02:51:33
+            <br><i>Published on: 2023-05-06T02:51:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_proposal-new-opcode-OP-ZKP-to-enable-ZKP-based-spending-authorization.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021614.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Weiji and ZmnSCPxj, the possibility of an attack on the fullnode mempool network was discussed. The attack involves flooding the network with non-aggregated transactions and then confirming a single aggregated transaction with a lower feerate in cooperation with a miner. However, ZmnSCPxj argues that this is not a feasible attack as it would require generating proofs for 1000 transactions and paying upfront for 1000*X. Additionally, the aggregation vendor would need to spend more computing power doing the aggregation and take (1000*X - Y) as profit, while the miner receives Y. To prevent overload on the free mempool service, there needs to be a separate, paid aggregator outside the mempool. If aggregation is paid for, it would be sufficient to stop the attack.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:03:14.689037+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

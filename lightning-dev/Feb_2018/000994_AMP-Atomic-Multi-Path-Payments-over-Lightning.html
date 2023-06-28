@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>AMP: Atomic Multi-Path Payments over Lightning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-02-06 07:12:09
+            <br><i>Published on: 2018-02-06T07:12:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2018/combined_AMP-Atomic-Multi-Path-Payments-over-Lightning.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000994.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange, ZmnSCPxj compliments Laolu's work on Atomic Multi-path Payments (AMP), a scheme that allows for multi-path payments without requiring fundamental changes to the Lightning protocol. He suggests using a globalfeatures odd bit rather than localfeatures for AMP as it is end-to-end negotiation between sender and receiver. There may be fee savings for larger payments if modifications are made to the fee schedule, but currently, fees do not have a super-linear component. Using smaller payments increases the set of possible paths, reducing the effectiveness of static analysis techniques involving channel capacities and plaintext values being forwarded. To include the three-tuple within the per-hop payload for the final destination, they repurpose the first byte of the un-used padding bytes in the payload to signal version 0x01 of the AMP protocol. The realm byte is intended for this purpose, allowing intermediate nodes to route over nodes that are unaware of AMP and only providing an AMP realm byte to the destination node. Supporting AMP at final payees is enough, and ZmnSCPxj believes that AMP at intermediate nodes might not be used often enough by senders for it to matter as taking advantage of that seems more complex than just asking the routing algorithm to provide multiple routes to a destination.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T20:52:50.697180+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

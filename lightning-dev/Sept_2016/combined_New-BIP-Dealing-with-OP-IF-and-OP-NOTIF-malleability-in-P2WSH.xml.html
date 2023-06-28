@@ -11,36 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>New BIP: Dealing with OP_IF and OP_NOTIF malleability in P2WSH <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2016/000602_New-BIP-Dealing-with-OP-IF-and-OP-NOTIF-malleability-in-P2WSH.xml.html">New BIP: Dealing with OP_IF and OP_NOTIF malleability in P2WSH</a>
-                        <b>Johnson Lau 2016-09-01 11:39:51</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2016/000605_New-BIP-Dealing-with-OP-IF-and-OP-NOTIF-malleability-in-P2WSH.xml.html">New BIP: Dealing with OP_IF and OP_NOTIF malleability in P2WSH</a>
-                        <b>Rusty Russell 2016-09-05 01:32:19</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000602.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2016-09-01T11:39:51+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Johnson Lau is proposing a new BIP to deal with malleability related to OP_IF and OP_NOTIF in pay-to-witness-script-hash (P2WSH) scripts. The proposed changes to the Bitcoin script validity rules apply only to P2WSH scripts described in BIP141, which has not been activated on the Bitcoin mainnet as of writing. In P2WSH, the argument for OP_IF and OP_NOTIF must be exactly an empty vector or 0x01, or the script evaluation fails immediately. This is deployed using BIP9 after segregated witness (BIP141) is activated. The rules are enforced as a relay policy by the reference client since the first release of BIP141 (v0.13.1). To avoid risks of fund loss, users must not create P2WSH scripts that are incompatible with this BIP. An OP_0NOTEQUAL may be used before OP_IF or OP_NOTIF to imitate the original behaviour (which may also re-enable the malleability vector depending on the exact script).</p>
-        <hr>
-        <p><i>Updated on: 2023-05-24T00:22:59.903544+00:00</i></p>
-    
-
     
 
     <footer>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Lightning over taproot with PTLCs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2021-10-11 06:29:51
-            <br><i>Published on: 2021-10-11T06:29:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2021/combined_Lightning-over-taproot-with-PTLCs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003287.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent email thread, Anthony Towns discussed the layering of transactions in Lightning Network. He identified four types of transactions: funding transaction, balance transaction, inflight transactions, and layered transactions. However, he also pointed out that the layering system may not be foolproof.Towns argued that if Alice forwarded a payment to Bob with timeout T, the only way she can ensure that she can either reclaim the funds or know the preimage by time T is to close the channel on-chain at time T-to_self_delay. If Alice waits beyond this point, Bob could post the inflight transaction at T+x and then immediately post the layered transaction (4) revealing the preimage. This would prevent Alice from claiming the refund.This potential issue highlights the need for a robust and secure layering system in Lightning Network. It also emphasizes the importance of considering all possible scenarios when designing a complex payment network such as Lightning.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T16:18:57.357353+00:00 </i></p>
     
     
 

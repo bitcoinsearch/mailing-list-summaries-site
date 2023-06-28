@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 16 changes (list inside) <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2012/001326_BIP-16-changes-list-inside-.xml.html">BIP 16 changes (list inside)</a>
-                        <b>Luke-Jr 2012-03-18 18:11:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2012/001325_BIP-16-changes-list-inside-.xml.html">BIP 16 changes (list inside)</a>
-                        <b>Amir Taaki 2012-03-18 14:04:27</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2012/001325_BIP-16-changes-list-inside-.xml.html">BIP 16 changes (list inside)</a>
-                        <b>Amir Taaki 2012-03-18 14:04:27</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2012/001326_BIP-16-changes-list-inside-.xml.html">BIP 16 changes (list inside)</a>
-                        <b>Luke-Jr 2012-03-18 18:11:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2012/001326_BIP-16-changes-list-inside-.xml.html">BIP 16 changes (list inside)</a>
-                        <b>Luke-Jr 2012-03-18 18:11:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2012/001325_BIP-16-changes-list-inside-.xml.html">BIP 16 changes (list inside)</a>
-                        <b>Amir Taaki 2012-03-18 14:04:27</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-March/001326.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2012-03-18T18:11:48+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>On March 18, 2012, Amir Taaki contacted someone to inquire about the accuracy of a summary regarding changes needed for P2SH and BIP 16. He suggested using his 0.4.x backport found on GitHub to assist with this, but also cautioned that the backport would need auditing since no one else had reviewed it yet. In terms of the changes required for P2SH and BIP 16, they are listed in two categories: block validation and script.In block validation, a LegacySigOpCount is used instead of SigOpCount in CheckBlock. Changes have been made only to ConnectBlock(), which has a new SigOp calculation, but there are no important changes to FetchInputs()/ConnectInputs(). Some improvements have been made to SetBestChain(), but they are not related to BIP 16. In script, Solver has a special case to check for TX_SCRIPTHASH which returns hash of input eval script. Another solver returns signature of pubkey script or TX_SCRIPTHASH; it finds the redeem script in KeyStore and returns it. ExtractAddress(es) and VerifyScript are also included. If the fValidatePayToScriptHash block date and output script (scriptPubKey) are P2SH, then scriptSig must be only push operations and evaluate the last item of copied stack as a script using the copied stack as the stack. A SigOpCount is used inside CBlock::ConnectBlock main loop that does scoring checksigs and multisigs. A newly added DecodeOP_N to normal SigOpCount is also used.Lastly, in Address, the main hash160 data is set with a beginning byte (nVersion) of 0x05. Despite Amir's suggestion to use his backport, he believed that the backport could only cover the minimal changes necessary for P2SH validation, but not the standard rule changes required to accept them into blocks.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-06T03:41:55.879765+00:00</i></p>
-    
-
     
 
     <footer>

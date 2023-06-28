@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>SIGHASH_WITHINPUTVALUE</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> slush 2015-01-23 17:40:54
-            <br><i>Published on: 2015-01-23T17:40:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2015/combined_SIGHASH-WITHINPUTVALUE.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007201.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion revolves around dynamic memory allocation and restrictions to the number of inputs or outputs. The current solution is slow, but there are no limitations on the transaction size. However, embedded systems have significant memory restrictions, which is why TREZOR uses a powerful MCU that can handle validations and hash calculations. With SIGHASH_WITHINPUTVALUE or similar solutions, the hardware cost can be reduced significantly. In response to Gregory Maxwell's query, it is suggested to stream in the input txid:vouts that are spent, then stream the actual inputs, hash them, and extract their value without any other verification. A table of txid:vout->value can be built, followed by the actual transaction to be signed. This approach should have O(inputs) hashing and communications overhead.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T15:57:53.190154+00:00 </i></p>
     
     
 

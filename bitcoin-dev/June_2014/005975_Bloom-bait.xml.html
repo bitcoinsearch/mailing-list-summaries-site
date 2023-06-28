@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Bloom bait</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2014-06-06 16:46:39
-            <br><i>Published on: 2014-06-06T16:46:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2014/combined_Bloom-bait.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/005975.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In the email thread, Adam Back responded to a discussion on NODE_BLOOM and mentioned that prefix brute forcing saved a bit or so while searching for the EDH key that has the user's public prefix. However, it weakens privacy by providing an extra correlation hook. Peter Todd corrected Adam's misunderstanding stating that both bloom filters and prefix filters are ways of giving a peer a probabilistic filter to match transactions against. Prefix filters have O(log n) scaling with slightly higher k, while bloom filters have O(n) scaling where n is the size of a block. Todd added that if brute forcing is not used in conjunction with prefixes, they have no different transactional graph privacy than bloom filters. Thus, prefixes are better scalable and compatible with future miner committed indexes to authenticate data. They provide better protection against hostile nodes by splitting queries across multiple peers. Todd agreed that privacy from the analysis of the public transaction graph is more damaging, and it is better to design for privacy against future analysis of public info than privacy by argument to select non-hostile nodes. Electrum and Obelisk already connect to a relatively small set of blockchain data servers operated by well-known people and use the same server repeatedly. However, applying this to the P2P network is challenging as there is a considerable amount of churn in the nodes. Todd also asked about running code for the Weil pairing proof of concept.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T23:46:05.194546+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fast Merkle Trees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-09-07 20:04:30
+            <br><i>Published on: 2017-09-07T20:04:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Fast-Merkle-Trees.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014960.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a specific instance of a general problem where third-party scripts cannot be trusted. The attack described involves finding a collision between double-SHA256(innocuous) and fast-SHA256(fast-SHA256(fast-SHA256(double-SHA256(malign) || r2) || r1) || r0). For this attack to occur, the first opcode of innocuous is the push of a value that the attacker claims to be their 33-byte public key. The attacker can grind r2 until the result of fast-SHA256(double-SHA256(malign) || r2) contains the correct first couple of bytes for the script header and the opcode for a 33-byte push. It was difficult to actualize the attack into a practical one that escalates the attacker's capabilities. However, if the attacker can get the other party to agree to a MAST policy that is nothing more than a CHECKSIG over a key they presumably control, then they don't need to do any complicated grinding. The attacker in that scenario would just specify a key they control and take the funds that way. To prevent attacks like these, multi-party wallet level protocols for jointly constructing scriptPubKeys should require a 'delinearization' step that proves knowledge of information necessary to complete each part of the script, as part of proving the safety of a construct. Additionally, it is suggested to modify the scheme to use a different IV for hash tree updates which would prevent even implausible attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:33:19.651665+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

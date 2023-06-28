@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recovery of Lightning channels without backups</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2020-12-09 02:44:51
+            <br><i>Published on: 2020-12-09T02:44:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2020/combined_Recovery-of-Lightning-channels-without-backups.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002909.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the Lightning Network, a synthetic static channel backup can be created to trigger the data loss protection protocol. By restoring this backup, a `channel_reestablish` is sent to the remote peer containing the `next_commitment_number` and `next_revocation_number` both set to zero, which forces the remote peer to force close the channel dropping its current commitment transaction to the chain. Using the `per_commitment_point` received from the remote peer, the private key needed for sweeping funds can be derived. The goal is to be able to securely restore layer 1 and 2 funds with just one's seed. There were concerns raised about the counter, discovery of public nodes, and encouraging channel recovery by asking the node to force close the channel. However, this method still provides a realistic chance of recovering a significant chunk of one's funds, particularly for unsophisticated users who are most likely to lose their channels with no backups. There is room for improvement in this process, particularly in finding the channels.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:20:49.729317+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Relaxing minimum non-witness transaction size policy restriction</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2022-10-11 12:50:07
+            <br><i>Published on: 2022-10-11T12:50:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_Relaxing-minimum-non-witness-transaction-size-policy-restriction.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020995.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to relax the current policy limit of 85 non-witness serialized bytes for Bitcoin transactions to 65 non-witness bytes. This change would allow for a single input, single output transaction with 4 bytes of OP_RETURN padding, instead of having to pad out 21 bytes to reach p2wpkh size. The current limit was introduced as a covert fix for CVE-2017-12842, but the "reasonable" constant chosen was not optimal. Allowing anything below 64 non-witness bytes is also being considered, but this option may come with risks for only a small gain in bytes. A link to the relevant pull request and alternatives can be found on GitHub. Feedback and concerns regarding this proposal are welcomed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:31:47.948784+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

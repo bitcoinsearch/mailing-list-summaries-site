@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onchain fee insurance mechanism</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-02-01 00:39:36
+            <br><i>Published on: 2020-02-01T00:39:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2020/combined_Onchain-fee-insurance-mechanism.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017603.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation between ZmnSCPxj and David on Bitcoin development proposes a mechanism for feerate insurance against onchain feerate spikes. The proposal involves Alice and Ingrid arranging a series of transactions with a specific locktime and sequence, but the plan has a flaw as Ingrid can rescind the pre-signed transactions at any time before confirmation by double spending her UTXO via an RBF fee bump. A patch is suggested that allows the Ingrid-input to be under the control of both Ingrid and Alice using a 2-of-2 mechanism, but this leads to new problems of denial of service. A possible insurance policy for Lightning channel closures is proposed where Alice prepays Ingrid using a CoinJoined transaction for the combined premium plus Ingrid inputs value locked to Alice && Ingrid. At each commitment transaction signing, there is an additional unencumbered tiny output that Alice can claim immediately. Ingrid and Alice create an insurance transaction with high feerate that spends the tiny output and the Alice&&Ingrid output, deducting the fees from the Alice&&Ingrid output and returning what is left to Ingrid. Alice can claim the tiny output itself if fees are low at the time of unilateral close, or sacrifice it and attach the insurance transaction with high feerate if fees are high. If Ingrid does not cooperate on a new commitment transaction, Alice can drop onchain and punish Ingrid by dropping the previous commitment and broadcasting the insurance transaction. The upper bound for what Alice will pay to ensure its channel is closeable at any time very quickly is the entire point of this proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:19:35.545698+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

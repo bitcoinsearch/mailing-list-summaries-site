@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Avoiding gossip spam: how many updates do you need?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-09-18 13:52:46
+            <br><i>Published on: 2019-09-18T13:52:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Avoiding-gossip-spam-how-many-updates-do-you-need-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002157.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A user on Lightning-dev suggested that it is fine to use zero routing fees for rebalancing a channel. This helps with Just-In-Time routing of nearby nodes and allows cheaper rebalances to support. However, this falls outside the scope of `channel_update`s as they are meant to communicate coarse-grained information about the channel to the rest of the network, not in a local group of nodes. A `local_channel_update` with a small TTL was suggested instead to limit its spread for this kind of communication. It is still desirable to rate-limit such updates, and the user proposed maintaining a "latest broadcast is zero" flag and broadcasting a 0-fee `channel_update` if the channel has been >=75% in your favor for more than 10 minutes. However, this will probably still lead to more than a burst of 4 `channel_update`s per day. The user suggests having separate negotiation logic for these scenarios rather than adding more logic to an already complex set of rules.The user also advocates for active rebalancing over indirect signaling through negative fees and suggests using local updates as offers for zero-fee forwarding without telling the wider world about the balances in your channel.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:10:26.667831+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

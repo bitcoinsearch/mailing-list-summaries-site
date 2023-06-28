@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Speedy Trial</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-04-25 17:00:12
+            <br><i>Published on: 2022-04-25T17:00:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Speedy-Trial.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020328.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin-Dev discussion, it was noted that while speedy trial and BIP8 are similar in the case of bad soft fork activation, there is one essential difference between them. Specifically, BIP8 does not have mandatory signaling during the lock-in period; it has semi-mandatory signaling during the must_signal period. This means that counter soft forks are not as easily implementable with BIP8.For example, to counter bip8 activation, an individual would reject any block during either the started or must_signal phases that met the threshold. In this case, someone running bip8 might see blocks that alternate between signaling yes and no, until locking in at a certain point. Rejecting the soft fork would mean rejecting the block that signaled "yes" just before locking in. Jeremy Rubin has written code that makes use of the getdeploymentinfo rpc to check the deployment status, and the invalidateblock rpc to reject a block. The difference between speedy trial and bip8 with lot=true is that nodes running speedy trial will reorganize to follow the resisting chain if it has the most work. On the other hand, bip8 with lot=true nodes will not reorganize to a failing chain unless one group or the other gives up and changes their software, which could potentially create an ongoing chain split.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T18:18:56.393209+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Splicing Proposal: Feedback please!</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2018-10-16 19:25:59
+            <br><i>Published on: 2018-10-16T19:25:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2018/combined_Splicing-Proposal-Feedback-please-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001460.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about simplifying the funding of Lightning Network channels. The proposal suggests splicing in one on-chain transaction to allow for future iterations, rather than using multiple funding outputs which adds more complexity. ZmnSCPxj suggests pre-seating inputs to generate addresses that can be spliced directly into the channel. This can be done by each channel having two public-key-derivation paths to create on-chain addresses, with the client detecting incoming funds and initiating a splice-in automatically from the UTXO paying to the address into the channel. This can be implemented without requiring a BOLT change. However, there are safety concerns without trust in the other peer, as the other party can refuse to create the new commit transaction. One solution proposed was to use Taproot addresses, which by default is just a 2-of-2, but in an uncooperative case it can reveal the script it commits to, which is a timelocked refund requiring a single-sig. However, this means that the entirety of the funds may have to be claimed by one endpoint, and third-party funds cannot be split in case of an uncollaborative refund.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T14:25:46.163545+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Missing fRelayTxes in version message</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2013-06-19 10:43:29
-            <br><i>Published on: 2013-06-19T10:43:29+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2013/combined_Missing-fRelayTxes-in-version-message.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002773.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion in this context is related to the Bitcoin version message field and its variable length. The issue being discussed is whether or not the fRelayTxes flag should be optional, with one person suggesting that it should be fixed for each protocol version. The standard BIP 37 does not require the flag to appear, but rather states that if it is false then broadcast transactions will not be announced until a filter{load,add,clear} command is received. Bitcoin-Qt on master sends it now although it doesn't affect anything. The code in main.cpp indicates the number of fields per protocol version has always been variable length. The argument against this is that a deterministic number of fields per protocol version is more sensible and easier for parsing messages. However, making it optional is necessary because old clients don't send it.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T19:06:24.702557+00:00 </i></p>
     
     
 

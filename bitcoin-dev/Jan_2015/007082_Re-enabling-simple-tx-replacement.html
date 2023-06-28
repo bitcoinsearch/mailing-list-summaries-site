@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Re-enabling simple tx replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ross Nicoll 2015-01-04 17:45:01
+            <br><i>Published on: 2015-01-04T17:45:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_Re-enabling-simple-tx-replacement.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007082.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Gregory Maxwell and Ross Nicoll on January 4, 2015, Nicoll reported a bug where unlocked transactions were being relayed or mempooled far in advance. He shared a test case from Chain.so which wouldn't lock until 0028 UTC on the 5th. Nicoll had tried closing the wallet, moving the wallet.dat file out of the way, and attempting the spend transaction, but it was either rejected upon acceptance to mempool or never included in a block. Maxwell requested the actual raw transaction and confirmed that it would be a severe bug if unlocked transactions were being relayed or mempooled far in advance. Nicoll mentioned that non-final transactions could only be replaced with final transactions, to which Maxwell responded that he missed that the replacement had to be final. Nicoll planned to set up a few nodes to double-check if the latest version was relaying this issue. If it was an issue of incorrect relaying, the problem could be tackled through that instead.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:15:11.128528+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

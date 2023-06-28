@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 158 Flexibility and Filter Size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Riccardo Casatta 2018-05-18 08:46:29
+            <br><i>Published on: 2018-05-18T08:46:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_BIP-158-Flexibility-and-Filter-Size.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015989.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent bitcoin-dev mailing list, the false positive rate parameter was discussed which heavily affects filter size. The false positive rate is empirically set to 2^-20, but it is not clear how the parameter has been selected and optimized for the number of elements to search for which the filter has been optimized for. A go code was shared in the BIP recall, but the user found it hard to understand and run. They requested more details on the process, including charts and explanations.The user believes that choosing a higher alpha would shrink the total filter size by gigabytes at the cost of having to wastefully download just some megabytes of blocks. Matt Corallo suggested that there is almost no reason why one would not be able to filter for the set of output scripts in a transaction one knows about. Gregory Maxwell added that making input prevouts filter based on the scriptpubkey being spent could eliminate the multiple data type mixing entirely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:29:12.401682+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

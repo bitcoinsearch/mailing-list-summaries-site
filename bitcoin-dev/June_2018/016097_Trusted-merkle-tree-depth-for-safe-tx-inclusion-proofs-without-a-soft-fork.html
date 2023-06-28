@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trusted merkle tree depth for safe tx inclusion proofs without a soft fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bram Cohen 2018-06-09 03:29:30
+            <br><i>Published on: 2018-06-09T03:29:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_Trusted-merkle-tree-depth-for-safe-tx-inclusion-proofs-without-a-soft-fork.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016097.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Bitcoin-dev mailing list, a discussion was held regarding the vulnerability of the Merkle tree algorithm in Bitcoin. It was noted that the algorithm fails to distinguish between inner nodes and 64-byte transactions, which could potentially lead to problems with transaction inclusion proofs. A miner could create a transaction committing to one that was not actually in the blockchain. One solution proposed is to store the depth of the Merkle tree, allowing for safe verification of transaction inclusion proofs without the need for a soft-fork. This could be achieved by fully validating nodes caching the number of transactions in each previous block. The idea of a soft-fork to include the number of transactions in a block header was also discussed and deemed a good idea. However, it was clarified that a soft-fork would not be necessary for the proposed solution. Peter Todd emphasized that this accidental feature encourages the use of safe full verification rather than unsafe lite clients.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:13:51.307105+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

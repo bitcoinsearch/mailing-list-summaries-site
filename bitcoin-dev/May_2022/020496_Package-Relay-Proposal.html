@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Package Relay Proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-05-18 00:35:31
+            <br><i>Published on: 2022-05-18T00:35:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_Package-Relay-Proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020496.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A Bitcoin developer has proposed implementing a new protocol for package relay, with three new protocol messages added for use in any version of the package relay. Each version of package relay must define its own inv type and "pckginfo" message version referred to as "MSG_PCKG" and "pckginfo". The proposal includes a discussion on the specification of sendpackages, with questions raised around configuration and compatibility. If the node operator configures their node such that it is not relaying packages properly, it would be better to avoid sending sendpackages entirely or to relay the package and reject it if it turns out too big, logging that it has been dropped so the node operator can rectify the problem. The proposal also discusses the rules around sending sendpackages to peers who have set fRelay=false in their version message. The sender should not send sendpackages to them, and if a sendpackages message is received by a peer after sending fRelay==false in their version message, the sender should be disconnected. The two cases for the protocol flow are when an orphan transaction is received and you want its ancestors, and when a child transaction is sent that a peer may be interested in. In the latter case, the proposal outlines the logic for deciding which transactions to send. There is also a discussion around "getpckgtxns" and "pcktxns," which are used to request a batch of transactions. It is suggested that these messages could be called "getbatchtxns" and "batchtxns" and could be used more generally, potentially in ways unrelated to packages/cpfp. The proposal includes a detailed list of requirements for package information, including the chain tip at which this package is defined, the sum total fees paid by all transactions in the package, and the sum total weight of all transactions in the package. The proposal concludes with a Q&A section, discussing topics such as whether "getpckgtxns" and "pckgtxns" messages can contain only one transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T20:04:04.040098+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: SPV Fee Discovery mechanism</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Aaron Voisine 2015-06-10 21:18:30
-            <br><i>Published on: 2015-06-10T21:18:30+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2015/combined_Proposal-SPV-Fee-Discovery-mechanism.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008566.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the issue of transaction fees for SPV wallets and proposes an alternative way for them to learn about fees. The current method of updating a hard-coded value every so often is not ideal as it does not take into account network congestion at the time of connection. The proposed solution requires a new transaction version that embeds output values into the signed data and an upgrade to the P2P protocol to send UTXO data. The wallet sets a Bloom filter with an FP rate that ensures it will see some random subset of all transactions being broadcast on the network, and with the extra data, it can calculate the fee paid. This method has the advantage of not having to trust miners to publish data accurately, but it requires significant protocol upgrades and new code in SPV wallets.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T22:47:43.662498+00:00 </i></p>
     
     
 

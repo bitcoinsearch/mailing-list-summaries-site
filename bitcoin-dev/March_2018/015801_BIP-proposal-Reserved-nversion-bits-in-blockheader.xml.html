@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP proposal: Reserved nversion bits in blockheader</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Btc Drak 2018-03-07 08:19:57
-            <br><i>Published on: 2018-03-07T08:19:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2018/combined_BIP-proposal-Reserved-nversion-bits-in-blockheader.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015801.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The proposal presented in this context suggests reserving 16 bits of the nVersion field in the block header for general purpose use, thereby reducing the number of parallel soft-fork activations using versionbits from 29 to 13. This move is intended to prevent node software from emitting false warnings about unknown signalling bits under the versionbits signalling system (BIP8/9). The author chose to reserve bits from the upper bits of the nVersion field as opposed to annexing the lower 2 bytes of the field. The scope of the BIP is limited to reserving bits for general use without specifying specific uses for each bit. The proposal cites a couple of informational examples of use cases for these reserved bits, such as version-rolling AsicBoost and nonce rolling to reduce CPU load on mining controllers. However, specific use cases are not important for this BIP.The proposal is revived now because the new DragonMint miner uses version-rolling AsicBoost on mainnet. It is essential to bring this up so that node software can adapt the versionbits warning system to prevent false positives. When a new use for bits is found, mining manufacturers can play in the designated area without causing disruption or inconvenience. The proposal is dual licensed as BSD-3-Clause and CC0-1.0 Universal.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T00:56:00.184422+00:00 </i></p>
     
     
 

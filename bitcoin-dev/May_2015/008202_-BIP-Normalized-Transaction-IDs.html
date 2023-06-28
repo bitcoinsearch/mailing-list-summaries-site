@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized Transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Stephen Morse 2015-05-19 12:48:20
+            <br><i>Published on: 2015-05-19T12:48:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_-BIP-Normalized-Transaction-IDs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008202.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about including the height in transactions without adding an extra field. It is suggested that for non-coinbase transactions, the height used is zero, and for coinbase transactions, the height specified in the scriptSig is copied into the locktime of the transaction before computing the normalized transaction ID. However, it is argued that there's no need to replace lock times or any other part of the transaction at all. Instead, the height can be serialized right before serializing the transaction and 0 can be pre-serialized for non-coinbase transactions. The normalization process for non-coinbase transactions involves replacing prevout hash with normalized hash and clearing the scriptSig. Finally, the transaction is serialized using CHashWriter.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T20:56:28.350311+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

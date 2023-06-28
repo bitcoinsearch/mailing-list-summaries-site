@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>comments on BIP 100</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-06-15 04:11:49
+            <br><i>Published on: 2015-06-15T04:11:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_comments-on-BIP-100.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008670.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread, Eric Lombrozo discusses the issue with the validation cost of a blockchain. He explains that the complexity of block validation is not the main problem, but rather the validation cost itself. The size of the entire block chain for every new validator must be synchronized, making it difficult to construct short proofs without requiring the validator to maintain the complete system state. There is currently no mechanism for directly compensating validators. Lombrozo suggests implementing an SPV archival node implementation that would serve SPV clients by distributing blockchain data linked to the longest chain without doing any validation at all. However, he notes that even full validators going offline for a short period of time take a while to catch up to the rest of the network. With 20MB blocks, it could take up to 23 days to start up a new node after two years of 20MB blocks. Lombrozo also critiques Satoshi's suggestion of SPV as lacking good validation security and practical implementations weakening privacy and complicating client implementations. Even with filtering, the validator still has to query every single block back to the first transaction, making it impractical for larger block sizes. Finally, Lombrozo notes that with 20MB blocks, it would take up to 1TB of IO per year-synced for a bloom-filter-using wallet to sync the blockchain, which may lead to a bloom IO DoS attack issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T23:06:20.217445+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

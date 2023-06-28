@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Playing with full-rbf peers for fun and L2s security</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-06-14 00:25:11
+            <br><i>Published on: 2022-06-14T00:25:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2022/combined_Playing-with-full-rbf-peers-for-fun-and-L2s-security.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020557.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin Lightning Network developers have raised concerns about the security of multi-party funded transactions such as coinjoins, dual-funded LN channels, and on-chain DLCs. A naive denial-of-service vector can be played against the funding flow of any such construction due to the lack of a full-replace-by-fee (RBF) transaction-relay topology on today's peer-to-peer network. While it does not result in a direct loss of funds, it could lead to significant time value loss or fee-bumping waste. Introducing fidelity bonds or a reliable centralized coordinator could address this issue, but it would come at the cost of overhead per-participant resource costs and loss in system openness. To fix the DoS vector, a subset of the network running full-RBF should enable propagation of honest multi-party transactions to interested miners, replacing potential non-signaling double-spends from a malicious counterparty. Antoine Riard has submitted a patch against Bitcoin Core enabling it to turn on full-RBF as a policy, which is still under review, with the default setting being false. He has also started running the patch on a public node at 146.190.224.15. Node operators curious to play with full-RBF can connect to this node or spawn up a toy, public node themselves. Mining operators looking to increase their income may be interested in experimenting with full-RBF as a policy. In the future, multi-party transaction issuers who need full-RBF to secure their funding flow should connect by default to full-RBF peers. Their transactions are likely to be more compelling in their feerate as their liquidity needs are higher than simple transactions. There are few standards and bitcoin softwares relying on multi-party funded transactions currently. Bitcoin users or businesses who do not like full-RBF should express an opinion on how it might affect their software/operations. Feedback from users and businesses is always welcome. Concerns about full-RBF have been addressed in the past, but the Bitcoin ecosystem has matured since then.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T21:52:39.718037+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

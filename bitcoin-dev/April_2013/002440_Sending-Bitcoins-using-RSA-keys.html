@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Sending Bitcoins using RSA keys</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Melvin Carvalho 2013-04-24 14:18:38
+            <br><i>Published on: 2013-04-24T14:18:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2013/combined_Sending-Bitcoins-using-RSA-keys.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002440.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There are two different types of digital payments, with bitcoin using ECDSA and GPG while Payswarm/WebID mostly use RSA. It is possible to bring these two worlds together to enable bitcoins to be sent over webid or payswarm. The problem arises when Alice and Bob have RSA key pairs but no public bitcoin addresses, and Alice wants to send 1 BTC to Bob. To solve this issue, Alice takes Bob's WebID and encrypts it with her private key to create entropy. She then uses that message as the seed to produce a Bitcoin address with an ECDSA key pair. Alice sends coins to this address and then encrypts the seed again with Bob's public key. Bob decrypts the seed using his private key and can now use the seed to recreate the wallet and spend the coins. This unites the web paradigm and crypto currency paradigm into one potentially giant ecosystem.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T15:23:59.322787+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BOLT RFC#1] Encryption spec</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2016-03-21 00:07:00
-            <br><i>Published on: 2016-03-21T00:07:00+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2016/combined_-BOLT-RFC-1-Encryption-spec.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000496.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion about the derivation of the shared secret and encryption keys, Anthony Towns suggests expanding on the sessionsecretkey calculation. The current implementation is different from NIST specifications, which only uses the x coordinate of the point directly and does not hash it. Reusing the secp256k1 elliptic curve already used in the bitcoin protocol avoids additional dependencies, but raises concerns about backwards compatibility if it breaks or gets deprecated. To handle upgrades, a second key can be added and the length field increased to cover it. If both sides send >= 66 bytes, the second value will be used instead.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T22:45:49.356141+00:00 </i></p>
     
     
 

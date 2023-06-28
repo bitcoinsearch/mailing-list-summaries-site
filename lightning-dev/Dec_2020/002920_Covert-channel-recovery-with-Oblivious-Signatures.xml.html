@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Covert channel recovery with Oblivious Signatures</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Lloyd Fournier 2020-12-16 04:51:01
-            <br><i>Published on: 2020-12-16T04:51:01+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2020/combined_Covert-channel-recovery-with-Oblivious-Signatures.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002920.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation between ZmnSCPxj and LL on December 15, 2020, they discussed the issue of channel state with HTLCs in flight and how to handle it. LL suggested that one option could be to gift the money to the party offering the recovery settlement or put them onto the settlement tx. However, ZmnSCPxj pointed out that gifting the money is not a good option as all the claimable value could potentially be in an outgoing HTLC. They also discussed the recovery system and how it should ideally be used by people whose channels are in a HTLC-free state for most of the time. LL mentioned that it would be cool to be able to lock up all their Bitcoin into channels with well-established lightning nodes to move money around cheaply, especially during times when fees go up. ZmnSCPxj also brought up the importance of redundant data storage as the first line of defense for routing nodes. They discussed using static-key channels, which allows them to recover even the outgoing channel with outgoing HTLC that has been forgotten by the outgoing peer. However, this approach does have slightly weaker privacy concerns as published nodes reveal all their channels with other published nodes on the blockchain. Unpublished nodes also risk revealing their channels with published nodes via the blockchain.LL expressed some doubts about whether unpublished nodes can reveal their channels with published nodes via the blockchain, stating that you need to know the private key of the node to discover its channels. There was also a minor concern about "deniability" of unpublished closed channels if a large node operator later becomes corrupted or coerced by a malicious actor. A potential mitigation for this problem would be for users who want unpublished channels to turn off the use-node-key-as-channel-key feature for their keys in the channel.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:23:54.415362+00:00 </i></p>
     
     
 

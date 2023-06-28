@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>The new obfuscation patch &amp; GetStats</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> James O&#39;Beirne 2015-10-08 00:29:25
-            <br><i>Published on: 2015-10-08T00:29:25+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2015/combined_The-new-obfuscation-patch-GetStats.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011477.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A bug in the recently merged "obfuscation" patch for Bitcoin has been reported, which obfuscates the content of the "chainstate" LevelDB by XOR'ing it against a random "key". CLevelDBWrapper's Read/Write methods cover most use cases, but the question was raised whether or not iterating over the database should also be handled. Specifically, it was suggested that the obfuscation key should be applied while iterating over the coin database in CCoinsViewDB::GetStats. The issue has been confirmed as a bug and a fix has been filed at <a href="https://github.com/bitcoin/bitcoin/pull/6777">https://github.com/bitcoin/bitcoin/pull/6777</a>. Tests will be written to prevent regressions. The patch author expressed appreciation for the diligence of the reporter and acknowledged that the implementation of GetStats may be dead code. It was noted that users of CLevelDBWrapper who go directly for the iterator run the risk of dealing with obfuscated data and this should be remedied.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T00:01:12.280336+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DRAFT: interactive tx construction protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> darosior 2020-02-11 10:48:34
+            <br><i>Published on: 2020-02-11T10:48:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_DRAFT-interactive-tx-construction-protocol.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002518.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the use of PoDLE (Proof of DLE) and lightning. It explains that in order to use PoDLE, an 'H2' field must be included in the TLV of the initiating message, which is a 32-byte hash commitment to the P2 key. The `tx_add_input` message is also extended with a TLV type. If the proof is incorrect, the non-initiator may fail the transaction collaboration or respond with `tx_complete`. If the proof is correct, the non-initiator verifies that the commitment has not been communicated to them via gossip. If the proof IS in their gossip store, the transaction collaboration SHOULD reply with `tx_complete`. The PoDLE blacklist originates from the 'non-initiating' peer, and does not reveal the offending node's id. It is noted that it is possible for a malicious peer to fail to relay their `H2` entries in the blacklisted gossip set. Only nodes that have at least one public channel will be able to contribute to the public PoDLE blacklist. The email then poses some open questions such as whether PoDLE should be required for every collaborative transaction or only for opens. It also asks if fixing the generator point is too restrictive. JoinMarket, a bitcoin mixing service, uses a generator point called `J` which is created by appending a counter byte to `G`, hashing it, and then using a coerce-to-point. PoDLE, the proof of discrete logarithm equality, is used by JoinMarket to prove that the prover knows the private key corresponding to a given public key. Watermarks like `nLockTime`, `nSequence`, and `nVersion` are currently fixed values, but JoinMarket implements PayJoin, which is not obvious onchain, and does anti-fee-sniping emulation for PayJoin.The use-case of JoinMarket is similar to a PayJoin where the opener proposes to make a payment to a channel between the opener and acceptor, rather than outright giving control to the acceptor as in PayJoin. The interactive tx construction mechanism can be later used for channel factories, and PoDLE techniques would be useful as well to multi-funded channel factories.It would be a good idea to share PoDLE format with JoinMarket so that bridges can share PoDLE between JoinMarket makers and Lightning nodes. A BOLT spec could mandate retaining PoDLE for at least a year or a month or two weeks to slow down probe attempts.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:56:46.529387+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

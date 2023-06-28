@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>bloom filtering, privacy</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2015-02-20 19:03:26
-            <br><i>Published on: 2015-02-20T19:03:26+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2015/combined_bloom-filtering-privacy.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007513.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The proposal is to have a scriptpubkey bitmap per block that users can request, allowing them to be SPV confident that they received a faithful one. If there are hits, they can request the block and be confident there was no censoring. However, there are potential issues with this proposal. Firstly, miners would need to upgrade to generate the per-block filters, and any block that doesn't have such a filter would still need to be downloaded in full. Secondly, if checking the filter isn't a consensus rule, any miner who builds a wrong filter breaks the entire SPV userbase. Thirdly, downloading full blocks is still a lot of data, which could be problematic for mobile users. Fourthly, header size is constant, but per-block filters wouldn't be, and even the null sync would download more data as the network got busier. Finally, there are concerns about privacy if a hit is detected in a block, as it would require downloading the entire block and potentially revealing transaction information to a remote node. The author suggests finding a solution that has O(1) scaling on sync, such as treating nodes as sources of UTXO data and shovelling the client (tx, existing merkle path) pairs keyed off script prefixes. This would provide the same security guarantees as Bloom filtering today but would create other problems to solve.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T17:31:01.090393+00:00 </i></p>
     
     
 

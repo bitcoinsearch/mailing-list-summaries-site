@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP: OP_BRIBVERIFY - the op code needed for Blind Merge Mined drivechains</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Paul Sztorc 2017-06-28 16:43:22
+            <br><i>Published on: 2017-06-28T16:43:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2017/combined_BIP-OP-BRIBVERIFY-the-op-code-needed-for-Blind-Merge-Mined-drivechains.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014670.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Luke Dashjr and Chris Stewart discussed the BRIBEVERIFY opcode, which redefines the NOP4 opcode. If the given critical hash is included at the given vout index in the coinbase transaction, the script evaluates to true, otherwise it fails. This allows sidechains to be merged mined against Bitcoin without burdening Bitcoin miners with extra resource requirements. Luke Dashjr is not convinced that this will be useful for merge mining since the logical outcome is "whoever pays the most gets the next sidechain block." However, BMM exploits this assumption, which is already safe, according to Paul Sztorc's Truthcoin blog (<a href="http://www.truthcoin.info/blog/blind-merged-mining/">http://www.truthcoin.info/blog/blind-merged-mining/</a>#focus). Luke Dashjr points out that there are different kinds of sidechains like Federated peg, SPV/SNARK peg, and Drivechains, and he questions how BRIBEVERIFY enables any kind of sidechain. However, Chris' email is specific to blind merged mining (BMM), which is a "sidechains+." So, BRIBEVERIFY does not directly enable any sidechains but enables the "+" part.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T02:57:55.421605+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

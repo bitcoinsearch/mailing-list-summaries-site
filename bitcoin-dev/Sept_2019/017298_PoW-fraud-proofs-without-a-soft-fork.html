@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PoW fraud proofs without a soft fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2019-09-16 16:48:21
+            <br><i>Published on: 2019-09-16T16:48:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2019/combined_PoW-fraud-proofs-without-a-soft-fork.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017298.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Ruben Somsen suggested using Tadge Dryja's utreexo work to implement PoW fraud proofs without a soft fork in Bitcoin. However, Dave pointed out that the worst-case size of just the UTXO entries that need to be communicated over can be more than 200 MB and lying peers can get honest listening nodes on one of these checks which could lead to bandwidth-wasting DoS attacks on honest SPV clients. Additionally, each node capable of providing fraud proofs will need to persistently store the state transition proof for each new block, which requires significant additional system resources beyond the minimum required to operate a full node. As a result, such nodes might be rare, and it would be relatively easy to eclipse attack an SPV client depending on these proofs. Furthermore, this system depends on SPV clients implementing all the same consensus checks that full nodes can currently perform but most SPV clients do not even perform the full range of checks possible to run on block headers. On top of that, each client must implement those checks perfectly or they could be tricked into a chainsplit the same as a full node that follows different rules than the economic consensus. One thing Dave didn't like in Ruben's original proposal is that the SPV client will accept confirmations on the bad chain until a fork is produced. Even if we widely deploy fraud proofs depending on forks as a signal, we'd have to retrain SPV users to wait for much higher confirmation counts before accepting transactions as reasonably secure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:17:46.193038+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

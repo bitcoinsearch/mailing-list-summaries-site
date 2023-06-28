@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>RFC: Deterministic Entropy From BIP32 Keychains</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Ethan Kosakovsky 2020-03-20 17:35:13
-            <br><i>Published on: 2020-03-20T17:35:13+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2020/combined_RFC-Deterministic-Entropy-From-BIP32-Keychains.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017686.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The sender of the email proposes a solution to the problem of having to use separate BIP39s for multiple wallets. He suggests using a single BIP39 mnemonic as a "master root key" and creating child BIP39 seeds using the private key as entropy ENT. This would allow for the creation of multiple wallets without worrying about backups. The proposal involves getting a child private key, hmac it to get entropy bits, and using that entropy to feed BIP39 to make a new mnemonic seed. This process can be standardized using paths like BIP44/49. The Bitcoin Core hdseed can also follow the same steps by generating a child private key, hmac it and get entropy bits to create a WIF to become the key for hdseed in Bitcoin Core. The proposal addresses the issue with BIP32's backup process not being human-friendly, while BIP39 hash-stretches initial entropy to ensure pseudorandom entropy. The ecosystem widely implements BIP39, so practically speaking, multiple wallets require separate 12 or 24 word mnemonics, which is five times the complexity to store than one.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T00:02:51.856882+00:00 </i></p>
     
     
 

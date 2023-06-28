@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>two-round MuSig less dangerous than it seems</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2020-10-10 23:47:11
+            <br><i>Published on: 2020-10-10T23:47:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_two-round-MuSig-less-dangerous-than-it-seems.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002823.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Lloyd Fournier posted on the Lightning-dev mailing list, stating that he thinks two-round MuSig can be used safely in the context of lightning. He suggests that using a two-round MuSig protocol would reduce the extra round of communication required before forwarding a payment that comes with a three-round MuSig protocol. Fournier explains that the original MuSig paper suggested a signing algorithm that was insecure under parallel composition. However, he believes that two-round MuSig is secure under sequential composition, which is essentially what happens in a lightning channel. Fournier then goes on to explain how PTLCs (point-time locked contracts) could work using this two-round MuSig protocol. He claims that there is a protocol using two-round MuSig for fully scriptless lightning that incurs no extra rounds of communication to get to the irrevocably committed state. He notes that it does incur extra storage for each PTLC in the present commitment transaction and includes an extra round to "fully" update the state between two parties but does not delay payment forwarding. Fournier ends his post by saying that he doesn't claim that this is the optimal path forward but just wanted to make this observation to see what others thought.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:25:42.104620+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

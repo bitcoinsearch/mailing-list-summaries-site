@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: AMPs With Proof of Payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nadav Kohen 2019-10-03 03:11:48
+            <br><i>Published on: 2019-10-03T03:11:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_Proposal-AMPs-With-Proof-of-Payment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002195.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the possibility of implementing Atomic Multi-Path Payments (AMPs) on the Lightning Network with Proof of Payment (PoP). It is stated that PoP is not compatible with AMPs because the payment pre-images must be fully known to the payer in advance, leaving nothing for them to learn atomically with payment completion. However, Payment Points and PTLCs can potentially allow for PoP-enabled AMPs. A proposed modification to OG AMP involves adding a Payment Point, PP = pop*G, to each partial payment point. This makes each payment scalar r_i + pop, allowing the receiver to add pop to each r_i which is required to complete each payment. The use of Payment Points is seen as a compelling reason to move to them as soon as possible.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:39:51.567894+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless Address Server – Outsourcing handing out addresses to prevent address reuse</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2022-09-29 15:39:18
+            <br><i>Published on: 2022-09-29T15:39:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2022/combined_Trustless-Address-Server-Outsourcing-handing-out-addresses-to-prevent-address-reuse.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020952.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The post discusses a protocol for non-interactive distribution of bitcoin addresses that outsources interaction to third-party servers, an area that is seemingly underexplored. The sender interacts with the server, which represents the recipient and hands out an address from an xpub. One big remaining problem is the gap limit. The recipient controls and therefore trusts the server, so malicious addresses won't be given out. An alternative mitigation would be to require the sender to reveal their intended transaction to the server before receiving the address. If the transaction doesn't end up getting sent, any subsequent attempt to reuse one of the inputs should either be blacklisted or responded to with the same address that was given out earlier. This protocol seems useful for users that want to use light clients, accept the privacy degradation of handing out their xpub to a third party, and want to receive payments non-interactively.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T00:41:34.049953+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

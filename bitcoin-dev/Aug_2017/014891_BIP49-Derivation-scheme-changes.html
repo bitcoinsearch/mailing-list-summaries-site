@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP49 Derivation scheme changes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> shiva sitamraju 2017-08-30 07:24:13
+            <br><i>Published on: 2017-08-30T07:24:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2017/combined_BIP49-Derivation-scheme-changes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014891.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer of the message wants to discuss changes in BIP49. They suggest breaking backwards compatibility because of issues that arise when recovering a wallet using seed words. The problem is that there is no difference in seed words between segwit/non-segwit, so the wallet would discover both m/44' and m/49' accounts. Asking the user to choose an account to operate on is not a good UI solution, and the wallet would need to constantly monitor both accounts for transactions. The writer suggests creating new wallets as segwit m/49' without asking the user anything, with the option to choose non-segwit from advanced options. Segwit wallet seed words would have a different format which encodes the information that the wallet is segwit. XPUB derivation is another issue not addressed in the BIP yet. Currently, there is no way to know whether an xpub is from m/44' or m/49'. This breaks things like importing xpub as a watch only wallet and displaying balance/generating merchant addresses. The writer is looking forward to hearing thoughts on these suggestions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T15:18:21.254676+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

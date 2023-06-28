@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[RFC] Lightning payment format</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2017-05-29 10:48:51
-            <br><i>Published on: 2017-05-29T10:48:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/May_2017/combined_-RFC-Lightning-payment-format.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000731.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent conversation regarding the Sphinx derived onion format, Olaoluwa Osuntokun suggested reintroducing the end-to-end payload in order to avoid needing to shave off bytes from the per-hop payload later on. This was removed in a previous version due to its large size and lack of clear use case at the time. However, some users have expressed interest in having this feature for mid-points as well. It was noted that it would be easy to extend to a "multi-cell" format in the future if needed.Fabrice also suggested adding a timestamp and expiry date to payment requests. The latest version has since included these features with the expiry time defaulting to one hour if not specified. While server-enforced, it saves senders from needing to extend an HTLC altogether.Regarding Schnorr signatures, Rusty initially believed they would lose the ability to include a recovery ID. However, after speaking with Pieter Wuille, it was determined that if modern practices are followed (making the signature hash commit to the public key), it is not possible to do so. It is possible, however, to commit to the pubkeyhash instead of the pubkey directly. Finally, Rusty proposed turning the changes into BOLT 11. As interoperability tests between implementations draw nearer, having a shared payment request format will be useful.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T01:14:04.308430+00:00 </i></p>
     
     
 

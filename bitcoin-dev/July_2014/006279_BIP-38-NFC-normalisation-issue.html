@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 38 NFC normalisation issue</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-07-17 10:59:26
+            <br><i>Published on: 2014-07-17T10:59:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_BIP-38-NFC-normalisation-issue.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006279.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a discussion about BIP38 implementation, Andreas Schildbach found that the only problem with the original test case was that one cannot specify codepoints from the SMP using \u in Java. Andreas updated bitcoinj to fix this issue and proposed a new test vector. There were issues with null character and other weird issues lurking.Aaron Voisine recommended that instead of removing control characters from password, the spec require that passwords containing control characters are invalid. He also recommended disallowing any character below U+0020 (space) for UI compatibility across many platforms. There were concerns about JVM-based wallets not supporting Unicode NFC and therefore suggest limiting the spec to the subset of Unicode that all popular platforms can support. It was suggested to filter ISO control characters to solve the problem.Black Duck is offering a free copy of Code Sight, the same software that powers the world's largest code search on Ohloh, the Black Duck Open Hub. With this offer, users can index and search up to 200,000 lines of code in their enterprise. The Black Duck Open Hub is one of the biggest code search engines available and provides users with an easy way to access all the code in their enterprise. Users who want fast and easy access to their code can take advantage of this free offer. To try it out, interested parties can visit <a href="http://p.sf.net/sfu/bds">http://p.sf.net/sfu/bds</a>.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:55:46.576363+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

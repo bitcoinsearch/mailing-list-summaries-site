@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SPV bitcoind? (was: Introducing BitcoinKit.framework)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-07-18 12:13:08
+            <br><i>Published on: 2013-07-18T12:13:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_SPV-bitcoind-was-Introducing-BitcoinKit-framework-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002933.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mike Hearn suggests the implementation of partial UTXO sets but notes that SPV wallets may not remain open long enough to benefit from the feature. He proposes getting telemetry from the Android wallet to see how users utilize it. In response to a question about anti-Denial-of-Service (DoS) measures, Hearn thinks prioritization heuristics could be useful by allowing clients with a record of not being abusive to get priority over new clients. Peter Todd argues that SPV clients behave abusively by using up maximum node resources with minimal cost to themselves. The goal is to prevent attackers from consuming more memory and similar resources than the network possesses. A good approach would be to force incoming peers to use up RAM to make a connection. The idea is to give each peer a set of random bits to store in high-speed memory. The nodes then prioritize peers based on how quickly they respond to requests for the stored bits. If the peer stores the bits in RAM, it can do so quickly. If it stores them on disk, it cannot. Todd suggests that if there existed a version of H() with a computational trap-door, it would be possible to create a more sophisticated approach.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T20:08:42.847527+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

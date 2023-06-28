@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>eltoo towers and implications for settlement key derivation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Conner Fromknecht 2019-11-26 23:41:14
-            <br><i>Published on: 2019-11-26T23:41:14+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2019/combined_eltoo-towers-and-implications-for-settlement-key-derivation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002349.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this message, Conner revisits the eltoo paper and notes some potential issues related to watchtowers that could impact channel construction. Due to the NOINPUT feature, any update transaction can spend from any other update transaction. However, in order for a watchtower to spend, it must also produce a witness script that matches the input's witness program. Each update transaction uses unique keys for the settlement clause to ensure that settlement transactions can only spend from one update transaction, meaning each state has a unique witness program. Naively, a watchtower could store settlement keys for all states, allowing it to reconstruct arbitrary witness scripts for any given sequence of confirmed update transactions. To avoid this, Conner proposes giving the tower an extended parent pubkey for each party and deriving non-hardened settlement keys on demand based on the confirmed state numbers. However, this solution is not ideal because leaking one hot settlement key compromises all sibling settlement keys. The issue of spending the unique witness programs is mentioned in section 4.1.4 of the eltoo paper, but from the perspective of counterparties rather than a third-party service. It is unclear if requiring non-hardened keys is a known consequence of the construction or if there are alternative approaches available.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T21:53:40.934016+00:00 </i></p>
     
     
 

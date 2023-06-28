@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP-118 / SigHash &#34;what&#39;s covered&#34; Cheatsheet</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2021-07-10 00:11:58
+            <br><i>Published on: 2021-07-10T00:11:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_BIP-118-SigHash-what-s-covered-Cheatsheet.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019257.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A chart was created as part of an ongoing review of BIP-118 to assist those evaluating it. The chart is not free of errors but may be helpful for understanding the conditional logic involved in evaluating BIP-118. The chart shows that input index is never signed, APO signs the amounts but APOAS never does, APO signs both the SPK and Tapleaf hash, and the signature binds APO to a specific script fragment within a Taproot key. Additionally, there are 16 different possible modes in total, including | Default and | All which overlap, leaving an opportunity to reserve or assign four additional sighash modes if desired. Furthermore, because BIP-118 defines a new key type, the notion that sighash flags are "flags" could be done away with and converted to an enum, giving each signature type a sensible name.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T03:17:50.002585+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

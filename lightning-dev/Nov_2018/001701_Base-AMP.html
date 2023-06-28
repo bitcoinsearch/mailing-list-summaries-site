@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base AMP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-30 05:53:26
+            <br><i>Published on: 2018-11-30T05:53:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Base-AMP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001701.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, ZmnSCPxj suggested using a 2-byte "number of total pieces" to split the bill, but this method wouldn't work well in all cases. For example, it wouldn't work with a dynamic algorithm that tries to pay the whole amount at once and then splits it if it doesn't fit. Rusty Russell explained that using `numpaths` overcommits to what you will do in the future, and is unnecessary anyway. The payee is interested in the total value, not the details of the split.They also discussed a network where there are four paths between payer and payee; three paths have low capacity but negligible feerate, while the fourth has high capacity with expensive feerates. In order to minimize fees when paying a large amount, it would be rational to split among the three low-cost paths. However, if two of those paths fail, it would be better to merge them into a single payment along the expensive fourth path. The remaining succeeding path has already given `numpaths`=3.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:26:20.082409+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

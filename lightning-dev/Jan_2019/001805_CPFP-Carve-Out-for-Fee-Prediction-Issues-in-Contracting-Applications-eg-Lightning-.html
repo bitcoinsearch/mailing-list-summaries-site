@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2019-01-08 05:50:20
+            <br><i>Published on: 2019-01-08T05:50:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001805.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion, Matt Corallo highlights the difficulty in defining a criteria for "near the top of the mempool," as it can be problematic for large batched transactions where a single counterparty can prevent confirmation. He notes that Lightning's requirements are different since it seeks certainty that a transaction will confirm by some deadline, rather than just having a high probability of confirmation. However, Rusty disagrees and believes that the two are not very different in practice. He suggests defining "top of mempool" as "in the first 4 MSipa," which is the next block, and only allowing RBF if the old package wasn't in the top and the replacement would be. This seems incentive-compatible and better than the current scheme of always overpaying and hoping. Although an attacker can make you pay high fees, you can still decide at the time based on whether the expiring HTLC(s) are worth it. Ultimately, Rusty thinks that whatever is simplest to implement should win, but he is not in a position to judge that accurately.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:31:40.716153+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

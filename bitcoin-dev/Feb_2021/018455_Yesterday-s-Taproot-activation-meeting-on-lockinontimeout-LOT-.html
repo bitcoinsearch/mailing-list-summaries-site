@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Yesterday&#39;s Taproot activation meeting on lockinontimeout (LOT)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-02-20 02:55:16
+            <br><i>Published on: 2021-02-20T02:55:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2021/combined_Yesterday-s-Taproot-activation-meeting-on-lockinontimeout-LOT-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018455.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion about the practicality of a LOT=false option for Bitcoin Core has been deemed moot due to software complexity. However, it can be worked around by running two clients, an "external" client running an LOT=X and an "internal" client that is at most 0.21.0, which will not impose any LOT rules. The internal client then uses `connect=` directive to connect locally to the external client and connects only to that client, using it as a firewall. The user can select LOT=C or LOT=!C on the external client based on their preferences. If Taproot is not MASF-activated and LOT=!U is what dominates later, the user can destroy the external node and connect the internal node directly to the network as a way to "change their mind in view of the economy". Bitcoin Core's policy is not to ship options that shoot users in the foot, and shipping a separate chain with its own datadir is the only practical way to implement such an option. While some developers may disapprove of LOT=false, Bitcoin Core maintainers and developers recommend courses of action they believe have reasonable levels of consensus and are technically sound. It is up to users to decide whether or not to run such software themselves.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T18:02:10.333755+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Useful bitcoin patches...</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeff Garzik 2011-08-04 23:43:56
-            <br><i>Published on: 2011-08-04T23:43:56+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2011/combined_Useful-bitcoin-patches-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000306.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The message discusses the issues with RPC servers and proposes solutions to improve their performance. The author mentions two possible paths to HTTP/1.1 persistent connections, either via threaded rpc or async I/O. However, the author suggests that based on field usage, the threaded rpc option is more stable. The only concern is whether this solution can handle a large number of incoming TCP connections without creating new threads blindly and reaching thread limits.RPC request volume in the present implementation uses a lot of socket resources due to constant disconnect/reconnect. The proposed patch aims to address this issue and provide positive impact for all production bitcoin sites using RPC. The author acknowledges that miners are experiencing these problems presently, but believes that deploying HTTP/1.1 persistent connections will make a positive impact at any site heavily using RPC.Lastly, the message briefly touches upon some other Git branches like bugfix_CreateThread_leak, getwork_dedupe, and gitignore. The author expresses interest in a dedupe branch but hasn't yet reviewed it. In the end, the author informs about moving his home computer lab setup to a new house, which may affect his availability until August 11th.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-26T18:55:35.013308+00:00 </i></p>
     
     
 

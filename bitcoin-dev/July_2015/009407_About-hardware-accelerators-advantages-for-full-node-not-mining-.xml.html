@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>About hardware accelerators advantages for full-node (not mining)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tier Nolan 2015-07-13 13:47:57
-            <br><i>Published on: 2015-07-13T13:47:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2015/combined_About-hardware-accelerators-advantages-for-full-node-not-mining-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009407.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The processor load for signature verification involves a hash function call, large number maths, and an elliptic curve operation. The longest step is the elliptic curve operation, which takes about 1ms per signature on normal hardware. However, optimized code can make the process faster. The main task is proving that R = u1 * G + u2 * Q, where G is a constant and the rest are different per signature. Some of the core team have created a fast CPU implementation available at <a href="https://github.com/bitcoin/secp256k1.git">https://github.com/bitcoin/secp256k1.git</a>. There has been discussion about batch verification of signatures, with the potential to compute 16 signatures together. However, it's believed that the benefit of using GPU would be lost due to communication bandwidth. GPU miners typically benefit from needing only minimal information to be sent to the GPU routine.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-10T02:31:22.200526+00:00 </i></p>
     
     
 

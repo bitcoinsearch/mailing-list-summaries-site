@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fee drop</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-02-25 18:09:23
+            <br><i>Published on: 2014-02-25T18:09:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_Fee-drop.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004448.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this discussion, the concern is raised that there may be a large discrepancy between MIN_RELAY and the expected minimum fee needed for a transaction to be included in a block. The relay network uses MIN_RELAY and MIN_DUST to prevent spam, but only transactions that are added to the blockchain actually pay a fee. This creates an opportunity for lower-cost spam. The issue revolves around how close the boundary is between staying above MIN_RELAY and staying out of the blockchain. In the worst-case scenario, an attacker could generate an infinite number of transactions that will never be included in a block, making them free for the attacker while being relayed by the network.To address this issue, nodes encountering memory pressure can increase their min relay fee locally until their usage fits inside their resources. There is also a suggestion to align mempool selection with the expected block inclusion to optimize resource allocation. For example, a miner would push out cheaper transactions to make room for higher fee transactions based on max block size or orphan rate projections. It is suggested that mempool selection should consider ejecting a random transaction that paid less fees than the incoming transaction from mempool, and also consider how ejection would work with chains of unconfirmed transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:28:44.643538+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Lightning Pre-Image Encryption Standard</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-06-25 22:39:54
-            <br><i>Published on: 2019-06-25T22:39:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2019/combined_Proposal-Lightning-Pre-Image-Encryption-Standard.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002037.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made for an industry standard that would allow the creation of uniform libraries for standard ln-encryption and ln-decryption. The proposed scheme entails responding to requests for data with an invoice and data that is encrypted with that invoice's payment pre-image ensuring that the user gets the data if and only if they successfully pay that invoice over the lightning network. AES encryption in CFB mode with no padding to plaintext is suggested as it is a widely used standard that has libraries available for most platforms and languages. Any pre-image that is 16, 24 or 32 bytes will work when encrypting with the preimage. After encrypting the desired data with the payment pre-image, serialize the encrypted data by prepending the IV to the encrypted data, and then convert the sequence of bytes to a base64 string. A data provider should respond to requests for data over a secure channel (e.g. HTTPS) with the requested data encrypted by the payment pre-image using AES in CFB mode. Once the payment has been received by the data provider, they may offer the payment pre-image directly to the data recipient if there is a communication channel to the user (say over a websocket). The data provider can also simply make the payment pre-image publicly available, e.g. via a public API to reduce latency and amount of communication a lapp client must have with a lightning node.Reference implementations are provided with acknowledgments to Alex Bosworth for sharing the idea and having a working implementation of this scheme at yalls.org and Torkel Rogstad for the encryption details and reference implementations.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T19:07:20.959014+00:00 </i></p>
     
     
 

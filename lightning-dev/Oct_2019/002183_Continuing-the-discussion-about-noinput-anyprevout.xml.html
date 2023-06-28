@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2019-10-01 14:26:39
-            <br><i>Published on: 2019-10-01T14:26:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002183.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>ZmnSCPxj, a Bitcoin developer, has proposed an alternative to the `SIGHASH_NOINPUT` flag. The proposal involves creating a new opcode called `OP_CHECKSIG_WITHOUT_INPUT`. This opcode would ignore any `SIGHASH` flags present on a signature and instead hash the current transaction without input references, then check that hash to the signature. It would be equivalent to `SIGHASH_NOINPUT`, but as an opcode, it could be embedded in a Taproot script. ZmnSCPxj suggests that this would be useful for a Decker-Russell-Osuntokun script with an internal Taproot point being a 2-of-2, then having a script `OP_1 OP_CHECKSIG_WITHOUT_INPUT`. Unilateral closes would expose the hidden script, but cooperative closes would use the 2-of-2 directly. ZmnSCPxj also notes that any special SCRIPT would already be supportable by Taproot, including ones that may potentially lose funds for the user. There is concern about `SIGHASH_NOINPUT` abuse, and ZmnSCPxj questions why there is not the same level of concern about Taproot abuse. However, there are advantages and disadvantages to both the sighash flag and the proposed opcode. With the sighash flag, the spender is in charge of specifying the flags, whereas with an opcode, the output dictates the signature verification modalities. The downside of the opcode is the increased design space. The proposal is open for discussion amongst other developers.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T20:29:27.101538+00:00 </i></p>
     
     
 

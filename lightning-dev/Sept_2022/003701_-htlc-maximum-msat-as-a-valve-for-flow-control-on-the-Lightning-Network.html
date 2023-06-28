@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>`htlc_maximum_msat` as a valve for flow control on the Lightning Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-09-26 23:26:24
+            <br><i>Published on: 2022-09-26T23:26:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2022/combined_-htlc-maximum-msat-as-a-valve-for-flow-control-on-the-Lightning-Network.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003701.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The lightning network is a decentralized, stable network that requires routing decisions to be made based on something other than fees. While quantizing payments may be an option for some, it would not work for everyone as payment sizes need to have a smooth/continuous distribution. Instead, throttling payment traffic through htlc_max_msat can act as a valve. The reliability of this method is dependent on market forces and may be non-linear like feerates, which are the sum total of market forces. Feerates will always be something that senders optimize for, but there are other possible throttling mechanisms such as randomly selecting routes within a budget or maintaining external "reliability" scores for nodes. What's novel about the htlc_max_msat approach is that channel operators can use it directly based on their private channel state, and they don't have a particular incentive to lie about it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:54:53.967664+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

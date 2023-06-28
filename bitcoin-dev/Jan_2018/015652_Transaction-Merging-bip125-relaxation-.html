@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction Merging (bip125 relaxation)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Evans 2018-01-24 13:43:29
+            <br><i>Published on: 2018-01-24T13:43:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Transaction-Merging-bip125-relaxation-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015652.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list revolves around BIP125 replacement, which requires an increase in fee rate. The original post mentions having one transaction in the mempool and then broadcasting a new transaction to replace it. However, the confusion arises from the use of "original transactions" as there should only be one transaction in the mempool at a time. The new transaction's fee and rate must be larger than the original, but increasing the fee rate will already cause a larger fee. There is concern about the incentive compatibility of BIP125 since it does not seem rational to accept a replacement transaction with a lower fee rate in a competitive mempool. Initially, Peter Todd considered only requiring an increase in fee rate, but ultimately decided on both a feerate and absolute fee increase criteria for simplicity.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:59:31.057808+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

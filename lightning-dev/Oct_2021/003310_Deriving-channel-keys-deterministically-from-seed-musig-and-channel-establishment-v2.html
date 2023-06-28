@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Deriving channel keys deterministically from seed, musig, and channel establishment v2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2021-10-13 07:04:46
+            <br><i>Published on: 2021-10-13T07:04:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_Deriving-channel-keys-deterministically-from-seed-musig-and-channel-establishment-v2.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003310.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent post on the Lightning-dev mailing list, SomberNight discussed a difficulty encountered while implementing anchor output support in Electrum. Specifically, the remote-force-close case where the to_remote output is no longer a simple p2wpkh presents a challenge for restoring from seed words. Previously, Electrum set option_static_remotekey to required and restricted lightning usage to wallets that derive p2wpkh addresses, meaning if a user were to restore from seed words and their channel counterparty force closed their channel, the to_remote output of the broadcast commitment tx would directly pay to the user's wallet. With the introduction of anchors, however, the to_remote output is now a p2wsh that involves a CSV, and we cannot easily make this script correspond to a wallet address, resulting in lost funds when restoring from seed.To solve this problem, SomberNight proposed an approach to derive channel keys deterministically that allows certain forms of recovery from just a seed, which works today. However, this approach will no longer work with MuSig key aggregation in the future. An idea for a proposal is given how the channel-open flow (e.g. as part of channel v2) could be changed to make a similar approach work independent of key aggregation. SomberNight explored various solutions to the problem, including deriving a static key to be used as payment_basepoint, reused between all channels, or deriving a new bip32 chain/sequence of pubkeys used as payment_basepoint for channels, and watching these p2wsh scripts with a gap limit. However, both options have significant drawbacks related to privacy and usability. Instead, it seems desirable to extract some entropy from the blockchain and use that as a nonce to be combined with a static private secret derived from the seed.One solution exploits the fact that the funding output uses a 2of2 OP_CHECKMULTISIG script composed of the funding pubkeys of each party. The funding pubkey itself can be used as a nonce, and it can be recovered from the witness of the commitment tx. The privkey for payment_basepoint can then be derived as e.g. hash(bip32_derive(seed, HARDCODED_PATH) + funding_pubkey). This approach has been used by Eclair for some time. Electrum is likely to use this solution at least for the payment_basepoint as part of adapting to anchors.However, note that the idea (3) relies on recovering the funding_pubkey from the witness of the spending transaction, which will break in the future if the funding script is changed to e.g. a p2tr that uses musig. Therefore, all the approach needs is some blockchain-visible nonce that is already known at the time we need to construct the open_channel message, so long as the funding output uses a 2of2 OP_CHECKMULTISIG. In conclusion, SomberNight raised the question of whether such a change - or something similar - might be useful, and if so, whether it could/should be incorporated into the current channel establishment v2 proposal. If there is agreement that this would be useful, a spec change would be most useful before changing the 2of2 multisig script.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:52:34.705295+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

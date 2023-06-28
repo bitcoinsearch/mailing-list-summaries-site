@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Proposal] New &#34;feefilter&#34; p2p message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Morcos 2016-02-17 02:28:31
+            <br><i>Published on: 2016-02-17T02:28:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2016/combined_-BIP-Proposal-New-feefilter-p2p-message.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012451.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange, Luke Dashjr questions the use of an int64_t datatype for the feefilter message in Bitcoin development. He argues that it is wasteful to allocate such a large number of bits for what will likely be a small number. Additionally, he questions the lack of extensibility in the current system. Alex Morcos defends his decision by stating that the command string system already provides sufficient extensibility and that a different command name can be given to a better version of feefilter if developed later. He also notes that the 8-byte size of the message is not a significant optimization issue given the low frequency of its use compared to ping traffic. Morcos also clarifies that the feefilter is additive with a bloom filter for transactions, meaning that transactions must pass both filters to be relayed. Dashjr questions the usefulness of this for wallets, but Morcos points out that sending feefilter messages should not affect the acceptance of transactions into the mempool. The email thread ends with no further resolution on the issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:03:06.483617+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

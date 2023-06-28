@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment sender authentication</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> fiatjaf 2021-12-18 13:07:56
+            <br><i>Published on: 2021-12-18T13:07:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_Payment-sender-authentication.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003427.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to the Lightning-dev mailing list, Joost Jager asked for opinions on how to implement opt-in sender authentication in Lightning. He noted that while Lightning provides anonymity for senders, there are cases where authentication could be useful, such as chat over Lightning or donation payments where a donor may want to reveal themselves. Jager suggested using a custom record containing an ECDSA signature or deriving a shared secret using ECDH with the sender and receiver node keys and attaching a custom record to the payment containing the sender node key and an HMAC of the payment hash using the shared secret as a key.As a temporary solution, someone suggested using lnurl-rfc, which allows users to provide a lone pubkey, a domain-specific pubkey along with a signature of a challenge provided by the receiver, or an unauthenticated name or email within the BOLT11 payment request using the 'h' tag. It was noted that the sender identity doesn't need to be the actual node identity and could be an unrelated key specific to the service being paid for. The discussion sought technical opinions on the best way to implement opt-in sender authentication while considering cryptographic authentication and non-repudiation issues.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:03:04.514058+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

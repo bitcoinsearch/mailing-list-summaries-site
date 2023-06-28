@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dynamic MaxBlockSize - 3 Byte Solution</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hampus Sjöberg 2019-11-11 16:08:43
+            <br><i>Published on: 2019-11-11T16:08:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Dynamic-MaxBlockSize-3-Byte-Solution.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017463.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread on the bitcoin-dev mailing list discusses the proposal of a Dynamic MaxBlockSize (DMBS) solution. The proposal suggests adding a 3-byte variable factor to the white space in the current block that would increase or decrease the future block size based on market-driven demand. The ruleset evaluates whether to increase or decrease the block size by checking if the last total block transaction fees exceed the average of the last 100 blocks' transaction fees and if the current block size is greater than or equal to 0.99 MB. If true, the block size will either increase by 10% or decrease by 10% at a fixed countdown variable of nine blocks. If the block size reaches the maximum limit of 6553.5 MB, no action will be taken. One participant in the thread advocates keeping the block size low for now but leaving room for increasing it in the future when necessary via an extension block. They argue that even with Lightning and SegWit, there would still be too many channel open and closes to handle millions of users without transaction fees skyrocketing. Another participant raises concerns about the impact of a reorg on validation and questions whether the current block can accommodate the proposed DMBS solution. However, the proposal aims to provide a middle ground solution to scale dynamically without compromising existing security or changing existing rulesets.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T22:03:55.053474+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Implementing batch processing for -blocknotify</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rune Kjær Svendsen 2013-05-31 12:37:50
-            <br><i>Published on: 2013-05-31T12:37:50+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2013/combined_Implementing-batch-processing-for-blocknotify.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002680.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange between Michael Hendricks and Rune Kjær Svendsen, the latter was asking for a way to keep up with new blocks as they come in through his application. He wanted to use the -blocknotify option with bitcoind, which would execute his application for each new block. However, his app wasn't quick enough to finish its work before a new block came in and the app was executed again. Hendricks suggested changing the -blocknotify script to quickly append necessary information to a queue and immediately exit. A separate script runs at all times monitoring this queue for work, and performs the labor-intensive calculations. But Svendsen felt that it would be clunky and lead to concurrency issues. Jeremy Spilman suggested blocking the bitcoind thread until Svendsen's process exits, but Svendsen didn't think it was optimal as it would slow down synchronization drastically. Instead, he thought it would be nimble for bitcoind to synchronize at full speed and only send out events when necessary, batching together previously queued items.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T18:10:18.182882+00:00 </i></p>
     
     
 

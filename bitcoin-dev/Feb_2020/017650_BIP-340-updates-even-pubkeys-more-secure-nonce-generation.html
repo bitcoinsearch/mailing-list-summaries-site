@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 340 updates: even pubkeys, more secure nonce generation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2020-02-26 04:20:58
+            <br><i>Published on: 2020-02-26T04:20:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2020/combined_BIP-340-updates-even-pubkeys-more-secure-nonce-generation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017650.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille has made a number of small changes to BIP 340-342 despite saying earlier that he expected no further semantical changes to the document. In change (1), the Y coordinate of 32-byte public keys is changed from implicitly square to implicitly even. This change makes signing slightly faster and simplifies integration with existing key generation infrastructure. Change (2) deals with more secure nonce generation in BIP 340 by including public key data in the nonce generation, implementing actual signing-time randomness into the nonce generation process, and using a different way of mixing in this randomness to protect against differential power analysis. Additionally, new tagged hash tags were added to make sure any code written for the earlier BIP text fails consistently. Despite being included in the alternative signing section, LL suggests having test vectors for these alternative methods and even having their own BIP.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:39:11.976479+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

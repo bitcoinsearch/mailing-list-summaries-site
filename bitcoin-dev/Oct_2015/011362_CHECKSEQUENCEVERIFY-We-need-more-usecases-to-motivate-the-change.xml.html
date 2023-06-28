@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CHECKSEQUENCEVERIFY - We need more usecases to motivate the change</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> s7r 2015-10-04 12:04:16
-            <br><i>Published on: 2015-10-04T12:04:16+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2015/combined_CHECKSEQUENCEVERIFY-We-need-more-usecases-to-motivate-the-change.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011362.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email conversation is between Anthony Towns and Peter Todd via bitcoin-dev. They discuss the implementation of relative CLTV using nSequence in Bitcoin transactions. Todd proposes that two things need to be made clear: 1) there are applications that require relative instead of absolute CLTV and 2) the implementation should be done through nSequence. Towns asks for a simple Alice and Bob example, and Todd explains that RCLTV/OP_CSV is used in Lightning commitment transactions to enforce a delay between publishing the commitment transaction and spending the output. Using absolute CLTV would mean that once the effective delay a commitment transaction has decreases over time, but over time it will become too short, which means there is not enough time to prove cheating, and the channel has to be closed prematurely. Todd explains that there is a small drawback in that the initial transaction could be delayed, reducing the overall time the channel exists. Towns agrees that CLTV/RCLTV is necessary in day-to-day use cases, and they discuss the use cases for BIP68 (nSequence). Todd concludes that OP_CRLTV alone works fine, and BIP112 is required for the rest.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-10T23:47:22.373942+00:00 </i></p>
     
     
 

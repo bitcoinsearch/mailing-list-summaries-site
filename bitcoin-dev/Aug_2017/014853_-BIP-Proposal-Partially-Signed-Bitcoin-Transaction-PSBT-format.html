@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Proposal] Partially Signed Bitcoin Transaction (PSBT) format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2017-08-22 19:26:30
+            <br><i>Published on: 2017-08-22T19:26:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2017/combined_-BIP-Proposal-Partially-Signed-Bitcoin-Transaction-PSBT-format.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014853.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about securing partially signed transactions for inputs in a way that doesn't compromise privacy. One suggestion is to have each input come with an ownership proof, which is essentially a signature over H(A || x) using the key for A. The 'x' is a private fixed key that only the signing device knows, and most likely along some unique bip32 path. This makes it identifiable and privacy-losing across inputs. To avoid "re-use", one would want to sign some message like HMAC("ownership proof", H(A || x) ) instead. Public verifiers see HMAC("ownership proof", some_random_hash_connected_to_A ) and the owner can recreate some_random_hash_connected_to_A by H(A || x). The goal is to create a proof of non-ownership, or a proof that the hardware wallet doesn't own the address. However, to verify the signature, 'x' should be public. There's also a need to prevent the reuse of signatures as ownership proof for different purposes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T14:59:42.328426+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

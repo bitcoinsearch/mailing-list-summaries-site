@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pay-to-Open and UX improvements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2019-12-18 15:14:24
+            <br><i>Published on: 2019-12-18T15:14:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Pay-to-Open-and-UX-improvements.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002396.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on #bitcoin-wizards, gmaxwell shared his feedback regarding the proposal to modify Tapscript's OP_CHECKSIG. He suggested that changing the behaviour of OP_CHECKSIG is not feasible as it increases the witness size and should be implemented as a new opcode instead. OP_CAT and friends were intentionally left out of Taproot as they are too general and require more analysis. However, the proposed OP_CHECKSPLITSIG may be acceptable as it is very constrained but does not protect against a finney attack. The scheme only protects against double-spending if Patrick is disallowed from emptying the UTXO via Lightning before double-spending. Despite these issues, Bastien believes there are good use-cases for this for off-chain protocols and is interested in more feedback about the scheme and potential attack vectors or other use-cases. Ethan Heilman also voiced his support for enabling outputs to enforce ECDSA nonce reuse but argued against changing the behaviour of OP_CHECKSIG, suggesting that it would likely result in bugs in systems that create and sign transactions and instead proposed the creation of a new OP code, such as OP_CHECKSPLITSIG or getting OP_CAT approved.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:27:27.754665+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

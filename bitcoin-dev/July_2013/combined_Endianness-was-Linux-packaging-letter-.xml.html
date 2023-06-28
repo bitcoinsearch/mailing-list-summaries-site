@@ -11,86 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Endianness (was: Linux packaging letter) <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002996_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Luke-Jr 2013-07-24 04:03:24</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002997_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Gregory Maxwell 2013-07-24 04:07:37</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002998_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Gregory Maxwell 2013-07-24 04:09:01</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002996_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Luke-Jr 2013-07-24 04:03:24</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002997_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Gregory Maxwell 2013-07-24 04:07:37</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002995_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Wendell 2013-07-24 03:54:25</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002998_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Gregory Maxwell 2013-07-24 04:09:01</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002996_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Luke-Jr 2013-07-24 04:03:24</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002998_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Gregory Maxwell 2013-07-24 04:09:01</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002995_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Wendell 2013-07-24 03:54:25</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002997_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Gregory Maxwell 2013-07-24 04:07:37</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2013/002995_Endianness-was-Linux-packaging-letter-.xml.html">Endianness (was: Linux packaging letter)</a>
-                        <b>Wendell 2013-07-24 03:54:25</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002996.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2013-07-24T04:03:24+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The context revolves around the possibility of endian independence in the Bitcoin codebase. Wendell asked about the presence of a substantial barrier to such independence and Luke replied that he had an 'endian' branch in his repo but it wasn't working yet. In an email exchange, it was stated that fixing memory order to and from the wire is a typical endianness fix but since almost everything Bitcoin sends and receives is an authenticated data structure, simply swizzling the byte order on input is not enough. Sometimes the data needs to be hashed for authentication and can't be in memory order. Gregory Maxwell discussed the protocol used for transmitting data through wires and emphasized the importance of attention to detail in communication protocols. The email exchange also mentioned the need to remain aware of potential differences in transmission order. Douglas Huff replied to Wendell's question, stating that attempting to package and ship big endian binaries is negligent. Overall, the context highlights the importance of understanding and accounting for variations in transmission order and the challenges associated with achieving endian independence in the Bitcoin codebase.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-07T14:40:01.440245+00:00</i></p>
-    
-
     
 
     <footer>

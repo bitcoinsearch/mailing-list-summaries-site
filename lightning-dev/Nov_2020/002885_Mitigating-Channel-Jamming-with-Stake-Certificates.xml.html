@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Mitigating Channel Jamming with Stake Certificates</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-11-27 00:16:13
-            <br><i>Published on: 2020-11-27T00:16:13+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2020/combined_Mitigating-Channel-Jamming-with-Stake-Certificates.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002885.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Lightning Network is exploring a new approach to channel jamming mitigation using UTXO ownership proofs, or Stake Certificates. The goal is to avoid upfront payment schemes that come at a cost of new fees and introduce anything less trust-minimized than the Lightning Network itself. Previously, these proofs were only used in the Lightning Network at channel announcement time to prevent malicious actors from announcing channels they don’t control. Stake Certificates are satisfactory as they do not inflate payment costs for honest users and do not require trust. However, the main disadvantage of Stake Certificates seems to be the novel cryptography required. The presented scheme could preserve privacy if it relied on zero-knowledge proofs of UTXO ownership by avoiding pointing to a particular UTXO. Unfortunately, this requires zero-knowledge protocols for general statements, which are more experimental primitives than most of the stuff we have in Bitcoin protocols. Despite this, Stake Certificates may provide a much better solution with good UX for the cost of implementation complexity because it relies on zero-knowledge.To address the issue of channel jamming, Gleb Naumenko and Antoine Riard propose Stake Certificates as a solution. This involves requiring proof of ownership of a certain amount of Bitcoin in order to use a channel, which would make it more difficult for attackers to tie up funds. The authors also discuss various design questions related to Stake Certificates, such as whether credit spending should be gossiped across the entire network or only the routing nodes involved in the payment know. They suggest that the credit-to-value-transferred function should not be linear to provide maximum security against malicious channel jammers. They also consider the interactivity and lifetime of Stake Certificates and whether spending a UTXO should reveal all Stake Certificates generated from it. The authors propose addressing the problem of malicious routing nodes failing payments by reducing the reputation of faulty links and routing nodes on the payment sender node. While Stake Certificates may not be the best near-term solution due to complexity, the authors argue that the zero satoshi overhead for honest payments is an appealing argument to switch to it in the future. They also note that stake-based protocols can solve Sybil challenges in the Bitcoin ecosystem and could be useful in other contexts. The next step is a discussion of Stake Certificates and choosing a cryptosystem if the community finds it interesting.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:02:48.030574+00:00 </i></p>
     
     
 

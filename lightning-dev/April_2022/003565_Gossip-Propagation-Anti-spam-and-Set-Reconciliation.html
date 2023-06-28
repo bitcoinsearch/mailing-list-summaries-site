@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Gossip Propagation, Anti-spam, and Set Reconciliation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2022-04-23 01:40:44
+            <br><i>Published on: 2022-04-23T01:40:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2022/combined_Gossip-Propagation-Anti-spam-and-Set-Reconciliation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003565.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Matt Corallo expressed concern over the spam limit for channels and how it affects syncing. Most nodes do not limit as aggressively, which could pose an issue in any context. The proposal is to set guidelines on channel spamming with an agreed limit between 1 and 1000 blocks. Removing features from the gossip query system may also be considered. Rusty mentions that eclair does not bother to rate limit and has seen no issues, but LND nodes had 50% of their channels left disabled by rejecting more than one per day. This problem will occur unless everyone does ratelimiting, and minisketch provides a good reason to do so.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:24:34.960103+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

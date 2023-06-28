@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Deriving channel keys deterministically from seed, musig, and channel establishment v2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-09-21 00:59:10
+            <br><i>Published on: 2021-09-21T00:59:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2021/combined_Deriving-channel-keys-deterministically-from-seed-musig-and-channel-establishment-v2.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003232.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj suggests a solution to address the privacy concerns associated with deriving a static key to be used as payment_basepoint and reused between all channels. The proposed solution involves tweaking the static_payment_basepoint_key using hash(seed | counterparty_node_id) for each channel, which should result in a unique key for each counterparty, but prevent individual counterparties from being able to predict this tweak. This would ensure that privacy is maintained, while still allowing for effective monitoring of p2wsh scripts on-chain.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:51:11.336609+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

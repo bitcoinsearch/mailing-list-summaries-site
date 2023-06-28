@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP174 amendment proposal (Important Signer Check should be mentioned)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Chow 2019-07-09 20:26:45
+            <br><i>Published on: 2019-07-09T20:26:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2019/combined_BIP174-amendment-proposal-Important-Signer-Check-should-be-mentioned-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017116.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On July 9th, 2019, Jonathan Underwood proposed a wording change to the Bitcoin Improvement Proposal (BIP) for the sighash field, which contains information about how a transaction should be signed. He presented an attack scenario where a hacker changes the sighashtype of a partially signed Bitcoin transaction (PSBT) to SIGHASH_ANYONECANPAY | SIGHASH_NONE and then adds inputs and outputs to send BTC to themselves. Underwood suggests adding a check for signers to ensure that the sighash type provided is acceptable to them and fail signing if it is not. If no sighash type is provided, signers should use SIGHASH_ALL but may sign with any sighash type they wish.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:38:30.560776+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

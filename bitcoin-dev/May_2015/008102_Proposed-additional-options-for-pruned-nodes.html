@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed additional options for pruned nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2015-05-12 16:05:44
+            <br><i>Published on: 2015-05-12T16:05:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_Proposed-additional-options-for-pruned-nodes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008102.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread dated May 12, 2015, discusses the proposal for a hybrid option in nodes that would reduce storage needs on a node while allowing it to continue validating all transactions. The proposed solution involves flipping the --no-wallet toggle, selecting a section of the blockchain to store fully (percentage-based), and pruning all sections not included in this selection. This approach is similar to how Koorde works, where the network decides which sections to retrieve. The user prompts the node to store a particular percentage of the blockchain, and it selects the least-occurring options from its peers and their peers (if secure). This solution should have little impact on security and would allow for a retroactive --max-size flag, where the node prunes until it reaches the specified size, continuing to prune over time while keeping to the sections defined by the network. However, some concerns were raised regarding side effects or network vulnerabilities that this solution might introduce. While it may not be Sybil resistant, it is no less so than a fully pruned node. Overall, the proposal aims to address concerns about increasing storage needs due to the 20MB step and switching to pruned nodes partially, reducing network security. It seeks to provide a solution that retains full validation capabilities while distributing the full copy among many nodes, significantly reducing storage needs on a node. Jeff Garzik, a Bitcoin core developer and open-source evangelist, was part of the email thread.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T20:52:07.919518+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Antoine Riard 2020-09-22 13:52:55
-            <br><i>Published on: 2020-09-22T13:52:55+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2020/combined_A-Replacement-for-RBF-and-CPFP-Non-Destructive-TXID-Dependencies-for-Fee-Sponsoring.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018193.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The issue being discussed in this context is related to pre-signed transactions and their feerate. In multi-party protocols, pre-signed transactions may have a feerate of today but are broadcasted later with a feerate of tomorrow, which can cause problems if the feerate is too low for the transaction to propagate across network mempools. The author suggests that the feerate of the package of transactions should be evaluated as a whole in order to ensure acceptance of each element of the package by the network.One participant in the discussion raises a concern about sponsored transactions with low fees being evicted from mempools due to fee pressure and not being widely accepted when rebroadcasted. They point out that the requirement that the sponsor's entry must be present in the mempool can create a catch-22 situation where the sponsor transaction cannot be broadcast because the sponsored transaction is not in the mempool, and the sponsored transaction cannot be rebroadcast because the fee is too low. The participant suggests that this requirement may need to be revised and notes that RBF can still work in this case by replacing or inserting the transaction. Overall, the discussion highlights the importance of considering the feerate of pre-signed transactions in multi-party protocols and ensuring that transactions are evaluated as a package rather than individually. It also identifies potential issues with low fee sponsored transactions and the need to revise certain requirements in order to avoid catch-22 situations.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T15:26:32.342521+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CLTV opcode allocation; long-term plans?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Btc Drak 2015-05-12 19:30:35
+            <br><i>Published on: 2015-05-12T19:30:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_CLTV-opcode-allocation-long-term-plans-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008114.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There is a discussion about the use of NOPs in Bitcoin's implementation of CheckLockTimeVerify (CLTV) opcode. Some developers argue that since there isn't actually scarcity of NOPs, it makes sense to choose the original unparameterized CLTV version #6124 which has been better tested and results in a slightly smaller script. On the other hand, adding a parameter to OP_CLTV makes it more flexible and is the most economic use of precious NOPs. The extra time required to make this change is deemed acceptable and it would be good to make this change to the PR in time for the feature freeze. However, there are concerns about whether to use #5496 or #6124 and it would be nice to decide and stop blocking this. It is also mentioned that we can always use the same trick with the last opcode to get 2^64 brand new opcodes. Some developers suggest that implementing a future relative CLTV as a future soft-fork could be a solution. Despite the extra work required to rewrite all the existing tests and example code and update the BIP, it is not too big of a deal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T19:28:31.570056+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

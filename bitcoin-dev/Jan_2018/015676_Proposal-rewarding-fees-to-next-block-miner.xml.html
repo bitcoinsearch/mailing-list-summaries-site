@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: rewarding fees to next block miner</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> George Balch 2018-01-29 01:44:08
-            <br><i>Published on: 2018-01-29T01:44:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2018/combined_Proposal-rewarding-fees-to-next-block-miner.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015676.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Miners are not rewarded with fees if they leave transactions out of a block. If they include their own spam transactions, they gain nothing and incur a cost. However, since blocks can have fees resulting in hundreds of thousands of dollars, it would seem unlikely that miners incur a huge cost for not including transactions. A proposal was made by Nathan Parker to reward the fees of the current block to the miner of the next block (or X blocks after the current one) to discourage miners from flooding their own blocks with very high fee transactions. The solution would be implemented in a backwards-compatible fashion by enforcing miners to set an anyone-can-spend output in the coinbase transaction of the block. The miner of 100 blocks after the current one can add a secondary transaction spending this block's anyone-can-spend coinbase transaction and thus claim the funds. This way, the block reward of a block X is always transferred to the miner of block X+100. Implementing this would require a soft-fork. When the fork is activated, miners wouldn’t get any reward for mining blocks for a period of 100 blocks, which could cause the hashrate to drop temporarily. However, if the hashrate drops too much, blocks would take much longer to mine, and miners wouldn’t want that either since they want to go through those 100 reward-less blocks as soon as possible so they can start getting rewards from mining again.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T00:15:41.850043+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Compact Client Side Filtering for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2017-06-01 22:10:34
+            <br><i>Published on: 2017-06-01T22:10:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2017/combined_BIP-Proposal-Compact-Client-Side-Filtering-for-Light-Clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014477.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Laolu Osuntokun, an engineer at Lightning Labs, has proposed a new light client BIP for consideration in a Bitcoin development mailing list. The proposal describes a concrete specification for the much-discussed client-side filtering reversal of BIP-37. Together with Alex Akselrod, Osuntokun has implemented a new light-client mode that uses client-side filtering based on Golomb-Rice coded sets. The motivation behind this work is to enable a light client mode for lnd in order to support a more lightweight back end, paving the way for the usage of Lightning on mobile phones and other devices.Full-nodes maintain an additional index of the chain and serve this compact filter (the index) to light clients which request them. Light clients then fetch these filters, query them locally and maybe fetch the block if a relevant item matches. One aspect missing from this BIP draft is direct support for unconfirmed transactions, an important UX feature for mobile phones. The original "bfd" mailing list chain brought up the issue of direct support for unconfirmed transactions, and there are two possible solutions: a new beefier INV message or a "streaming" p2p extension.Matt Corallo commented on the proposal, mentioning that there was no way to match the input prevouts being spent, which is nice from a "watch for this output being spent" point of view. He also confirmed that it is indeed possible to watch an output for spentness. Osuntokun and Akselrod would like feedback on the parameter selection, especially on the fixed false-positive. Currently specified as P = 1/2^20, they have done analysis and optimization attempting to optimize the following sum: filter_download_bandwidth + expected_block_false_positive_bandwidth.In another blog post, Osuntokun detailed the size and scope of the neutrino light client for bitcoin, including data from Karl Johan Alm. The post includes stats on the total index size for mainnet and testnet, as well as averages for both. He also ran the index for testnet to consider average+median filter sizes in a world with larger blocks. Finally, he included testnet stats which take into account the increase in maximum filter size due to segwit's block-size increase. Osuntokun concludes by saying that they look forward to feedback on their work.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T02:46:18.312338+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

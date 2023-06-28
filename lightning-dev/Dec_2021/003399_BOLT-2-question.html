@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BOLT 2 question</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Benjamin Weintraub 2021-12-09 20:10:10
+            <br><i>Published on: 2021-12-09T20:10:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_BOLT-2-question.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003399.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the post has a question about BOLT #2 and specifically what it means to "fail the channel". They have provided an excerpt from the section for "update_add_htlc," which outlines four scenarios where a node "SHOULD fail the channel". The first scenario involves receiving an amount_msat equal to 0 or less than its own htlc_minimum_msat. The second scenario involves receiving an amount_msat that the sending node cannot afford at the current feerate_per_kw while maintaining its channel reserve and any to_local_anchor and to_remote_anchor costs. The third scenario is when the sending node adds more than the receiver max_accepted_htlcs HTLCs to its local commitment transaction or adds more than the receiver max_htlc_value_in_flight_msat worth of offered HTLCs to its local commitment transaction. Finally, the fourth scenario is when the sending node sets cltv_expiry to greater or equal to 500000000. The author asks whether failing the channel means closing the channel (unilaterally or mutually) or ending the TCP connection or something else entirely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:50:32.050114+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

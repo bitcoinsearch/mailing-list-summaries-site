@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Salvatore Ingala 2021-04-12 15:03:12
+            <br><i>Published on: 2021-04-12T15:03:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_Proposal-Bitcoin-Secure-Multisig-Setup.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018777.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the distinction between a "Signer" and a "Signing device" in a multisig setup. While a "Signer" is defined as a participating member, who is likely using both a hardware wallet and some BSMS-friendly software wallet, the "Signing device" is the hardware wallet. The flow for wallet registration includes the desktop wallet requesting the HWW to register a new multisig wallet, the HWW validating and verifying it with the user, and returning a wallet ID and signature. The desktop wallet stores the full wallet description, ID, and signature, which could be backed up elsewhere. The only caveat is that the script registration is never revocable if a signing key derived from the seed is used. There is a disagreement on going stateless in a multisig setup, with one side arguing that any Signer in the contract must know who the other co-Signers are at all times, while the other side argues that external software only cares about storing certain data and sending it back later. Storing xpubs/descriptors in the desktop software that interacts with the HWW is already common practice and necessary for using any watch-only wallet. The stateful/stateless characteristic of a hardware wallet does not really affect the ability to participate in the BSMS ceremony, whose Signers should indeed be stateful.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T17:34:50.112503+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

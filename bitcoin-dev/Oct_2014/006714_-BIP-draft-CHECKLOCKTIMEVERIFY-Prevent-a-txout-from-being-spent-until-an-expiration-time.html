@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP draft] CHECKLOCKTIMEVERIFY - Prevent a txout from being spent until an expiration time</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2014-10-09 06:14:31
+            <br><i>Published on: 2014-10-09T06:14:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2014/combined_-BIP-draft-CHECKLOCKTIMEVERIFY-Prevent-a-txout-from-being-spent-until-an-expiration-time.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-October/006714.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread starts with Adam expressing his support for a proposal and mentioning that nlocktime as a script property is inconvenient. Then Alan Reiner responds to the thread, stating that he really likes the proposal and sees plenty of opportunities it can provide. One use case Alan mentions is non-interactive recurring payments with ID-association. He explains how this scheme allows the customer to make N recurring payments to a service. Each transaction uses a CHECKLOCKTIMEVERIFY block number approximately X months in the future. The merchant/service has signing access after the locktime, and the merchant software will continuously watch for and sweep all coins available via this mechanism and credit the appropriate customer account. Alan also notes that both the merchant's address and the user's address are in the script, allowing the service to link payment to the user's account. This feature could make it easy to continue paying for a subscription without explicitly linking each payment to the account. In addition to everything else mentioned by Peter in his original proposal, Alan sees OP_CHECKLOCKTIMEVERIFY as an enabling feature.Wladimir chimes in on the thread, saying that Gavin's change to make nlocktime a function is useful but won't help the existing user base, assuming CHECKLOCKTIMEVERIFY is to go into the next major release. Wladimir believes that the next minor release (0.9.4) could have Gavin's change already. However, he doesn't think CHECKLOCKTIMEVERIFY will make it into the next major release. Once headers-first and pruning is merged, he plans to split off the 0.10 branch and give it time to stabilize with a feature freeze. After that, they plan to do a release before the end of the year. Therefore, Wladimir thinks that the earliest we might see CHECKLOCKTIMEVERIFY is in version 0.11, which would be about six months from then.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:50:59.893221+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

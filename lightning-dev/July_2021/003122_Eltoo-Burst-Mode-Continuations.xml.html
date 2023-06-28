@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Eltoo Burst Mode &amp; Continuations</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy 2021-07-10 21:07:02
-            <br><i>Published on: 2021-07-10T21:07:02+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2021/combined_Eltoo-Burst-Mode-Continuations.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003122.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Eltoo channels can be continued without having to go on-chain, by signing a move to a new update key for the final update. This allows up to 32 bits worth of updates before forwarding to a new contract with an additional transaction fee. However, this method adds an additional CSV and increases resolution time linearly. To mitigate this, a "semitrusted burst mode" can be used with a counterparty, where parties move to sequence M+1 and pass through to a 2-step Eltoo update, allowing for 32 bits of sequences to blow through. The burst can be terminated at a certain internal state number, and the last state reflected in M+2. This protocol also improves privacy, as top-level state numbers do not reflect the number of payments strongly. There are mitigations against potential malicious attacks, such as only entering burst mode with long-lived peers, only entering when the initiator has more funds in the channel than you or has some ratio, and limiting the % of liquidity moved during a burst.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T05:07:57.564327+00:00 </i></p>
     
     
 

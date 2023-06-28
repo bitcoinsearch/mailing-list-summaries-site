@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Difficulty adjustment / time issues</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> theymos 2011-09-14 21:45:33
+            <br><i>Published on: 2011-09-14T21:45:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/combined_Difficulty-adjustment-time-issues.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000529.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author suggests using the real average time between all blocks in an interval for a better retarget strategy, as it avoids treating any block specially. However, they acknowledge that this is not significant enough to fork the chain over, given that an attacker would have to maintain control for a long time due to Bitcoin's long retarget interval. The author expresses concern about requiring block times to be within minutes of reality, as this would require not just miners but also clients and relays to have accurate time. Instead, they suggest that discouraged blocks should not count towards confirmations, and relays would need accurate time if they were to discourage blocks.The author proposes a limit of 40 minutes for the network to adjust time to prevent timejacking attacks, but sees no problem with other time rules since time is only used for retargets and LockTime and does not need to be precisely accurate.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T19:33:29.058852+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

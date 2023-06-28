@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC: empty scriptPubKeys and OP_RETURN for marking unspendable txouts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-02-12 15:11:08
+            <br><i>Published on: 2013-02-12T15:11:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2013/combined_RFC-empty-scriptPubKeys-and-OP-RETURN-for-marking-unspendable-txouts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-February/002159.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author proposes two new features for the fidelity bond protocol. The first feature involves using OP_RETURN at the end of a scriptPubkey to mark an unspendable txout, ensuring that it can be immediately pruned. This is preferable to using a spendable scriptPubkey like OP_CHECKSIG, as implementors may fail to write the code to spend non-standard outputs created, which would pollute the UTXO set. Using OP_FALSE is another possibility, but there are no clear advantages over OP_RETURN. The second feature proposed is using an empty scriptPubkey with OP_TRUE or similar to create trivially spendable outputs, providing a mechanism for even non-miners to take funds sacrificed and increasing the incentive to scan the blockchain for sacrifices. This also avoids having to provide the txin to prove the value of the mining fee. In the future, this could be used as a way for multiple parties to collectively sign an assurance contract donating to miners, effectively a mining fee. Making an empty scriptPubkey spent by the scriptSig OP_TRUE a standard transaction type would make collecting the funds easier until miners start doing so themselves. However, the main disadvantage is that it makes it easier for people with buggy custom transaction code to accidentally lose their funds. Feedback on both ideas is requested.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T10:08:16.617350+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

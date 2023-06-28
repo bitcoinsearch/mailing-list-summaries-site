@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BitCoin and MinorFs/AppArmor</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rob Meijer 2011-09-05 11:55:43
-            <br><i>Published on: 2011-09-05T11:55:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2011/combined_BitCoin-and-MinorFs-AppArmor.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000451.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>MinorFs is a filesystem concept which provides private members to objects. The bitcoin object can delegate parts of its private state to other objects, but as long as it doesn't do that, the private state won't be disclosed. It maps all read and write operations directly to the underlying file-system, so it comes with the same lack of guarantee that any file-system comes with once the underlying media becomes flaky. The MinorFs will work already with the existing BitCoin due to the fact that Bitcoin seems to extract $HOME from an environment variable, but there are some caveats. It needs a bash script for starting up bitcoin with $HOME set to the MinorFs home. Bitcoin can be started in only one way, and all potential malware needs to run with at least an AppArmor profile that keeps it from reading /proc/$PID for pids other than itself. All input that helps accommodate bitcoin developer needs in MinorFs would be extremely welcome. In the new version of MinorFs contemplated, there would be a minor change to bitcoin needed, which is that bitcoin would have to use a small library that provides a 'minorfs_getpwuid' function. This function will work like getpwuid on any system without an active MinorFs2, and for any non apparmor confined process. On a system with MinorFs running, it should return a passwd structure with the home changed to the MinorFs2 home. It's a good idea to have data on disk encrypted even if you use something like Minorfs, if only to protect against bootable media attacks.Nils Schneider thinks that MinorFs sounds like an interesting concept, but wallet encryption (already being tested and close to release) is a simpler solution for end-users. The two could be considered complementary. In the new version of MinorFs contemplated, facilities will be provided to pick a granularity for 'object' more suitable for most lines of development (where pseudo persistent processes are an unnatural concept). Haven't really thought about the proper way to do backups yet, and what is considered the currently proper way to keep backups for bitcoin.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-26T20:37:32.450128+00:00 </i></p>
     
     
 

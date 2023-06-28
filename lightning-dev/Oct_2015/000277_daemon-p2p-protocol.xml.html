@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>daemon/p2p protocol</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2015-10-19 22:09:09
-            <br><i>Published on: 2015-10-19T22:09:09+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2015/combined_daemon-p2p-protocol.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000277.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange from October 2015, Mats Jerratsch and aj discussed the risks associated with IP-PubKey-Relationship in lightning nodes. Jerratsch suggested adding it to the gossip protocol. Aj agreed but mentioned the need to mitigate associated risks. The suggestion was then made to have lightning nodes run on dedicated machines and firewalled against any incoming connections. However, aj pointed out that this distinction between wallets for consumers and nodes for routing/merchants would pose a problem since lightning wallets cannot realistically run on dedicated machines/IPs. To mitigate the risks of MITM and eavesdropping, Jerratsch proposed changing the protocol such that the one initiating the connection always sends his signed pubkey object first. However, aj disagreed, stating that if Alice and Bob were being MITM'd, sending a shared secret nonce instead and then just sending signatures avoids revealing who they are while still allowing them to re-establish connection if they can actually talk.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-18T15:31:02.162571+00:00 </i></p>
     
     
 

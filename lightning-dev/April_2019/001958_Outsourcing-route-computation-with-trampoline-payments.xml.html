@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Outsourcing route computation with trampoline payments</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-04-03 03:41:53
-            <br><i>Published on: 2019-04-03T03:41:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2019/combined_Outsourcing-route-computation-with-trampoline-payments.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001958.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email discusses an issue with trampoline nodes creating overlapping routes due to their lack of knowledge about what happened before they received the onion. This can cause issues when using payment_hash as it is currently done and requires a more elaborate solution. The email provides an example network to explain the issue. When the B->C HTLC is resolved, B can instead claim the A->B HTLC and just fail the D->B HTLC, thereby removing D and E from the route and claiming their fees, even though they participated in the route. The email also suggests using payment points/scalars instead of payment hash/preimage to improve trampoline payments, offline vending machines, and payment decorrelation.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T18:03:24.337475+00:00 </i></p>
     
     
 

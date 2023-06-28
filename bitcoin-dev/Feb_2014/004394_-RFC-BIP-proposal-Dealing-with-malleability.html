@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] [BIP proposal] Dealing with malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-02-20 14:08:59
+            <br><i>Published on: 2014-02-20T14:08:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_-RFC-BIP-proposal-Dealing-with-malleability.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004394.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On February 20, 2014, Michael Gronager suggested that a subclass of version 1 transactions should become unmalleable, namely those with sighash=all. This would mean that instead of defining a version 3, only the sender can modify the sighash as it is part of the hash signed. They also acknowledged that they buy the argument of Peter and Gregory that there might exist unpublished transactions out there that do not even conform to the DER rules, so they cannot forbid them from being mined and timestamped. Therefore, they cannot change the consensus rule for version 1 transactions, and only changing the relay rules will not provide a certain guarantee. Gronager supported the BIP but expected the realistic timeline for enforced version 3 transactions to be roughly one year. Pieter Wuille replied to Gronager on February 19, 2014, and stated that the change is not directly intended to avoid incidents. It will take too long to deploy, and software should deal with malleability. This is a longer-term solution intended to provide non-malleability guarantees for clients that are upgraded and willing to restrict their functionality. While they could make all these rules non-standard now and schedule a soft fork in a year or so to make them illegal, it would mean removing potential functionality that can only be re-enabled through a hard fork. This is significantly harder, so they should think about it very well in advance. Wuille also discussed new transaction and block versions, which allow implementing and automatically scheduling a soft fork without waiting for wallets to upgrade. The non-DER signature change was discussed for over two years and implemented almost a year ago, yet they still notice wallets that do not support it. They cannot expect every wallet to be instantly modified, and if software only spends confirmed change and tracks all debits correctly, there is no need.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T02:39:10.948573+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

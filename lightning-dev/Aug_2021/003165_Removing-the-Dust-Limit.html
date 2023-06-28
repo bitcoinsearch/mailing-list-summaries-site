@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Charlie Lee 2021-08-10 18:39:39
+            <br><i>Published on: 2021-08-10T18:39:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_Removing-the-Dust-Limit.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003165.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development email thread, a proposal was made for a softforkable design that would allow Bitcoin to maintain a non-CT block (the current scheme) and a separately-committed CT block. This would enable unconditional privacy and computational soundness, as well as retaining the dust limit. The proposal involves creating "burn" transactions in the legacy non-CT block, which magically causes the same amount to be created (with a trivial/publicly known salt) in the CT block. To move from the CT block back to legacy non-CT, one would match one of those "burn" TXOs and spend it, with a proof that the amount being removed from the CT block is exactly the same value as the "burn" TXO being spent. The total amount of funds that are in all CT outputs in the legacy non-CT block would have a known upper limit, that cannot be higher than the supply limit of the legacy non-CT block, i.e., 21 million BTC. At the same time, individual CT-block TXOs cannot have their values known; what is learnable is only how many BTC are in all CT block TXOs, which should be sufficient privacy if there are a large enough number of users of the CT block. Litecoin is doing something similar with MWEB by using MimbleWimble with extension blocks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:14:07.881488+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

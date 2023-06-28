@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[RFC] Lightning payment format</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2017-05-04 04:39:50
-            <br><i>Published on: 2017-05-04T04:39:50+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/May_2017/combined_-RFC-Lightning-payment-format.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000694.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Fabrice Drouin suggested adding a timestamp and expiry date to payment requests. Rusty Russell added these features, with the default expiry being one hour. The optional timestamp is encoded using 32 bits, while the variable length encoding is used for the expiry timestamp. These changes were reflected in the code that was pushed. The tagged parts of the data include the description of the payment, the fallback on-chain address, and extra routing information. The script `lightning-address.py` was updated to accept an expiry time in seconds as an argument. This Python script encodes payment requests and decodes Lightning Network invoices. The `--description` flag specifies what is being purchased, while the `amount` option indicates the amount of the transaction in millisatoshi.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T01:12:45.602345+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using a storage engine without UTXO-index</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tomas 2017-04-11 08:43:30
+            <br><i>Published on: 2017-04-11T08:43:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Using-a-storage-engine-without-UTXO-index.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014132.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Eric Voskuil and Tomas van der Wansem, the topic of splitting transactions was discussed. The purpose of splitting transactions was to optimize storage on P2P networks. However, Eric argued that a transaction cannot be validated based solely on its outputs, as the entire transaction must be relevant for validation. Double-spend information is crucial for node defense against invalid transactions, but alternatives may exist. Switching tips during reorg is a tradeoff that reduces complexity but requires the maintenance of state information for each branch, making it a costly optimization. The blockchain is only eventually consistent across nodes, and accepting a block under different circumstances could be considered a hard fork. The design progress of Bitcrust was discussed with Eric encouraging Tomas to consider any consensus-related detail. Finally, Tomas expressed interest in further exploring libbitcoin to gain insights for Bitcrust.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T23:52:57.489392+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

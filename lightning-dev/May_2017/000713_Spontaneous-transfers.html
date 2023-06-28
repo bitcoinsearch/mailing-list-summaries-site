@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Spontaneous transfers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2017-05-09 01:22:42
+            <br><i>Published on: 2017-05-09T01:22:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2017/combined_Spontaneous-transfers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000713.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Christian Decker, a prominent Bitcoin developer, has been contacted by some users who want the Lightning Network to consider other use-cases besides invoice based transfers. They would like to be able to send donations without prior contact between the sender and recipient, and not have to go through the invoice-transfer-release cycle that invoices support. The recurring requirements for these types of transfers are that the recipient gets the payment preimage so that she can trigger the clearing of the HTLC, and there must be a mechanism that signals to the recipient who the sender is, without out of band communication. To solve this issue, Christian Decker proposed two possible solutions. The first option involves stuffing information into the routing info, which can be interpreted as the sender information, and then putting R and Alice’s ID in there. The second option involves creating a circular route, from Alice sending X+fees to Bob and then fees back to herself. This way Alice can trigger the payment herself, but the sender’s identity cannot be communicated to Bob. Rusty, another Bitcoin developer, suggested using a wiki on Github to document brainstorming ideas about possible solutions for the Lightning Network.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:49:11.744754+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

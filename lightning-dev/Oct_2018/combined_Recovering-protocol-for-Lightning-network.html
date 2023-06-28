@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recovering protocol for Lightning network <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001488_Recovering-protocol-for-Lightning-network.html">Recovering protocol for Lightning network</a>
+                        <b>Johan Torås Halseth 2018-11-01 10:26:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2018/001485_Recovering-protocol-for-Lightning-network.html">Recovering protocol for Lightning network</a>
+                        <b>Margherita Favaretto 2018-10-31 23:58:57</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001488.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-11-01T10:26:09+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Margherita Favaretto shared her project on GitHub, aimed at realizing a recovering protocol for Lightning Network. The current issue in the Eltoo mechanism is that if one of the two nodes loses some information, it can ask the other node to share the most recent status. However, this mechanism doesn't include the case where the other node shares an older transaction, more favorable for its balance. Margherita's idea is to use the other connected nodes as a backup of one's recent status. For each transaction between A and B, A sends an encrypted information to C regarding the last commitment transaction with B, and for each commitment transaction with C, sends an encrypted information to B regarding the last commitment transaction with C. In this way, if A loses the last transactions, she may ask the information to the other connected node and update the status. Margherita is open to discussion and possible collaborations to work together. Johan suggested Margherita to look into "data loss protection" as defined in the BOLTs, watchtowers, and static and dynamic channel backups, as they touch onto what Margherita is describing.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-25T15:02:47.366897+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

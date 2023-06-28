@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Playing with full-rbf peers for fun and L2s security</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2022-07-08 15:09:33
+            <br><i>Published on: 2022-07-08T15:09:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2022/combined_Playing-with-full-rbf-peers-for-fun-and-L2s-security.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020660.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list centered around the potential for a double-spend denial of service (DoS) attack on the Wasabi protocol. It was noted that the attacker could disrupt the protocol indefinitely without spending any funds. The attacker's input double spend would be at an impractical feerate and never included in a block, sitting at the bottom of the mempool. Other users' only practical choice would be to double-spend their own input at competitive rates higher than the attacker or wait and hope to win a propagation race somewhere. The conversation then shifted to the DoS vectors already mitigated by Wasabi, such as a participant stopping participation after the first phase of the round leading to coinjoin failure. Punishment for double-spends would be difficult since transactions are broadcasted after signing and before coinjoin tx broadcast. Inputs are already checked multiple times for double spend during the coinjoin round. If all inputs in the coinjoin transaction that failed to relay are checked and one or more are found to be spent later, it is unclear how punishment will be enforced and how this affects the attacker with thousands of UTXOs or normal users. Ultimately, it was noted that a motivated attacker can DoS attack Wasabi by spending money, and it is a design choice that has served them well so far.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T21:52:53.179187+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

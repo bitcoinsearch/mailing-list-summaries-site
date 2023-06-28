@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Schnorr signatures BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2018-08-05 14:33:52
+            <br><i>Published on: 2018-08-05T14:33:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2018/combined_Schnorr-signatures-BIP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016279.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed change from "Let R = sG - eP" to "Let R = sG + eP" for the verification equation allows faster verification by avoiding negating a point or coefficient. Computing the non-quadratic residue is not the same cost as computing a quadratic residue, so the revised proposed change makes the verification equation "R + sG + eP = 0," which is suitable for batch verification. For single signature verification, the check becomes computing Q := sG + eP, verifying that Q isn't the point at infinity and Q.x = r, and verifying that Q.y is *not* a quadratic residue. The proposal effectively suggests negating the 's' value in a signature instead of the 'e' value. Changing the verification equation removes one negation operation from the cost of doing verification in either verification procedure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:43:36.836964+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

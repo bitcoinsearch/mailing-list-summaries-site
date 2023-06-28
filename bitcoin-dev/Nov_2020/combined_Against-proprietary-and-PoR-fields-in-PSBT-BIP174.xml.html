@@ -11,71 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Against proprietary and PoR fields in PSBT BIP174 <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018275_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Ferdinando M. Ametrano 2020-11-16 23:38:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018284_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Jonathan Underwood 2020-11-26 23:24:32</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018284_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Jonathan Underwood 2020-11-26 23:24:32</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018275_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Ferdinando M. Ametrano 2020-11-16 23:38:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018284_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Jonathan Underwood 2020-11-26 23:24:32</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018274_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Ferdinando M. Ametrano 2020-11-16 23:01:34</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018274_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Ferdinando M. Ametrano 2020-11-16 23:01:34</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018275_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Ferdinando M. Ametrano 2020-11-16 23:38:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Nov_2020/018274_Against-proprietary-and-PoR-fields-in-PSBT-BIP174.xml.html">Against proprietary and PoR fields in PSBT BIP174</a>
-                        <b>Ferdinando M. Ametrano 2020-11-16 23:01:34</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018275.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2020-11-16T23:38:19+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>A proposal has been made to remove the 'proprietary' and 'proof-of-reserves' types from the PSBT specifications, as they have nothing to do with the intrinsic operations required to finalize a valid transaction from PSBT manipulation. Ferdinando M. Ametrano has submitted a pull request to the bips repository to remove these types, which are not covered in the BIP174 test vectors. He questions the rationale for these types and believes that any information content they could provide for non-standard PSBT manipulation could stay in the *unknown* field without any loss of generality.According to him, as long as BIP174 clearly prescribes that unknown data must be kept during PSBT manipulation, that should suffice. The author also stresses that he has a project where they include proprietary information in the PSBT, and any PSBT software supporting unknown data keeps the proprietary information and the proprietary software retrieves that data from serialized PSBT with no problem. Therefore, there is no need for a PSBT implementation to provide explicit support for these types.The author's conclusion is reinforced by the evidence of all PSBT implementations he knows of, including bitcoin core and HWI, not implementing proprietary and proof-of-reserve types. It is common practice to set aside one or more "version slots" for proprietary usage so that people adding their own features don't use the official BIP version. As a BIP174 library, one does not have to add logic to "support" those versions, just treat them as unknown. The only people who will need to worry about the logic of parsing and encoding those versions are apps that utilize them. However, there is a high probability that part of BIP174 would be ignored if included.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-14T16:20:16.524088+00:00</i></p>
-    
-
     
 
     <footer>

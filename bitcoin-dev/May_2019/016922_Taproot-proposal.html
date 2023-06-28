@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-05-08 04:37:37
+            <br><i>Published on: 2019-05-08T04:37:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Taproot-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016922.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Sjors Provoost and Pieter Wuille, they discussed the possibility of avoiding an "everyone agrees" branch by using an unknown discrete logarithm. The technique involves taking random data, hashing it with SHA256 and acquiring a 256-bit number, and then treating that number as an X coordinate to see if there exists a point on the secp256k1 curve at that coordinate. About half of the possible X coordinates will have a point on the curve. The scalar behind the above point cannot be known unless either the hash function is broken or ECDLP is broken. The point is just an arbitrary point on the curve, so it is unknown to the rest of the world whether somebody knows the scalar or nobody knows. Lightning developers may have an opinion on everyone agreeing with respect to hash pre-images. Lightning may eventually switch to using payment points/scalars instead of hashes/preimages, which would allow them to have path decorrelation within a route and in multiple routes of the same payment. This is enabled by Schnorr, as this requires Scriptless Script.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:37:48.224258+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

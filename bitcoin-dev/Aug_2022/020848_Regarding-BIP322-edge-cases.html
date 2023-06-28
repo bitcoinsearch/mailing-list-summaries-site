@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Regarding BIP322 edge cases</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> vjudeu at gazeta.pl 2022-08-10 15:05:59
+            <br><i>Published on: 2022-08-10T15:05:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2022/combined_Regarding-BIP322-edge-cases.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020848.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A hypothetical OP_CHECKDATASIG can perform an ECDSA public key recovery for legacy P2PKH signing, which can be done safely inside BIP. If OP_CHECKDATASIG is not handled, then signing by scripts can handle that, but it would unnecessarily complex the script. To make a new opcode compatible with existing schemes, it has to be assigned some byte for OP_CHECKDATASIG or any other new opcodes. Backward compatibility needs to be considered and it can be achieved by introducing OP_RESERVED to make it compatible with "Bitcoin Message". Assigning unused opcode would make things more complex as in Script, those opcodes make transactions invalid, but inside TapScript, those opcodes are defined as OP_SUCCESS, and make things automatically valid. The draft of BIP322 has some TODO items like Silent Transactions, some invalid opcode to allow only in various proof types, and a way for the initial signer to delegate to another scriptPubKey. A NOP can be placed at the beginning of the script to activate proof parsing mode and limit what opcodes scriptPubKeys should be eligible to sign from them. For Silent Transactions, a subsection can be made to operate with them using its scriptPubKey. Delegation to another scriptPubKey can be done through MAST.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T23:41:38.392044+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

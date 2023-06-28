@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BOLT Draft] Onion Routing Spec</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Olaoluwa Osuntokun 2016-10-20 22:26:07
-            <br><i>Published on: 2016-10-20T22:26:07+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2016/combined_-BOLT-Draft-Onion-Routing-Spec.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-October/000637.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>During a discussion on updating the Lightning Network specification, Christian Decker mentioned that they have dropped the end-to-end payload from the specification and kept the shared secret backlog for now. They discussed committing the routing information to the payment hash which was deemed awkward since it would increase the per-hop payload size which is expensive to do. They envisioned that the payment hash would be a parameter to the packet processing/creation function and would be concatenated to the material being authenticated similar to the "associated data" in AEAD cipher modes. This way there is no additional data added to the packets but the payment hash is authenticated as part of packet processing at each hop. If an adversary attempts a replay, then they're forced to use the same payment hash, otherwise the packet won't propagate. Assuming all nodes remember all payment hashes, then replay attempts always fail and come at a direct monetary cost to the attacker.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-18T16:51:54.820850+00:00 </i></p>
     
     
 

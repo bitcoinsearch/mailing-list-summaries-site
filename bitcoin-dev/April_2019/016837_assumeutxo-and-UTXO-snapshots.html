@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>assumeutxo and UTXO snapshots</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2019-04-03 23:03:12
+            <br><i>Published on: 2019-04-03T23:03:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_assumeutxo-and-UTXO-snapshots.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016837.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The assumeutxo proposal aims to improve the usability of the Bitcoin network by allowing nodes to initialize using a serialized version of the UTXO set rendered by another node at a predetermined height. This could allow fully validating nodes to be run on modest hardware under limited bandwidth constraints, such as mobile devices. The initializing node would sync headers from the network, then obtain and load one of these UTXO snapshots, which takes around 23 minutes, not accounting for download of the 3.2GB snapshot. Based upon the snapshot, the node is able to quickly reconstruct its chainstate, and compares a hash of the resulting UTXO set to a preordained hash hard-coded in the software a la assumevalid. Even while background validation is happening, the node can validate incoming blocks and transact with the benefit of the full (assumed-valid) UTXO set. Snapshots could be obtained from multiple separate peers in the same manner as block download.While similar to assumevalid, there are security implications that need to be taken into consideration. For example, an attacker could trick a user into transacting under a false history if they convince them to start a bitcoind with a malicious assumeutxo parameter and then supply them with a false coin assignment. As a result, it is recommended that if we were to implement assumeutxo, we should not allow its specification via command line argument.A particularly exciting use case for assumeutxo is the possibility of mobile devices functioning as fully validating nodes, allowing very fast startup using an accumulator of a few kilobytes in lieu of a multi-GB snapshot. The proposal has been submitted as a draft implementation of snapshot usage via RPC and a related issue has been created at the Bitcoin Github repository. Concrete plans for deployment steps should be discussed in the Github issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:58:10.024582+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

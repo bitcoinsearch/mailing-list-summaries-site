@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[PATCH v3] daemon: encrypted communication (version 3)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2015-10-27 19:44:07
-            <br><i>Published on: 2015-10-27T19:44:07+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2015/combined_-PATCH-v3-daemon-encrypted-communication-version-3-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000300.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent exchange about the technicalities of encryption, Rusty and Pierre discuss some additional details. They consider the use of ECDH to derive a shared secret, which is then used to generate transmission encoding parameters for each side. These include Session AES-128 key, Session HMAC key, and IV for AES. When encrypting packets, all data transmitted is covered by an SHA256 HMAC, with totlen referring to the size of the unencrypted serialized protobuf message. The comment on this aspect is somewhat misleading, as totlen does not define encrypted message boundaries. However, it is necessary for determining how much padding to ignore. Rusty also notes that he chose to encode the length on 64 bits to avoid wrapping.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T21:15:42.552991+00:00 </i></p>
     
     
 

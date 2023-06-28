@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dmitry Petukhov 2019-07-08 10:26:24
+            <br><i>Published on: 2019-07-08T10:26:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017112.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The bitcoin-dev mailing list discusses a method for eliminating malleability in UTXOs using the ANYPREVOUTANYSCRIPT signature, which would be used to restrict spending conditions. This would require a second signature to commit to the entire transaction. The control-sig would be created with flags meaning ANYPREVOUTANYSCRIPT to restrict the outputs. P would be the pubkey of the actual key needed to spend the UTXO and the signature of P can commit to all the inputs and outputs to prevent malleability. The use of NOPREVOUT and NOSCRIPT flags for sighash is suggested as a way to exclude previous outputs and all inputs except the current one. By combining these with ANYONECANPAY, this would mean NOINPUT. With NOPREVOUT|ANYONECANPAY|NOSCRIPT, it would create ANYPREVOUTANYSCRIPT. With NOPREVOUT|NOSCRIPT, you could commit to "all the inputs beside the current one," allowing for a spending restriction such as a "vault" UTXO that requires an additional "control" UTXO to spend. This mechanism could enable the rights to spend certain UTXOs to be transferred or revoked retroactively by creating taproot branches with different pairs of (vault, control) keys and a chain of transactions that each spend the previous control UTXO so that the newly created UTXO becomes controlled by the control key of the next pair together with the vault key in that pair.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:14:48.479817+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

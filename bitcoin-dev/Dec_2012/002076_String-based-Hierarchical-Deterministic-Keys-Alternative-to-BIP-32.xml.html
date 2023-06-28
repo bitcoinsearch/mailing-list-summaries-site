@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>String-based Hierarchical Deterministic Keys - Alternative to BIP 32</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Koss 2012-12-05 03:06:00
-            <br><i>Published on: 2012-12-05T03:06:00+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2012/combined_String-based-Hierarchical-Deterministic-Keys-Alternative-to-BIP-32.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-December/002076.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author has created an alternative to the BIP 32 proposal, which uses a hierarchical string representation instead of an integer hierarchy. He names keys based on this system and envisions using it in services. The author has not done any work to recommend how keys would be represented directly in the client. The author is looking for feedback on any security concerns with their scheme and whether not introducing the enlarged key space that BIP 32 does represents a weakness of their scheme versus BIP 32. The author is happy to release their source code (Python) but wants to get feedback first. In response to a question about serializing points using a compressed format before going into the hash function, Pieter Wuille suggests standardizing on just compressed keys since they take less space in the blockchain and there is no additional value in uncompressed keys. The software may continue to support uncompressed keys for compatibility, but for a new standard, compressed keys make sense. The encoding itself is not hard, just 0x02 or 0x03 followed by the 32-byte encoding of X. Decoding is harder but is never needed in the derivation. Decoding compressed public keys is somewhat harder as Y must be reconstructed, but this is only necessary when someone wants to import an extended public key for watch-only wallets.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T09:40:10.473215+00:00 </i></p>
     
     
 

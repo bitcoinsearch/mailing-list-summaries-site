@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Request review: drop misbehaving peers</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gavin Andresen 2011-09-15 12:25:23
-            <br><i>Published on: 2011-09-15T12:25:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2011/combined_Request-review-drop-misbehaving-peers.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000537.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this context, Gavin Andresen is responding to Mike's detailed review. Andresen agrees with Mike's points and decides to simplify the code by adding a -banscore option. If a node accumulates more than -banscore misbehavior points, it will be dropped and banned for -bantime seconds. Andresen also plans to make bad signatures a banning offense. Additionally, Andresen decides to remove the number-of-sigops and non-standard-transaction penalties. To avoid modifying many methods, Andresen used a mutable field with const setter. He believes that a block/transaction's DoS score is metadata and not part of its state. Finally, Andresen agrees to make GetTime() unit-test friendly as suggested by Mike.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-04T19:43:58.910501+00:00 </i></p>
     
     
 

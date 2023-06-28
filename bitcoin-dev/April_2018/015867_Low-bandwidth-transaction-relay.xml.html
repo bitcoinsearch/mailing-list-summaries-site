@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Low-bandwidth transaction relay</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jim Posen 2018-04-03 17:45:34
-            <br><i>Published on: 2018-04-03T17:45:34+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2018/combined_Low-bandwidth-transaction-relay.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015867.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Gleb Naumenko, a member of the bitcoin-dev community, proposed an idea related to transaction relay protocol. After conducting an emulation and simulation, he found out that around 90% of INV messages sent by public-IP nodes are idle (duplicate), which results in significant overall bandwidth consumption. To address this issue, Gleb suggested a new protocol that would keep the same zero-trust, decentralization guarantees and latency while reducing redundancy by filtering transactions through N=2 links. The proposal is in some sense similar to BIP37 but applied to public-IP nodes. Gleb's idea is to have a new node agree on some filter with each of 8 nodes it connects to while joining the network. Each node will then relay only a subset of transactions, thereby reducing redundancy. To make the new protocol robust to attacks, Gleb has two extensions in mind: set reconciliation and rotating filters every N minutes. Feedback on the proposal is appreciated.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T01:21:19.492873+00:00 </i></p>
     
     
 

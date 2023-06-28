@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Discussion related to pull 349 and pull 319 (escrow transactions)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> bgroff at lavabit.com 2011-08-03 06:10:47
+            <br><i>Published on: 2011-08-03T06:10:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2011/combined_Discussion-related-to-pull-349-and-pull-319-escrow-transactions-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000270.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developer Gregory Maxwell has implemented a multiple signature escrowed transaction system, and believes that it should be added to the client sooner rather than later. Although the system needs more testing and discussion before being added, one challenge with implementation is that because it requires a new transaction type, it won't be deployable until an updated isStandard is widely used in the network. Maxwell also noted that there is an issue with multisig validation, as redundancy in the script length coding opcodes makes it possible to code a script multiple ways, and the signature validation code creates new template scripts in order to evaluate signatures for one output. However, the code in bitcoin is not careful to code the new script the same way the original one was coded, causing the signature validation to fail when something used OP_PUSHDATA when a direct length could have been used.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T19:36:16.453167+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

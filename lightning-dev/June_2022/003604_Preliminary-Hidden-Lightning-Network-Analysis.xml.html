@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Preliminary Hidden Lightning Network Analysis</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tony Giorgio 2022-06-13 16:58:31
-            <br><i>Published on: 2022-06-13T16:58:31+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2022/combined_Preliminary-Hidden-Lightning-Network-Analysis.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003604.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation between Tony and René Pickhardt, they discuss the issue of exploiting channel privacy in Lightning Network. Tony suggests parsing through the data from <a href="https://github.com/lnresearch/topology">https://github.com/lnresearch/topology</a> to get a link between every unspent p2wsh transaction up to 6 hops from the opening transaction between two nodes. He plans to keep a list of every node and their possible p2wsh transactions and probe with those. René agrees with this approach and adds that probing ACINQ's node one could probabilistically learn which nodes tend to have unannounced channels and gain some speedup by probing those nodes first. René also mentions that wallets tend to have poor utxo management, and looking at the on-chain signal, one can probably guess for a p2wsh to which two nodes it might belong and try them first. They both agree that these strategies should reduce the number of tested nodes for a newly seen p2wsh output significantly and probably make it feasible to probe the network as new blocks come in. René also points out that the exploit with short_channel_ids is known since 2019 and mentions the use of error codes of onions.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T08:53:14.120877+00:00 </i></p>
     
     
 

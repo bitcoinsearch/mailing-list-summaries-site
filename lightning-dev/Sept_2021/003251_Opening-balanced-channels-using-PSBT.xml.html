@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Opening balanced channels using PSBT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Olaoluwa Osuntokun 2021-09-22 23:30:56
-            <br><i>Published on: 2021-09-22T23:30:56+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2021/combined_Opening-balanced-channels-using-PSBT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003251.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email conversation between Ole Henrik Skogstrøm and Laolu details a method of opening balanced channels using LND's psbt option when opening channels. The process involves joining funded PSBTs before signing and submitting them, which enables the opening of a balanced channel between two nodes or a ring of balanced channels between multiple nodes. The 'balanceofsatoshis' tool has a command that packages up the interaction into an easier-to-use format. However, doing this manually requires caution since lnd will only lock the UTXOs allocated for the funding attempt for a few minutes. Lightning Pool also uses this trick to allow users to purchase channels that are 50/50 balanced and buy channel leases for a third party. Compared to other approaches, the process can be automatically batched with other channels created in that epoch and uses traits of the Pool account system to make things atomic.The email includes an example of the complete flow for a single channel as well as an example of the complete flow for a ring of channels between multiple nodes. The process involves collaboration between nodes by sending PSBTs back and forth to each other. Automating the process through a client would be more efficient than manual collaboration. It is important to note that the balanced-ness of a channel is a transitory state and that opening channels like these only serves to allow the channel to start in the state. If fees and channel policies aren't set accordingly, then it's possible that a normal payment or balance flow shifts the channel away from equilibrium shortly after the channel is open.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T16:12:25.153709+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Commitment transaction format suggestions/proposals.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Fabrice Drouin 2017-01-25 21:27:52
-            <br><i>Published on: 2017-01-25T21:27:52+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2017/combined_Commitment-transaction-format-suggestions-proposals-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-January/000664.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation between Rusty Russell and Fabrice Drouin, they discussed changes to the offered HTLC output script in Bitcoin's Lightning Network. They proposed using a multisig 2-of-3 with `localkey`, `remotekey` and `revocationkey`. The script allows for funds to be claimed without waiting for HTLC timeout refunds. Additionally, the output can be spent with remote key and payment preimage or with remote key and local key. It can also be spent with the remote key and revocation key. The witness script can also be used to spend the output with the payment preimage and the remote and local keys, with the remote key after a delay. The script has improvements including using revocation keys which means users don't know the revocation key that can be used to take all funds if a revoked commit tx is published. The proposed solution includes an OP_SWAP, OP_SIZE 32 OP_EQUAL, OP_NOTIF, OP_ELSE and other elements. An optimization suggestion was made but deemed unnecessary due to "minimal IF constraints". Finally, the output can be spent with the payment preimage and the remote and local keys, with the remote key after a delay.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T00:55:20.030045+00:00 </i></p>
     
     
 

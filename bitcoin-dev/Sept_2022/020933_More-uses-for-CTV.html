@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More uses for CTV</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-09-19 01:22:43
+            <br><i>Published on: 2022-09-19T01:22:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2022/combined_More-uses-for-CTV.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020933.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses potential uses of OP_CHECKTEMPLATEVERIFY (BIP-119), a proposal that allows Bitcoin transactions to be more efficient. One use case is congestion control, where CTV could be used to "compress" settlement commitments and facilitate later unpacking of the CTV outputs into the contract's true end state. This can help smooth fee rates and create a less spiky incentive to mine. Another potential application is in atomic mining pool payouts, where direct-from-coinbase payouts are desirable for avoiding some trust in pools. However, the size of the coinbase outputs owed to constituent miners limits the number of participants in the pool. If the payout was instead a single OP_CTV output, an arbitrary number of pool participants could be paid out "atomically" within a single coinbase. The author raises some concerns about the proposed atomic mining pool payouts design, such as weird dependencies between the coinbase output scriptpubkey, the header's merkle root commitment, and the CTV hash. The author also questions the trust removal statement of this design, as the job negotiator operator always has malleability to select the coinbase output scriptpubkey. The author suggests an alternative design that favors the payouts settlement directly over Lightning channels to save on-chain fees and avoid leaking the mining pool hashrate distribution. However, this scheme might not fit with the SPLNS "real-time" calculation proposed by the paper.The author also suggests that the paper would benefit from a fully fleshed-out "coinbase generation" scheme and provides a link to a scratch of further scheme analysis. Overall, the author acknowledges the simplicity of CTV in concept and implementation and thinks it is likely to continue to yield potential applications, especially in light of a possible increase in L2 usage.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T23:46:29.759560+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

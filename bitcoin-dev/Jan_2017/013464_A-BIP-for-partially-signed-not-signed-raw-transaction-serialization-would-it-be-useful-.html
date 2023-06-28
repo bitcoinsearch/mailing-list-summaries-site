@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A BIP for partially-signed/not-signed raw transaction serialization; would it be useful?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Priest 2017-01-09 22:15:17
+            <br><i>Published on: 2017-01-09T22:15:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2017/combined_A-BIP-for-partially-signed-not-signed-raw-transaction-serialization-would-it-be-useful-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013464.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There is a need for a standardized specification for unsigned transactions to eliminate the friction caused by different serialization methodologies used in partially signed multisig raw transactions and not-signed raw transactions. This was proposed by 木ノ下じょな via bitcoin-dev who has seen similar issues across different projects that support multisig with users responsible for partial transaction transport. Electrum, Copay, Coinb.in, Bitcoin Core, etc. all have different serialization methodologies for partially signed multisig raw transactions as well as not-signed raw transactions regardless of scriptPubkey. The proposal for standardization will ensure that all unsigned transactions are of the same form and the signature section of the transaction should contain all the required information to make the signature. To achieve this, someone needs to write up a specification that is standardized so that all unsigned transactions are of the same form. The signature section should contain all the information required to make the signature, and it needs to be encoded in a way that the signing application (a blockchain library like BitcoinJ or BitcoinJS) can tell that it is unsigned. Prior to proposing a BIP, opinions were gathered to know if there is a need for one.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:10:26.780832+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

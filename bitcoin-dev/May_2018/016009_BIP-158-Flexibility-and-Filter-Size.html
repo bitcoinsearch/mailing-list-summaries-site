@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 158 Flexibility and Filter Size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2018-05-23 07:38:40
+            <br><i>Published on: 2018-05-23T07:38:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_BIP-158-Flexibility-and-Filter-Size.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/016009.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author checked filter sizes as a proportion of block size for each sub-filter and attached a graph. The first ~120,000 blocks are too small for Golomb-Rice coding to compress the filters efficiently. However, after block 120,000, the filter compression converges quickly to near-optimal value. The ratio of the combined size of separated filters versus the size of a filter containing all of them is pretty much the same size. After block 150,000, the mean of the ratio between them is 99.4%. Therefore, not much compression efficiency is lost when separating the basic filter into sub-filters.Jim Posen suggested advertising a bitfield for each filter type that the node serves where the bitfield indicates what elements are part of the filters. This removes the notion of decided filter types and instead leaves the decision to full-nodes. The author thinks it makes more sense to construct entirely separate filters for different types of elements and allow clients to download only the ones they care about. If there are enough elements per filter, the compression ratio shouldn't be much worse by splitting them up. The suggestion is to create three separate filter types, one for output scripts, one for input outpoints, and one for TXIDs, each signaled with a separate service bit. There is also the question of whether to separate or combine the headers. The author would lean towards keeping them separate because it's simpler that way. The option of a prev output script filter or rolling that into the block output script filter was not included because it changes the security model (cannot be proven to be correct/incorrect succinctly).</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:27:37.089565+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

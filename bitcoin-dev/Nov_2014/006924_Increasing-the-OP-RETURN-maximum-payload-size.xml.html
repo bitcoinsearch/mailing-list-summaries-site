@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Increasing the OP_RETURN maximum payload size</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Flavien Charlon 2014-11-17 11:43:38
-            <br><i>Published on: 2014-11-17T11:43:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2014/combined_Increasing-the-OP-RETURN-maximum-payload-size.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-November/006924.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The concern with OP_RETURN is that it encourages the use of blockchain as a convenient transport channel, rather than for data that the world needs to see to validate it. The number one user of the blockchain as a storage and transport mechanism is Counterparty, and limiting OP_RETURN to 40 bytes did not prevent them from doing so. In fact, they used multi-sig outputs which is worse than OP_RETURN since it's not always prunable, and yet let them store much more than 40 bytes. For Open Assets, there is a need to store a URL in the OP_RETURN output (with optionally a hash) plus some bytes of overhead. However, 40 bytes is insufficient for this purpose. Storing only a hash is fine for the most basic timestamping application, but it's hardly enough to build something interesting. There were 1,674 OP_RETURNs in the blockchain for the month of October 2014. Assuming they were all 40 bytes, that means an increase of 14.37 bytes per block. Considering a 1 MB block, that's about 0.0013% of the block used up by OP_RETURN data on average. Increasing to 80 bytes will have a negligible impact on bandwidth and storage requirements while being extremely useful for many use cases where a hash only is not enough. Pieter Wuille's main concern with OP_RETURN is that it seems to encourage people to use the blockchain as a convenient transport channel, rather than just for data that the world needs to see to validate it. He'd rather encourage solutions that don't require additional data there, which in many cases (but not all) is perfectly possible.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T14:16:25.742411+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bitcoin scripting and lisp</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2022-03-07 22:56:38
+            <br><i>Published on: 2022-03-07T22:56:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_bitcoin-scripting-and-lisp.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020077.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion starts with a query regarding the coin set model, where each scriptpubkey gets run and returns a list of extra conditions. The question is whether this means it gets recursive covenants or if there's a condition in the list that is written in a more restrictive language which cannot return a list of conditions. There's also a mention of serialization being verbose and suggestions for optimizing it for small lists and literal numbers. The conversation moves on to compression at the consensus layer, which isn't being used aggressively yet. There's a hook for doing compression, but it has the downside of adding up very nonlinearly when combined with the cost of transactions. Even with that form of compression maxed out, gzip could still do some compression, but it's better done in the database and wire protocol formats rather than changing the format hashed at the consensus layer. There's a discussion about the opcodes used in the first section being directly from Chia Lisp, while the rest are to complete the "bitcoin" functionality. The last two are extensions that are more food for thought than a real proposal. It's hard to see how they mix because everything in Lisp is completely sandboxed, and that functionality is important to a lot of things. AJ proposes a completely alternative format to OG Bitcoin SCRIPT, as nothing in the design of Tapscript versions prevents them from completely changing the interpretation of Tapscript bytes and using a completely different language.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T17:32:52.683475+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Incentivising full nodes by having SPV nodes to pay for data requests</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2015-08-03 17:22:16
+            <br><i>Published on: 2015-08-03T17:22:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_Incentivising-full-nodes-by-having-SPV-nodes-to-pay-for-data-requests.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/009880.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a post to the bitcoin-dev mailing list, Luv Khemani discussed the issue of full nodes and their role in validating transactions and keeping miner dishonesty in check. The problem is that full nodes bear the full cost of validating/relaying/storing the blockchain and servicing SPV clients but gain nothing financially from it. As a result, there is a tragedy of the commons problem where full nodes are likely to continue decreasing as a percentage of total Bitcoin nodes. This is exacerbated by the fact that as more and more people use SPVs, the burden on existing full nodes will increase even without a block size increase, which will further reduce the number of full nodes. The primary reason why many in the technical community are against drastic blocksize increases is that it worsens the problem of decentralization as this cost increases. However, technically, the hardware/bandwidth required to run full nodes supporting considerably larger blocks (4MB-8MB) is not out of reach of many individuals around the globe. The core issue, according to Khemani, is that of incentive, because at the end of the day, running a full node is not free and at larger blocks costs will not be trivial. Khemani proposes that full nodes could be incentivized through payment channels and lightning. A node could advertise its rates to an SPV node upon connection and the SPV could either agree or look for another node with lower fees. If implemented, fees are likely to be trivial (few satoshis per request) as competition will drive down fees close to the cost of running a full node. This should spur an increase in the number of full nodes and increase decentralization of the network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T18:07:47.116351+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

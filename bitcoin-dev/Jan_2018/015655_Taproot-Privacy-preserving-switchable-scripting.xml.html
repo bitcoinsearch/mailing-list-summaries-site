@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Taproot: Privacy preserving switchable scripting</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Natanael 2018-01-24 18:51:27
-            <br><i>Published on: 2018-01-24T18:51:27+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2018/combined_Taproot-Privacy-preserving-switchable-scripting.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015655.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email conversation between Tim Ruffing and the Bitcoin-dev community discusses a proposal for preventing theft in a blockchain transaction. The original proposal was deemed flawed, but the new proposal involves committing a hash to the blockchain and revealing the key later. This reduces the risk of an attacker intercepting the key since it would have already been committed. However, there is still a potential attack where an attacker could prevent the transaction from reaching miners and create their own commitment hash for a theft transaction. To reduce the risk of this attack, the community suggests publishing encrypted transactions as the commitment, then publishing the key to propagate it quickly. However, this could potentially be a major DoS vector against the network. As a solution, they suggest redefining how blocks are processed so that encrypted transactions can be pruned if the key has not been published within a certain timeframe. Blocks would not necessarily need to include the encrypted transactions during propagation since they have no effect until the key is published. This revised approach increases the chances of settling the transaction before an attacker completes their attack by getting the key into the blockchain faster than pushing a full transaction that miners haven't seen before. However, the revised approach still has the potential for DoS attacks against miners caching all encrypted transactions. If efficient Zero-knowledge proofs were practical, one could prove their encrypted transaction valid even against the UTXO set, making it nearly identical to standard transactions in terms of its DoS attack properties. To change a committed transaction, one would simply let the commitment expire.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T00:07:15.670331+00:00 </i></p>
     
     
 

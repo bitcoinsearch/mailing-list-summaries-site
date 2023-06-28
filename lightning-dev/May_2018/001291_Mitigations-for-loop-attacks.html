@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigations for loop attacks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2018-05-19 00:54:49
+            <br><i>Published on: 2018-05-19T00:54:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2018/combined_Mitigations-for-loop-attacks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001291.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about reputation loss rates and pricing payment delays, it was suggested that attackers on the network should be made to pay for the resources they waste. Reputation loss was viewed as compensation for time-value lost in locked HTLCs, with each node paying in reputation for all of the time-value locked in HTLCs upstream from them. The linear increase in reputation loss was said to come from this view of reputation loss as proportional to the value assigned to it by the owners of the funds. It was noted that the `reputation_loss_rate` is explicit in the HTLC, but the reputation score itself is a private per-node thing. Further considerations were given to the reputation bins being assigned to half-chans rather than nodes in a line network. The initial Mallory3->Node18->Mallory2 gave high reputation to half-chans Node18->Mallory3 and Node18->Mallory2, then sacrificed the Node18->Mallory3 reputation to destroy the NodeN -> NodeN+1 and NodeN+1->NodeN reputations. Reputation lost was found to be higher as N increased, forming a triangle when graphed, with the area of the triangle representing the total reputation destroyed. Only the length of one edge of the triangle was what is lost by the Node18->Mallory3 reputation score.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T00:41:35.615869+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>eltoo towers and implications for settlement key derivation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-12-03 08:26:22
-            <br><i>Published on: 2019-12-03T08:26:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2019/combined_eltoo-towers-and-implications-for-settlement-key-derivation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002363.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent email exchange, ZmnSCPxj discussed the use of watchtowers in the Lightning Network. The update transaction for a settlement can be posted at any time, and the only transaction that can spend it is the correct settlement. However, if a user's Lightning node is destroyed, then there could be a total loss of funds. To prevent this, the blob containing the update, settlement, and transaction that spends the output of the settlement can be sent to a cold-storage address controlled by different hardware. This would allow the watchtower to place part of the funds (excluding those in HTLCs) back into a cold-storage address. While this is an edge case, it may be worth considering for certain scenarios. The use of `SIGHASH_NOINPUT` expects fees to be paid by another output, simplifying the implementation of watchtowers and increasing the feasibility of deploying a watchtower network.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T21:53:21.488558+00:00 </i></p>
     
     
 

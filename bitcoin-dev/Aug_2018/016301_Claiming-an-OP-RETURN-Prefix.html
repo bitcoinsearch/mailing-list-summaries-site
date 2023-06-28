@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Claiming an OP_RETURN Prefix</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jude Nelson 2018-08-15 20:40:02
+            <br><i>Published on: 2018-08-15T20:40:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2018/combined_Claiming-an-OP-RETURN-Prefix.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016301.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the use of op_return prefixes took place in the Bitcoin-dev mailing list, with Christopher Allen recommending against using them due to transaction censorship. In his case, where an IPFS hash is used in an op_return, he removes the IPFS multihash prefix information to post a "bare" SHA256 hash that looks like many other hashes being posted in op_returns, minimizing a miner's ability to identify the transaction. This tactic is hoped to create herd immunity if more projects adopt it. However, a miner can still censor transactions if they can identify which ones came from a specific software. Suggestions for responsible ways to publish the hash include having the hash be in the witness script data, but requires everyone to do it the same way. There has yet to be a solid proposal for best practices.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T04:05:27.165414+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

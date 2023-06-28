@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP47 Prague Discussion <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2022/020549_BIP47-Prague-Discussion.html">BIP47 Prague Discussion</a>
+                        <b>Ruben Somsen 2022-06-11 10:01:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2022/020550_BIP47-Prague-Discussion.html">BIP47 Prague Discussion</a>
+                        <b>Paul Sztorc 2022-06-11 14:30:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2022/020549_BIP47-Prague-Discussion.html">BIP47 Prague Discussion</a>
+                        <b>Ruben Somsen 2022-06-11 10:01:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2022/020550_BIP47-Prague-Discussion.html">BIP47 Prague Discussion</a>
+                        <b>Paul Sztorc 2022-06-11 14:30:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2022/020549_BIP47-Prague-Discussion.html">BIP47 Prague Discussion</a>
+                        <b>Ruben Somsen 2022-06-11 10:01:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2022/020550_BIP47-Prague-Discussion.html">BIP47 Prague Discussion</a>
+                        <b>Paul Sztorc 2022-06-11 14:30:13</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020549.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2022-06-11T10:01:58+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Bitcoin-developer mailing list held a discussion on improving the current implementation of BIP47, which requires a notification transaction prior to making payments. The focus was on minimizing the on-chain space required and outsourcing the notification transaction so that the link between the sender and recipient is no longer apparent on-chain. It was suggested that it may be unnecessary for the recipient to learn the payment code of the sender, and therefore, the minimum notification payload required would be reduced to a fresh sender key and a static recipient key. Another idea proposed was to put multiple notifications in a single transaction, which could be outsourced to a third party over the Lightning Network, who could be paid for their services to break the sender/recipient link. However, this approach requires custom software for the recipient to notice the notification since it's not tied to an easily noticeable output. An alternative solution would be to use the taproot annex to insert the notification payload as discounted witness data, but this makes the transaction non-standard and requires the recipient to have custom software to notice the notification. An interesting point raised during the discussion was that the recipient key could be represented using only 4 bytes (provided it is in the annex), leaving a window of 1 in ~4.3 billion for a collision. This would reduce the payload from 64 bytes to 36 bytes of witness data. However, using the annex makes the transaction non-standard and may require standardization or an alternative method should be considered. Participants in the discussion included Alekos Filini, Martin Habovštiak, Daniela Brozzoni, Eric Sirion, Pavol Rusnak, Salvatore Ingala, and others. Relevant links such as Silent Payments and BIP47 were shared.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-15T21:51:36.467385+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

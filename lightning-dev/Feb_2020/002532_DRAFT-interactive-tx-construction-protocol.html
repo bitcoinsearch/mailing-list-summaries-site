@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DRAFT: interactive tx construction protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> lisa neigut 2020-02-12 23:09:17
+            <br><i>Published on: 2020-02-12T23:09:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_DRAFT-interactive-tx-construction-protocol.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002532.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning-dev mailing list, ZmnSCPxj commented on the inclusion of UTXOs in Schnorr signatures for Lightning Network transactions. The motivation for including the UTXO is likely to avoid address reuse, as having two UTXOs with the same address and wanting to make two different channels with different peers could otherwise cause issues. However, having 2 UTXOs locked to the same public key will map to a single H2 value, which is used to flag UTXO reuse. With a PoDLE, a key for a UTXO is proven and the verifier checks that the key provided maps to controlling the UTXO attached to it. The inclusion of the UTXO in the signature commitment doesn't add anything to the security of the verification. At worst, it might leak what other UTXO the initiator controls if they accidentally commit to the wrong one and the peer tries grinding outpoints on the off-chance that one matches.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:09:05.209381+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

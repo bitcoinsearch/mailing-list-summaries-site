@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Local Reputation to Mitigate Slow Jamming</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Clara Shikhelman 2023-03-06 18:53:59
-            <br><i>Published on: 2023-03-06T18:53:59+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2023/combined_Local-Reputation-to-Mitigate-Slow-Jamming.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003884.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The endorsement decision for a node endorsing an HTLC is made if it came from a neighbor with reputation 1 that endorsed it. The available liquidity/slots on a given outbound channel are initially distributed between all the inbound channels and are balanced once the inbound channels start to accumulate reputation. The quotas for any incoming HTLC that is either from a neighbor with reputation 0, or is not endorsed, are independent of other channels and independent of the neighbor that forwarded the HTLC. Regarding the local reputation scheme, it is unclear how reputation is slashed in case of HTLC failure, and if any "grace" amount/rate is granted to the inbound channel counterparty. The local reputation scheme might suffer from exploitable reputation asymmetries by a jamming adversary, where Alice can inflict damage to Caroll while only encumbering the lower-priced reputational cost towards Bob. This concern could hold in case of asymmetries arising from the dynamic adjustment of routing fees during an evaluated period of time. In general, if Bob is a low flow node, he cannot have a high reputation with Carroll as he will never forward enough. Taking into account the differences in fees is interesting but should be checked further.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T12:00:34.165790+00:00 </i></p>
     
     
 

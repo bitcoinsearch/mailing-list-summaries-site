@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-10-03 01:47:58
+            <br><i>Published on: 2019-10-03T01:47:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017341.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Lightning-dev discussion about the issues with `SIGHASH_NONE` and `SIGHASH_SINGLE`, ZmnSCPxj proposed that `SIGHASH` be removed from signatures, and instead put on public keys. This would remove the problems with `SIGHASH_NONE` and `SIGHASH_SINGLE`. However, the proposal may not work for key path spends as it could lose some of the indistinguishability of taproot addresses, making it more expensive than having the sighash in witness data. Therefore, sighashes would still be included in key path signatures, which could make the behavior confusingly different between signing for key path and script path spends. The problems with NONE and SINGLE are no worse than using SIGHASH_ALL to pay to "1*G". The use of NOINPUT/ANYPREVOUT is worse because it could allow someone to steal funds from other UTXOs, similar to nonce-reuse. Committing to enabling NOINPUT for an address may make sense, but the same is not necessary for other sighashes generally.One way to look at a transaction spending UTXO "U" to address "A" is that the "script" lets you enforce conditions on the transaction when you create "A", while the "sighash" lets you enforce conditions on the transaction when you sign the transaction. Nlocktime, nsequence, and taproot annex express conditions on the transaction. In this view, "sighash" is actually an extremely simple scripting language itself with a total of six possible scripts. Finally, graftroot allows updating those conditions for address "A" after the fact.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:59:36.924002+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

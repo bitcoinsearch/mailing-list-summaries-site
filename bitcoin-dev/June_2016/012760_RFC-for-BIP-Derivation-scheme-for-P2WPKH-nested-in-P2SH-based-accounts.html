@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC for BIP: Derivation scheme for P2WPKH-nested-in-P2SH based accounts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Daniel Weigl 2016-06-15 10:53:27
+            <br><i>Published on: 2016-06-15T10:53:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2016/combined_RFC-for-BIP-Derivation-scheme-for-P2WPKH-nested-in-P2SH-based-accounts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012760.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to include "native" P2WPKH addresses along with P2WPKH over P2SH addresses in compatible wallets. The proposal suggests that every fully BIP-compatible wallet must support both address types. The simpler nature of P2WPKH makes it reasonable to require. Different chain IDs could be used to differentiate between the different address types, with 0 and 1 used for P2WPKH over P2SH and 2 and 3 used for native P2WPKH. It is suggested that using P2WPKH over P2SH for change addresses instead of native P2WPKH could lead to a privacy leak. As a result, it is recommended to always use the same output type for the change output for "normal" send-to-single-address transactions if the wallet is able to recognize it. However, there is no final decision yet on how the address encoding for P2WPKH public keys should look like as Bip141 is deferred.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:41:44.796808+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

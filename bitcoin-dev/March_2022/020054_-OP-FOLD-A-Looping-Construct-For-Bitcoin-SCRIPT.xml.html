@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>`OP_FOLD`: A Looping Construct For Bitcoin SCRIPT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Billy Tetrud 2022-03-05 19:12:03
-            <br><i>Published on: 2022-03-05T19:12:03+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2022/combined_-OP-FOLD-A-Looping-Construct-For-Bitcoin-SCRIPT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020054.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Bitcoin Taproot update proposes the implementation of an `OP_FOLD` opcode, which replaces the `OP_SUCCESS` code and allows for a loop construct in SegWit v1. This new opcode provides a looping mechanism that enables the processing of elements in an input structure and accumulation of results. It has a property that ensures termination if the language is total. However, this feature changes the current size of SCRIPT in Bitcoin, and there is a need to determine the cost of a script that includes a loop. The proposed solution suggests providing more general operations that users can combine to their specific needs while implementing those that are most important to the blockchain layer.During execution, `OP_FOLD` expects a stack with three or more items, including the initial loop value (`z`), the number of times to loop (`n`), and the items to loop over. Restrictions are placed on the use of `OP_FOLD` to prevent potential Denial of Service (DoS) attacks through SCRIPT. For instance, `OP_FOLD` can only exist once in a Tapscript, and the `f` sub-SCRIPT must not contain an `OP_FOLD`. An alternative suggestion proposes adding a field to the Taproot annex to limit the number of opcodes processed, allowing for multiple loops and loops-in-loops. This technique would increase bandwidth consumption, but not CPU consumption.While `OP_FOLD` cannot exceed the amount of processing that a script without `OP_FOLD` does, it allows for shorter scripts over the wire, reducing network bandwidth consumption. Overall, `OP_FOLD` improves bandwidth consumption without significantly increasing CPU consumption. The article also discusses two ways of extending SCRIPT: providing more general operations or providing operations that do more.The Bitcoin SCRIPT design presents a dilemma between using general opcodes or complex opcodes. The former has a higher chance of being reused for future use-cases, while the latter reduces interpretation overhead and allows secure implementation. However, both options have their downsides, creating a No Free Lunch Theorem for Bitcoin SCRIPT design. As such, trade-offs must be made, and the real question is which option to choose and which uses are more common. Additional information on totality and partiality can be found in the provided links.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T17:22:13.333578+00:00 </i></p>
     
     
 

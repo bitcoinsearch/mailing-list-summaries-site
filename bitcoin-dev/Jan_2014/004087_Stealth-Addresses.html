@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Stealth Addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-01-14 19:12:40
+            <br><i>Published on: 2014-01-14T19:12:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_Stealth-Addresses.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004087.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange, Peter Todd and Jeremy Spilman discuss the use of pubKeys in a 2-of-2 multisig. Spilman suggests that putting both pubKeys in the multisig would prevent a malicious sender from triggering false positives on an online detection key when funds are still fully controlled by the payer. However, he notes that there could still be a false positive, but the funds would be trapped. Peter Todd questions how false positives would be triggered and explains the process of nonce recovery with ECDH and BIP32 public derivation. Todd then shares his current code and explains how it can be scanned with d2, calculated with S2, and matching payments will have the right q2New. However, he notes that it needs to be checked again offline with d1 since it's a separate shared secret. He then proposes a fix by adding a counter to the hash function. The proposed fix assumes that q2New needs to be put somewhere into the transaction. Todd then suggests another code update where only q1New is needed for the transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T23:37:17.665308+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

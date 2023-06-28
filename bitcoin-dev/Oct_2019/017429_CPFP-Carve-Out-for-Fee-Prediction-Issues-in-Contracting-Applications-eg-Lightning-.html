@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2019-10-24 13:49:09
+            <br><i>Published on: 2019-10-24T13:49:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017429.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The recently released RC for bitcoind 0.19 includes a carve-out rule in an attempt to pave the way for more robust CPFP of on-chain contracts (Lightning commitment transactions). The special case rule should have been relaxed to avoid the need for adding a 1 CSV to all outputs, but instead, the last transaction which is added to a package of dependent transactions in the mempool must have no more than one unconfirmed parent. This would allow adding a large transaction to each output of the unconfirmed parent, but it may allow an attacker to exceed the MAX_PACKAGE_VIRTUAL_SIZE limit in some cases. An attacker can spam 100k of free tx, but it's simple. In conclusion, the Lightning close algorithm would be feasible to implement by allowing a simplified RBF where you can replace if feerate is higher, new tx is in the first 4Msipa of mempool, and old tx isn't.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:48:22.274676+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

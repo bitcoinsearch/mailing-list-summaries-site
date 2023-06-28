@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Sig-Witness and legacy outputs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tier Nolan 2016-02-18 16:14:19
-            <br><i>Published on: 2016-02-18T16:14:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2016/combined_Sig-Witness-and-legacy-outputs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012454.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a bip written by TierNolan, the idea of extended transaction information was introduced. This included the scriptPubKey being spent along with transactions, making it easier to verify transactions locally. The extended transaction would contain the current transaction and the CTxOuts that are being spent. Each entry in the UTXO set could store UTXO_hash = hash(txid_parent | n | CTxOut). Witness transactions could include the CTxOut for each input that isn't a segregated witness output as part of the witness data. There was also a suggestion at one of the conferences to have the witness data include info about the block height/index of the output that each input is spending. By implementing this change, nodes would only need to store the UTXO_hashes for each UTXO value in the database, making it more efficient. It would also make it easier to create a simple consensus library where the library would return the UTXO_hashes that are spent, the UTXO_hashes that are created, the fee, sigops, and anything that needs to be summed when given the transaction and the witness.Validating a block would mostly involve validating the transactions in the block and adding up the totals. Including the info with transactions saves each node from having to include a lookup table to find the data.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T04:04:15.240503+00:00 </i></p>
     
     
 

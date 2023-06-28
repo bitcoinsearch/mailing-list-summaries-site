@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Gossip Propagation, Anti-spam, and Set Reconciliation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Matt Corallo 2022-05-26 22:19:17
-            <br><i>Published on: 2022-05-26T22:19:17+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/May_2022/combined_Gossip-Propagation-Anti-spam-and-Set-Reconciliation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-May/003591.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange, Rusty Russell and Matt Corallo discuss the issue of rate-limits being a locally-enforced thing that cannot be made global due to potential race conditions. Rusty proposes a solution where updates contain a block number and only those updates that meet the block height requirement are propagated. However, this proposal requires a gossip "hard fork" and would only work for taproot channels. In contrast, Matt suggests doing sketches based on "the things that I received since the last sync, ie all the gossip updates from the last hour" rather than doing sketches based on "the things I have, ie my full gossip store". Rusty expresses concern about the need for state in the former approach but acknowledges that it may make the protocol more efficient.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T08:22:20.874369+00:00 </i></p>
     
     
 

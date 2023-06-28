@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>DEBUG_LOCKORDER : early detection of potential deadlocks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2011-08-17 14:53:43
+            <br><i>Published on: 2011-08-17T14:53:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2011/combined_DEBUG-LOCKORDER-early-detection-of-potential-deadlocks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000372.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new compile-time #ifdef has been added in commit 865ed8a, called DEBUG_LOCKORDER. By compiling with -DDEBUG_LOCKORDER, a check is made each time a lock is acquired by a CCriticalSection to record the order of locks and complain if they are being acquired in an inconsistent order. When potential deadlocks are detected, the debug.log file will display the previous and current lock orders. Gavin Andresen has stated that he will be working on figuring out how to eliminate these potential deadlocks and will be conducting RPC stress-tests to detect other potential problems.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T20:20:21.739286+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

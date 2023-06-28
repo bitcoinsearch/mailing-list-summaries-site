@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-10-01 15:42:08
-            <br><i>Published on: 2019-10-01T15:42:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017336.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a Bitcoin development mailing list, ZmnSCPxj proposed the creation of a new opcode, `OP_CHECKSIG_WITHOUT_INPUT`, which would ignore any `SIGHASH` flags present on a signature. In response to this proposal, another member suggested that creating a new tapscript public key type might be a more effective solution. This would involve encoding the new code in the following manner: `3301AC [CHECKSIG of public key type 0x01]` or `32B3 [CHECKSIG_WITHOUT_INPUT (replacing NOP4) of key]`. Under tapscript v0, it is possible to reuse the internal Taproot pubkey by giving `OP_1` as the public key to `OP_CHECKSIG`. The proposal suggests having a similar mechanism for copying the internal Taproot pubkey while also enabling new `SIGHASH` flags for a particular script only. This would allow update transactions to use `MuSig(A,B,C)` for signing along the "update" path, with unique "state" keys, and cooperative closes would sign using `P + h(P | MAST( OPCHECKSIG)) * G`, without revealing that it was a Decker-Russell-Osuntokun output.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T21:34:32.865164+00:00 </i></p>
     
     
 

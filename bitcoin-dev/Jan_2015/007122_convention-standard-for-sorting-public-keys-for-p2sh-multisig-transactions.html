@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>convention/standard for sorting public keys for p2sh multisig transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Reiner 2015-01-16 17:09:39
+            <br><i>Published on: 2015-01-16T17:09:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_convention-standard-for-sorting-public-keys-for-p2sh-multisig-transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007122.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion among Bitcoin developers revolves around the need for a BIP outlining how multisig scripthash address should be determined, specifically with regards to compressed and uncompressed keys. The argument against restricting compressed/uncompressed is that strings do not have to be the same length to sort them lexicographically. However, if a multi-sig participant provides an uncompressed key, they are declaring that the key will only be used uncompressed. This can cause confusion as clients will not search for all combinations of compressed & uncompressed. Some participants suggest anticipating only compressed keys for scripts. There is a need for a BIP outlining this issue as it has been brought up by many people and some are already using it. Developers discuss how pubkeys are represented as DER-encoded integers and raw integers, where DER encoding is only used for signatures. OP_CHECKSIG takes a DER-encoded pubkey and a DER-encoded signature on the stack. It is important to note that both are binary blob objects with either a fixed format (DER) or a fixed size (hashes). BlockTrail B.V. is registered with the Dutch Chamber of Commerce in Amsterdam with registration No.:60262060 and VAT No.:NL853833035B01. Lastly, there is an advertisement from GigeNET offering a free month of service with a new server in Ashburn.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:25:26.460996+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

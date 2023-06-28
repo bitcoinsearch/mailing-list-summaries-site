@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New P2P commands for diagnostics, SPV clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2012-06-15 13:43:06
+            <br><i>Published on: 2012-06-15T13:43:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_New-P2P-commands-for-diagnostics-SPV-clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001540.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the format of a project and potential user input to determine what information is necessary. Matt's point is that a branch-per-transaction could create duplicate data and suggests that a format to solve this issue would be more complex. The proposal for a three-part change includes adding the mempool command, syncing up nodes' mempools on startup, and changing the "block" message to consist of a header + num transactions + vector instead of full transactions for protocol version >= X. Upon receiving such a block, the missing transactions from the mempool are requested with getdata. After receiving the tx message, it checks if it was one that was missing from a block. Once all transactions in the block message are in memory, the block is assembled and verified as usual. This should speed up the block propagation process, and miners have an incentive to upgrade because it reduces wasted work.The third step involves a new message, getmerkletx, which takes a vector and returns a merkletx message: "merkle branch missing the root + transaction data itself" for each requested transaction. The filtering commands are added so that the block message only lists transaction hashes that match the filter, which can then be requested with getmerkletx.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T05:00:45.327822+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_WITHINPUTVALUE</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> slush 2015-01-23 19:19:40
+            <br><i>Published on: 2015-01-23T19:19:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_SIGHASH-WITHINPUTVALUE.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007204.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about transaction validation and hash calculations, the participants acknowledge that there is room for optimization to reduce complexity and improve security. One suggestion is to use a table to avoid retransmitting reused transactions, which can be done in constant memory without dynamic allocation. The current solution is slow but has no limitations on transaction size, though there are significant restrictions on memory in the embedded world. The TREZOR device uses a powerful MCU to perform validations and calculations, and using SIGHASH_WITHINPUTVALUE or a similar approach could reduce hardware costs significantly. The transaction is streamed along with its inputs interleaved in order to reduce memory requirements to two midstates and a value accumulator but may require resending the transaction in some cases. In the worst-case scenario, where there are around 800 inputs spending from 100KB input transactions, sending about 800MB of data could take up to half an hour if hashing runs at 45KB/s or slower.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:57:32.358175+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

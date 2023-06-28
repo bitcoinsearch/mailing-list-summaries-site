@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Electrum 2.0 has been tagged</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gary Rowe 2015-03-12 17:20:53
-            <br><i>Published on: 2015-03-12T17:20:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2015/combined_Electrum-2-0-has-been-tagged.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-March/007683.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>During the selection process of which combination of HD wallet structures to support, Jim and his team have noted several considerations. They found BIP39 to be a good standard list that mandates words that do not look similar to each other, a certain spelling, and possible foreign language variants provided by experts later. Meanwhile, BIP32 and BIP44 allow for maximum compatibility with other wallets. However, including a date in the "wallet words" themselves is open to spoofing since the generator cannot be sure if the date is correct. Therefore, a timestamp as optional external metadata is useful to reduce sync times in SPV. Their experience has also verified that users will often enter a timestamp incorrectly, so they opted for "number of days elapsed since Bitcoin genesis block with a modulo 97 checksum appended" (e.g. 1850/07) to mitigate this. If a user has no timestamp, then blank is the only alternative, interpreted as "earliest possible BIP32 date". In case of restoration, the user has to select where the "wallet words" came from.Despite the convenience of typing "wallet words" into any wallet and getting bitcoins back, developers must make it happen. The long-term solution is to have the 12-word seed be an encryption key for a wallet backup with all associated metadata. However, it will take time for wallets to start working this way, and all pieces to fall into place. Restoring from the blockchain will be a semi-regular operation for users until then. Regarding the version number, there are no real strong feelings about it. But representing short pieces of binary data as words is convenient, and it seems likely that it could be similar to addresses. People find other uses for this mechanism beyond just storing a raw private key. Bitcoin addresses have versions, and that's proven to be useful several times, even though in theory, an address is "just" a hash of a pubkey.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T18:12:12.201423+00:00 </i></p>
     
     
 

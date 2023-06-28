@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>What Lightning Is</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-08-10 21:02:40
+            <br><i>Published on: 2015-08-10T21:02:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_What-Lightning-Is.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010113.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation between Gavin Andresen and others in the Bitcoin community discussed a potential use case for the Lightning Network. The scenario was a customer using their phone to pay for a cup of tea at a merchant's shop. The user would swipe their phone or scan a QR code to initiate payment, which would then prompt a dialogue box on their phone to confirm the transaction. The backend process would involve the merchant passing on their identity, public key, amount, and hash for the payment. The user's phone would go online to determine if a route to the vendor could be established and to calculate lightning network fees, among other things. The user's phone would then prepare a lightning transaction to the vendor, signed with the corresponding lightning channel keys, using the hash the merchant provided and sends it through one of the channels the user already has open and funded. The transaction would make its way through the lightning network, and the confirmation would make its way back. The UIs at both ends would update, and the user would get their cup of tea. There were some potential problems, such as the possibility of the merchant claiming that they had not been paid, but there were ways to mitigate these issues, such as incremental payments or having an initial negotiation involving signing something that could be adjudicated independently later. The discussion also addressed the issue of maintaining the channels, such as what would happen if a merchant's payment channels filled up suddenly, how to close the till at the end of the day, and how to reset channels once a day/week/fortnight/month with some money from salary/savings so that they don't run out. Additionally, the conversation touched on other issues, such as refunds, monitoring the blockchain, keeping channel keys/secrets secure, and figuring out who to make channels with.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T21:25:47.555777+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

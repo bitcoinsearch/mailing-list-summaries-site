@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP sighash_noinput</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dario Sneidermanis 2018-04-30 18:25:42
+            <br><i>Published on: 2018-04-30T18:25:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2018/combined_BIP-sighash-noinput.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015909.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Christian Decker proposed a new sighash flag, 'SIGHASH_NOINPUT', that removes the commitment to the previous output. The flag could be useful for various use cases related to RBF. For instance, if Alice sends Bob an RBF-activated transaction T1 with the intention of bumping its fee if necessary. Bob wants to send these funds to Carol, but cannot wait until T1 confirms, so he crafts a transaction T2 that spends T1 using SIGHASH_NOINPUT, and pays Carol. Carol can now make sure she receives the money even if Alice fee-bumps T1, as long as the outputs of the replaced transactions are compatible. Extra care should be taken to avoid rebinding, maybe by including an extra input in T2 that doesn't use SIGHASH_NOINPUT. By not committing to the previous output being spent by the transaction, we can rebind an input to point to any outpoint with a matching output script and value. The binding therefore is no longer explicit through a reference, but through script compatibility, and the transaction ID reference in the input is a hint to validators. The sighash flag is meant to enable some off-chain use-cases and should not be used unless the tradeoffs are well-known. In particular, contract specific key-pairs should be used to avoid having any unwanted rebinding opportunities.The proposal is minimalistic and simple, but there are a few things where wider community input is needed. There were discussions internally on whether to use a separate opcode or a sighash flag, but they decided to go the sighash way since existing wallets will not sign things with unknown flags. Another thing is that they still commit to the amount of the outpoint being spent. The rationale behind this is that while rebinding to outpoints with the same value maintains the value relationship between input and output, they will probably not want to bind to something with a different value and suddenly pay a gigantic fee.The deployment part of the proposal is left vague on purpose in order not to collide with any other proposals. It should be possible to introduce it by bumping the segwit script version and adding the new behavior. The proposed sighash flag opens up various interesting applications, and the author is looking forward to discussing variants and tradeoffs.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:46:51.369555+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

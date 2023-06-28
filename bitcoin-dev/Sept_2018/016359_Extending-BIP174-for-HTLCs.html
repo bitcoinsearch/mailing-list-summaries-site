@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Extending BIP174 for HTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2018-09-04 16:57:28
+            <br><i>Published on: 2018-09-04T16:57:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2018/combined_Extending-BIP174-for-HTLCs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016359.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal to add fields to the Partially Signed Bitcoin Transactions (PSBT) format tag for Bitcoin Improvement Proposal 174 to support Hash Time-Locked Contracts (HTLCs) was discussed on the bitcoin-dev mailing list. One approach suggested is to add two fields to PSBT: a preimage request field and a revealed preimage field. The workflow would involve an updater recognizing an output/script that requires a preimage and adding a preimage request field to the input, followed by a signer who knows the preimage adding a preimage field after verifying the secret. Finally, a compatible finalizer combines all signatures and preimages into a final scriptSig/witness stack. However, dealing with multiple possible satisfactions may complicate things, especially when the number of combinations is intractable. Another approach suggests using an easily-parsable subset of script, which includes and/or/threshold/pubkey/locktimes/hashlocks, instead of changing PSBT. The author hopes to publish more information soon.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:42:00.560682+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

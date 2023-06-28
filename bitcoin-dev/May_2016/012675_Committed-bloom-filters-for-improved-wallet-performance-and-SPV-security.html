@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Committed bloom filters for improved wallet performance and SPV security</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bob McElrath 2016-05-11 20:29:33
+            <br><i>Published on: 2016-05-11T20:29:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Committed-bloom-filters-for-improved-wallet-performance-and-SPV-security.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012675.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal of creating a Bloom Filter Digest for every block was discussed in the Bitcoin-dev mailing list. The filter size is determined by the number of elements it contains and false-positive rate, where an optimal filter is linear in the number of elements and logarithmic in the false-positive rate. A Cuckoo filter is faster than using Bloom filters as the data that would be put into the filter is already hashed. False-positive rate should be roughly less than 1/block height to prevent light clients from downloading more blocks than necessary. For today's block height (~410000) and false positive rate of 1e-6, this is about 20 bits per element. Thus the required size of the filter commitment is roughly N*log2H, where H is the block height. If Bitcoin had these filters from the beginning, a light client today would have to download about 12MB of data in filters, with personal SPV wallet using 31MB currently. It is not clear if this is a bandwidth win, though it's definitely a win for computing load on full nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:00:38.988718+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

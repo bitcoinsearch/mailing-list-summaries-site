@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Compact Block Relay BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2016-05-09 10:43:02
+            <br><i>Published on: 2016-05-09T10:43:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Compact-Block-Relay-BIP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012639.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, Tom Zander raised concerns about the networking effects of selecting the best node to set the announce bit for block propagation. However, testing on actual nodes in the network showed that blocks are normally requested from one of the last three peers they were requested from 70% of the time, which increases robustness and reduces latency. The decision is non-normative to the protocol, so nodes can decide based on better criteria if discovered in the future. The "high bandwidth" mode uses somewhat more bandwidth than low bandwidth but still >>10 times less than an ordinary getdata relay. If a node is trying to minimize bandwidth usage, it can choose not to request the high bandwidth mode. The latency bound cannot be achieved without unsolicited data. The variable length encoding used in Bitcoin Core for years is being adopted in a BIP for compact blocks, with some control information in the high bits. Salting the hash eliminates collision attacks, and per-source randomization ensures that when a rare chance collision occurs, it only impacts a single node at a time.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:20:45.031256+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

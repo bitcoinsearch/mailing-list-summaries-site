@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for updateable / revokable proofs of payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-05 01:20:51
+            <br><i>Published on: 2018-11-05T01:20:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Proposal-for-updateable-revokable-proofs-of-payment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001506.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network allows for the creation of payment channels in which parties can transact without needing to broadcast every transaction to the blockchain. CJP on the lightning-dev mailing list discusses the current definition of the description field in BOLT11, which is vague and may require more details regarding obligations. BOLT11 payment requests can be seen as option contracts. If payment happens, the payee has an obligation to deliver what was described in the contract. However, issues arise when the payer is not identified in the contract. One way to solve this issue is through two-way communication where first the payer sends data to the payee, who then makes the payment request including this data. Proofs of payment may be too inflexible for real-life applications. In many cases, updates or revocations of agreements are necessary, even after payment. Examples include full refunds, partial refunds, and changes in conditions without change of payment. A "contract update" format may cover all such cases. This format would include the new obligations of the two parties to each other, a secure hash of the previous contract version that is replaced by this one, optionally a payment hash, and signatures from both parties. The contract update is considered valid if certain conditions are met such as the signatures corresponding to the pubkeys in the original contract, the signatures being valid signatures on this contract, and the previous contracts in the chain being all valid except for being invalidated by contract updates. The potential issue with the "contract update chain" is that it can fork. The simple solution is to avoid forking by not signing the forking update.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:16:52.717664+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

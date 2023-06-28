@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SAS: Succinct Atomic Swap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2020-05-15 19:47:29
+            <br><i>Published on: 2020-05-15T19:47:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_SAS-Succinct-Atomic-Swap.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017877.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Ruben and ZmnSCPxj about the CoinSwap protocol, it was noted that if Bob neglects to broadcast success tx before refund tx #1 becomes valid, Alice can broadcast it, potentially causing chaos. However, as long as Alice chooses the path for refund tx #2, it won't cause chaos for her. They also discussed the importance of ensuring the TXO is spent before refund tx #1 becomes valid and suggested using sighash_single + anyonecanpay to achieve this. They also discussed the roles of the client and server in a client-server CoinSwap. ZmnSCPxj suggested that the server take Alice's position and the client take Bob's position, as the client may want to make multiple CoinSwaps in sequence to obscure their history. Additionally, whoever is planning to spend their UTXO first should be Bob to reduce the risk of wasting resources. For the final swap, the client can spend the final coins to an HD wallet they control, reducing the key backup load on the client. Finally, they discussed how Bob can specify a set of address/value pairs to be put in the success tx instead of just Bob pubkey, giving additional leeway later for RBF once Alice hands over the Alice privkey and Bob can remake the success tx.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:28:53.637615+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

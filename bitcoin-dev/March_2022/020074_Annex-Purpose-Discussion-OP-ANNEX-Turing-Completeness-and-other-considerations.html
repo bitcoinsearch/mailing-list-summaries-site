@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Annex Purpose Discussion: OP_ANNEX, Turing Completeness, and other considerations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-03-07 00:59:33
+            <br><i>Published on: 2022-03-07T00:59:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_Annex-Purpose-Discussion-OP-ANNEX-Turing-Completeness-and-other-considerations.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020074.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There has been some discussion within the Bitcoin community about the potential uses of the Annex in Bitcoin, which is a reserved space for future extensions. One suggestion is to use it as a transaction field extension, where new consensus validity rules are assigned to the annex payloads. This could be useful in case of contentious forks, where you want your transaction to confirm only when enough work is accumulated. Another possible use for the annex is locating the SIGHASH_GROUP group count value, as this would allow for annex payloads interdependency validity. However, there are concerns about using the annex in this way, as it could make witness construction turing complete and cause script satisfiers to become recursive. Additionally, there are issues with signing multiple annex values and preallocating memory for validation. As a result, some members of the community suggest soft-forking the annex out of the current Checksig and redesigning the technique later when its purpose is better understood.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T17:38:55.449839+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

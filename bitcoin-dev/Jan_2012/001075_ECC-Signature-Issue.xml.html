@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>ECC Signature Issue</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Brautigam Róbert 2012-01-27 18:19:54
-            <br><i>Published on: 2012-01-27T18:19:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2012/combined_ECC-Signature-Issue.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-January/001075.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A user named Brautigam Róbert posted on a forum stating that he had encountered an issue with BouncyCastle while verifying a particular signature. Dave Hook from Bouncycastle replied to the post, stating that one of the ASN1 encoded integers in the signature was negative, which is not a valid coordinate for a point on a curve. Since ASN1 integers are always signed, "big" values need to be padded with a zero byte to stay positive. A simple workaround for verification would be to convert the integer to a positive value. The official C++ client was able to verify the transaction successfully, but the bitcoinj implementation failed to do so, which suggests that the issue may lie with BouncyCastle, which both implementations use.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-05T01:51:46.312366+00:00 </i></p>
     
     
 

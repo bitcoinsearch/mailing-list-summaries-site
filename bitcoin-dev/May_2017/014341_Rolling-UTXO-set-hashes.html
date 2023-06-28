@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Rolling UTXO set hashes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2017-05-15 23:59:58
+            <br><i>Published on: 2017-05-15T23:59:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Rolling-UTXO-set-hashes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014341.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion among the developers on bitcoin-dev mailing list is about lite nodes with UTXO sets. Commitment to the UTXO data is required by these lite nodes to download a UTXO set from any full node and verify it by verifying only block headers starting from genesis. The commitment to the UTXO data has been observed as one of the oldest advantages. However, compact membership proofs are required for most of the arguments for those. Recently, there has been a rise in interest in full block lite clients for privacy reasons which complements the membership proofless usage. Pieter has described some uses for doing something like this without a commitment. In his view, it's more interesting to first gain experience with an operation without committing to it. It requires more care and consideration as it is a consensus change which is easier if people have implementation experience. For audibility and engineering reasons, it would need to be added rather than instead of. The proof of work needs to commit to the witness data because the transactions themselves become witnesses for UTXO deltas. If not done so, trivial DOS attacks where people provide malleated blocks that have invalid witnesses can occur.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T02:20:48.859430+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Transaction Relay over Nostr</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2023-05-28 02:37:12
+            <br><i>Published on: 2023-05-28T02:37:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_Bitcoin-Transaction-Relay-over-Nostr.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021722.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development email thread, Joost Jager has suggested an approach for dealing with denial-of-service (DoS) threats. The approach would delegate responsibility for dealing with these threats to the relays themselves by requiring payment to mitigate concerns. Dave Harding responded to Jager's suggestion, proposing that it might be worth relaying block templates and weak blocks in addition to individual transactions and packages. Block templates are an ordered list of raw transactions, while weak blocks are blocks whose headers do not quite hash to a low enough value to be included on the chain. Weak blocks are inherently DoS resistant, and miners could relay them through Nostr to full nodes and other miners so that they could quickly relay and accept complete blocks that later included the same custom transactions. This would also help fee estimation and provide valuable insights to those trying to get their transactions included into the next block.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:39:26.204811+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

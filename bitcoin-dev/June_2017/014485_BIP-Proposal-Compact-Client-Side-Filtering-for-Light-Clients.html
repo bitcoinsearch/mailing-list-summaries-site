@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Compact Client Side Filtering for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Akselrod 2017-06-02 17:55:31
+            <br><i>Published on: 2017-06-02T17:55:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2017/combined_BIP-Proposal-Compact-Client-Side-Filtering-for-Light-Clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014485.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange between Karl Johan Alm and Olaoluwa Osuntokun, they discuss the maintenance of an additional index of the chain by full-nodes, which is served as a compact filter to light clients. The client then fetches these filters, queries them locally, and maybe fetches the block if a relevant item matches. Without a soft fork, this is the only way for light clients to verify that peers are not lying to them. The simulations for wallets are based on completely random data within given parameters. Filters for empty blocks take a few bytes and sometimes zero when the coinbase output is a burn that doesn't push any data. In the Compact Filter Header Chain proposal, it is mentioned that clients should download filters from nodes if filter_headers are not identical and ban offending nodes. They also discuss retaining a permanent binsearchable record of the entire chain being too space costly but keeping the last X blocks as binsearchable could speed up syncing for clients tremendously. It may be space efficient to ONLY store older digests in chunks of e.g. 8 blocks and make 4-, 2-, 1-block digests on demand. They also discuss creating digests on demand in some cases rather than keeping them around indefinitely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T01:31:02.546180+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

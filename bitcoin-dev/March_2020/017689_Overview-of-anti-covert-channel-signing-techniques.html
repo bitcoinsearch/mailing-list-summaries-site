@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Overview of anti-covert-channel signing techniques</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tim Ruffing 2020-03-21 13:34:14
+            <br><i>Published on: 2020-03-21T13:34:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Overview-of-anti-covert-channel-signing-techniques.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017689.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the potential security concerns with malicious hardware wallets, specifically regarding key generation and signing. The author notes that if key generation is compromised, then anti-covert channel singing protocols may not be effective. While there are several signing protocols available, there is little research on key generation. One suggestion is a commit-and-reveal protocol for generating a master public key pair using contributions from both hardware and software, followed by BIP32 public derivation for all other keys. However, this idea has drawbacks and is not compatible with hardened derivation. The email also mentions a paper that considers a similar scenario where the hardware wallet is malicious during key generation and assumes threshold signatures with the human user as the trusted party. Moving back to the signing process, the author suggests looking at security against malicious software with parallel signing sessions and notes that Scheme 4 is vulnerable to Wagner's attack. Scheme 5 may be more effective but requires two interaction rounds and state that needs to be kept by the hardware between the rounds. To make the hardware stateless, one suggestion is to let it encrypt and authenticate its state using AEAD or a simple MAC. The email proposes a new scheme, Scheme 7, which uses a synthetic nonce, two interactions, is stateless using MAC, and verifies e. Finally, the author notes that verifying e may be weaker than verifying the signature in some cases, but overall, the proposed solutions aim to improve the security of hardware wallets against potential attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:53:12.449347+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

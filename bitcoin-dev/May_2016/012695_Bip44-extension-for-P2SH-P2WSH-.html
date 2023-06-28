@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bip44 extension for P2SH/P2WSH/...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Daniel Weigl 2016-05-13 13:16:20
+            <br><i>Published on: 2016-05-13T13:16:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Bip44-extension-for-P2SH-P2WSH-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012695.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In preparation for SegWit, a common derivation scheme needs to be defined for BIP44 compatible wallets to handle P2(W)SH and P2WPKH receiving addresses. Two options have been proposed by Daniel of Mycelium, the first option being to stick with the current Bip44 account and give users the option to show public keys as either a P2PKH-Address or P2SH address, scanning the blockchain for both representations. However, this would require the wallet to scan twice as many addresses, and three times as much in the future when P2WPKH is available. Additionally, if the same xPub/xPriv key is used in different wallets, both need to take care of the different address types. The second option is to define a new derivation path parallel to Bip44 but with a different 'purpose', letting the user choose which account they want to add ("Normal account" or "Witness account"). This option requires the user to migrate to a new account to receive the benefits of SegWit but makes it easier to stage roll-outs and catch bugs earlier. Daniel's personal favorite is pt2. No information was given regarding whether any Bip44 compliant wallet has done any integration at this point.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:21:20.078150+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

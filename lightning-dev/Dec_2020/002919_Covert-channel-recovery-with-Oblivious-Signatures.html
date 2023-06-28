@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Covert channel recovery with Oblivious Signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-12-15 10:21:09
+            <br><i>Published on: 2020-12-15T10:21:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2020/combined_Covert-channel-recovery-with-Oblivious-Signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002919.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the possible options when a channel state has HTLCs in flight, specifically whether to put them onto the settlement transaction or to gift the money to the party offering the recovery settlement. However, gifting the money is not recommended as all the claimable value could potentially be in an outgoing HTLC, which can cause problems if the node is a forwarding node and funds are in various HTLCs. In this case, it is suggested to "bind" incoming and outgoing HTLCs if the node was a forwarding node. The context further provides a hypothetical situation where a forwarding node forward a payment whose outgoing expires in 1 day and whose incoming expires in 2 days. If the node loses memory and cannot recover the outgoing channel, it becomes impossible to recover the outgoing channel since the peer has already closed it and resolved everything it is interested in. To address this issue, using static-key channels (i.e. channel keys are our node keys) allows us to recover even the outgoing channel with outgoing HTLC that has been forgotten by the outgoing peer. However, using static-key channels does have slightly weaker privacy concerns.The privacy concerns include published nodes revealing all their channels with other published nodes on the blockchain and unpublished nodes risking revealing their channels with published nodes via the blockchain. Invoices created by unpublished nodes currently reveal their public key, which can allow payers to uncover all the channels of that node. Unpublished nodes could use a faked node id, by combining the payment hash/point with its privkey to generate a new keypair to use as faked node id, but this technique is potentially risky and may lead to loss of funds and privacy.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:23:21.700673+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

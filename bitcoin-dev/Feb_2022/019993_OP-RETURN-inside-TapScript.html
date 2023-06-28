@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_RETURN inside TapScript</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2022-02-24 14:01:58
+            <br><i>Published on: 2022-02-24T14:01:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_OP-RETURN-inside-TapScript.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019993.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Since the activation of Taproot, it is no longer necessary to create separate OP_RETURN outputs to attach data to a transaction. Instead, it is possible to create "OP_RETURN" as a branch in the TapScript to store data off-chain and prove that it is connected with a taproot address pushed on-chain. This can be done without revealing the full script and without costing extra bytes on-chain. However, creating non-deterministic scripts can make backup recovery more difficult. Additionally, the scheme is not equivalent to OP_RETURN because it requires out-of-band communication to reveal the commitment. The cost of storing additional data on-chain is also considered expensive. Ruben Somsen notes that committing to an ECC point has always been possible and is not specific to Tapscript. It is possible to tweak an ECC point to commit data inside it and store 1.5GB of data using OP_RETURN or even an entire merkle tree of hashes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T17:14:14.026268+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

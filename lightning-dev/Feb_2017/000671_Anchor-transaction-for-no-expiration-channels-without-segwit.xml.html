@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Anchor transaction for no expiration channels without segwit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Nicolas Dorier 2017-02-08 04:16:25
-            <br><i>Published on: 2017-02-08T04:16:25+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2017/combined_Anchor-transaction-for-no-expiration-channels-without-segwit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-February/000671.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion revolves around a proposed solution that utilizes Segwit to establish a symmetrically funded channel between Alice and Bob, without the need for third-party channel monitoring. Tier Nolan suggests a simpler way to implement this, through nTimelock after the bounty's expiration. The proposed symmetrically funded channel requires four 1BTC outputs, which are essentially two single-funded channels. The transaction creates an output paying Alice and Bob 1BTC each. Alice and Bob create TX1, sign it, and share the results. They also create TX2, sign it, and share the results. If one signs the transactions, and the other doesn't, then the signer should spend their inputs to be safe. If TX1 is broadcast, then they can both spend their timeouts to recover their funds, making it safe. Once they both have signed versions of TX1 and TX2, they will broadcast TX1 to initialize the channel. In case TX1 is mutated, they should abort and spend their timeouts to recover their funds. The Lightning-dev mailing list is hosting this discussion.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T00:59:42.699389+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Soft fork fix for block withholding attacks</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> gladoscc 2016-02-12 11:31:56
-            <br><i>Published on: 2016-02-12T11:31:56+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2016/combined_Soft-fork-fix-for-block-withholding-attacks.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012441.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposed solution to fix block withholding attacks with a soft fork is presented in this context. The solution involves redefining the block PoW target to be less than the difficulty, with the last two bytes being the target. Blocks must include a blinded hash of the target plus some junk in the coinbase, and miners cannot arbitrarily switch targets. Hashers must submit all shares that match the first PoW criteria and delegate secondary verification to the miner. Miners are required to communicate a proof of their target hash in a non-hashed area of the block. This can be deployed as a soft fork with miner opt-in triggering across many difficulty cycles. Initially, the last bit of the block hash is required to be zero, followed by the last two bits in the next cycle. The progression continues over 16 difficulty cycles to minimize increases in block timings. The nominal difficulty would have been cut by 2^16 (65536) by then, but the block target makes mining each block 65536 times harder. It is possible to progress over even more difficulty cycles through more clever soft fork rules, such as Vitalik's "timewalking" attacks that allow effective granular lowering of the nominal difficulty. Critiques are welcome.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T04:01:57.812082+00:00 </i></p>
     
     
 

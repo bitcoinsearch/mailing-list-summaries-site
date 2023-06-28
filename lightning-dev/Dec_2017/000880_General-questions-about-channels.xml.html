@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>General questions about channels</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mark Friedenbach 2017-12-28 10:38:54
-            <br><i>Published on: 2017-12-28T10:38:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2017/combined_General-questions-about-channels.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-December/000880.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Splitting a single payment into multiple invoices has bad semantic properties and makes the payment no longer atomic, leading to implementation difficulties and potential channel capacity exhaustion. This can hinder the building of higher level smart contracts on top of lightning channels as primitives since those constructs typically use a single HTLC revelation as the decision gate between multiple contingent outcomes. While protocol limits were assumed to be training wheels, it is now unclear whether they will stick around for the long term. The idea of keeping most funds in cold storage runs counter to the spirit of Bitcoin as the value proposition of Bitcoin is its ability to serve as non custodial collateral. Large portions of the Bitcoin monetary base are expected to be held as collateral in smart contract payment channels, which would require higher limits on channels. However, removal of the limit may not even be reached in practice by the time Lightning becomes fully deployed. It is unlikely that most people following the wisdom of keeping funds in cold storage would have an incentive to run software with the limit removed. Finally, while rejecting a large channel may seem illogical, the other end of the channel is known via node gossip and there is the possibility of getting attacked in order to get to the funds committed to the channel.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T17:20:03.951198+00:00 </i></p>
     
     
 

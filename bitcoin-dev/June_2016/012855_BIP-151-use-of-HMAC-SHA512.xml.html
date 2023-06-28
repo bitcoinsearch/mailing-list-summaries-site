@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 151 use of HMAC_SHA512</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Ethan Heilman 2016-06-29 01:56:55
-            <br><i>Published on: 2016-06-29T01:56:55+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2016/combined_BIP-151-use-of-HMAC-SHA512.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012855.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this context, the writer mentions about the insecurity of using SHA256(key|cipher-type|mesg) as a MAC because of the length extension property of SHA256. The attacker can easily forge a tag protected by SHA256(key|cipher-type|mesg). To know more about it, one can refer to a link provided in the context. The discussion is regarding the use of SHA512_HMAC and SHA256_HMAC in Bitcoin development. A developer suggests using SHA256_HMAC instead of SHA512_HMAC for header encryption key and body encryption key. However, another developer argues that SHA512_HMAC is used by BIP32 and most clients will make use of BIP32 features. Moreover, SHA256_HMAC is not used by the current p2p & consensus layer of Bitcoin-Core. Finally, Rusty Russell says that he was looking at appropriating the work for lightning inter-node comms and adding another hash algo seemed unnecessarily painful. He also confesses his ignorance of why HMAC is used instead of just SHA256(key|cipher-type|mesg).</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T18:52:52.201861+00:00 </i></p>
     
     
 

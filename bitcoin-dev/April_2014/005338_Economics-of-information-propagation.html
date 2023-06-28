@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Economics of information propagation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Paul Lyon 2014-04-21 16:22:48
+            <br><i>Published on: 2014-04-21T16:22:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Economics-of-information-propagation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005338.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses the idea of improving block propagation times by allowing nodes to request a list of transaction hashes that make up a block and then downloading only the transactions not currently known. The current system determines the primacy of a block based on the time the `block` message is received, which can result in delays due to both transmission time and validation time. However, headers-first has the option of basing primacy on the time the block header is received, which is faster and more efficient. In this system, miners will continue working on the old, known valid parent block until the contents of the new block are received and processed. The larger block with slower scripts may take longer to propagate but will still win out over a smaller block nearly every time, as long as it does not take too long to be validated. The conversation also touches on the harmful effects of small miners mining on top of block headers without including any transactions or doing any validation, which could harm the security of Bitcoin.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T20:28:20.037261+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

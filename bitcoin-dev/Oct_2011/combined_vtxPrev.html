@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>vtxPrev <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000636_vtxPrev.html">vtxPrev</a>
+                        <b>Gregory Maxwell 2011-10-05 12:50:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000635_vtxPrev.html">vtxPrev</a>
+                        <b>Michael Grønager 2011-10-05 12:31:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000637_vtxPrev.html">vtxPrev</a>
+                        <b>Michael Grønager 2011-10-05 13:44:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000635_vtxPrev.html">vtxPrev</a>
+                        <b>Michael Grønager 2011-10-05 12:31:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000635_vtxPrev.html">vtxPrev</a>
+                        <b>Michael Grønager 2011-10-05 12:31:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000636_vtxPrev.html">vtxPrev</a>
+                        <b>Gregory Maxwell 2011-10-05 12:50:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000637_vtxPrev.html">vtxPrev</a>
+                        <b>Michael Grønager 2011-10-05 13:44:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000636_vtxPrev.html">vtxPrev</a>
+                        <b>Gregory Maxwell 2011-10-05 12:50:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2011/000637_vtxPrev.html">vtxPrev</a>
+                        <b>Michael Grønager 2011-10-05 13:44:08</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000636.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2011-10-05T12:50:52+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In October 2011, Michael Grønager, the owner of Ceptacle and NDGF Director at NORDUnet A/S, was exploring ways to enable a split between thin clients holding the wallet and server(s) holding the blocks and txdb. He came across vtxPrev in the code and raised a concern about it storing transactions that are three blocks back. Michael questioned whether it was necessary for transactions to mature for seven blocks before they can be considered respendable.Gregory Maxwell corrected Michael's assumption that transactions need 7 blocks to maturity and respendability. He explained that software will try to use older inputs when available but will use what it has if not. The system also trusts its own transactions and is prone to respending its own outputs quickly. In case of deep splits, it is possible that inputs might have been spent differently in the new split. Therefore, retransmitting one of your own transaction's parents if it's dropped but not yet impossible seems prudent.It was later clarified that vtxPrev contains a list of the supporting confirmations up to 3 confirmations back. This feature is only relevant if you accept newly earned coins that are less than 3 confirmations old. It will only be of relevance for half an hour or so. In case of chain splits, it is suggested to resend the depending transactions to the network.Overall, Michael Grønager's initial concern about vtxPrev storing transactions that were overkill was cleared up and the purpose of vtxPrev was better understood.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-04T20:25:14.124681+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

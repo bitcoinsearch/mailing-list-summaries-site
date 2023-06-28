@@ -11,36 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Using BOLT 8 to Send Wumbo Messages <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/July_2022/003655_Using-BOLT-8-to-Send-Wumbo-Messages.xml.html">Using BOLT 8 to Send Wumbo Messages</a>
-                        <b>Thibaut Le Guilly 2022-07-04 00:29:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/July_2022/003649_Using-BOLT-8-to-Send-Wumbo-Messages.xml.html">Using BOLT 8 to Send Wumbo Messages</a>
-                        <b>Olaoluwa Osuntokun 2022-07-02 00:16:08</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003655.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2022-07-04T00:29:14+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>A developer from dlcspecs requested feedback on a PR that proposes sending messages larger than 65 KB using BOLT 8. During the discussion, Thibaut stated his motivation for having the segment explicit, including the ability to handle disconnects/reconnects without requiring access to the low-level network layer. Christian Decker mentioned the ability to send an urgent message in the middle of sending a large one. However, Thibaut has no strong opinion on what is best and thinks it would be nice to use something similar in LN to reduce the need for maintaining multiple things. Olaoluwa Osuntokun clarified that chunking messages and reading them into a read buffer over a stream-like interface is possible without adding any new application layer messages.This method is no different from sending a 65 KB message over TCP/IP, and the behavior was actually present in the original spec but removed to simplify things. To reintroduce this feature, a new wumbo message feature bit could be added to indicate that a peer can properly chunk and aggregate larger messages. The discussion involved dlcspecs developers and other contributors who provided comments and feedback. Relevant discussions and commits related to the topic were also linked.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-04T03:57:38.484466+00:00</i></p>
-    
-
     
 
     <footer>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Removing the Dust Limit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy 2021-08-08 23:07:27
-            <br><i>Published on: 2021-08-08T23:07:27+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019312.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Jeremy would remove the dust limit entirely. Allowing 0-value or 1-sat outputs can incentivize people to make better use of low feerate periods to do more important work like consolidations so that others do not have the opportunity to pollute the UTXO set.Regarding using the chain for something besides value transfer, a bond to clean it up is reasonable. However, in a protocol, it might not make sense to clean up the UTXO otherwise. Any LN node can refuse to accept/route HTLCs below the dust limit, but this may have an impact on routing and capacity.Any LN node that accepts an uneconomic HTLC cannot recover that value, so the money is lost either way. LN operators may stick the uneconomic HTLCs aggregately into a fan-out UTXO and try to cooperate, but failing that, they may only pollute the chain by O(1) for O(n) non-economic HTLCs.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T00:46:56.066822+00:00 </i></p>
     
     
 

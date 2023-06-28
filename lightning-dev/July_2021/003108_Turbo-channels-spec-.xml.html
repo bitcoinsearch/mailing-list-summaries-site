@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Turbo channels spec?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2021-07-05 02:20:01
-            <br><i>Published on: 2021-07-05T02:20:01+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2021/combined_Turbo-channels-spec-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003108.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the implementation of zero-conf channels, which are not currently specified. A strawman proposal is suggested, where a new feature bit called "I accept zeroconf channels" is assigned, and if both parties negotiate this, update_add_htlc can be sent before funding_locked without upsetting the peer. The risks for the funder are that the channel never confirms, while the risks for the fundee are that the funder doublespends, so the HTLCs must not be routed out to others unless there is another reason to trust the peer. The terminology used in the discussion is also nitpicked, with "funder" and "fundee" being deprecated in favor of "initiator" and "acceptor". Finally, it is noted that the substantial feature of turbo channels is the confirmation of the channel, not the opening process itself, and what matters is the sender and receiver of an HTLC, not who is the acceptor or initiator.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T04:28:57.441090+00:00 </i></p>
     
     
 

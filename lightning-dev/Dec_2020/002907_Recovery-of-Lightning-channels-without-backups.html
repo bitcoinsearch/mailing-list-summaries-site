@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recovery of Lightning channels without backups</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2020-12-07 00:32:27
+            <br><i>Published on: 2020-12-07T00:32:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2020/combined_Recovery-of-Lightning-channels-without-backups.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002907.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a post on the mailing list, LL proposes a solution to the issue of recovering lightning channels after losing channel state in a boating accident. The current method is static channel backups which involves keeping a list of channel ids and nodes that the user had channels with. With this backup, users can remember who they had channels with, connect to them, and ask them to force close the channel. LL suggests a change to the lightning protocol that would allow for channel recovery without the need for a channel backup. The proposal involves using a deterministically randomized version of the node's static public key as the `funding_pubkey` in the open channel message, instead of the temporary_channel_id. By doing a Diffie-Hellman operation with the other party's public key, it is possible to deterministically produce scalars r1 and r2, which can be used to create 2-of-2(r1*G + P_local, r2*P_remote) as the script pubkey of funding output. This would allow users to figure out what their funding outputs with each node look like non-interactively, making it possible to find them in the UTXO set when channel state is lost. This solution could greatly improve user experience, especially for non-enterprise users who exclusively have channels with well-known and reliable public nodes whose public keys can be discovered through routing gossip or from public indexes. While there are concerns about the security implications of this approach, many members of the community support exploring this idea further.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:20:31.587692+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onion messages rate-limiting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2022-06-29 08:28:26
+            <br><i>Published on: 2022-06-29T08:28:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2022/combined_Onion-messages-rate-limiting.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003623.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>At the recent Oakland Dev Summit, lightning engineers discussed DoS protection for onion messages. Rusty proposed a simple rate-limiting scheme that applies per-peer rate limits on incoming onion messages which should be relayed. Nodes only need to keep track of the last node_id per outgoing connection to ensure a small memory footprint. It is recommended to allow more onion messages from peers with whom you have channels. The sender looks at its per-connection state to find where the message was coming from and relays onion_message_drop to the last sender, halving their rate limits with that peer. If the sender doesn't overflow the rate limit again, the receiver should double the rate limit after 30 seconds until it reaches the default rate limit again. A new message will be sent when dropping an incoming onion message because it reached rate limits. This message has two types of data: rate_limited: u8 and shared_secret_hash: 32-byte. The flow of this mechanism is illustrated in an example between Alice, Bob, and Carol along with the messages exchanged by them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:13:10.866086+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

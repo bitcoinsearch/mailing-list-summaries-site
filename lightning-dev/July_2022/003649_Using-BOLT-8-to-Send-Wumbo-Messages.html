@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using BOLT 8 to Send Wumbo Messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2022-07-02 00:16:08
+            <br><i>Published on: 2022-07-02T00:16:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2022/combined_Using-BOLT-8-to-Send-Wumbo-Messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003649.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A developer from dlcspecs reached out for feedback on a PR that aims to send messages larger than 65KB using BOLT 8. However, it wasn't clear from reading BOLT 8 that this was possible without adding any new application layer messages. The sender just needs to chunk their messages and the receiver reads them out into a read buffer exposed over a stream-like interface. This is similar to sending a 65KB message over TCP/IP. The OG spec had this feature but it was removed to simplify things. To reintroduce it, a new wumbo message feature bit can be added.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:36:24.086510+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

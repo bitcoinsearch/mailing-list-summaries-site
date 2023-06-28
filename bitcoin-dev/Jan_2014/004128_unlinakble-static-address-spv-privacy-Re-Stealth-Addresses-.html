@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>unlinakble static address? &amp; spv-privacy (Re: Stealth Addresses)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2014-01-16 11:42:42
+            <br><i>Published on: 2014-01-16T11:42:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_unlinakble-static-address-spv-privacy-Re-Stealth-Addresses-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004128.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, Jeremy Spilman and Adam Back discussed the use of a second pubKey to scan for transactions without keeping bitcoin-encumbered private keys decrypted in memory. They agreed on its usefulness. However, Adam Back raised concerns about the cost of doing DH calculation per transaction, especially for full nodes, as it is not precomputable and requires IO per query. He also noted that multiple reusable addresses would require separate calculations to check each one. This could create a high load on popular centralized services, which he considered a feature. Adam Back further explained that using the second pubKey with parameters giving high elimination probability would affect everyone's privacy as statistical effects are accumulative. He predicted that reusable addresses could undo most, if not all, of the hard-won privacy benefit of CoinJoin. To address this issue, a version of the prefix computed via brute-force was proposed to make it somewhat stealthy still. Jeremy Spilman argued that hash grinding of the prefix would only be used if that's how transactions are being indexed, adding that it does not add any privacy but only added work forced to do for the prefix to work as designed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:10:59.892456+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

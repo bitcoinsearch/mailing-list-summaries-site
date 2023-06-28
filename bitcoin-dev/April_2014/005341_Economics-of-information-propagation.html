@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Economics of information propagation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonathan Levin 2014-04-21 16:45:22
+            <br><i>Published on: 2014-04-21T16:45:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Economics-of-information-propagation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005341.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark Friedenbach suggests using headers-first to determine the primacy of a block based on the time the block header is received, which is O(1) time to transmit and to SPV-validate. This method would be more efficient than the current regime where the primacy of a block is determined by the time at which the `block` message is received, which is delayed due to both the time it takes to transmit the block data and the time it takes to validate. The earlier, larger block A will only become stale if two blocks are found in the extra time it takes for block A to propagate the network, which is probably a negligible concern to most miners. However, Peter Todd argues that small miners can't mine on top of just a block header leaving them disadvantaged as they are earning no profit while they wait for the information to validate the block and update their UTXO sets. This results in the same problem as before, as the large pools who mine most blocks can validate either instantly - the self-mine case - or more quickly than the smaller miners.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T20:29:49.148732+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 35: add mempool message</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Amir Taaki 2012-08-16 18:20:55
-            <br><i>Published on: 2012-08-16T18:20:55+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2012/combined_BIP-35-add-mempool-message.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-August/001797.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email is a discussion between Pieter Wuille and Jeff Garzik regarding the proposal of BIP 35, which aims to add a mempool message. The implementation of this new feature seems simple, as it will allow nodes to query the memory pool of other nodes. Upon receipt of a "mempool" message, the node will respond with an "inv" message containing MSG_TX hashes of all the transactions in the node's transaction memory pool. An "inv" message is always returned, even if empty. Feature discovery is enabled by checking two "version" message attributes: a) Protocol version >= 60002 b) NODE_NETWORK bit set in nServices. Pieter suggests that the implementation of an extra service bit for this feature could be useful as it would mean that mempool-providing services may be discovered before connecting to them, as the service bits are carried around in addr messages. Although the proposal adds another level of complexity to an already complicated protocol, it is a rather benign offence when compared to other changes (past and future). If the majority of nodes implement it, then it can become part of the protocol by just incrementing the version.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T06:59:41.334013+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP proposal - addrv2 message</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Sjors Provoost 2019-03-06 09:05:09
-            <br><i>Published on: 2019-03-06T09:05:09+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2019/combined_BIP-proposal-addrv2-message.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016707.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The concept ACK discusses several considerations regarding the gossip protocol in Bitcoin. The first consideration is whether it makes sense for a client to store and gossip address formats that they do not know about, especially those outside a certain overlay network. Three possible scenarios where a node may not know about an address format are discussed, followed by recommendations on how to proceed in each case. Despite concerns about gossiping information that cannot be verified, the authors suggest that it could be useful for nodes to share information about other networks to help bootstrap connections. Another consideration is the precision of the time field, as seconds precision can be overkill and harmful. To address this, it's suggested that the time field be reduced to 16 bits and turned into a "time ago seen" quantized to 1-hour precision. This would reduce space requirements and prevent attacks that exploit high-precision timestamps for mapping the current network topology.Finally, optional (per-service) data is suggested to be useful for various things, including optional flags. A byte count and type system is recommended to encode the length of the payload for each flag. The authors acknowledge that while adding more information would create more topology mapping opportunities, it could also be beneficial for some use cases.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T17:08:04.811777+00:00 </i></p>
     
     
 

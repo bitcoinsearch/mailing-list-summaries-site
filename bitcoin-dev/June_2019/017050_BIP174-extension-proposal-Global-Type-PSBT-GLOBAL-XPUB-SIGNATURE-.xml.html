@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP174 extension proposal (Global Type: PSBT_GLOBAL_XPUB_SIGNATURE)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jonathan Underwood 2019-06-27 08:59:44
-            <br><i>Published on: 2019-06-27T08:59:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2019/combined_BIP174-extension-proposal-Global-Type-PSBT-GLOBAL-XPUB-SIGNATURE-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017050.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Jonathan Underwood, the Chief Bitcoin Officer at Bitbank, has proposed a new system to address the problem of verifying xpubs in an offline environment without importing warm private keys into cold signers. The proposal involves securely verifying the xpub of the warm/hot wallet first, followed by using an airgap signing tool to sign the xpub with all cold keys. The signature/xpub pairs are then uploaded to the online unsigned transaction generator.Underwood's proposal was made in response to the problem of how to ensure that the address being sent to is not a hacker's address that was swapped in between unsigned tx creation and first signature. He initially suggested signing individual xpubs with cold keys to check destination addresses. However, Dmitry Petukhov pointed out that this scheme does not handle multisig well as attackers can create a single-sig destination address that they control if one key from that multisig is compromised.Petukhov suggested signing the whole 'xpub package' of the multisig wallet or using an auxiliary message to be signed along with the 'xpub package'. Underwood proposed a new key value specification, but Petukhov suggested dealing with these schemes outside of PSBT or using some form of 'vendor-specific', or 'metainformation-specific' PSBT field.Underwood mentioned that his proposed scheme would fix the "send to address verification" problem for HD, but also the multisig change problem with 0x01. The proposal slightly alters the current system and is not indicative of how they work in the backend. Jonathan invites feedback on this proposal.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T19:35:50.341308+00:00 </i></p>
     
     
 

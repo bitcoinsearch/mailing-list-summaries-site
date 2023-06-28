@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Miniscript on LN (was: eltoo implementation in Bitcoin functional test framework)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2019-09-06 18:43:05
+            <br><i>Published on: 2019-09-06T18:43:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Miniscript-on-LN-was-eltoo-implementation-in-Bitcoin-functional-test-framework-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002138.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on Lightning-dev, the use of miniscript for Lightning was questioned. While it may be useful for transporting arbitrary contracts, using carefully-coded SCRIPT to transport HTLCs would be easier implementation-wise. However, the primary use of miniscript is not necessarily to create optimized Bitcoin scripts. Miniscript also makes it easy for any miniscript-aware wallet to figure out how to create a valid witness for the miniscript. If someone imported their keys and invoice pre-images into their Bitcoin Core wallet, then Bitcoin Core could sign for their LN update and settlement transactions. Later, other wallets such as hardware wallets and exchange HSMs may add support for libminiscript, making it easy for LN nodes to delegate signing to outside devices without anyone having to change the code of those hard-to-change devices. In conclusion, while miniscript does help produce machine-optimized scripts, its true potential may come from allowing any wallet to sign for any miniscript-compatible script, freeing developers from having to write sensitive signing code or heavily coordinating changes across different software.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:12:13.258015+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

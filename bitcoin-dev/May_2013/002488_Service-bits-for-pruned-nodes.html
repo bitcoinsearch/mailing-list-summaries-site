@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Service bits for pruned nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2013-05-01 13:46:08
+            <br><i>Published on: 2013-05-01T13:46:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2013/combined_Service-bits-for-pruned-nodes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002488.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille proposed the idea of pruning nodes, which involves nodes that validate and relay blocks and transactions but do not keep all historic blocks. To ensure new and old nodes can synchronize from them, he suggests adding two extra service bits to the P2P protocol: NODE_VALIDATE and NODE_BLOCKS_2016. NODE_NETWORK will imply NODE_VALIDATE and guarantee availability of all historic blocks. The proposal has general support, though it raises a question about snapshotting. A fully validating node could bootstrap from a UTXO snapshot plus all blocks since that snapshot, so an interval for creating a UTXO snapshot every three months could be set, serving all blocks after that snapshot. Older nodes would contact an archive node or torrent for blocks older than three months, then download normally.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T15:46:56.299139+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

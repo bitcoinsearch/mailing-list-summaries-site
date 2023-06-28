@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Difference between ignoring htlc request due to wrong payment hash vs refusing to release preimage in LND</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-03-24 08:27:27
+            <br><i>Published on: 2020-03-24T08:27:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2020/combined_Difference-between-ignoring-htlc-request-due-to-wrong-payment-hash-vs-refusing-to-release-preimage-in-LND.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-March/002601.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between ZmnSCPxj and Subhra, ZmnSCPxj discusses an issue regarding the LND protocol. ZmnSCPxj explains that A and B form an HTLC where the payment is "irrevocably committed". B then looks at the HTLC data and checks whether it knows the preimage to the payment hash. If B does not know the preimage, and there is no forwarding data (B is the final hop), then B responds with "incorrect or unknown payment details", and A waits for the channel state to advance. ZmnSCPxj also mentions that money gets locked temporarily in the HTLC but was freed soon afterwards as fast as B and A can advance the channel state. When asked how one can mimic a griefing attack scenario in LND, ZmnSCPxj suggests modifying the LND code directly or asking LND developers for any available hooks. In C-Lightning, a plugin must be installed, and you may devise some way for the plugin to know what payment hash you want to grief. Then, the plugin hooks into `htlc_accepted` handler, performs a `waitblockheight` command, and waits for the target block height to grief for before returning from the `htlc_accepted` handler.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T00:12:58.649978+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

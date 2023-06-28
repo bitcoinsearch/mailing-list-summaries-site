@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Implementing Covenants with OP_CHECKSIGFROMSTACKVERIFY</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Russell O&#39;Connor 2016-11-03 20:02:33
-            <br><i>Published on: 2016-11-03T20:02:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2016/combined_Implementing-Covenants-with-OP-CHECKSIGFROMSTACKVERIFY.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-November/013272.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion between Daniel Robinson and Russell O'Connor on the bitcoin-dev mailing list, they discussed the possibility of implementing "poison transactions" using OP_CHECKSIGFROMSTACKVERIFY. O'Connor explained that while he had not studied poison transactions very carefully, the transaction data is easily recoverable and adding transaction introspection operations would save everyone a bunch of work. He also mentioned that there are no specific plans to put transaction introspection opcodes into Elements at this moment, but it is a possibility in the future.Johnson Lau also joined the conversation, mentioning that he has implemented OP_CHECKSIGFROMSTACKVERIFY in a different way from the Elements implementation. Instead of hashing the data on stack, he directly put the 32 byte hash to the stack, which he believes should be more flexible as not every system uses double-SHA256.O'Connor then detailed how covenants can be implemented using two script extensions: OP_CAT and OP_CHECKSIGFROMSTACKVERIFY, both of which are already available in the Elements Alpha sidechain. He provided an example of constructing scripts for the Moeser-Eyal-Sirer vault. O'Connor expressed interest in collecting and implementing other useful covenants and encouraged others to share their ideas.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T20:31:21.386759+00:00 </i></p>
     
     
 

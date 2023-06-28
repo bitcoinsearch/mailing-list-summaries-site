@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Forcenet: an experimental network with a new header format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2016-12-04 19:34:00
+            <br><i>Published on: 2016-12-04T19:34:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2016/combined_Forcenet-an-experimental-network-with-a-new-header-format.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-December/013338.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new experimental network called Forcenet has been created to show how a new header format may be implemented. The current bitcoin header is limited and forces users to put additional data in the coinbase transaction, which is not ideal for light wallets. The header hash is calculated in a way that non-upgrading nodes would see it as a block with only the coinbase tx and zero output value. This technique allows rewriting most of the rules related to block and transaction validity. The header format is described in Luke's BIP, but has been amended by the creator of Forcenet. In addition to increasing the maximum block size, the calculation and validation of witness commitment may be changed with a new header. The Forcenet network includes some new parameters such as a hardfork at block 200, segwit always activated, 1 minute block with 40000 (prefork) and 80000 (postfork) weight limit, 50 blocks coinbase maturity, 21000 blocks halving, and 144 blocks retarget. There are also some things that have not yet been implemented such as the new merkle root algorithm described in the MMHF BIP and communication with legacy nodes. For easier testing, the codes can be accessed on Github and one can join by running "bitcoind --forcenet" and connect to the node running at 8333.info with default port. Basic internal mining support is available and new RPC commands such as getlegacyblock and getlegacyblockheader have been added.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T00:12:01.054332+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

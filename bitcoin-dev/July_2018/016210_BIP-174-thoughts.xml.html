@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 174 thoughts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Achow101 2018-07-06 18:59:50
-            <br><i>Published on: 2018-07-06T18:59:50+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016210.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email thread between Andrew, William Casarin and Jason Les, William expressed concern about the format of parsing key-value maps arrays. He stated that "you can only parse the format properly by first deserializing the transaction. Since there is no 'length' field for the key-value map arrays, you must count the number of transaction input/outputs and use that as the number of kv maps to parse." However, Andrew disagreed and stated that this was not a problem since almost all roles have to deserialize the unsigned tx before they can do anything. Andrew went on to say that if a combiner writes the wrong number of key-value maps, then it would simply be invalid to the next person that receives the PSBT and it would not deserialize properly because the key value pairs would have incorrect values for their types. In the same email thread, Jason Les asked if there had been any thought given to standardizing file names used when creating .psbt files. He suggested using a naming convention that gives some reliability of being collision resistant and descriptive such as "[8 char trim of hash of unsigned tx]+[Role that created file (Ex: Signer)]+[4 char trim of hash of data unique to that role (Ex: partial sig)]". Andrew did not see the need for this naming convention as he did not think it was necessary for any role to know who created the PSBT.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T03:24:21.194080+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Encrypt bitcoin messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2014-08-20 01:27:46
+            <br><i>Published on: 2014-08-20T01:27:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_Proposal-Encrypt-bitcoin-messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006545.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Peter Todd and William Yager on the Bitcoin developers' mailing list in August 2014, Todd suggested enabling hidden service support by default to add encryption and reasonably good authentication. However, Yager argued that this would introduce an "insanely huge attack surface." Todd proposed separating the surface by using the standalone Tor binary, which runs under a different user from the Bitcoin Core binary. Yager pointed out that the suggestion conflated two different things: using Tor for anonymity, which he agreed was valuable, and using encryption, which he saw as useless for Bitcoin. Todd countered that without encryption, significant amounts of information would be leaked to any passive attacker trying to trace the origin of Bitcoin transactions, creating a significant privacy risk. Todd also argued that Sybil attacks posed a threat to the upcoming v0.10's fee estimation implementation, and authentication and encryption were needed to make it secure from ISP-level targeting to ensure that one's view of the network is representative. He suggested that Tor support used in parallel with native connection is ideal here, as neither the Tor network nor one's ISP alone can Sybil attack them. It's worth noting that Bitcoinj has already implemented Tor support for these same reasons.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:15:08.882198+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

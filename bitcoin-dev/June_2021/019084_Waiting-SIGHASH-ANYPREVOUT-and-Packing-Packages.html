@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Waiting SIGHASH_ANYPREVOUT and Packing Packages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2021-06-18 22:11:38
+            <br><i>Published on: 2021-06-18T22:11:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2021/combined_Waiting-SIGHASH-ANYPREVOUT-and-Packing-Packages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019084.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The post discusses safety issues with the Lightning network, which include pre-signed feerate and malicious transaction pinnings. The author proposes solutions for each of these issues. For the pre-signed feerate problem, the author suggests using package-relay or SIGHASH_ANYPREVOUT. To address malicious transaction pinnings, the author suggests hardening the mempool against tx-relay jammings attacks. The author emphasizes the importance of considering these issues during the development process. They propose a rough deployment timeline for the proposed solutions. Furthermore, the post discusses the design considerations for implementing package relay in Bitcoin Core to support advanced Bitcoin protocols such as OP_CTV congestion tree, CoinPool, and interactive cut-through. The author explains that the package relay relies on two separate components: the higher half, an extension of the mempool logic with a new package-level policy, and the lower half, which has at least three different designs. The author also proposes that feedback from L2 ecosystem users should establish API bounds for package-size acceptance logic to establish public consensus. Additionally, they emphasize the importance of carefully considering anti-DoS measures for package-relay and exploring cost-effective package replacement policies to avoid economically outlawing Lightning nodes with a small fee budget. Finally, the author suggests a rough deployment timeline for various solutions and emphasizes that p2p design belongs to the bitcoin core dev process.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T02:42:30.118601+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

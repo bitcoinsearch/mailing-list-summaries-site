@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2019-01-07 15:18:52
+            <br><i>Published on: 2019-01-07T15:18:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016608.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange between Rusty Russell and Matt Corallo discusses the issue of RBF-pinning, which allows a transactor to mark their transactions as "likely-to-be-RBF'ed" to prevent attacks. In order to ensure that such attacks are not possible to pull off consistently, children of such transactions would be rejected unless the resulting package would be "near the top of the mempool." However, this proposal is less convincing due to the difficulty of defining a "near the top of the mempool" criteria. Lightning's requirements differ from the original problem, as they need certainty that the transaction in question confirms by some deadline rather than a high probability that it will confirm soon. As for package relay, there might be a simpler solution for this specific case, but it depends on the scope of that design. The proposal seems like a hack, but it is a hack at the boundary condition where packages meet local anti-DoS rules in violation of the "incentive compatible" goal anyway. This proposal is very different and isn't incentive compatible if blocks come in a bit fast for an hour or two, as all of a sudden that "near the top of the mempool" criteria makes no sense and you should have accepted the new transaction(s). Regarding the reduction of the problem that the current lightning proposal adds to the UTXO set with two anyone-can-spend txs for 1000 satoshis, Rusty suggests allowing a simple single P2WSH(OP_TRUE) output, or, with IsStandard changed, a literal OP_TRUE. Meanwhile, the proposal clearly relies on some form of package relay, which comes with its own challenges. Nonetheless, Rusty believes that this could be done client-side by doing a quick check if the transaction is above 250 satoshi per kweight but below minrelayfee, putting it in a side-cache with a 60-second timeout sweep. If something comes in which depends on it, which is above minrelayfee, then process them as a pair.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:28:42.619741+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

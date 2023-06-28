@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Multi-frame sphinx onion format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-02-24 00:53:03
+            <br><i>Published on: 2019-02-24T00:53:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2019/combined_Multi-frame-sphinx-onion-format.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001883.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to Christian and Rusty, ZmnSCPxj presents a proposal for the Lightning Network's onion packet format. The proposal suggests using a TLV-set for the entire payload and using the old payload format as a single TLV-value with 20 bytes of size. This reduces overhead by two bytes compared to the old v0 format. ZmnSCPxj suggests further reducing overhead by making the realm 0 byte into a special type "0" with a fixed length of 1299 bytes. The next 1299 bytes are defined as the "V", having the format of 64 bytes of the current hop format, plus encrypted form data. This would remove the overhead of the realm byte by re-encoding it as the type in a TLV system. ZmnSCPxj also proposes another special type 255, which declares the next 32 bytes as HMAC and the rest of the onion packet as the data for the next hop. However, he notes that this is not a serious proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:38:21.198103+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>deterministic transaction expiration</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kaz Wesley 2014-08-01 00:58:23
+            <br><i>Published on: 2014-08-01T00:58:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_deterministic-transaction-expiration.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006396.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Currently, there is a lack of transaction lifetime management in the network's mempools. The absence of such management has been identified as a significant factor hindering some mempool exchange. While expiry per-node after a specific amount of wall time has been proposed, this mechanism is fragile and could be exploited by a single node that keeps all relayable transactions alive forever. To address this issue, a proposal has been made to add finite and predictable lifespans to transactions in mempools using nLockTime and a new standardness rule. The proposal can be implemented in stages and would not necessarily require a soft fork, avoiding problems with reorgs. The first stage involves setting nLockTime to the current height by default in newly created transactions. Once users have upgraded to clients that set nLockTime, transactions without nLockTime will be discouraged, and a slightly higher fee may be required for relay. Relay of transactions without an nLockTime will then be rate-limited, which alone may achieve discouragement. Finally, a new IsStandard rule will be added, rejecting transactions with an nLockTime more than N blocks behind the current tip.Transactions will stop being relayed and drop out of mempools a fixed number of blocks from their creation. Once that window has passed, the sender's wallet could begin to expect that the transaction will not be confirmed. If a reorg displaces a transaction until after its expiry height, a miner can still put it back in the blockchain; the expiry height is just a relay rule. A user who needs to get their original "expired" transaction confirmed could still do so by submitting it directly to a miner with suitable policies.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:46:38.009514+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

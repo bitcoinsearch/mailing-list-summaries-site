@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Version 1 witness programs (first draft)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mark Friedenbach 2017-10-01 18:34:07
-            <br><i>Published on: 2017-10-01T18:34:07+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015148.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Luke Dashjr, a Bitcoin Core developer, proposed an upgrade to SegWit and Bitcoin scripting. The proposal introduces five key changes such as minor versions for witnesses, undefined opcodes causing script to exit with success, new shorter fixed-length signature format, the ability for signatures to commit to additional conditions expressed in serialized Script, and if the final stack element is not exactly true or false, it is interpreted as a tail-call Script and executed. One of the significant changes is the elimination of the 520-byte push limitation for v1 scripts that could benefit from larger proof sizes, such as MERKLEBRANCHVERIFY. The proposal also aims to introduce a per-input hashing limit equal to a small multiple of the witness size or retaining the opcount limit. The proposal includes the use of indirect pointers and reference counting for items on the stack to safely rework script internals. This can be useful regarding introducing OP_CHECKBLOCKATHEIGHT (BIP 115) and ending the whole replay protection argument before any further splits. However, the signature must commit to the script interpreter flags and internal "sigversion," which serve the same purpose; otherwise, someone could move the signature to a different context to exploit differences in the various Script interpretation modes. Despite the last part being a bit complicated, Luke considers this BIP deployable after resolving this issue. Finally, he requested feedback and thoughts on the proposal to ensure no important information is left missing or controversial.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T21:29:51.961751+00:00 </i></p>
     
     
 

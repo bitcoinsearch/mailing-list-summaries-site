@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving the initial gossip sync</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-02-20 01:08:54
+            <br><i>Published on: 2018-02-20T01:08:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2018/combined_Improving-the-initial-gossip-sync.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001032.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The lightning dev interop call discussed three new mechanisms for querying specific short channel IDs, ranges of blocks and gossip timestamps. The first mechanism allows a user to query for a channel announcement and channel updates for a specific 8-byte short ID. The second mechanism is a new message pair where the sender requests information about short channel IDs within a given range of blocks and the receiver responds with an ordered series of short channel IDs. The implementation requires a channel index by block number. The third mechanism adds a gossip timestamp field to 'init' which overrides 'initial_routing_sync'. It appends the negotiation of this feature bit, allowing nodes to reconnect to a single peer more easily. The implementation is easy. Appendix A provides the encoding sizes tested for the ordered list of short channel IDs in various compression schemes (Raw, gzip -9, splitgz, delta, deltagz) using two different corpus samples: LN mainnet dump (1830 channels) and all P2SH outputs between blocks 508000-508999 incl (790844 channels). Appendix B shows the encoding source code in C language.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T20:41:32.299851+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

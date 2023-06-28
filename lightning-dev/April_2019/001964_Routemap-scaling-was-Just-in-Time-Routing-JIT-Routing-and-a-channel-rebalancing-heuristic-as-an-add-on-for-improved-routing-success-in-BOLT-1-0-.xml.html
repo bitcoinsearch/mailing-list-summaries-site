@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Routemap scaling (was: Just in Time Routing (JIT-Routing) and a channel rebalancing heuristic as an add	on for improved routing success in BOLT 1.0)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> m.a.holden 2019-04-04 07:08:44
-            <br><i>Published on: 2019-04-04T07:08:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2019/combined_Routemap-scaling-was-Just-in-Time-Routing-JIT-Routing-and-a-channel-rebalancing-heuristic-as-an-add-on-for-improved-routing-success-in-BOLT-1-0-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001964.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author proposes a quadtree-based solution for reducing the maximum or typical route length to query, with the goal of improving efficiency. This approach does not split up the network in any way that nodes or channels can be politically targeted, and there are no special nodes or privileged status. All nodes remain equal participants, and the network remains homogeneous. The quadtree provides an efficient strategy for locally organizing gossip, and each node determines its own depth in the tree based on the approximate quantity of information it wishes to gossip. Nodes could also pick (multiple) specific quadtree buckets to communicate all gossip about through filters they negotiate, and this would be optional. The global rule is given such that any node can probabilistically fulfill the requirement to know at least routes to some nodes. The proposed approach optimizes for reduced querying rather than finding the most optimal routes. It is semi-structured and provides enough incentive for everyone to keep as much information locally as realistic for the resources they have, thus improving the efficiency of the network overall. The network would become "reasonably efficient" for everyone, rather than inefficient for most except the few with sufficient resources to maintain a useful routemap. The autopilot suggestions prioritize local channels and deprioritize distant channels, with the goal of improving efficiency. There may be some trade-off with this approach, but it's still worth considering.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T18:10:39.993620+00:00 </i></p>
     
     
 

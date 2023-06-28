@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>OP_RETURN inside TapScript</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Zac Greenwood 2022-02-24 21:40:57
-            <br><i>Published on: 2022-02-24T21:40:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2022/combined_OP-RETURN-inside-TapScript.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019999.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The bitcoin-dev mailing list recently discussed reducing the footprint of storing data on-chain by supporting raw data storage without creating a transaction. Currently, data is stored within an OP_RETURN in a transaction structure, which is deemed wasteful. However, if raw data can be stored without creating a transaction, waste can be reduced. It is expected that storing data this way will only be marginally cheaper per on-chain byte than the current method. This is done to disincentivize the use of OP_RETURN and achieve a smaller footprint for on-chain data without making it cheaper. Taproot has eliminated the need for separate OP_RETURN outputs to be pushed on-chain, and instead, it allows for "OP_RETURN" as a branch in the TapScript. This enables the storage of data off-chain while proving that it is connected with some taproot address that was pushed on-chain. There is currently a "data" field in "createrawtransaction" in Bitcoin Core, but the implementation may need to be changed to place that data in a TapScript instead of creating a separate OP_RETURN output.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T17:14:39.537734+00:00 </i></p>
     
     
 

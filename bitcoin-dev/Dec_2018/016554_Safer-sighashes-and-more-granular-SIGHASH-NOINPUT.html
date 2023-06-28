@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-12-14 00:47:29
+            <br><i>Published on: 2018-12-14T00:47:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016554.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin-dev discussion, Russell O'Connor proposed signing the actual weight of a transaction instead of an upper bound on the weight. Anthony Towns suggested to assume every signature is 65 witness bytes and just be grateful for the prioritisation benefit if someone chooses a shorter signature. The proposal to sign the weight commits to the feerate and hence transaction priority, and it's reasonable to target the lower bound feerate because the potential loss is only that you get a higher feerate and would have saved "0.8%" on f if you'd been able to be 100% sure of that. Signing an upper bound requires specifying that upper bound somewhere in the transaction, which is not possible since sneaky places to stash that data are out. Committing to a minimum feerate seems more useful as it applies for ANYONECANPAY crowd-funding type transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:03:59.441600+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

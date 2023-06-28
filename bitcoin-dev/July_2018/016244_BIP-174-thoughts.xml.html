@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 174 thoughts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gregory Maxwell 2018-07-11 20:05:32
-            <br><i>Published on: 2018-07-11T20:05:32+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016244.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion among developers regarding the policy for signing Bitcoin transactions with extra metadata has raised concerns about the potential difficulty of implementing new features that require extra data. The fear is that if signers are allowed to refuse to sign because of extra fields, it would create pressure to find places to stuff the extra data where it won't interfere with already deployed signers. This would be unfortunate as PSBT was created specifically to avoid field stuffing. While it's understandable that no signer should sign data they don't understand, extra data that doesn't change their signature shouldn't stop them from signing. The example given is a checkmultisig with one key using schnorr multisignature requiring extra rounds to establish an R and other keys being legacy material. If the other signers stop working when there are extra fields irrelevant to them, this creates significant pressure not to extend the PSBT in the intended way but instead to find places to put the extra data where it won't interfere with already deployed signers. If someone wants to make a non-conforming signer, they can do so, but it would be unfortunate if new applications get slowed down or forced to use ugly hacks due to intentional extension support being blocked by things claiming to support the spec. The reason why the specification does not lock in exactly the possible fields and allow no others is to enable extensions without breaking compatibility.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T17:07:42.019118+00:00 </i></p>
     
     
 

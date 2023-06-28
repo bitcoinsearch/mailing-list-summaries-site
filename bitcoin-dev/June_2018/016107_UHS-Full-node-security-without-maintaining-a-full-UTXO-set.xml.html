@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>UHS: Full-node security without maintaining a full UTXO set</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jim Posen 2018-06-10 23:07:07
-            <br><i>Published on: 2018-06-10T23:07:07+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2018/combined_UHS-Full-node-security-without-maintaining-a-full-UTXO-set.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016107.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal to allow full nodes to run with a different storage/bandwidth tradeoff has been suggested. The proposal suggests storing only the hashes of all unspent outputs, rather than all unspent outputs themselves. Sjors Provoost finds the proposal attractive due to its ability to squeeze more out of limited RAM on low-end devices. However, he thinks that the benefits during initial sync from ongoing operation need to be measured before the proposal can be fully evaluated. Additionally, he mentions that the cost savings for using less SSD storage on AWS is not negligible, but it's marginal, and probably not worth it unless there’s really no downside. Another alternative would be for nodes to simply maintain a Merkle Mountain Range over all TXOs in order of creation and a spentness bitfield, which would use even less storage and more bandwidth. Despite this, the proposed change does not modify the blockchain data structure, so implementations could do it without marrying the network to it forever.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T02:21:32.382754+00:00 </i></p>
     
     
 

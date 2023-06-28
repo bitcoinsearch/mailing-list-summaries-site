@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Supporting a custodial user who wishes to withdraw all sats from the account...</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2022-08-27 02:06:27
-            <br><i>Published on: 2022-08-27T02:06:27+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2022/combined_Supporting-a-custodial-user-who-wishes-to-withdraw-all-sats-from-the-account-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-August/003675.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A Lightning developer has proposed a solution to the problem of users having leftover funds when withdrawing from custodial wallets. The proposal is called 'option_recipient_pays_routing_fees' and involves creating an invoice with a flag indicating that the recipient is willing to pay for routing fees by releasing the preimage, even if the full amount has not been received. The onion is then constructed in a way that the first htlc will be for the full amount, while subsequent HTLCs will be of decreasing value so that routing nodes are compensated properly. The release of the preimage will occur only if missing sats (up to 1% of the amount) are not too many. However, this proposal may confuse users who want to drain their accounts. Another possible solution is trampoline routes, where a trampoline node decrypts the first layer of the onion and the receiver provides an encrypted route from some node to itself. The receiver deducts the fees from its funds in this case.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T09:42:54.621871+00:00 </i></p>
     
     
 

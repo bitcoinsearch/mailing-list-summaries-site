@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Optional &#34;wallet-linkable&#34; address format - Payment Protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Timo Hanke 2013-06-19 20:03:07
+            <br><i>Published on: 2013-06-19T20:03:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2013/combined_Optional-wallet-linkable-address-format-Payment-Protocol.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002785.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread from June 2013, Timo Hanke and Alan Reiner discuss a subtle issue with the use of a standard address in conjunction with the payment protocol. Hanke explains that if the payee has spent the output (i.e., the pubkey corresponding to "destination"), which is publicly known as PubKeyParent * Multiplier[i], then anyone can create arbitrary pairs {PublicKeyParent, Multiplier} that lead to the same "destination." Depending on what the transaction should "prove," this could be an unwanted feature, so Hanke suggests replacing PubKeyParent * Multiplier[i] by PubKeyParent * HMAC(Multiplier[i],PubKeyParent), which eliminates ambiguity about PubKeyParent. However, this modification would no longer be compatible with BIP32. The attack vector is the discrete log problem of spoofing a relationship between a target public key and one that you control. While you can produce essentially-random pairs of {PubX, Mult} pairs that give the same PubB, you won't have the private key associated with those public keys.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T18:53:22.391019+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

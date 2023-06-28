@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Concurrent sigs in BOLT #2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-04-26 02:21:00
+            <br><i>Published on: 2016-04-26T02:21:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2016/combined_Concurrent-sigs-in-BOLT-2.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000522.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the email is discussing how concurrent updates should be handled. They suggest using an ordering system to resolve conflicts by comparing signatures. In this case, if two nodes send each other a signature at the same time, they could agree that the one that sent the "greatest" signature has to immediately resend a new signature including all pending changes. The author then provides a diagram that shows how nodes track two commitment states and the rules nodes must follow when processing packets. When a node sends an ADD HTLC, it modifies the other side's state, but only modifies its own state when it receives an ack covering that ADD HTLC. The ADD HTLC receiver modifies its own state and modifies the other side's state when it sends the next ack. Both nodes have outstanding changes, so they can send another SIG (which acks the received changes, thus modifying the other state). The minimum single-update case is still 1.5 round-trips.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:27:51.182291+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

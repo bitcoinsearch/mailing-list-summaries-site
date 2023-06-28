@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>sorting public keys for p2sh multisig transactions <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2014/004635_sorting-public-keys-for-p2sh-multisig-transactions.xml.html">sorting public keys for p2sh multisig transactions</a>
-                        <b>devrandom 2014-03-12 19:42:44</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2014/004629_sorting-public-keys-for-p2sh-multisig-transactions.xml.html">sorting public keys for p2sh multisig transactions</a>
-                        <b>Ryan X. Charles 2014-03-12 17:10:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2014/004629_sorting-public-keys-for-p2sh-multisig-transactions.xml.html">sorting public keys for p2sh multisig transactions</a>
-                        <b>Ryan X. Charles 2014-03-12 17:10:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2014/004629_sorting-public-keys-for-p2sh-multisig-transactions.xml.html">sorting public keys for p2sh multisig transactions</a>
-                        <b>Ryan X. Charles 2014-03-12 17:10:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2014/004635_sorting-public-keys-for-p2sh-multisig-transactions.xml.html">sorting public keys for p2sh multisig transactions</a>
-                        <b>devrandom 2014-03-12 19:42:44</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2014/004635_sorting-public-keys-for-p2sh-multisig-transactions.xml.html">sorting public keys for p2sh multisig transactions</a>
-                        <b>devrandom 2014-03-12 19:42:44</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004635.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2014-03-12T19:42:44+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>In a p2sh multisig transaction, the serialized script consists of multiple public keys and an OP_CHECKMULTISIG operation. The order of the public keys affects the resulting p2sh address, so there needs to be a standard way of sorting them to ensure consistency. There are two types of public keys: compressed and uncompressed, with the latter being longer. Sorting methods such as string, big endian number, and little endian number can be used, but they have different outcomes. For instance, sorting as strings may result in a compressed key being ranked higher than an uncompressed one due to their length. On the other hand, sorting them as big endian numbers would give the correct order.Alan Reiner's comment suggests using parallel trees to generate P2SH addresses after sorting the keys lexicographically, which probably means sorting as strings. The writer implemented sorting in javascript, where he sorted them as big endian numbers and filled in the 0s. However, he doesn't care which method they use as long as everyone in the Bitcoin world uses the same standard. Therefore, a standard way of sorting public keys is necessary for p2sh multisig transactions to ensure consistency.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-08T14:59:01.679151+00:00</i></p>
-    
-
     
 
     <footer>

@@ -11,41 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Warning to rawtx creators: bug in SIGHASH_SINGLE <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Aug_2012/001805_Warning-to-rawtx-creators-bug-in-SIGHASH-SINGLE.xml.html">Warning to rawtx creators: bug in SIGHASH_SINGLE</a>
-                        <b>Matt Corallo 2012-08-20 16:06:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Aug_2012/001805_Warning-to-rawtx-creators-bug-in-SIGHASH-SINGLE.xml.html">Warning to rawtx creators: bug in SIGHASH_SINGLE</a>
-                        <b>Matt Corallo 2012-08-20 16:06:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Aug_2012/001805_Warning-to-rawtx-creators-bug-in-SIGHASH-SINGLE.xml.html">Warning to rawtx creators: bug in SIGHASH_SINGLE</a>
-                        <b>Matt Corallo 2012-08-20 16:06:14</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-August/001805.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2012-08-20T16:06:14+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>A vulnerability has been found in the rawtx API when using SIGHASH_SINGLE. If an invalid transaction is created with this signature, any future outputs to the public key associated with the signature can be easily stolen by anyone. The risk of a hardfork or further complicating transaction verification could be avoided by blocking such transactions in the rawtx API. This vulnerability occurs when parsing a transaction input and the given input's index is greater than or equal to the total number of outputs in the current transaction. The issue was identified in the code under SIGHASH_SINGLE in script.cpp:SignatureHash. It is important for those using the rawtx API to exercise caution when working with SIGHASH_SINGLE to avoid falling victim to this vulnerability. It is recommended that users avoid creating invalid transactions with this signature to protect themselves from potential security breaches. In order to mitigate the risk associated with this vulnerability, it is advised to block such transactions in the rawtx API. This approach would prevent any future outputs to the public key associated with the signature from being stealable by anyone. In conclusion, the rawtx API vulnerability poses a significant threat to the security of Bitcoin transactions. Users should exercise caution when using SIGHASH_SINGLE and consider blocking such transactions in the rawtx API to protect themselves from potential security breaches. The issue has been identified in the code under SIGHASH_SINGLE in script.cpp:SignatureHash.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-06T07:06:35.576860+00:00</i></p>
-    
-
     
 
     <footer>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Update on mobile 2-factor wallets <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006899_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Jeff Garzik 2014-11-08 16:21:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006903_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 19:36:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006900_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 16:37:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006902_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Chris Pacia 2014-11-08 18:43:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006899_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Jeff Garzik 2014-11-08 16:21:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006898_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 16:04:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006900_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 16:37:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006902_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Chris Pacia 2014-11-08 18:43:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006898_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 16:04:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006903_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 19:36:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006902_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Chris Pacia 2014-11-08 18:43:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006903_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 19:36:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006899_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Jeff Garzik 2014-11-08 16:21:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006898_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 16:04:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2014/006900_Update-on-mobile-2-factor-wallets.html">Update on mobile 2-factor wallets</a>
+                        <b>Mike Hearn 2014-11-08 16:37:51</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-November/006899.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-11-08T16:21:02+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Decentralized 2-factor Bitcoin wallets have recently seen significant development, requiring both a desktop/laptop and an Android smartphone app to function. Two different implementations of such wallets are discussed in the post: Bitcoin Authenticator and a wallet made by Christopher Mann and Daniel Loebenberger from Uni Bonn. Bitcoin Authenticator uses P2SH/CHECKMULTISIG for the 2-factor functionality, but has downsides such as less support for address types and larger transactions resulting in higher fees. On the other hand, Mann and Loebenberger's implementation has ported the efficient DSA 2-of-2 signing protocol by MacKenzie and Reiter to ECDSA. Their protocol uses a combination of ECDSA, Paillier homomorphic encryption, and zero-knowledge proofs to build a working solution for the 2-of-2 case only.Alon Muroch and Chris Pacia have made considerable progress on their HD wallet app, Bitcoin Authenticator. It is currently in alpha but expected to be popular due to its focus on UI and simple mobile security model. Both projects are expected to become more user-friendly and secure with further development. Currently, neither of these projects implement support for BIP70, so the screen you see when signing the transaction is hardly user-friendly or secure without trusting the destination address.The field of secure key escrow needs more research, as being your own bank seems much riskier than just using a real one as people feel very safe with the security provided by banks. Support for sending a full payment request between devices is the clear next step once these wallets have obtained a reasonable user base and are stable. The email thread discusses these recent developments in the space of decentralized 2-factor Bitcoin wallets. Both projects run on desktop/laptop with an Android app to go along with them, and require compromise of both devices for any kind of compromise. Bitcoin Authenticator has several features like OneName integration and is currently in alpha, while Mann and Loebenberger's implementation has good enough performance and looks easy to integrate with Bitcoin Authenticator.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-09T14:12:40.678959+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

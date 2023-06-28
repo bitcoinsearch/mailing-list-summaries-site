@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An Alternative Onion-Routing Proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2015-12-18 22:16:22
+            <br><i>Published on: 2015-12-18T22:16:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2015/combined_An-Alternative-Onion-Routing-Proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-December/000397.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the concept of backwards-compatibility in edge wallets. The scenario starts with an edge wallet wanting to send funds over lightning to a particular address but is unable to connect directly. So, the wallet falls back on regular on-chain Bitcoin transactions. This mechanism provides a graceful fallback to on-chain transactions. The safety of this mechanism is discussed, where collisions of public-key hashes can occur. The network is viewed in two namespaces - global and local. In practice, it is safe as a global node ID conflict with the local mix-net ID doesn't undermine the propagation of an HTLC. A scenario is illustrated where Alice wishes to send funds to Dave, and her channel sub-graph has nodes Bob, Carol, and Estelle. A collision occurs between the 16-byte ID of Estelle's public key and Carol's ID. Bob gets the mix-header and processes it normally but realizes there's a collision in the local namespace. He sends the mix-header to Estelle first, who rejects it, resulting in Bob forwarding it to Carol, who accepts it, and everything continues as normal.Lastly, it is explained that Sphinx requires that the mix-net node IDs be of the same size as the MAC in the mix-header. If node IDs were 32-bytes, then poly3015 couldn't be used since its tag size is 16-bytes.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:40:55.464697+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

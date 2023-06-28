@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BOLT 11, real time micro payments, and route redundancy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andy Schroder 2017-09-03 05:58:39
+            <br><i>Published on: 2017-09-03T05:58:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2017/combined_BOLT-11-real-time-micro-payments-and-route-redundancy.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-September/000753.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Andy Schroder is trying to adapt his fuel pump to use Lightning and is exploring the possibility of implementing micro payments. He has concerns about the smallest volume that could be individually paid for, which would be around 100mL. He also wonders if there is a protocol for doing repeated payments and if it is possible to reuse the same payment request when payment routes go down. Rusty Russell suggests that it is only an issue if the payment goes down during a payment, in which case a new payment would need to be re-routed. Schroder also asks about the absence of a refund address in BOLT 11 and compares it to BIP 70, which does have a refund address option. Russell admits that he never considered this requirement but suggests a flag in BOLT 11 that indicates a refund address is needed. The refund information would then be added to the payment onion itself.Schroder also has questions about how payees distinguish payments from different payers in BOLT 11 and the purpose of the p tagged field. He also asks about the n tagged field and its relevance when the public key is implied through the signature and required recovery ID.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T02:22:32.844322+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

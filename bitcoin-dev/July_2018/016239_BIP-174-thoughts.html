@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> matejcik 2018-07-10 12:10:10
+            <br><i>Published on: 2018-07-10T12:10:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_BIP-174-thoughts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016239.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the possibility of malicious conflicting values in a scenario where one signer produces an invalid signature or modifies any of the other fields already present in the PSBT for consumption by others. It is believed that combiners can always be replaced with just a different topology of data flow since it does not make a difference. The Combiner, which picks arbitrarily in case of conflicts, will never end up with something worse than what one already needs to deal with. Furthermore, if one disregards the case of invalid fields because the result will just be an invalid transaction, then any choice the Combiner makes is fine because all the values it can pick from are valid. It is discussed whether rejecting invalid fields ever matters and, in general, comes down to a philosophical difference. One is reluctant to sign an input with unknown data on the premise that there could be *anything* in that data, and the fact that right now, one cannot come up with a field that would be problematic does not mean that tomorrow won't bring one, particularly since a potential failure here is silent and invisible to the user. It is mentioned that they are most likely to implement the "do not sign with unknown fields" rule in any case (technically a whitelist of "known OK" field types) and resolve potential problems as they arise.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:21:03.919022+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

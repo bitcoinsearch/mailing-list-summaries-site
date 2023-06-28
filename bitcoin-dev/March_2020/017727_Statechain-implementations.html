@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Statechain implementations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-03-27 01:46:15
+            <br><i>Published on: 2020-03-27T01:46:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Statechain-implementations.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017727.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Ruben and Christian discusses the use of a late fee binding in eltoo, which alters the txid and causes the settlement tx to become invalid. Instead, Christian suggests using a secondary output that can be spent by anyone to fee bump the kickoff tx with CPFP. However, this could be exploited by third parties who could prevent the parent transaction from being confirmed. The solution proposed for Lightning was to give each participant their own attach-your-fees output, but this might not work for statechains. The broadcasting of the kickoff creates a "dead man walking" statechain, but implementation complexity might increase tremendously.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:13:34.811632+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

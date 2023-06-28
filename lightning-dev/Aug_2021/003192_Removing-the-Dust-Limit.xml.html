@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Removing the Dust Limit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2021-08-21 03:10:46
-            <br><i>Published on: 2021-08-21T03:10:46+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003192.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>During the BitDevs conference in Austin, a new argument was presented in favor of removing the dust limit on Bitcoin transactions. The argument is that the dust limit is a per-node relay policy and it is rational for miners to mine dust outputs given their lower cost of maintenance. If transaction relaying nodes censor something that a miner would mine, users will seek a private/direct relay to the miner, which is both bad for privacy and decentralization. Therefore, the dust limit, should there be demand to create dust at prevailing mempool feerates, causes an incentive to increase network centralization immediately. However, we should note that in the Lightning spec, when an output *would have been* created that is less than the dust limit, the output is instead put into fees. Thus, the existence of a dust limit encourages L2 protocols to have similar rules, where outputs below the dust limit are just given over as fees to miners, so the existence of a dust limit might very well be incentivize-compatible for miners, regardless of centralization effects or not.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T05:16:03.308865+00:00 </i></p>
     
     
 

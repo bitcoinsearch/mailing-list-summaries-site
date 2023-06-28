@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why do we need a MAX_BLOCK_SIZE at all? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008437_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Stephen Morse 2015-06-01 19:02:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008440_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Jim Phillips 2015-06-01 20:02:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008434_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Jim Phillips 2015-06-01 18:32:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008434_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Jim Phillips 2015-06-01 18:32:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008434_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Jim Phillips 2015-06-01 18:32:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008437_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Stephen Morse 2015-06-01 19:02:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008437_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Stephen Morse 2015-06-01 19:02:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008440_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Jim Phillips 2015-06-01 20:02:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2015/008440_Why-do-we-need-a-MAX-BLOCK-SIZE-at-all-.html">Why do we need a MAX_BLOCK_SIZE at all?</a>
+                        <b>Jim Phillips 2015-06-01 20:02:31</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008437.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-06-01T19:02:12+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In a 2015 discussion, Jim Phillips questions the need for a hard limit on block size in Bitcoin. He acknowledges the reasons for keeping blocks to a certain size, such as difficulties with propagation and creating a fee economy for miners, but suggests that configurable settings could address these issues instead of a hard limit. Philips argues that the original purpose of the limit, to prevent spamming, is no longer relevant with ASIC mining. He proposes that relay nodes should configure their own limits on block size, and hardware limitations should act as bottlenecks for growth to avoid an arbitrary soft limit imposed by the protocol. To maintain consensus in the network, there needs to be a clearly defined rule about which blocks are valid. This is achieved by setting a limit on the maximum block size that everyone agrees on. Relays can set configurable limits on the size of blocks they will relay to prevent a rogue miner from flooding the network with large blocks. Over time, relays can raise the limits they set on block sizes they will propagate, allowing the true maximum block size to grow naturally without requiring a hard fork. However, removing the 1 MB cap entirely could lead to further centralization of pools. Allowing relays to restrict propagation can mitigate this issue, as they can refuse to relay large blocks filled with nonsense or coming from a miner known for producing bad blocks.Anonymizing networks like TOR are not geared towards handling static IP traffic, so large miners who have to use static IPs would not risk getting blacklisted by relays. Larger blocks mean fewer people can download and verify the chain, resulting in fewer people willing to run full nodes and store all of the blockchain data. Artificially bloating the block with nonsense could increase server costs for everyone running a full node and make it infeasible for people with home computers to even keep up with the network. Finding a block size limit with the right tradeoff between resource restrictions and functional requirements is important, but no such solution currently exists. However, this same attack could be achieved simply by sending lots of spam transactions and bloating the UTXO database or the mempool. This particular attack vector has already been largely mitigated by pruning and could be further mitigated by allowing relays to decide which blocks they propagate.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-09T22:04:57.419355+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

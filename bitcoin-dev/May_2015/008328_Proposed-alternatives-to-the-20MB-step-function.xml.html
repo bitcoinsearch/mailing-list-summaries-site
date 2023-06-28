@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposed alternatives to the 20MB step function</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2015-05-28 17:34:32
-            <br><i>Published on: 2015-05-28T17:34:32+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2015/combined_Proposed-alternatives-to-the-20MB-step-function.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008328.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the possibility of increasing the block size limit in Bitcoin, but argues against assuming size-independent propagation. The author argues that while several improvements are possible to aspects of block propagation, no part can be completely size-independent. The email outlines various reasons for this, including non-uniform relay policies, double spend attempts, and transactions generated before a block had time to propagate, which results in extra bandwidth usage and signature validation for unrelayed transactions. Furthermore, block validation with 100% known and pre-validated transactions is not constant time due to updates that need to be made to the UTXO set. The email suggests that the availability of hardware with higher bandwidth, faster disk/ram access times, and faster CPUs would allow for larger blocks with the same propagation profile as smaller blocks with earlier technology. The email also discusses the idea of a dynamic maximum size limit based on recent history. A proposal is made for the max size to be two times the average size over the last 144 blocks, calculated at every block, with some other changes to consensus rules. However, there is concern about miners having complete control over the max block size, even though there is currently an incentive for them to keep blocks small. If size-independent new block propagation does become possible, then miners may need to impose rules to make the system healthy again.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T20:17:34.789733+00:00 </i></p>
     
     
 

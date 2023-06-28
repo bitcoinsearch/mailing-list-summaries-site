@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Making AsicBoost irrelevant</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Timo Hanke 2016-05-11 18:28:42
-            <br><i>Published on: 2016-05-11T18:28:42+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2016/combined_Making-AsicBoost-irrelevant.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012673.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion revolves around the idea of modifying the Bitcoin block header to increase nonce space, where Luke suggested XORing bytes 64-76 with the first 12 bytes of the SHA2 midstate. However, Timo Hanke pointed out that it does not work and only adds another computational step before checking for a collision in those 4 bytes. If all 12 bytes are used, finding a collision becomes substantially harder but it is recommended to restrict oneself to 10 bytes as timestamp rolling on-chip by hardware may occur. Additionally, messing around with the version bits can create an incentive, which needs fixing. Sergio Demian Lerner shared the original idea of putting a 4-byte hash of the second chunk in the first 64 bytes, allowing increased nonce space.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T05:15:28.077348+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Guessing the spentness status of the pruned relatives</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> praxeology_guy 2017-04-02 01:10:53
-            <br><i>Published on: 2017-04-02T01:10:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2017/combined_Guessing-the-spentness-status-of-the-pruned-relatives.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/013953.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email thread related to using the MMR data structure for txo commitments, a user named bfd at cock.lu replied to praxeology_guy stating that if a wallet is unaware of spends of its own coins, there are bigger problems going on. The user suggested the topic of committed bloom filters as a solution to similar issues without needing an ever-growing list of hundreds of millions of spent outputs. Praxeology_guy responded saying that wallets could maintain the changing MMR proof for their old coins but they also need to know the spentness status of close relatives in the MMR tree to construct a valid MMR proof that their own coin is not spent. Bitcoin nodes could keep a spentness status list where each bit corresponds to whether a txo in the MMR is spent. This could make it so that disconnected wallets didn't have to guess the pruned relative spentness status when it reconnects to the network and help prevent DoS attacks. However, praxeology_guy mistakenly forgot to change the subject back to "A Better MMR Definition" when emailing to the dev list instead of directly to Peter.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T23:28:18.083788+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blinded channel observation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tadge Dryja 2016-08-10 01:34:43
+            <br><i>Published on: 2016-08-10T01:34:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2016/combined_Blinded-channel-observation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-August/000570.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses different methods of outsourcing work and reducing computational cost when watching multiple channels. The method proposed involves using HMAC to check transactions against a key-value store and can be effective for a single channel, but it becomes more computationally expensive as the number of channels watched increases. To solve this problem, the observer can put all txids being watched for into the same tree and have seek access time independent of the number of separate channels being watched. Additionally, there is discussion about sending encrypted state information to the observer, but it is determined that most information needed by the observer is already available in the observed commitment tx, and reconstructing messages from hashes and/or signatures is not possible. There are also suggestions for using one's input signature as the key for the encrypted blob, which helps to encourage more nodes to download witness data.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:14:15.600750+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

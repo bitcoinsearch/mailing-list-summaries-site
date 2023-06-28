@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposed Extensions to BIP 174 for Future Extensibility</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dmitry Petukhov 2019-07-31 16:19:48
+            <br><i>Published on: 2019-07-31T16:19:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2019/combined_Proposed-Extensions-to-BIP-174-for-Future-Extensibility.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017195.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email to Bitcoin-dev, Andrew Chow proposes the reservation of certain types for private use in PSBTs. These types would be used by organizations or individuals who require additional data that is not useful or available to the general public. To distinguish between different private formats, Chow suggests that private types should start with a prefix and that the size of the prefix should be indicated at the beginning. Organizations can choose any prefix they like or no prefix if they are fine with possible conflicts with other empty-prefix private types.Chow also proposes a canonical method for multibyte types. He suggests designating a specific type, 0xFF, to indicate that the type is multiple bytes. When parsers see this value, they read the next byte as being part of the type. Two-byte types will be of the form 0xFFXX, three-byte types will be of the form 0xFFFFXX, four-byte types 0xFFFFFFXX, and so on. The proposed system allows for a prefix match to quickly identify the type being used. Finally, Chow suggests encoding the types as 'compact size unsigned integer' to avoid adding complexity to parsing, as it is already used in the BIP for other fields.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T20:36:21.961804+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2019-03-22 04:23:28
+            <br><i>Published on: 2019-03-22T04:23:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001934.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list regarding the eltoo paper suggests that OP_CSV (BIP112) is not necessary for update and settlement purposes. Instead, BIP68 relative-time is sufficient. A and B will co-sign a muSig with nLockTime = t for update purposes without committing to the scriptCode and BIP68 lock time, while for settlement purposes, they will co-sign with an agreed BIP68 locktime and commit to the scriptCode. The update sig could be bound to any previous update tx immediately, while the settlement sig would only bind to a specific update tx after the relative locktime has passed. The eltoo paper incorrectly suggests using OP_CSV; however, it is only needed if one party could single-handedly decide the relative locktime, which is not the case with a muSig. Finally, even a script using OP_CHECKLOCKTIMEVERIFY OP_DROP OP_CHECKSIGVERIFY OP_CHECKSIG doesn't require OP_CSV because the two signatures must use the same relative locktime, or the transaction is invalid.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T01:57:32.935640+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

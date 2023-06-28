@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTLCs using OP_CHECKSEQUENCEVERIFY/OP_LOCKTIMEVERIFY and revocation hashes.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2016-02-09 08:59:56
+            <br><i>Published on: 2016-02-09T08:59:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_HTLCs-using-OP-CHECKSEQUENCEVERIFY-OP-LOCKTIMEVERIFY-and-revocation-hashes-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000437.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the best options for closing a payment channel, Rusty Russell presents four possible choices: keeping the channel open, having the other party close it unilaterally, closing it unilaterally oneself, or cooperatively closing it together. He then argues that the preferences are strictly in favor of cooperative closing as opposed to unilateral closing by either party. Unilateral closing has some disadvantages compared to cooperative closing due to the OP_CSV delay. Russell also suggests that if one is trying to convince the other party to close the channel unilaterally instead of doing it oneself, it would be better to simply do a cooperative close. This approach would be preferred anyway and would also be more likely to be accepted by the other party. He believes that with the current arrangement, there are no realistic threats that the other party could make to avoid a cooperative close.Finally, Russell discusses the potential benefits of implementing an OP_CSV on both sides of HTLCs. With this change, one could threaten to close the channel unilaterally unless the other party pays a certain amount for a cooperative close. He concludes that while changing the system may make things marginally worse, it will not improve them.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T00:22:40.051219+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

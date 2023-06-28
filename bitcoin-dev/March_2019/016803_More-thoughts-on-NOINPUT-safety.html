@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-22 07:46:28
+            <br><i>Published on: 2019-03-22T07:46:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016803.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, ZmnSCPxj and Anthony Towns are discussing the use of `OP_CSV` in a settlement branch. ZmnSCPxj suggests using `OP_CHECKLOCKTIMEVERIFY OP_DROP  OP_CHECKDLSVERIFY  OP_CHECKDLS` instead of codeseparator for settlmenet txs as well as update txs. However, he encounters issues regarding the lack of `OP_CSV` in the settlement branch.Anthony suggests that relative timelock can be enforced in the settlement branch by refusing to sign a settlement tx that doesn't have the timelock set, rendering `OP_CSV` redundant. He also points out that because BIP-68 is enforced by consensus, update-1 isn't immediately spendable by settlement-1.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:42:21.215606+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

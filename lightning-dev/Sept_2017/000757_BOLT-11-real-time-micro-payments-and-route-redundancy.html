@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BOLT 11, real time micro payments, and route redundancy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2017-09-04 18:42:06
+            <br><i>Published on: 2017-09-04T18:42:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2017/combined_BOLT-11-real-time-micro-payments-and-route-redundancy.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-September/000757.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, Rusty Russell discussed the possibility of being able to pay the same payment request twice with Christian Decker. At present, paying the same payment request twice is not possible because it can be an opportunity for anyone in the middle to take your funds. However, with version 1.1, they may change the way payment hashes work so that this becomes possible. It would be similar to bip32, but for lightning. They also discussed the idea of allowing for amount adjustments while the payment has not been resolved. This could enable incremental payments from the sender to the recipient. The recipient would issue a payment request indicating support for adjustments. The sender then sends an initial transfer to the recipient through a route of her choosing. The recipient does not immediately claim the transfer by revealing the preimage, instead it serves the sender and keeps the transfer open. The sender increments the amount by sending an updated add_htlc message with matching payment hash and higher value. Nodes along the route notice that this is an update to an existing HTLC and forward it along the route, resetting any timeouts to unlock the HTLCs.This approach could allow for payments similar to simple Spillman-style payment channels, which are routed along a path or multiple hops. However, it opens up new DoS vectors where an attacker can lock up funds for longer periods, so careful implementation is necessary.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T02:23:37.131668+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

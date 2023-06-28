@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version bits proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2015-05-28 08:11:21
+            <br><i>Published on: 2015-05-28T08:11:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_Version-bits-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008310.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about manipulating the merkle tree in Bitcoin, Christian Decker and Patrick Strateman agree that there is no need to misuse the version field. Decker states that there is enough variability in the merkle tree, including and excluding transactions, and even the scriptSig of the coinbase transaction, which influences the merkle root. He has a fundamental dislike of retroactively changing semantics and thinks that the version field should only be used for that purpose. Strateman argues that any reasonable micro-controller can build merkle tree roots significantly faster than necessary, with an RPi 1 model B doing 2451050 SHA256 ops/second. Sergio Lerner likes the idea but suggests leaving at least 16 bits of the version fixed as an extra-nonce to avoid miners using them as a nonce and interfering with the soft-fork voting system. In this way, miners could permute transactions in the block by permuting the internal merkle tree nodes at increasing depths, making the tree manipulations maximum depth independent and possibly even transaction-independent, depending on how much depth in the tree of hashes are permutation safe.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T21:34:32.223123+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

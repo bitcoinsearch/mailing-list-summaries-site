@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP] Normalized transaction IDs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gregory Maxwell 2015-10-21 10:14:01
-            <br><i>Published on: 2015-10-21T10:14:01+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011586.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion on October 21, 2015, Christian Decker proposed using the scriptSig to transport signatures internally to transactions and stripping them when it comes time to sign and check them. This process wouldn't alter the wire format or transportation of transactions, allowing old clients to continue processing them as before, but they wouldn't be able to verify the TX. Blocks would still reference the instance, but verification would use the stripped TX with the signatures on the side. Another method proposed was utilizing sighash normalization; however, this technique comes with certain limitations. It doesn't allow for creating a utxo set or scanning the blockchain while transferring only about a third of the data. Additionally, it requires rewriting txin IDs when the witness changes on a parent transaction, hashing each transaction multiple times, and storing two IDs for every transaction in the UTXO set. While not infinitely easier than the previous proposal, it is easier to deploy.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T22:18:03.845096+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>commitment update steps</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Joseph Poon 2015-07-24 23:24:49
-            <br><i>Published on: 2015-07-24T23:24:49+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2015/combined_commitment-update-steps.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000060.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this discussion, Joseph Poon talks about solving the issue of identifying HTLC outputs using pubkeys as identifiers, stating that it is not possible due to P2SH being used. He suggests checking only recent blocks before the Commitment Transaction for the search space, but notes that long-dated HTLCs break down this limitation. While a separate hash-tree could be used to store these types of HTLCs, it is not an ideal solution. Poon also highlights the tradeoff between having the entire script in the output and using P2SH, which reduces bits of entropy and identifiability. He suggests storing prior commitment transactions as a stop-gap solution, including the timeout and original Commitment Transaction height when the HTLC was first made, which amounts to 48 bits of storage per HTLC output per fully expired Commitment Transaction. He dislikes using OP_RETURN as a solution but acknowledges its possibility.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T18:37:52.925433+00:00 </i></p>
     
     
 

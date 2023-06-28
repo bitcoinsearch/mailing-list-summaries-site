@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Few questions regarding ListTransaction</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Maksim Solovjov 2018-04-10 20:29:23
+            <br><i>Published on: 2018-04-10T20:29:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2018/combined_Few-questions-regarding-ListTransaction.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015884.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The sender has three questions regarding the ListTransaction RPC call. Firstly, they ask about the meaning of a transaction being "trusted" or not, particularly in the case of transactions with 0 confirmations. There is a field for this in the response of ListTransaction, but as far as the sender knows, nothing is trusted without confirmations. They inquire how this value is set to true or false.Secondly, the sender asks when the "confirmations" field can be -1 (conflicted) and what it means to have a conflicted transaction. They wonder if it is related to Transaction Malleability, Double Spend, or both.Lastly, the sender asks about "walletconflicts" and what happens if they add a watch-only address to their bitcoind process that is not part of their wallet. If someone pays them to this address and someone else makes a confirmed transaction using Transaction Malleability, will the sender see the first transaction in the "walletconflicts" array when ListTransaction returns the second transaction in the response?</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T05:25:58.141893+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

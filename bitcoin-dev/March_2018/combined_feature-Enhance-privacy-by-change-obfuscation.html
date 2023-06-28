@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>feature: Enhance privacy by change obfuscation <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2018/015861_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-04-01 14:37:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015835_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-03-18 01:34:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015836_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Evan Klitzke 2018-03-18 05:50:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015841_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Eric Voskuil 2018-03-18 18:59:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015835_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-03-18 01:34:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015841_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Eric Voskuil 2018-03-18 18:59:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015836_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Evan Klitzke 2018-03-18 05:50:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2018/015861_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-04-01 14:37:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015837_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-03-18 07:07:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015837_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-03-18 07:07:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015841_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Eric Voskuil 2018-03-18 18:59:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015837_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-03-18 07:07:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015836_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Evan Klitzke 2018-03-18 05:50:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/April_2018/015861_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-04-01 14:37:13</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2018/015835_feature-Enhance-privacy-by-change-obfuscation.html">feature: Enhance privacy by change obfuscation</a>
+                        <b>Damian Williamson 2018-03-18 01:34:20</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015861.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-04-01T14:37:13+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>There is a new option available in Electrum v3.0.6, which enables multiple change addresses, but it is currently off by default. In response to the proposal of enhancing privacy through change obfuscation, Eric Voskuil corrected a common misperception regarding the cost of unspent outputs. He stated that there is no necessary additional cost to the network from the count of unspent outputs and that this perception arises from an implementation detail of particular node software.Bitcoin Core has introduced an 'Enhanced privacy' option for transaction creation, which enhances privacy by change obfuscation. The feature allows the user to randomly distribute change across up to twenty output addresses (minimum five), as long as each output is not dust. It is suggested that the total random number of addresses to distribute to should be limited by change amount. Additional inputs can be selected if available to increase change, although this may eventually result in a decrease in obfuscation in some cases when the outputs are spent. However, the transaction cost will be higher for the initial spend with the change due to increased outputs and possibly for later spending the change depending on the future spend amount(s) and the number of inputs required.Although transaction linkage is still possible, it is far more difficult to guess what was retained by the owner of the originating utxo's unless the new change outputs are spent together in the same transaction. Overall, the 'Enhanced privacy' option provides an improved level of privacy for Bitcoin Core users. Damian Williamson proposed adding an "Enhanced privacy" option for transaction creation to randomly distribute change across up to twenty output addresses, but Evan Klitzke argued that it would be expensive for the network due to the bloat in UTXO size, which everyone would have to pay for. Moreover, it doesn't seem private as the wallet will have to rejoin those inputs in future transactions, resulting in a high transaction fee for the user. Thus, despite understanding the additional cost, Klitzke did not support the idea.In summary, while there is a suggestion to add an "Enhanced privacy" option for transaction creation to randomly distribute change across multiple output addresses, it may not be as private as intended due to the high transaction fees for users and network bloat in UTXO size. However, Bitcoin Core has already introduced an 'Enhanced privacy' option for transaction creation that enhances privacy by change obfuscation, allowing users to randomly distribute change across multiple output addresses and provides an improved level of privacy for Bitcoin Core users. Additionally, Eric Voskuil corrected a misperception regarding the cost of unspent outputs, stating that there is no necessary additional cost to the network from the count of unspent outputs.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-13T01:05:22.828613+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

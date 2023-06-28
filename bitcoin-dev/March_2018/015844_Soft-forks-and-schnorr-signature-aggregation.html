@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Soft-forks and schnorr signature aggregation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bram Cohen 2018-03-22 00:47:01
+            <br><i>Published on: 2018-03-22T00:47:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2018/combined_Soft-forks-and-schnorr-signature-aggregation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015844.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed segwit v2 with reclaiming most things as RETURN_VALID is being suggested for supporting aggregated signatures in the future. However, there are some subtleties to getting it right. Most unused opcodes should be reclaimed as RETURN_VALID, but there should still be one OP_NOP and there should be a 'real' RETURN_VALID, which doesn't have any parsing weirdness. There are several options for dealing with new opcodes being added later on, including avoiding the problem completely by exterminating IF and MASTing, adding IFJUMP, IFNJUMP, and JUMP which specify a number of bytes, requiring all new opcodes have fixed length 1, or making it so that the unknown opcodes case a RETURN_VALID even when they're parsed, regardless of whether they're being executed. By far the most expedient option is to cause a RETURN_VALID at parse time, even though there's precedent for this sort of behavior in the other direction with disabled opcodes causing failure at parse time even if they aren't being executed. It may make sense to seriously consider BLS signatures, which have a lot of practical benefits starting with them being noninteractively aggregatable so you can always assume that they're aggregated instead of requiring complex semantics to specify what's aggregated with what. Regarding hacking in a multisig opcode, it is very stuck specifically on m-of-n and doesn't support more complex formulas for how signatures can be combined, which makes it feel hacky and weird. While there are many strategies for dealing with new opcodes, the general strategy of making unused opcodes be RETURN_VALID for now and figuring out how to handle it later works for all of them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:07:30.638748+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

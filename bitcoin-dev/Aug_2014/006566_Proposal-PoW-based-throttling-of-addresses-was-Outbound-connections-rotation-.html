@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: PoW-based throttling of addresses (was: Outbound connections rotation)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-08-23 13:03:05
+            <br><i>Published on: 2014-08-23T13:03:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_Proposal-PoW-based-throttling-of-addresses-was-Outbound-connections-rotation-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006566.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The use of proofs of work (PoW) as a defense against denial-of-service (DoS) attacks has been recognized since the days of "hashcash" before cryptocurrencies were even invented. While some sites have used PoW to block IPs they suspect are bots, the hard part is scoring the connections, and bots often have more patience than humans. Other sites use human PoWs in the form of CAPTCHAs, but those don't work well either. The proposal to have only misbehaving clients do complicated work would require scoring clients, which is difficult, and prioritizing clients is the better approach. The current notion of misbehavior is limited and can be tricky to get right, and forcing users to wait for requests wastes battery power and is not ideal. The use of cookies to link connections and deanonymize users is not a significant concern because any DoS attack that uses most of the network's resources is likely driven by a botnet. Cookies can be somewhat anonymized using a signature over a timestamp that is normalized to the day or week, but attackers can age accounts before preparing for abuse. Proof of UTXO is another way to rank users, but this leads back to a CPU imbalance, and a small PoW cost could even it out without users noticing.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:25:49.105336+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Height based vs block time based thresholds</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2017-07-06 17:20:47
+            <br><i>Published on: 2017-07-06T17:20:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2017/combined_Height-based-vs-block-time-based-thresholds.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014703.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the context prefers using height over time for bip9, but his arguments were not persuasive enough at the time. He sees only one advantage in Luke's proposal which is to allow nodes who don't know a deployment that gets activated to issue a warning like bip9 always does when an unknown deployment is locked in. However, he believes there is a simpler way to do it without adding consensus rules as to what versionbits should be. The proposed modification adds more complexity to the consensus rules, with something that could merely be "warning code". His proposal doesn't guarantee that the warning will be signaled; if the miner that mines the block right after lock-in doesn't know about the deployment, he can't possibly know that he was supposed to signal the warning bit even if he has the best intentions. Miners can also intentionally not signal it out of pure malice. But that's no worse than the current form when deployments activated by final date instead of miner signaling never get a warning. Shaolinfry had more concerns with his proposed modification, but he thinks he answered all of them. Luke's proposal enables deploying soft forks as a MASF and upgrading them to UASF on an as-needed basis. It's not pointless; it's a wake-up call for miners asleep "at the wheel", to ensure they upgrade in time. Not having a mandatory signal turned out to be a serious bug in BIP 9, and one which is fixed in BIP 148. Additionally, it makes the activation decisive and unambiguous: once the lock-in period is complete, there remains no question as to what the correct protocol rules are.Some people have criticized BIP9"s blocktime based thresholds arguing they are confusing (the first retarget after threshold). It is also vulnerable to miners fiddling with timestamps in a way that could prevent or delay activation - for example by only advancing the block timestamp by 1 second, you would never meet the threshold. On the other hand, the exact date of a height based thresholds is hard to predict a long time in advance due to difficulty fluctuations. However, there is certainty at a given block height and it's easy to monitor.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T03:18:16.522405+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dynamically Controlled Bitcoin Block Size Max Cap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Upal Chakraborty 2015-08-21 21:45:37
+            <br><i>Published on: 2015-08-21T21:45:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_Dynamically-Controlled-Bitcoin-Block-Size-Max-Cap.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010576.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer has proposed two different solutions to solve the maximum block size debate. The first proposal suggests making calculations based only on the previous block size calculation. It suggests doubling the MaxBlockSize if over 50% of the block's size found in the first 2000 of the last difficulty period is more than 90% MaxBlockSize. If over 90% of the block's size is less than 50% MaxBlockSize, it proposes halving the MaxBlockSize. If neither of these conditions are met, then the MaxBlockSize remains the same.The second proposal recommends considering both the previous block size calculation and the previous transaction fee collected by miners. It suggests calculating the TotalTxFeeInLastButOneDifficulty as the sum of all transaction fees of the first 2008 blocks in the last two difficulty periods. Similarly, it proposes calculating the TotalTxFeeInLastDifficulty as the sum of all transaction fees of the second 2008 blocks in the last two difficulty periods (including eight blocks from the last but one difficulty). If the sum of the first 4016 block size in the last two difficulty periods is more than 50% MaxBlockSize AND TotalTxFeeInLastDifficulty is more than TotalTxFeeInLastButOneDifficulty, then the MaxBlockSize would be equal to TotalTxFeeInLastDifficulty multiplied by MaxBlockSize divided by TotalTxFeeInLastButOneDifficulty. If the above condition is not met, then the MaxBlockSize remains the same.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T20:08:36.937116+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>deterministic transaction expiration</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2014-08-06 15:17:02
+            <br><i>Published on: 2014-08-06T15:17:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_deterministic-transaction-expiration.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006425.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion among Bitcoin developers, Jeff Garzik suggests that a new field for expiration time should be introduced instead of overloading existing fields with new meaning. Tom Harding agrees and suggests using nLockTime for expiration would not be appropriate since it begins as invalid and becomes valid after nLockTime passes. Mike Hearn proposes introducing a new field in a new tx version. However, Jeff Garzik argues that existing users and uses of nLockTime would become worthless if this were to happen suddenly, breaking payment channel refunds and other active uses of nLockTime. He suggests that a new, separate field containing expiration time would be more appropriate. The group also discusses the potential benefits of using nLockTime for expiration, such as preventing transaction creators from lying to help transactions live longer without pushing initial confirmation eligibility into the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:46:03.540548+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

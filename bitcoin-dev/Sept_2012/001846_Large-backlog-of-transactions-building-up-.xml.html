@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Large backlog of transactions building up?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gregory Maxwell 2012-09-23 20:44:55
-            <br><i>Published on: 2012-09-23T20:44:55+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2012/combined_Large-backlog-of-transactions-building-up-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-September/001846.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion between Jeff Garzik and another individual, the issue of mempool size was brought up. Jeff's public nodes currently have 2200+ in their mempool, which can become cluttered over time due to the disconnect between what miners mine and what relayers relay. This disconnect is why simple scalar measures of mempool size aren't terribly informative.There are bursts of weird transactions, like someone flooding zero value txn a few weeks ago, or enormous series of double-spend induced orphans before that, and other sustained loads that quite a few miners are intentionally excluding. No one has strenuously argued against this, so it is down to writing a patch and coming up with a good number that the network can agree upon.However, there is concern that being more aggressive can turn otherwise valid transactions into orphans because nodes will repeat their own transactions but not the unconfirmed parents. The suggestion was made for an archive-mempool which is only checked when you receive an orphan transaction. It's important to note that there's no guarantee that a transaction will disappear because someone else could happily reannounce it.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T15:44:22.235507+00:00 </i></p>
     
     
 

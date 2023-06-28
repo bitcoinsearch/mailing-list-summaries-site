@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Fast bootstrapping with a pre-generated UTXO-set database</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jonas Schnelli 2016-02-29 10:29:05
-            <br><i>Published on: 2016-02-29T10:29:05+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2016/combined_Fast-bootstrapping-with-a-pre-generated-UTXO-set-database.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012478.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author proposes a way to reduce the bootstrap time and network usage of bitcoin nodes by loading a pre-generated UTXO-set datafile. The UTXO-set will be deterministically linearized at a specified height and appended with a serialized form of the current chain-index up to the specified height, which is then hashed with a double SHA256. A group of developers will produce and reproduce the corresponding hash and sign it with ECDSA. Full node client implementations that support bootstrapping from a pre-generated UTXO-set need to include a set of pubkeys from trusted developers, the hash (or hashes) of the pre-generated UTXO-set-datafile(s), and n signatures of the hash(es) from a subset of developers defined in 1). To guarantee the integrity of developer pubkeys & signatures, methods like the current gitian build must be used. New nodes could download a copy of the pre-generated UTXO-set, hash it, verify the hash against the allowed UTXO-sets, verify the ECDSA signatures from various developers, and continue bootstrapping from the specified height if the users accept the amount of valid signatures. Sharing of the pre-generated UTXO-set can be done over CDNs, BitTorrent or any other file hosting solution. It would also be possible to extend the bitcoin p2p layer with features to distribute/share such a pre-generated UTXO-set.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T04:12:31.410103+00:00 </i></p>
     
     
 

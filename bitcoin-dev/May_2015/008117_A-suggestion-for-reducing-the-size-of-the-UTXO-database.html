@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A suggestion for reducing the size of the UTXO database</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Danny Thorpe 2015-05-12 19:50:16
+            <br><i>Published on: 2015-05-12T19:50:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_A-suggestion-for-reducing-the-size-of-the-UTXO-database.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008117.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of UTXO growth in Bitcoin nodes has been a concern and there have been discussions on ways to deal with it. While having multiple UTXOs for a single address creates memory load, having only one UTXO is not optimal for parallelism. The suggestion of having "all" UTXOs of an address spent in one transaction has been pushed by some, but others argue that it is excessive and impractical. Instead, the idea of designing wallets to consolidate unspent outputs has been proposed. This would involve selecting all UTXOs from a particular address or wallet when building a transaction and sending the rest back as a single output, thus reducing the UTXO database over time. Developers of popular wallets have been encouraged to adopt this approach, which could also benefit miners by reducing storage needs for UTXOs. Relays could refuse to relay transactions that don't use all available UTXOs, further promoting good behavior.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T20:30:57.084111+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

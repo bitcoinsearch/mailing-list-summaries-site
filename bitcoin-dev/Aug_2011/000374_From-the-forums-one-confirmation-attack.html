@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>From the forums: one-confirmation attack</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2011-08-18 14:00:01
+            <br><i>Published on: 2011-08-18T14:00:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2011/combined_From-the-forums-one-confirmation-attack.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000374.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A variation on a 'Finney attack' has been posted on the forums by vector76. The method involves observing when nodes are broadcasting transactions, and establishing a direct connection to the target by watching for which nodes are earliest to broadcast transactions. The attacker then creates a transaction making a valid deposit into their target, but does not broadcast it. Instead, they add it to a block they are attempting to mine. Once they succeed in creating a valid block, they wait until someone else mines a block, at which point they immediately broadcast their block to the target. If the target sees their block before the other block, it will be accepted, and the block chain will fork. The attacker can then request a withdrawal, and if the deposit eventually "wins", they have made a deposit and withdrawal, and lost nothing. The lessons from this attack are "don't accept 1-confirmation transactions" and "try to be well-connected." However, the deeper lesson may be "don't trust information you get from only one peer," or "watch for peers that are trying to fool you."</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T20:20:54.394089+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

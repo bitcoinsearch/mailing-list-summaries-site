@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Gossip Propagation, Anti-spam, and Set Reconciliation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2022-04-22 18:55:34
+            <br><i>Published on: 2022-04-22T18:55:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2022/combined_Gossip-Propagation-Anti-spam-and-Set-Reconciliation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003564.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Rusty Russell and Matt Corallo, they discussed the issue of rejecting a large percentage of channel updates. While Matt suggested that the sync frequency could be tuned to solve the problem, Rusty pointed out that allowing only one update per day resulted in 18% of channels hitting the spam limit, making it impossible to fit all the differences inside a set. However, regular-update-sync can bypass some of these issues by syncing once per block. Matt also mentioned that gossip queries are broken in at least five ways, but Rusty disagreed, saying that the "gossip_timestamp_filter" message is perfect for asking for updates since a certain time. They agreed that a gossip2 might be necessary to enable taproot and use block height as timestamps. Regarding rate limiting, Rusty and his team initially did not see any issues with it like Eclair, but they have found it to be limiting in some cases. For example, when people restart their LND nodes once a day, two updates per day occur, which is now allowed in 0.11.0. Despite having an aggressive bandwidth limit, Rusty has experienced rare instances where it hits unless the peer is very overloaded and not responding to pings.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:29:01.940048+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Zeroconf-safe tx replacement (replace-for-fee) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003533_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Peter Todd 2013-11-04 10:52:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003534_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Adam Back 2013-11-04 11:10:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003533_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Peter Todd 2013-11-04 10:52:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003539_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Peter Todd 2013-11-04 11:59:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003534_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Adam Back 2013-11-04 11:10:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003539_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Peter Todd 2013-11-04 11:59:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003539_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Peter Todd 2013-11-04 11:59:25</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003533_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Peter Todd 2013-11-04 10:52:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2013/003534_Zeroconf-safe-tx-replacement-replace-for-fee-.html">Zeroconf-safe tx replacement (replace-for-fee)</a>
+                        <b>Adam Back 2013-11-04 11:10:38</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003533.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-11-04T10:52:43+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email exchange from 2013 between Bitcoin developers John Dillon and Peter Todd, they discuss the flaws of Bitcoin estimates and the importance of backups. Todd shares his work on replace-for-fee, which allows for infrastructure preparation for eventual replace-by-fee usage while avoiding the politics around zero-conf transactions. The rules for replacement are simple: every output in the old transaction must have a corresponding output in the new with the same scriptPubKey and of equal or greater value, and all old tx outputs must also be unspent.However, Todd notes a flaw in Bitcoin wallet code where a transaction with double-spent inputs forever blocks those inputs from being spent. Though this doesn't happen too often, any CoinJoin implementation violates that assumption and could cause issues. Todd suggests the wallet recognize when a transaction's inputs no longer exist and mark remaining inputs as unspent. In another email exchange regarding Bitcoin transaction replacement, Adam Back suggests making everything the same except for the amount going to one address would be simpler and more robust. However, he acknowledges the privacy leak that this method may cause. He also notes that change addresses do not add much privacy according to network analysis. In terms of privacy fixes, Back believes that more robust solutions are needed in addition to revising fees. Todd suggests that replace-for-fee could prepare infrastructure for eventual replace-by-fee usage while avoiding politics around zero-conf transactions. The discussion also mentions that estimates are imperfect and always will be, and that backup is a good thing. Despite this, the code for implementing replacement is already simple and does not need to be made less general. Transaction relaying rules are not part of consensus.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-07T19:05:39.529873+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

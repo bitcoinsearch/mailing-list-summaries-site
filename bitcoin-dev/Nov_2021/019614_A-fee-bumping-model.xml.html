@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A fee-bumping model</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> darosior 2021-11-29 14:27:23
-            <br><i>Published on: 2021-11-29T14:27:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2021/combined_A-fee-bumping-model.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019614.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The post discusses the problem of fee bumping in Bitcoin transactions and its importance for the security of protocols built on Bitcoin, specifically focusing on the delegation process in Revault. It presents the problem statement of ensuring the confirmation of a Cancel transaction for any delegated vault at any point, while minimizing overpayments and UTxO set footprint. One of the challenges in this context is predicting future feerates and determining the reserve feerate. The post suggests strategies for choosing the reserve feerate, including using percentiles, maximum historical feerate, or a maximum historical feerate adjusted in dollars. The suggested reserve feerate strategy determines how much funds a watchtower needs.To manage the UTxO pool across time and merging consolidation with fanout, the post introduces two distributions per vault: the "reserve distribution" and the "bonus distribution." The post also discusses bumping and re-bumping fees, suggesting basing estimates on "estimatesmartfee" and rebumping after each block connection.The post mentions that increasing fees by a factor of N can incentivize miners to censor transactions and suggests using `estimatesmartfee 2 CONSERVATIVE` feerate at every block as an effective way to bump and rebump transactions. To support their discussions, the authors studied historical data obtained from Statoshi, Txstats, and Riccardo Casatta's `blocks_iterator`. The code for the study can be found on GitHub.Finally, the post highlights the need for an insurance market for this problem and provides links to relevant resources and previous discussions on the topic.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T03:12:44.454075+00:00 </i></p>
     
     
 

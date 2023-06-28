@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Sphinx Rendezvous Update</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2020-03-02 11:39:49
+            <br><i>Published on: 2020-03-02T11:39:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2020/combined_Sphinx-Rendezvous-Update.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-March/002574.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, Christian and Bastien are discussing privacy concerns with partial onion routing, which is being proposed as a solution to the issues with full onion routing. They discuss the tradeoff between the size of the onion and the number of hops it can have. Christian is currently using the maximum size but plans to expose the size to be prefilled so that smaller partial onions can be used. This would enable the ability to chain multiple partial onions. The shared secret used to generate the prefill stream is derived from both the ephemeral key and RV's private key, so RV+1 can't compute the same stream. The ephemeral key in the partial onion is used twice. Once by RV to generate an obfuscation stream to fill in the gap, and as part of the reconstructed onion, processed by RV+1 to decode the onion. This design ensures security and doesn't leak information. Christian mentions that payment errors won't be readable by RV since the recipient generates the onion and RV doesn't have the shared secrets. Any error beyond RV should be treated by the sender as "rendezvous failed, discard partial onion". Bastien points out that each hop's amount/cltv is fixed at invoice generation time by the recipient, meaning MPP cannot be used, and if any channel along the path updates their fee the partial onion becomes invalid unless you overpay the fees. Trampoline should be able to address that since it provides more freedom to each trampoline node to find an efficient way to forward to the next trampoline. However, it's not clear how to mix these two proposals to make them work together.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:52:54.218028+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

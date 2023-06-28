@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Positive and negative feedback on certificate validation errors</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-03-01 06:26:39
+            <br><i>Published on: 2014-03-01T06:26:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_Positive-and-negative-feedback-on-certificate-validation-errors.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004467.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Currently, a signed payment request is indicated by a green background while unsigned requests appear without any background. Requests with a certificate but missing or invalid signature also appear without the green background. There is an open bug (#3628) and pull request (#3684) to provide negative feedback in the form of a yellow background for requests with missing or invalid signatures. However, there is debate on whether this should be implemented in bitcoind. If an attacker can avoid the negative feedback by stripping the signature and setting pki_type to none, then there may not be a security benefit to singling out badly signed payment requests from unsigned ones. Therefore, the root problem could be that the positive feedback (green background) is not noticeable enough to the end user.In addition, there is a discussion on implementing the equivalent of HTTP Strict Transport Security for payment protocol to prevent the signature stripping attack. This may be a possible extension field that merchants are interested in.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:38:14.406943+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

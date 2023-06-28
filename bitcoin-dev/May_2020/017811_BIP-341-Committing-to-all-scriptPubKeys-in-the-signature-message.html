@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP-341: Committing to all scriptPubKeys in the signature message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2020-05-02 12:53:12
+            <br><i>Published on: 2020-05-02T12:53:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_BIP-341-Committing-to-all-scriptPubKeys-in-the-signature-message.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017811.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread, Andrew Kozlik discusses the need for a wallet to ascertain non-ownership of an external input by obtaining the scriptPubKey of the previous output spent by the input. While it is easy to check whether a scriptPubKey contains a specific pubkey using P2PK/P2TR, it is impractical for wallets to check whether a scriptPubKey contains any of the possible two billion keys in a specific BIP32 derivation path, particularly since many wallets support multiple paths. Checking a list of scriptPubKeys for wallet matches would require obtaining the BIP32 derivation paths for the corresponding keys from a trusted data source. Alternatively, Greg Saunders' scheme, co-attributed to Andrew Poelstra, can be used, which only requires one-way communication from a signing device to a coordinator. The downside to this scheme is that it requires extra communication, which can be annoying for true offline signers but not burdensome for automated hardware wallets participating in coinjoins or LN. The scheme can be tweaked to be compatible with BIP322 generic signed messages, making it easier to support.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:04:56.680090+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

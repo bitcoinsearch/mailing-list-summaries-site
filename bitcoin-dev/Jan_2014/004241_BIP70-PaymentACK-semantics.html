@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70: PaymentACK semantics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-01-28 13:24:34
+            <br><i>Published on: 2014-01-28T13:24:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_BIP70-PaymentACK-semantics.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004241.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about broadcasting transactions in CoinJoin. Delaying the broadcast of a transaction after inputs are signed can add complexity to implementation. Some wallets may not broadcast at all and instead try to submit via the payment URL. If the submission fails, the transaction is never committed to the wallet, but the coins remain with the user. Real-time CoinJoin can be achieved by building the transaction together and submitting it via payment URL and broadcasting it as well. In case of any issues with the payment such as an expired request or non-standard transaction, manual sorting out would be required with the merchant.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:51:18.393024+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

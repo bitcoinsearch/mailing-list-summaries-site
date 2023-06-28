@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Interesting thing about Offered HTLCs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Eugene Siegel 2022-03-07 20:26:51
-            <br><i>Published on: 2022-03-07T20:26:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2022/combined_Interesting-thing-about-Offered-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003506.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author of the message shared an interesting information regarding Offered HTLCs. The offered HTLCs have three claim paths: the revocation case, the offerer claiming through the HTLC-timeout transaction, and the receiver claiming via their sig + preimage. The offering party can claim via the HTLC-timeout case on their commitment transaction with their signature and the remote's signature (SIGHASH_ALL) after the cltv_expiry timeout. The offering party can claim with the remote's signature + preimage, but can only spend with the HTLC-timeout transaction because of SIGHASH_ALL. However, this assumes that the remote party doesn't claim it first. The same trick isn't possible with the Received HTLC's due to OP_CHECKLOCKTIMEVERIFY. The author believes that this is benign since they cannot think of any cases where the offering party would know the preimage and want to force close. This also makes the witness smaller. The link provided gives more details about the technicalities of the process.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T07:44:15.494074+00:00 </i></p>
     
     
 

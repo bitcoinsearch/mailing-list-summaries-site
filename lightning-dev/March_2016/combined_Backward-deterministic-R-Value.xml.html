@@ -11,86 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Backward deterministic R Value <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000459_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Nicolas Dorier 2016-03-07 12:35:30</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000468_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Nicolas Dorier 2016-03-08 04:53:55</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000471_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Mats Jerratsch 2016-03-08 15:16:41</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000473_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Nicolas Dorier 2016-03-08 15:51:00</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000474_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Mats Jerratsch 2016-03-08 15:53:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000475_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Nicolas Dorier 2016-03-08 16:14:59</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000476_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Mats Jerratsch 2016-03-08 16:27:06</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000482_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Rusty Russell 2016-03-09 00:43:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000464_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Rusty Russell 2016-03-07 23:31:52</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000470_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>CJP 2016-03-08 07:19:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000480_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Rusty Russell 2016-03-08 06:02:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000477_Backward-deterministic-R-Value.xml.html">Backward deterministic R Value</a>
-                        <b>Nicolas Dorier 2016-03-08 16:38:11</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000459.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2016-03-07T12:35:30+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The proposal is to make RValues of HTLC/Payment channel contracts backward deterministic. This can be achieved by choosing an RValue such that RValue(n+1) = PreImage(RValue(n)), where n is the commitment index. If Alice cheats Bob at a commitment, Bob only has to remember RValue(99) from the 99th revocation. Commitment Revocation is only accepted if RValue(n+1) = PreImage(RValue(n)). A downside is that Alice needs to regenerate all hashes every time she needs a new commitment, but this can be mitigated by her storing some pre-computed values along the path.The conversation between CJP and Nicolas Dorier revolves around deriving R values from a tree structure for larger lightning networks. They discuss how it could work between two nodes, but if different transactions follow different routes, does that mean the tree structure somehow has to be shared across all nodes? Rusty Russell suggests using hashing in the Deployable Lightning paper but didn't actually spell out the idea. Mats Jerratsch chimes in with a scenario where Alice could want to receive more money and accept other payments, but not a particular one. However, by doing so, she would automatically disclose R for any old payment.In a Lightning-dev discussion, Mats Jerratsch questioned the possibility of Alice not wanting to disclose R in case Bob charged her too much fee or paid too little. Rusty Russell clarified that R usually means the chained atomic swap preimage and "revocation preimage" is used for invalidating old transactions. In response to CJP's query about how tree structure works for larger Lightning networks, Nicolas Dorier suggested using hashing, which Rusty Russell affirmed was Adam Back's idea. When Nicolas Dorier shared an idea about one-way deterministic R-value generation, Rusty Russell referred him to ccan/crypto/shachain.There were also some clarifications made regarding R values and commit revocation hash, and the use cases for disclosure of R values. The idea of 'proof-of-payment'/'pay-to-contract' relies on only revealing R for an accepted payment. Knowing R is no longer proof of having made a payment if it is disclosed when the payment isn't in the current commitment. Nicolas Dorier asks why R values are used in the first place without HTLCs. Mats Jerratsch explains further and they discuss the case of a simple bipayment channel, without HTLC in the equation, where all payments are sequential.</p>
-        <hr>
-        <p><i>Updated on: 2023-05-23T22:59:37.861595+00:00</i></p>
-    
-
     
 
     <footer>

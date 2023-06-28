@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>maximum block height on transaction</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-04-16 04:24:28
+            <br><i>Published on: 2021-04-16T04:24:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_maximum-block-height-on-transaction.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018787.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the idea of specifying maximum block height on a transaction. An argument against using an opcode to impose the max-block constraint is that it would greatly increase CPU usage because the script cache would need to be reworked. Adding a field would significantly increase code complexity to the level of SegWit, without all the important bugfixes+features (tx malleability, quadratic sighash, well-defined extensible outputs) that SegWit provides. It is suggested that a second `nLockTime`d transaction can be used to do what one wants, which is easier and requires less computation power. The email also discusses some technical aspects of Bitcoin Core implementation, such as how SCRIPT is evaluated only when a transaction enters the mempool and not at any other time, and how the mempool assumes that once a SCRIPT accepts, it will always accept in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:02:50.589933+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

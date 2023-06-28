@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Stealth Addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-01-14 22:34:01
+            <br><i>Published on: 2014-01-14T22:34:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_Stealth-Addresses.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004090.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange from January 2014, Adam Back contacted Jeremy Spilman about a possible typo in his code. Specifically, he asked if the `Util.SingleSHA256()` function was multiplying by G internally and suggested that Q'=Q+H(S)*G was what was intended rather than Q'=Q+H(S). In response, Spilman confirmed that SingleSHA256 is a single application of SHA256 and explained that the multiplication by G is part of his `EC.PointAdd` implementation. He also shared the relevant code snippet for `PointAdd`, which takes a byte array representing a point and another byte array as scalar input, and returns the resulting point after adding the two. The method also has an optional boolean input for specifying whether to return a compressed or uncompressed byte array. Finally, Spilman joked that he should probably just publish all his code as MIT and be done with it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T23:37:33.376964+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

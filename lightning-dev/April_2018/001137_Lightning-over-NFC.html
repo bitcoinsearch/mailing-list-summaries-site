@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning over NFC</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Igor Cota 2018-04-06 06:10:09
+            <br><i>Published on: 2018-04-06T06:10:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Lightning-over-NFC.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001137.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Igor Cota, a developer, is experimenting with the Lightning network for retail payments. He has set up an instance of c-lightning on Android and experimented with payments via NFC. There are two basic ways to use NFC enabled phones today - as passive tag readers or in card emulation mode. The latter enables two-way communication and therefore an ad hoc connection to the lightning network. After some handshaking, phone can tell the terminal that it wants to connect to lightning via NFC. All communication between these two lightning nodes can be done over NFC or even Bluetooth. A MIME type(application/lightning) and an NFC application id (LIGHTNING) have been settled on along with a simple protocol to forward socket data. It would be great if standards could be agreed upon for interoperability. In response to Corné Plooy's suggestion for a set-up where payer has an authenticated connection to a trusted server through the Internet connection provided by payee, ZmnSCPxj suggests communicating over a secure channel to a trusted server is how he imagines most practical mobile devices would work. But what the payment terminal would provide, would not be a connection to the payment terminal node, but a connection to the Internet-in-general. The trusted server can, for instance, be a full Lightning node running at the payer's home.ZmnSCPxj queries whether there needs to be a direct channel between payer and payee, and notes that initiating a payment to anyone on the network requires direct communication with whoever you have a direct channel to. If the mobile device can communicate only with the payment terminal, then it can only pay using channels with the only node it has a connection to. The payer then needs to somehow get blockchain information from the payee if the payer itself has no Internet. Igor responds that the payer will need a direct channel to the payee, or at least the payment terminal of the payee for instantaneous payments. However, he feels that the trusted server can be a full Lightning node running at the payer's home.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T22:46:03.570070+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

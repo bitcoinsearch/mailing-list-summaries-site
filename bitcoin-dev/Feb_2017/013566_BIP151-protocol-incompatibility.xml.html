@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP151 protocol incompatibility</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2017-02-13 08:47:38
-            <br><i>Published on: 2017-02-13T08:47:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2017/combined_BIP151-protocol-incompatibility.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013566.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On February 12, 2017, Eric Voskuil posted a message on bitcoin-dev stating that the BIP151 proposal is not actually backward compatible, despite what was stated in the proposal. The reason for this is that sending content that current nodes do not expect can lead to incompatibilities and make the implementation vulnerable to DOS attacks. Furthermore, the version handshake must be completed before the protocol level can be determined. While ignoring unknown messages may only lead to a waste of downstream bandwidth, using the protocol level for determining optional features is more elegant, simple, and does not create new attack vectors. This is because using otherwise ignored messages allows for a strict linear progression of allowed network protocol features, which becomes increasingly difficult to maintain with continued increments of the protocol version. In summary, Voskuil's message on bitcoin-dev highlights issues with the BIP151 proposal's claim of backward compatibility and suggests an alternative approach to determining optional features within the protocol.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T00:56:37.217683+00:00 </i></p>
     
     
 

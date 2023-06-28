@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Libconsensus phase 2</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jorge Timón 2016-01-13 08:37:46
-            <br><i>Published on: 2016-01-13T08:37:46+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2016/combined_Libconsensus-phase-2.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012238.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation between Eric Voskuil and Jorge Timón, Eric asked about how the database dependency will be isolated from consensus critical code if a public blockchain interface is not used in phase 2. Jorge replied that an interface will exist, but it will be a C++ interface that fits better with Bitcoin Core internals. He also shared an initial draft of the storage interface and mentioned that phase 3 will consist of refining the interface to define the C interfaces using structs of function pointers instead of classes. Jorge believes that starting with any interface that decouples the consensus code from chain.o and coins.o is more important.Jorge is aware that faithful reproduction of stored data is a prerequisite for consensus validity, but he presumes that a libbitcoinconsensus that forces its users to a given uniform storage will likely have fewer users. He prefers implementing both versions — one with a common store implementation and another that allows alternative implementations with custom storage. Jorge thinks that forcing anyone who doesn't want or need to take the risks of reimplementing the consensus storage part would be a mistake, but he does not want to force them. He believes that allowing it optionally is more beneficial. Luke Dashjr advocated for the storage-dependent version, but Jorge believes that implementing both versions is an acceptable solution.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T03:05:06.500334+00:00 </i></p>
     
     
 

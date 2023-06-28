@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment presentation strawmen.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-09-06 00:49:24
+            <br><i>Published on: 2016-09-06T00:49:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2016/combined_Payment-presentation-strawmen-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000606.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about how a payee instructs a payer on how to make a payment, Joseph brought up a critical issue. Rusty then presented his wishlist, which includes the following points: minimal state required on the client and server, minimal network queries by the client, and presentation of a standard QR code for one-way communications. Rusty then discussed three possibilities that could address this issue. The first possibility is to present only the amount and public node address, relying on the routing protocol for the client to reach its destination. This option requires only 4+33 bytes. However, the client must know either the entire network or query for route and fee information, which could result in privacy leaks.The second possibility involves presenting one or more chains of channels from landmarks, with fee information represented as blocknum and txnum pairs. This option adds 4+4+2 bytes per hop and requires the client to know the channel tx->node ID mapping for all nodes. The client must also know routes to landmarks or query for them.The third possibility is similar to the second, but it includes IDs for each hop in the chain. This option adds an additional 33 bytes per hop and requires the client to know routes to landmarks or query for them. Rusty notes that option C is more scalable, while option B would work for the first million or so nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:24:41.093189+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

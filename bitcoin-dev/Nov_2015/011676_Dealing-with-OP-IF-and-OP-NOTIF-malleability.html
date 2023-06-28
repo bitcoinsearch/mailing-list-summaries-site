@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dealing with OP_IF and OP_NOTIF malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2015-11-06 09:37:58
+            <br><i>Published on: 2015-11-06T09:37:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_Dealing-with-OP-IF-and-OP-NOTIF-malleability.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011676.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the use of different opcodes for push operations in Bitcoin scripts. The writer mentions not using OP_PUSH opcodes for push operations and asks if OP_0 gives a zero-length byte array. They then present a script consisting of OP_0, OP_PUSHDATA1 (length = 1, data = 0), and OP_EQUAL and ask if it would return true. The writer suggests that only OP_0 and OP_1 should be used for pushing data and not any other opcode. In response to this, Oleg Andreev points out a contradiction between two suggestions made by the writer regarding the definition of one and zero as arrays of length one or zero. Oleg suggests defining explicitly that "IF/NOTIF argument must be either a zero-length array or a single byte 0x01."</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:55:37.880701+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

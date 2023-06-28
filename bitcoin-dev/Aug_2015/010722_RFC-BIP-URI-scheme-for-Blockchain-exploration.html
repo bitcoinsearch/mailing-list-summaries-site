@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC - BIP: URI scheme for Blockchain exploration</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Whitlock 2015-08-29 19:01:23
+            <br><i>Published on: 2015-08-29T19:01:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_RFC-BIP-URI-scheme-for-Blockchain-exploration.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010722.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On August 29, 2015, Marco Pontello proposed a new BIP (Bitcoin Improvement Proposal) to enable users to handle all requests for details about blocks, transactions, and addresses on a blockchain explorer with their preferred tool. The purpose of this URI scheme is to create a simple way to look up blocks, transactions, and addresses on a blockchain explorer. It was suggested that the blockchain: link could be used as a means of reference for developers, without having to worry about any specific blockchain explorer or provide a means for the user to select one. Blockchain explorers will simply offer to handle the blockchain: URI, the first time the user visits their website, or launch/install the application, or even set themselves if there isn't already one. The proposal suggested using a real URI scheme, blockchain://, so that normal URL parsing libraries can be used, which would help make the URI more human understandable, as well as give the explorers the ability to optimize what they are looking for when hitting various databases. Examples of the URI include: blockchain://blockhash/00000000000000001003e880d500968d51157f210c632e08a652af3576600198 and blockchain://txid/3b95a766d7a99b87188d6875c8484cb2b310b78459b7816d4dfc3f0f7e04281a. The BIP also specified little endian searching. However, it was pointed out that "mainnet" and "testnet" are not host names, and a suggestion was made to use something like blockchain:?network=testnet&txid=3b95a766d7a99b87188d6875c8484cb2b310b78459b7816d4dfc3f0f7e04281a instead. Finally, it was suggested that another, related BIP could be created to include what the return results should look like.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T21:15:37.894406+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

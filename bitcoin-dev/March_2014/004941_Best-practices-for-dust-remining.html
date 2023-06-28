@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Best practices for dust remining</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2014-03-29 20:10:00
+            <br><i>Published on: 2014-03-29T20:10:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_Best-practices-for-dust-remining.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004941.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread from March 2014 on the Bitcoin-development mailing list, Justus Ranvier asks for advice on how to deal with dust deposits in a multisig wallet. Dust deposits are tiny amounts of bitcoin that are uneconomical to spend due to high transaction fees. In this case, the dust deposits were received due to an advertising campaign for the Olympics. Justus Ranvier's concern is how to clean up the unspent transaction output (UTXO) set without compromising the security of the multisig wallet. He mentions that the scripts may include large values of n, which refers to the number of signatures required to authorize a transaction from the wallet.The discussion centers around the use of the NONE|ANYONECANPAY transaction type, which allows anyone to add inputs to a transaction without requiring their signature. This would enable the dust outputs to be combined into a single transaction and spent by a miner who includes a fee that makes it economically viable.One contributor suggests using a tool like Pycoin to craft the transaction manually, while another proposes creating a custom client that automatically handles dust inputs using NONE|ANYONECANPAY transactions.Overall, the thread provides insights into the technical challenges of dealing with dust deposits in a multisig wallet and highlights the importance of keeping the UTXO set clean for the health of the Bitcoin network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T17:56:56.420604+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

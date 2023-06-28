@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Arbitrary Bitcoin Contracts over LN</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-08-02 03:43:23
+            <br><i>Published on: 2018-08-02T03:43:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2018/combined_Arbitrary-Bitcoin-Contracts-over-LN.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001387.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, Christian Decker and Rusty Russell discussed the need for `OP_CSV` guard to protect from CLTV-branches and nLocktimed spending transactions which may leak on-chain. The two-stage HTLC resolution introduced a first stage acting as the `OP_CSV` guard that keeps the second stage clean. The CSV belongs in the output script, not the input script. A CLTV-branch whose timeout expires before attempting on-chain mediation can lead to a race. There is no CSV in an HTLC, however. The HTLC-timeout/HTLC-success transactions (which spend from the above script), have a CSV. The CSV occurs on a transaction that is dependent on a CLTV under Poon-Dryja. The CSV does not interfere with CLTV, and its condition in the second transaction becomes complicated, requiring cleverness like eliding A from A && B && C to keep witnesses and script size down.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T02:02:16.163952+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

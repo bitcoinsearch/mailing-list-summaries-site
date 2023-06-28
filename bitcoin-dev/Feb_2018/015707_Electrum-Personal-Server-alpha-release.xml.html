@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Electrum Personal Server alpha release</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Chris Belcher 2018-02-08 16:51:59
-            <br><i>Published on: 2018-02-08T16:51:59+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2018/combined_Electrum-Personal-Server-alpha-release.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015707.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Electrum is a widely used bitcoin wallet which, however, is not a full node wallet. This means it relies on third-party Electrum servers for synchronization, which could lead to potential security issues where the servers can trick Electrum wallets into accepting fake bitcoin transactions. Additionally, the servers must be trusted with the user's privacy, as wallets send all their bitcoin addresses to the server, making it easy to spy on them. One way of avoiding these problems is for users to run their own Electrum server and connect their wallets only to it. This requires significant resource usage, including the full unpruned blockchain, transaction index, and an extra address index, along with more RAM and CPU usage compared to just a full node. However, this also requires the server to always be online, making it less suited to being shut down and started up again.To overcome these challenges, Electrum Personal Server has been introduced, which allows users to benefit from all of Bitcoin Core's resource-saving features like pruning, blocksonly, and disabled txindex, but backed by the user's own full node. This way, users can use all of Electrum's feature richness like hardware wallet integration, multisignature wallets, offline signing, mnemonic recovery phrases, etc., without relying on third-party Electrum servers.An alpha version of Electrum Personal Server is available on the repository, which the wallet user must configure with their master public key before importing those addresses into Bitcoin Core as watch-only. Although Electrum's "instant on" feature is traded away when using Electrum Personal Server in return for full node verification and privacy, it remains the most resource-efficient way right now to use a hardware wallet connected to your own full node. Lastly, similar ideas could be applied to other lightweight wallets, where a full node can run on smartphones with pruning and blocksonly, then a similar script would allow the user to connect their Samourai Wallet, Breadwallet or GreenAddress app to their own full node.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T05:09:38.003189+00:00 </i></p>
     
     
 

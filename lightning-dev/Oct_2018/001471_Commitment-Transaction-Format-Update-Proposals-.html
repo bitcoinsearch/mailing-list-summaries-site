@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Commitment Transaction Format Update Proposals?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2018-10-20 20:36:59
+            <br><i>Published on: 2018-10-20T20:36:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2018/combined_Commitment-Transaction-Format-Update-Proposals-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001471.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the use of CPFP as a means to include transaction fees in Bitcoin transactions. A suggestion is made that instead of leaving an extra output for CPFP, it should be sufficient to sign all inputs with ANYONECANPAY and expect the sender to make an exact output for the fees input. However, this would require an extra transaction assuming the sender does not already have a properly sized UTXO available. It is questioned whether there is anything missing from this approach.There is also a discussion on symmetric delays, which are believed to simplify game theory analysis. However, it is suggested that the delays need not be the same for both participants, but rather applied equally regardless of who publishes the commitment tx. The reason for taking the max is questioned, and the point is raised that participants should be able to specify their own `to_self_delay`.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T14:29:05.845517+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

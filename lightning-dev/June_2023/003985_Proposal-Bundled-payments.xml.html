@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Bundled payments</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> David A. Harding 2023-06-19 20:29:34+00:00
-            <br><i>Published on: 2023-06-19T20:29:34+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2023/combined_Proposal-Bundled-payments.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003985.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation, Thomas Voegtlin discusses the semantics of bundled payments. He explains that a BOLT-11 invoice contains two preimages and two amounts: a prepayment and a main payment. The receiver is instructed to wait until all the HTLCs (Hashed Time-Locked Contracts) of both payments have arrived before fulfilling the HTLCs of the pre-payment. If the main payment does not arrive, the pre-payment should be failed with a MPP (Multi-Part Payment) timeout.Once the HTLCs of both payments have arrived, the receiver fulfills the HTLCs of the prepayment and broadcasts their on-chain transaction. However, it is important to note that the main payment can still fail if the sender never reveals the preimage of the main payment.Dave, in response to Thomas' explanation, suggests an alternative approach for the prepayment. He proposes using a keysend payment with the onion message payload, where the receiver is indicated what payment hash to associate with the prepayment. For example, Alice wants to receive 1 BTC to a specific hash, and she sends a keysend payment with metadata indicating the receiver should wait until they receive the 1 BTC HTLC (Hashed Time-Locked Contract) to that specific hash before claiming the prepayment of 10k satoshis.Dave suggests extending the BOLT11 invoices with an extra_fee_via_keysend field to accommodate this alternative approach. This would make the invoice significantly smaller and allow for the encoding of the extra_fee_via_keysend field in existing BOLT11 fields such as the description or the metadata field. This could potentially allow for immediate implementation until an updated version of BOLT11 or an alternative using offers becomes widely deployed.Overall, the discussion revolves around the semantics of bundled payments and the possibility of using keysend payments as an alternative for prepayments in BOLT11 invoices.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-28T03:25:48.834176+00:00 </i></p>
     
     
 

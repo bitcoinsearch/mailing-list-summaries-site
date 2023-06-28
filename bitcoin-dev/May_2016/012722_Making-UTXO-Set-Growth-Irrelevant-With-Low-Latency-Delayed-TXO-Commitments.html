@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making UTXO Set Growth Irrelevant With Low-Latency Delayed TXO Commitments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2016-05-18 23:53:36
+            <br><i>Published on: 2016-05-18T23:53:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Making-UTXO-Set-Growth-Irrelevant-With-Low-Latency-Delayed-TXO-Commitments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012722.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the proposed TXO commitments using Merkle Mountain Range, a type of deterministic, indexable, insertion-ordered merkle tree. The MMR implementation with pruning support is available on Github, where item retrieval by index is implemented and changing elements in-place is yet to be implemented. The original MMR scheme developed for OpenTimestamps is insufficient as it doesn't prove the position in the tree very well. However, the proofchains MMR scheme fixes this problem by making each inner node in the MMR commit to the total number of elements under it. The proposal of having both an append-only TXO and an append-only STXO was discussed, but it wouldn't work as the STXO would need to be indexed by outpoint or txout creation order, which is similar to insertion-ordered TXO commitment. It is interesting how a merbinner tree, when insertion-order indexed, ends up with a data structure that's almost identical to a MMR.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:26:14.878265+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

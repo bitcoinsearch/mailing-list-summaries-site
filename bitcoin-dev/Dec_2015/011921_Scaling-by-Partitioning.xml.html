@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Scaling by Partitioning</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Akiva Lichtner 2015-12-09 18:26:06
-            <br><i>Published on: 2015-12-09T18:26:06+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2015/combined_Scaling-by-Partitioning.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011921.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Akiva Lichtner, a developer with experience in the payment industry and process groups, proposed an idea for scaling Bitcoin by running more than one simultaneous chain. Each chain would defeat double spending on only part of the coin, which would be partitioned by radix or modulus. For example, ten parallel chains could be run to multiply throughput by a factor of ten. Blocks would have to contain the number of the partition they belong to, and miners would need to round-robin through partitions to prevent attackers from having an unfair advantage. However, Loi Luu, one of the authors of the SCP protocol, questioned this proposal and wondered how transactions that spend a "coin" that ends in "1" and creates a new coin that ends in "1" should be processed. He also noted that sharding does not bring any advantages if the amount of data needed to broadcast immediately to the network increases linearly with the number of transactions that the network can process. Luu suggested that their SCP protocol can localize the bandwidth used, but recipients need to verify whether a transaction is double-spending. Despite this tradeoff, he believed that SCP provides potential scalability. Akiva responded, stating that since partitions are completely segregated, there is no need for a node to work on multiple partitions simultaneously. However, for attacks to be defeated, a node needs to be able to work on multiple partitions in turn, not at the same time.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T01:55:08.410264+00:00 </i></p>
     
     
 

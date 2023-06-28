@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Merkleize All The Things</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2022-12-13 06:59:27
+            <br><i>Published on: 2022-12-13T06:59:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2022/combined_Merkleize-All-The-Things.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021277.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Verkle trees could be a useful tool for something like Utreexo, but the cryptography used to get those nice properties of Verkle trees isn't quantum safe. Despite many things in Bitcoin going down the path of quantum-unsafe, there are still many people who think quantum safety is important in various contexts. The computation step encoded in a leaf needs to be simple enough for Script to verify it. One can imagine reducing the computation all the way down to a circuit where each step (leaf) is as simple as what can be checked with {OP_NOT, OP_BOOLAND, OP_BOOLOR, OP_EQUAL}. In practice, one would want to utilize Script to its fullest, so one wouldn't compile a SHA256 computation to something else – one would rather use OP_SHA256 directly.The function f is already hard-coded in the contract itself, by means of the tree of scripts − that already commits to the possible futures. Therefore, once you are at state S14, you know that you are verifying the 6th step of the computation; and the operation in the 6th step of the computation depends solely on f, not its inputs. It is well-known in the academic literature of state channels that you can create contracts where even the function ("program", or "contract") is not decided when the channel is created. Since f is generic, we can choose f itself to be a universal Turing machine. That is, we can imagine a function f(code, data) that executes a program ("code") on the "data" given to it as input.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T03:05:31.856745+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

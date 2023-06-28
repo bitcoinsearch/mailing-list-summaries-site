@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bundled payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2023-06-20 07:32:15+00:00
+            <br><i>Published on: 2023-06-20T07:32:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2023/combined_Proposal-Bundled-payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003987.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Thomas Voegtlin and David A. Harding, they discuss the idea of bundling payments in BOLT-11 invoices. Thomas suggests that the invoice should have a feature bit to make prepayment optional or required. He explains that for the feature to be optional, the prepayment amount needs to be subtracted from the main payment amount. In this case, Alice would expect to receive either 1 BTC with the invoice payment hash or 1 BTC minus 10k sats with the invoice payment hash, along with a prepayment of 10k sats via keysend.David raises a question about whether a BOLT11 invoice is necessary for the prepayment or if it can be done using a keysend payment with the onion message payload. He suggests adding an extra_fee_via_keysend field to the BOLT11 invoice, which would be smaller and could be encoded in an existing field like description or metadata. This would allow for immediate implementation until an updated version of BOLT11 or an alternative using offers becomes widely deployed.The email conversation ends with the contact information for Electrum Technologies GmbH, including their address and legal registration details.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-28T03:26:05.921683+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: AMPs With Proof of Payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-10-03 00:48:46
+            <br><i>Published on: 2019-10-03T00:48:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_Proposal-AMPs-With-Proof-of-Payment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002192.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been put forward to modify the Original AMP (OG AMP) in order to allow for Atomic Multi-Path Payments (AMPs) with Proof of Payment (PoP). Currently, it is not possible to do AMPs with PoP because the payment pre-images must be fully known to the payer, and if the payer knows the pre-image in advance then there is nothing for them to learn atomically with payment completion. However, the use of Payment Points and PTLCs instead of Payment Hashes with their HTLCs can make PoP-enabled AMPs possible. The proposal involves having a Payment Point, PP = pop*G, and adding it to each partial payment point. This allows the receiver to add pop to each r_i which is required to complete each payment. Once Payment Points are implemented, this will be how AMPs work, and AMPs can enjoy all of the benefits that come with PoP. The proposal was made by Nadav, who believes that it is not possible to have PoP in AMPs without Payment Points. He feels that this is a compelling reason to move to Payment Points as soon as possible, likely when bip-schnorr enters the base layer. At Adelaide 2018, only path decorrelation and High AMP were the known advantages of payment point/scalar, thus the decision to wait for Schnorr-like signatures to hit the base layer rather than implement 2p-ECDSA. The possibility of Stuckless (which potentially allows Escrow-over-Lightning as well) gives additional boost to the use of payment points. ZmnSCPxj is currently tempted to consider implementing 2p-ECDSA already, as bip-schnorr probably will have one year of arguing, one year of testing+ developing, and two years of miners delaying activation before another UASF.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:39:38.128616+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

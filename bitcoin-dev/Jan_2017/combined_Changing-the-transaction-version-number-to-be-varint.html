@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Changing the transaction version number to be varint <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2017/013489_Changing-the-transaction-version-number-to-be-varint.html">Changing the transaction version number to be varint</a>
+                        <b>Tom Zander 2017-01-20 14:02:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2017/013492_Changing-the-transaction-version-number-to-be-varint.html">Changing the transaction version number to be varint</a>
+                        <b>Johnson Lau 2017-01-26 12:57:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2017/013492_Changing-the-transaction-version-number-to-be-varint.html">Changing the transaction version number to be varint</a>
+                        <b>Johnson Lau 2017-01-26 12:57:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2017/013492_Changing-the-transaction-version-number-to-be-varint.html">Changing the transaction version number to be varint</a>
+                        <b>Johnson Lau 2017-01-26 12:57:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2017/013489_Changing-the-transaction-version-number-to-be-varint.html">Changing the transaction version number to be varint</a>
+                        <b>Tom Zander 2017-01-20 14:02:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Jan_2017/013489_Changing-the-transaction-version-number-to-be-varint.html">Changing the transaction version number to be varint</a>
+                        <b>Tom Zander 2017-01-20 14:02:22</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013489.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-01-20T14:02:22+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>On January 20th, 2017, Tom Zander proposed a new transaction format for Bitcoin. The version field is always 4 bytes in a transaction, while the rest of the integer encoding is variable-sized to save on bytes. This means that almost all transactions have bytes 2, 3 and 4 set to zero. Changing the way the version number is serialized to be var int when accepting a new version of transaction format could mean that each transaction loses three bytes which can be used differently in v1 transactions and are not needed at all for newer formats. Additionally, 100% of all integers in the transaction will follow exactly the same encoding (var-int encoding) at least for FlexTrans.Currently, there is no consensus rule that rejects transactions which lie about their version. Hence, this rule cannot be introduced retroactively and will only apply from a certain block-height. The proposed way to implement this is to label bytes 2, 3 & 4 as unused from a certain block-height while interpreting the first byte as varint. Additionally, a new rule will be added that only transactions that do not lie about their version number are valid, meaning version 1. This could be done as a soft fork. However, some issues were raised with this proposal. Firstly, it would require a hardfork, as existing nodes would not be able to deserialize the transaction. Secondly, using non-version 1 transactions is permitted since v0.1, and version 2 transactions are already used due to BIP68. Finally, if the proposal only affects network transfer, it would be considered a p2p protocol upgrade and not a softfork nor a hardfork.The three ways to introduce new transaction formats include: through a softfork, which makes old clients blind to the new format; through a hardfork, which forgets the old clients and requires new clients to understand the new format; or p2p only, which won't affect consensus. Regardless of the method chosen, one could introduce whatever new format they want. It is also worth noting that although almost all transactions have bytes 2, 3 & 4 set to zero, there is no transaction version defined that sets them to non-zero. Links to the Bitcoin Classic website and the author's blog and vlog are provided at the end of the context.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T21:12:13.090461+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

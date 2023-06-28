@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Acknowledgements in BOLT #2</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Fabrice Drouin 2016-04-01 14:57:37
-            <br><i>Published on: 2016-04-01T14:57:37+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2016/combined_Acknowledgements-in-BOLT-2.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000508.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent discussion, it has been realized that htlc ids are not sufficient in some cases and the acknowledge field needs to be taken into account. This is because in scenarios where A sends ADD HTLC X, ADD HTLC Y, ADD HTLC Z and B sends FAIL Y, then A sends SIG Z before receiving the last message from B. When B receives SIG Z which includes (X,Y,Z), it won't match the expected signature (X,Z) and may close the channel without knowing if A received the "FAIL Y" message or not. In such circumstances, checking the 'acknowledge' field becomes necessary as pointed out by Rusty.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T23:22:48.074261+00:00 </i></p>
     
     
 

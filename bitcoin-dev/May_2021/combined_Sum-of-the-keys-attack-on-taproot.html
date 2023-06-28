@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Sum of the keys attack on taproot <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018929_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>vjudeu 2021-05-15 10:21:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018931_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>Ruben Somsen 2021-05-15 20:35:37</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018929_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>vjudeu 2021-05-15 10:21:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018929_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>vjudeu 2021-05-15 10:21:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018930_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>Tim Ruffing 2021-05-15 20:25:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018930_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>Tim Ruffing 2021-05-15 20:25:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018930_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>Tim Ruffing 2021-05-15 20:25:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018931_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>Ruben Somsen 2021-05-15 20:35:37</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2021/018931_Sum-of-the-keys-attack-on-taproot.html">Sum of the keys attack on taproot</a>
+                        <b>Ruben Somsen 2021-05-15 20:35:37</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018929.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-05-15T10:21:00+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Alice's ownership of taproot address and public key "a*G" along with private key "a" raises concerns about potential attacks from malicious actors. Bob, who knows "a*G" by exploring the chain and looking for P2TR outputs, creates a taproot address "(b-a)*G" and sends a small amount to it, in an attempt to steal Alice's funds. To accomplish this, Bob creates a transaction with two inputs, taking coins from "a*G" and "(b-a)*G" addresses, requiring a signature matching the sum of the public keys used in taproot, which is "(a+b-a)*G", reduced to "b*G". One solution to protect against such attacks could be using multisignature setup or a timelock, where both Alice and Bob need to sign off on any transaction and wait for a certain period before allowing any transactions. Another option is using coin control features to ensure that her coins are not vulnerable to such attacks. In a discussion on the bitcoin-dev mailing list, vjudeu suggested that producing a signature matching the sum of public keys used in taproot would be sufficient. However, Tim Ruffing corrected this statement, stating that taproot does not enable cross-input aggregation or spending multiple UTXOs with a single signature. Ruben added to the conversation by suggesting reading about MuSig, a key aggregation scheme using Schnorr signatures. The link provided leads to a blog post on Blockstream's website explaining the details of MuSig. It is crucial for users to be aware of these potential attacks and take proper precautions to safeguard their assets.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-14T21:57:18.337461+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

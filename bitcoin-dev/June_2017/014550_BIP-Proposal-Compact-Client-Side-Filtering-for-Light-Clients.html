@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Compact Client Side Filtering for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2017-06-09 03:42:58
+            <br><i>Published on: 2017-06-09T03:42:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2017/combined_BIP-Proposal-Compact-Client-Side-Filtering-for-Light-Clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014550.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal for a new light client BIP was made by Olaoluwa Osuntokun and Alex Akselrod, which Gregory Maxwell reviewed. He pointed out that the inner loop of construction and lookup contains non-constant divmod, which could result in needlessly slow implementations. To fix this, he suggested using an approach that has the same non-uniformity as mod but requires only a multiply and shift, which he linked to. However, it cannot be used as described since it outputs 32-bit integers instead of 64-bit integers. If filter commitment are considered for a soft-fork in the future, the construction of filters should be optimized as much as possible. Maxwell also noted that all cases in the spec where N is transactions should be n=indexed-outputs to ensure that the golomb parameter and false positive rate are correct. This was due to an oversight on Osuntokun's part, but it has been corrected. In addition, another commit was made to explicitly take advantage of the fact that P is a power-of-two within the coding loop.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T02:43:39.545491+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

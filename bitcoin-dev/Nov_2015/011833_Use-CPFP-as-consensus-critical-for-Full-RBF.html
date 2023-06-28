@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Use CPFP as consensus critical for Full-RBF</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2015-11-29 11:55:08
+            <br><i>Published on: 2015-11-29T11:55:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_Use-CPFP-as-consensus-critical-for-Full-RBF.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011833.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the relay/mining policy of CPFP and RBF, which cannot be made consensus rules because it is impossible to know which transactions have been received by a given peer and at what time. The consensus rules can only validate information that is in the blockchain. The discussion focuses on making CPFP consensus critical for all Full-RBF transactions in order to make RBF safer to use. It is noted that RBF is necessary for users to fix mistakes, but it is hard to spot a legitimate RBF and a malicious one. If the recipient signs off on the one they know about using CPFP, there should be no problems. However, this might depend on the CPFP implementation, as it is important to prevent the sender from signing off their own transactions. The proposal is to allow Full-RBF up to the point where a recipient creates a CPFP transaction, and any transaction with full RBF that has not been signed off with a CPFP cannot go into a block, making it a consensus rule rather than a local policy. The purpose of CPFP is to allow merchants to bear the burden of fees, and combining the two policies would make RBF much safer to use.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:30:21.285392+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

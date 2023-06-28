@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-09-30 23:28:43
+            <br><i>Published on: 2019-09-30T23:28:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002178.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to a mailing list, a user named ZmnSCPxj suggests the creation of a new opcode called `OP_CHECKSIG_WITHOUT_INPUT` as an alternative to `SIGHASH_NOINPUT`. This new opcode would ignore any `SIGHASH` flags present on a signature and instead hash the current transaction without input references to check against the signature. The suggested opcode could be embedded in a Taproot script, which already supports special SCRIPTs that may potentially lose funds for users.ZmnSCPxj also notes that this proposed new opcode would allow for a Decker-Russell-Osuntokun with an internal Taproot point to be a 2-of-2, then have a script `OP_1 OP_CHECKSIG_WITHOUT_INPUT`. Unilateral closes would expose the hidden script, but cooperative closes would use the 2-of-2 directly. The author raises the question of why there isn't more concern about potential abuse of Taproot, considering its support for SCRIPTs that may lead to fund losses.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:31:45.107227+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

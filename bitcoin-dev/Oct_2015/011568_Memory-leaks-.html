@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Memory leaks?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Multipool Admin 2015-10-19 22:24:11
+            <br><i>Published on: 2015-10-19T22:24:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_Memory-leaks-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011568.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A user on the bitcoin-dev mailing list reported experiencing a memory usage issue that was not caused by connected nodes, as they were only connected to three nodes which they controlled. Another user reported a similar issue with 35 GB of RSS usage, leading to speculation that the issue is related to CreateNewBlock() and getblocktemplate. Testing with PR #6410's better mempool reporting suggests that actual in-memory usage by CTxMemPool is about 2.5x to 3x higher than serialized transaction sizes, but the excess memory usage seen in this case is on the order of 100x higher than the mempool "bytes" value, making it unlikely that this is normal/correct mempool behavior. The user suggested mitigating the mempool growth by setting -mintxfee. The user also reported on some additional notes on the issue, including valgrind not showing anything super promising. The user apologized for any confusion caused by cross-posting and promised to post more clearly in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:07:55.488928+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Anchor transaction for no expiration channels without segwit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tier Nolan 2017-02-07 12:02:34
-            <br><i>Published on: 2017-02-07T12:02:34+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2017/combined_Anchor-transaction-for-no-expiration-channels-without-segwit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-February/000670.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent email exchange, Nicolas Dorier suggested an alternative method for transaction locking to create symmetrically funded channels. The proposed method involves using nTimelock after the bounty's expiration, which would keep the transaction smaller. A symmetrically funded channel requires four 1BTC outputs, making it essentially two single funded channels. To open the channel, they would need two transactions: TX1 and TX2. TX1 has four inputs: two from Alice and two from Bob. It also has four outputs: one that is (Alice + Bob) OR (Bob + AliceSecret), one that is (Alice + Bob) OR (Alice + BobSecret), one that is (Bob + timeout(now + T)) OR (Alice + AliceSecret), and one that is (Alice + timeout(now + T)) OR (Bob + BobSecret). TX2, with locktime now + 2T, has two inputs signed by both Alice and Bob and an output that pays Alice and Bob 1BTC each as the initial channel payment. If one party signs and the other does not, the signer should spend their inputs to be safe. If TX1 is broadcast, they can both spend their timeouts to recover their funds. Once they have signed versions of TX1 and TX2, they should broadcast TX1 to initialize the channel. If TX1 is mutated, they should abort and spend their timeouts to recover their funds.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T00:59:17.877433+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segregated witness p2p layer compatibility</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2017-03-27 21:03:08
+            <br><i>Published on: 2017-03-27T21:03:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2017/combined_Segregated-witness-p2p-layer-compatibility.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013814.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the implementation of SegWit has taken place on the Bitcoin-dev mailing list. Eric Voskuil stated that pre-SegWit miners will produce blocks that SegWit nodes will not receive due to the protocol requirements of SegWit. However, Suhas Daftuar clarifies that this is an "implementation detail" in the Bitcoin Core code that alternate implementations compliant with BIP 144 could implement differently. At the consensus layer, non-SegWit blocks that are valid to older nodes are also valid to SegWit nodes. This means that if a miner was using an older, pre-SegWit version of Bitcoin Core to produce blocks after SegWit activates, those blocks they find will be valid to all nodes. It is noted that Bitcoin Core has been implemented so that it will not see valid blocks announced by certain peers. Forcing it to see such blocks requires the peer-to-peer network to work around its current implementation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T22:38:43.723128+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

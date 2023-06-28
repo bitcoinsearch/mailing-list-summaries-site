@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 38 NFC normalisation issue</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Andreas Schildbach 2014-07-16 09:17:44
-            <br><i>Published on: 2014-07-16T09:17:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2014/combined_BIP-38-NFC-normalisation-issue.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006261.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The problem with Unicode astral plane is caused by a plain old (ASCII) control character, \u0000. It is suggested to ban/filter ISO control characters to solve this issue. However, it is assumed that Character.isISOControl() works consistently across platforms. Aaron Voisine suggests limiting the spec to the subset of Unicode that all popular platforms can support if JVMs can't support Unicode NFC. Mike Hearn recommends refusing any passphrase that includes characters outside the BMP for compatibility with JVM based wallets. He suspects that Java may not/won't support this kind of thing because it uses 16 bit characters internally. The email also includes a link to Black Duck Code Sight for indexing and searching up to 200,000 lines of code.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T00:57:07.566337+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>More denial-of-service prevention code to review</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gavin Andresen 2011-09-27 17:12:09
-            <br><i>Published on: 2011-09-27T17:12:09+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2011/combined_More-denial-of-service-prevention-code-to-review.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000601.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Bitcoin team has implemented a pull request to prevent denial-of-service attacks from orphan blocks. Orphan blocks are valid blocks that are not in the main blockchain and were stored in memory by the Bitcoin client. The new patch rejects orphan blocks before the last blockchain lock-in and requires them to have a plausible proof-of-work. If a node sends enough obviously-not-part-of-the-main-chain blocks, it will be disconnected and banned. Orphan blocks with too-low proof-of-work are ignored, and if a node sends ten of them it is disconnected/banned. This implementation will make the attack too expensive to attempt as generating valid blocks at the current difficulty would cost a lot.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-04T20:13:57.065026+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Dmitry Petukhov 2021-02-14 11:28:58
-            <br><i>Published on: 2021-02-14T11:28:58+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2021/combined_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018420.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal for an encryption scheme for a multisig setup was made by Hugo Nguyen, which utilized PBKDF2 with SHA512 as the key derivation function. The coordinator and signers exchange two secrets, HUMAN_READABLE_TITLE and NONCE, prior to setup. The NONCE can be converted into a 6-word phrase, a 20-digit decimal number, or a QR code. The flexibility in data format allows vendors to customize the user experience based on their device capabilities. A concern about the vulnerability of the scheme to rainbow table attacks was raised, prompting suggestions such as using a longer token or making use of mnemonics. A discussion between Hugo and Dmitry Petukhov followed, where they considered issues such as the difficulty of entering long data into a device manually and confusion between procedures. In another email thread, Dmitry proposed adding a requirement for signers to derive participant ids but later concluded that this would only complicate matters without net positive tradeoff. It was suggested that a unique TOKEN per participant could suffice, and there may not be a need to mention the possibility of deriving a public 'participant id' in the specification.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T17:32:25.416970+00:00 </i></p>
     
     
 

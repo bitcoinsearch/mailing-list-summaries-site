@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Refreshed BIP324</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2022-11-03 22:26:54
+            <br><i>Published on: 2022-11-03T22:26:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Refreshed-BIP324.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021162.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The network is expected to have 35 message types with the addition of BIP324 and there are around 256 possible IDs for these messages. However, to be more conservative, the first bit could be used to signal a 2-byte message ID, which would allow the expression of 128 IDs with 1 byte and a total of 2^15 IDs across 2 bytes if needed. Another alternative would be to reserve the short ID 0xFF as an indication for a 2-byte short ID which would lead to approximately 207 unused 1-byte short IDs while the signal bit two-byte approach would lead to ~32k more two-byte message IDs. The main benefit of short IDs is bandwidth, but short IDs 1-12 are reserved for string-based IDs and new and rarely sent message types need not always use a short ID. The BIP assigns short IDs to all message types, including low-frequency messages like SENDHEADERS. To optimize short ID usage, it may be helpful to state in the BIP that only frequently sent messages should reserve a short ID or exclude message types that are expected to be sent only once from assigning a short ID.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T01:33:08.170792+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

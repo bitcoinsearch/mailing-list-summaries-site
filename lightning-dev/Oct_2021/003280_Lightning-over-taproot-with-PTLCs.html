@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning over taproot with PTLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-10-09 02:15:19
+            <br><i>Published on: 2021-10-09T02:15:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_Lightning-over-taproot-with-PTLCs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003280.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, ZmnSCPxj discusses the implementation complexity of putting transactions on-chain. They suggest that it may not be necessary to put a transaction on-chain in some cases, but doing so requires calculating fees in advance and being unable to update it off-chain. However, they note that maintaining the historical longevity of a channel can be an advantage, as many pathfinding and autopilot heuristics use channel lifetime as a positive indicator of desirability. To take advantage of this, routing nodes could establish a new taproot-based channel between two parties, alongside their existing bolt#3 based channel. This new channel, called a shadow channel, would not be advertised to others, but secretly committed to by PTLCs instead of the public channel. Once the funding transaction for the shadow channel is sufficiently buried, the node could start advertising it instead of the public channel, while converting the public channel to a shadow channel. This setup allows for splicing funds into or out of the shadow channel while retaining the positive longevity heuristics of the public channel.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T16:19:23.176798+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

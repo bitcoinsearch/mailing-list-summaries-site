@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Base-32 error correction coding <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2014/004402_Base-32-error-correction-coding.xml.html">Base-32 error correction coding</a>
-                        <b>Mark Friedenbach 2014-02-21 02:41:05</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2014/004432_Base-32-error-correction-coding.xml.html">Base-32 error correction coding</a>
-                        <b>Jim Paris 2014-02-24 18:29:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2014/004432_Base-32-error-correction-coding.xml.html">Base-32 error correction coding</a>
-                        <b>Jim Paris 2014-02-24 18:29:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2014/004402_Base-32-error-correction-coding.xml.html">Base-32 error correction coding</a>
-                        <b>Mark Friedenbach 2014-02-21 02:41:05</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2014/004432_Base-32-error-correction-coding.xml.html">Base-32 error correction coding</a>
-                        <b>Jim Paris 2014-02-24 18:29:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2014/004402_Base-32-error-correction-coding.xml.html">Base-32 error correction coding</a>
-                        <b>Mark Friedenbach 2014-02-21 02:41:05</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004402.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2014-02-21T02:41:05+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Mark Friedenbach has proposed a BIP for human-friendly base-32 serialization with error correction encoding. The purpose of this proposal is to provide automatic correction of up to one transcription error per 31 coded digits (130 bits of payload data) that will aid in seamless recovery from up to two transcription errors, as long as they occur in separate halves of the coded representation. However, Jim suggests that to correct a transposition, interleaving the two halves of the coded representation would be necessary. The proposed format differs from the default hexadecimal or base58 encodings as it includes the full range of alphanumeric digits in its base-32 encoding, except the characters 0, l, v, and 2, which are too easily confused with 1, i, u, r, or z in font or handwriting. It also has highly probable detection of errors beyond the error correction threshold, and case-insensitive encoding. For error correction coded strings, BIP specifies usage of Phil Zimmermann's z-base-32 encoding alphabet, which provides better resistance to transcriptive errors than the RFC 3548 standard. In addition to the error correction code transformation of base-32 data, a padding scheme is specified for extending numbers or bit vectors of any length to a multiple of 5 bits suitable for base-32 encoding. The document also describes an error correction encoding using cyclic redundancy check polynomial division, which requires 5 error correction digits per 26 digits of input, instead of the theoretically optimal 4. Although providing an error correction coder for base-32 data is interesting and useful in contexts where base-32 is already deployed, many applications involve encoding of integers, which are powers of two in length. This section provides a standard scheme for the encoding of any sized bitstring into a multiple of 5 bits in length, suitable for direct encoding into base-32.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-08T03:12:32.375115+00:00</i></p>
-    
-
     
 
     <footer>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning RPC</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2022-01-19 10:58:40
+            <br><i>Published on: 2022-01-19T10:58:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2022/combined_Lightning-RPC.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-January/003446.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Christian, an iOS developer, has created a C library called lnsocket, which allows him to send messages from iOS to control his lightning node. He is now considering what format the RPC commands should be in. While JSON-RPC is commonly used, it can be problematic with binary data and doesn't have any concept of streaming. Christian suggests that something more compact and rpc-friendly like grpc would be better. Rusty also has a summer of bitcoin project attempting to expose a websocket directly to browsers in order to provide another way to communicate with your node, and of course there's Commando. Christian thinks the end goal of an RPC bolt would be super powerful, so that lnsocket could talk to any lightning node. Choosing the right data format seemed like an important step in that direction. He thinks either the JSON-RPC or grpc can serve as a basis for a common RPC definition that can have any number of bindings, since they generate conversion code to/from JSON-RPC and grpc they can transparently map them back and forth. Christian cc'd clightning/lightning-dev as well to see if anyone else is working on this or thinking about this stuff right now. He is open to suggestions, comments, and criticism. The cln-grpc crate is rather new but should be reviewable as is. The cln-plugin crate is less fleshed-out, but has the core functionality needed for cln-grpc-plugin, which was the goal of this first exploration. The cln-rpc crate is missing many RPC commands, but Christian plans to tackle that separately.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:22:34.381813+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

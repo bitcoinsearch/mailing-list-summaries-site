@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Build your own nHashType</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Stephen Morse 2015-04-10 02:56:20
-            <br><i>Published on: 2015-04-10T02:56:20+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2015/combined_Build-your-own-nHashType.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-April/007785.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion revolves around the rehashing of transaction data once per input being a bottleneck and how full nodes have to check all transactions' inputs, which is much more costly. The conversation also touches upon auto-forwarding as a feature, with the Bitcoin SE post highlighting the fact that people have looked for this feature before. There are convoluted use cases for it, but better solutions for key management exist. Sergio suggests Hash(Tx, previn-index) = Hash ( Hash(outputs) || Hash(Inputs-with-script-cleared) || ) (for SIGHASH_ALL) as a way to avoid the bottleneck by reordering the serialization. Peter Todd mentions CODESEPARATOR and how it can be used to sign code to run as part of verifying the signature, making a signature that's only valid if the tx fee is less than the defined amount. However, Stephen argues that OP_CODESEPARATOR cannot really be made useful unless you already have a way to sign without hashing the TXIDs referenced by your input.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T19:05:13.954679+00:00 </i></p>
     
     
 

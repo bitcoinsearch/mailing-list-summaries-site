@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ephemeral Anchors: Fixing V3 Package RBF against package limit pinning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2022-10-18 13:52:46
+            <br><i>Published on: 2022-10-18T13:52:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_Ephemeral-Anchors-Fixing-V3-Package-RBF-against-package-limit-pinning.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of an email to the Bitcoin-dev mailing list has elaborated on potential follow-up work related to V3 transactions and pinning attacks. While V3 transactions may solve some pinning attacks, they do not solve package limit pinning, which occurs when a fee-paying transaction cannot enter the mempool due to the existing mempool package being too large. The proposed solution is Ephemeral Anchors, which marks an output as one that must be spent in a V3 package. If this anchor must be spent, then anyone can bump the transaction without any transaction key material. This proposal also benefits more traditional wallet scenarios as change outputs can no longer be pinned, and RBF/CPFP becomes robust. Open questions include whether allowing non-zero value in ephemeral outputs opens up a MEV and whether SIGHASH_GROUP-like constructs would allow uncommitted ephemeral anchors to be added at spend time, depending on spending requirements.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T21:46:35.238461+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

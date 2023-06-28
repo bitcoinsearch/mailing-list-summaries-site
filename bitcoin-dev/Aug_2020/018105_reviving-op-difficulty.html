@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>reviving op_difficulty</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Hartman 2020-08-19 23:32:25
+            <br><i>Published on: 2020-08-19T23:32:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2020/combined_reviving-op-difficulty.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018105.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author initially proposed using op_diff to take 2 packed targets, 1 known and 1 unknown at the time of contract, and return the ratio. However, upon further consideration, they decided against this idea. Instead, the 32-bit packed difficulty target should be pushed onto the stack with no need for division. This can be done using the arithmetic less than operator, which is already live in script. The author suggests that these contracts could be completed with the addition of a single op_diff opcode. Although it may be less human readable to use difficulty target instead of difficulty, as no one reads script, this is acceptable.Additionally, the author was concerned about difficulty being a floating point number and expressed their dislike for floats. They are pleased that they no longer have to think about them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:10:12.979294+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

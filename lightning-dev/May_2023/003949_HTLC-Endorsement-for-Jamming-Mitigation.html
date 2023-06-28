@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTLC Endorsement for Jamming Mitigation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Vincenzo Palazzo 2023-05-11 07:15:12
+            <br><i>Published on: 2023-05-11T07:15:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2023/combined_HTLC-Endorsement-for-Jamming-Mitigation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003949.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email update discusses the upcoming call for channel jamming, which is scheduled for 15:00 UTC on Monday, May 1. The agenda for the meeting can be found on GitHub. The email also mentions the gathering of data during these weekly calls to mitigate jamming. The goals include observing the effect of logging-only implementation in steady state and gathering real-world data for future simulation work. Different algorithms for tracking local reputation will also be experimented with.Minimal changes required to add HTLC endorsement are outlined in [2]. A binary endorsement field is suggested to start with, and as more is learned, a more expressive value may be required. There is interest in deploying using an experimental TLV value. The email proposes a two-part scheme for mitigating channel jamming: reputation for slow jams that are easily detected as misbehavior and unconditional fees for quick jams that are difficult to detect, as they can always fall under a target threshold.Each node tracks the reputation of its direct neighbors and allocates a number of slots reserved for endorsed HTLCs from high reputation peers, as well as a portion of liquidity reserved for endorsed HTLCs from high reputation peers. Forwarding of HTLCs depends on whether or not a HTLC is endorsed by a high reputation peer. If it is, it is forwarded as usual with endorsed = 1. Otherwise, it is forwarded with endorsed = 0 if there are slots and liquidity available for unknown HTLCs.Finally, the email ends with some offers to help with implementation details and an expression of gratitude for the helpful updates.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T12:51:18.075947+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

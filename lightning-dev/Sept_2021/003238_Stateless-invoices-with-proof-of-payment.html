@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Stateless invoices with proof-of-payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2021-09-21 11:25:41
+            <br><i>Published on: 2021-09-21T11:25:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2021/combined_Stateless-invoices-with-proof-of-payment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003238.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed payment scheme involves the sender locking an HTLC to a preimage that is computed using several inputs including the payment amount and encoded order details. The preimage is then hashed to produce an invoice hash, which serves as the lock for the HTLC. When the recipient receives the HTLC, they use the inputs provided by the sender to reconstruct the preimage, which is then hashed to verify that it matches the invoice hash. If it does, the recipient can settle the payment. The preimage also serves as proof of payment and is returned to the sender. It should be noted that this scheme is not a spontaneous payment protocol and the sender must request an invoice from the recipient via an ordinary HTTP request to learn the invoice hash. The goal of the scheme is to alleviate the recipient from storing the invoices that they generate.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:55:19.779594+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

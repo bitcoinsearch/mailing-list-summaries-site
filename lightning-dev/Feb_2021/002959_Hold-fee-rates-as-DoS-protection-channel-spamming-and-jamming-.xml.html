@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Hold fee rates as DoS protection (channel spamming and jamming)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2021-02-11 14:53:06
-            <br><i>Published on: 2021-02-11T14:53:06+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2021/combined_Hold-fee-rates-as-DoS-protection-channel-spamming-and-jamming-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002959.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The vulnerability of channel jamming is still a concern. A promising solution is bidirectional upfront payments, which involves using hold fees that are time-proportional rather than fixed to cover costs incurred during the lock-up period of an HTLC. The idea is that routing nodes advertise their hold fee rate and the receiver of the HTLC pays this fee minus a hold fee discount as compensation for the time the payment is held in flight. Routing nodes can only claim compensation if they delay forwarding the payment beyond a certain grace period, otherwise, they expect the sender of the HTLC to cover the costs. The sender of the payment constructs the onion payloads so that all nodes along the route have their costs covered. If an intermediate hop delays the payment, they will pay at least 0.6 sat/min, depending on their position in the route. This proposal adds flexibility to fair pricing for hodl invoices and its applications while simplifying the parameter set.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:42:32.267385+00:00 </i></p>
     
     
 

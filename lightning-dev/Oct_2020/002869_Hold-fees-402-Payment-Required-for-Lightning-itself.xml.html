@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Hold fees: 402 Payment Required for Lightning itself</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-10-23 15:26:57
-            <br><i>Published on: 2020-10-23T15:26:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2020/combined_Hold-fees-402-Payment-Required-for-Lightning-itself.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002869.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation with Bastien on Lightning-dev mailing list, ZmnSCPxj discussed the possibility of C unfairly delaying D's refund by delaying its own `commitment_signed`. While D is the one who decides whether they will be refunded or not, as they are the first to send the `commit_sig` that removes the HTLC, C can still drop the previous commitment and delay the process by not revoking its previous commitment (`revoke_and_ack`) and not signing the D-side next commitment (`commitment_signed`). ZmnSCPxj suggested extending `commit_sig` with a TLV field indicating "I refunded myself for HTLC N" to help C compute the same commit tx and verify sigs. However, if C can only take the hold fee at this point by dropping on-chain, then on-chain fees and the loss of a viable channel might outweigh the benefits. Moreover, rules involving "SHOULD/MUST fail the channel" have caused issues in interoperability, as seen in the mass channel closes between C-Lightning and lnd nodes due to sudden on-chain fee movements. ZmnSCPxj shared an old post related to this topic for further reference.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T02:34:09.969360+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless hash-price insurance contracts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> JW Weatherman 2019-10-20 16:10:53
+            <br><i>Published on: 2019-10-20T16:10:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Trustless-hash-price-insurance-contracts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017420.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the idea of a trustless hash-price insurance contract that can guarantee minimum profitability of a mining operation. The problem is that if the hash-rate goes up too much, the miner will have a loss. However, one assumption has been questioned about why a loss is assumed in the case of subsequently increasing hash rate, which implies an expectation of increasing return on investment. An analogy has been given with car insurance, where even an excellent driver would be willing to spend money to protect his car in the event of an accident if it is cheap enough. Similarly, if the offered insurance is cheap enough, it would be worth it for the miner to decrease his potential loss by buying insurance for this possibility. Moreover, the existence of attractive insurance contracts would lower the barrier to entry for new competitors in mining and increase Bitcoin's security. The proposed solution is a trustless hash-price insurance contract implemented as a Bitcoin transaction, where an insurer who believes that it's unlikely the price of a hash will go down negotiates a contract with the miner. There are three OR'ed conditions for paying the actual insurance, including expiry date, mutual agreement between the miner and insurer, and providing a pre-image that produces a hash within certain difficulty constraints before expiry. However, there are implementation issues like arithmetic comparison with long integers >32bit in the script, which requires a hacky implementation of the difficulty requirement using the hashes of one or more pre-images with a given short length. The pre-images are chosen by the insurer, and we would need a "honesty" deposit or other mechanism to punish the insurer if he chooses a hash that doesn't correspond to any short-length pre-image. Overall, the solution aims to guarantee a minimum profitability of the mining operation through a trustless contract.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:59:57.101734+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

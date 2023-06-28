@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP: Limiting excessive SignatureHash operation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2016-09-30 10:57:53
+            <br><i>Published on: 2016-09-30T10:57:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2016/combined_New-BIP-Limiting-excessive-SignatureHash-operation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013171.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed BIP aims to prevent excessive SignatureHash operation in Bitcoin network. The amount of data hashing in SignatureHash is proportional to the size of transaction, leading to O(n^2) growth as the number of sigops in a transaction increases. BIP143 introduced a new SignatureHash algorithm in segregated witness transactions. However, it was not able to fix pre-segregated witness transactions. The proposed BIP defines a new type of block-level resources limit, with several (optional) script restrictions, to prevent excessive SignatureHash operation. Transaction hashable size (TxHashableSize) is defined as the size of a transaction serialized without witness data (BIP144) and has scriptSig in all inputs replaced by zero-size script. The SignatureHash equivalent operation (SigHashOp) is defined as the maximum possible number of times that a sigop would perform SignatureHash at the TxHashableSize. There are two ways to estimate the SigHashOp: Loose estimation and Tight estimation.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:59:10.145063+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

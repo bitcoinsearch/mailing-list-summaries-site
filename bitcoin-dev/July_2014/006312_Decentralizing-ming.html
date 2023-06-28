@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decentralizing ming</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Emin Gün Sirer 2014-07-19 00:51:06
+            <br><i>Published on: 2014-07-19T00:51:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Decentralizing-ming.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006312.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the problem of set reconciliation, where peer A thinks that the set of transactions that should be in the block is S_A, and peer B has actually included set S_B. The goal is to reduce communication complexity between peers A and B from O(S_B) to O(delta), with delta being the difference between the two sets. This paper from Cornell proposes a scheme for achieving this through an underlying technique from the peer-to-peer/gossip literature. The approach has three benefits over the Bloom filter approach: it requires smaller packets than Bloom filters (which are still O(S_A)), it is non-probabilistic and non-interactive, and it avoids hash collision complications. The naive version needs an estimate of the size of delta. The email suggests applying this idea to the Bitcoin p2p protocol to reduce packet size. Additionally, the email discusses democratizing transaction selection by finishing off getblocktemplate support in various tools so that it's possible to pool for payout purposes without giving up control of block creation modulo the coinbase.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:05:55.228258+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

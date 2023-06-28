@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH v3] daemon: encrypted communication (version 3)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pierre 2015-10-27 17:00:24
+            <br><i>Published on: 2015-10-27T17:00:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2015/combined_-PATCH-v3-daemon-encrypted-communication-version-3-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000295.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, the author discusses two main points related to encryption. Firstly, they explain that ECDH is used to derive a shared secret which is then used to generate various transmission encoding parameters such as Session AES-128 key, Session HMAC key and IV for AES. They also mention that only the first 16 bytes are used for aes_key and aes_iv. Secondly, the author talks about packet encryption and mentions that all packets are encrypted using HMAC and contains totlen and data. However, the author raises concerns regarding the comment in the code where totlen represents the size of the unencrypted serialized protobuf message rather than the total data transmitted. The author also questions why totlen includes the length of itself since it doesn't define the encrypted message boundaries anyway. Additionally, they inquire why the length is encoded on 64 bits instead of 32 bits.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:15:05.296579+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

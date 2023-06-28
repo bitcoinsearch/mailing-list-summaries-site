@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP32 structure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andreas Schildbach 2014-03-26 23:37:46
+            <br><i>Published on: 2014-03-26T23:37:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_New-BIP32-structure.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004825.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread starts with a discussion about finding a better structure for wallets. The main concern is interoperability, and it is suggested that there should be either 100% interoperability or none at all. Some wallets only see a subset of the addresses/keys of other wallets when using the standard, which creates issues. Therefore, it is suggested to agree on a least common denominator and let wallets that want to implement some feature on top of that do so but are encouraged to pick a different "cointype". It is also suggested to have a separate chain for refunds, which require a much slower moving window than receiving addresses or change.On 03/26/2014, Mike Hearn proposed a BIP32 wallet structure that was developed in collaboration with Thomas V (Electrum) and Marek (Trezor). The structure is /m/cointype/reserved'/account'/change/n, where cointype distinguishes between keys intended for things like multisig outputs, while reserved is for "other stuff". Account is for keeping wallets-within-a-wallet to avoid mixing of coins, and change is 0 for receiving addresses and 1 for change addresses. N is the actual key index.The goal of the email thread is to ensure that the same seed can meet all the users' needs while still allowing some drift between what wallets support. Pieter made a valid point that you cannot encode how keys are meant to be used into just an HDW hierarchy and normally need metadata as well. However, interop between wallets is more important than arriving at the most perfect arrangement, which feels a little like bikeshedding.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T16:13:57.965659+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

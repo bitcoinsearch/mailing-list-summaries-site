@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Relative txout amounts with a Merkleized Sum Tree and explicit miner fee.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Melnychuk Oseen 2022-11-18 21:11:54
+            <br><i>Published on: 2022-11-18T21:11:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Relative-txout-amounts-with-a-Merkleized-Sum-Tree-and-explicit-miner-fee-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021215.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author is seeking feedback on an idea about mapping output amounts to a tap branch for the purpose of secure partial spends of a single UTXO. The Merkel tree root tweak and tree branch and leaf are defined using tagged hash and left and right hash and relative output amount. The transaction validation involves a negative output amount flagging the transaction as relative amount spends, with the miner fee being the absolute of the output amount. The author poses questions regarding whether this would require a hard fork, if the sum is required in the asset tree, how big a taproot tree can get before it becomes cumbersome, and whether multiple taproot trees can be put inside a tweak. Possible benefits include slightly increased privacy of output amounts and reduced growth rate of UTXOs. Drawbacks may include disabling the ability for output change addresses to be the same as inputs, as the spending amounts are absolute. An example transaction is given, where inputs are [1.5,.3,.1] and outputs are [-.0.001]. Alice's spending example is provided, where she sends to a new address and has a new change address. The author suggests that this idea could provide a way to onboard a lot of lightning channels with a single UTXO output. An exchange could schedule open lightning channels at certain time intervals, with people providing pubkeys and payment to be placed in a tap leaf, similar to selling seats for an aircraft flight.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T22:55:14.658104+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

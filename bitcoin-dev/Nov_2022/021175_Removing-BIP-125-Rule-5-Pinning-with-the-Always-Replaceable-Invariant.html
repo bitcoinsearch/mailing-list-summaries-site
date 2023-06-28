@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing BIP-125 Rule #5 Pinning with the Always-Replaceable Invariant</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2022-11-07 20:17:29
+            <br><i>Published on: 2022-11-07T20:17:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Removing-BIP-125-Rule-5-Pinning-with-the-Always-Replaceable-Invariant.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021175.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin Core currently implements rule #5 of BIP-125 which limits the number of original transactions and their descendant transactions that can be replaced in the mempool to a total of 100. However, this rule has no justification beyond avoiding "too much work" and may not be necessary since the overall mempool size limits naturally limit the maximum number of possible replacements. To avoid rule #5 pinning, an invariant called the Replaceability Invariant can be implemented where no transaction is accepted into the mempool that would cause another transaction to be unable to be replaced due to Rule #5. This invariant is simple to implement: for each transaction maintain an integer, nReplacementCandidates. When a non-conflicting transaction is considered for acceptance to the mempool, verify that nReplacementCandidates + 1 does not exceed the MAX_REPLACEMENT_CANDIDATES limit. If the limit is exceeded, reject the new transaction. By ensuring that all transactions in the mempool are always replaceable, the problem of Rule #5 pinning can be removed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T22:47:58.871959+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

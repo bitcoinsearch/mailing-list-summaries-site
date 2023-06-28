@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Free Rebalancing Proposals</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-08-13 10:16:10
+            <br><i>Published on: 2018-08-13T10:16:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2018/combined_Free-Rebalancing-Proposals.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001390.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses a new function in the network called "Free Rebalancing Proposals", which is a fee-less, omni-beneficial rebalancing scheme. The proposed function can be used by both payers and payees to coordinate and locate a route that could be made free using the "free rebalancing" feature. This feature is transported via onion-routing-packet style and thus, intermediate hop routes cannot detect this at all. The swapping of off-chain funds for on-chain funds solves the same problems as rebalancing and splicing do without requiring changes at the LN layer, merely adding an application on top of LN.The proposed solution works by sending a proposal-for-balancing-message over channel A, and the max amount you would propose to balance in that direction. Each node analyzes the in and out channels and adjusts the max to its own desire to balance. The origin node sends a payment along this node, without dropping off any fees along the way, since all nodes agreed and benefit from the rebalancing act if everyone is happy (i.e. max>0). The intermediate nodes might not need to keep track of any agreements to balancing proposals, it can simply call the freeBalancerMax function, and if the payment is lower, it passes on the payment even if it didn't get any fees, otherwise, it fails as usual.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T02:09:59.990276+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

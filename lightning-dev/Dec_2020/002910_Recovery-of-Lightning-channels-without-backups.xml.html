@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Recovery of Lightning channels without backups</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2020-12-09 03:52:11
-            <br><i>Published on: 2020-12-09T03:52:11+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2020/combined_Recovery-of-Lightning-channels-without-backups.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002910.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Lloyd Fournier, a member of a mailing list, presents an idea to recover lightning channels after losing channel state in a boating accident. The new way of doing so is by using "static channel backups." These are lists of channel ids and the nodes users had the channels with. With static channel backup, users can remember who they had channels with and connect to them to force close the channel. Fournier proposes a change in the lightning protocol that eliminates the need for the channel backup altogether. He suggests using a deterministically randomized version of the node's static public key as the `funding_pubkey` instead of using the temporary_channel_id. This would enable users to know what the funding output would look like with any node without interacting with them. The proposed method involves performing a Diffie-Hellman operation with the other party's public key and using the resulting shared secret to deterministically produce scalars r1 and r2, which will be used as the script pubkey of funding output. To open multiple channels with the same node, a new shared secret must be generated from each one by hashing a counter.Recreating a list of nodes users may have had channels with can help locate them in the UTXO set when channel state is lost. For non-enterprise users, this task can be done automatically because they exclusively have channels with well-known reliable public nodes whose public keys can be discovered through routing gossip or from public indexes. In practice, nodes can reconnect to each other. Peers can supply storage for each other, allowing users to spray out encrypted backups. Fournier's scheme makes for much less data to store.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:21:19.747582+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Warning: many 0.7 nodes break on large number of tx/block; fork risk</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2013-03-12 00:18:10
-            <br><i>Published on: 2013-03-12T00:18:10+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2013/combined_Warning-many-0-7-nodes-break-on-large-number-of-tx-block-fork-risk.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-March/002235.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>There are multiple reports of 0.7 nodes getting stuck around block 225430 due to running out of lock entries in the BDB database, while 0.8 nodes do not seem to have this problem. If you do not have a specific block, then you are likely stuck, and it is advised to check debug.log and db.log for 'Lock table is out of available lock entries'. This could be an emergency if it's a widespread issue as it risks having several forked chains with smaller blocks that are accepted by 0.7 nodes. People should contact pool operators to see which fork they are on. Blockexplorer and blockchain.info are also stuck. The immediate solution is upgrading to 0.8 or manually setting the number of lock objects higher in your database. Pieter will follow up with more concrete instructions. It is suggested to stop processing transactions if unsure.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T16:34:03.136513+00:00 </i></p>
     
     
 

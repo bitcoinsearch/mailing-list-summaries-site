@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Revisiting squaredness tiebreaker for R point in BIP340</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Nadav Kohen 2020-08-12 20:19:01
-            <br><i>Published on: 2020-08-12T20:19:01+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2020/combined_Revisiting-squaredness-tiebreaker-for-R-point-in-BIP340.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018082.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Nadav, a maintainer of Bitcoin-S and secp256k1 bindings, expressed his support for the change in tiebreaker for conveying the Y coordinate of points in BIP340. The current draft uses squaredness as a tiebreaker for R point inside signatures and evenness for public keys, but it was discovered that determining evenness can be done more efficiently than previously assumed. This new information led to reconsideration of using evenness as the tiebreaker for the R point. Performance tests showed that changing the tiebreaker will have a slight positive impact on verification speed and a larger positive impact on signing speed. The change is relatively simple and involves modifying the BIP, proposed implementation, test vectors, and other draft implementations. While Nadav acknowledges that he may not be aware of the entire impact of this change, he believes that it is worth making the switch.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T03:34:12.515280+00:00 </i></p>
     
     
 

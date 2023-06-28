@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improve Lightning payment reliability through better error attribution</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2019-06-14 13:50:16
+            <br><i>Published on: 2019-06-14T13:50:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2019/combined_Improve-Lightning-payment-reliability-through-better-error-attribution.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002025.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, Joost proposes a solution to address the issue of intermediate nodes potentially learning their position in a payment path. He suggests adding padding along the way and having the erring node's padding be bigger than intermediate nodes' padding. This would mitigate the possibility of intermediate nodes figuring out their approximate position. However, it is uncertain whether it is possible to add padding in a way that hops don't learn anything about their position. Instead, they could add padding with a random length between 0 and 20 block sizes, which would reveal an upper bound for the distance to the error node. For example, if a node receives a failure with a padding of 3 blocks, that means the distance to the error node is between 0 and 3 hops. Overall, this solution could help prevent network observers from correlating error messages between hops.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:44:15.902990+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Combining bloom filters? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003153_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>Jeff Garzik 2013-08-17 14:00:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003153_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>Jeff Garzik 2013-08-17 14:00:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003156_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>bitcoin-list at bluematt.me 2013-08-17 14:03:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003155_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>Pieter Wuille 2013-08-17 14:15:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003156_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>bitcoin-list at bluematt.me 2013-08-17 14:03:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003155_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>Pieter Wuille 2013-08-17 14:15:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003156_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>bitcoin-list at bluematt.me 2013-08-17 14:03:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003155_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>Pieter Wuille 2013-08-17 14:15:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2013/003153_Combining-bloom-filters-.html">Combining bloom filters?</a>
+                        <b>Jeff Garzik 2013-08-17 14:00:32</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-August/003153.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-08-17T14:00:32+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Jeff Garzik, a Senior Software Engineer and open source evangelist at BitPay, Inc., has explored the possibility of merging two separate bloom filters built by different wallets. Bloom filters are space-efficient probabilistic data structures that use bit arrays and hash functions to determine if an element is in a set. Specifically, wallet A builds bloom filter A' and wallet B builds bloom filter B'. The query is whether these two filters can be combined to form a single bloom filter C'. Merging bloom filters can be done by OR-ing their bit arrays or by using a weighted union to minimize false positives. Bitcoinj's BloomFilter class allows for the combination of two filters under certain conditions. The filters must have the same parameters, including tweak, size, and hash count. A user posed a question on whether or not bloom filter A' and B' could be combined to form a single bloom filter C', to which Jeff Garzik responded. This feature can be useful for wallet users who want to combine their filters for greater efficiency. In an email thread on the Bitcoin-development mailing list, Jeff Garzik asked whether it is possible to combine two bloom filters created by different wallets into a single filter. Pieter Wuille responded that, assuming both filters use the same seed and number of hash functions, combining them would result in a worse filter if they were already optimal for their given false positive rate. It is unclear from the thread why Garzik was interested in combining the bloom filters or what the specific use case was. The thread also includes a promotional message for AppDynamics Lite, a troubleshooting tool designed for Java and .NET code.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-07T16:07:34.897333+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

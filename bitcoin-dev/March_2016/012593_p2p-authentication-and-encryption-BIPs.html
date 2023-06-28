@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>p2p authentication and encryption BIPs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2016-03-27 11:58:11
+            <br><i>Published on: 2016-03-27T11:58:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2016/combined_p2p-authentication-and-encryption-BIPs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-March/012593.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the idea of adding encryption to SPV wallets. The concern is that mixing encrypted messages and messages sent to everyone could cause problems, so it would be better to make the private connection out-of-band. However, the idea of adding encryption as a feature is still being considered since the number of SPV wallets is expected to increase. The suggestion is to give encrypted messages their own port number. The question is raised about whether or not different ports would make sense, and how this would affect p2p address management. It is suggested that rebroadcasting messages on both (encrypted and non-encrypted) channels would prevent two networks from developing, but this would double the required bandwidth of the network. The proposal for adding encryption involves negotiating encryption between two peers, and then encrypting all traffic between them. The negotiation process involves exchanging session public keys, verifying identities, and exchanging identity public keys with signatures of the session ID. Once the identities have been verified and communication is encrypted, there is protection against MITM attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:36:05.172913+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

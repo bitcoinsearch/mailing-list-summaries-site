@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>var_int ambiguous serialization consequences</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Wladimir 2015-02-01 10:44:46
-            <br><i>Published on: 2015-02-01T10:44:46+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2015/combined_var-int-ambiguous-serialization-consequences.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007250.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A discussion about the consequences of using longer than necessary forms of var_int was initiated by Tamas Blummer in 2015. However, the topic being discussed was actually CompactSize and not VarInt as pointed out by Wladimir. The representation of CompactSizes is redundant, meaning the same number can be represented in up to four different byte sequences. In contrast, VARINTs were designed to not have any redundancy in their representation but are not currently used anywhere in the block chain. Tamas expressed interest in the possible implications of applying size limits to a block since transaction count is var_int but not part of the hashed header or merkle tree. Wladimir questioned the relevance of this concern since non-canonical CompactSizes are forbidden, which is flagged in serialize.h's ReadCompactSize function.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T16:19:26.095986+00:00 </i></p>
     
     
 

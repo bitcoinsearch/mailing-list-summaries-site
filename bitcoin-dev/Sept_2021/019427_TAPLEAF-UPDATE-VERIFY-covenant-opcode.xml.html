@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>TAPLEAF_UPDATE_VERIFY covenant opcode</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy 2021-09-09 19:26:37
-            <br><i>Published on: 2021-09-09T19:26:37+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2021/combined_TAPLEAF-UPDATE-VERIFY-covenant-opcode.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019427.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The safety of the control byte in Taproot is questioned due to various issues such as indicating the parity of X and the number of steps in the merkle path that are dropped. The TLUV script is used to control how spending scripts can change between the input and output sPK. Examples of TLUV scripts include keeping the current script, keeping all the steps in the merkle path, and adding a new step to the merkle path. However, there is concern about burning out path E beyond the 128 Taproot depth limit if this rule is recursively applied. While it may be possible to check the depth for E after adding F to prevent burning it out, there is no way to protect against this generically. The stability of C=4 across all state transitions is also questioned, especially when C and E are similar scripts and C adds some clauses F1, F2, F3. It is suggested that a NOREPLACE flag be added to prevent siblings from modifying a specific script.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T01:41:18.467860+00:00 </i></p>
     
     
 

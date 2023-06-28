@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin address TTL &amp; key expiration?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2014-07-15 14:48:55
+            <br><i>Published on: 2014-07-15T14:48:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Bitcoin-address-TTL-key-expiration-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006246.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, Jeff Garzik suggests a useful feature that would limit the lifetime of a Bitcoin address and intentionally prevent bitcoins being sent to a pubkey/pkh after the key expires. The metadata would not be digitally signed, but it would be hash-sealed. Wallet clients would enforce such a rule, however, the best insertion point in the protocol for key expiration is an open question. Jeff agrees that this would be useful for the "permit" case, but not the "confirm" case. He thinks that it's important that transactions valid in block X also be equally valid in block X+1 to avoid reorg issues. Jeff admits he does not have good answers, but he thinks it's valuable to prevent users from accidentally sending to an "expired" TxOut/pkh, discourage address reuse, and enable sites that generate lots of keys to rotate ancient keys off their core systems. He also mentions that HD wallets mitigate some of these issues. However, Luke points out that wallets/services can already ignore transactions using an address more than once and that there might be race attacks if this feature is implemented in an immediate fashion.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:50:33.370834+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Another uninitialized memory problem <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005937_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Wladimir 2014-06-03 09:57:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005941_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Jeff Garzik 2014-06-03 16:43:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005943_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Jeff Garzik 2014-06-03 17:40:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005934_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Toshi Morita 2014-06-02 20:01:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005943_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Jeff Garzik 2014-06-03 17:40:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005942_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Toshi Morita 2014-06-03 16:47:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005943_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Jeff Garzik 2014-06-03 17:40:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005934_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Toshi Morita 2014-06-02 20:01:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005937_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Wladimir 2014-06-03 09:57:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005937_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Wladimir 2014-06-03 09:57:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005941_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Jeff Garzik 2014-06-03 16:43:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005942_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Toshi Morita 2014-06-03 16:47:53</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005934_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Toshi Morita 2014-06-02 20:01:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005941_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Jeff Garzik 2014-06-03 16:43:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2014/005942_Another-uninitialized-memory-problem.html">Another uninitialized memory problem</a>
+                        <b>Toshi Morita 2014-06-03 16:47:53</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/005937.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-06-03T09:57:11+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>On June 2nd, 2014, Toshi Morita reported an uninitialized memory problem in bitcoind using valgrind. The error message stated that a conditional jump or move in the program depends on uninitialised value(s). The error occurred in CWallet::LoadKeyMetadata function, which is responsible for loading key metadata from the wallet database. The error was traced back to ReadKeyValue and CWalletDB::LoadWallet functions, which are used to read data from the wallet database. This error was caught by the memory error detector, Valgrind-3.8.1 and LibVEX. Jeff Garzik, Bitcoin core developer and open-source evangelist, responded to Toshi's email about the issue. In the email conversation, Toshi confirmed that both sides of the comparison were uninitialized and he fixed one side but the other still has the same problem. He also said that he would investigate further once he gets out of meetings/meetings prep. Jeff Garzik believes he has identified the issue and ended the conversation by stating that he is a Bitcoin core developer and an open source evangelist at BitPay, Inc. A link to a pull request on Github was also provided for fixing the issue.The user is experiencing a memory-related issue in their bitcoind software when using valgrind. The valgrind output shows an uninitialized value error occurring in the CWallet::LoadKeyMetadata function in wallet.cpp, caused by a conditional jump or move that depends on uninitialised value(s). The function is called by ReadKeyValue in walletdb.cpp, which is in turn called by CWalletDB::LoadWallet. LoadWallet is called by CWallet::LoadWallet(bool&) in wallet.cpp, which is called by AppInit2 in init.cpp. Finally, AppInit2 is called by AppInit in bitcoind.cpp, which is the main function of the application.In addition to the issue at hand, there is information about a new guide to graph databases called "Graph Databases" that can be downloaded for free. Jeff Garzik is a Bitcoin core developer and open source evangelist at BitPay Inc. In an email exchange on June 2, 2014 at 10:01 PM, Toshi Morita reported an uninitialized memory problem in bitcoind using valgrind and Wladimir replied and asked for the version/commit id of bitcoind.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-08T23:31:33.218080+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

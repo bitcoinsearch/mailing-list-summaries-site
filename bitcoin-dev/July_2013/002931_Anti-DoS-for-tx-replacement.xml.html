@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Anti DoS for tx replacement</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2013-07-18 11:13:53
-            <br><i>Published on: 2013-07-18T11:13:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2013/combined_Anti-DoS-for-tx-replacement.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002931.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Jeremy Spilman proposes a negotiation between the user and AP to determine how much to escrow, who pays the fees, and how long the user's funds will be tied if AP doesn't close the channel. The user creates an unsigned TX1 with one or more inputs from their 'listunspent', change going back to the user (if any), and a single output of 'FundAmount' with scriptPubKey of '2 PK1 OP_0 CHECKMULTISIG', which is sent to the AP. It is suggested that with OP_DEPTH, there is no chance of payee vanishing and putting the funds in limbo. The implementation of OP_DEPTH can be done as part of a script v2 using the soft-fork mechanism Peter Todd outlined before when talking about fidelity-bonded ledgers. It's best to do MAST (merklized abstract syntax tree) support at the same time.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T15:03:31.943233+00:00 </i></p>
     
     
 

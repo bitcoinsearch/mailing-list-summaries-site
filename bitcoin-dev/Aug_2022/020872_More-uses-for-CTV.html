@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More uses for CTV</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2022-08-19 18:53:39
+            <br><i>Published on: 2022-08-19T18:53:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2022/combined_More-uses-for-CTV.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020872.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On August 19, 2022, James O'Beirne of Bitcoin-dev proposed that multiple parties could use SIGHASH_ALL | ANYONECANPAY to trustlessly collaborate and settle into a single CTV output. This would require interaction similar to coinjoins. The advantage of this method is that CTV is the most parsimonious way to do such a scheme, since SHA256 commitment can't be smaller.In response, Dave asked why CTV was better than presigned transactions, which have two benefits: 1) The payment from the first transaction can be sent to a smaller P2WPKH output, but this requires an extra round of communication for commit-and-reveal to prevent collision attack on the P2WPKH address, and 2) having the first transaction pay a either a P2WPKH or bech32m output and the second transaction spend from that UTXO may blend in better with other transactions, enhancing privacy. However, this advantage probably isn't compatible with SH_ALL|SH_ACP, and it would require other privacy upgrades to LN.Regarding direct-from-coinbase payouts, James suggested that instead of payout being a trust-based feature, a single OP_CTV output could pay out an arbitrary number of pool participants atomically within a single coinbase. However, the size of the coinbase outputs owed to constituent miners limits the number of participants in the pool. Dave asked about the size limitation on coinbase outputs, how it limits the number of participants in a pool, and how CTV fixes that.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T23:46:15.123024+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

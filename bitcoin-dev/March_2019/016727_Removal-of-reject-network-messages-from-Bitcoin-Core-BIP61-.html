@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removal of reject network messages from Bitcoin Core (BIP61)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Wilmer Paulino 2019-03-08 00:09:01
+            <br><i>Published on: 2019-03-08T00:09:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_Removal-of-reject-network-messages-from-Bitcoin-Core-BIP61-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016727.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, Bitcoin Core developer, Marco Falke, proposed removing the reject message feature from Bitcoin Core to make the codebase slimmer. However, it has been pointed out that Neutrino, which is a light client implementation that uses BIPs 157 and 158, currently relies on receiving reject messages from its peers when broadcasting a transaction to the network. Despite this, Falke believes that removing the feature would help in terms of comprehension and maintainability. Nodes in the network rely on the assumption that they are connected to at least one honest peer so that they can ban or disconnect any who send an invalid reject message for a valid transaction. However, the alternative recommended by Falke is not suitable for use cases where the main thing required is identification of whether a broadcasted transaction is valid or not. Reject messages are also useful when developing new light clients, as feedback from the network on why a transaction was rejected helps identify potential bugs in their transaction crafting logic. While Falke suggested testing the validity of a transaction through specific RPCs, such as `sendrawtransaction` and `testmempoolaccept`, these are not helpful for light clients. It is believed that disabling the reject message feature by default would hinder light clients' ability to realize they are broadcasting invalid transactions. Therefore, the feature should remain enabled by default to aid the light clients of the network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:18:58.455639+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

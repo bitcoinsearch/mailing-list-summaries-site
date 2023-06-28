@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decentralizing ming</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Emin Gün Sirer 2014-07-19 00:54:36
+            <br><i>Published on: 2014-07-19T00:54:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Decentralizing-ming.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006314.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Bitcoin-development mailing list, Emin Gün Sirer pointed out some research results that could help with the problem of "set reconciliation" in which one peer thinks the set of transactions that should be in a block is S_A, while another peer has included set S_B. Ideally, communication complexity between peers should be O(delta), where delta is the difference between sets S_A and S_B, and B should send a single message to A. This Cornell paper describes a scheme for achieving this. Set reconciliation is non-probabilistic, non-interactive, and O(delta), whereas Bloom filters require packets that are still O(S_A), are probabilistic, and interactive. Meanwhile, Jeff Garzik suggested that propagating a block without re-propagating all the transactions everyone already has could address the large-blocks-slower-to-relay problem and democratize transaction selection, thereby taking power away from miners and giving it back to the network at large. Mike Hearn agreed and suggested finishing off getblocktemplate support in various tools so that it is possible to pool for payout purposes without giving up control of block creation modulo the coinbase.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:06:10.973012+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

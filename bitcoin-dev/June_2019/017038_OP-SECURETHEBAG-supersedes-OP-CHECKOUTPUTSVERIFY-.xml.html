@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy 2019-06-23 06:43:22
-            <br><i>Published on: 2019-06-23T06:43:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017038.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On a Bitcoin-dev mailing list, Anthony Towns suggested using an ANYPREVOUT sighash to simulate OP_SECURETHEBAG. This would require calculating a signature sig = Schnorr(P,m) for some pubkey P and making the script "CHECKSIG". However, this loses the ability to commit to the number of inputs or restrict the nsequence of other inputs, and requires a bigger script (sig and P are ~96 bytes instead of X's 32 bytes). To construct "X" via script instead of hardcoding a value, one could use CAT, LEFT, and RIGHT.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T19:11:22.425128+00:00 </i></p>
     
     
 

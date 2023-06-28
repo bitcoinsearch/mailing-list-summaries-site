@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-22 01:59:14
+            <br><i>Published on: 2019-03-22T01:59:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016798.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation is discussing the issue of `OP_CSV` in the settlement branch. Without it, earlier states cannot be invalidated by later updates. One solution discussed is using a distinct public key for settlement transactions and enforcing `nLockTime` with `OP_CHECKLOCKTIMEVERIFY`. Another possibility is using `OP_CODESEPARATOR` to distinguish between the two cases. However, both of these approaches require a flag that allows commitment to the scriptcode even if not committing to the input tx or scriptpubkey. This flexibility is not provided by BIP118, making key rolling necessary for A_s_i and B_s_i.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:42:11.353817+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Adding request/reply id in messages</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeff Garzik 2012-04-12 17:12:09
-            <br><i>Published on: 2012-04-12T17:12:09+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2012/combined_Adding-request-reply-id-in-messages.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-April/001380.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email conversation, Christian Bodt has proposed a bitcoin protocol improvement. The proposal suggests adding request/reply ID in all messages by creating a new "requestid" field. The idea behind this proposal is to make robust blockchain downloading easier as the download protocol relies on the other peer sending one or more "inv" responses to "getblocks" and sending the "hashContinue". However, if the other peer doesn't send a response to getblock, sends a partial response to getblocks, mixes it with some unrelated blocks inventories, or doesn't send the "hashContinue", it becomes difficult to detect and handle this misbehavior. This could cause some DoS attacks by misbehaving peers.Jeff Garzik, in his reply, suggests that stateless protocols are of great value as they are easier to implement and prove correct. Existing clients like ArtForz' half-a-node rely on this statelessness to one degree or another. Stateful protocols, however, have their own set of problems, as one must add code to help remain "synchronized" between local and remote states. Jeff Garzik also argues that Christian Bodt's listed reasons for needing this major change (stateless to stateful) do not justify the change as handling initial block download can be accomplished in a number of ways, and peer(s) may crash or return odd results. Proper handling of such cases is necessary, regardless of the presence of req/reply id's.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T04:00:46.590164+00:00 </i></p>
     
     
 

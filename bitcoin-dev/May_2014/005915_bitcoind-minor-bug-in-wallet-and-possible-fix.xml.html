@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>bitcoind minor bug in wallet and possible fix</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Toshi Morita 2014-05-30 00:01:23
-            <br><i>Published on: 2014-05-30T00:01:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2014/combined_bitcoind-minor-bug-in-wallet-and-possible-fix.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005915.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>During a test run of bitcoind under valgrind, an uninitialized variable was discovered in some instances. The error message indicated that a conditional jump or move depends on uninitialised value(s) in CWallet::LoadKeyMetadata. Further analysis revealed that the bug occurs because nTimeFirstKey is not initialized when the wallet is instantiated. This issue is present in the source code for bitcoin and has been identified using Valgrind-3.8.1 and LibVEX. The code is located in the wallet.cpp file, specifically on line 63. The error can be fixed by initializing nTimeFirstKey or ensuring it is given a value before use.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T23:28:42.537200+00:00 </i></p>
     
     
 

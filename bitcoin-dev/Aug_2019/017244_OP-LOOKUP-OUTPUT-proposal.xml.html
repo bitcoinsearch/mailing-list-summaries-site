@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>OP_LOOKUP_OUTPUT proposal</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Haoyu LIN 2019-08-09 13:35:19
-            <br><i>Published on: 2019-08-09T13:35:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2019/combined_OP-LOOKUP-OUTPUT-proposal.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017244.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A BIP draft has been proposed by Runchao, Jiangshan and HAOYU, which describes a new opcode OP_LOOKUP_OUTPUT. The opcode is used to mitigate the arbitrage risk in HTLC-based Atomic Swap. The problem is called the “free premium problem” where the initiator can abort the deal without any penalty. The proposal has analyzed how profitable the arbitrage can be given the default timelock setting and shows that the profit can be approximately 1% to 2.3%. Several studies have proposed solving this problem, but they introduce a new problem of Bob getting the premium without paying anything. To solve this problem, a new opcode OP_LOOKUP_OUTPUT is proposed. The transaction verifier needs to know the status of a dependent transaction which Bitcoin does not support, thus making it necessary to propose a new opcode. With OP_LOOKUP_OUTPUT, the Bitcoin script can decide whether Alice or Bob should take the premium by `OP_LOOKUP_OUTPUT OP_EQUALVERIFY`. The proposal also explores Atomic Swaps in American Call Options scenario where Alice should pay for the premium besides the underlying asset regardless of whether the swap is successful or not. A sample premium transaction implementation of Atomic Swap for Spot and Option based on this opcode is provided in the proposal.The BIP draft can be found at <a href="https://github.com/HAOYUatHZ/bips/blob/bip-lookup_output/bip-lookup_output.mediawiki">https://github.com/HAOYUatHZ/bips/blob/bip-lookup_output/bip-lookup_output.mediawiki</a>. In conclusion, the proposal aims to avoid the risk-free optionality in Atomic Swap and proposes a new opcode OP_LOOKUP_OUTPUT using premium to mitigate the risk of Atomic Swap both in Spot and in Option.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T20:57:28.572074+00:00 </i></p>
     
     
 

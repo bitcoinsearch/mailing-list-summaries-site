@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Vote on the blocksize limit with proof-of-stake voting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Reiner 2013-06-10 17:25:05
+            <br><i>Published on: 2013-06-10T17:25:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2013/combined_Proposal-Vote-on-the-blocksize-limit-with-proof-of-stake-voting.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002739.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>One major problem with the proposed proof-of-stake voting system for protocol soft-forks is that those with the most stake, likely have their private keys behind super-secure accessibility barriers, and are not likely to go through the effort just to sign votes. This is unlikely to be feasible, especially if the system requires some kind of persistent voting. However, the idea of designing ways for a decentralized community to find consensus for important decisions is intriguing. The proposed voting mechanism can be an important part of determining if a hard fork is required at all. It ensures that any increase to the blocksize genuinely represents the desires of the Bitcoin community and happens at a rate that gives all participants time to react. The process also gives a mechanism for the community to vote to decrease the limit if it turns out that the new one was in fact too high.The upper limit on the blocksize is then determined by the median of all votes, where each txout in the UTXO set is one vote, weighted by txout value. A txout without a corresponding vote is considered to be a vote for the status quo. Users may create these specially encoded txouts themselves and get them into the blockchain; however, doing so is not needed as a given vote is only required to actually be in the chain by a miner wishing to increase the blocksize.For any given block actual limit in effect is then the rolling median of the blocks in the last year. At the beginning of every year, the value considered to be the status quo resets to the mean of the limit at the beginning and end of the interval. The rolling median and periodic reset process ensure that the limit changes gradually and is not influenced by temporary events such as hacks to large exchanges or malicious wallet software. Coercion and vote buying are possible in this system. A miner could say that they will only accept transactions accompanied by a vote for a given limit. However, in a decentralized system, completely preventing vote buying is impossible, and the design of Bitcoin itself has a fundamental assumption that a majority of miners will behave in a specific kind of "honest" way.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T18:41:10.452849+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Fwd: Re: Routing &amp; Beacons</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2016-05-02 23:27:56
-            <br><i>Published on: 2016-05-02T23:27:56+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/May_2016/combined_Fwd-Re-Routing-Beacons.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-May/000531.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion revolves around the update of routing tables in Lightning Network. The process involves landmark nodes, which periodically send a message to their neighbors, initiating a new temporal frame. When a node receives the first message associated with a new temporal frame for a given landmark, it waits for a delay before forwarding the message to its own neighbors. After this delay has elapsed, the node computes the best route to the landmark node and forwards the message (information defining the temporal frame + best route to landmark node) to its neighbors. Every node repeats the same process, and once completed, every node knows the best route to/from a given landmark. When a node needs to send a payment, the receiver sends her best routes to each landmark node. Therefore the sender can compute the best route to reach the receiver, which allows onion routing. The "base+per-satoshi" fee model creates difficulty in defining the best route. A solution may be nominal values and forwarding a set of best routes (a route for each range of amounts between 2 nominal values). In regards to fees, the current model conceptually associates fees to the node, and there is no distinction related to the direction of the payment (sending or receiving). A different model would be to associate fees to individual payment channels (with a different fee defined for sending and receiving on this channel). It means that for a given landmark, a node would forward two best routes (for sending/receiving payments to/from the landmark). This asymmetry could be useful to cope with unbalanced channels because it allows the node to signal that, for example, it's okay to receive payments on a given route but sending payments is not encouraged. The participants also discuss the usefulness of having simulations to gain insight into the process. Anthony Towns did some simulations, but other than a simple YouTube video, there are no published results.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T23:35:39.718647+00:00 </i></p>
     
     
 

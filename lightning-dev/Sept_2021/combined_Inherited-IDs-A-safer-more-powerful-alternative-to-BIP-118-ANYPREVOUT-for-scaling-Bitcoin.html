@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Inherited IDs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2021/003230_Inherited-IDs-A-safer-more-powerful-alternative-to-BIP-118-ANYPREVOUT-for-scaling-Bitcoin.html">Inherited IDs - A safer, more powerful alternative to BIP-118 (ANYPREVOUT) for scaling Bitcoin</a>
+                        <b>Jeremy 2021-09-17 16:58:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2021/003231_Inherited-IDs-A-safer-more-powerful-alternative-to-BIP-118-ANYPREVOUT-for-scaling-Bitcoin.html">Inherited IDs - A safer, more powerful alternative to BIP-118 (ANYPREVOUT) for scaling Bitcoin</a>
+                        <b>Anthony Towns 2021-09-18 11:37:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2021/003255_Inherited-IDs-A-safer-more-powerful-alternative-to-BIP-118-ANYPREVOUT-for-scaling-Bitcoin.html">Inherited IDs - A safer, more powerful alternative to BIP-118 (ANYPREVOUT) for scaling Bitcoin</a>
+                        <b>Jeremy 2021-09-24 07:27:03</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003230.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2021-09-17T16:58:45+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>John Law has proposed an alternative to BIP-118 called Inherited IDs (IIDs), which involves adding a resettable "structural" tx id called an "iid" to each utxo and identifying input txs in this way when signing. The proposal does not allow floating transactions, but it allows an output to specify that child transaction signatures commit to the parent transaction's IID, rather than its transaction ID. Nodes can validate signatures of transactions that spend IID outputs as long as they store or calculate the IID of each transaction in the UTXO set. The proposal includes Layer 2 protocols using IIDs that are more scalable and usable than those proposed for BIP-118, including channel factories that can be combined with the 2Stage protocol to create trust-free and watchtower-free channels including very large numbers of casual users. The paper compares IIDs with eltoo, and concludes that special-casing two-party channels with eltoo would make eltoo-2party and 2stage equally effective. Comparing eltoo-nparty and the multisig iid factories approach, the uncooperative case shows that ms-iid would require log(n) txs for the invalidation tree and log(n) time for the delays to ensure invalidated states don't get published, while eltoo would require only 1 tx from the user and 1 block after noticing, plus the fixed csv delay.The proposal also discusses the implementation of the "iid" concept, which would require additional complexity, but it is presumed to be mostly just in the additional complexity. Both iid and ANYPREVOUT require changes to how signatures are evaluated and apps that use the new feature are written, but ANYPREVOUT doesn't need changes beyond that. John has posted some responses in his Github repository regarding the topic of "btc-iids". It is recommended to respond to him via a Github issue or similar means.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-04T02:20:16.216232+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

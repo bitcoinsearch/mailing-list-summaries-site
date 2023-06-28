@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] listtransactions reformatting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke-Jr 2011-07-16 17:14:11
+            <br><i>Published on: 2011-07-16T17:14:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2011/combined_-RFC-listtransactions-reformatting.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000196.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed change involves adding new keys to transactions in order to keep a standard format for similar types of entries. The changes include categorizing all additions to wallets as "receive" transactions, while generated coins have an extra key labeled "generation". All transactions now have a "status" key, which can be one of five values: "orphan", "validating", "processing", "confirmed", or "expired". The "orphan" status is used when another blockchain has invalidated the transaction, while "validating" is the default stage for transactions with 0-2 confirmations for ordinary sends and 0-100 for generated coins. "Processing" is used for transactions with 3-6 confirms for ordinary sends and 101-120 for generated ones. "Confirmed" is used for transactions with over 6/120 confirmations, and "expired" is used for ordinary sends that have timed out without getting into a block or had their inputs respent. These changes are being proposed in order to fix issues with webservices being ignorant of generated transactions. By keeping a standard category/format for all similar types of entries, this problem should be addressed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T19:33:06.677037+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

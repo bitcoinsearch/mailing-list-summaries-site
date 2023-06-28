@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Straight Flag Day (Height) Taproot Activation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-03-03 14:59:02
+            <br><i>Published on: 2021-03-03T14:59:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_Straight-Flag-Day-Height-Taproot-Activation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018539.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developer Matt Corallo has proposed activating Taproot, the upcoming Bitcoin soft fork, via a traditional flag day activation. The suggested date for the flag day is around August 2022, based on the timeout height of block 745920. This would require bip8/lockinontimeout=true with that parameter for activation by block 747936. The proposal would involve reusing an existing parameter while dropping the consensus-critical signaling. Corallo suggests that this unsignaled flag day could be implemented by adjusting DeploymentHeight(), adding "int TaprootHeight;" to Conensus::Params in PR #19438 and setting TaprootHeight=747936 for MAINNET. Corallo also proposes updating getblocktemplate to allow miners to signal uptake for taproot rules three or four retarget periods prior to activation, without this signaling having any consensus level effect. This would enable miners and businesses to adjust their expectations and prepare for the possibility of an increase in invalid-block entries in their logs. Finally, Corallo acknowledges that the high node-level-adoption bar is one of the critical goals of Taproot, but notes that it is currently in jeopardy due to Luke's strong opposition to implementing lot=false.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T01:20:18.764011+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

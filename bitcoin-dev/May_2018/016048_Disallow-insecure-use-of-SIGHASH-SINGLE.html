@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Disallow insecure use of SIGHASH_SINGLE</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2018-05-31 18:53:01
+            <br><i>Published on: 2018-05-31T18:53:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_Disallow-insecure-use-of-SIGHASH-SINGLE.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/016048.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new policy has been proposed to prevent the usage of SIGHASH_SINGLE without matched output. The signature of this form is considered insecure as it commits to no output while users might think it commits to one. This becomes even worse in non-segwit scripts, which results in any UTXO of the same key being stolen. While it's restricted to only one UTXO in segwit, it's still like a SIGHASH_NONE. This is one of the earliest unintended consensus behaviors and is inherently unsafe.To disable this unintended "feature" with a softfork, these signatures need to be made non-standard. A pull request has already been made to add this policy to Bitcoin's Github repository. As these signatures are currently allowed, making them non-standard is the first step towards disabling them.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T16:58:47.030912+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

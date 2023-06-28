@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-10-08 22:47:11
+            <br><i>Published on: 2021-10-08T22:47:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2021/combined_Removing-the-Dust-Limit.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019528.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion, Pieter voiced his concern about the externality of UTXO set size which is not accounted for in Bitcoin's consensus rules. He suggested a relay policy that avoids economically irrational behavior to manage this issue. However, it is not obvious how consensus rules could deal with this as hardcoded prices/feerates would not be desirable. One possible solution is to give transactions a size/weight bonus/penalty but this would be both hardforky and difficult to implement correctly. When asked why +weight malus is very hardforky, Pieter explained that adding a new version of a node that adds +20 sipa per output of a transaction to discourage additional outputs in the UTXO set would lower the weight of blocks seen by older versions. Although older versions would still accept any block acceptable to newer versions, only a -weight bonus would be hardforky. The impact of such a fork would primarily be felt on mining nodes as miners might refuse to activate the fork since they would see fewer transactions per block on average.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T00:50:42.615740+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Testing censorship resistance of bitcoin p2p network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> alicexbt 2023-02-19 00:33:11
+            <br><i>Published on: 2023-02-19T00:33:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2023/combined_Testing-censorship-resistance-of-bitcoin-p2p-network.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021487.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the issue of censorship resistance in Bitcoin transactions. There is a concern about some projects censoring transactions, and how government agencies could take advantage of such practices. To ensure censorship resistance, it is important to test if transactions are getting relayed by the connected peers. Two tools are mentioned to test this: counting the number of INV messages and broadcasting transactions to specific nodes using libbtc. A Python script is shared that can be used to list peers, broadcast transactions to peers, and ban peers that did not relay transactions. The script's primary goal is for testing, but it can be used by anyone who wants to avoid wasting resources connecting to peers that do not relay transactions. It is noted that there could be some false positives, and the script mainly uses libbtc. The discussion moves on to the topic of storing arbitrary amounts of data on-chain and whether or not to use OP_RETURN. The writer believes that commitments should be stored only by nodes that explicitly enable them, so from that point of view, commitment is "a witness of a signature", and it is additional information that can be skipped if needed. They argue that using OP_RETURN means that all nodes will store such data, while using witness means that only witness nodes will keep it.The email also highlights some positives of inscriptions, including more users interested in running full nodes (non-pruned), trying bitcoin wallets, lightning, etc., increased Taproot usage, more developers interested in learning bitcoin development and looking for libraries, docs, etc., and demand for block space has increased. In conclusion, the writer seeks feedback on an ideal tool for testing censorship resistance, which includes allowing users to construct different types of transactions that might be considered "bad" by some people, broadcasting transactions to specific nodes, verifying if the transaction was relayed successfully or rejected, and banning such peers.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T15:30:39.044730+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Covenants through merkelized txids. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015274_Covenants-through-merkelized-txids-.html">Covenants through merkelized txids.</a>
+                        <b>Rusty Russell 2017-11-10 01:31:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015274_Covenants-through-merkelized-txids-.html">Covenants through merkelized txids.</a>
+                        <b>Rusty Russell 2017-11-10 01:31:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Nov_2017/015274_Covenants-through-merkelized-txids-.html">Covenants through merkelized txids.</a>
+                        <b>Rusty Russell 2017-11-10 01:31:14</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015274.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-11-10T01:31:14+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The author proposes an alternative to jl2012's BIPZZZ (OP_PUSHTXDATA[1]) by using OP_CHECKSIGFROMSTACK, which was implemented by Russell for covenants. The proposal suggests using OP_TXMERKLEVERIFY to compare the top stack element against a merkle tree of the current transaction. TXMERKLE is constructed using a combination of nVersion | nLockTime | fee, inputs & outputs. Inputs and outputs are calculated using a combination of inputmerkle and outputmerkle. The input is calculated using prevoutpoint, nSequence | inputAmount while the output is calculated using nValue, scriptPubkey.The author notes that there are many variants of this proposal, but using OP_CAT would make it easier to test a particular tx property. Furthermore, having a dedicated OP_MERKLE would simplify the process even further. If there is ever a hard fork and merklized TXIDs are added, this method could also be used to inspect the tx being spent.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-12T22:06:56.942544+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

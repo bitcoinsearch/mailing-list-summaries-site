@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Pruning in the reference client: ultraprune mode <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2012/001645_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
-                        <b>Pieter Wuille 2012-07-06 16:52:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2012/001648_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
-                        <b>Gregory Maxwell 2012-07-06 17:19:59</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2012/001645_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
-                        <b>Pieter Wuille 2012-07-06 16:52:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2012/001648_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
-                        <b>Gregory Maxwell 2012-07-06 17:19:59</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2012/001645_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
-                        <b>Pieter Wuille 2012-07-06 16:52:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2012/001648_Pruning-in-the-reference-client-ultraprune-mode.xml.html">Pruning in the reference client: ultraprune mode</a>
-                        <b>Gregory Maxwell 2012-07-06 17:19:59</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-July/001645.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2012-07-06T16:52:04+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>A new block/transaction validation system called "ultraprune" has been implemented for the reference client. The system allows for pruning, which is the ability to delete full transactions from storage once all their outputs are spent and buried deeply enough in the chain. Instead of using a fully indexed blockchain, a database with only the unspent transaction outputs was kept, reducing the storage required for such a dataset to less than 70 MB. The stored data is kept in a BDB database file (coins.dat) with indexing and overhead, taking around 130 MB. Non-indexed blocks with metadata about all stored blocks were added to compensate for things like block connections, wallet transactions, and serving the chain to other nodes.The ultraprune system allows one to run a full node now with coins.dat taking up 130 MB, chain.dat occupying 40 MB, and the size of retained blocks plus approximately 12% of that for undo information. It is also faster and was benchmarked on a laptop with a full import of the blockchain taking 22 minutes. However, ultraprune has some disadvantages as it cannot find a full transaction from its txid, and transactions that depend on unconfirmed transactions will not get rebroadcasted. Only block download and reorganization are somewhat tested, so use at your own risk. Finally, fewer consistency checks are possible on the database, and even fewer are implemented.Pieter Wuille's performance numbers are considered conservative due to the reference client wasting time in redundant serialization and hashing operations. This information is supported by profiles on ultraprune, which shows that this is the major time sink. Once this issue is resolved, the system should perform significantly faster. Replacing the BDB indexing in ultraprune with a hash committed tree structure, whose root is committed in the blockchain, would result in a txout commitment scheme. Ultraprune handles most of the structural work for such a scheme. The remaining differences are mostly related to storage. Although not directly related to recent pruning proposals that use an alt chain with an index of unspent coins and addresses merged mined with the main chain, ultraprune could be a step towards such a system. The ultraprune branch can be found on GitHub for those who want to experiment with it.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-06T06:06:02.379391+00:00</i></p>
-    
-
     
 
     <footer>

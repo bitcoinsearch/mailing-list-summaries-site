@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>SCRIPT_VERIFY_STRICTENC and CHECKSIG NOT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2014-11-06 11:04:03
-            <br><i>Published on: 2014-11-06T11:04:03+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2014/combined_SCRIPT-VERIFY-STRICTENC-and-CHECKSIG-NOT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-November/006874.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The emails between Pieter Wuille and Peter Todd discuss the vulnerability of pubkey formats that are not recognized by the STRICTENC flag. Although this does not affect IsStandard() transactions, it can allow garbage transactions to fill up the mempool. Wuille suggests adding a second validity check with the actual consensus rules. Todd proposes two solutions: either make STRICTENC fail unrecognized pubkeys immediately or fail the script if the pubkey is non-standard and signature verification succeeds. They decide to implement the latter as a "least invasive" measure, as hybrid encoding for pubkeys still needs to be supported for a while. They plan to get rid of hybrid-encoded pubkeys in a further tightening of the rules.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T03:50:45.761982+00:00 </i></p>
     
     
 

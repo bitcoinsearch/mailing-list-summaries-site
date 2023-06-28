@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making the case for flag day activation of taproot</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-03-29 09:17:57
+            <br><i>Published on: 2021-03-29T09:17:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_Making-the-case-for-flag-day-activation-of-taproot.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018723.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed activation methods for Taproot have been a topic of discussion among the Bitcoin development community. Although the author supports any proposed method, including flag day activation, they suggest that it is premature to call BIP8 dead. The author considers starting with BIP8 LOT=false a reasonably safe activation method, but many people are expected to run lot=true when activation starts, leading to a possible chain split if activation is blocked. The author proposes a state machine approach to deployment along the lines of: DEFINED - STARTED - FAILED - DELAYED - LOCKED_IN - ACTIVE, which would work fine for an if-at-first-you-don't-succeed approach to deployment. This approach has desirable properties such as not allowing a minority of hash power to block activation, miners not having to worry about their blocks getting orphaned, and no need to run different clients or carefully configure nodes to stay in consensus.However, the main drawback of this approach is that it does not allow faster activation with miner support. Even with a speedy trial first, it is just a boolean: did miners indicate they've upgraded quickly enough to hit the early activation or not? Overall, the proposed state machine approach provides a feasible solution that allows for a safer activation process of Taproot.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T01:34:55.893955+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

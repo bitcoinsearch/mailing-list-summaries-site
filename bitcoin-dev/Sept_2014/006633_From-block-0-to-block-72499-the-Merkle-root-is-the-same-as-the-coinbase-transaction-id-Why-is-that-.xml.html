@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>From block 0 to block 72499 the Merkle root is the same as the coinbase transaction id. Why is that?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2014-09-20 16:24:16
-            <br><i>Published on: 2014-09-20T16:24:16+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2014/combined_From-block-0-to-block-72499-the-Merkle-root-is-the-same-as-the-coinbase-transaction-id-Why-is-that-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-September/006633.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On September 20, 2014, Peter Grigor asked why the Merkle root is the same as the coinbase transaction ID from block 0 to block 72499. The reason for this is due to how the merkle tree algorithm works. In the algorithm, all the txids are pushed onto the vMerkleTree vector, which is initially blank. For most of the early blocks, there was just the coinbase transaction and no other transactions. This means that a for loop never executes because nSize is always equal to vtx.size() == 1.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T02:38:10.881039+00:00 </i></p>
     
     
 

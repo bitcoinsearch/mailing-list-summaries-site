@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Lightning Pre-Image Encryption Standard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nadav Kohen 2019-06-25 16:54:23
+            <br><i>Published on: 2019-06-25T16:54:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2019/combined_Proposal-Lightning-Pre-Image-Encryption-Standard.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002035.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests the use of AES encryption in CFB mode with no padding to plaintext for monetizing data transfers in Lightning. Responding to any request for data with an invoice and encrypted data with that invoice's payment pre-image ensures that the user gets the data only if they successfully pay that invoice over the lightning network. The proposed scheme is already in use in real applications and will likely be further adopted as more lapps emerge. The proposal suggests the creation of an industry standard for uniform libraries for standard ln-encryption and ln-decryption. AES encryption is a widely used standard that has libraries available for most platforms and languages. CFB mode allows the encryption of arbitrary sized plaintexts, allowing the avoidance of logic for padding/unpadding. When encrypting with the preimage, any pre-image that is 16, 24 or 32 bytes will work. After encrypting the desired data with the payment pre-image, serialize the encrypted data by prepending the IV to the encrypted data, and then convert the sequence of bytes to a base64 string. The proposal recommends that a data provider should respond to requests for data over a secure channel (e.g. HTTPS) with the requested data encrypted by the payment pre-image using AES in CFB mode. Encrypting with the pre-image ensures that the user only receives the data they pay for, and sending over a secure channel ensures no one else who knows the pre-image receives the data. Once the payment has been received by the data provider, they may offer the payment pre-image directly to the data recipient if there is a communication channel to the user (say over a websocket). The proposal provides reference implementations in JavaScript using the Crypto-JS library, Python using the Pycrypto library, and Java/Scala using the Bitcoin-S library. Finally, the proposal acknowledges Alex Bosworth for sharing this idea with them and having a working implementation of this scheme at yalls.org, and Torkel Rogstad for the encryption details and reference implementations.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T19:06:48.689346+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

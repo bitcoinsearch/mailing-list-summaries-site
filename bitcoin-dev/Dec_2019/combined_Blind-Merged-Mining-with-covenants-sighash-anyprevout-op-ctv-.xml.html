@@ -11,71 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv ) <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017537_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Ruben Somsen 2019-12-26 16:52:43</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017534_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Ruben Somsen 2019-12-26 02:23:10</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017537_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Ruben Somsen 2019-12-26 16:52:43</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017534_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Ruben Somsen 2019-12-26 02:23:10</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017534_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Ruben Somsen 2019-12-26 02:23:10</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017536_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Nick Gregory 2019-12-26 12:32:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017537_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Ruben Somsen 2019-12-26 16:52:43</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017536_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Nick Gregory 2019-12-26 12:32:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2019/017536_Blind-Merged-Mining-with-covenants-sighash-anyprevout-op-ctv-.xml.html">Blind Merged Mining with covenants ( sighash_anyprevout / op_ctv )</a>
-                        <b>Nick Gregory 2019-12-26 12:32:26</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017537.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2019-12-26T16:52:43+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Ruben Somsen's Blind Merged Mining (BMM) allows external blockchains to outsource their mining to the Bitcoin blockchain. Miners commit the hash of another blockchain into a unique location on the Bitcoin blockchain and get paid with Bitcoin fees for capturing the fees inside the other blockchain, thus increasing the total PoW on the Bitcoin blockchain and adding to the security of the network. BMM does not require extra validation from miners as they only need to choose the highest bidder.A complete transaction flow diagram can be found here. The BMM chain will need some kind of native token to pay for fees, and the fairest and least speculation-inducing method is a perpetual one-way peg, where at any time, 1 BTC can be burned for 1 token, preserving the 21M coin limit. However, since there is no block subsidy, there may not be enough impetus to move the chain forward instead of enacting a reorg. BMM reorgs are somewhat unique in that they will have to compete for the same unique location that the original chain is using. Whether this mitigation is sufficient is an open question. It is worth asking whether BMM interferes too much with the existing incentive structure of Bitcoin.Private key security is actually irrelevant with BMM since the exact signature is committed ahead of time. Assuming taproot, the spending script will be inside a taproot leaf, meaning there is a key spend path that should be made unusable to enforce the covenant. Technical details include assuming taproot, the spending script will be inside a taproot leaf, meaning there is a key spend path that should be made unusable to enforce the covenant. This can be achieved with a NUMS such as hashToCurve(G) = H, which can then be used as the internal taproot key T = H + hash(H||bmm_hash)*G.Ruben believes that if BMM is not supported, more wasteful methods may be utilized instead. However, a much more inefficient version of BMM is already possible today, where one could simply use up lots of block space instead of specifying a unique location for the hash. A 10-block reorg would take 100 minutes on average to catch up, during which the original chain won't move forward. Whether this mitigation is sufficient is an open question.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-13T22:56:25.091922+00:00</i></p>
-    
-
     
 
     <footer>

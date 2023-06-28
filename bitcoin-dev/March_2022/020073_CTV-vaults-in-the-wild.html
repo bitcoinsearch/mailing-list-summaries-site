@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV vaults in the wild</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-03-06 23:15:41
+            <br><i>Published on: 2022-03-06T23:15:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_CTV-vaults-in-the-wild.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020073.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin-dev email thread, Antoine Riard responded to James O'Beirne's sketch of a CTV-based vault design. Riard expressed his concern regarding the immutability of flow paths once funds are locked to the root vault UTXO in any hashchain-based vault design. He believes that corruption and key endpoint compromise are major concerns, particularly in the early phases of toolchain deployment when bugs may slip in, affecting output amount or relative-timelock setting correctness. Riard suggests leveraging a presigned transaction data design where every decision point is a multisig, allowing for correction or adaptation if all multisig participants agree on it. This design could achieve the same as a key-deletion design, as long as all the vault's stakeholders participate in the multisig. Riard notes that relying on presigned transactions comes with higher assumptions on the hardware hosting the flow keys, but flow keys can be stored on the same keys guarding the UTXOs before sending them to vault custody. The presence of trusted hardware in the vault design might lead one to ask what's the security advantage of vaults compared to classic multisig setup. Riard thinks this security advantage is only relevant in the context of recursive design, where the partial unvault sends back the remaining funds to vault UTXO (not the design proposed here).Riard also discusses other minor points on vault design. For instance, he suggests introducing an intermediary, out-of-chain protocol step where the unvault broadcast is formally authorized by the vault stakeholders to avoid hot key compromise. Also, he questions the safety of using anchor outputs in any vault deployment where the funds stakeholders do not trust each other or where watchtowers are not trusted.James O'Beirne's implementation and write-up of a simple vault design using CTV were shared. O'Beirne believes that the design has several appealing characteristics for custody operations of any size.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T17:44:05.289027+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

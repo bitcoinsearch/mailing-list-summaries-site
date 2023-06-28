@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Outbound connections rotation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ivan Pustogarov 2014-08-18 16:46:11
+            <br><i>Published on: 2014-08-18T16:46:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_Outbound-connections-rotation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006502.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer of this message initiates a discussion on the periodic rotation of outbound connections. The motivation behind this is that each bitcoin non-UPnP client behind NAT has 8 outbound connections that change rarely, which allows attackers to identify users by listening for transactions in the Bitcoin network and recording the first 8 peers that forwarded the transaction. From there, if two unrelated transactions originate from the same set of 8 peers, the attacker can conclude they came from the same user. Additionally, Bitcoin clients advertise their public IP addresses, allowing attackers to link the advertised IPs with corresponding 8 entry nodes and deanonymize clients. By periodically rotating a client's set of outbound connections, their 8-peers fingerprint is blurred over time, making it more difficult for attackers to link different Bitcoin addresses of the same user. A corresponding pull request is available on GitHub (#4723), and more details can be found at <a href="https://www.cryptolux.org/index.php/Bitcoin">https://www.cryptolux.org/index.php/Bitcoin</a>.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:10:52.738894+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

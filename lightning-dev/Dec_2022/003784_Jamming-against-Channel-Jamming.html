@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Jamming against Channel Jamming</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-12-03 01:05:08
+            <br><i>Published on: 2022-12-03T01:05:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2022/combined_Jamming-against-Channel-Jamming.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003784.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange between Joost Jager and Antoine Riard, the topic of channel jamming and spamming in the Lightning Network was discussed. Jager suggested using a lightning firewall such as circuitbreaker to fight against these issues by setting limits on pending HTLCs or rate limits. However, the approach has limitations, such as failures leading to extra retries and penalization of routing nodes that apply limits. As an alternative, Jager proposed holding and queuing HTLCs that exceed the limit instead of failing them, which could punish upstream nodes for facilitating bad traffic. This strategy could lead to recursive propagation of limits across the network and push bad senders into corners where they cannot cause much harm. However, routing nodes employing the hold strategy are potentially punishing themselves as well, especially if they initiated the channel with many pending HTLCs.Jager updated circuitbreaker with a queue mode for experimentation. The email also mentioned the potential impact of fat errors and the importance of routing nodes taking a careful look at the source of bad traffic and applying limits. Overall, the discussion highlighted the challenge of balancing countering channel jamming and spamming while maintaining efficient HTLC traffic scheduling.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T10:55:33.326736+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

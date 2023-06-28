@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Trickle and transaction propogation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Kaz Wesley 2014-07-20 21:01:22
-            <br><i>Published on: 2014-07-20T21:01:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2014/combined_Trickle-and-transaction-propogation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006327.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The inv trickling mechanism in Bitcoin has two main purposes: protecting users' privacy and reducing the number of unnecessary invs sent between nodes. However, this mechanism also slows down transaction propagation and delays mutual knowledge of transactions between nodes. These drawbacks will become more significant as optimizations based on mutually-known transactions are developed. Trickling helps to protect privacy by obscuring the originating node of transactions, but it also has its limitations. To make the staggering of introducing new invs more effective, a structure similar to mapAskFor could be used to schedule staggered pushes of wallet transactions to each peer. However, this method is vulnerable to sybil attacks. A policy of ending staggering and pushing to all peers once another peer has received the transaction from elsewhere can reduce the likelihood of inv origin information being obtained by a partial sybil. In terms of redundant invs, trickling reduces the number of invs sent between nodes when they receive transactions at around the same time. To solve the who-sends-first problem, connections could have directional parity. This means that a node initiating a connection would announce its parity (even or odd), and an inv would be sent right away to peers with matching parity, but only sent against parity if a certain timeout has elapsed without the inv being received. Parity could also be specified as a mask to allow for nodes with few peers or nodes on local connections that might flood everything to each other. Overall, although invs are small, they are numerous and can cause problems for efficient transaction propagation. Eliminating trickling would at most double inv traffic, but there are more efficient solutions to the problems caused by it.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T01:25:01.850631+00:00 </i></p>
     
     
 

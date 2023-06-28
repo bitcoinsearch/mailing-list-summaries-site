@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Escrow Over Lightning?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pedro Moreno-Sanchez 2021-02-08 08:43:28
+            <br><i>Published on: 2021-02-08T08:43:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2021/combined_Escrow-Over-Lightning-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002949.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion thread on the Lightning-dev mailing list, Pedro Moreno-Sanchez introduced his work on "Bitcoin-compatible Virtual Channels" that resembles the use case and requirements mentioned in the thread. The virtual channels are built on top of two payment channels and can be used to construct their own "funding transaction." If a buyer and seller do not have a payment channel between them, they can create a virtual channel using funds from both parties' channels with a common node like Escrow. Once created, the virtual channel offers the same functionality as a direct payment channel between the two parties without involving Escrow for payments. The construction ensures that no party loses funds when the virtual channel needs to be closed. This construction is compatible with the current Bitcoin script and the Lightning Network. Although it assumes that a payment-channel follows the design in "Generalized Bitcoin-Compatible Channels," it can seamlessly work using the current Lightning payment channels. The links to the paper describing this construction and generalized Bitcoin-compatible channels are shared in the post. Another member of the discussion thread, Andrés G. Aragoneses, asked if it is possible to implement a Lightning-based escrow system without modifying existing implementations or adding new BOLTs, even if some requirements are simplified. He suggested removing the aspect where Escrow only learns of dispute cases, never learns non-dispute cases. While this requirement is good to have, removing it could lead to an interim solution for non-custodial exchanges to start adopting this. Otherwise, they might resort to custodial-based escrows, which lack the escrow privacy brought by the requirement above.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:45:57.044892+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

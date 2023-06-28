@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Re-enabling simple tx replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-01-04 17:35:37
+            <br><i>Published on: 2015-01-04T17:35:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_Re-enabling-simple-tx-replacement.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007080.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Ross Nicoll reported a bug in Bitcoin's protocol related to transaction locking. He provided a test case where the transaction won't lock until January 5th. Ross tried moving the wallet.dat file and attempting the spend transaction but it either rejects on acceptance to mempool or is never included in a block. He asked for the raw transaction which wasn't available on the website. It would be a severe bug if unlocked transactions are being relaying or mempooled far in advance. The replacement had to be final, which is a much more sane thing to do than just checking the sequence number was higher. If they can relay the first one to begin with its an issue, the replacement just makes it twice an issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:37:54.003365+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

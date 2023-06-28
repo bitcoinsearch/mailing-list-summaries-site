@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> shymaa arafat 2021-10-07 09:13:33
+            <br><i>Published on: 2021-10-07T09:13:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2021/combined_Removing-the-Dust-Limit.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019524.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the bitcoin-dev mailing list, a proposal was made to store dust UTXOs in a separate Merkle tree or structure to alleviate the burden of dealing with them. The author, who prefers not to discard anything unnecessary, suggests keeping these UTXOs in secondary storage where they can be verified and deleted. The conversation then turns to the topic of lightweight nodes that ignore UTXOs below the dust limit and do not validate dust transactions, but still validate POW and other transactions. The question is raised about how such a node would treat a transaction that spends multiple dust UTXOs and creates a single non-dust UTXO out of them (after fees). The concern is that since these nodes do not store dust UTXOs, they cannot know if the UTXO being spent by such a transaction is spending dust or trying to spend an already-spent TXO or even inventing a TXO out of `/dev/random`.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T00:50:31.145590+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

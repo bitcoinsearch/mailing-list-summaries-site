@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>unlinakble static address? &amp; spv-privacy (Re: Stealth Addresses)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2014-01-24 09:17:33
-            <br><i>Published on: 2014-01-24T09:17:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2014/combined_unlinakble-static-address-spv-privacy-Re-Stealth-Addresses-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004196.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation is regarding the implementation of reusable payment addresses on the blockchain. One concern raised is that if the payee's address doesn't have a length indicator, then the payer would have to put the whole address verbatim into the OP_RETURN without knowing how many bits of the payee actually wants to see there. To solve this, a proposal is made where the address has a 2-byte prefix and 1-byte number of bits representing the number of bits of prefix that should be fixed. This way, the payer will know how much of the address should be taken verbatim, and the rest of the two bytes would be replaced with random data, and exactly two bytes would be put in the OP_RETURN. If the number of bits is zero, the 2-byte prefix in the reusable address must be ignored, and an entirely random 2-byte prefix would be put into the OP_RETURN. A concern is raised about broken implementations copying the prefix from the reusable address into OP_RETURN when the number of bits is zero and ending up basically identifying the payee. To prevent the opportunity to screw it up, it is suggested to make the number of bits optional in the reusable address. However, even if the fields weren't in the address at all, a 2-byte random prefix would still be put in the OP_RETURN.It is also mentioned that the indexes available will likely be over H(scriptPubKey) for creating succinct proofs of fraud in indexes, miner committed, and otherwise. The only way they are succinct is if you limit the length. Hashes naturally do that because it's so expensive to generate partial collisions. Grinding nonces isn't much of a burden given it's fast hash functions. The prefixes in question are fairly small and will be small for the foreseeable future.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T00:09:31.326649+00:00 </i></p>
     
     
 

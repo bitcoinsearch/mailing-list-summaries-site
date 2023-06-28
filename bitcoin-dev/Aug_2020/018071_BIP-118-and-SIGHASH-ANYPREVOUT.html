@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 118 and SIGHASH_ANYPREVOUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-08-04 01:38:55
+            <br><i>Published on: 2020-08-04T01:38:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2020/combined_BIP-118-and-SIGHASH-ANYPREVOUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018071.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, Richard expressed his interest in implementing Taproot version of Decker-Russell-Osuntokun (eltoo). He thanked ZmnSCPxj for providing a summary on the differences between ANYPREVOUT vs. ANYPREVOUTANYSCRIPT and their exploitation. Richard then sketched out the protocol to understand it better and raised some questions. ZmnSCPxj clarified that key-path spending could be used for collaborative close to improve privacy. Regarding the 1.5 round trips for MuSig signing session, ZmnSCPxj believed that using the commitments for the next signing session with the current signing session could reduce it to 1.0 round trips. However, a provably-safe 2-round MuSig was being worked on and would be released soon. The signing sessions for settlement and update txes could be performed simultaneously. ZmnSCPxj also clarified that an output had to have a special taproot version to be spent with SIGHASH_ANYPREVOUT or SIGHASH_ANYPREVOUTANYSCRIPT in the script path and not usable with key path spends. Finally, ZmnSCPxj pointed out that the proposed chaperone signatures for SIGHASH_NOINPUT/SIGHASH_ANYPREVOUT back then would not provide much better security in practice.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T02:53:12.890261+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

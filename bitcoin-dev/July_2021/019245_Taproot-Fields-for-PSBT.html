@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot Fields for PSBT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2021-07-08 20:06:08
+            <br><i>Published on: 2021-07-08T20:06:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_Taproot-Fields-for-PSBT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019245.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin developer Jeremy Rubin has suggested that different keys should be allowed to specify different sighash flags, which would allow for greater flexibility in specifying signature requirements. For example, if a user wanted chaperone signatures with anyprevout, they would need to specify that the anyprevout key sign with APO and the chaperone sign with ALL. Similarly, Sapio emulator oracles currently sign with SIGHASH_ALL, but other signatories might be instructed to sign with a different flag. Currently, the sighashtype key is per-input, and if a sighash type is not provided, the signer should sign using SIGHASH_ALL, but may use any sighash type they wish. By allowing for a new per-key mapping, this could be changed to allow for more specific and granular signature requirements. There is no set format for this yet, but Rubin requested it when spec'ing V2 and hopes to get it implemented soon.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T23:25:44.910122+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>UTXO set commitment hash <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011638_UTXO-set-commitment-hash.html">UTXO set commitment hash</a>
+                        <b>Bob McElrath 2015-10-30 16:36:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011638_UTXO-set-commitment-hash.html">UTXO set commitment hash</a>
+                        <b>Bob McElrath 2015-10-30 16:36:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2015/011638_UTXO-set-commitment-hash.html">UTXO set commitment hash</a>
+                        <b>Bob McElrath 2015-10-30 16:36:04</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011638.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-10-30T16:36:04+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin transactions can be committed in blocks by maintaining two running hashes of unspent and spent transaction outputs. Miners can place these hashes into a block's Merkle tree through a soft fork, which allows for an implementation independent definition of consensus to be defined by computing (hTXO, hSXTO) at a low cost. Leveldb is critical for consensus as it stores the state of transactions, but there's only one correct answer to what the set of unspent transaction outputs (UTXOs) is. To prevent consensus failures caused by bad database behavior, (hTXO, hSXTO) can be computed twice - once without the database while processing a new block, and once by requesting the same data from the database. By creating and publishing (hTXO, hSXTO), miners can share their view of the transaction state, thereby enabling any implementation to be validated against it.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T00:50:09.121410+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

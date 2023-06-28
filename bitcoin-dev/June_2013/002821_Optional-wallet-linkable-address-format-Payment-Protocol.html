@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Optional &#34;wallet-linkable&#34; address format - Payment Protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Reiner 2013-06-26 15:29:50
+            <br><i>Published on: 2013-06-26T15:29:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2013/combined_Optional-wallet-linkable-address-format-Payment-Protocol.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002821.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is centered around the complications of designing a wallet system that can handle multiple chains and addresses. BIP 32 defines M/i/j/k, where j=0 is the "external" chain used for distributing addresses, and j=1 is the "internal" chain for sending change. The extended wallet would have chains with j>=2 carved out for individual relationships with wallet code to individually associate each j-value with a particular identity. The wallet code will pool all the addresses in all j-chains when calculating the balance of the wallet and/or creating transactions. The wallet would have extra functions to "Receive Bitcoins" button to allow creation of new contacts/identities. When choosing to generically "Receive Bitcoins", it will pick the next address from the j=0 chain. Add code to figure out lookaheads for each alternate chain. There will be an interface to display and choose the different chains in your wallet and export the pubkey&chaincode in some soon-to-be-standardized format. There is also code and an interface to receive and track alternate j-chains from other clients/users and maintain those. It was proposed that payment protocol work be furthered along to define an extension that lets you send payment requests containing public keys+chain codes so further payments can be made push-style with no recipient interaction (e.g. for repeated billing). While the multi-chain idea is good, it complicates the developer complexity and interface complexity to achieve something much simpler. On another note, there were concerns related to automatic payments without requesting from the other party.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T18:56:25.157947+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

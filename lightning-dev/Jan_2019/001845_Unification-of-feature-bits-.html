@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unification of feature bits?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Fabrice Drouin 2019-01-25 16:55:19
+            <br><i>Published on: 2019-01-25T16:55:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Unification-of-feature-bits-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001845.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell has proposed a unification of feature bits in his email to the Lightning-dev mailing list. His proposal includes renaming 'local features' to 'peer features' and 'global features' to 'routing features', having them share a number space, and putting both in `features` in node announcements but never using even bits for peer features. This will enable the use of node_announcement as "connect to a peer which supports feature X" and "can I route through this node?". However, Fabrice expressed concerns about the concept of `routing features` as opposed to `node features`. He finds it easier to reason in terms of `node features`, which are advertised in node announcements, and `peer/connection features`, which are a subset of `node features` applied to a specific connection. He suggests that Node features should be all the features that we have today with the addition of wumbo which could only be optional.Fabrice also questions the rationale for not allowing even bits in peer features as there are cases where specific features may be required for a specific connection. Rusty responds saying that (future) DNS seed filtering might support filtering only by pairs of bits (ie. give me peers which support X, even or odd).</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:10:17.772525+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

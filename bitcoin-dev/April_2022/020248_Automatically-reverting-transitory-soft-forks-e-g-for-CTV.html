@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Automatically reverting (&#34;transitory&#34;) soft forks, e.g. for CTV</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Rubin 2022-04-21 06:20:15
+            <br><i>Published on: 2022-04-21T06:20:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Automatically-reverting-transitory-soft-forks-e-g-for-CTV.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020248.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin-dev mailing list, a user asked if it was possible to revert soft forks that are already activated, specifically referring to the witness discount in SegWit transactions. While reverting Segwit wouldn't be possible, it is entirely possible to do an additional softfork to either weigh witness data at the full 4 WU/Byte rate (same as other data), or to reduce the total weight limit so as to extend the witness discount to non-segwit transactions (so scriptSig is similarly discounted). However, there is a concern that this would confiscate funds if the increase in weight would make pre-signed transactions invalid. There was also a discussion about the variant of Speedy Trial being used, which has no purpose other than to try to sabotage parallel UASF efforts. It was suggested that any Speedy Trial attempts be rejected by the community and fail outright, and possibly even prepare a real counter-softfork to invalidate blocks signalling for it. Additionally, the BIP9 variant of Speedy Trial was criticized for giving miners the ability to activate CTV instead of allowing users to decide if they prefer mining pools to make the decision for them or want to enforce it irrespective of how many mining pools signal for it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T19:09:31.312456+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

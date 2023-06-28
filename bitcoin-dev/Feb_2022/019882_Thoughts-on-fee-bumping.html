@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Thoughts on fee bumping</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James O&#39;Beirne 2022-02-10 23:51:47
+            <br><i>Published on: 2022-02-10T23:51:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_Thoughts-on-fee-bumping.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019882.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>As a miner, it can be complicated to prioritize transactions in the mempool. If there is less than 1vMB of transactions, it may not be beneficial to include a high-paying transaction if it is significantly larger than lower-paying transactions. This is because miners typically prioritize transactions based on their fee rate, which is calculated by dividing the transaction fee by its size in virtual bytes (vB). In this scenario, a 10sats/vB transaction paying 100,000 sats may not be prioritized over a 100sats/vB transaction paying only 10,000 sats.The reason for this is that miners want to maximize their profits while also ensuring that the network remains efficient. Including a large transaction with a high fee rate could result in the block being too big and increasing the likelihood of it being orphaned, which means the miner would lose out on potential rewards. Therefore, it's important for miners to carefully consider all transactions in the mempool and prioritize them based on their fee rates and sizes.Overall, as a miner, it's crucial to balance maximizing profits with maintaining an efficient and secure network. By prioritizing transactions based on their fee rates and sizes, miners can ensure that they are making the most profitable decisions while also contributing to the overall health and stability of the Bitcoin network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T16:33:58.310224+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

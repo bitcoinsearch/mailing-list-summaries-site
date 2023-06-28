@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Lightning payment format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Fabrice Drouin 2017-05-03 15:37:14
+            <br><i>Published on: 2017-05-03T15:37:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2017/combined_-RFC-Lightning-payment-format.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000691.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Rusty Russell and Pierre on May 2, 2017, they discussed the use of signatures in payment requests. One concern raised was that users cannot verify the validity of the signature without a (direction || chanID) -> pubKey mapping. However, Rusty pointed out that key recovery from the signature can be used to obtain the necessary information. Additionally, they debated the use of the short chanID in the onion as it assumes that the network is well-known and does not take into account the time it takes for announcements to propagate. They also questioned if optimizing the size of payment requests was important since they are sent out-of-band. Later in the conversation, Rusty and Olaoluwa Osuntokun discussed the use of tags in payment requests, which offers flexibility for application developers. However, assigning onion bytes as tags could be a limited resource. They also discussed the use of bech32, but agreed that its character optimization for manual-entry may not be significant since payment requests are too long to be entered by hand. Finally, Fabrice suggested that payment requests should include a timestamp and an expiry date, which could be mandatory items rather than optional tagged ones.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:12:27.393520+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

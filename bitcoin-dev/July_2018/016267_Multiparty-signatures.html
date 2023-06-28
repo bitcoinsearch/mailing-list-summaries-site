@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Multiparty signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2018-07-26 02:05:05
+            <br><i>Published on: 2018-07-26T02:05:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_Multiparty-signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016267.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses the implementation of an M-of-N "single sig" extension of MuSig without the need for new opcodes. The solution involves using MuSig's blinding factor solution and interpolation to achieve M-of-N instead of M-of-M. Each party publishes a public key and a random nonce. The x coordinate is used for interpolation purposes, while R is derived from the interpolation of G*k1, G*k2... L is obtained from H(X1,X2,...), and X is the sum of all H(L,Xi)Xi. E (a blinding factor) is computed as H(R | M | X), with si being a share of the signature and xi being the private data. (si, e) are then published as the share signature. To prevent a birthday attack on k, e2 is introduced as a second blinding factor, and (si, e, e2) is published as the share signature. Finally, any party can derive s from m of n shares by interpolating, not adding.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:53:06.377534+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

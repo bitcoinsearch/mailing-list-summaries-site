@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CoinPool, exploring generic payment pools for Fun and Privacy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2020-06-12 23:45:35
+            <br><i>Published on: 2020-06-12T23:45:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_CoinPool-exploring-generic-payment-pools-for-Fun-and-Privacy.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017975.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Antoine and Jeremy have been working on designing payment pools for the Lightning Network. Antoine discussed the use of OP_CTV in a talk last summer, while Jeremy proposed a new type of payment pool called "CheckTemplateVerify (CTV) Pools". CTV pools aim to improve the efficiency and security of payment channels by using a setup based on radix trees that allows users to exit bad actors with only Log(N) chain work. In contrast, accumulator-based pools require O(N^2) work after two failures. Jeremy proposes a design for a payment pool using CTV with a radix of R, which allows for non-interactive any-order withdrawal. This design is more efficient overall compared to an accumulator-based pool, which may be better for worst-case scenarios. They also discuss the need for better definitions of non-interactivity and privacy optimization, as well as potential trade-offs between security and performance.CTV pools allow users to make payments if just their immediate counterparty is online in the channel, while accumulator pools require all parties to be online. In a cooperative case, both CTV pools and accumulator pools act like an N of N multisig. However, because accumulator pools always require N signers, they can be used to build a better privacy model where N parties manage a Chaumian ecash-like server for updates, giving greater privacy of who initiated payments. Both protocols require new features in Bitcoin but CTV is relatively simple compared to accumulators + sighashnoinput. The payment pool in both designs can be created non-interactively, allowing third parties such as exchanges to withdraw users' funds into a payment pool. While CTV pools are compatible with LN, Rubin has only implemented rudimentary transactions for them so far. Users may prefer making updates at the 2 party channel layer for low latency and privacy benefits out of the routability of the channels and ability to connect to the broader lightning network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T02:24:42.937149+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

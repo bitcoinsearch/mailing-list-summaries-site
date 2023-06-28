@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>High level fee mechanics</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2018-03-18 23:48:57
-            <br><i>Published on: 2018-03-18T23:48:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2018/combined_High-level-fee-mechanics.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-March/001099.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The message is a query about Lightning fees in routed payments. The BOLT spec contains detailed information on the topic, but it can be difficult to navigate. In the case of a multi-hop routed payment where A needs to pay D through B and C, established channels are A->B->C->D. A high-level explanation of how fees are established, announced and ultimately claimed in such a payment is sought. Node gossip, the `channel_update` message in BOLT#7, is used to announce fees. For each channel, there are two `channel_update` messages, one from each direction. If A has obsolete information about fees, routing will fail, but the `channel_update` will also be sent as part of the error message returned by payment routing failure. A computes the amount of fees that need to be added to the payment to cover all fees. If D is to be given a payment with value `msatoshi`, then it computes first the C->D fee and adds that to `msatoshi`. The payment that needs to reach C is computed similarly, except the `msatoshi` is replaced with the payment that should reach C. A knows how much it has to give to B. D is only aware of how much C offers it. A offer B a value that is higher than what A instructs B to forward to C. The difference is the fee. Since the highest value is at the source A, A ends up paying the entire fee.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T22:05:59.860181+00:00 </i></p>
     
     
 

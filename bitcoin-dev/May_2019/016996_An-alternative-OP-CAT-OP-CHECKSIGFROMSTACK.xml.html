@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>An alternative: OP_CAT &amp; OP_CHECKSIGFROMSTACK</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Russell O&#39;Connor 2019-05-29 06:49:29
-            <br><i>Published on: 2019-05-29T06:49:29+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2019/combined_An-alternative-OP-CAT-OP-CHECKSIGFROMSTACK.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016996.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the flexibility of Bitcoin Script and proposes adding OP_CAT and OP_CHECKSIGFROMSTACKVERIFY to enable flexible programmability. The proposal is based on the argument that some parts of Script have been unsuccessful and not useful in practice, and that a subset of concatenation, arithmetic, CHECKDATASIG, transaction reflection, and/or covenants could create particularly useful programs. The thread also discusses simulating an ANYPREVOUT sig with a data signature and proposes using CHECKDATASIG first before debating chaperone vs. non-chaperone ANYPREVOUT. The proposal for CHECKSIGFROMSTACK (aka CHECKDATASIG) was based on the argument that it wouldn't be controversial since it was limited to self-recursion and had less than 64-bits of state space, but was later found to be nearly as powerful as arbitrary recursive covenants. While support for recursive covenants is desirable, it is currently too controversial to add. The proposal suggests supporting MPC with penalties via a HASH_tapdata digest function rather than SHA256 to avoid accidental covenants, which would be an additional proposal rather than an alternative to ANYPREVOUT or COSHV. The proposal also discusses the use of "CHECK_SIG_MSG_VERIFY" opcode for simplicity and generic programming.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T18:57:52.141965+00:00 </i></p>
     
     
 

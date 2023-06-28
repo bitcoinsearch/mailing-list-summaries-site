@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CTV and ANYPREVOUT vault designs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Prayank 2022-01-15 17:19:36
-            <br><i>Published on: 2022-01-15T17:19:36+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2022/combined_CTV-and-ANYPREVOUT-vault-designs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019760.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>This email discusses the current lack of research on the safety and utility of different ways to construct vault designs. The covenant opcode TAPLEAF_UPDATE_VERIFY proposed in September 2021 has yet to be implemented, making it difficult to compare to constructing vaults using SIGHASH_ANYPREVOUT or OP_CHECKTEMPLATEVERIFY. However, the TAPLEAF_UPDATE_VERIFY enables a vault design that matches a previous design by Bryan Bishop with additional benefits. Jeremy Rubin initially described OP_CHECKOUTPUTSHASHVERIFY (which became OP_CHECKTEMPLATEVERIFY) as a "rudimentary, limited form of covenant which does not bear the same technical and social risks of prior covenant designs." Andrew Poelstra has blogged on how to use OP_CAT and OP_CHECKSIGFROMSTACK to construct covenants and vaults. These would enable more generalized covenants than OP_CHECKTEMPLATEVERIFY, but with the downsides of being less efficient and arguably riskier.The solitary paper that has compared building vaults using OP_CHECKTEMPLATEVERIFY and SIGHASH_ANYPREVOUT at the time of writing is Bitcoin Covenants: Three Ways to Control the Future. This paper discussed three categories of vault design - deleted key, recovered key, and script-based covenants. Recovered-key and script-based covenants are mostly functionally equivalent, and if either were enabled, a new domain of practical covenant-based protocols could emerge.The paper concluded by stating that every modification of bitcoin's code-base and protocol introduces systemic risks, and it is difficult to analyze those risks. It would be hubris to claim that there are no unknown risks being introduced.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-22T16:33:44.584396+00:00 </i></p>
     
     
 

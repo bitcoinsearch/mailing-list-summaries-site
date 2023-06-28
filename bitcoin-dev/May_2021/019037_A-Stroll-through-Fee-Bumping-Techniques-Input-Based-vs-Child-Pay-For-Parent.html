@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Stroll through Fee-Bumping Techniques : Input-Based vs Child-Pay-For-Parent</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> darosior 2021-05-28 22:25:16
+            <br><i>Published on: 2021-05-28T22:25:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2021/combined_A-Stroll-through-Fee-Bumping-Techniques-Input-Based-vs-Child-Pay-For-Parent.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/019037.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation discusses various technical approaches to secure transactions and prevent malicious attacks in multi-party contracts and channels. The proposed solution involves using MuSig key for all contract participants with SIGHASH_ANYPREVOUT | SIGHASH_IOMAP for signature commitment, and one pubkey per participant to lockdown the transaction with SIGHASH_ALL. There is also a discussion around the use of fee-bumping UTXO pools for vaults and Lightning Network channels. In the case of Lightning Network channels, it was noted that node operators may not keep enough fee-bumping reserves, which could create a tradeoff between liquidity and security. Additionally, while input-based bumping targeting the tail of the chain works at the transaction level, there are concerns about concurrent state broadcasts and propagation. Smarter tx-relay techniques such as "attach-on-contract-utxo-root" CPFP or blinded CPFP might help solve this issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T22:20:12.981500+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

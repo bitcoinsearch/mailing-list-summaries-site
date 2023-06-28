@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Multisignature transaction support in the GUI</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Aidan Thornton 2012-02-07 11:52:19
-            <br><i>Published on: 2012-02-07T11:52:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2012/combined_Multisignature-transaction-support-in-the-GUI.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-February/001204.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On February 6th, 2012, a discussion took place regarding changes to BitcoinAddressValidator::MaxAddressLength and WalletModel::sendCoins. The validation of addresses is performed through walletmodel->validateAddress, which in turn calls CBitcoinAddress addressParsed(addr) and then isValid(). Both the GUI and RPC commands use CBitcoinAddress and IsValid to validate addresses. It was questioned whether or not this process would work for new addresses. It was concluded that it should work unless BIP 16 caused any issues. CScript.SetBitcoinAddress is used for the new address type and should work with the RPC commands for sending Bitcoins. The only change that needs to be made is to MaxAddressLength, which is necessary when sending coins to multisig addresses on testnet. However, sending coins on mainnet should still work without any changes. Overall, there are minimal changes needed for the new address types.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T02:46:10.007133+00:00 </i></p>
     
     
 

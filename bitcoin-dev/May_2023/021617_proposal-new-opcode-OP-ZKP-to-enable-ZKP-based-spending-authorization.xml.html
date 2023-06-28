@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>proposal: new opcode OP_ZKP to enable ZKP-based spending authorization</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Weiji Guo 2023-05-05 23:06:51
-            <br><i>Published on: 2023-05-05T23:06:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2023/combined_proposal-new-opcode-OP-ZKP-to-enable-ZKP-based-spending-authorization.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021617.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email exchange between Weiji and ZmnSCPxj discusses the potential attack vector of non-aggregated transactions in a pseudonymous network. An anonymous attacker can flood the fullnode mempool network with large numbers of non-aggregated transactions and then confirm a single aggregated transaction with a lower feerate than what it put in the several non-aggregated transactions. The attacker ends up paying less for the single confirmed transaction, but it costs the fullnode network a significant amount of CPU to process and validate all the non-aggregated transactions. To prevent this attack, transactions that could appear in the mempool should be made non-aggregatable with other transactions in the mempool. One solution is to arrange for aggregation before the blockchain-level transaction hits the mempool. Cross-input signature aggregation designs should be compared, and signature aggregation should be allowed only within a single blockchain-level transaction, not across transactions, to prevent the above attack. Similarly, cross-input ZKP aggregation would be acceptable, but not cross-transaction ZKP aggregation. It is recommended to disallow aggregation of ZKPs once a transaction is in a form that could potentially hit the mempool and to require paid services for aggregation outside of the unpaid, free mempool. The focus should be on the load on the mempool, not blocks, as the mempool is a free service that should not be abusable, while blockspace is a paid service.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T18:03:05.722508+00:00 </i></p>
     
     
 

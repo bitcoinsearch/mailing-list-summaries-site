@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 158 Flexibility and Filter Size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-06-02 00:22:25
+            <br><i>Published on: 2018-06-02T00:22:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-158-Flexibility-and-Filter-Size.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016058.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Olaoluwa Osuntokun and Bitcoin Core developer, Gregory Maxwell, Osuntokun suggests that a typical network attacker could be any of your peers, meaning someone on your LAN or Wi-Fi segment, or someone who has compromised or operates an upstream router. Maxwell agrees with this statement but argues that it cannot make us accept any invalid filters unless the attacker is also creating invalid blocks with valid proof of work. However, Maxwell admits that without commitments, this would not always be the case, as you wouldn't have any sign that there was something wrong with the filter unless you were always downloading all the blocks. For segwit, Maxwell had originally proposed adding additional commitments that would make it possible to efficiently prove invalidity of a block, but this got stripped because many people were of the view that the "assume you have at least one honest peer who saw that block and rejected it to tell you that the block was invalid" security assumption was of dubious value. Maxwell suggests having both filter types from day one so that things not implementing the comparison techniques don't get the efficiency loss or the extra work to change filter types for a consensus one. He believes they are much closer to a design that would be worth making a consensus committed version of than they were a few months ago now since they are effectively already on a second generation of the design with the various improvements lately.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:33:41.856642+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

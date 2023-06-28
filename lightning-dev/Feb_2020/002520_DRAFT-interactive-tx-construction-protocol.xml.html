@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>DRAFT: interactive tx construction protocol</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-02-11 13:05:08
-            <br><i>Published on: 2020-02-11T13:05:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2020/combined_DRAFT-interactive-tx-construction-protocol.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002520.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a Bitcoin dev email thread, the topic of acceptable reuse in case of non-malicious failure after a valid PoDLE exchange was discussed. The default number of 3 for JoinMarket was considered reasonable. It was noted that limiting accepted `node_id`s to those previously seen in a `node_announcement` could help mitigate flooding. This is because `node_announcement` requires funds be allocated to a channel visible onchain. Therefore, if nodes send PoDLE gossip that they did not sign themselves, but are signed by *some* node that was `node_announcement`ed before, we can identify those nodes that are spamming a lot of their own signed PoDLE gossip and rate-limit them. It was suggested that announced nodes are in the best position to inform others of such attempts and are the most likely to have such data. Set reconciliation for these also may be necessary at some point.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T22:57:02.312598+00:00 </i></p>
     
     
 

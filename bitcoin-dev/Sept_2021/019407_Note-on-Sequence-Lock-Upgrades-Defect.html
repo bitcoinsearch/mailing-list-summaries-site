@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Note on Sequence Lock Upgrades Defect</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> darosior 2021-09-06 06:16:44
+            <br><i>Published on: 2021-09-06T06:16:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2021/combined_Note-on-Sequence-Lock-Upgrades-Defect.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019407.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the Bitcoin-dev mailing list, Jeremy Rubin pointed out a flaw in the Sequence lock implementation with respect to upgradability. He suggested that this issue might be protected against by some transaction level policy but couldn't find any such policy in policy.cpp. In response, David A. Harding asked if this wasn't why BIP68 requires using tx.version=2 and suggested deploying any new nSequence rules with tx.version>2 instead. Jeremy had previously suggested enforcing minimality in the context of Miniscript a few months ago. However, he found flaws in the upgradable semantic in script as well as in the transaction nSequence, making it weird/bad to change the semantic in transaction version 3. To fix this issue, he provided a patch in his blog post at <a href="https://rubin.io/bitcoin/2021/09/03/upgradable-nops-flaw/">https://rubin.io/bitcoin/2021/09/03/upgradable-nops-flaw/</a>. To ensure that the upgradable semantic is enforced correctly, Jeremy's code checks whether the transaction's version number is set high enough to trigger BIP 68 rules. If not, the code fails. He also emphasized the need for a fix, providing further proof of the problem.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T01:27:52.248305+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

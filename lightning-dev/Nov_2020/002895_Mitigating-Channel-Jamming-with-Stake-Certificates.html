@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigating Channel Jamming with Stake Certificates</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gleb Naumenko 2020-11-30 08:34:35
+            <br><i>Published on: 2020-11-30T08:34:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2020/combined_Mitigating-Channel-Jamming-with-Stake-Certificates.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002895.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread, Lloyd Fournier expresses his appreciation for the novel proposal put forth by Gleb Naumenko and Antoine Riard regarding proof-of-stake in Lightning Network. However, he raises concerns about the proposal's lack of a strong argument as to why it is a better proof-of-stake than channel balances themselves. Gleb responds by referring to t-bast's alternative Stake Certificates proposal and explains that Stake Certificates allow for a node in the middle of the route to distinguish where the payment is coming from and to force an attacker to distribute jamming in time and across many channels. The issue with loop attacks is also discussed, and it is proposed that restricting based on from which immediate channel/node they are coming (one-hop) may be an alternative, although this approach has its own drawbacks. Furthermore, there is a discussion on whether these channel jamming attacks are actually economic and whether non-economic adversaries who simply want to destroy LN pose another game altogether. David A. Harding raises concerns about how a stake certificate can prove that the UTXO was generated for LN rather than just belonging to a user with a 2-of-2 multisig wallet or any key-path-spendable taproot wallet. Finally, the cost of acquiring stake certificates for a one-week attack is brought up, and it is concluded that it may not be high enough to effectively prevent attacks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:00:22.341355+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

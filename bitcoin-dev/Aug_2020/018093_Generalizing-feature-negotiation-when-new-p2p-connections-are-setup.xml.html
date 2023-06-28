@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Generalizing feature negotiation when new p2p connections are setup</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Eric Voskuil 2020-08-17 21:21:53
-            <br><i>Published on: 2020-08-17T21:21:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2020/combined_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018093.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a Bitcoin development mailing list, Suhas Daftuar proposed a mechanism that network clients should ignore unknown messages received before a VERACK in an effort to make future p2p protocol changes more efficient. This was in response to his earlier proposal for WTXID-based transaction relay (BIP 339), which included feature negotiation prior to receiving a VERACK message. Eric Voskuil responded to Suhas' proposal, pointing out that ignoring unknown messages is not only poor protocol design but also a protocol breaking change. The purpose of version negotiation is to determine the set of valid messages, and changes to version negotiation itself are problematic. Voskuil suggested making new features optional at the new protocol level, allowing each client to limit its communication to the negotiated protocol, and allows ignoring of known but unsupported/disabled features. Suhas agreed to the suggestion and further clarified that if software upgrading past protocol version 70016 was already planning to either implement BIP 339 or ignore the wtxidrelay message proposed in BIP 339, then the proposed mechanism would work fine. However, if it was problematic, he hoped someone would speak up so that they could be careful about how they deploy future p2p changes to avoid disruption.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T15:03:43.395057+00:00 </i></p>
     
     
 

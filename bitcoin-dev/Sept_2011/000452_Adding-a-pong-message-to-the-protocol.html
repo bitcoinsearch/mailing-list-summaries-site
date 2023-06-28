@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Adding a pong message to the protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2011-09-05 12:04:49
+            <br><i>Published on: 2011-09-05T12:04:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/combined_Adding-a-pong-message-to-the-protocol.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000452.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer is considering writing a patch for an issue related to nodes under heavy load exhibiting extremely high latency, which makes downloading the blockchain from such nodes useless. The issue could be fixed by making nodes not accept connections or advertise until they are sure they have the best chain. However, a more general fix is suggested: adding a "pong" response to the existing "ping" message. This would allow useful stats about the node to be collected and, more importantly, let nodes be ordered by responsiveness. Currently, this can only be done indirectly through messages that yield a known response. The addition of the pong response would be easy and backwards compatible. However, care must be taken to avoid sloshing load around too much when making nodes prefer responsive servers. Overall, the writer is seeking input on the proposed solution.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T18:55:08.536730+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

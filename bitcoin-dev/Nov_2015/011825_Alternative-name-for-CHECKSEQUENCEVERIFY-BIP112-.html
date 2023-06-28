@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Alternative name for CHECKSEQUENCEVERIFY (BIP112)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2015-11-27 08:10:49
+            <br><i>Published on: 2015-11-27T08:10:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_Alternative-name-for-CHECKSEQUENCEVERIFY-BIP112-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011825.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion focuses on the relative locktime (or minimum age) and the nSequence field in transactions, which currently plays a combined role. The lack of a dedicated field for the purpose of relative locktime is considered unfortunate as it requires repurposing unused bits in the txin. However, there may be ways around this issue using segwit. One suggestion is to add an extra input vector to the prunable extra data that comprises the witness. Witness structures can provide additional data that is used in transaction validation but does not contribute to the tx hash. While signatures cannot contribute to the hash they are signing, segwit makes this separation explicit by moving the signatures to a structure external to the script. Adding extra prunable signed data fields to transactions may ultimately remove scarcity of tx data that can be repurposed via soft forks. The nSequence field could be turned into a dedicated min age/rlt field to simplify semantics and avoid ugliness in trying to reclaim unused bits.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:20:56.891309+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

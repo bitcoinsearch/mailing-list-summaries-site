@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>How accurate are the Bitcoin timestamps?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tier Nolan 2018-01-29 21:40:44
-            <br><i>Published on: 2018-01-29T21:40:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2018/combined_How-accurate-are-the-Bitcoin-timestamps-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015680.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The timestamps in Bitcoin are not necessary to avoid double-spending, as a simple ordering of blocks is sufficient. Permissioned consensus protocols, such as Hyperledger, have no timestamps. The main purpose of timestamps is to allow difficulty updates and to check that the node has caught up. Dishonest miners could set their timestamp as low as possible, but if more than half of the timestamps move forward, then the median would move forward as well. If miners are majority dishonest, then they can set the limit to anything as long as they don't move it more than 2 hours into the future. A possible improvement for difficulty adjustment formula is to exchange average with standard deviation, which better mirrors changes in the hash power along the interval and disables the option to manipulate timestamps without affecting the difficulty. However, this change requires a hardfork and won't happen anytime soon. For check locktime, the median of the last 11 blocks is used as an improved indicator of what the actual real time is and again assumes that a majority of the miners are honest.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T00:21:19.820147+00:00 </i></p>
     
     
 

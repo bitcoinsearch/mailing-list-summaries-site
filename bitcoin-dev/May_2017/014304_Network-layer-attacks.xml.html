@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Network-layer attacks</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Eric Voskuil 2017-05-09 23:11:31
-            <br><i>Published on: 2017-05-09T23:11:31+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2017/combined_Network-layer-attacks.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014304.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The paper discusses the risks of routing attacks on the Bitcoin peer-to-peer network and suggests various countermeasures, including the use of encryption to secure communications between nodes. However, the author of this response indicates a different conclusion. The proposed solution of encrypting traffic among miners is not just about encryption since one cannot identify the peer as the intended miner, which could be an attacker. Instead, it is about using authenticated connections. Furthermore, the paper recognizes that encryption is centralizing and ineffective, and that authentication is necessary to centralize the network. The paper also investigates partitioning and delay routing attacks on the p2p protocol. It identifies several issues that cannot be mitigated by encryption, such as a smaller set of nodes being easier to isolate for extended periods, all incoming connection slots can be occupied by connections from attacker nodes, and outgoing connections can be biased via a traditional eclipse attack. The paper recommends various countermeasures, including increasing the diversity of node connections, selecting Bitcoin peers while taking routing into account, monitoring round-trip time (RTT), embracing churn, using gateways in different ASes, preferring peers hosted in the same AS and in /24 prefixes, using distinct control and data channels, using UDP heartbeats, and requesting a block on multiple connections. Finally, the author emphasizes that authentication is a necessary aspect of centralizing the network, and that the most obvious answer is not always the right answer. While encryption has been suggested as a low-hanging fruit to mitigate routing attacks, it is anything but easy since there are several risks associated with it, particularly the risk of centralization through widespread use of authentication. Nonetheless, the paper is a valuable contribution in assessing risks to the P2P network and individual nodes and suggesting mitigations.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T00:44:07.994250+00:00 </i></p>
     
     
 

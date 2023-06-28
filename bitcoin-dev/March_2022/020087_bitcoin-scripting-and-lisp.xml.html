@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>bitcoin scripting and lisp</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bram Cohen 2022-03-09 02:24:15
-            <br><i>Published on: 2022-03-09T02:24:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2022/combined_bitcoin-scripting-and-lisp.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020087.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion about Bitcoin's scripting language, ZmnSCPxj explains that in the coin set model, each puzzle (scriptpubkey) either fails an assert or returns a list of extra conditions, including timelocks and creating new coins. The language is restrictive but allows for recursive covenants through specifying output scriptpubkeys/puzzles. However, Bitcoin's script's ability to generate and parse transactions isn't quite up to the task. In terms of compression, there is a hook for doing compression at the consensus layer, but it isn't being aggressively used yet. Even with maxed-out compression, gzip could still do some compression, but it would be better done in the database and in wire protocol formats rather than changing the format hashed at the consensus layer. Regarding Simplicity jets, they are meant to be for things like Sha3 rather than shared library code. It might be possible to use Simplicity jets by implementing CLVM opcodes as a bunch of Simplicity jets, but it's unclear whether this would make the CLVM irrelevant or just be based on Simplicity under the hood. The compression hook involves a generator written in CLVM in each block that outputs a list of puzzle reveals and solutions, which can be passed the generators of old blocks to pull out code snippets.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T17:31:30.615100+00:00 </i></p>
     
     
 

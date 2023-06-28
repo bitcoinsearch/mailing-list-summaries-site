@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning in a Taproot future</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-01-07 00:26:05
+            <br><i>Published on: 2020-01-07T00:26:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2020/combined_Lightning-in-a-Taproot-future.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002415.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange, Lloyd Fournier suggests that transactions with relative lock times could be improved to make them less distinguishable. In response, ZmnSCPxj proposes that Bitcoin Core could set the nSequence of UTXOs being spent to the block age, which would enhance anti-fee-sniping and limit a sniper's ability to rearrange ancestor transactions. However, it is noted that having both non-zero nLockTime and relative-locktime nSequence does not work. Instead, Bitcoin Core could use a coin toss to determine whether to use a non-relative-locktime nSequence and an nLockTime of the next block or a relative-locktime nSequence equal to the confirmations of the output being spent and an nLockTime of 0. The Lightning relative-locktime transactions could then be hidden with an nLockTime of 0. It is suggested that relative-locktime is used for unlimited-lifetime offchain updateable mechanisms, while intra-chain swaps should use absolute-locktime.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:14:28.761699+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

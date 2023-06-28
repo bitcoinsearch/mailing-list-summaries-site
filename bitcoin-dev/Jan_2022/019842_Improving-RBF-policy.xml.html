@@ -11,33 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Improving RBF policy</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bram Cohen 2022-01-31 22:54:10
-            <br><i>Published on: 2022-01-31T22:54:10+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019842.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The post by Gloria Zhao discusses the limitations of the current Bitcoin Core RBF policy and aims to start a conversation about how it can be improved. The author asks for input on issues to be solved and ideas for improvement. One point raised is whether it is still necessary to disallow RBF, as it is normal behavior and disallowing it is simply a feature to appease some people's delusions about zeroconf.The main focus of the post is on incentive compatibility, which ensures that an RBF policy would not accept replacement transactions that decrease fee profits of a miner. If the mempool policy deviates from what is economically rational, the transactions in the mempool may not match those in miners' mempools, making fee estimation, compact block relay, and other mempool-dependent functions unreliable. Additionally, incentive-incompatible policies may encourage transaction submission through routes other than the p2p network, harming censorship-resistance and privacy of Bitcoin payments.There are two different common regimes that result in different incentivized behavior. In one case where there is more than a block's backlog in the mempool, between two conflicting transactions, the one with the higher fee rate should win. In the other case where there isn't a whole block's worth of transactions, the one with higher total value should win. It would be nice to have consolidated logic that handles both, as the issue has to do with the slope of the supply/demand curve, which in the first case is gentle enough to keep the one transaction from hitting the rate but in the second one is basically infinite.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T16:20:55.436321+00:00 </i></p>
     
     
 

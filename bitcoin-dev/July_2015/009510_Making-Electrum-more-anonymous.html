@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making Electrum more anonymous</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2015-07-22 15:51:02
+            <br><i>Published on: 2015-07-22T15:51:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Making-Electrum-more-anonymous.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009510.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Electrum client typically requests address balances and histories from a single server, which means that the chosen server knows that a given set of addresses belong to the same wallet. There have been various proposals to improve anonymity, but none of them have convinced the author so far. One proposal was to create subsets of wallet addresses and send them to separate servers, but this would require trusting more servers and wouldn't necessarily improve anonymity. Inspired by TOR, the author proposes creating an anonymous routing layer between Electrum servers and clients. Each server publishes an RSA public key, and each client receives a list of available servers and their pubkeys. For each wallet address, the client chooses a server and a RSA keypair, and creates a list of encrypted requests containing the address and keypair, which are encrypted with the pubkey of the chosen server. The client sends the list of encrypted requests to a main server, which dispatches the requests to the corresponding servers without revealing the client's IP address. Each server decrypts the requests it receives, performs the request, and encrypts the result with the keypair. The main server then receives encrypted responses and forwards them to the client, who decrypts them with the keypair. This approach would not work if all servers or a large fraction of them were controlled by the same entity that controls the main server. The author is seeking feedback on this idea and wants to know the costs and benefits of such an approach.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T03:06:21.842427+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

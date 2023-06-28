@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Newly introduced DoS</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2011-09-27 20:39:32
+            <br><i>Published on: 2011-09-27T20:39:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2011/combined_Newly-introduced-DoS.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000606.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The code in question is a "belt-and-suspenders just in case" case that should be impossible to trigger. AcceptBlock() is called from two places in the code: ProcessBlock, if the block is not an orphan, and recursively, in AcceptBlock(), processing orphans that link to the block being accepted. The mapBlockIndex.find(hashPrevBlock) in AcceptBlock can't fail. In case there is some subtle bug or edge case, keeping the check is appropriate. Attackers look for subtle bugs and edge cases that can be exploited.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T20:05:27.388686+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

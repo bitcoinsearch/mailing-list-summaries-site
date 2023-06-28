@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Detailed protocol design for routed multi-transaction CoinSwap</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-08-22 01:09:35
-            <br><i>Published on: 2020-08-22T01:09:35+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2020/combined_Detailed-protocol-design-for-routed-multi-transaction-CoinSwap.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018128.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation discusses the implementation of watchtowers for CoinSwaps to prevent theft attempts. The use of absolute timelocks is suggested as it allows setting a timer without risking loss of funds. However, it combines two time periods, making it inconvenient for makers. A solution using Scriptless Script 2p-ECDSA/Schnorr and an absolute timelock is proposed. Watchtowers guarding CoinSwaps with absolute timelocks would need to know the funding outpoint they are guarding and watch block height, which affects privacy. To make these watchtowers compatible with Lightning watchtowers, a solution is suggested where the timeout tx pays out to a `OP_IF OP_CHECKSEQUENCEVERIFY OP_DROP OP_ELSE OP_ENDIF OP_CHECKSIGVERIFY`. The revocation key would be the same private key turned over at the end of the CoinSwap. The proposed solution offers more privacy and security while reducing the attack surface on privacy.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T03:23:42.609126+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Yesterday&#39;s Taproot activation meeting on lockinontimeout (LOT)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-02-22 10:16:32
+            <br><i>Published on: 2021-02-22T10:16:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2021/combined_Yesterday-s-Taproot-activation-meeting-on-lockinontimeout-LOT-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018464.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Matt Corallo discussed the ban caused by invalid headers. Invalid headers due to MUST_SIGNAL rules are marked as BLOCK_RECENT_CONSENSUS_CHANGE, which does not directly result in a ban. If a lockinontimeout=true node requests compact blocks from a lockinontimeout=false node during a chainsplit in the MUST_SIGNAL phase, it could result in a ban. Furthermore, nodes on both sides of a fork need to find each other to avoid competing with each other while catching up. This requirement is especially important when a chain where taproot is impossible to activate temporarily has more work. This same requirement may also be necessary for a signet feature that allows "optional reorgs" or mining blocks that will be reorganized out. The soon-to-be-stale blocks can be flagged so that the "don't-want-reorgs" nodes can easily ignore them, while the "I want to see reorgs!" nodes can connect with each other.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T00:47:28.218840+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

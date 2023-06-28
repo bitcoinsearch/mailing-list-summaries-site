@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Covenants and capabilities in the UTXO model</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2022-01-18 15:10:33
+            <br><i>Published on: 2022-01-18T15:10:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2022/combined_Covenants-and-capabilities-in-the-UTXO-model.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019768.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developer Bram Cohen discussed the controversial topic of adding covenants and capabilities to the UTXO model in a recent post on the bitcoin-dev mailing list. Cohen explained that full support for both capabilities and covenants can be added without changing the UTXO model by adding programmatic capabilities to the language and doing some programmatic tricks. Cohen also suggested adding special purpose opcodes for making coherent statements about transactions, as Bitcoin's current transactions are complex and hard to parse. Cohen acknowledged the controversy surrounding the implementation of covenants and capabilities, particularly regarding whether they should be opt-in or opt-out. He emphasized the importance of ensuring that recipients of payments with covenants fully understand them, as retroactive veto or clawback actions would be unacceptable behavior. Cohen also discussed the potential issue of implementing complex general purpose functionality, which tends to become very expensive very fast, and proposed ways to compress or de-duplicate snippets of code to save bandwidth and help Bitcoin scale better. He suggested having a specific set of pre-ordained script snippets that are given a shorthand that's stored in the software and explicitly shouldn't be transmitted long-hand. Another approach would involve nodes keeping an index of scripts or script snippets, and keep around ones that it sees most often. In terms of adding capabilities, Cohen suggested that for a UTXO to have a capability, its scriptpubkey asserts that its parent must either be the originator of that capability or also conform to the same parent-asserting format. More complex functionality such as supporting on-chain verifiable colored coins can also be done but it follows the same pattern: Capabilities are implemented as backwards pointing covenants. Overall, Cohen's suggestions aim to add covenants and capabilities while making very few compromises to practices Bitcoin has been following so far.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T03:46:52.886386+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Async payments proof-of-payment: a wishlist for researchers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2023-01-26 01:04:12
+            <br><i>Published on: 2023-01-26T01:04:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2023/combined_Async-payments-proof-of-payment-a-wishlist-for-researchers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003831.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email thread, the sender's challenge of receiving an invoice from the receiver when they are offline was discussed. The proposed solution involves a BIP340 signature of the message "Alice has paid me $50 -- signed Bob" with Bob's public signature nonce R. To avoid attacks via Wagner's algorithm, it is suggested to share (R1,R2) pairs and calculate R = H(P,R1,R2,m)*R1+R2. This process requires Bob to pre-generate a set of nonces and share the public part with Larry. To claim a nonce, Alice may have to make a micropayment to Larry. The setup also allows for separate LSPs: one to issue nonces while the recipient is offline and the other to hold onto incoming PTLCs. Previous discussions on this topic can be found in the provided links.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T11:30:15.626715+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

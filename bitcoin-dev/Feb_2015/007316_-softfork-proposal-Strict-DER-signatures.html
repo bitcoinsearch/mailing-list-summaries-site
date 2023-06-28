@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[softfork proposal] Strict DER signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2015-02-03 23:38:42
+            <br><i>Published on: 2015-02-03T23:38:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2015/combined_-softfork-proposal-Strict-DER-signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007316.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On February 3, 2015, Pieter Wuille proposed a one-line change to BIP66's DERSIG that would softfork. However, he has since retracted the proposal after Suhar Daftuas pointed out that there were still edge-cases that weren't covered. The goal was to ensure that signature validation and parsing could be entirely separated and that signature checking didn't require a third return value. The only guaranteed way to do this would be to require R and S to be within the range allowed by secp256k1, which would need an integer decoder inside the signature encoding checker. This was deemed unreasonable. Instead, a cleaner solution was proposed: only allow an empty byte vector as an invalid signature. This would align signature validity with decoding and be much simpler to implement.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:41:46.690395+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

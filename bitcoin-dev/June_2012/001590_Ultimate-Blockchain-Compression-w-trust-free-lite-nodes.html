@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ultimate Blockchain Compression w/ trust-free lite nodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2012-06-17 19:05:11
+            <br><i>Published on: 2012-06-17T19:05:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_Ultimate-Blockchain-Compression-w-trust-free-lite-nodes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001590.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a forum post about blockchain compression, Alan Reiner proposed using a special tree data structure to organize all unspent-TxOuts on the network, with the root of this tree being used to communicate its "signature" between nodes. The leaves of the tree correspond to addresses/scripts, and the data at the leaf is actually a root of the unspent-TxOut list for that address/script. The proposal provides the same compression as the simpler unspent-TxOut merkle tree but also gives nodes a way to download just the unspent-TxOut list for each address in their wallet and verify that list directly against the block headers. This enables even lightweight nodes to get full address information from any untrusted peer with only a tiny amount of downloaded data (a few kB). However, concerns were raised about potential deliberate unbalancing of the tree with addresses with chosen hashes. One suggestion was to discard any new address whose hash happens to be deeper in the tree than 10*log(n), indicating it was probably chosen to be unbalanced. Such a rule would mean that anyone playing games will find they can't spend their money and only with pruning clients, but unrelated people will not be affected. Another suggestion was to use a comparison function that works last bit first, which may be useful given the popularity of firstbits.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T05:37:07.547972+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

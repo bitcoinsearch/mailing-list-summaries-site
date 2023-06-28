@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-10-01 13:31:49
+            <br><i>Published on: 2019-10-01T13:31:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002180.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a recent Bitcoin development meeting, Christian Decker proposed revisiting the `sighash_noinput` proposal for rebinding of transactions to new outputs, as well as AJ's `bip-anyprevout` proposal. The proposals are complementary and not competing. However, concerns were raised about the potential foot gun that SIGHASH_NOINPUT introduces into the bitcoin protocol with address reuse. It is common practice for bitcoin businesses to re-use addresses, which could lead to an exchange's wallet being drained if a digital signature from a cold storage address was replayed on the blockchain multiple times.To address this issue, Christian Decker proposes allocating SegWit v1 Tapscript v16 for `SIGHASH_NOINPUT` instead of SegWit v16. Another proposal to address the issue is to make scripts used internally in protocols unaddressable by removing output tagging. Output tagging was also proposed as a way to disincentivize the use of non-smart-contract cases by making output scripts unaddressable. This involves specifying a version of taproot outputs for which the bech32 addressing scheme does not have a representation.However, both proposals raise concerns about potential downsides. Output tagging hurts fungibility, marking outputs used in a contract as such and making them identifiable. On the other hand, removing output tagging may not completely solve the issue of address reuse. Additionally, there are concerns about third-party malleability of transactions and the use of chaperone signatures to ensure that no third party can modify them. Chaperone signatures have downsides, including additional size and the fact that protocols can still use a globally known private key. The questions that remain to be addressed are the usefulness of noinput/anyprevoutanyscript/anyprevout beyond eltoo, whether there is strong support or opposition to chaperone signatures, the advantages and disadvantages of output tagging/explicit opt-in, and whether BIP-118 and bip-anyprevout should be merged. Overall, while some argue that the `sighash_noinput` proposal is easier from a procedural point of view, there are concerns about its potential risks and downsides that need to be carefully considered.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:29:01.734042+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

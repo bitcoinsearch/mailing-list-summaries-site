@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Fwd:  &#34;Compressed&#34; headers stream</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2017-09-04 14:06:44
-            <br><i>Published on: 2017-09-04T14:06:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2017/combined_Fwd-Compressed-headers-stream.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014904.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion on bitcoin-dev, Gregory Maxwell pointed out that there are several ways to reduce the number of bytes needed for block headers. These include reducing the frequency of changing the bits field, setting the timestamp to be no less than the median of the last 11 blocks and usually only slightly more than the last one, and noting that the block version is usually one of the last few. However, these improvements are just a constant factor. The compact SPV proofs described in the appendix of the sidechains whitepaper create log scaling proofs, but they only prove total work, not validity. OpenTimestamps plans to have infrastructure for trusted validity attestations. Timestamping has security issues when done via proof-of-work, since miners can set block times backwards, which could weaken security further. It is important to understand the risks before implementing compact SPV proofs. It may also be possible to reduce initial download bandwidth by shipping a known-good sum-merkle-tree tip hash with the software.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T15:14:14.932324+00:00 </i></p>
     
     
 

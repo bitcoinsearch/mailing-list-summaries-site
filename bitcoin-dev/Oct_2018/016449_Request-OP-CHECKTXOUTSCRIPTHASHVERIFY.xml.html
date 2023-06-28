@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Request: OP_CHECKTXOUTSCRIPTHASHVERIFY</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2018-10-17 05:17:15
-            <br><i>Published on: 2018-10-17T05:17:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2018/combined_Request-OP-CHECKTXOUTSCRIPTHASHVERIFY.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016449.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made for a new opcode, OP_CHECKTXOUTSCRIPTHASHVERIFY, which would allow a transaction output to be spendable only in a predetermined manner. The specification of the behavior of the opcode is P2SH-focused and is unusable for SegWit, but there are plans to include OP_CHECKSIGFROMSTACK, which could allow covenants more generally with more complex SCRIPT. For now, the proposed specification of the opcode is as follows: The OP_CHECKTXOUTSCRIPTHASHVERIFY will succeed if either of the below are true for all outputs of the transaction that is spending this SCRIPT: 1. It is a P2WSH whose SegWit version and hash, when concatenated together, are equal to the stack top. 2. It is a P2WSH or P2SH-P2WSH that is the same as the transaction output being spent. Otherwise, if any output does not match either of the above, this operation will fail. A sample use case for the opcode is presented, where a redeemScript is used to make an output spendable in a predetermined manner. The proposal aims to improve the security of transactions by allowing retroactive invalidation in different and less interactive ways from channels.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T15:06:22.242990+00:00 </i></p>
     
     
 

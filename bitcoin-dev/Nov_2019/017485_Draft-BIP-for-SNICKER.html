@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP for SNICKER</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> AdamISZ 2019-11-22 14:02:56
+            <br><i>Published on: 2019-11-22T14:02:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Draft-BIP-for-SNICKER.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017485.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development mailing list, Riccardo Casatta proposed a solution to the "watch-only issue" in CoinJoin transactions. He suggested that the proposer creates two transactions: the CoinJoin transaction and another encrypted 1-to-1 transaction that spends their output to another of their key. When the receiver accepts the proposal, they can create their own 1-to-1 transactions spending their tweaked output to pure bip32 derived keys. The proposer and receiver could then broadcast the CoinJoin transaction and their corresponding 1-to-1 transactions together. This would result in the receiver having only bip32 derived outputs. However, AdamISZ, who responded to the email, stated that he inclined not to add this complexity due to cost implications and said that it would be way more complicated than what they were considering at the moment. AdamISZ also discussed the watch-only issue in CoinJoin transactions, stating that the key tweak (`c` as per draft BIP) must be known by both the Proposer and Receiver but not by anyone else. The classic watch-only use case of monitoring a wallet in real-time with no private key access is incompatible with this. For the recovery process, he suggested a small amount of round-trip communication between the hot wallet and the cold wallet since anyone using SNICKER with a watching-only wallet must regularly interact with their cold wallet anyway to sign the coinjoins. He noted that on-going discovery of addresses is required for many use cases for watch-only wallets. AdamISZ also made some general comments about AES-GCM vs AES-CBC and the security of the construction for a Receiver from a Proposer who should be assumed to be an attacker.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:08:11.872331+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

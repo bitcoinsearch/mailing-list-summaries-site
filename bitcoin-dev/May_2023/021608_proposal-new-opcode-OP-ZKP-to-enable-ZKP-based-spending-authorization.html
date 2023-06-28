@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>proposal: new opcode OP_ZKP to enable ZKP-based spending authorization</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2023-05-02 15:01:01
+            <br><i>Published on: 2023-05-02T15:01:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_proposal-new-opcode-OP-ZKP-to-enable-ZKP-based-spending-authorization.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021608.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation discusses the aggregation of transaction proofs or recursively verifying transactions. It is questioned whether miners should be responsible for this aggregation, as it would require all fullnodes to also perform non-aggregated validation. The cost of this non-aggregated validation must be reflected in the weight and affects all fullnodes since they are considered miners with zero hashpower. To avoid increasing the cost on fullnodes, the suggestion is made to create a separate network for aggregation that does not involve Bitcoin fullnodes. Fees can then be extracted for aggregation and already-aggregated transactions can be validated in the Bitcoin mempool. It is noted that validation occurs when a transaction enters the mempool and is not re-run when an in-mempool transaction is seen in a block. The goal is to limit the validation of non-aggregated transactions by increasing the weight of heavy-validation transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:03:26.779564+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

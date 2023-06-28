@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Coins: A trustless sidechain protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-01-13 00:21:42
+            <br><i>Published on: 2020-01-13T00:21:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2020/combined_Coins-A-trustless-sidechain-protocol.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017558.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author explains why they stopped considering sidechains for scaling and moved to Lightning Network development. They realized that sidechains do not scale, even with stakes anchored on the mainchain because they require everyone interested in it to propagate all their transactions to everyone else interested in it. On the other hand, Lightning Network allows selecting only a tiny handful of nodes to inform about your payment. The author also points out that Lightning Network channels are cryptocurrency systems with two users and that Lightning Network payment routing is just the use of cross-channel atomic swaps to convert between channelcoins. The author suggests that sidechains can be replaced with a mechanism that does not give custody to funds to anyone else. The collateral contract can be implemented with a simple `OP_CHECKSEQUENCEVERIFY OP_DROP  OP_CHECKSIG` with a single-signature used at the consensus layer for the sidechain. The author further explains that if the pubkey is used in a single-sign signature scheme (which reveals the privkey if double-signed), then at the end of the period, anyone who saw the double-signing can claim that fund and act as "Bob." The author also mentions that many "Bobs" will act and claim this fund, increasing the fee each time to try to get their version onchain. Eventually, some "Bob" will just put the entire fund as a fee and put a measly `OP_RETURN` as a single output, donating it to miners. The author concludes that Alice has a vanishingly low chance of spending the fund after the collateral period ends, and cannot plausibly bribe a miner since the miner could always get more funds by replacing the transaction internally with a spend-everything-on-fees `OP_RETURN` output transaction. Additionally, a `OP_CHECKTEMPLATEVERIFY` would work better for this use-case, but even without it, you do not need a *single* *tr\*sted* Bob to implement the collateral contract.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:10:56.959743+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

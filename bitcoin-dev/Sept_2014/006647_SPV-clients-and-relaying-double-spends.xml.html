@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>SPV clients and relaying double spends</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Matt Whitlock 2014-09-26 02:16:43
-            <br><i>Published on: 2014-09-26T02:16:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2014/combined_SPV-clients-and-relaying-double-spends.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-September/006647.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Aaron Voisine, the founder of breadwallet.com, suggested having nodes relay double-spends to alert the network about double spend attempts. This would help SPV clients that cannot detect double spends on their own. However, there was a concern that an attacker could flood the network with millions of spends of the same output(s), overwhelming nodes with slower connections. To prevent this, after two attempts to spend the same output, no further transactions spending that same output should be relayed. Aaron also proposed that nodes send BIP61 reject messages or something similar to indicate which transactions they believe to be invalid but are relaying anyway. This would increase the cost of performing a 0 confirmation double spend attack on an SPV client above just relaying double-spends without indicating if a node believes the transaction to be valid. However, this would be subject to sybil attacks.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T02:44:56.930368+00:00 </i></p>
     
     
 

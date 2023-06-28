@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Can we penalize peers who relay rejected replacement	txs?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Whitlock 2015-07-10 01:12:14
+            <br><i>Published on: 2015-07-10T01:12:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Can-we-penalize-peers-who-relay-rejected-replacement-txs-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009369.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The concept of "replace-by-fee" allows for transactions with higher fees to be accepted over those with lower fees. It is not possible to determine which transaction is the "replacing" transaction and which is/are the "replaced" transaction(s) based on the order in which they were received, as the order is not defined in the mempool. On July 9, 2015, Raystonn pointed out that it is a mistake for RBF to assume a transaction with a lower fee is invalid. He noted that if someone paid a higher fee for a one-hour confirmation in the current congestion, they may want to drop back to a lower fee if the spam attack stops. Matt Whitlock mentioned that he was running his full node with Peter Todd's full replace-by-fee patch set and seeing a lot of messages in the log about replacement transactions being rejected due to their paying less in fees than the transactions they would replace. He suggested penalizing peers who relayed the offending transaction and temporarily banning them if the penalty builds up enough, similar to how other "misbehaving" peers are treated.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:15:08.358391+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

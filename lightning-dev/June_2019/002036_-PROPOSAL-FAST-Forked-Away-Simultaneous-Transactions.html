@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PROPOSAL]: FAST - Forked Away Simultaneous Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-06-25 22:32:42
+            <br><i>Published on: 2019-06-25T22:32:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2019/combined_-PROPOSAL-FAST-Forked-Away-Simultaneous-Transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002036.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network community is discussing an idea proposed by Ugam Kamat which involves simultaneous payment to multiple parties using the same partial route. The scenario presented is of Alice wanting to pay the bill amount to Eric, the restaurant owner and a tip to Grace, her waiter. In the current situation, Alice would have to send two payments to Eric and Grace. However, if they repurpose the onion blob in the same way as needed for spontaneous payments, there will be no path duplication. Dave would split the payments, one to Eric and the other going to Grace through Frank. The pre-image used in commitments A->B, B->C and C->D will be a function of pre-images P1 of D->E and P2 of D->F and F->G such that PM = f(P1, P2). This proposal works in a similar fashion to the Spontaneous Payment proposal, by packing additional data in the unused hops. The first byte would indicate how many hashes are packed, so the payload can be 64 + 33 bytes = 97 bytes. The first hop tells D the short-channel id, the amount to forward, CLTV and the padding. Since the pre-image is 32 bytes, it can be packed in one single hop that is received by the final party. This leaves the remaining 7 hops that can be used for routing.Under Scriptless Script (payment point / scalar), this is possible to do while retaining a form of proof-of-payment. However, note that the proof-of-payment scalar will be the sum of Eric and Grace proof-of-payment scalars. It is uncertain if that provides undeniable proof that you paid Grace or Eric. One solution would be to route through Eric and leave Eric with a higher-than-normal fee, which retains an undeniable proof-of-payment of Grace. Eric would not provide proof-of-payment, but in this scenario, given it seems, it is a "tip" and the actual payment is to the restaurateur Grace. In any case, this is effectively simply creation of fork points and join points along a multipart path. That the payment does not later join is merely a detail, especially once we get to "high" AMP (which requires payment points / scalars). We decided at the previous dev summit not to implement this due to complexity-of-implementation for payers, as well as how to resolve when one branch fails while the other branch claims the payment.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T19:00:34.720579+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

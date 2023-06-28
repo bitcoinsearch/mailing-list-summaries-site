@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Minor tweaks to blinded path proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-11-19 13:57:11
+            <br><i>Published on: 2020-11-19T13:57:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2020/combined_Minor-tweaks-to-blinded-path-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002880.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Rusty Russell and Bastien, Rusty asks if additive tweaks can be used instead of multiplicative ones in the lightning network. He suggests that additive tweaks are faster and supported by x-only secp API. Bastien agrees and proposes to replace `B(i) = HMAC256("blinded_node_id", ss(i)) * P(i)` with `B(i)=HMAC256("blinded_node_id", ss(i)) * G + P(i)`. However, he also mentions that he is unsure about the security of the tweak and whether it is as secure as the multiplicative version. Rusty also questions the use of x-only pubkeys, which are generally shorter and easier to use. Bastien agrees that they can be used if it's trivial, but it's not worth any additional effort if it's not. Overall, the conversation revolves around finding ways to improve the efficiency and security of the lightning network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:58:07.810019+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

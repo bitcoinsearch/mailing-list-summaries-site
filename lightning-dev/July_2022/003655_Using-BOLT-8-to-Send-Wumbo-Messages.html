@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using BOLT 8 to Send Wumbo Messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thibaut Le Guilly 2022-07-04 00:29:14
+            <br><i>Published on: 2022-07-04T00:29:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2022/combined_Using-BOLT-8-to-Send-Wumbo-Messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003655.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about specifying a way to send messages larger than 65 KB using BOLT 8 (Noise based encrypted transport), Thibaut shared his motivation for having the segment explicit. One of the reasons was to handle disconnects/reconnects without requiring access to the low level network layer. Additionally, Christian Decker mentioned the ability to send an urgent message in the middle of sending a large one. However, Thibaut does not have a strong opinion on what is the best and believes it would be nice to use something similar in LN to reduce the need for maintaining multiple things. Olaoluwa Osuntokun clarified that it is possible to send large messages without adding any new application layer messages. The sender can chunk their messages, and the receiver reads out messages into a read buffer exposed over a stream-like interface. This method is no different from using TCP/IP to send a 65 KB message over the wire. This behavior was actually in the original spec but was removed to make things simpler. To re-introduce this behavior, a new wumbo message feature bit could be added to indicate that a peer knows how to properly chunk and aggregate larger messages. The discussion was held among the dlcspecs developers and other contributors who provided comments and feedback. Links were provided to relevant discussions and commits related to the topic.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:36:57.866451+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

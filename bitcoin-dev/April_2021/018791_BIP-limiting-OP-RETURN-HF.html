@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP - limiting OP_RETURN / HF</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2021-04-16 13:56:11
+            <br><i>Published on: 2021-04-16T13:56:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_BIP-limiting-OP-RETURN-HF.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018791.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent proposal sent to the Bitcoin-dev mailing list, Christopher Gilliard suggests adding limitations on OP_RETURN transactions. However, this proposal is a soft-fork, not a hard-fork. The proposal is problematic because users who want to embed arbitrary data in their transactions can always do so by encoding their data inside the values of legacy multi-signature scriptpubkeys. This behavior is problematic because such multi-signature "data" scriptpubkeys are indistinguishable from "real" multisignature scriptpubkeys and must be kept in the unspent transaction output (UTXO) set, whereas outputs using OP_RETURN are provably unspendable and therefore can be safely omitted from the UTXO set. The proposal encourages people to use OP_RETURN outputs to avoid UTXO bloat since it is otherwise impossible to stop people from putting arbitrary data values into their transactions. Additionally, fees already nudge various participants to consolidate their data in the way that the proposal suggests they do. While the proposal has been made, there is currently no consensus or decision on whether to implement it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:06:43.977670+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

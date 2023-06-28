@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Combining SPV and Stealth addresses</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Henning Kopp 2017-05-06 09:38:06
-            <br><i>Published on: 2017-05-06T09:38:06+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2017/combined_Combining-SPV-and-Stealth-addresses.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014271.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the combination of stealth addresses with Simplified Payment Verification (SPV), allowing for privacy on smartphones without losing anonymity. SPV involves a thin client putting their public keys in a bloom filter and asking a full node to provide Merkle proofs of all transactions whose pubkey are in the bloom filter. This gives privacy to the thin client, as the full node cannot detect if a specific transaction belongs to them. Stealth addresses allow for receiver privacy, where the sender derives a one-time pubkey to which they send the money, and the receiver can recover the one-time private key. The problem arises when checking if a payment belongs to a pubkey (Q,R), as the full node needs to check if R' = R + H(dP)*G for each transaction, requiring the scanning key d. Multiparty computation may be possible in theory, but it's costly, so the community is seeking better ideas for combining stealth addresses with SPV.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T00:38:12.028078+00:00 </i></p>
     
     
 

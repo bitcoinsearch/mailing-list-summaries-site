@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trying to patch Core ZMQ &#34;rawtx&#34; topic to only publish unconfirmed transactions: How?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> LORD HIS EXCELLENCY JAMES HRMH 2021-11-29 14:10:11
+            <br><i>Published on: 2021-11-29T14:10:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2021/combined_Trying-to-patch-Core-ZMQ-rawtx-topic-to-only-publish-unconfirmed-transactions-How-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019612.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread on the bitcoin-dev mailing list discusses an issue with the ZeroMQ topic "rawtx," which emits a raw transaction when it appears on the mempool. However, it also emits the same transaction once it's already confirmed, causing problems with software that de-duplicates arrays. The proposed solution is to instruct Core to only publish unconfirmed transactions, but it requires editing the source code as there are no configuration or command-line options available. A draft PR has been opened to add a rawmempooltx publisher, but changes to the chain notifications in interfaces/chain.h would be required for a mempool transaction publisher with both the raw transaction and transaction fee. There is a discussion on which function should be patched in src/zmq/zmqnotificationinterface.cpp to only publish unconfirmed transactions, and Jonas Schnelli's suggestion of adding an `if (!pblock)` check from several years ago is no longer applicable as the function he was referencing no longer exists.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T03:02:29.897639+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

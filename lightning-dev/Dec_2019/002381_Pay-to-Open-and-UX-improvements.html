@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pay-to-Open and UX improvements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2019-12-17 08:34:07
+            <br><i>Published on: 2019-12-17T08:34:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Pay-to-Open-and-UX-improvements.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002381.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning network's onboarding process could be made smoother, according to a post on the mailing list by Bastien, who has been experimenting with pay-to-open using Phoenix. While it provides a great user experience for newcomers, it requires temporary trust between the user and the node until the funding transaction confirms. There are two places where the trust relationship appears: first, the user releases the preimage and then the channel is funded, and secondly, the user trusts that the funder will not double-spend the funding transaction.Presently, there is a need for the first scenario as it cannot be ensured that the user will reveal the preimage once the channel has been funded. This can be fixed easily once Bitcoin supports Schnorr. If PTLCs are used (where the secret is a private key) along with MuSig for channel funding transactions, then when Alice receives a PTLC to forward to Bob, if she doesn't have a channel to Bob and Bob supports pay-to-open, she can initiate a tweaked channel opening flow. Alice can use tlv extensions in the open_channel message to tell Bob that this channel is linked to a PTLC with point `X = x*G`. Bob will tweak the MuSig nonce with `X` and provide Alice with a partial signature for that nonce. When Bob provides the adaptor signature to finalize the funding transaction, it reveals `x` to Alice who can now fulfill the PTLC downstream. It must be noted that in this simple version, Alice knows the nonce tweak beforehand, which may or may not be a security issue.Bastien is more concerned about fixing the second scenario, i.e., double-spending by the funder while the funding transaction is unconfirmed. He is trying to figure out possible solutions for this and is calling for ideas that could help. The incentives can be set up so that it's never rational for the funder to double-spend.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:28:18.095249+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

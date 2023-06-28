@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reduced signalling threshold activation of existing segwit deployment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James Hilliard 2017-05-23 20:42:46
+            <br><i>Published on: 2017-05-23T20:42:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Reduced-signalling-threshold-activation-of-existing-segwit-deployment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014401.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made by James Hilliard to activate Segregated Witness (segwit) at an 80% threshold, signaling at bit 4, in a way that minimizes chain split risk and network disruption while maximizing backwards compatibility and still providing for rapid activation of segwit at the 80% threshold using bit 4. The proposed implementation would accomplish the first part of the Barry Silbert proposal independently from the second. By activating segwit immediately and separately from any hard fork, the goal is to scale quickly without risking a rushed combined segwit+HF that would almost certainly cause widespread issues. This document specifies a method to activate the existing BIP9 segwit deployment with a majority hashpower less than 95%. Segwit increases the blocksize, fixes transaction malleability, and makes scripting easier to upgrade as well as bringing many other benefits. While this BIP is active, all blocks must set the nVersion header top 3 bits to 001 together with bit field (1> existing segwit deployment). Blocks that do not signal as required will be rejected. This deployment is compatible with the existing "segwit" bit 1 deployment scheduled between midnight November 15th, 2016 and midnight November 15th, 2017. Miners will need to upgrade their nodes to support segsignal otherwise they may build on top of an invalid block.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T01:09:34.187707+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

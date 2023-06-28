@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>bitcoind stops responding</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gavin Andresen 2013-10-04 06:22:34
-            <br><i>Published on: 2013-10-04T06:22:34+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2013/combined_bitcoind-stops-responding.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003324.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email correspondence on October 1, 2013, slush reported that one process was asking getinfo every second as a fallback to possibly misconfigured blocknotify. Additionally, it called getblocktemplate every 30 seconds. However, with version 0.9, users will be able to use getbestblockhash instead of getinfo which has a wider range of functions. Another process was calling getinfo once a minute to check if bitcoind was working. If there was no response within a minute, the process would kill bitcoind and restart it. Gavin Andresen suggested using 'help getinfo' to see if bitcoind was responding to RPC requests without acquiring any locks. Furthermore, users running into the maximum-of-4-keepalive-requests issue were advised to run with -rpcthreads=11 or however many keepalive connections they needed to support to avoid the problem. Gavin Andresen suggested that the rpc code should be smarter, and making the last rpc thread ignore keepalive and always disconnecting should be a simple patch. He added that patches were welcome.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-07T17:12:12.338507+00:00 </i></p>
     
     
 

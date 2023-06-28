@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Pinging a route for capacity</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> René Pickhardt 2018-03-01 15:26:22
-            <br><i>Published on: 2018-03-01T15:26:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2018/combined_Pinging-a-route-for-capacity.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-March/001059.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A new participant in the Lightning development community shared their ideas on a problem posed by another member regarding channel capacity. The new member suggested IP-Fragmentation, splitting IP-packages to utilize a link layer protocol with insufficient bandwidth, to solve the problem of insufficient channel balance during routing. They proposed sending the second part of the fragmented payment through a different route encapsulated within a new onion routed package and discussed the impact on HTLC. They added that this method would be more dynamic than the proposed ping method, which could result in payment failures due to channels running dry after a successful ping. The original problem was about choosing the best route for sending funds over, but the proposed solution involved determining all possible routes, ranking them by estimated fees based on channel announcements, and trying them successively until one works. An idea to send a ping over an onion route asking if every hop has sufficient capacity before sending the payment was also discussed. The ping would reveal no additional information about channel capacities and could make payments quicker and cheaper. However, it may also allow someone to extract information about channel capacities on the network with a binary search.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T21:23:35.813263+00:00 </i></p>
     
     
 

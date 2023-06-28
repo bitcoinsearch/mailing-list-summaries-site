@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>URI scheme for signing and verifying messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2015-09-15 12:08:57
+            <br><i>Published on: 2015-09-15T12:08:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_URI-scheme-for-signing-and-verifying-messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011009.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Luke Dashjr expressed his concern about the need to rethink the current signed message process in Bitcoin. He believes that most of its common uses are insecure and not working properly, especially in proving ownership or sending bitcoins. He also suggested that a new method should be designed to avoid using the same key for signing transactions. Furthermore, as addresses are losing their importance due to the payment protocol, it may be necessary to design an entire authentication system, which could be complex. Arthur from bitcoin-fr.io proposed giving users easier access to existing tools, including the current signing process, even though it is not perfect. However, Luke Dashjr cautioned that making the existing signatures even easier could increase overall risk by causing incompatible uses to become more accepted. Instead, he recommended satisfying existing use cases with a safe signature first.Regarding privacy concerns, Luke explained that the signed message proves that the person who receives payment with the address agrees to a given message/contract. It is best practice for web wallet providers to allow users to sign messages with their deposit addresses. However, such a signature does not prove that the user presently still has the bitcoins received as the UTXO representing the bitcoins in the wallet is not associated with the address itself. Additionally, the UTXO can be redeemed at a low-level by the wallet when an entirely unrelated user is sending a transaction, making it possible for the original recipient of the bitcoins to sign a message even though they have nothing to do with nor any right to the goods/services purchased with the transaction redeeming that UTXO.Although there are some good use cases for the current signed messages, they appear to be a minority. Implementing any URI-based signing would actually make them more difficult as well, since it is additional code on the requester's part.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:26:46.571331+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

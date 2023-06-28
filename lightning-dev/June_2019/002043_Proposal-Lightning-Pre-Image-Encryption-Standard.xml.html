@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Lightning Pre-Image Encryption Standard</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-06-26 06:12:39
-            <br><i>Published on: 2019-06-26T06:12:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2019/combined_Proposal-Lightning-Pre-Image-Encryption-Standard.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002043.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation, ZmnSCPxj suggests splitting up large data into chunks and applying FEC-encoding to each chunk with a separate MAC. This would allow for the recovery of data in case of errors during transmission without having to re-download the entire dataset. The reason for this approach is that decryption is required before confirming the MAC, so if the MAC fails for a chunk, it's better to recover data from nearby chunks rather than re-downloading and re-decrypting the entire dataset. In another email, Stepan Snigirev and Nadav discuss how to simplify the process of decrypting stream data by having Sally use a scalar to generate a point with a fixed sign. This would eliminate the need for Bob to attempt both positive and negative signs for the y-coordinate. ZmnSCPxj agrees with both ideas presented in the conversation.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T19:10:40.766127+00:00 </i></p>
     
     
 

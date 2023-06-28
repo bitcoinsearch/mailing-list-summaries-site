@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Linux packaging letter</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Luke-Jr 2013-07-23 22:26:44
-            <br><i>Published on: 2013-07-23T22:26:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2013/combined_Linux-packaging-letter.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002985.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation revolves around the consensus of upstream developers that any distributed binary should only be linked against libraries that Bitcoin developers have tested and audited. Debian bitcoind/bitcoin-qt runs the compile test during all architectures but it needs to be audited by someone who understands the issues and can dedicate competent time to it. The bundled/embedded LevelDB is the best solution as using other libraries requires a lot of additional work for the maintainers of the library packages, and the security team. MIPS has always failed on the Satoshi codebase and will not be supported until someone dedicates time to fixing the numerous little-endian assumptions in the code. All patches are public, patches to build systems and adding debug messages are not problematic. However, it is essential to ensure that patches do not harm both the network and user. There are two solutions; no one besides the upstream developers compiles and distributes binaries, ever, or upstream comes up with a system where someone besides them can compile working binaries for distribution. Debian could probably package Bitcoin-Qt and bitcoind as-is with no modifications.  Using Gitian, anyone can produce bit-for-bit identical binaries. Official releases are only published after three or more people have done an independent compile and signed the output. Achieving this level of security would make distributing Bitcoin node software much safer.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-07T14:31:24.518896+00:00 </i></p>
     
     
 

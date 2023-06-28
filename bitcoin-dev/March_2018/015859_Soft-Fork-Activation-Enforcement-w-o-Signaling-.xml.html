@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Soft Fork Activation &amp; Enforcement w/o Signaling?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jorge Timón 2018-03-30 20:52:50
-            <br><i>Published on: 2018-03-30T20:52:50+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2018/combined_Soft-Fork-Activation-Enforcement-w-o-Signaling-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015859.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread between Samad Sajanlal and Jorge Timon discusses the possibility of activating soft forks, such as BIP65 and BIP66, without prior signaling from miners. Samad is working on a project that is a clone of a clone of Bitcoin and intends to upgrade the codebase to at least version 0.15 to implement SegWit and other features introduced by Bitcoin. Jorge Timon confirms that it is possible to activate softforks at a given height and recommends reading bip34 to understand what it activates in the code. He also suggests upgrading directly to version 0.16 and mentions that block version bumping was a mistake in bip34 and that there is no need to bump the version number. Samad notes that since versions 0.15 and 0.16 use block versions as 0x20000000, while their current deployed codebase (based on Bitcoin 0.9.4) makes versions 0x00000002, it appears safe to activate soft forks which require a minimum of version 3 and 4 blocks (0x00000003 and 0x00000004, respectively). Samad asks if they can skip over signaling and go straight into activation/enforcement if the entire network upgrades to the correct version of the software, based on Bitcoin 0.15, which includes the block height that has enforcement. Jorge agrees that they don't need to lose those bits like Bitcoin by imposing that the version is greater than that. However, he suggests that just doing the same is simpler. Finally, Samad asks another related question about whether the block version gets bumped up automatically at the time that a soft fork activates or if there is additional stuff that needs to be done within the code to ensure that it bumps up at the same time. Overall, the email thread provides insight into the technical aspects of implementing soft forks in a Bitcoin codebase.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T01:09:39.511591+00:00 </i></p>
     
     
 

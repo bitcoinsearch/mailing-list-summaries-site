@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving Payment Latency by Fast Forwards <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/April_2019/001986_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2019-04-24 08:32:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003049_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>Lloyd Fournier 2021-06-07 03:21:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003054_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>Lloyd Fournier 2021-06-13 04:12:36</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2021/003043_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-05-31 09:46:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003045_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>Lloyd Fournier 2021-06-02 01:45:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003047_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-06-02 02:45:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003048_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-06-02 03:30:35</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003060_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-06-20 00:30:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2021/003038_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-05-23 07:26:30</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2021/003040_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>Lloyd Fournier 2021-05-24 05:53:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003050_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-06-08 02:37:27</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2021/003039_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-05-23 18:48:37</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2021/003041_Improving-Payment-Latency-by-Fast-Forwards.html">Improving Payment Latency by Fast Forwards</a>
+                        <b>ZmnSCPxj 2021-05-24 07:04:27</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2019-04-24T08:32:26+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email exchange revolves around various aspects of Lightning Network proposals, their potential risks and benefits, and practical approaches to handling funds in a fast-forward state. One proposed solution to improve payment latency is the "fast forward" technique, which reuses the revocation path to root a new transaction to propagate failed payments via 'update_fail_htlc'. However, this technique increases the risk of unilateral close after fast-forward or fast-fail, and additional transactions need to be put on-chain, beyond just the commitment transactions, which require fees.ZmnSCPxj suggests a variant of the Decker-Russell-Osuntokun technique that does not require additional encumbrance at the outputs. Another advantage of eltoo fast forwards over the Poon-Dryja Fast Forwards is that they do not require building up a long chain of HTLC transactions. The conversation explores the benefits of eltoo fast forwards and how it could lead to a new type of custodial Lightning Network provider.One suggestion to handle funds in a fast-forward state is to implement an "ask first" 3 round protocol, and another is to have `remote_penaltyclaimpubkey` owned by the node instead of the hardware device. However, it is noted that funds in the fast forward state are more vulnerable than the main channel balance during that time because their keys are not in a secure device.The conversation also highlights security vulnerabilities in lightning network transactions, such as signature-deletion attacks that can result in hostage-taking of funds if necessary mitigations are not taken. Hostaging of funds occurs when one participant loses the ability to unilaterally close, which can happen if certain keys are revealed to an attacker.ZmnSCPxj shares a link to a presentation that explains fast forwards, and LL offers their own perspective on how offering a fast forward HTLC works. ZmnSCPxj suggests an asymmetric protocol, where the offerer creates and signs a new commitment tx with the HTLC and patches their balance output by sending a transaction to a new tx which contains the HTLC output and their balance output unencumbered.Overall, the email exchange discusses various aspects of Lightning Network proposals and their potential risks and benefits, exploring different options for practical approaches to handling funds in a fast forward state. The conversation also sheds light on security vulnerabilities in lightning network transactions and suggests ways to mitigate them.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T21:54:14.875991+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Coinjoin with less steps using ALL|ANYONECANPAY <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2023/021701_Coinjoin-with-less-steps-using-ALL-ANYONECANPAY.html">Coinjoin with less steps using ALL|ANYONECANPAY</a>
+                        <b>Lucas Ontivero 2023-05-23 12:17:23</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2023/021702_Coinjoin-with-less-steps-using-ALL-ANYONECANPAY.html">Coinjoin with less steps using ALL|ANYONECANPAY</a>
+                        <b>alicexbt 2023-05-23 12:34:03</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2023/021696_Coinjoin-with-less-steps-using-ALL-ANYONECANPAY.html">Coinjoin with less steps using ALL|ANYONECANPAY</a>
+                        <b>alicexbt 2023-05-22 12:51:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2023/021698_Coinjoin-with-less-steps-using-ALL-ANYONECANPAY.html">Coinjoin with less steps using ALL|ANYONECANPAY</a>
+                        <b>Ben Carman 2023-05-22 22:51:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2023/021703_Coinjoin-with-less-steps-using-ALL-ANYONECANPAY.html">Coinjoin with less steps using ALL|ANYONECANPAY</a>
+                        <b>alicexbt 2023-05-23 12:48:02</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021701.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2023-05-23T12:17:23+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A Bitcoin developer has suggested using the ALL|ANYONECANPAY sighash flag in CoinJoin to reduce some steps in the process. This method involves registering outputs and creating a signed PSBT with one input, all registered outputs, and the sighash flag. Other participants then add their inputs to the PSBT before finalizing and broadcasting the transaction. However, this approach may compromise CoinJoin's privacy benefits by allowing lower fee rates and different input types or amounts, as well as the potential for banned inputs and DoS attacks in later stages of the coinjoin round.To mitigate these risks, client-side validation can be used, and certain types of inputs can be disallowed. The code for verifying psbt on the client side in ln-vortex was provided as an example. Joinstr will use NIP38/48 channels for CoinJoin rounds to ensure only participants in a CoinJoin round are aware of details. A proof of concept using ALL|ANYONECANPAY to reduce steps in coinjoin was presented, and the sender plans to use this method in joinstr if there are no major drawbacks and it can be implemented by other coinjoin implementations.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-16T18:38:32.062525+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

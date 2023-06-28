@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unlimited covenants, was Re: CHECKSIGFROMSTACK/{Verify} BIP for Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-07-05 05:04:21
+            <br><i>Published on: 2021-07-05T05:04:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_Unlimited-covenants-was-Re-CHECKSIGFROMSTACK-Verify-BIP-for-Bitcoin.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019209.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion around enabling covenants is centered on whether OP_CAT should be allowed or not. Multisig alone can enable recursive covenants, as a government could require that funds be deposited into a multisig of "2   2 CHECKMULTISIG" and that the recipient has gone through KYC. In this scenario, the government can refuse to sign with gov_key unless the funds are being spent to a new address that follows the same rules. This approach is already used by Liquid, which locks bitcoins into a multisig and enforces an off-chain covenant that those bitcoins can only be redeemed after some valid set of signatures are entered into the Liquid blockchain. BTC-on-Ethereum tokens and coins held in exchanges/custodial wallets also use similar approaches. In essence, escaping from this type of recursive covenant would require a change in signing policy by the government (or Liquid functionaries, or exchange admins). However, one could equally escape any consensus-enforced covenant by having a hard fork to stop doing consensus-enforcement. This difference appears to be more of a procedural and difficulty-based issue than a fundamental difference in kind.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T03:13:29.131110+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

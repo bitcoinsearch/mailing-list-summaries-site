@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC - BIP: URI scheme for Blockchain exploration</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Marco Pontello 2015-11-15 02:14:44
+            <br><i>Published on: 2015-11-15T02:14:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_RFC-BIP-URI-scheme-for-Blockchain-exploration.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011763.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed new URI for Blockchain references/exploration aims to enable users to handle all the requests for details about blocks, transactions, etc. with their preferred tool by providing a simple URI scheme. Marco Pontello collected feedback, reworked the text, put the BIP on GitHub, and created a pull request. The need for a URI for this is evident in services like Eternity Wall, which provides a use case that we will see more of in the future. Using that service, when you want to check for the proof that a specific message was written in the Blockchain, it lets you choose from 5 different explorers. Mycelium wallet recently added the option to select one of 15 block explorers, and there's the crypto_bot on reddit/r/bitcoin that detects reference to transaction and adds a message with links to 7 different explorers. The URI follows a simple form: blockchain:, and examples are provided. Marco Pontello thought about using some more complex scheme, but keeping it simple should be practical enough. Blockchain explorers can apply the same disambiguation rules they are already using to process the usual search box. From the point of view of a wallet developer (or other tool that needs to show any kind of Blockchain references), using this scheme means that he can simply make it a blockchain: link and be done with it, without having to worry about any specific Blockchain explorer or provide a means for the user to select one. Blockchain explorers in turn will simply offer to handle the blockchain: URI, the first time the user visits their website, or launch/install the application, or even set themselves if there isn't already one. Users get the convenience of always using their preferred explorer, which can be especially handy on mobile devices, where juggling with cut&paste is far from ideal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T21:13:15.905180+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

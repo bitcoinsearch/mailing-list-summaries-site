@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2018-07-05 22:06:53
+            <br><i>Published on: 2018-07-05T22:06:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_BIP-174-thoughts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016202.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation revolves around the safety concerns of allowing combiners to arbitrarily choose a value. It is stated that conflicts in UTXOs, sighash type, redeem/witness scripts, derivation paths, etc. can cause recoverable or unrecoverable errors and sometimes indicate malicious activity. The safest option is to reject conflicts but allow intelligent processing by combiners if they understand the relevant fields. Two possible topologies for multiparty signing are explained where a PSBT T is turned into T1 and T2 by signers 1 and 2, respectively, then combined into T12 by a combiner in topology B. The only case where malicious conflicting values can occur is when one of the signers produces an invalid signature or modifies any of the other fields present in the PSBT. It is said that combiners can always be replaced with just a different topology of data flow. The worst that can happen is an invalid signature caused by intentionally or unintentionally created incorrect fields in a PSBT. Additional sanity checks for known fields can be implemented to catch such errors early. Rejecting invalid fields doesn't matter as an attacker can always drop the fields you don’t understand before giving you the PSBT. A suggestion is made to have fields with an explicit flag bit that says "Don't sign if you don't understand this," but it can be left for future extensions. A rule like "if the highest bit of the field type is set, don't sign" could be used, but there is no current field where such a flag would be necessary right now.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:08:10.833111+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

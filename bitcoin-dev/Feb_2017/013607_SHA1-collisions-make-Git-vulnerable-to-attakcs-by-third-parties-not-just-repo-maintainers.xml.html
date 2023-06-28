@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>SHA1 collisions make Git vulnerable to attakcs by third-parties, not just repo maintainers</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Aymeric Vitte 2017-02-23 23:57:45
-            <br><i>Published on: 2017-02-23T23:57:45+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2017/combined_SHA1-collisions-make-Git-vulnerable-to-attakcs-by-third-parties-not-just-repo-maintainers.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013607.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The impact of SHA1 collision attack on Git is not limited only to maliciously colliding Git commits, but also third-party's submitting pull-reqs containing commits, trees, and especially files for which collisions have been found. This is likely to be exploitable in practice with binary files, as reviewers aren't going to necessarily notice garbage at the end of a file needed for the attack. It is suggested that the most concerning avenue of attack is likely to be tree objects, as it can be constructed with garbage at the end that many review tools don't pick up on. Trees are supposed to extend, which means you can perform progressive hash operations on the objects. The intermediary hash state is kept each time instead of hashing the intermediate hash of the objects. The Tor protocol is an example of implementing this technique which is not existing in any crypto implementations unless hacked into and applies to progressive encryption too.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T21:46:36.194683+00:00 </i></p>
     
     
 

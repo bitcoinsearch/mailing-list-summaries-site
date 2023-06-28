@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Outbound connections rotation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ivan Pustogarov 2014-08-18 20:33:43
+            <br><i>Published on: 2014-08-18T20:33:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_Outbound-connections-rotation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006511.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The attack discussed in this context involves an attacker listening to transactions on the Bitcoin network. Each NATed client connects to the Bitcoin network through eight entry peers and advertises their public IP address to these peers, allowing the attacker to map out connections. The attacker establishes multiple connections to each reachable Bitcoin peer and listens for transactions. For each transaction, they record eight to ten peers that were the first to forward it, allowing them to identify which clients these transactions belong to. This method allows the attacker to link together different Bitcoin addresses and learn the IP of the client. The eight entry peers are unique per client, so if two users share the same IP, they can be distinguished. Outbound connections are rotated from time to time due to remote side disconnections, but initial connections have a preference for nodes that were up recently. However, this behavior could be improved. The attack was described in detail at cryptolux.org and discussed on bitcointalk.org. Gregory Maxwell questioned Ivan Pustogarov's statement that an attacker with no peers would learn nothing about the Bitcoin network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:10:31.957383+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

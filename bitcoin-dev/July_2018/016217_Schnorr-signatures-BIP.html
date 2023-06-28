@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Schnorr signatures BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2018-07-08 14:36:16
+            <br><i>Published on: 2018-07-08T14:36:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_Schnorr-signatures-BIP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016217.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion among Bitcoin developers is about the optimal order of inputs for hashing in the context of ECDSA signatures. There are two proposed orders: one with nonce (R) first, and the other with message (m) first. The argument in favor of nonce first is that it provides a minor security benefit if the hash function has a weakness that an attacker can exploit to obtain a signature for a different message than the one intended. However, this benefit is deemed extremely marginal as it would not affect most practical scenarios. The argument in favor of message first is that it follows the standard MD-style hash function design where message comes before any other input. Additionally, placing the nonce first would prevent an optimization technique called pre-filling the SHA256 expander to speed up signature generation or verification when multiple signatures for a single public key are needed. The optimization would only work if a fixed public key is used and part of the expander is hardwired to depend on this key. However, the gain from this optimization is also considered extremely marginal.Another proposal discussed is to add 31 bytes of zeros before the public key in the hash input. This would allow caching the midstate of the first compression function run for different public keys, which could result in faster computation when public keys are reused. However, this proposal increases the number of blocks that need to be compressed from two to three, which is deemed too burdensome for the marginal gain. An alternative is to drop the SHA-256 length padding, but this would require breaking existing SHA-256 libraries' APIs, which is also considered not worth it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:44:22.766572+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

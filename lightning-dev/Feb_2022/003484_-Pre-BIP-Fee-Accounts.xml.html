@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[Pre-BIP] Fee Accounts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2022-02-19 09:39:22
-            <br><i>Published on: 2022-02-19T09:39:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2022/combined_-Pre-BIP-Fee-Accounts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003484.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation, Jeremy Rubin and Peter Todd discussed a new type of pinning attack. Jeremy defined pinning as sequences of transactions that prevent or hinder progress in terms of computation proceeding, which Peter argued was misleading since blockchain transactions have nothing to do with computation. He suggested calling the new attack 'necromancing', which involves bringing back old versions of a transaction that would otherwise be irrational. However, Peter pointed out that this is incorrect for all use cases, and a third party can only accelerate mining on timestamp transactions. OTS calendars use RBF to update the timestamp tx with a new merkle tip hash for all outstanding per-second commitments once per new block. In high fee situations, there may be dozens of versions of the same transaction, each with a slightly higher feerate. Older versions getting mined wastes money and delays settlement. Peter disagreed with Jeremy's suggestion that getting necromanced on an earlier RBF'd transaction would save fees overall since the undoing of a later RBF does not return satoshis to the wallet. They also discussed implementing fee accounts or similar mechanisms, which should be opt-in, and using nVersion bits as a possible approach. Peter noted that BTC transaction accelerator services are either scams or very expensive.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T07:13:53.010170+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onion routing design.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-09-22 05:25:44
+            <br><i>Published on: 2015-09-22T05:25:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2015/combined_Onion-routing-design-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000205.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange, Anthony Towns suggests using OFB or CTR mode for the symmetric cipher to calculate D_KD() of all padding. Rusty Russell proposes a method which involves having two R values, where one is known by the recipient and the other by the sender. He explains that including S encrypted to the final recipient in the onion payload can make the htlc irredeemable so misrouting it gives no information. Anthony Towns then suggests combining both approaches; he suggests setting S as sha256(H+X) where X is the plaintext routing message the payee gets and H is its hash that was prefixed to the plaintext. He further adds that revealing S as well as R would be required for payment redemption. The combined approach makes any attempt to garble the padding render the payment unredeemable without relying on any verification/cooperation from anyone else on the network.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T00:35:39.852030+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

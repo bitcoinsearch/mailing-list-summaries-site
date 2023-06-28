@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 35: add mempool message</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2012-08-16 17:32:04
+            <br><i>Published on: 2012-08-16T17:32:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2012/combined_BIP-35-add-mempool-message.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-August/001792.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new BIP (Bitcoin Improvement Proposal) has been suggested for P2P changes, with the aim of making a network node's transaction memory pool accessible via a new "mempool" message. The proposal suggests that by doing so, it would enable several use cases such as SPV clients wanting to obtain zero-confirmation transactions sent or received, miners downloading existing network transactions after a restart, and remote network diagnostics. The specification proposed in the BIP includes that upon receipt of a mempool message, the node will respond with an "inv" message containing MSG_TX hashes of all the transactions in the node's transaction memory pool. An "inv" message is always returned, even if empty. The typical node behavior in response to an "inv" is "getdata". However, to support "mempool", an implementation must extend its "getdata" message support to querying the memory pool. Feature discovery is enabled by checking two "version" message attributes: Protocol version >= 60002 and NODE_NETWORK bit set in nServices.The author of the BIP suggests that older clients remain 100% compatible and interoperable after this change. The implementation details can be found on <a href="https://github.com/bitcoin/bitcoin/pull/1641">https://github.com/bitcoin/bitcoin/pull/1641</a>. Feedback has been requested on the proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T06:59:17.251500+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

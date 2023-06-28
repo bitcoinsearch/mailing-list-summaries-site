@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[Question] Unilateral closing during fee increase.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2018-01-14 12:32:29
-            <br><i>Published on: 2018-01-14T12:32:29+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2018/combined_-Question-Unilateral-closing-during-fee-increase-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000927.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a message to the Bitcoin development mailing list, Jonathan Underwood posed a question about what happens when a channel partner disappears. Specifically, if the last time channel state was updated it was assumed that 40 satoshi/byte was enough to get confirmed and a user leaves for a few weeks only to come back and find that their partner is offline, what can be done? If there are 500 MB of transactions at around 100 satoshi/byte and the transaction will never get confirmed at 40 satoshi/byte, what course of action can be taken? In this situation, the to_local output cannot be redeemed until the commitment transaction is confirmed + the CSV timeout, but the to_remote output probably won't be redeemed as the other person is offline. The only remedy is to wait for the other person to come online. However, since CSV will cause script verification to fail, a CPFP transaction will not be propagated. Therefore, the CSV timer won't start. Some solutions suggested include using out-of-band fee payment mechanisms such as Confirmtx.com and Pushtx.btc.com to get the transaction mined without an on-blockchain payment or using a Lightning transaction to pay for that service more cheaply than on-chain payments those existing accelerators currently use.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T18:30:23.208123+00:00 </i></p>
     
     
 

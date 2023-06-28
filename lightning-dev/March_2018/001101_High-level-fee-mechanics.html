@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>High level fee mechanics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Steenholdt 2018-03-19 11:30:35
+            <br><i>Published on: 2018-03-19T11:30:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2018/combined_High-level-fee-mechanics.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-March/001101.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Thomas Steenholdt had asked for a high-level explanation of how fees are established, announced and ultimately claimed in a payment over Lightning Network. ZmnSCPxj replied that the details are contained in BOLT spec, but it is very detailed and contains the topic in multiple places. For example, Node gossip, the channel_update message in BOLT#7, provides information about  the fee_base_msat and fee_proportional_millionths for each channel. The A may have obsolete information about fees, but in this case, payment routing will fail, but the channel_update will also be sent as part of the error message returned by payment routing failure. To know the amount of fees that need to be added to the payment to cover all fees, A computes it. D is only aware of how much C offers it. The fees are actually claimed when A offers B a value that is higher than what A instruct B to forward to C. The difference is the fee and since the highest value is at the source A, A is the one who ends up paying the entire fee.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T22:02:52.765385+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trusted merkle tree depth for safe tx inclusion proofs without a soft fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Sergio Demian Lerner 2018-06-09 11:03:53
+            <br><i>Published on: 2018-06-09T11:03:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_Trusted-merkle-tree-depth-for-safe-tx-inclusion-proofs-without-a-soft-fork.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016102.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email to the Bitcoin community, Sergio Lerner from RSK reported a problem with SPV wallets and urged everyone to work on fixing it for the security and clean design of Bitcoin. The issue was discovered by RSK in 2017 and it is important for them to fix it as their SPV bridge uses SPV proofs. Lerner suggested two options: using version bits indicating the tree depth as a soft-fork or banning transactions with size lower or equal to 64. Bram Cohen responded to a thread on Bitcoin-dev mailing list, asking if fully validating nodes can maintain the ability to validate old transactions by caching the number of transactions in each previous block if they wish to prune. Peter Todd responded to Cohen's proposal to include the number of transactions in a block in the block headers to compensate for the broken Merkle format, saying that this vulnerability can be trivially avoided by simply comparing the length of the Merkle path to that known depth and it does not require a soft-fork to implement. Todd also thinks that this is an accidental feature rather than a bug, as it further encourages the use of safe full verification rather than unsafe lite clients.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:14:45.153267+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

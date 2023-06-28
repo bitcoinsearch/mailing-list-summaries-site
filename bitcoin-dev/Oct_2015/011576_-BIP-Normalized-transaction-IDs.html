@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-10-21 07:48:39
+            <br><i>Published on: 2015-10-21T07:48:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011576.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal was implemented to compute the normalized transaction ID when adding them to the UTXO and storing them along with the coin state. However, it still doesn't completely close malleability, which should be documented in the BIP. The implementation of fully malleability-proof wallets could be done by specifying flags upfront in the UTXO-creating transaction, specifying which parts the signature will cover. Additionally, there is a flag to control whether the opcode behaves as VERIFY or not, but non-VERIFY is not possible as a softfork since it can be negated. Flagability cannot work recursively which is necessary for any improvement to be useful for multi-phase protocols. One still wants sighash flags, but they're going to inherently result in malleability. Uniform segregated witness is hard to deploy, adding another id to every utxo set won't be a nice cost. The only real application of this class of improvement is third party mutation prevention by enforced canonical encodings.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T22:17:37.222576+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

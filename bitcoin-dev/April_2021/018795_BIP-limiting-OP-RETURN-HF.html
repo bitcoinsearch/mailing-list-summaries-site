@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP - limiting OP_RETURN / HF</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christopher Gilliard 2021-04-16 15:34:33
+            <br><i>Published on: 2021-04-16T15:34:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_BIP-limiting-OP-RETURN-HF.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018795.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal to add limitations on OP_RETURN transactions is not helpful, according to Russell O'Connor. He argues that users can still encode their arbitrary data in the values of legacy multi-signature scriptpubkeys, which can lead to UTXO bloat since such "data" scriptpubkeys are indistinguishable from "real" multisignature scriptpubkeys. On the other hand, outputs using OP_RETURN are provably unspendable and can be safely omitted from the UTXO set. O'Connor suggests that if it is otherwise impossible to stop people from putting arbitrary data values into their transactions, then it is better to encourage them to use OP_RETURN outputs to avoid UTXO bloat. Additionally, fees already incentivize participants to consolidate their data. Christopher Gilliard's proposal for a BIP is aimed at notarization and can be found on GitHub.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:08:24.794135+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

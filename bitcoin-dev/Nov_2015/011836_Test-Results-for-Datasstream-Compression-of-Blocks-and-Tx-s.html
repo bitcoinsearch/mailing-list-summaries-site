@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Test Results for : Datasstream Compression of Blocks and Tx&#39;s</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2015-11-30 16:53:39
+            <br><i>Published on: 2015-11-30T16:53:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_Test-Results-for-Datasstream-Compression-of-Blocks-and-Tx-s.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011836.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email is a final analysis of testing with the reference implementation for compressing blocks and transactions. The implementation concatenates blocks and transactions when possible, so data sizes were in the range of 1-2MB. The results show the time it takes to sync the first part of the blockchain comparing Zlib to the LZOx library. With latency on the network, all compression libraries performed much better than without compression. Although Zlib provides higher compression, overall LZO is faster and more scalable, which will be a boost in performance for users who want performance over compression. At the high end, LZO provides decent compression, which approaches Zlib, but at a higher cost, making it good for those who want to save more bandwidth. Zlib is the clear winner for compressibility, with LZOx-999 coming close but at a cost. As compression ratios increase, LZOx-999 performs much worse than Zlib. LZO1x is the fastest, and as file sizes increase, LZO1x time hardly increases at all. So, LZO is faster on the low end and slower (5 to 6 times slower) on the high end.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:29:47.266877+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

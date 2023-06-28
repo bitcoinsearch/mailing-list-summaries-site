@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>new BIP: Self balancing between excessively low/high fees and block size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bernd Jendrissek 2019-04-07 22:11:55
+            <br><i>Published on: 2019-04-07T22:11:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_new-BIP-Self-balancing-between-excessively-low-high-fees-and-block-size.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016855.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The bitcoin-dev community is discussing the implementation of a new algorithm for sorting and validating transactions in a block. The proposed algorithm suggests that transactions should be sorted by their FeeInSatoshiPerByte, with the lowest fee transactions being processed first. Then, each transaction is validated by summing up the bytes of space used so far and checking if this is smaller than or equal to the formula result. However, some members of the community have raised concerns about whether this approach would break CPFP (child pays for parent) and suggested that chains of transactions need to be treated as a group to avoid this issue. It has also been noted that multiple transactions in one block could depend on the same "parent" transaction, which may affect the validation process.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:13:49.221989+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

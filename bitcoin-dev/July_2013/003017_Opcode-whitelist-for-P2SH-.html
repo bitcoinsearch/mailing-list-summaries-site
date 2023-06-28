@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Opcode whitelist for P2SH?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-07-29 07:41:31
+            <br><i>Published on: 2013-07-29T07:41:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_Opcode-whitelist-for-P2SH-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/003017.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jeff Garzik and Luke-Jr discussed creating a whitelist for specific opcodes that would apply to scripts serialized using P2SH while retaining the existing standard whitelist for scriptPubKeys. John Dillon suggested dropping pay-to-pubkey and pay-to-multisig due to their potential for dumping data in the UTXO set. However, Luke-Jr stated that some specific standard forms would still be necessary for interoperability between wallets without a much smarter solver. Current designs are all based on pattern matching a script template. The discussion included two use-cases: wallets protected by authorization tokens for multi-factor security and allowing funds to be controlled by oracles that attest that events have happened allowing the funds to move. The latter application especially demands a specialized wallet, yet can only possibly work with non-standard script formats. Bringing the issue of wallet standardization into this discussion is silly and premature according to them. Until the txout is spent all *any* wallet sees is a P2SH address with no information as to what scriptPubKey is needed to spend it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T14:44:13.060890+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

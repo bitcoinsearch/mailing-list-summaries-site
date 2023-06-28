@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Splicing Proposal: Feedback please!</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2018-10-10 03:45:43
-            <br><i>Published on: 2018-10-10T03:45:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2018/combined_Splicing-Proposal-Feedback-please-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>C-lightning users are complaining that they can't open multiple channels, therefore, a rough proposal has been introduced to allow splicing of existing channels. The proposal consists of three steps: Splice Negotiation, Splice Signing, and Splice Announcement. Each side sends 0 or more splice_add_input and 0 or more splice_add_output followed by spice_all_added to complete the splice proposal. Once this is done, both sides need to sign both the splice transaction and the first commitment transaction which spends it. Once splice_commitment_signature is both sent and received, both sides send splice_signature and splice_witness for each splice_add_input proposed in BIP69 input order. Finally, once both side's minimum_depth confirmations of the splice transaction are seen, the splice is locked in and both sides can send announcement_signatures for the new channel as per normal rules.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-25T14:18:51.868019+00:00 </i></p>
     
     
 

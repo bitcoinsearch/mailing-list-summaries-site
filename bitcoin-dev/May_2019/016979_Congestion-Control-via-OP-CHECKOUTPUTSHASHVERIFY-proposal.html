@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Congestion Control via OP_CHECKOUTPUTSHASHVERIFY proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2019-05-24 21:15:07
+            <br><i>Published on: 2019-05-24T21:15:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Congestion-Control-via-OP-CHECKOUTPUTSHASHVERIFY-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016979.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The OP_COSHV Taproot key is a better option for withdrawal requests from an exchange as compared to MuSig and other distributed signing solutions because they require interaction for payout guarantee. With OP_COSHV, one can request a withdrawal that pays out to multiple people at once, without having to withdraw multiple times and pay separately. The exchange doesn't have to know about this, and they can also aggregate multiple withdrawal requests into a tree without requiring permission from the recipients. Additionally, the payment can be made into a payment channel between the user and the exchange, which allows undoing the withdrawal by routing money back to the exchange over lightning. With just pre-signing, none of these operations work well as they require permission first. OP_COSHV allows the payer or recipient to commit funds to a complex transaction structure without talking to anyone else.Furthermore, in terms of DoS, if one user drops out during the last step of building a tree with N users' payment requests, the process has to be restarted, excluding that user. With OP_COSHV, once all the requests are received, issuing the transaction is the only thing left to do, allowing for a smoother process.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:54:24.451043+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

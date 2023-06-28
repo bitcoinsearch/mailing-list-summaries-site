@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for Stuckless Payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hiroki Gondo 2019-06-27 09:45:13
+            <br><i>Published on: 2019-06-27T09:45:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2019/combined_Proposal-for-Stuckless-Payment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002049.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation between Hiroki and ZmnSCPxj and Bastien, they discuss security and privacy issues in their proposal. They all agree that it's best to retain the property of "D does not know payer A". The addition of a new ACK-key turnaround may allow intermediate nodes to guess the payer's identity by measuring the time from sending the ACK to receiving the key. In response, A can select another route and create an ACK onion packet during the setup phase. This way, D doesn't learn anything about A, and intermediate nodes aren't included in the ACK route so they don't learn anything either. Hiroki thinks this is likely to be an improvement and plans to understand more precisely the limitations of the onion packet and consider combining this proposal with AMP and new routing algorithms (Trampoline, Rendezvous).</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:58:55.024056+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

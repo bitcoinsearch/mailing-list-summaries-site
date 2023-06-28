@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Implementing Covenants with OP_CHECKSIGFROMSTACKVERIFY</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Ryan Grant 2016-11-03 17:42:22
-            <br><i>Published on: 2016-11-03T17:42:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2016/combined_Implementing-Covenants-with-OP-CHECKSIGFROMSTACKVERIFY.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-November/013271.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A discussion on Bitcoin-dev mailing list by Russell O'Connor prompted the collection and implementation of other useful covenants. A business case was presented as an example of two parties who entered into a transaction with counterparty-minimization in mind. The transaction utilized MAST and had different payout distributions, however, both parties took on risks due to external factors. To protect against the possibility of one party wishing to renegotiate the exit distribution or either party getting hit by the proverbial bus, a multisig which included an oracle determination was used. The oracle's trusted role was bound to the example's unstated "external factors" in a limited sense and did not include broader concerns such as determining whether a party to the transaction is of "sound mind and body." The transaction terms included a CLTV lasting several years, applied whenever the exit requires the oracle-set's signatures. Both parties may mutually select and sign one of the payout distributions to exit early. Two features were desired - (1) one party would like to unilaterally sell their participation in the transaction to a previously unknown recipient before the CLTV becomes valid, and (2) both parties would like to mutually revoke rogue oracle-entities from the oracle-set without exposing each other to any possible renegotiation of other terms. These features affect each other since if one party sells their participation after any oracle-entities have been revoked, then the revocations should remain in effect until a proper payout executes the final agreement in the contract.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T20:31:06.713940+00:00 </i></p>
     
     
 

@@ -11,86 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[RFC] Lightning invoice/payment format draft <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014470_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>ZmnSCPxj 2017-06-01 03:42:21</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014472_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>Andreas Schildbach 2017-06-01 05:54:37</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014468_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>Rusty Russell 2017-06-01 01:28:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014470_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>ZmnSCPxj 2017-06-01 03:42:21</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014472_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>Andreas Schildbach 2017-06-01 05:54:37</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014468_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>Rusty Russell 2017-06-01 01:28:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014470_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>ZmnSCPxj 2017-06-01 03:42:21</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014468_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>Rusty Russell 2017-06-01 01:28:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014471_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>ZmnSCPxj 2017-06-01 03:48:46</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014472_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>Andreas Schildbach 2017-06-01 05:54:37</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014471_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>ZmnSCPxj 2017-06-01 03:48:46</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2017/014471_-RFC-Lightning-invoice-payment-format-draft.xml.html">[RFC] Lightning invoice/payment format draft</a>
-                        <b>ZmnSCPxj 2017-06-01 03:48:46</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014470.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2017-06-01T03:42:21+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The email exchange between Rusty and ZmnSCPxj discusses the potential issues with parsing of optional amounts in bech32. They note that the separator character between human-readable and data is the character "1", which may cause problems when upgrading versions. Currently, version 0 translates to the character "q" appearing after "1", indicating that 1q is not an amount and starts the data part. However, if version 1 is available, a payment starting with lnbc1p could indicate a 1 pico-bitcoin payment or an arbitrary payment to a version-1 data part. ZmnSCPxj suggests fixing the first 5 bits to be 0 as an unambiguous separator.Rusty Russell has submitted a pull request on GitHub for review of a lightning payment format. The format is bech32 encoded and includes optional parts tagged with an URI scheme. It also includes a MIME type for usage in NFC NDEF messages or emails. An example provided in the pull request demonstrates how to send 2500 microbitcoin using payment hash 00010203040506...0102 to a specific recipient within a specific time frame. The author has requested wider review on the pull request. ZmnSCPxj corrects their understanding of the bech32 specification in a message sent later. The character "1" is not allowed in the data part as previously thought. The last "1" digit in the bech32 string serves as a separator between the human-readable and data parts. ZmnSCPxj apologizes for any confusion caused by their previous statement. Additionally, Rusty and ZmnSCPxj discuss the assertion that lightning invoices are less prone to human error due to their length compared to QR reader errors. An implementation of the format can be found at <a href="https://github.com/rustyrussell/lightning-payencode">https://github.com/rustyrussell/lightning-payencode</a>.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-12T01:29:18.892413+00:00</i></p>
-    
-
     
 
     <footer>

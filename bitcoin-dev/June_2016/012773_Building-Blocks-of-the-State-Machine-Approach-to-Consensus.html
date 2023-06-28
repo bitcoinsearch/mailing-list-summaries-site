@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Building Blocks of the State Machine Approach to Consensus</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2016-06-20 08:56:49
+            <br><i>Published on: 2016-06-20T08:56:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2016/combined_Building-Blocks-of-the-State-Machine-Approach-to-Consensus.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012773.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article discusses the state-machine approach to smart contract systems as an extension of Bitcoin's design. The approach requires deterministic code and expressions that allow for precisely specified conditions upon which funds can be spent. The data that causes a given expression to return true is then a "proof," which can be passed from one party to another to prove desired states in the system have been reached.Pruning allows evaluation of an expression against a proof without requiring all data in the proof. A common type of state machine is the transaction, with a directed acyclic graph of transactions. Each output has conditions attached to them, and a transaction is valid if there are valid proofs for each input. Additionally, the article discusses how to ensure uniqueness and single-use seals using cryptographic Single-Use Seals, which can help achieve consensus over the set of all (valid) transactions.The article also discusses two-phase timeouts and Proof-of-Publication and Proof-of-Non-Publication. Proof of publication schemes can prove that a message has been published publicly or to a specific audience. Different implementations for these schemes include decentralized blockchains, centralized public logs, and receipt oracles. Validity oracles can attest to the validity of transactions, allowing history prior to attested transactions to be discarded. Fraud proofs can show that claimed states or proof in the system are invalid.Pruning can automatically keep track of only necessary data while serializing the proof. Probabilistic validation techniques can be used to verify that the percentage of undetected fraud within the system is less than a certain amount with a specified probability.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T05:48:14.198816+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

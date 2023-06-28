@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Fwd: Service bits for pruned nodes</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeff Garzik 2013-04-30 20:11:47
-            <br><i>Published on: 2013-04-30T20:11:47+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2013/combined_Fwd-Service-bits-for-pruned-nodes.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002486.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation between Jeff Garzik and Andy Parkins, the two discussed the most efficient storage format for Bitcoin protocol blocks. Garzik suggested using the format currently used by bitcoind - blocks/blkNNNN.dat for raw data. He argued that it was a generic format supported in multiple applications already. To make it more effective, he suggested adding a small metadata download and serving the raw block files. However, Parkins felt this was too specific to bitcoind's current storage format. Instead, he proposed supporting more bitcoin-protocol-oriented HTTP requests. Parkins' proposal would allow any client to supply the same interface rather than being forced to create blkNNNN.dat on the fly. He suggested using URLs such as <a href="http://bitcoind.example.com/block/BBBBBBBBBBBBBBBBBBBBBBB,">http://bitcoind.example.com/block/BBBBBBBBBBBBBBBBBBBBBBB,</a> <a href="http://bitcoind.example.com/tx/TTTTTTTTTTTTTTTTTTTTTTTT,">http://bitcoind.example.com/tx/TTTTTTTTTTTTTTTTTTTTTTTT,</a> <a href="http://bitcoind.example.com/block/oftx/TTTTTTTTTTTTTTTTTTT,">http://bitcoind.example.com/block/oftx/TTTTTTTTTTTTTTTTTTT,</a> <a href="http://bitcoind.example.com/peers,">http://bitcoind.example.com/peers,</a> and <a href="http://bitcoind.example.com/peer/nnn">http://bitcoind.example.com/peer/nnn</a>. Essentially, this would be block explorer's raw mode but in every bitcoind. Parkins pointed out that the hardest operation for light clients is finding out the block that contains a particular transaction - something that bitcoind already knows.Garzik responded that this was a whole new client interface and went beyond the scope of an efficient HTTP protocol that downloads blocks. He argued that Parkins' proposal was closer to a full P2P rewrite over HTTP or a proxy thereof.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T16:00:49.583370+00:00 </i></p>
     
     
 

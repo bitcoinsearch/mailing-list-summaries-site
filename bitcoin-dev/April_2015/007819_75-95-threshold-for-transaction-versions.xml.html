@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>75%/95% threshold for transaction versions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Stephen Morse 2015-04-25 15:40:37
-            <br><i>Published on: 2015-04-25T15:40:37+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2015/combined_75-95-threshold-for-transaction-versions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-April/007819.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation is about the security risks associated with not signing the input ID in bitcoin transactions. By not covering the ID, attackers can easily replay old transactions and cause severe monetary losses. However, using the SIGHASH_WITHOUT_PREV_VALUE flag can help mitigate the risk of replay attacks as signatures would have to explicitly specify that they are to be signed without the previous UTXO's value/amount. This means that at worst, replay attacks can only send the money to the same place it was sent before, which may not result in a loss of funds. The proposal linked to in the conversation is seen as a game of wack-a-mole, but the defined space of issues is limited. While some of the flags may not be useful for any particular application, it is better to build in a more flexible solution now than to wish for one later. The hope is that wallets will upgrade to use version 3 transactions and their associated rules over time, making the proposed solution unnecessary.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T19:09:49.594400+00:00 </i></p>
     
     
 

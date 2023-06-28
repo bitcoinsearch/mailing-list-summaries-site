@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 174 thoughts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2018-06-26 20:30:04
-            <br><i>Published on: 2018-06-26T20:30:04+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016170.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a Bitcoin-dev email thread, Pieter Wuille argues against the key-value model for BIP174. He expresses concern about human readability and confusion for future implementers. Wuille believes that the original rationale for using key-values is no longer valid. In response to the role of the Combiner, Wuille questions its significance and importance in correctly combining PSBTs by agents who don't understand them. However, he acknowledges that a Combiner can pick any of the values in case different PSBTs have different values for the same key. In cases where these are highly specialized things only implemented by some software, adding a slight bit of structure (parts of the fields that need to be unique - "keys") seems to be the preferable option, as it allows forward compatibility with new script types. Wuille suggests leaving out the Combiner role entirely. The only remaining types where key data is used are BIP32 derivations and partial signatures. Wuille proposes that the pubkey part of BIP32 derivation should be left out to save space since it's redundant. However, computing the pubkeys is possibly expensive, and without pubkeys, they're forced to perform derivations for all keys present. In terms of formatting, Wuille notes that BIP174 is basically protobuf and if the record set model is adopted, it would be "protobuf with different varint."</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T17:02:20.258638+00:00 </i></p>
     
     
 

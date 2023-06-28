@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Taro: A Taproot Asset Representation Overlay</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Johan Torås Halseth 2022-11-07 13:51:12
-            <br><i>Published on: 2022-11-07T13:51:12+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2022/combined_Taro-A-Taproot-Asset-Representation-Overlay.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003746.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation between Johan and Olaoluwa Osuntokun, they discuss the technical details of the "utxo teleport" scheme. Johan expresses his belief that the scheme is sound as long as clients adhere to the rule of not sending to a spent UTXO, however, it may not be compatible with Lightning Network (LN) channels. Olaoluwa raises concerns about the lack of a necessary total ordering to ensure safety in the scheme, which could result in assets being burned or lost if a channel closes before a pending deposit confirms. Olaoluwa contrasts this with Taro's state transition model, which binds everything to a single synchronization point: a normal Bitcoin transaction with inputs consumed and outputs created. He explains that Taro transfers inherit the same re-org safety traits as regular Bitcoin transactions and that anything that can be done today with Bitcoin/LN also applies. Sending to an address creates an on-chain taproot output just like sending to a P2TR address, and the send process is fully async with the sender and receiver using the blockchain itself as a synchronization point like a normal Bitcoin wallet.Olaoluwa also highlights a drawback of the teleport model, which either requires an OP_RETURN or additional out-of-band synchronization to complete the transfer, whereas Taro does not require these. Overall, Olaoluwa concludes that the "utxo teleport" scheme lacks the serialization of events/actions the blockchain provides and that Taro's state transition model offers a safer and more compatible alternative for anchoring assets in channels.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T08:05:30.884400+00:00 </i></p>
     
     
 

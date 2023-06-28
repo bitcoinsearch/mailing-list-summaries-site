@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>General questions about channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2017-12-28 11:31:55
+            <br><i>Published on: 2017-12-28T11:31:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2017/combined_General-questions-about-channels.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-December/000881.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article discusses the issues with splitting single payments into multiple invoices. It is stated that this approach has bad semantic properties and makes the payment no longer atomic, which can lead to problems if channel capacity is exhausted partway through a transaction. The article goes on to explain that multipath payments are a simple solution to this problem, as long as both the sender and recipient know how to handle them. It is technically possible to do this without using multiple invoices, but it increases complexity for the recipient. The article also states that the current protocol limits are like training wheels, but they may not always be necessary in the future. It is possible to change these limits on a per-channel level, and an upgrade can be performed using feature bits without the need to fork lightning. The article concludes by saying that larger channels can be used in the multi-hop layer, and that these changes will make lightning more useful for intended applications.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T17:14:08.837436+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

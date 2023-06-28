@@ -11,36 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proof-of-payments <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Feb_2019/001869_Proof-of-payments.xml.html">Proof-of-payments</a>
-                        <b>Joao Joyce 2019-02-13 11:53:30</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Feb_2019/001870_Proof-of-payments.xml.html">Proof-of-payments</a>
-                        <b>ZmnSCPxj 2019-02-14 04:07:53</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001869.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2019-02-13T11:53:30+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>In a recent discussion, it was determined that identifying users across multiple payments is not ideal. Instead, ZmnSCPxj suggested using the preimage of an already paid invoice to prove payment for things like redownloading previously purchased documents. João Joyce proposed standardizing payment invoices to signal wallets to skip the payment process if they can provide a preimage for a previous payment for that particular item. This would have use cases beyond downloads and could include paying for a service and accessing it by scanning the LN invoice.C-Lightning already has this feature where if given an invoice for a payment hash it already knows, it silently succeeds and returns the preimage without sending out any money. It is unclear what other implementations do. While intermediate nodes know about the preimage, this aspect was not the focus of the discussion.Overall, the discussion suggests that using preimages to prove payment may be a better approach than identifying users across multiple payments. Standardizing payment invoices to skip the payment process when a preimage is provided could have various use cases. C-Lightning already has this feature, but it is unclear whether other implementations do.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-03T21:38:10.502074+00:00</i></p>
-    
-
     
 
     <footer>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>URI scheme for signing and verifying messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2015-09-15 04:03:40
+            <br><i>Published on: 2015-09-15T04:03:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_URI-scheme-for-signing-and-verifying-messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011004.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On September 14, 2015, Arthur from bitcoin-fr.io suggested the need for a URI scheme to request or verify a signature as easily as requesting payment using a bitcoin URI scheme (BIP0021). He proposed that with proper consensus, this could become available in most bitcoin clients that support message signing/verifying and payment URL. Arthur suggested going through a BIP to gain proper consensus and presented his idea publicly before drafting a BIP and reference implementation. Similar to BIP0021, he suggested that clients must not act on URIs without user authorization. He proposed using the same URI scheme as BIP0021 with an additional parameter or using another one like BIP121.However, Luke, in response, suggested that the entire signed message thing needs to be rethought since it does not work in insecure cases. The most common uses today are for people trying to prove ownership of bitcoins or that they sent bitcoins, which current signed messages cannot do. Furthermore, it is not ideal to use the same key as for signing transactions since the public key is technically private information. Address being semi-deprecated by the payment protocol means it may not make sense without designing an entire authentication system.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:26:57.015948+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

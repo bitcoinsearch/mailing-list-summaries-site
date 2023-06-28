@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Long-term vision for bitcoind (was libconsensus and bitcoin development process) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011152_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Eric Lombrozo 2015-09-23 00:07:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011153_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Eric Lombrozo 2015-09-23 00:10:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011150_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Jorge Timón 2015-09-22 18:36:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011153_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Eric Lombrozo 2015-09-23 00:10:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011150_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Jorge Timón 2015-09-22 18:36:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011153_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Eric Lombrozo 2015-09-23 00:10:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011152_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Eric Lombrozo 2015-09-23 00:07:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011150_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Jorge Timón 2015-09-22 18:36:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2015/011152_Long-term-vision-for-bitcoind-was-libconsensus-and-bitcoin-development-process-.html">Long-term vision for bitcoind (was libconsensus and bitcoin development process)</a>
+                        <b>Eric Lombrozo 2015-09-23 00:07:22</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011152.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2015-09-23T00:07:22+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In 2015, Eric Lombrozo proposed a long-term plan for bitcoind which involved defining an API for libconsensus that would support an abstract DB model, track chain state, provide query mechanisms for blocks and transactions with optional pruning and indexing, expose a subscription mechanism for events such as NEW_TIP, REORG, etc., and contain a script interpreter. The second step was to develop a peer services library that performs the tasks of peer discovery and relay, using libconsensus for all validation functionality and as a datastore for the consensus state but maintaining its database for peer history and statistics. High-level calls and pub/sub mechanisms were also proposed for API/RPC. Finally, the wallet was split out into a separate process that connects to the stack via the API/RPC layer. Jorge Timón agreed with this long-term vision and suggested that bitcoind becomes a subtree of bitcoin-wallet, which has bitcoin-wallet and bitcoin-qt, and upper layers should move to C++11. Wladimir J. van der Laan shared his vision for Bitcoind as a P2P node with validation and blockchain store in a Bitcoin development mailing list. Another contributor agreed with the long-term plan and suggested that it could happen in two steps. The first step would be to move Libconsensus to a subtree, including libsecp256k1 as an internal subtree, while the second step would be to make Bitcoind a subtree of bitcoin-wallet, which already has bitcoin-qt and bitcoin-wallet. It is expected that libconsensus would become C, like libsecp256k1, which is better for proving correctness. The goal is to maximize the number of people who can safely contribute to the project. The proposed architecture is believed to be what most contributors have in mind for the long term.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-10T22:53:03.756697+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

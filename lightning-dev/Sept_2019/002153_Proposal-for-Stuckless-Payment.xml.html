@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal for Stuckless Payment</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-09-18 10:30:57
-            <br><i>Published on: 2019-09-18T10:30:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2019/combined_Proposal-for-Stuckless-Payment.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002153.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Hiroki Gondo explains that the proposal for Stuckless Payments can be accomplished using HTLC variants that are not compatible with BOLT 1.x HTLCs, instead of waiting for PTLCs. Hiroki makes changes to the BOLT#3 offered and received HTLC policies by replacing `hash160(H)` with `and(hash160(H), hash160(H))`. The two notations refer to different H values; one is provided by the payer and the other by the payee. The change helps support cross-currency swaps without premium-free American Call Option and non-custodial escrow. Both can also be served by using points. ZmnSCPxj and Bastien raise security and privacy issues about the proposal. ZmnSCPxj suggests that retaining the property of "D does not know payer A" is best. However, intermediate nodes may guess the payer by measuring the time from ACK to receive of the key after a new ACK-key turnaround is added. Hiroki agrees with ZmnSCPxj's opinion and thinks that embedding the ACK packet inside the last hop payload of the add_htlc onion packet could be an improvement. This method could also be generalized as a case where a packet is sent back via a given node. Hiroki needs to understand more precisely the limitations of the onion packet including new specs under development, and consider combining this proposal with AMP and new routing algorithms (Trampoline, Rendezvous).</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T18:58:35.297169+00:00 </i></p>
     
     
 

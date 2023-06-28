@@ -11,71 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Bitcoin Fee Formula Proposal <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005759_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Peter Grigor 2014-05-13 01:21:44</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005763_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Bernd Jendrissek 2014-05-13 10:02:08</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005759_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Peter Grigor 2014-05-13 01:21:44</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005760_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Gmail 2014-05-13 01:46:24</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005763_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Bernd Jendrissek 2014-05-13 10:02:08</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005760_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Gmail 2014-05-13 01:46:24</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005763_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Bernd Jendrissek 2014-05-13 10:02:08</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005759_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Peter Grigor 2014-05-13 01:21:44</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2014/005760_Bitcoin-Fee-Formula-Proposal.xml.html">Bitcoin Fee Formula Proposal</a>
-                        <b>Gmail 2014-05-13 01:46:24</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005759.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2014-05-13T01:21:44+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Peter Grigor proposed a new method to calculate the transaction fee for Bitcoin. The proposal suggests calculating the fee as a percentage of the input amount divided by the confirmations of the input multiplied by the number of inputs. This ensures that the transaction fee always makes sense regardless of the bitcoin price in fiat. Dividing the fee by the number of confirmations discourages hasty spends and rewards savings, while multiplying the fee by the number of inputs discourages "payment fragmenting." Payment fragmenting occurs when multiple inputs are required to pay for larger purchases, leading to higher transaction fees.The proposed formula for calculating transaction fees is ((INPUT_AMOUNT * BASE_PERCENT) / CONFIRMATIONS) * NUMBER_OF_INPUTS. The INPUT_AMOUNT, CONFIRMATIONS, and NUMBER_OF_INPUTS would be determined by the creator of the transaction, while the BASE_PERCENT would be hard-coded in the bitcoind software. A spreadsheet has been created to show various fees by amount and confirmations based on this proposal.This proposal was made in response to concerns about the safety of tiny "spam" transactions that could potentially become unsafely inexpensive with the use of 0 confirmation inputs. However, some responses in the issue tracker suggest that this method may not be suitable for Bitcoin and that it could potentially do more harm than good. As a result, there are concerns about whether or not this proposal should be implemented.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-08T22:35:55.543701+00:00</i></p>
-    
-
     
 
     <footer>

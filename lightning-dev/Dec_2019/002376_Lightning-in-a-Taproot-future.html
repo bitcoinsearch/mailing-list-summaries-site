@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning in a Taproot future</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2019-12-16 01:27:59
+            <br><i>Published on: 2019-12-16T01:27:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Lightning-in-a-Taproot-future.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002376.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network is constantly exploring ways to improve its performance while maintaining security and privacy. One area of focus is the signing commitment transactions, which involve a lot of round trips and can affect latency. To address this, the Lightning Network is considering using fast-forwards or explicit 2-of-2 for commitment and MuSig for mutual close.Another area of exploration is the use of pointlocked timelocked contracts (PTLCs) to switch to payment point+scalar. There are two types of PTLCs: scriptless and revocable. The scriptless PTLCs require a complete MuSig ritual to sign the timelocked branch, which increases the latency of adding new PTLCs. On the other hand, the revocable PTLCs enable faster addition of new PTLCs but require a backout transaction that must be signed by both parties before broadcasting the first transaction.However, the decision to use either a purely scriptless PTLC construction or a tapscripted timelock branch and a keypath pointlocked branch for PTLCs is affected because we need revocable PTLCs, not plain PTLCs. This is because the Poon-Dryja mechanism requires that all outputs of Poon-Dryja must be made revocable. Revocable outputs always have a CSV-requirement before the output can be spent by whoever "should" own the output, according to the contract details.Overall, the Lightning Network is exploring different options to optimize its performance while maintaining security and privacy. It is important to note that further discussions may be necessary before selecting particular options to implement and evaluate in alpha software.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T02:41:31.295798+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

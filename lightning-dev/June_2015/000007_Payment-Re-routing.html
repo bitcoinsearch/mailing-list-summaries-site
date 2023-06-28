@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment Re-routing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Stephen 2015-06-27 03:45:41
+            <br><i>Published on: 2015-06-27T03:45:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2015/combined_Payment-Re-routing.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-June/000007.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network is a payment channel that allows for fast and cheap transactions on the Bitcoin network. However, there are concerns about the security of the network when rerouting payments. In a scenario where A wants to make a payment to E through channels A->B->C->E, but C becomes unresponsive part way through the payment, A may want to re-route the rest of the payments through A->B->D->E to avoid delays.The problem arises because C has already been given a contract that guarantees payment if they can produce the pre-image of a certain hash. If C receives the pre-image from E, they must reveal it either to B directly or on the blockchain before B's contract times out. However, A has not paid the full amount to E yet when C became unresponsive.If C reveals the pre-image to B after A has rerouted the payment through A->B->D->E, then an extra 0.01 BTC will be stolen from Alice and given to E. This could happen if C and E were colluding to split the profits.It is unclear whether there is something that prevents this from happening, or if it is just a risk one takes with payment re-routing. Further research may be necessary to determine the best course of action to prevent this type of theft on the Lightning Network.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T17:54:06.587871+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

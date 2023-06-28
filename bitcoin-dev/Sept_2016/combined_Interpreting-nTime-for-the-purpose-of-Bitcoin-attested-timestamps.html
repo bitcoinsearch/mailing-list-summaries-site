@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Interpreting nTime for the purpose of Bitcoin-attested timestamps <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013121_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-18 16:05:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013122_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Tom Harding 2016-09-19 16:13:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013121_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-18 16:05:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013122_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Tom Harding 2016-09-19 16:13:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013123_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-19 17:56:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013124_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Tom Harding 2016-09-19 19:53:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013121_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-18 16:05:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013122_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Tom Harding 2016-09-19 16:13:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013123_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-19 17:56:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013124_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Tom Harding 2016-09-19 19:53:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013120_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-18 04:20:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013123_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-19 17:56:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013120_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-18 04:20:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013124_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Tom Harding 2016-09-19 19:53:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2016/013120_Interpreting-nTime-for-the-purpose-of-Bitcoin-attested-timestamps.html">Interpreting nTime for the purpose of Bitcoin-attested timestamps</a>
+                        <b>Peter Todd 2016-09-18 04:20:01</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013121.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-09-18T16:05:24+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email thread discusses the use of timestamps in OpenTimestamps. While one person suggests considering earlier blocks, another argues that timestamps are just proofs of existence before a specific time and there can't be a "wrong order" in timestamp proofs. OpenTimestamps verifies plausible dates for various uses such as timestamped git commits. Peter Todd suggests using Satoshi's formula from bitcoin.pdf, section 11, to determine the probability of dishonest miners building a chain N blocks long, taking the random walk into account. In an email conversation, Peter Todd corrects his suggestion regarding the catch-up formula and gives a new probability formula that determines whether honest miners can build a chain N blocks long before dishonest miners. The author proposes interpreting nTime fields in block headers for timestamping purposes using the Bitcoin blockchain. The proposed algorithm defines the time T as the maximum nTime out of the N blocks that confirmed the timestamp, including the first block that committed the timestamp, and max_offset is the maximum nTime offset expected from an honest miner. The dishonest miners can create an invalid timestamp if all N blocks are found by them, but if any block is found by an honest miner, the nTime field will be set correctly. It's important to note that timestamps shouldn't contain the block headers of the blocks allegedly confirming them, as this is an extremely weak proof given the relative ease of creating a block. OpenTimestamps doesn't do this, but it wouldn't hurt to make this point 100% clear. The UI considerations include refraining from displaying timestamps until the local time is after the timestamp and rounding up the timestamp to the nearest day when displaying it.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T20:01:00.841958+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

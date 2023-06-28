@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Arbitrary Bitcoin Contracts over LN</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-08-01 10:36:22
+            <br><i>Published on: 2018-08-01T10:36:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2018/combined_Arbitrary-Bitcoin-Contracts-over-LN.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A recent discussion on an IRC channel questioned whether smart contracts could be transported via LN. It is theoretically possible as long as the contract can be implemented as a Bitcoin SCRIPT. However, Poon-Dryja is superior to Decker-Wattenhofer or Decker-Osuntokun-Russell for transporting arbitrary contracts. The only smart contract worth transporting is HTLC, which can also be used for swap options and multi-step swaps. Of these, Decker-Osuntokun-Russell "eltoo" is far superior to Poon-Dryja "LN-penalty" in other ways except for the transportation of arbitrary contracts.For the transportation of an arbitrary contract C over a channel between nodes A and B, under Poon-Dryja, there must first be a channel anchoring transaction on-chain. From there, a symmetrical series of transactions are created that include (signA signB, revoke) || (A && B && C), where (revoke) is the revocation key. Note that only signA and signB need to be shared, while the witnessC can be fulfilled by each side automatically. Under Decker-Osuntokun-Russell eltoo, the transaction series is simpler with no additional script necessary. However, the CSV in the second transaction may interfere with the operation of the contract C if it is time-sensitive.Poon-Dryja is inferior in many other ways such as not using nLockTime in a sufficiently clever way, having "toxic waste," and symmetrical chains of transactions different for both parties instead of a single chain. Arbitrary contracts are not particularly useful either, compared to HTLCs, which are an important building block for digital value transfers. Ultimately, Decker-Osuntokun-Russell remains a superior technology over Poon-Dryja.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T02:01:54.396106+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

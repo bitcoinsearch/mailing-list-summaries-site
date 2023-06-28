@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>How to create a pull tester JAR</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2014-08-06 10:01:39
+            <br><i>Published on: 2014-08-06T10:01:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_How-to-create-a-pull-tester-JAR.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006420.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>To build with the jar file, users should use "./configure --disable-silent-rules --disable-ccache --with-comparison-tool=/path/to/your/BitcoindComparisonTool.jar" instead of the regular "./configure". "make check" will run most of the tests the pull tester does. The BitcoindComparisonTool entry point can be found here: <a href="https://github.com/bitcoinj/bitcoinj/blob/master/core/src/test/java/com/google/bitcoin/core/BitcoindComparisonTool.java">https://github.com/bitcoinj/bitcoinj/blob/master/core/src/test/java/com/google/bitcoin/core/BitcoindComparisonTool.java</a>. However, in the near future, the library will have a new namespace from com.google.bitcoin to org.bitcoinj, and this link will break. The code itself is an example of copy/paste coding and will be refactored soon by Matt. Therefore, anyone who wants to add tests to the framework should coordinate with Matt first to avoid conflicts with a big refactor/rewrite.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:51:14.628733+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

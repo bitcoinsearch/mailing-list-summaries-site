@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pull request for &#34;getmemorypool&#34; RPC call <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2011/000449_Pull-request-for-getmemorypool-RPC-call.html">Pull request for &#34;getmemorypool&#34; RPC call</a>
+                        <b>Forrest Voight 2011-09-05 02:21:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2011/000449_Pull-request-for-getmemorypool-RPC-call.html">Pull request for &#34;getmemorypool&#34; RPC call</a>
+                        <b>Forrest Voight 2011-09-05 02:21:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2011/000449_Pull-request-for-getmemorypool-RPC-call.html">Pull request for &#34;getmemorypool&#34; RPC call</a>
+                        <b>Forrest Voight 2011-09-05 02:21:24</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-September/000449.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2011-09-05T02:21:24+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Forrest Voight has submitted a pull request on Github that replaces the "getwork" RPC call for clients that generate their own transactions with his patch. Originally, the patch returned Bitcoin's memory pool as a list of transaction hashes and the total fees, but it evolved into a full alternative to "getwork." The diff in the pull request shows all the changes made to the code. Instead of producing its own merkle tree, the call now returns all the necessary information to create a generation transaction and the complete contents of other transactions that should be included.The getmemorypool [data] command is used to build a block to work on. If [data] is not specified, it returns data such as the block version, hash of the current highest block, non-coinbase transaction contents, maximum allowable input to coinbase transaction, timestamp appropriate for the next block, and the compressed target of the next block. If [data] is provided, it attempts to solve the block and returns true if successful.The new pull request was tested with p2pool and resulted in the first p2pool generated block with transactions. The post contains a link to the blockexplorer showing the results.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-04T19:23:30.819757+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

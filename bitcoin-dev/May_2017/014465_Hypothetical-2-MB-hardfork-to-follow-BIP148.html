@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Hypothetical 2 MB hardfork to follow BIP148</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke Dashjr 2017-05-31 04:14:25
+            <br><i>Published on: 2017-05-31T04:14:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Hypothetical-2-MB-hardfork-to-follow-BIP148.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014465.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion among developers on the bitcoin-dev mailing list centers around the need for a transaction size limit. Jorge Timón asks why the existing code at line 1661 in validation.cpp is not enough, to which Luke responds that transactions are bottlenecked by their size as hashing a transaction comes with a CPU time cost based on its size. He suggests that it may make sense to factor sigops into the limit. James MacWhyte proposes adding a transaction-size limit of 10kb to solve the quadratic hashing problem, but Jean-Paul Kogelman points out that this would invalidate any pre-signed transactions currently out there. Instead, he suggests making the limit 100kB, which has always been policy-forbidden and should not be expected to be acceptable in the future. Additionally, Luke suggests specifying a minimum transaction size of 8 bytes, which is the minimum for any sane output.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T01:17:47.471329+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

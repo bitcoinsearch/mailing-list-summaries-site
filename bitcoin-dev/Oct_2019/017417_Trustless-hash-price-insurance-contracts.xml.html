@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Trustless hash-price insurance contracts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Eric Voskuil 2019-10-20 20:17:03
-            <br><i>Published on: 2019-10-20T20:17:03+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2019/combined_Trustless-hash-price-insurance-contracts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017417.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The context discusses the idea of a trustless contract or insurance that guarantees minimum profitability of a mining operation. The problem statement is that a miner invests in new mining equipment, but if the hash-rate goes up too much, the price he is paid for a hash goes down by too much and he will have a loss. An insurer who believes that it's unlikely the price of a hash will go down a lot negotiates a contract with the miner implemented as a Bitcoin transaction. The instrument described above protects against the scenario where operational profitability (P) is greater than 0, but Return on investment (ROI) is negative. Difficulty would only go down in this case at the end of life of these equipment, if there isn't a new wave of even more efficient equipment being adopted before that. The implementation issues are: we can't do arithmetic comparison with long integers >32bit in the script, so implementation of the difficulty requirement needs to be hacky. The pre-images are chosen by the insurer, and we would need a "honesty" deposit or other mechanism to punish the insurer if he chooses a hash that doesn't correspond to any short-length pre-image. The context also talks about two different metrics that can mean "profitable" that are getting confused - operational profitability and Return on investment (ROI). A positive ROI requires not just that P > 0, but that it is enough to compensate for the initial investment of buying or building the equipment. As long as P > 0, a miner will keep his equipment running, even at a negative ROI, as the alternative would be an even worse negative ROI. It is possible it could be useful in some cases to protect against operational profitability being greater than 0, but ROI being negative. In addition, the context mentions that insuring investment is a zero-sum game. Furthermore, a disproportionate increase in hash rate is based on the expectation of higher future return. So the insurance could end up paying out against realized profit. Overall, the context discusses a trustless contract or insurance that guarantees minimum profitability of a mining operation and highlights the implementation issues and different metrics that can mean "profitable".</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T21:58:15.734362+00:00 </i></p>
     
     
 

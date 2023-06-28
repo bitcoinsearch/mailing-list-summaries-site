@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>High consensus fork system for scaling without limits</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Chow 2017-03-08 21:21:15
+            <br><i>Published on: 2017-03-08T21:21:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2017/combined_High-consensus-fork-system-for-scaling-without-limits.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013702.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a BIP proposal that allows users to signal readiness by publishing an absolute upper bound, EB. The miners can also signal readiness by publishing their own EB in a block. If 95% of blocks within a one month signalling period contain an EB greater than the previous consensus EB, a fork date is triggered at 6 months using the smallest 5th percentile EB published. After 6 months, any users which already have the new EB or greater begin actually using it to validate transactions. Users use the EB or the latest 95% consensus triggered value - whichever is less. Users are free to safely set very high EB levels, based on their current hardware and network speeds. These EB levels don't cause those users to accept invalid blocks ever. If a smaller block size is needed, a reduced size can also be published and agreed upon by both users and miners using the same mechanism, but the largest 5th percentile is used. Any new node can simply follow these rules to validate all the blocks in a chain... even if the sizes changes a lot (at most twice per year). In order to implement the system, some sort of versioning system is used to ensure that the two networks (old and new) are incompatible, and this would require a soft fork beforehand. It would be in the best interests of major exchanges and users to publicly announce their EB's. 'Scaling' includes a lot more than just the block size, there is much more to scaling than just increasing the block size.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T01:02:41.497898+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

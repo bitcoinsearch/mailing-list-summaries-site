@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On massive channel closing and fee bumping <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2020/002569_On-massive-channel-closing-and-fee-bumping.html">On massive channel closing and fee bumping</a>
+                        <b>Gleb Naumenko 2020-02-26 15:32:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2020/002571_On-massive-channel-closing-and-fee-bumping.html">On massive channel closing and fee bumping</a>
+                        <b>Devrandom 2020-02-28 20:04:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2020/002570_On-massive-channel-closing-and-fee-bumping.html">On massive channel closing and fee bumping</a>
+                        <b>ZmnSCPxj 2020-02-28 13:00:58</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002569.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2020-02-26T15:32:46+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network (LN) implementation's security is being discussed in an email between Gleb and Ariard. The LN relies on the ability to confirm on-chain commitment transactions unilaterally, but current fee rates for related transactions may not be reliable. Dynamic fee-bumping could solve this issue but may open up new attack vectors. A massive channel closing could be provoked by feeding an invalid block to light clients. Additionally, malicious attacks exploiting vulnerabilities in the LN protocol could lead to mutual channel closures. To counter these attacks, it is suggested that LN light clients disable HTLC routing and avoid aggressive fee-bumping. Gleb Naumenko and Ariard have discussed aspects of the LN implementation with regards to massive channel closing. They discussed how many nodes implement dynamic bumping, time-sensitive and non-time-sensitive transaction broadcasts, game theory, and local policies versus macro considerations. Non-time-sensitive transactions such as normal closing require a non-aggressive fee bump to optimize transaction inclusion versus time-value of money. On the other hand, time-sensitive transactions such as penalty broadcast require an aggressive fee bump to keep the chance of losing one's balance relatively low.The email also discusses the potential for low-fee rate commitment transactions to never make it into network mempools in case of mempool fee rate surges, adversarial or irresponsive counterparties. Dynamic single-party fee-bumping via CPFP/package relay may be a solution but raises concerns about violating Initiator Pays. Removing the channel-funder-pays-closing-fee could reduce the cost of attacks. An empirical study and simulation of fee spikes are suggested, based on historical data and parameterized with the number of vulnerable channels, their properties, distribution, and the number of nodes implementing dynamic bumping.LN light clients should disable HTLC routing and avoid any aggressive fee-bumping. As LN becomes important, it is necessary to acknowledge mining-related incentives and risks as they may influence protocol development. It is important to understand the mechanics of attacks and countermeasures as heavy use of light clients is expected. The bounding dynamic-fees engine can be viewed as a game-theoretic aspect between LN parties and macro-considerations. Local modifications that result in fatal global dynamics should be fixed with protocol changes.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T23:48:17.846061+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

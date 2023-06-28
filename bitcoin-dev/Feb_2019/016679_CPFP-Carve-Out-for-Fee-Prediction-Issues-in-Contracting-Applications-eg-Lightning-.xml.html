@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2019-02-13 04:22:39
-            <br><i>Published on: 2019-02-13T04:22:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016679.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Matt Corallo and Rusty are discussing the use of Bitcoin's Replace-by-fee (RBF) mechanism, which allows a sender to replace an unconfirmed transaction with a new one with a higher fee. Corallo argues that allowing RBF only for transactions near the top of the mempool would not be incentive-compatible, as block time variance could cause these transactions to be delayed. Rusty proposes a simplified version of RBF where transactions can only be replaced if the feerate is higher and the new transaction is in the first 4 MSipa of the mempool while the old one isn't. He suggests that the Lightning close algorithm should be used for this purpose. This method allows someone to send 100k of free tx spam but it's simple. Rusty further suggests marking the unilateral close to say "gonna be pushed" and limiting the child tx weight to 5kSipa in that case.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T15:49:13.172272+00:00 </i></p>
     
     
 

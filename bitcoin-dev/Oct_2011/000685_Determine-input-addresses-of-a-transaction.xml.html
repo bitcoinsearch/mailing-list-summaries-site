@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Determine input addresses of a transaction</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jan Vornberger 2011-10-25 09:45:41
-            <br><i>Published on: 2011-10-25T09:45:41+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2011/combined_Determine-input-addresses-of-a-transaction.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000685.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation from 2011, Gavin Andresen discussed with Jan about the safety of detecting green address style transactions. Gavin suggests that a simple scriptPubKey validation might not be enough as there are non-standard scriptPubKey scripts that will validate if given certain inputs. Jan then suggests bringing his own scriptPubKey of just OP_CHECKSIG to check if it is a proper signature from a green address key, and afterwards checking the address by looking at 'tx.getHashForSignature()'. Gavin suggests that green addresses could be implemented as a second signature in the scriptSig, which would allow the rest of the transaction to be completely normal and not require specific inputs. Jan considers two options: getting something working reasonable fast to detect current green address style transactions or rethinking how green transactions are created and verified and try to put something 'proper' together which has a chance of being merged at some point. However, green transactions are too controversial at this point to get them included in mainline.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-04T20:52:00.894377+00:00 </i></p>
     
     
 

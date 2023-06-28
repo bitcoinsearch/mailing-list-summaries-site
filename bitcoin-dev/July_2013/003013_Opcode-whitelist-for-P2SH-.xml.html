@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Opcode whitelist for P2SH?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> John Dillon 2013-07-28 19:39:08
-            <br><i>Published on: 2013-07-28T19:39:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2013/combined_Opcode-whitelist-for-P2SH-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/003013.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Peter Todd has suggested two uses for non-standard transactions to implement oracles and one-time-password protection of wallet funds. The oracle case would be most useful with more arbitrary rules. It is useful to have scriptPubKeys like n...m CHECKMULTISIG CHECKSIG BOOLOR and many other similar constructions. The author suggests creating a whitelist for specific opcodes that would apply to scripts serialized using P2SH, retaining the existing standard whitelist for scriptPubKeys. The author recommends dropping pay-to-pubkey and pay-to-multisig due to their potential for dumping data in the UTXO set. The whitelist should contain 0 to 75 byte pushdata, PUSHDATA1, 1NEGATE, OP 1 to OP16, IF, NOTIF, ELSE, ENDIF, VERIFY, RETURN, TOALTSTACK, FROMALTSTACK, DROP, DUP, SWAP, EQUAL, EQUALVERIFY, 0NOTEQUAL, BOOLAND, BOOLOR, RIPEMD160, SHA1, SHA256, HASH160, HASH256, CHECKSIG, CHECKSIGVERIFY, CHECKMULTISIG, and CHECKMULTISIGVERIFY. This list allows for complex logic, but does not allow for arithmetic, thus avoiding potential problems.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-07T14:43:39.348432+00:00 </i></p>
     
     
 

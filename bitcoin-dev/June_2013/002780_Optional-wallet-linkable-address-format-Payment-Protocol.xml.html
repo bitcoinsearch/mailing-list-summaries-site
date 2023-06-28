@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Optional &#34;wallet-linkable&#34; address format - Payment Protocol</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Alan Reiner 2013-06-19 14:39:04
-            <br><i>Published on: 2013-06-19T14:39:04+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2013/combined_Optional-wallet-linkable-address-format-Payment-Protocol.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002780.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation between Timo Hanke and Alan, Timo brings up a subtlety related to the payment protocol. Suppose the payer wants to pay a destination address called "destination," and the payee has already spent the output, which means that the public key corresponding to "destination" is publicly known. Then anyone can create arbitrary many pairs {PublicKeyParent, Multiplier} that lead to the same "destination." Depending on what the transaction should prove, this could be an unwanted feature. To eliminate ambiguity about PubKeyParent, Timo suggests replacing PubKeyParent * Multiplier[i] with PubKeyParent * HMAC(Multiplier[i],PubKeyParent), but this modification would not be directly compatible with BIP32 anymore. Alan finds it interesting but notes that the most obvious attack vector is the discrete log problem. If someone wants to maliciously prove that a public key they control is related to PubB, they will have to find the multiplier M that solves: M*PubC = PubB. Although it's possible to produce random pairs of {PubX, Mult} pairs that give the same PubB, one won't have the private key associated with those public keys. Overall, the email conversation explores potential vulnerabilities in the payment protocol.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T19:00:03.631476+00:00 </i></p>
     
     
 

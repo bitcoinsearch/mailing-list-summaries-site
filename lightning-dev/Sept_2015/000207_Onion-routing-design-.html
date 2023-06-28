@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onion routing design.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Zooko Wilcox-OHearn 2015-09-22 01:27:03
+            <br><i>Published on: 2015-09-22T01:27:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2015/combined_Onion-routing-design-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000207.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion regarding requirements and desiderata, Rusty Russell explained the format of a route for onion routing. The route includes required bytes of data, which is decrypted by a node using its pubkey to reveal where the data should go next and how much fee can be taken. The nodes create the route backwards to calculate the size and then randomly pick a total size between 1024 and 4096, padding to that size with at least 32 bytes of random padding. Nodes can probe the route to guess the final destination, but there is no general fix for this issue. To prevent errors from leaking information to observers on the route, signing errors and using the 'sum' field as a secret key seems sensible. Overall, onion routing only provides limited protection against correlating HTLCs by R value.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T20:12:32.213493+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

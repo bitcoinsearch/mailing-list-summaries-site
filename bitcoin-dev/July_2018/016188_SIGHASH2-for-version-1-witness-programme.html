@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH2 for version 1 witness programme</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-07-02 18:23:48
+            <br><i>Published on: 2018-07-02T18:23:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_SIGHASH2-for-version-1-witness-programme.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016188.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to the bitcoin-dev mailing list, Johnson Lau explained how different values in hashtype affect the signature and certain parameters in a transaction. For example, if bit 0 to 3 of hashtype is 1, the signature is invalid; if it is 7 or below, outpoint is the COutPoint of the current input; if it is even (including 0), nSequence is the nSequence of the current input; if it is 11 or below, nAmount is the value of the current input. Additionally, bit 4 and 5 denote a value between 0 and 3, which affects hashOutputs, and bit 6-9 set certain parameters such as nFees, nLockTime, nVersion, and scriptCode. The post did not capture SIGHASH_SINGLE | SIGHASH_LAST_OUTPUT, which allows for signing both a change output and joint-payment output, often used in "kickstarter" joint-payment transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T16:39:26.054133+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

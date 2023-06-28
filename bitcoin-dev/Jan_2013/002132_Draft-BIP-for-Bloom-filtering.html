@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP for Bloom filtering</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andreas Schildbach 2013-01-19 09:51:04
+            <br><i>Published on: 2013-01-19T09:51:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2013/combined_Draft-BIP-for-Bloom-filtering.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-January/002132.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mike Hearn, a bitcoin developer, has suggested changes to the bitcoinj side due to pending transactions. He suggests that the filtered block should be sent before transaction data, as it is not intuitive to receive a callback saying "new pending tx" before another callback confirming the transaction. The current setup makes this most natural. Hearn believes it is cleaner to receive a filtered block and attach any matching transactions to it, then pass it to the wallet code all at once. Another issue is that downloading all dependencies is necessary to risk analyze unconfirmed transactions, which has to be triggered by seeing an unconfirmed transaction. However, it is dumb to start this process for a transaction that is actually in the chain, so there needs to be some notion of whether it came from a filtered block. Matt Corallo's code has been tested by Andreas, and because it is unit tested and reviewed several times, Hearn requests that it be merged into 0.8.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T08:07:51.569348+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

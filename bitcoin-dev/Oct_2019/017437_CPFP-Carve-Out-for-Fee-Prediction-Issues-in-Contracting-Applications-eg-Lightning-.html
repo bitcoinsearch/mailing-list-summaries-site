@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2019-10-28 09:45:39
+            <br><i>Published on: 2019-10-28T09:45:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017437.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the limitations and issues of the current mempool acceptance code in bitcoind. The proposed change to relax the current rules by allowing to add a child to each output as long as it has a single unconfirmed parent would still only allow free relay of O(size of parent) extra data, which might not be that bad. However, this would be enough for the current Lightning Network use case but not for OP_SECURETHEBAG. The issues with mempool limits for OP_SECURETHEBAG are related but have distinct solutions. One is relay cost, and the other is mempool walking. To solve the issue of relay cost, appropriately assessing Replace By Fee update fees to encapsulate all descendants can be done. But there are some tricky edge cases that make this non-obvious to do. The walking issue can be solved by caching it with a set to avoid re-expanding a node.OP_SECURETHEBAG can help with the LN issue by putting all HTLCS into a tree where they are individualized leaf nodes with a preceding CSV. Then, the above fix would ensure each HTLC always has time to close properly as they would have individualized lockpoints. This is desirable for some additional reasons and not for others, but it should "work". By doing so, every output of the commitment could be hidden within OP_STB, which could either allow bypassing the fee-pinning attack entirely (if the output cannot be spent unconfirmed) or adding fees to the commitment using SIGHASH_SINGLE|ANYONECANPAY.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:49:01.103384+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

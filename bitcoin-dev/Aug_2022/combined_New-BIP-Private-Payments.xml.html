@@ -11,71 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>New BIP: Private Payments <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020812_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Alfred Hodler 2022-07-30 09:24:47</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020813_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Ruben Somsen 2022-07-30 13:41:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Aug_2022/020816_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Alfred Hodler 2022-08-01 11:38:29</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020812_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Alfred Hodler 2022-07-30 09:24:47</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Aug_2022/020816_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Alfred Hodler 2022-08-01 11:38:29</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020812_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Alfred Hodler 2022-07-30 09:24:47</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Aug_2022/020816_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Alfred Hodler 2022-08-01 11:38:29</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020813_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Ruben Somsen 2022-07-30 13:41:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020813_New-BIP-Private-Payments.xml.html">New BIP: Private Payments</a>
-                        <b>Ruben Somsen 2022-07-30 13:41:36</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020812.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2022-07-30T09:24:47+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Alfred has proposed a new BIP on GitHub that aims to enhance the privacy and future-proofing of two-party transactions. The new BIP is an improvement on BIP47 and offers increased privacy features. Alfred is requesting feedback on it before it can be assigned a BIP number. Once deemed viable, a reference implementation will be published. In a recent email exchange on the Bitcoin-dev mailing list, Ruben Somsen provided feedback to Alfred Hodler regarding his proposal for a new BIP that facilitates more private two-party transactions.Ruben pointed out that the proposal introduces a scanning requirement to detect incoming notifications, complicating light client implementation. He recommended that Alfred put this information in the BIP, as it is an important downside that readers should be aware of. Ruben also suggested that Alfred take another look at the "Allowing collisions" paragraph from the Prague discussion, as it can potentially shave off up to 28 bytes. Despite this feedback, Ruben expressed support for Alfred's proposal and appreciated the effort put into working out details such as how to handle address formats. Alfred responded to Ruben's feedback and incorporated his suggestion of using only the first four bytes of the notification code. Alfred also added Ruben as a co-author. In response to hiding the recipient in the notification, Alfred explains that it is not only meant to allow Alice to send a notification herself but also to break the link between the notifier and Bob. This avoids social graph building issues similar to those found in BIP47 and unique per-recipient notification addresses. However, light clients will need to rely on some OP_RETURN indexing service. Alfred considers this inconvenience acceptable since it reduces social metadata on the blockchain, prevents censorship of certain recipients by notification services, allows wallets to choose their level of outsourcing, and protects against attacks from adversaries monitoring notifications.Alfred had proposed a new BIP that aims to facilitate more private two-party transactions, which he claimed was a strict improvement upon BIP47, with increased privacy and better future-proofing. The contents of the proposal can be found on GitHub. Alfred hoped to collect feedback and be assigned with a BIP number, with a reference implementation to be published once the BIP is deemed viable.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-15T23:34:38.385506+00:00</i></p>
-    
-
     
 
     <footer>

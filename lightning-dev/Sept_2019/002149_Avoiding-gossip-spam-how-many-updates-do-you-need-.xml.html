@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Avoiding gossip spam: how many updates do you need?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-09-15 12:27:11
-            <br><i>Published on: 2019-09-15T12:27:11+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2019/combined_Avoiding-gossip-spam-how-many-updates-do-you-need-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002149.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A Lightning Network developer has proposed a method of passively rebalancing channels by broadcasting a `channel_update` with zero routing fees if there is too much liquidity on one side of the channel. This would help JIT-Routing of nearby nodes as it allows cheaper rebalances to support. The developer also proposes limiting such updates to once every 10 minutes and setting the feerate to zero. The next release of c-lightning will start suppressing gossip which comes too fast. A simple filter has been implemented that allows each message (node_announcement or channel_update) once per day on average, with a burst up to four times per day. The cap is about 90,000 12 MB per day given 40,000 channels and 10,000 nodes. Other gossip reductions include using gossip queries for backfilling, no longer asking for the last 24 hours of gossip on startup, and suppressing duplicate gossip and reply gossip. Refresh updates are only issued once every 13 days instead of the current seven to accommodate users with rPi on a 4G plan.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T20:10:45.277628+00:00 </i></p>
     
     
 

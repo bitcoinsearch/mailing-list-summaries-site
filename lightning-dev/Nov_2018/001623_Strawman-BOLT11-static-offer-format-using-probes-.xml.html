@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Strawman BOLT11 static &#34;offer&#34; format using probes.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> René Pickhardt 2018-11-16 07:47:15
-            <br><i>Published on: 2018-11-16T07:47:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2018/combined_Strawman-BOLT11-static-offer-format-using-probes-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001623.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email is addressed to Rusty and the sender expresses confusion about a proposal. They are unable to find the term "lightning probe message" in the current BOLTs and therefore can't understand the proposal. The proposal suggests a method of having reusable BOLT11 "offers" which provide almost-spontaneous payments as well as not requiring generating a BOLT11 invoice for each potential sale. The payer would use a new lightning probe message using the current onion format we use for HTLCs to retrieve the complete invoice. An "offer" has a `p` field of 26 bytes (128 bits assuming top two are 0) and the final-hop lightning onion would contain: [whatever-marker-we-need?][128-bit-`p`-field][[type,len,data]+]. The return lightning message would contain a new bolt11 invoice and an additional field: `m` (27) `data_length` 52. The payer checks the signature is correct, `m` is correct, and uses the invoice to pay as normal. The format of the proposal is handwaved a bit over the detailed format. The proposal provides a platform for recurring payments and static invoicing, and a single static invoice without an amount field can be used to approximate "spontaneous" donations while still providing proof of payment.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-25T17:00:37.317550+00:00 </i></p>
     
     
 

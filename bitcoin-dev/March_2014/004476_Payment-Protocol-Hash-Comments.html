@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment Protocol Hash Comments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-03-02 07:52:40
+            <br><i>Published on: 2014-03-02T07:52:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_Payment-Protocol-Hash-Comments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004476.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The BIP70 protocol outlines that if the pki_type is x509+sha256, then the PaymentRequest message is hashed using the SHA256 algorithm to produce the message digest that is signed. On the other hand, if the pki_type is x509+sha1, then the SHA1 algorithm is used. However, it's worth noting that this reference may be outdated as the field to be hashed is actually 'PaymentRequest', not 'Payment' message. There are a few suggestions to improve the clarity of the protocol. Firstly, the hashing process could be more explicitly outlined such as copying the PaymentRequest, setting the signature field to an empty string, serializing it to a byte[] and then hashing it. Additionally, since SHA1 is retiring, it may be worth reconsidering its use in the protocol. Finally, the question was raised whether there is any way for end-users to see details like the pki_type and certificate chain, similar to how browsers display these details.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:41:50.930209+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

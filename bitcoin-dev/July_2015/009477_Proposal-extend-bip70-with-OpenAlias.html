@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: extend bip70 with OpenAlias</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2015-07-18 13:29:39
+            <br><i>Published on: 2015-07-18T13:29:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Proposal-extend-bip70-with-OpenAlias.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009477.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Justin Newton and the recipient, it was clarified that Netki is a company providing a service based on an open standard which they are proposing. However, they have not done a good job of promoting the standard so far. Any of the Open Source Wallet Name resolvers created by them do lookups against the standard record formats and not directly against their servers in any way. They have an open lookup standard based on both the namecoin blockchain as well as traditional DNSSEC. Furthermore, they have provided links to the lookup API server and some early libraries that can be found on <a href="https://www.netki.com/">https://www.netki.com/</a>#/developers and here: <a href="https://github.com/netkicorp.The">https://github.com/netkicorp.The</a> recipient suggested that it would be in Netki's interest to convey the message that they are actively promoting an open standard, rather than pushing a private solution. Assuming that the future standard satisfies Netki fully, the recipient proposed that the standard carry a neutral name (such as "OpenAlias v2" or "BIP xx"), instead of being named after Netki as it is purely a PR issue.Netki has the option of storing a URL rather than just a wallet address in the TXT record. This allows a second level lookup against the URL to get back a unique HD Wallet address or Payment Request each time, further protecting user privacy and security. They also use a 2-tier lookup format, where the first lookup returns a list of currencies or payment types supported by the Wallet Name, and the second lookup goes to a record specific to that currency type to get the address to go to.Netki mandates DNSSEC while the recipient makes it optional. They did this because they believe giving the user the option of NOT using DNSSEC is like letting them order a car with no brakes. In addition, Netki released another open source API server called Addressimo which will serve unique HD Wallet addresses or Payment Requests for every lookup, thus allowing a user to have a private, secure way to share a Wallet Name that can be used to send them any digital currency.Lastly, Justin Newton expressed his interest in merging standards going forward. Verisign has also delivered a standard to the IETF using DNSSEC to pass payment information and they have started discussions with them about merging standards as well. However, the recipient suggested that maybe consensus should be reached at the bitcoin level first before trying to merge with the IETF.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:38:56.283554+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

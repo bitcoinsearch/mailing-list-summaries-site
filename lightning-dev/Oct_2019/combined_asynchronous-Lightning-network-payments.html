@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>asynchronous Lightning network payments <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2019/002258_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>Konstantin Ketterer 2019-10-29 20:46:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2019/002263_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>Konstantin Ketterer 2019-10-30 12:39:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2019/002265_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>Yaacov Akiba Slama 2019-10-30 15:20:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2019/002273_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>Yaacov Akiba Slama 2019-11-04 10:04:21</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2019/002260_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>ZmnSCPxj 2019-10-30 04:28:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2019/002259_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>Nadav Kohen 2019-10-29 21:20:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2019/002268_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>Yaacov Akiba Slama 2019-10-30 17:16:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2019/002272_asynchronous-Lightning-network-payments.html">asynchronous Lightning network payments</a>
+                        <b>ZmnSCPxj 2019-11-04 07:31:56</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002258.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2019-10-29T20:46:38+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Intelligent assistants are expected to be available online most of the time, and this availability can be used for communication between them using standard https. Trampoline implementations could potentially implement polling behavior without a `please_poll` flag, especially if given a substantial fee and time budget. This proposed solution would facilitate asynchronous payments and outsourcing of routing to S.However, there are potential issues that need to be addressed before implementing this solution. These include privacy concerns, locked up capital, communication channel security, and proof of payment. One proposed solution involves the use of eltoo, where A pre-signs a transaction and sends it to B in an end-to-end encrypted communication channel. B can sell the signature to S using pay-for-signature enabled by payment points and scalars. A and S sign the settlement transaction, increasing the balance between them, and exchange signatures. A then sends the update transaction to B using an encrypted asynchronous communication channel. When B comes online, they decrypt the update transaction and sell the signature to S for payment. Privacy concerns can be addressed by splitting the payment between S and a public routing node, while locked-up capital can be addressed by overwriting or rebalancing the payment multiple times.Another proposed solution involves B signing a new settlement transaction and sending it to A, who acts as a watchtower while B is offline. Overall, these solutions enable truly asynchronous Lightning network payments and provide another reason to move to payment points and scalars.To ensure the effectiveness and security of the solution, proper safeguards and protocols must be in place.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T22:47:31.079654+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blocking uneconomical UTXO creation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-03-11 22:19:07
+            <br><i>Published on: 2013-03-11T22:19:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2013/combined_Blocking-uneconomical-UTXO-creation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-March/002230.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The UTXO set is a LevelDB and not stored in memory. Unspendable outputs are not in the working set, and if they are unlikely to be spent, they can be moved into a separate database. If an output can be proven unspendable, it can be pruned immediately, and consensus has been reached on adding a standard template for OP_RETURN that results in insta-pruning. The issue lies with low-value spendable outputs as wallets with lots of small outputs generate large transactions that take longer to verify. Wallet apps have incentives to find a balance in output sizes and defragment themselves if their average output gets too low in value.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T10:33:11.136044+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

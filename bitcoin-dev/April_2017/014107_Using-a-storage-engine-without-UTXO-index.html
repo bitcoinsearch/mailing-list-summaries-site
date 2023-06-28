@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using a storage engine without UTXO-index</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Troy Benjegerdes 2017-04-08 21:22:11
+            <br><i>Published on: 2017-04-08T21:22:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Using-a-storage-engine-without-UTXO-index.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014107.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author suggests that those worried about hard drive access should order a 512GB NVME flash drive or a laptop, as the performance is expected to make the use of cloud unnecessary. The author's brief analysis of the performance of a full chain download on a new laptop showed more overhead in lock contention and database writes, which could be due to slow flash write speed, but random reads are fast. Flash storage sizes are growing at similar rates as the total blockchain size. The question is raised as to why persistent storage is needed in a distributed byzantine fault-tolerant system, except for long-term archival and chain of custody issues. The author suggests serializing the in-memory structures out as a stream to things like tape drives or write-once optical media. A discussion ensues regarding optimizing the system for parallel access, cramming as much as possible in memory, and minimizing disk accesses. Another individual questions the proposals for addressing UTXO growth and how they relate to long-term resource requirements.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T23:52:10.007540+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

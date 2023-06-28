@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>RFC: Deterministic Entropy From BIP32 Keychains</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Adam Back 2020-03-25 13:54:18
-            <br><i>Published on: 2020-03-25T13:54:18+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2020/combined_RFC-Deterministic-Entropy-From-BIP32-Keychains.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017713.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposed extension/standard for "seed management" aims to solve the problem of too many backups due to various wallet implementations and security models. The proposal details a way to deterministically derive the initial entropy used for new root keychains using a single BIP32 style "master root key". This will allow one root key or mnemonic to derive any variety of different root keychains in whatever format is required (like BIP32 and BIP39 etc). The proposed derivation scheme uses the format `m/83696968'/type'/index'` where `type` is the final seed type, and `index` in the key index of the hardened child private key. Wallet developers don't need to change anything as the interaction point is a bip 39 seed which they mostly know how to use. HMAC-SHA512 is chosen because it may have better compatibility in embedded devices as it's already required in devices supporting BIP32.The proposed extension/standard could be a practical solution for people managing multiple seeds for various wallets in a bitcoin business setting or even power users. This proposal could be split into multiple discrete BIPs. This document contains three test cases, each of which shows the derivation of a child key from a parent key using BIP32 and BIP39. The first test case provides a child key derived from a given root key. The second and third test cases show the derivation of a child key from a master seed input, with different path values specified. Each test case specifies the bits required for the child key, as well as the WIF, k, entropy, and BIP39 seed and mnemonic for the derived child key. The references for this document are BIP32 and BIP39, and the document is dual-licensed under the Open Publication License and BSD 2-clause license.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T00:03:33.123585+00:00 </i></p>
     
     
 

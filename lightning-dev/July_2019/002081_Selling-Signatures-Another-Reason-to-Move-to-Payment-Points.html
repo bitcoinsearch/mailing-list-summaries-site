@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Selling Signatures: Another Reason to Move to Payment Points</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2019-07-17 18:16:18
+            <br><i>Published on: 2019-07-17T18:16:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2019/combined_Selling-Signatures-Another-Reason-to-Move-to-Payment-Points.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002081.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Nadav Kohen proposed a scheme for selling data using the Lightning Network. However, he also thought about situations where an untrusted party attempts to sell a signature to a known message. This could be useful in offering a DLC-like Option contract where they are essentially collateralizing themselves in a funding transaction and then selling their signatures to Contract Execution Transactions (CETs). In this example, it is crucial to ensure that the buyer of the signatures pays if and only if they receive valid signatures for the CETs which are known. To achieve this, ZmnSCPxj's proposed payment points with scalars could be used. The (Schnorr) signature seller could give the buyer their one-time public key, `R = k*G`, through which the buyer could compute the payment point whose scalar is the seller's signature: `sig*G = R + h(m, R)*A` where `A` is the seller's public key. Using this value as the payment point, the buyer could be assured that they pay if and only if they receive `sig` from the seller, where `sig` is the desired valid signature of `m`! Lloyd Fournier expressed interest in this idea and asked for more background information on CETs. Nadav responded by explaining that although it's possible for oracles to sell options contracts, a more decentralized setup can be achieved with normal DLC oracles.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T19:32:00.662970+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>questions about bitcoin-XT code fork &amp; non-consensus hard-fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aaron Voisine 2015-06-16 04:00:19
+            <br><i>Published on: 2015-06-16T04:00:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_questions-about-bitcoin-XT-code-fork-non-consensus-hard-fork.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008718.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email chain discusses potential changes to Bitcoin's mempool size and transaction propagation rules. Aaron Voisine, the co-founder and CEO of breadwallet, suggests that ejecting transactions from mempools instead of preemptively refusing them based on network wide propagation rules may result in inconsistent tx propagation and an increase in tx rebroadcasts. Additionally, he believes that a significant issue with replace-by-fee (RBF) is that users cannot know up front what fee they will pay. On the receive side, the problems are worse since users cannot rely on the sender to do replacing. Voisine advocates for increasing block size followed by tx selection and propagation rule changes to create fee pressure as simpler solutions to limit blockchain growth. Alex Morcos responds by suggesting that there have been improvements made to the fee estimation code, which should give more accurate estimates. There are also efforts being made to overhaul the block creation and mempool limiting code so that actual outstanding queues to be included in a block can be incorporated in fee estimation. CPFP and RBF are candidates for inclusion in Bitcoin core soon to handle edge cases.   There is also discussion about the XT fork, which Gavin and Mike plan to proceed with. However, Aaron suggests that there is no need for an XT only hard-fork and that alternate proposals like BIP100 or major changes to non-consensus code could avoid it. The email chain ends on this note without any clear resolution.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T23:15:35.819660+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

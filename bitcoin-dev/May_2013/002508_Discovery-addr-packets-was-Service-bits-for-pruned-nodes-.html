@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Discovery/addr packets (was: Service bits for pruned nodes)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-05-06 16:34:47
+            <br><i>Published on: 2013-05-06T16:34:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2013/combined_Discovery-addr-packets-was-Service-bits-for-pruned-nodes-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002508.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of delays in finding a peer that will accept an incoming connection on Android phones has been raised. However, it is unlikely to be due to regular nodes not caring about responding to SPV nodes quickly, as remote nodes do not have any special code that knows what kind of client is connecting. The issue may lie with overloaded seeds or general delays in bringing up a 3G data link from idle.Jeff's seed was removed in git master a few weeks ago because it was often serving nodes that were full, which should speed things up a bit. There are many other ways to optimize performance beyond having fresh seeds, such as the Android app supporting putting Bluetooth MAC addresses in URLs served via QRcode/NFC. This means that the sending side can provide the receiving side with a transaction via a local Bluetooth socket, eliminating the need to wait for P2P bringup on the send side.In a typical merchant scenario, the receive side is more likely to have WiFi access and is more likely to be talking to the network frequently, so its list of IPs gathered from addr packets would be fresher. It can do P2P bringup whilst the user is confirming/signing/uploading on the sending side, overlapping the two and buying precious seconds. These methods can help improve the efficiency of connecting to peers on Android phones.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T16:06:00.644027+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>LOT=False is dangerous and shouldn&#39;t be used</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-03-01 15:06:14
+            <br><i>Published on: 2021-03-01T15:06:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_LOT-False-is-dangerous-and-shouldn-t-be-used.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018512.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on Bitcoin-dev, Luke Dashjr expressed concerns about the risks associated with relying solely on miner signaling to coordinate activation of protocol upgrades. However, another contributor pointed out that in 2017, miners were unable to successfully veto a BIP9 activation. The conversation then turned to the potential messiness of introducing the Lock In On Timeout (LOT) parameter in the context of a soft-fork like Taproot. Those running LOT=True would enforce Taproot rules, while those with LOT=False would not reject blocks if activation did not occur. If miners produced a chain split, users with LOT=False could face an unreliable chain, being replaced every time the LOT=True chain overtook it in work. However, this assumes that miners cannot avoid a reorg, which is easily achieved via running "invalidateblock" or examining block headers. While some argue that LOT=True should be the only deployed parameter to reduce risk, this ignores the fact that LOT=false is already the default behavior for all node software.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T01:33:15.280428+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Commitment-suitable UTXO set &#34;Balances&#34; file data structure <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013696_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>Bram Cohen 2017-03-08 03:07:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013692_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>praxeology_guy 2017-03-07 21:28:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013692_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>praxeology_guy 2017-03-07 21:28:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013692_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>praxeology_guy 2017-03-07 21:28:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013693_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>Bram Cohen 2017-03-08 01:55:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013695_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>bfd at cock.lu 2017-03-08 01:55:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013696_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>Bram Cohen 2017-03-08 03:07:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013695_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>bfd at cock.lu 2017-03-08 01:55:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013696_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>Bram Cohen 2017-03-08 03:07:31</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013693_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>Bram Cohen 2017-03-08 01:55:18</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013695_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>bfd at cock.lu 2017-03-08 01:55:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2017/013693_A-Commitment-suitable-UTXO-set-Balances-file-data-structure.html">A Commitment-suitable UTXO set &#34;Balances&#34; file data structure</a>
+                        <b>Bram Cohen 2017-03-08 01:55:18</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013696.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-03-08T03:07:31+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Bitcoin-dev mailing list recently discussed the scalability and cost of implementing a commitment to the "balance" of an "address." One user argued that this approach is not particularly useful for clients. However, another potential benefit was also discussed: creating infrequent utxo commitments that would allow new clients to download just the contents of the utxo set without having to retrieve the entire blockchain history, which is much larger.Praxeology_guy proposed using Merkle tree hashes to store output transactions and output numbers in a proposal for a commitment-suitable UTXO set "Balances" file data structure. This proposed structure is expected to allow all nodes in the network to verify their UTXO set's data integrity and permit pruned nodes to trustlessly start synchronizing at a Balances file's block height instead of the genesis block. To work, Bitcoin would need a new policy where a UTXO commitment is made every "Balances/UTXO Commitment Period" (BCP) blocks.A proposed Commitment-suitable UTXO set "Balances" file data structure allows pruned nodes to satisfy SPV nodes and trustlessly start synchronizing at a Balances file's block height instead of the genesis block. The balances file summary consists of a header, balances, balance index, and merkle tree hashes. The suggested design change to the chainstate "CCoinsViewDB" utxo database proposes changing the "CCoins" data structure so that it can keep track of spends that shouldn't be included in the commitment. Praxeology suggests that vtipspends could hold {vout_ix, blockhash } instead of just vout_ix to handle forks and txo spends better.Feedback on the proposal is welcome.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T22:05:51.549290+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

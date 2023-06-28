@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Testing a Flare-like routing implementation on 2500 AWS nodes</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Viacheslav Zhygulin 2016-09-23 14:10:19
-            <br><i>Published on: 2016-09-23T14:10:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2016/combined_Testing-a-Flare-like-routing-implementation-on-2500-AWS-nodes.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-September/000620.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author of this email is asking Pierre about their implementation in tests and the difference between it and the original paper. The main difference is in the way nodes communicate with each other, where there is no DHT in their implementation as inter-nodes communication only occurs on existing open channels and all routing-related messages are onion-encrypted and routed themselves. This means that a node cannot talk directly to a node it doesn't already have a route to. Regarding route selection, the Flare paper proposed a 3-step process which includes sender using its own routing table, requesting receiver's table and using a combination of both tables, and iterating over nodes close to the receiver to request their tables. However, in their test, they only did the second step which is a strong tradeoff. It means that the time allowed to find a route is short and predictable, but it is very suboptimal in terms of probability of finding a route. The author's question is how the sender requests the receiver's routing table if the sender cannot communicate with the receiver. The email ends with a confidentiality notice.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T00:28:34.108684+00:00 </i></p>
     
     
 

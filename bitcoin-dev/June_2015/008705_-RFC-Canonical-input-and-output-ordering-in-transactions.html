@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Canonical input and output ordering in transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-06-15 21:01:04
+            <br><i>Published on: 2015-06-15T21:01:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_-RFC-Canonical-input-and-output-ordering-in-transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008705.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark Friedenbach suggests a special exemption for compact commitments via mid-state compression. The use case involves an OP_RETURN output sorted last, with the last N bytes serving as a commitment, and a proof of the commitment using mid-state compression to elide the beginning of the transaction. However, it is challenging to create a clean exemption without requiring an advertisement of sort-order exemptions. Despite this challenge, outputs can be sorted by the first byte minus 107 (or 0 if script is zero length) and the remainder of the script in lexicographical order. This method would place OP_RETURN outputs last. Peter Todd's more general best-effort language could also be used, as OP_RETURN transactions cannot be hidden to look like something else, so non-canonical ordering will not be an issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T22:18:10.230562+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

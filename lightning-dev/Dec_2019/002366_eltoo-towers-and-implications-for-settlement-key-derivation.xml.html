@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>eltoo towers and implications for settlement key derivation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2019-12-04 13:53:39
-            <br><i>Published on: 2019-12-04T13:53:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2019/combined_eltoo-towers-and-implications-for-settlement-key-derivation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002366.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A discussion on the Lightning-dev mailing list about the eltoo paper and its impact on channel construction brought up an issue with watchtowers. Due to NOINPUT, any update transaction can spend from any other, so in theory, the tower only needs the most recent update txn to resolve any dispute. However, in order to spend, the tower must also produce a witness script which when hashed matches the witness program of the input. To ensure settlement transactions can only spend from exactly one update txn, each update txn uses unique keys for the settlement clause, meaning that each state has a unique witness program. The discussion suggested alternatives such as adding a taproot branch with an `OP_RETURN` tapscript or using BIP32 derivation. The original poster questioned the issue and argued that update_tx and settlement_tx are self-contained, and there is no need to recover the prevout scriptPubKey or any value therein. They also argued that it's not a watchtower's job to finalize the entire off-chain contract, but rather to watch the blockchain and react should anything trigger it.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T21:55:56.601808+00:00 </i></p>
     
     
 

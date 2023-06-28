@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>MASF=true + LOT=informational</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2021-03-04 18:40:18
+            <br><i>Published on: 2021-03-04T18:40:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_MASF-true-LOT-informational.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018562.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developers are looking for ways to improve the activation mechanisms for soft-forks. Four activation configurations have been discussed with rationales. The first one involves MASF=true and LOT=false, which is considered a safe conservative approach. However, it perpetuates the risk demonstrated by BIP 141/BIP9. The second configuration includes MASF=true and LOT=true, which is the inverse of the first. The third configuration is MASF=false and LOT=informational. This configuration uses the non-standardness part of schnorr to activate at a flag height without normative signaling in version bits but creates needless delays. The fourth configuration combines MASF=true (same mechanism as 1 or 2) with LOT=informational (mechanism from 3). It provides signaling in an optional and informational sense that is not normative for consensus code but informs the ecosystem about hashrate-verified opt-in assertion of readiness from pools. Using a declining activation threshold over time gives miners control over the timing of activation, not the eventuality. This is essentially the same as LOT=true, however, it has a greater chance of activation without requiring intervening releases or changes to the code. There were also concerns about offending miners, but this concern seems dubious to many, given pools indicated ~90% support. Against the realism of developer control, if there were a market need to reject a soft-fork, that can also be done with a UASF. Disagreement and potential for partly incompatible clients with different activation configuration change the risk calculation for LOT=false. So that LOT=false may not be safer in practice and does not wash reference client developers' hands of contributing to the combined risk. If LOT=true is a hidden flag in bitcoin reference code or released by another project, then misinterpretation of developer control is avoided. Subsequent posts on the thread with the third proposal discuss that informational signaling be substituted so that users and the market can benefit from the information about miner intent. In some way, it could be more reliable in signaling a willing readiness rather than a UASF under duress mandatory signal. In the MASF delay eventuality, where the flag height is relied upon, users and services would be well advised to ensure they are running schnorr validating fullnodes, and for SPV users to verify their wallet relies on schnorr upgraded fullnodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T19:01:16.371163+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

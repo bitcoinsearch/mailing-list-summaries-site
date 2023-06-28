@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: relax the IsStandard rules for P2SH transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Wladimir 2014-06-18 07:42:12
+            <br><i>Published on: 2014-06-18T07:42:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2014/combined_Proposal-relax-the-IsStandard-rules-for-P2SH-transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/006097.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In 2014, Gavin Andresen proposed to open up the "IsStandard" transaction rules on the main Bitcoin network, allowing for more complicated transaction forms including multi-signature. However, he proposed keeping the current limit of 15 ECDSA signature checking operations per transaction output in place to prevent attackers from crafting a single standard transaction that requires an order of magnitude more validation. The proposal would allow any combination of enabled Script opcodes, but the reference implementation's wallet would still only recognize P2SH transactions that use one of the standard transaction forms. Specialized wallets or applications would be required to use new transaction forms. Wladimir agreed with the proposal, stressing the importance of lifting restrictions and increasing flexibility while maintaining DoS limits.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T00:20:05.539197+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pay-to-Open and UX improvements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-12-17 09:31:56
+            <br><i>Published on: 2019-12-17T09:31:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Pay-to-Open-and-UX-improvements.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002382.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning onboarding process can be made smoother by using pay-to-open, which provides a good UX for newcomers but requires temporary trust between the user and the node. The trust relationship appears in two places: the user releases the preimage, then we fund the channel; and the user trusts that we won't double-spend the funding transaction. It is easy to fix the former once Bitcoin supports Schnorr. HTLC-like constructions can be used to assure this today, similar to what is used in HTLC-success/HTLC-timeout in BOLT 3. However, fixing the latter issue is more complex as there's a risk of double-spending by the funder. There are no clear solutions proposed yet, but the mailing list's brainpower is being leveraged to find possible solutions. The above procedure probably fixes this issue as well by setting things up so that the funder cannot double-spend the funds that will eventually get into the channel after it is capable of receiving the preimage. Funder can double-spend, but then is unable to learn the preimage and cannot steal the payment (and is indistinguishable from any other payment failure). However, the above procedure makes Alice vulnerable to Bob aborting after the pre-funding is confirmed, thus on-chain fees are paid by Alice to pay for the pre-funding and the timelock branch. This can be fixed by forcing Bob to provide funds to the pre-funding, which get returned to the channel on Bob's side, and having the timelock branch be `(A && B && timelock)` and pre-signing a backout that returns the funds back to Alice and Bob, with Bob paying all on-chain fee.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:23:15.956909+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

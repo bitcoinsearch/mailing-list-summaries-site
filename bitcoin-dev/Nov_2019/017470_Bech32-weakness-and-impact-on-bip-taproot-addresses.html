@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bech32 weakness and impact on bip-taproot addresses</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2019-11-13 06:30:18
+            <br><i>Published on: 2019-11-13T06:30:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2019/combined_Bech32-weakness-and-impact-on-bip-taproot-addresses.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017470.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the Bitcoin-dev mailing list has suggested that adding a length for checksumming purposes does not necessarily require the length to be added in the address format. One proposal is to create an improved bech32 algorithm and use it for future addresses, rather than working around the problem in the address encoding while keeping the existing bech32 checksum. This would result in two checksum formats, one which validates with the witness program length, and one without. Readers that do not understand the new checksum format will simply reject them without mis-sending to the wrong witness program. Another solution includes including the length in some fashion directly in the checksum calculation, which may be preferable. It's also possible to do this in such a way that for 33-symbol and 53-symbol data parts (corresponding to P2WPKH and P2WSH lengths) the new algorithm is defined as identical to the old one. Updating BIP173 to indicate the issue and suggesting improvements for other users of bech32 is also under consideration. It has been suggested that there is no need to introduce the "new" address format right now; amending BIP173 to only permit length 20 and length 32 for now should suffice. The introduction of the new address format using an improved checksum algorithm can wait until a non-32-byte-witness-program would come into sight.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T21:04:54.712516+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

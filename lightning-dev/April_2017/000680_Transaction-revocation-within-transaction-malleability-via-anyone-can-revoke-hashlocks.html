@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction revocation within transaction malleability via anyone-can-revoke hashlocks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2017-04-26 19:16:47
+            <br><i>Published on: 2017-04-26T19:16:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2017/combined_Transaction-revocation-within-transaction-malleability-via-anyone-can-revoke-hashlocks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-April/000680.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The need for bidirectional channels requires a primitive called revocable transactions. In order to generate a revocable output, the output is encumbered such that either the receiver can receive the output after some time or the output may be signed by both sender and receiver. However, in the presence of malleability, a fraudulent receiver may malleate the transaction producing the output, invalidating the existing revocation transaction. Another issue is that it is possible for the receiver to defraud the sender via a two-prong attack. To fix these issues, the receiver generates a secure random number, the revocation key, and publishes it to the sender and any interested participants in the Lightning Network. If the output has not been revoked, the receiver simply needs to wait 2 days to spend. If the output has been revoked, the sender can construct a revocation transaction by itself by signing the transaction and showing the published revocation key. Anyone who has heard and kept the revocation key may claim the receiver's coins after 1 day of the CSV+1 period. The receiver needs to prevent everyone to whom the revocation key has been sent from the Bitcoin network during the 1 day between the CSV+1 and CSV+2 periods to use a revoked output.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:03:53.012563+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

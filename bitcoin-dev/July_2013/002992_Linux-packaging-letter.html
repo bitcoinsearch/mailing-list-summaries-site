@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Linux packaging letter</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Scott Howard 2013-07-24 03:00:36
+            <br><i>Published on: 2013-07-24T03:00:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_Linux-packaging-letter.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002992.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation between Luke-Jr and Scott about packaging Bitcoin for Debian reveals some key points. Luke-Jr mentions that using the bundled/embedded LevelDB is probably the best solution as it saves a lot of additional work for the maintainers of the library packages, and the security team. He also says that MIPS has always failed on the Satoshi codebase and will not be supported until someone has time to dedicate to fixing the numerous little-endian assumptions in the code. Scott clarifies that bitcoind/bitcoin-qt is only built on little endian machines and Debian should get away with packaging Bitcoin-Qt and bitcoind as-is with no modifications. However, there are concerns that modifying the package could put a much larger price on compromising Debian's build servers and/or repositories. Scott also mentions that the official binaries are not simply built by upstream developers but using Gitian, anyone can produce bit-for-bit identical binaries. Official releases are only published after three or more people have done an independent compile and signed the output. He thinks that achieving this level of security would make distributing Bitcoin node software much safer. In conclusion, the email conversation highlights the importance of maintaining the security and integrity of the Bitcoin package while packaging it for Debian. It also emphasizes the need to use the included library to avoid any potential security risks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T14:34:34.386681+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

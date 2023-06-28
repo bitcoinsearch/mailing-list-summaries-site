@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[softfork proposal] Strict DER signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-01-22 00:32:35
+            <br><i>Published on: 2015-01-22T00:32:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_-softfork-proposal-Strict-DER-signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007172.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille, a Bitcoin Core developer, has proposed an improvement to the Bitcoin protocol that would replace OpenSSL with libsecp256k1. The proposal was made in light of recent events that revealed the risks of depending on OpenSSL for consensus rules. Currently, OpenSSL is used to enforce the malleability protections specified by BIP 62. However, this has been postponed due to unforeseen complexities.The new proposal aims to provide a more fundamental solution to the problem sooner rather than later. The proposal involves removing the dependency on OpenSSL and replacing it with the libsecp256k1 library. This library will provide signature verification and public key recovery functionality, which are currently handled by OpenSSL. The proposed changes were shared on the Bitcoin Development mailing list along with sample codes and test cases to ensure compatibility.In addition to the proposal, the given context also contains multiple arrays of hexadecimal values representing different types of signatures. These arrays are used to test the validity of signatures in a Bitcoin transaction. The valid signature arrays include `good(zerolen)`, `good(normal)`, `good(min_r)`, `good(min_s)`, `good(max_r)`, `good(max_s)`, `good(wierd_s_len)`, `good(wierd_r_len)`, `good(zeropad_s)`, and `good(zeropad_r)`.On the other hand, the invalid signature arrays include `not_compound`, `short_len`, `long_len`, `r_notint`, `s_notint`, `s_oversig`, `r_oversig`, `s_negative`, `r_negative`, `zeropad_bad_s`, `zeropad_bad_r`, `zerolen_r`, `zerolen_s`, `overlen_r_by_1`, `overlen_s_by_1`, `underlen_r_by_1`, `underlen_s_by_1`, `missing_sighash`, and `extra_byte`. These arrays are used to test various fail cases of signatures with issues such as not being compound, having incorrect length, being negative, or missing a sighash value.Lastly, the codes also include a loop that tests different amounts of truncation for the `normal` signature array.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:46:21.975078+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

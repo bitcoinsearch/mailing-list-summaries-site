@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Block Batch Filters for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2019-10-11 15:44:54
+            <br><i>Published on: 2019-10-11T15:44:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2019/combined_Block-Batch-Filters-for-Light-Clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017384.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is about the limitations of BIP 157 as compared to BIP 37, which does not allow applying filters to mempool and checking zero confirmation transactions. The light client can process unconfirmed transactions only by loading the entire mempool transaction flow, which may lead to concerns regarding DOS and fingerprinting. One possible solution suggested is to retrieve a complete compact filter of the whole mempool using a maximum size of the filter ordered by feerate. To mitigate DOS concerns, dynamic filter construction could be used, and the update-interval of such a filter could also be time-based rather than on every new tx in the mempool. The expected process involves generating a mempool filter, connecting to the peer, requesting the mempool-filter, processing the filter for relevant transactions, and eventually sending getdata of relevant transactions. After the initial retrieve, the light client inspects all new txns received from peers from that point on (filterless unconfirmed tx detection). Alternatively, the mempool filter can be requested again after a timeout if the previous process is too bandwidth expansive. The conversation is focused on finding ways to make the light client process more efficient without compromising privacy and security.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:25:49.254894+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>deterministic transaction expiration</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tom Harding 2014-08-02 00:36:46
-            <br><i>Published on: 2014-08-02T00:36:46+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2014/combined_deterministic-transaction-expiration.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006404.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion regarding setting nLockTime in newly created transactions, Kaz Wesley suggested implementing four changes to Bitcoin Core. The first change would be to set nLockTime to the current height by default or slightly below for reorg-friendliness. The second change would be to discourage transactions without nLockTime by requiring a slightly higher fee for relay. The third change would be to start rate-limiting relay of transactions without nLockTime. The fourth change would be to add an IsStandard rule rejecting transactions with an nLockTime more than N blocks behind the current tip. To implement these changes, it was suggested to begin with mempool janitor #3753 to allow transactions with nLockTime to live longer in the mempool than those without. The isStandard change would complement this effort and avoid relaying a transaction that will soon expire by the nLockTime rule.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T01:42:22.976806+00:00 </i></p>
     
     
 

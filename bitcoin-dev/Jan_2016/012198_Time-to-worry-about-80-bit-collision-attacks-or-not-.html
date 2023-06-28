@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Time to worry about 80-bit collision attacks or not?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2016-01-07 19:02:05
+            <br><i>Published on: 2016-01-07T19:02:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2016/combined_Time-to-worry-about-80-bit-collision-attacks-or-not-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012198.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Gavin Andresen, a developer and former lead maintainer of Bitcoin, raised the concern about the tradeoff between security and efficiency in the context of segregated witness BIP. The proposal suggested reducing the size of the signature by using SHA256(RIPEMD160()) as the hash function. However, Pieter argued that this could lead to collision attacks where an attacker creates two scripts with identical hashes, only one of which transfers the intended payment. Gavin proposed that contract wallets can protect against such attacks and that adding an extra 12 bytes to every segwit is unlikely to be a problem in practice and trivial to protect against. He further questioned whether there is a need to worry about collision attacks against RIPEMD160 today. A successful brute-force collision attack would require O(2^80) CPU and storage, which is infeasible given current technology. Even assuming doubling storage capacity every year, it would take four decades for an attacker to have the entire world's storage and mount a collision attack. In conclusion, while reducing the size of the signature can result in significant savings, it may not be worth compromising security. Therefore, protecting against possible attacks should be a priority even if they seem unlikely to happen.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T02:59:44.248437+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

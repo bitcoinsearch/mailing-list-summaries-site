@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A protocol for requesting invoices</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2018-03-21 04:02:39
-            <br><i>Published on: 2018-03-21T04:02:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2018/combined_A-protocol-for-requesting-invoices.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-March/001113.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The use-case discussed here is for payees to use multiple TOR addresses with only one Lightning Network (LN) node. The TOR address advertised for channel connections is widely shared through gossiping, and it can be considered the same identity as the peer ID. However, to keep payer/payee communication unlinked from a node's ID, different TOR addresses or any other pseudonymous communication method should be used. One possible privacy break is when channels are brought on-chain, and any HTLCs pending through that channel will also be brought on-chain and visible, exposing the payment_hash. A payer observing the chain knows the payment_hash it was paying to, and from the channel signatures, knows which nodes were using that channel. Using non-public channels helps reduce the risk, but there is no such thing as a truly private channel. Once Scriptless Script is implemented, this privacy leak disappears, as even on-chain, the equivalent to a hashlock becomes indistinguishable from an ordinary Bellare-Neven m-of-n signature.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T21:39:26.462059+00:00 </i></p>
     
     
 

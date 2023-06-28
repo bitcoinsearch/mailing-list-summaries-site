@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Outsourcing route computation with trampoline payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2019-04-03 08:27:13
+            <br><i>Published on: 2019-04-03T08:27:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2019/combined_Outsourcing-route-computation-with-trampoline-payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001960.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Lightning-dev mailing list, Johan commented on the proposal of implementing trampoline payments in the network. Johan thinks that the high-level direction of the proposal is good and it ties together several concepts proposed earlier. The correct design could give the sender all the flexibility needed to craft payments according to its own reliability/privacy/fee tradeoff. In an ideal world, multi-hop locks, packet-switched routing, rendezvous routing, and fees would be implemented. Johan admitted that he hasn't thought about the technical implications of all this and it would require a lot of work to get this actually implemented.On the same thread, ZmnSCPxj brought up an unrelated issue with trampoline nodes creating overlapping routes unintentionally. For example, when A creates an inner trampoline onion "E->C", and an outer onion "A->B->E". E, on receiving the inner trampoline onion "E->C", finds that E->B direction is low capacity, so routes over the outer onion "E->D->B->C" with the inner trampoline onion "C". This creates an overall route A->B->E->D->B->C. When the B->C HTLC is resolved, B can instead claim the A->B HTLC and just fail the D->B HTLC, thereby removing D and E from the route and claiming their fees, even though they participated in the route. There was also a suggestion to switch to payment points/scalars soon.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:03:59.196775+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

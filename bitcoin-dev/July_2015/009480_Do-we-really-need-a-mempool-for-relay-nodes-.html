@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Do we really need a mempool? (for relay nodes)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Patrick Strateman 2015-07-18 19:46:01
+            <br><i>Published on: 2015-07-18T19:46:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_Do-we-really-need-a-mempool-for-relay-nodes-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009480.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a post on the Bitcoin-dev mailing list in 2015, Peter Todd discussed whether relay nodes need to keep a record of the transactions they have relayed. He concluded that they do not strictly need to, as long as some mechanism is in place to avoid DoS issues. To mitigate these concerns, there should be a per-UTXO limit on bandwidth relayed, which could be accomplished by maintaining a record of weighted fee and fee/KB. This would provide a clear and simple upper limit of lifetime bandwidth. Additionally, bandwidth moment-to-moment could be limited by asking peers for highest fee/KB transactions they advertise first, stopping when the bandwidth limit is reached. While relay nodes do not require a mempool, wallet nodes can use it for fee estimation in addition to looking at past blocks. Todd suggests that IsStandard() could be removed entirely with an increasingly expensive "replacement" policy, relying on it alone to provide anti-DoS measures. Miners would still want to have a mempool, but simplifying the codebase for relaying could make it easier for them. This approach could even be used for a scalable general-purpose messaging network paid by coin ownership if the UTXO set is split up, and some kind of expiration over time policy is implemented.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:58:02.172315+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

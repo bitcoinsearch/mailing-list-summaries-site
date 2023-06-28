@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[RFC] Simplified (but less optimal) HTLC Negotiation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Matt Corallo 2021-04-28 02:13:01
-            <br><i>Published on: 2021-04-28T02:13:01+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2021/combined_-RFC-Simplified-but-less-optimal-HTLC-Negotiation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003024.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange, Rusty Russell and Matt Corallo discuss a proposal for a simplified protocol for the Lightning Network. The proposed protocol would involve additional state machine logic to enforce when a message can or cannot be sent and additional logic for when pending changes buffers can be flushed. The only difference from the current state machine is that if it's your turn and you receive an update, you can either reply with a "yield" message or ignore it. Rusty asks how to handle the "no changes to make" case, to which Matt responds that both parties can send yields back and forth every Nms or resolve it through some protocol. Rusty fails to understand why the simplified protocol is different, as both sides have to be in sync to update_splice. Matt suggests deterministic throw out one splice instead of implementing turns while keeping the non-turn slice protocol simpler. However, Rusty points out that he is not sure if anyone else will implement turn-based, so they will have to wait and see.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T14:41:34.345467+00:00 </i></p>
     
     
 

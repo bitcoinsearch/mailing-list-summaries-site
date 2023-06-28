@@ -11,71 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Bitcoin components. <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000250_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Luke-Jr 2011-07-28 05:56:50</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000252_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Matt Corallo 2011-07-28 11:21:06</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000250_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Luke-Jr 2011-07-28 05:56:50</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000252_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Matt Corallo 2011-07-28 11:21:06</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000252_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Matt Corallo 2011-07-28 11:21:06</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000249_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Alan Grimes 2011-07-28 05:25:46</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000249_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Alan Grimes 2011-07-28 05:25:46</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000250_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Luke-Jr 2011-07-28 05:56:50</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000249_Bitcoin-components-.xml.html">Bitcoin components.</a>
-                        <b>Alan Grimes 2011-07-28 05:25:46</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000250.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2011-07-28T05:56:50+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>In an email sent on July 28, 2011, Alan Grimes expressed his thoughts about the Infrastructure page on Bitcoin's wiki, noting that while it provides a high-level overview of the current Bitcoin concept, it still needs more explanation. Grimes had put the page together with logical segregation of the Bitcoin concept, but the code is untrustworthy and poorly commented. He has questions about the peer and wallet boxes on the diagram and wants to implement his own version. The writer is leaning towards an inetd implementation after reading dox on libdb to minimize the quantity of code at the expense of overhead.Grimes also asked about the relationship between the wallet and the miner. In response, the miner only needs an address from the wallet to generate coins. However, he raised a general concern over the lack of documentation on how today's operating systems are properly multi-user systems, where each user would keep their wallet in an encrypted store in their home directory. He wonders if there are standards for users to set up their personal wallet daemon that connects to a system-wide peer node and provides an interface for only their GUI.Finally, Grimes suggested that one could run a system-wide bitcoind (or equivalent) to handle p2p connectivity and have each user run a dedicated wallet bitcoind with a unique JSON-RPC port or wx GUI. However, he noted that there was no automated setup for this kind of arrangement and personally foresees the p2p being implemented on a SOHO router as the end goal, or even better, multicast.In response to Grimes' desire to create his own version of the peer and wallet boxes, a member of the Bitcoin community advised against creating new client libraries and encouraged Grimes to search for an existing one to assist with or to aid in the development of the original client. Many individuals were writing or planning to write their own client from scratch, and Bitcoin's code could be segmented into necessary pieces with comments being added progressively.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-04T17:36:43.109615+00:00</i></p>
-    
-
     
 
     <footer>

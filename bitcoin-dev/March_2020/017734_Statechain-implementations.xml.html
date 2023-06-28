@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Statechain implementations</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Ruben Somsen 2020-03-28 17:38:47
-            <br><i>Published on: 2020-03-28T17:38:47+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2020/combined_Statechain-implementations.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017734.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation between Bob and Ruben on the bitcoin-dev mailing list revolves around the use of statechains for atomic swaps of multiple UTXOs. Ruben proposes using adaptor signatures to ensure swapping UTXOs is atomic, but he believes that it may be easier to make the statechain more like a fully audited transparent blockchain where multiple users create a combined transaction of all the UTXOs they want to swap, which is published together with all the corresponding Bitcoin transactions. This method eliminates the need for adaptor signatures, but it has the downside of losing the ability to only validate the history of the coins held, thus adding complexity.Bob mentions three enhancements that will be necessary or desirable, including atomic swap of multiple UTXOs, binary decomposition of value in lots, key exchange to facilitate a secure comms path from sender to receiver, and single-use seals to close old state. Ruben agrees with Bob's proposal of binary decomposition, which involves decomposing outputs into a binary decomposition with fixed lot sizes, making coinjoin-type uses more viable, and assisting in dividing a UTXO into two utxos of the next lot size down.ZmnSCPxj responds by suggesting that statechains can be internally divided from a single large onchain UTXO, acting much like a federated blockchain. The interface to the statechain could be for its clients to send a Bitcoin transaction to it spending one or more of the UTXOs currently instantiated inside the statechain, which prevents the onchain UTXO from having a single logical owner. ZmnSCPxj believes that this framework will work for all offchain mechanisms such as CoinSwap, Lightning, and statechains. In conclusion, the discussion focuses on the use of statechains for atomic swaps of multiple UTXOs, binary decomposition of value in lots, and the internal division of statechains from a single large onchain UTXO.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T00:17:27.117197+00:00 </i></p>
     
     
 

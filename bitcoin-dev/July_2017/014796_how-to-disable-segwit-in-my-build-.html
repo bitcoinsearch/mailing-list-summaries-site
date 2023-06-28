@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>how to disable segwit in my build?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2017-07-14 09:03:58
+            <br><i>Published on: 2017-07-14T09:03:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2017/combined_how-to-disable-segwit-in-my-build-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014796.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation on bitcoin-dev mailing list discusses SegWit transactions, which look like people are transferring money to "anyone-can-spend" outputs from the perspective of old nodes. This creates a risk for those running legacy clients as they can be tricked with "zero confirm" transactions. The solution is to avoid any chain of transaction that contains a SegWit transaction, but that's difficult given that anyone transacting with you can send coins at any time. One would have to ensure that everyone they give their addresses to follows the same rule, and eventually only a tiny fraction of all bitcoins would be clean. A reasonably compromise suggested is to assume that all transactions buried more than a few hundred blocks deep are probably ok, while only SegWit-looking outputs would be marked as "uncertain".</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T03:37:46.622495+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

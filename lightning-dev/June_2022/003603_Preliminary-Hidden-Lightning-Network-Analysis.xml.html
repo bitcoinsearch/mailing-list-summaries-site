@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Preliminary Hidden Lightning Network Analysis</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> René Pickhardt 2022-06-08 05:42:57
-            <br><i>Published on: 2022-06-08T05:42:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2022/combined_Preliminary-Hidden-Lightning-Network-Analysis.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003603.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email to Tony, Rene Pickhardt discusses the possibility of exploiting Lightning Network channel privacy. The exploit is possible because channel IDs are currently based on UTXOs, and using error codes of onions like `unknown_next_peer`, `invalid_onion_hmac`, `incorrect_cltv_expiry`, and `amount_below_minimum` have been helpful in exploiting channel privacy. Although the exploit with short_channel_ids has been known since 2019, Rene emphasizes the use of error codes of onions. Creating a probe that guesses the Channel ID based on unspent p2wsh transactions results in a `m * n` problem to probe the entire network, where `m` is utxos and `n` is nodes. This is the main reason why Rene didn't do this. However, one could probabilistically learn which nodes tend to have unannounced channels and gain some speedup by probing those nodes first. Wallets tend to have poor utxo management, so it might be possible to guess for a p2wsh to which two nodes it might belong and try them first by looking at the on-chain signal. These two strategies should reduce the number of tested nodes for a newly seen p2wsh output significantly and probably make it feasible to probe the network as new blocks come in.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T08:54:27.941593+00:00 </i></p>
     
     
 

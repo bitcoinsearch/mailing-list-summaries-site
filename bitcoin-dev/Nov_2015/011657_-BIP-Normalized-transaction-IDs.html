@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2015-11-03 20:37:44
+            <br><i>Published on: 2015-11-03T20:37:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_-BIP-Normalized-transaction-IDs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011657.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Christian Decker provided an update on the proposed Bitcoin Improvement Proposal (BIP). He made some changes to the proposal, including using a simple version number instead of binary flags and adding Schnorr signatures. The BIP has been assigned number 130. While intrigued by Luke Dashjr's idea of empty scriptsigs and shipping signatures in external scripts, Decker noted that the proposal uses on-the-fly normalization due to the lack of a good way to relay external scripts. He is open to suggestions and willing to amend or withdraw the proposal if there is a better solution. Regarding malleability, Decker expressed doubt that such issues can be fixed at all, as a single signer's ability to double-spend by arbitrarily appending or replacing inputs/outputs is not fixable, in his opinion. This could cause any future transaction built on its outputs to be orphaned. He asked about the perfect properties for such a fix. Luke Dashjr responded, arguing that wallets should ideally add more outputs to unconfirmed transactions every time they send another transaction. Spending unconfirmed change is the wrong approach. Half-fixing malleability encourages inefficient behavior in multiple ways and does not make it malleability-safe.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:32:25.948915+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

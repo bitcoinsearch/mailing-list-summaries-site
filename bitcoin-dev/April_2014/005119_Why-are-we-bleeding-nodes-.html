@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why are we bleeding nodes?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tamas Blummer 2014-04-08 07:59:24
+            <br><i>Published on: 2014-04-08T07:59:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Why-are-we-bleeding-nodes-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005119.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The ongoing specialization of nodes is most prominent with SPV wallets and mining. The author believes that there is a need for software that can serve multiple wallets and is multi-tiered, with a hybrid model that is SPV plus mempool transaction validation against UTXO. A border router could serve as an archive node, even offering blocks at bulk through HTTP. This setup is expected to be common for enterprises, and the author pushes for a stripped-down reference border router without wallet, payment protocol, GUI, RPC calls, etc. Enterprises running a multi-tiered environment have the bandwidth to serve as archives. In an email thread between Jeff Garzik and Gregory Maxwell, Garzik suggests refusing to serve blocks older than three months, to avoid wasting time and bandwidth on serving static, ancient data. Maxwell proposes extending the addr messages so that nodes can indicate a range or two of blocks that they're serving, allowing all nodes to contribute fractionally according to their means. Maxwell believes that a binary archive bit will cause extreme load hot-spotting and the kind of binary "Use lots of resources YES or NO" that they are currently suffering from. There is currently no room to signal arbitrary ranges, but they already need distributed storage for the most recent blocks to prevent extreme bandwidth load on archives.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T18:46:37.989690+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

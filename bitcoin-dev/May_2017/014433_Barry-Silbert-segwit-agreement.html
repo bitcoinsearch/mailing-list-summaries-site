@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Barry Silbert segwit agreement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James Hilliard 2017-05-26 21:30:37
+            <br><i>Published on: 2017-05-26T21:30:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Barry-Silbert-segwit-agreement.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014433.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The only way to lock in segwit with less than 95% hashpower is through mandatory signalling. Bit 4 can be used to coordinate bit 1 mandatory signalling, while also signalling BIP141 bit 1. A hard fork (HF) cannot be scheduled until BIP141 is active, without waiting for the timeout and doing a redeployment. This is due to activation/p2p codepath complexity. The fastest safe path forward involves using BIP91 or similar to activate BIP141 via mandatory signalling as soon as possible, likely using bit 4. HF code can then be developed based on the assumption that BIP141 is active so that only the BIP141->HF upgrade/activation codepath has to be tested. The HF can be deployed after BIP141 lock-in, which can reuse bit 4 again since this will be after BIP91 expiration.Rolling out some features often makes sense to combine into a single fork. For example, BIP’s 68, 112, 113 were rolled out at the same time as are BIP's 141, 143, 144, 145 for segwit. However, attempting to simultaneously deploy them would cause major complexity/testing issues due to feature conflict resolution for multiple potential activation scenarios. By doing a staged rollout of segwit and then a HF, a single testable upgrade path can be created.Based on past development experiences, a 6 month timeline for a properly tested HF is not realistic. The proposed upgrade path should be the fastest available for both SegWit and a HF regardless. Jacob Eliosoff suggested a proposal to avoid incompatibility with existing nodes by triggering BIP141 signalling when Silbert/NYC Segwit2MB proposal's lock-in supports 80% for bit 4. This would still leave problems like the aggressive HF schedule, possible chain split at the HF date between Segwit2MB nodes and any remaining BIP141 nodes, etc.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:55:30.528614+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

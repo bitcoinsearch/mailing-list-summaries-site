@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mandatory &#34;d&#34; or &#34;h&#34; UX issues</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Giovanni P 2019-01-21 11:40:22
+            <br><i>Published on: 2019-01-21T11:40:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Mandatory-d-or-h-UX-issues.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001836.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Lightning-dev mailing list, Francis Pouliot raised a user experience issue regarding withdrawing funds from a service via Lightning Network (LN). He described a scenario where a user buys Bitcoin with fiat on his app and opts to be paid out via LN rather than on-chain BTC. The app then instructs the user to create an invoice with the following details: msatoshi and description. However, there is no mechanism for the app to verify if the user has created the invoice correctly, leading to potential errors or typos. Rusty Russell replied that there's a missing "give me an invoice" API for this type of push payment and suggested using an lninv URL with a description, minimum and maximum amounts, and submission URL. Ideally, the browser would reach out to the wallet to get an invoice and do the submission itself, but he wasn't sure how that part of the stack works. The discussion centered around improving user experience when it comes to withdrawing funds from a service via LN. The current process lacks a mechanism for verifying if the user has created the invoice correctly, which can lead to errors or typos. Rusty Russell suggested using an lninv URL with a description, minimum and maximum amounts, and submission URL to alleviate this issue. However, he acknowledged that he was unsure about how the browser reaching out to the wallet to get an invoice and do the submission itself would work in practice.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:03:48.654128+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why is deriving public key from the signature not used in Segwit?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-01-24 04:25:28
+            <br><i>Published on: 2018-01-24T04:25:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Why-is-deriving-public-key-from-the-signature-not-used-in-Segwit-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015641.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev email thread, Артём Литвинович questioned the rationale behind having both public key and signature in Segwit witness. He suggested that since the public key can be derived from the signature and a quadrant byte, leaving out the public key would have saved 33 bytes per signature. However, it was pointed out that this method is slow to verify and incompatible with batch validation. Additionally, it doesn't save space if hashing isn't used, and could potentially be patent encumbered. The reason for keeping both public key and signature in Segwit witness is not specifically stated, but it appears there are valid security, performance, and patent-related reasons for doing so.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T05:03:05.756796+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Probe cancellation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-12 00:17:31
+            <br><i>Published on: 2018-11-12T00:17:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Probe-cancellation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001559.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread is discussing a potential solution to freeing up scarce resources on the network. The proposed solution involves making probing routes more efficient and cancelling stuck probes from both the sending and receiving direction. The risk of probing is that if the probe discovers a failing node/channel, the probe HTLC will get stuck, using up HTLC slots and memory for each of the well-behaved nodes, but if the probe has a realistic value rather than just a few (milli)satoshis, it might lock up real money too.The proposed solution suggests allowing for cancelling stuck probes from the sending direction as well as the receiving direction. This would involve generating a 128b random number X, calculating H=bitwise-not(SHA256(X)), making a probe payment over path P, hash H, amount V, and waiting for response. The response could either be success or error, unknown hash, routing failure, or timeout. Overall, this solution provides an option for someone making an honest effort to probe the network to not inadvertently attack it in case a probe fails. However, an attacker may still take the option to not do this.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:52:09.568255+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

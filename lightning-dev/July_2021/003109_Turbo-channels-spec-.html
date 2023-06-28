@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Turbo channels spec?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2021-07-05 06:38:42
+            <br><i>Published on: 2021-07-05T06:38:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2021/combined_Turbo-channels-spec-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003109.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion, ZmnSCPxj suggests that the BOLT should have a "rationale" section and proposes using "initiator" and "acceptor" instead of "funder" and "fundee" in light of dual-funding. Lisa has already created a patch for this. Rusty adds to the conversation by pointing out that the risks for the sender of an HTLC is that the channel never confirms, but ignores this risk because they can close onchain, and the risks for the receiver is that the channel never confirms, so the HTLC must not be resolved locally if the receiver already knows the preimage unless they trust their peer. However, Rusty notes that this misses an important case since single-sided funding is more common with dual-funding protocol. In such a case, if the peer hasn't contributed funds, then the user is in control and the channel is safe. If the peer has contributed funds, the user can send, as cancellation results in a free refund, and should not route incoming HTLCs unless they trust the peer.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T04:29:16.722762+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

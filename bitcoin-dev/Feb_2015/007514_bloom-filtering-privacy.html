@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bloom filtering, privacy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2015-02-21 05:12:54
+            <br><i>Published on: 2015-02-21T05:12:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2015/combined_bloom-filtering-privacy.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007514.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Greg Maxwell and Mike Hearn, there are different ideas being proposed regarding how to implement UTXO commitment to improve scalability and privacy. Maxwell suggests that there should be a scriptpubkey bitmap per block committed, which allows users to request the map and be SPV confident that they received a faithful one. If there are hits, they can request the block and be confident that there was no censoring. However, Hearn has some concerns about this proposal, including issues with miners having to upgrade to generate the per-block filters and the fact that downloading full blocks is still a lot of data. Additionally, he questions whether it is really more private and proposes an alternative solution that has O(1) scaling on sync, which involves viewing nodes as sources of UTXO data. Hearn clarifies that by UTXO commitment, he means a merkle tree of unspent addresses that is committed in each block, along with a bloom filter containing addresses in the block. The user downloads the bloom filter for each block and searches it locally, seeing which addresses of theirs may be in the block (with some false positives). Then, they make fresh random connections to different nodes and request download of the respective individual transactions from the full node. The node can respond in two ways. First, it can provide the transaction and its merkle path in the merkle tree, which is the way SPV works today. Second, if there is no such transaction, it can provide a pair of merkle trie paths in the UTXO commitment that proves the full node is not withholding and it is true that no such transaction is in the block. With UTXO commitments, in case a), the user can keep up to date with the chain tip and request from the full node a merkle path in the UTXO commitment to show that the coin is still unspent. Regarding privacy, the node can make different random connections to different nodes to fetch addresses, and nothing is leaked by downloading the bloom filter. Scanning happens locally, and the full node cannot correlate the addresses as belonging to the same person by correlating the download requests for them because they are made via different nodes. However, the limit is the interactive nature of ToR, which isn't very secure against pervasive monitoring. In contrast, increasing the false positive on bloom queries allows the full node to test correlation (modulo the false positive ratio) and combine that with network flow analysis to narrow down who the user might be. Additionally, query size and privacy are in conflict, and the query size has to be continually retuned to even create a reliable false positive rate relative to the current UTXO set.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T17:31:27.253725+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

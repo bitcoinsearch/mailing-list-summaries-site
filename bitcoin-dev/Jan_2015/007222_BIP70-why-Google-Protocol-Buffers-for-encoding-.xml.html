@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP70: why Google Protocol Buffers for encoding?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2015-01-28 16:55:43
-            <br><i>Published on: 2015-01-28T16:55:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2015/combined_BIP70-why-Google-Protocol-Buffers-for-encoding-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007222.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion is centered around the burden of certificate verification in BIP70, which could be shifted to leveraging the built-in HTTPS support of a platform. While platforms that support HTTPS but not certificate handling are rare, embedding certificates within signed payment requests makes them verifiable by third parties and provides a form of digital receipt, which has many use cases. However, doing things this way means losing the benefit of having a digitally signed request for proving to a third party that a server gave you a piece of data. Additionally, using the built-in certificate stores of platforms such as Android, JRE, Windows, and Mac can simplify the process, although custom binding glue might be required for other platforms. The issue of targeting WinRT and other platforms with a single codebase is an unusual constraint, and BitPay encountered it because they wanted to do everything in Javascript. There are pros and cons to bundling a custom root store, and Java can do OCSP checks, although no wallets currently do so.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T15:32:13.653811+00:00 </i></p>
     
     
 

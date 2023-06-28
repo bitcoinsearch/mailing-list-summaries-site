@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_NOINPUT in Segregated Witness</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-03-02 00:44:51
+            <br><i>Published on: 2016-03-02T00:44:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2016/combined_SIGHASH-NOINPUT-in-Segregated-Witness.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000451.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell, a developer for the Bitcoin Lightning Network, discussed the advantages of using SIGHASH_NOINPUT over pre-signed transactions on Monday. He stated that if there are no batchings, every second commit transaction adds a new HTLC, which is (4 + 32) / 2 + 32 = 50 bytes per commit transaction. Without SIGHASH_NOINPUT, you would have to add 64 bytes per commit transaction output (2+), plus generate those signatures. Rusty Russell thinks that it's probably going to be less than one TCP packet, though, and he's not convinced it's qualitatively different. The discussion was focused on how to recover timeout/R values recoverable last year, and they came up with some clever tricks which don't win much. You can avoid sending/storing the 4-byte timeout. Rusty Russell also talked about having a visible scriptPubKey with SegWit where R is trivially obvious, but this isn't possible anymore. Moreover, MAST doesn't help because you still need the hash of the unknown part. They'd need a "script is one of these hashes" form, which bloats the UTXO set. Therefore, it's not likely to be acceptable until lightning is the main bitcoin user.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:35:13.573262+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

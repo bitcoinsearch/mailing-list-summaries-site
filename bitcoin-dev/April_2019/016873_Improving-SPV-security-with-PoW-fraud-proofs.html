@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving SPV security with PoW fraud proofs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2019-04-15 06:37:43
+            <br><i>Published on: 2019-04-15T06:37:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_Improving-SPV-security-with-PoW-fraud-proofs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016873.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Simplified-Payment-Verification (SPV) system relies on the chain with the most Proof-of-Work (PoW) being valid, but this assumption has proven unsafe in past attacks like Segwit2x. An improvement on this system rejects invalid blocks as long as there are enough honest miners to create a block within a reasonable timeframe. This system is not fully secure against dishonest miners but is an improvement over regular SPV. A potential solution to verifying the validity of block N+1 without knowing the UTXO set at block N is through the introduction of UTXO set commitments. This would allow block N+1 to be validated by verifying whether its inputs are present in the UTXO set that was committed to in block N. It is still uncertain if a similar result can be achieved without a soft fork that commits to the UTXO set. If an invalid block is created and only 10% of the miners are honest, it would take an average of 100 minutes for a valid block to appear. During this time, the SPV client will follow the invalid chain and see roughly 9 confirmations before the chain gets rejected. It may be prudent to wait for a number of confirmations that correspond to the time it may take for the conservative percentage of miners that you think may behave honestly to create a block. While waiting for confirmation may cause payments from an invalid chain to get reverted, it's still preferable to continually following an invalid chain. As long as a reasonable number of miners remain honest, a dishonest majority can only temporarily control the network, and their blocks (and all coins gained from it) will eventually be rejected.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:15:54.137385+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Address expiration times should be added to BIP-173</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Sjors Provoost 2017-09-28 12:43:05
-            <br><i>Published on: 2017-09-28T12:43:05+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2017/combined_Address-expiration-times-should-be-added-to-BIP-173.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015086.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The re-use of old addresses is a major issue for both privacy and operational reasons. To address this problem, Peter Todd suggests adding a UI-level expiration time to the new BIP173 address format. By doing this, wallets would consider addresses invalid as a destination for funds after the expiration time has passed. One downside could be differences in expiration policy that would be visible on chain. Another downside is that miners could potentially game it in their interaction with brokers. Todd suggests using either an hour resolution or a month resolution for the expiration time. The former has sufficient shortness that UIs can display an "exact" time, while the latter is long enough to round off to the nearest day in the local timezone. Greg Maxwell notes that most efficient address format linked fields are multiples of 5 bits and suggests using one bit to indicate an embedded amount and 19 bits of 1-day precision. Embedding amounts in an address could confuse people when they reuse it, so wallets would have to ignore the amount value if they previously sent money without changing the address string displayed in the UI. High precision of the expiration times is also asking the sender to have a higher precision of idea of the time; date only is nice. Andreas Schildbach mentions that the payment protocol already has an expiration time, but it has significant overhead and requires back and forth. Emailing a bitcoin address or printing it on an invoice is much easier, so people are likely to continue doing that.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T19:07:22.618518+00:00 </i></p>
     
     
 

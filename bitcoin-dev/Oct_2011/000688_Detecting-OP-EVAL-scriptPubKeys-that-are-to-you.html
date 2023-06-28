@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Detecting OP_EVAL scriptPubKeys that are to you</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2011-10-25 10:49:11
+            <br><i>Published on: 2011-10-25T10:49:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2011/combined_Detecting-OP-EVAL-scriptPubKeys-that-are-to-you.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000688.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The use of scriptPubKeys that use OP_EVAL in transactions pose a challenge for wallets to detect relevant transactions. This is because the transaction contains a hash of a script, requiring pre-calculation of every possible hash that might appear. For single payments, this isn't a problem but multi-signing can complicate things later on. For wallet protection services, it is crucial to match WPS keys with private keys. Deterministic wallets can achieve this without compromising privacy. In escrow contracts, the use of OP_EVAL means that the sender must communicate their pubkey to recreate the hashed script. However, this isn't inherently a problem as out-of-band communication is required for escrow protocols.It is unclear if there are any use cases where recognizing transactions without predicting full script contents is necessary. Overall, while the use of OP_EVAL can pose challenges, there are ways to work around these issues for various use cases.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T20:55:22.125577+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

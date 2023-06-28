@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Refreshed BIP324</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2023-02-17 22:13:05
-            <br><i>Published on: 2023-02-17T22:13:05+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2023/combined_Refreshed-BIP324.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021479.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On February 17th, 2023, Anthony Towns suggested in the bitcoin-dev group that closing some of the doors might be less complex. A discussion on using short ids to minimize bandwidth followed, and it was suggested that short id 0 is reserved for long commands and short ids 1-255 are available for use as aliases of particular long commands. This would avoid variable-length encoding questions and reduce how much information a passive observer could learn about application level features. Additionally, it would drop VERSION, VERACK, GETADDR, SENDADDRV2, SENDHEADERS, and SENDTXRCNCL from bip 324 currently being used. REJECT was discussed but not included. It was agreed upon that moving the type id mapping to the p2p layer away from the transport layer would be cleaner but an implementation issue. One possibility is having the transport layer translate short-command-number-N to the 12-byte command "\x00\x00..." + byte(N), and hand that to the application layer, which could then do the mapping.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-22T21:53:49.099601+00:00 </i></p>
     
     
 

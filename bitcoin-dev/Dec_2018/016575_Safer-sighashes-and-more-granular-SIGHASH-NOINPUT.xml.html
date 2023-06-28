@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Johnson Lau 2018-12-20 19:34:38
-            <br><i>Published on: 2018-12-20T19:34:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016575.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion about the proposed new sighash proposal for Bitcoin, Johnson Lau raised concerns over the usability and security of OP_CODESEPARATOR with NOINPUT. To address this, it is suggested that the new sighash will always commit to the same H(script), instead of the truncated scriptCode, making scripts more compact and efficient. If using NOINPUT with MASKEDSCRIPT, it will commit to the H(masked_script) instead of H(script). The sighash will also commit to the position of the last executed CODESEPARATOR to make CODESEPARATOR work as before. However, if NOINPUT does not commit to H(masked_script), the wallet has to guess the meaning of such committed positions, making it unreliable. Rusty Russell questioned why OP_CODESEPARATOR should be supported at all, but acknowledged that it could make scripts more compact in some cases.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T18:02:26.737776+00:00 </i></p>
     
     
 

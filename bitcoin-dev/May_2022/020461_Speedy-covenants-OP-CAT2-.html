@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Speedy covenants (OP_CAT2)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> vjudeu at gazeta.pl 2022-05-11 10:57:01
+            <br><i>Published on: 2022-05-11T10:57:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_Speedy-covenants-OP-CAT2-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020461.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, ZmnSCPxj proposed using `OP_SUBSTR` or `OP_SPLIT` instead of `OP_CAT` for script covenant operations. He suggested that with `OP_SPLIT`, a string can be split into N pieces, while `OP_SUBSTR` can be used to generate smaller parts of strings. ZmnSCPxj argued that these opcodes are better than `OP_CAT` because they ensure that the script always gets smaller and only one byte is the smallest unit in the script.In the same conversation, ZmnSCPxj clarified that `OP_CAT` does not make all covenant opcodes recursive by itself, but it can make any opcode recursive. In response to a question about why `OP_CSFS+CAT` enables recursive covenants while `CTV+CAT` does not, ZmnSCPxj explained that in `CTV`, the input's `prevout scriptPubKey` cannot be verified on the stack, whereas it can be verified with `OP_CSFS`. However, he also noted that recursion can be achieved even without verifying the `prevout scriptPubKey` by including a copy of the script as an initial push, which can then be reconstructed using `OP_CAT` followed by `PUSH()`. Finally, ZmnSCPxj pointed out that `OP_CAT` is not enabled until after it is confirmed that recursive covenants are not unsafe.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T20:34:19.979094+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

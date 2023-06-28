@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment and Refund Stuck</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-09-24 05:56:30
+            <br><i>Published on: 2015-09-24T05:56:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2015/combined_Payment-and-Refund-Stuck.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000225.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion thread, Mats Jerratsch shared his thoughts on the potential impact of an attacker stopping one payment in a payment channel network. Jerratsch believes that such an attack would be a mere nuisance because the payer and payee can set a timeout and the payee can issue a refund back to the payer if the payment does not arrive after the timeout. This refund will pay to the same secret hash as the initial payment, and it will pay an amount sufficient for the payer to receive their initial payment completely back. Jerratsch further explains that when the payer receives the refund in their channel, they can be sure that the payment has been invalidated. Furthermore, even if the payee reveals the secret, the funds will just circle back again, and the payee will pay fees for both transactions as a disincentive. This concept has been suggested by Joseph Poon before.Rusty acknowledges Jerratsch's criticisms and keeps the suggestion in reserve in case there is a need to code up a solution in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T20:31:46.959211+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

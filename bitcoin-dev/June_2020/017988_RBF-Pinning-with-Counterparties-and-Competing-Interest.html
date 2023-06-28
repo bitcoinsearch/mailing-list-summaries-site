@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2020-06-19 20:52:20
+            <br><i>Published on: 2020-06-19T20:52:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017988.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email thread on the bitcoin-dev mailing list, David A. Harding clarified his previous statement about a hypothetical attack on the Lightning Network. He corrected himself, stating that the attacker would be broadcasting the latest state and not a particular state. In this case, the honest counterparty would only need to send one blind child. However, the blind child will only be relayed by a Bitcoin peer if the peer also has the parent transaction. If it has the parent transaction, the user can retrieve the preimage using `getdata('tx',$txid)` and immediately resolve the HTLC with the upstream channel. Harding concludes that the strongman argument for the attack would be that the attacker could perform a targeted relay of the low-feerate preimage-containing transaction to just miners. This means that everyone else on the network would receive the honest user's higher-feerate expired-timelock transaction. Unless the honest user has a connection to a miner's node, they will neither be able to CPFP fee bump nor use `getdata` to retrieve the preimage. He apologizes for any confusion caused by his earlier statement.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:33:47.967921+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

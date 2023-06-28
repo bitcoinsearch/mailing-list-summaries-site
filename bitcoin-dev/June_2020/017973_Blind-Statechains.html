@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blind Statechains</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Trevethan 2020-06-12 18:11:52
+            <br><i>Published on: 2020-06-12T18:11:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_Blind-Statechains.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017973.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Statechain implementation and service co-sign off-chain transactions to transfer ownership of an unspent transaction output (UTXO) from one owner to the next, which can be engineered to be 'blind' to the transactions it is signing. Blind statechains offer significant privacy benefits such as enabling more private off-chain coin-swaps and making collusion more difficult. However, the downside of a blind SE is that it can no longer enforce the rules governing the sequence of backup transactions it co-signs as owners can ask the SE to cosign any transaction. In the case of a multisig, and Schnorr signatures, existing blind Schnorr protocols could be used to implement a blind SE. But the team is opting to use two-party Elliptic Curve Digital Signature Algorithm (ECDSA) because there is no Schnorr yet. There is no current 2P ECDSA protocol that enables one of the two signers to be completely blinded, but it seems that this would require only minor modifications to an existing 2P ECDSA scheme. Each new owner of a UTXO must receive, store and verify the full sequence of previous owner backup transactions to ensure that no previous owner has asked the SE to sign a transaction that could be used to steal the UTXO. This may end up making wallets more bloated and clunky, given that ownership of a UTXO could change hands thousands of times off-chain. Feedback on the matter is welcome.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T23:27:10.957766+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

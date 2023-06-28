@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP draft - Auxiliary Header Format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2014-11-10 00:39:20
+            <br><i>Published on: 2014-11-10T00:39:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2014/combined_BIP-draft-Auxiliary-Header-Format.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-November/006907.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Tier Nolan proposed a way to add auxiliary headers to Bitcoin in a bandwidth efficient manner through a soft fork. The draft BIP involves using the last transaction in the block to store the hash of the auxiliary header, with an overhead of only around 104 bytes per header. However, there is a tradeoff between overhead and delayed transactions as 12.5% transactions may be delayed to the next block. To improve this, padding transactions could be added. Creating "seed" transactions is also an implementation headache as each node needs control over a UTXO to create the final transaction in the block with the auxiliary header digest. This means that it is not possible for a node to simply start mining without somehow being given the private key, which can cause issues if two nodes are given the same key by accident.There are different approaches to address these issues. One approach would involve adding a transaction with a few thousand outputs into the blockchain, with the signatures for locktime restricted transactions hard-coded into the software. However, this would require a large table of signatures and trust in the person who generates the signature list not to spend the outputs early. On the other end of the scale, mining nodes would need to include wallets to manage their UTXO entry, allowing them to split a zero value output into many outputs if they wish. A middle ground would be for nodes to detect special transactions and use them, such as timelocked transactions that pay to a particular address but are timelocked, with the private key for the output known. However, miners who mine version 2 blocks wouldn't be able to spend them early.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T14:13:07.323603+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

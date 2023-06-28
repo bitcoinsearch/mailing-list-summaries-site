@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 118 and SIGHASH_ANYPREVOUT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Matt Corallo 2020-08-11 00:14:29
-            <br><i>Published on: 2020-08-11T00:14:29+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2020/combined_BIP-118-and-SIGHASH-ANYPREVOUT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018079.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation on the Bitcoin-dev mailing list, Matt Corallo discussed the possibility of a relay network that could handle transactions with SIGHASH_ANYPREVOUT. Such a network would need to be able to rewrite transactions before passing them on to a local bitcoind. For example, a sender could relay a transaction with one input that is valid for any output index 0 in a transaction spending output B. The receiver would then look up which transaction in its mempool or chain spends output B and fill in the input with that outpoint. Richard Myers asked if such a relay network could be more "smart about replacement" in the context of ANYPREVOUT by RBF-ing parts of a package. Matt responded that SIGHASH_NOINPUT would make these issues much simpler to address, but only if nodes could be "smart" about replacement when they see a SIGHASH_NOINPUT spend that can spend an output already spent by something else in the mempool. While shoving this complexity into the Bitcoin P2P network may not be feasible, a relay network of lightning nodes could potentially handle the calculation and pass the transactions to their local full nodes.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T23:31:50.408251+00:00 </i></p>
     
     
 

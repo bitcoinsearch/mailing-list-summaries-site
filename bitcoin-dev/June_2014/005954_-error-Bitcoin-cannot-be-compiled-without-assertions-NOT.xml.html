@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1># error &#34;Bitcoin cannot be compiled without assertions.&#34; &lt;&lt;&lt;&lt;NOT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jannis Froese 2014-06-04 10:42:37
-            <br><i>Published on: 2014-06-04T10:42:37+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2014/combined_-error-Bitcoin-cannot-be-compiled-without-assertions-NOT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/005954.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The use of assertions in software like Bitcoin Core is necessary to prevent costly incorrect behavior, but this comes at the cost of meeting certain performance requirements. Expensive, redundant checks cannot be done in performance critical code, which is one of the benefits of asserts. Assertions are intended for checks such as ensuring a hash hasn't changed or that data structures are in sync. There have been concerns about the current use of assertions, with some suggesting that debugging assertions should be introduced exclusively for expensive, redundant checks and disabled by NDEBUG. However, it is important to note that assertions should have no side effects and that the codebase has been cleaned up to remove any assertions with side effects. It is common for professional codebases to require assertions to be enabled, and Bitcoin Core currently fails to build if assertions are disabled. The wisdom of this decision was demonstrated when an additional side-effect having assert was contributed soon after. It is considered prudent to refuse to compile in an untested, unsupported configuration, although using our own assertion macros would be superior. Making larger changes all at once to satisfy aesthetics would be unwise since the codebase is a production thing.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T23:35:20.701333+00:00 </i></p>
     
     
 

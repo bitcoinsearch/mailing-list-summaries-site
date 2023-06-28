@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>2 softforks to cut the blockchain and IBD time <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2017/014994_2-softforks-to-cut-the-blockchain-and-IBD-time.xml.html">2 softforks to cut the blockchain and IBD time</a>
-                        <b>michele terzi 2017-09-12 22:58:35</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2017/014994_2-softforks-to-cut-the-blockchain-and-IBD-time.xml.html">2 softforks to cut the blockchain and IBD time</a>
-                        <b>michele terzi 2017-09-12 22:58:35</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2017/014994_2-softforks-to-cut-the-blockchain-and-IBD-time.xml.html">2 softforks to cut the blockchain and IBD time</a>
-                        <b>michele terzi 2017-09-12 22:58:35</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2017/014995_2-softforks-to-cut-the-blockchain-and-IBD-time.xml.html">2 softforks to cut the blockchain and IBD time</a>
-                        <b>Tier Nolan 2017-09-13 09:09:52</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2017/014995_2-softforks-to-cut-the-blockchain-and-IBD-time.xml.html">2 softforks to cut the blockchain and IBD time</a>
-                        <b>Tier Nolan 2017-09-13 09:09:52</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2017/014995_2-softforks-to-cut-the-blockchain-and-IBD-time.xml.html">2 softforks to cut the blockchain and IBD time</a>
-                        <b>Tier Nolan 2017-09-13 09:09:52</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014994.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2017-09-12T22:58:35+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The growing size of the Bitcoin blockchain, currently at 160GB, is hindering its decentralization as syncing a new node is difficult and discourages many people from participating in the network. To address this issue, the author proposes two softforks. The first involves hashing a snapshot of the UTXO set with all relevant information in the coinbase, which can be repeated every given period of x blocks. The second involves writing the UTXO hash in the consensus code after a given amount of time, becoming the hash of a new genesis block where all older blocks are chopped away.These proposed softforks offer benefits such as faster syncing for new nodes, less HD space needed for full non-pruning nodes, more difficult future chain analysis for small entities, and a frozen old history in one new genesis block that prevents the chain from being reorged prior to that point. However, there are cons to consider, such as consuming a small amount of space on the blockchain, requiring every node to perform calculations, and full nodes with old software not able to sync with the existing network. To address security concerns, the author notes that the softforks will be tested and inspected like other softforks, and the process is divided into two separate steps, giving the community additional time to test it. After the first softfork locks in, there is no room for mistakes as either the hashes match or they do not, making it easy to spot misbehavior. In addition to the proposed softforks, the proposal suggests a new way of syncing nodes with the Bitcoin blockchain that allows for faster syncing, less disk space usage, and optional slow downloading of remaining blocks. Soft checkpoints are used to prevent re-orgs from causing network partitions. It also addresses the importance of maintaining archive nodes to prevent a network split and ensure agreement on new network rules.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-12T18:44:07.180415+00:00</i></p>
-    
-
     
 
     <footer>

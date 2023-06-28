@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Hugo Nguyen 2021-02-11 19:11:45
-            <br><i>Published on: 2021-02-11T19:11:45+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2021/combined_Proposal-Bitcoin-Secure-Multisig-Setup.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018401.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On February 11, 2021, in a discussion on the bitcoin-dev mailing list about encryption keys, Hugo Nguyen suggested reusing the BIP32 seed words list for generating encryption keys. The encryption key would be derived the same way as the seed words list using PBKDF2 as a key derivation function. This matches with Dmitry Petukhov's suggestion of using a key derivation function designed for passwords like PBKDF2 if TOKEN has the characteristics of a password. The idea was well received because HWW (hardware wallet) should already have this functionality. However, there might be confusion between entering the main key and entering the shared key for multisig setup, so measures must be taken to prevent such confusion. One solution proposed is to specify a key derivation function suitable for passwords and share a password and/or the derived key via a secure channel. If HWW supports a derivation function, it can derive the key from the password. If HWW supports only keys, the key can be entered raw or via mnemonic.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T17:31:08.383786+00:00 </i></p>
     
     
 

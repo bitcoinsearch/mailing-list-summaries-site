@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP sighash_noinput</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2018-05-09 23:04:58
-            <br><i>Published on: 2018-05-09T23:04:58+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2018/combined_BIP-sighash-noinput.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015943.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Anthony Towns, a developer, has expressed concerns about the SIGHASH_NOINPUT proposal. He believes that using the same key for multiple inputs and signing one of them with NOINPUT could result in all inputs being spent. While the current proposal limits the potential damage by committing to the prevout amount, this still poses a risk for those who reuse addresses. Anthony suggests that instead of NOINPUT, a flag for a signature for a hypothetical "OP_CHECK_SIG_FOR_SINGLE_USE_KEY" opcode should be used to prevent trickery. Mark Friedenbach had previously suggested this idea. However, Rusty believes that implementing this idea would lead to more "magic key" solutions like Schnorr/taproot/graftroot and less script in future. Rusty also proposed having a different opcode for NOINPUT, arguing that normal signatures are signing a spend of a particular "coin," whereas NOINPUT signatures sign a spend of an entire "wallet."</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T01:50:04.533826+00:00 </i></p>
     
     
 

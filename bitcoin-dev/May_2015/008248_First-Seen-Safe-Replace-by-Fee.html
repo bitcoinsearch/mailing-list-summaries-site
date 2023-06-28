@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>First-Seen-Safe Replace-by-Fee</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-05-26 05:13:05
+            <br><i>Published on: 2015-05-26T05:13:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_First-Seen-Safe-Replace-by-Fee.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008248.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The First-seen-safe replace-by-fee (FSS RBF) is a modification to the Bitcoin Core implementation that allows users effective ways of getting "stuck" transactions unstuck and uses blockchain space efficiently, while not changing the status quo with regard to zeroconf. FSS RBF is a compromise between the current “first-seen” mempool behavior and replace-by-fee (RBF). Transactions may be replaced by higher-fee paying transactions, provided that all outputs in the previous transaction are still paid by the replacement. FSS-RBF is "zeroconf safe" and has no affect on the ability of attackers to double spend. An implementation of fee bumping respecting FSS rules is available at <a href="https://github.com/petertodd/replace-by-fee-tools/blob/master/bump-fee.py">https://github.com/petertodd/replace-by-fee-tools/blob/master/bump-fee.py</a>. FSS RBF adds additional criteria to replace-by-fee before allowing a transaction t1 to be replaced with t2 including: all outputs of t1 exist in t2 and pay >= the value in t1; all outputs of t1 are unspent; the order of outputs in t2 is the same as in t1 with additional new outputs at the end of the output list; t2 only conflicts with a single transaction, t1; and t2 does not spend any outputs of t1. The benefits of FSS RBF include cost savings of 11% to 34%+ and RBF can increase fees even in cases where the original transaction didn't have a change output. All wallets should treat conflicting incoming transactions as equivalent so long as the transaction outputs owned by them do not change.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T21:31:21.928444+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

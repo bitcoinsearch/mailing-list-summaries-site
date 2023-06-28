@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Stroll through Fee-Bumping Techniques : Input-Based vs Child-Pay-For-Parent</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2021-07-12 00:02:12
+            <br><i>Published on: 2021-07-12T00:02:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_A-Stroll-through-Fee-Bumping-Techniques-Input-Based-vs-Child-Pay-For-Parent.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019262.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around a proposed new SIGHASH_GROUP flag that commits to each output i, start. The group outputs are serialized and the sha256 of the span of the group commits to the number of elements, the order, and the elements themselves. The design rationale is that the "sig_group_count" lockdowns the hashing of outputs for a given input, thus allowing midstate reuse across signatures input. The message being signed would replace SIGHASH_SINGLE's sha_single_output with sha_group_outputs. In an example provided, combining {x_1, y_1} and {x_2, y_2} where {x, y} denotes bundles of Lightning commitment transactions, x_1 is dual-signed by Alice and Bob under the SIGHASH_GROUP flag with sig_group_count=3, x_2 is dual-signed by Alice and Caroll under the SIGHASH_GROUP flag, with sig_group_count=2, and y_1 and y_2 are disjunctive. At broadcast, Alice cannot combine {x_1,y_1} and {x_2, y_2} because x_1 and x_2 are colliding on the absolute output position.The proposal should not be susceptible to any spend replay attack as the state pair prevents output group overlapping. However, users may still have to be careful about siphoning if they use SIGHASH_SINGLE and their x's amount > y's value. The fix suggested is to skim the "end > num_outputs" semantic. Although the proposal might solve other use-cases, it does not seem to achieve the batch fee-bumping of multiple Lightning commitments with O(1) on-chain footprint.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T22:17:32.487930+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

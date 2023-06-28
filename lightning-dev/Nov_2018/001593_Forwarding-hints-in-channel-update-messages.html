@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Forwarding hints in channel update messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2018-11-14 08:17:14
+            <br><i>Published on: 2018-11-14T08:17:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Forwarding-hints-in-channel-update-messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001593.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Joost proposes an idea for improving non-strict forwarding, which involves repurposing the `channel_update` message as a 'forwarding hint' in case of failed non-strict forwarding. When forwarding fails, the intermediate node would iterate over all its channels to the next hop and determine the 'best' channel to use from the sender's point of view based on a trade-off between minimum fee and time lock delta. The hinted policy of the best channel is then returned to the sender as a forwarding hint instead of the requested channel. This would give senders more certainty about the parameters that lead to successful forwarding and likely reduce payment attempts to complete the payment. However, Joost notes that senders should not blindly apply the new policy to a route as an intermediate node may try to maximize its earning by handing out 'expensive' forwarding hints. The sender should also be aware that if something changes at the intermediate node, the hint may not be valid anymore. To implement this proposal, no onion packet changes are required, and an intermediate node could advertise that it provides forwarding hints through a global feature bit, but that is optional.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:58:33.064659+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

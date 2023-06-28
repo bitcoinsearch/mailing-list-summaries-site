@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[patch] Switching Bitcoin Core to sqlite db</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> telemaco 2015-11-17 22:17:33
+            <br><i>Published on: 2015-11-17T22:17:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_-patch-Switching-Bitcoin-Core-to-sqlite-db.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011788.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the transparency of ODBC/JDBC/JConnect or an equivalent driver for the consensus code. The suggestion is to write or store data communicating with the driver provided by the vendor using the schema suggested by Bitcoin adapted to different vendors, installed in the machine with the node and from that communication to the driver, the storage would be controlled by the third-party RDBMS. There are concerns about bugs or the risk of forks. The client has no defense against someone forking core and slightly changing the actual database used to create a fork themselves. Additionally, there is no way to verify if what is stored is correct. One possible solution proposed is inserting a column with a hash of what is stored in each row and another column with an incremental row by row hash composed of the hash of each row and the previous column one. People could easily access the Bitcoin blockchain with the thousands of software packages already bought and licensed by all companies worldwide.For decades, replication servers have allowed a publish/subscription model using replication agents. If a company needs one guy to subscribe to something on the Bitcoin blockchain, they can use one of the purchased methods in their company and access the company database that holds blockchain data or hire a Bitcoin developer to create a customized interface for a specific need. The proposal suggests having a publishing daemon that would allow companies and their software packages to write things on the Bitcoin blockchain, provided they fund the agent with a small Bitcoin amount to send transactions and comply with the database constraint of being the owners of the private key. The publishing agent would check for changes every X minutes on that specific address in the db and, if funded, would publish "send" the transaction through the Bitcoin client. This would enable people to publish information on the decentralized ledger from 90% of enterprise software packages with a small delay. The network should be shielded from a malfunctioning or ill-forked database from the core client. The concern with unknown bugs is that you don't know how serious they are, and a serious bug could be devastating.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:39:14.594324+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

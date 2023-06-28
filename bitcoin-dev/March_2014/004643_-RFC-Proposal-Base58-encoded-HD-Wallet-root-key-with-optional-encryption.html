@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Proposal: Base58 encoded HD Wallet root key with optional encryption</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> William Yager 2014-03-12 20:49:43
+            <br><i>Published on: 2014-03-12T20:49:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_-RFC-Proposal-Base58-encoded-HD-Wallet-root-key-with-optional-encryption.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004643.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Pavol Rusnak and William Yager, they discussed the feasibility of using PBKDF2-HMAC-SHA512 as a means of encryption for storage wallets. They noted that this method is easy to implement even on devices with limited RAM, and can run at reasonable speeds on slow, embedded ARM processors. They mentioned that TREZOR, which has a 120MHz ARM processor, does 1024 rounds of PBKDF2-HMAC-SHA512 in approximately one second, with 2^16 taking around a minute and 2^21 taking around half an hour. They considered these time scales reasonable for encryption/decryption on slow devices like storage wallets.They further explained that even if it takes several minutes to encrypt/decrypt, it is not unreasonable for a one-time activity like printing a cold wallet using a Raspberry Pi based printer or importing a heavily encrypted wallet into a phone. Additionally, the deterministic amount of time it will take to encrypt/decrypt allows for the easy addition of a progress bar to a UI.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T14:51:19.804681+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Removing the Dust Limit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Charlie Lee 2021-08-10 18:39:39
-            <br><i>Published on: 2021-08-10T18:39:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2021/combined_Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019329.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>ZmnSCPxj proposed a softforkable design for Bitcoin to maintain a non-CT block and a separately-committed CT block, allowing for unconditional privacy and computational soundness. When transferring funds from the legacy non-CT block, users put it into a "burn" transaction that magically causes the same amount to be created in the CT block. To move from the CT block back to legacy non-CT, users match one of those "burn" TXOs and spend it with a proof that the amount being removed from the CT block is exactly the same value as the "burn" TXO being spent. The "burn" TXOs would be some trivial anyone-can-spend, and in the legacy non-CT block, the total amount of funds in all CT outputs is known. Meanwhile, individual CT-block TXOs cannot have their values known. This design may be sufficient for practical privacy. Litecoin is doing something similar with MimbleWimble and extension blocks, and interested parties can find more information about it on their Github page.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T00:49:59.664375+00:00 </i></p>
     
     
 

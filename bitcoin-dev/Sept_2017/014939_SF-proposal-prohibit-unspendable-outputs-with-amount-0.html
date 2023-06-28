@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SF proposal: prohibit unspendable outputs with amount=0</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> CryptAxe 2017-09-07 03:41:49
+            <br><i>Published on: 2017-09-07T03:41:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_SF-proposal-prohibit-unspendable-outputs-with-amount-0.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014939.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the impact of a proposed soft fork on confidential transactions. It is noted that the proposed fork would make these transactions more complicated, as blinding and unblinding transactions would have to be created with minimal output values. This could result in a situation where the fee is equal to the total amount of input. The format of blinding transactions is analyzed, and it is suggested that a change to the blinding scriptPubKey could allow for the use of 0 value outputs. It is proposed that OP_RETURN could be added to the scriptPubKey during blinding, and that the witnessOut data could still be added even if the scriptPubKey is unspendable. The discussion also touches on the issue of 0-value outputs that are spendable and can potentially remain in the UTXO indefinitely. The need for spendable outputs with null amounts is questioned, and it is suggested that creating a BIP to address this issue would be simple if there is no reason or use case to keep allowing them.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:07:23.657877+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

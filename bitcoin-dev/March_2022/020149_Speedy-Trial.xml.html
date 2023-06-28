@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Speedy Trial</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2022-03-18 23:01:43
-            <br><i>Published on: 2022-03-18T23:01:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2022/combined_Speedy-Trial.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020149.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>ZmnSCPxj proposes a coin-weighted signature-based poll system for users. The poll requires every pollee to sign messages for each UTXO they want to respond to the poll with, and a signed message is valid only while that UTXO has not been spent. Poll results are considered only at each particular block height, where the support and opposition responses are weighted by the UTXO amount and the support/oppose fraction in the message. The system is not vulnerable to sybil attacks because it requires access to UTXOs and response weight is directly tied to UTXO amount. Lightning channels would need to sign together, so they can have an agreement to sign for the fractions that match their respective channel balances. However, this system might not work for vault constructions because the "cold" key wants to be kept offline as much as possible for security. A vote from the "cold" key only would be ideal, but vault owners might not want to vote due to the risk associated with putting the "cold" key online. There is also a sub-issue with the spend/signal pubkey idea, which might require a softfork for indicating that a long-term-cold-storage UTXO has a signaling pubkey.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T18:02:06.732965+00:00 </i></p>
     
     
 

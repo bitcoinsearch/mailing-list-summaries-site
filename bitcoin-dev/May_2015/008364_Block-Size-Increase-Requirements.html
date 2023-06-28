@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Block Size Increase Requirements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2015-05-30 19:32:22
+            <br><i>Published on: 2015-05-30T19:32:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_Block-Size-Increase-Requirements.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008364.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Matt Corallo and Gavin Andresen discussed the issue of miners optimizing for returns in terms of free-floating block size. Analysis shows that if, for example, the majority of miners are in China, and there is poor connectivity in and out of China, then a miner who naively optimizes for profit will create large blocks which take a while to relay out of China. By simple trial-and-error, an individual large miner may notice that when they create larger blocks which fork off miners in other parts of the world, they get more income. This shows that incentives here are very far from aligned, and simplified good-behavior models are very far from convincing. The disadvantage is small with 1MB blocks, but already non-zero. 20MB blocks are much worse (lots of things here don't scale linearly). The use of default 750K blocks by most miners may be due to defaults and dumb designs, as other miners probably didn't see transactions relayed across several hops or so, and a select few miners are doing crazy things like making their blocks fit in a single packet to cross the gfw. Gavin Andresen suggests increasing the block size to 20MB (and then doubled every couple of years), but Matt Corallo asks whether anyone has convincing evidence that at 20MB miners will be able to break even on transaction fees for a long time, since no one has any idea how bitcoin transaction volumes are going to scale, period.Even if we end up in a world where only big companies can run full nodes (and Gavin is NOT proposing any such thing), there is a difference - you don't need permission to open up a bank on the Bitcoin network. Matt argues that by increasing the block-size, the incentives to actually make bitcoin scale go away.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T20:14:40.464363+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

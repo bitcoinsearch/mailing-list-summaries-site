@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pizza for (lightning) bitcoins?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Laszlo Hanyecz 2018-02-25 01:29:59
+            <br><i>Published on: 2018-02-25T01:29:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2018/combined_Pizza-for-lightning-bitcoins-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001044.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A man recently tried out a real trade using the lightning network but didn't know of any pizza places that accepted lightning bitcoin near him. However, he was able to make arrangements with a friend in London who sub-contracted a local shop to deliver two pizzas to him by paying Bitcoin using the lightning network. In this trade, his friend acted as a middleman taking on the risk of accepting lightning payments. The man agreed to open a channel and fund it with a sufficient amount for what they estimated the cost would end up being. The man was given a bolt11 invoice which he decoded with the c-lightning cli to verify everything was as agreed. In order to claim his pizza, the man needed to provide the payment hash preimage to the delivery driver. He couldn't produce the preimage without paying the invoice. Upon receiving the invoice, he paid instantly and received the preimage in return. To get the preimage for the invoice, he did it through c-lightning. In the interest of keeping things simple, they made an agreement that the preimage would be the first and last 4 characters of the hex string. His answer was 7241-a8c1. The delivery driver compared the code on the notepad with his own before giving the man the pizza. The man was able to confirm the correct preimage by hashing it again and comparing it to the payment_hash in the invoice. There is no point in doing this instead of an on-chain transaction because lightning nodes are not yet common.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T21:12:38.470237+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

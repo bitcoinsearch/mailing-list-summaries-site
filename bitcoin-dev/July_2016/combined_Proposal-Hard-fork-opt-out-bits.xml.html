@@ -11,41 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Hard fork opt-out bits <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2016/012917_Proposal-Hard-fork-opt-out-bits.xml.html">Proposal: Hard fork opt-out bits</a>
-                        <b>Tom Harding 2016-07-31 18:01:18</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2016/012917_Proposal-Hard-fork-opt-out-bits.xml.html">Proposal: Hard fork opt-out bits</a>
-                        <b>Tom Harding 2016-07-31 18:01:18</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2016/012917_Proposal-Hard-fork-opt-out-bits.xml.html">Proposal: Hard fork opt-out bits</a>
-                        <b>Tom Harding 2016-07-31 18:01:18</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-July/012917.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2016-07-31T18:01:18+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The proposal suggests allowing transaction authors to restrict execution to fewer than all blockchain forks where the transaction would otherwise be valid. This is achieved by node implementations selecting a bit from among the upper 8 bits of the transaction version space to enforce as a hard fork opt-out bit. To specify that a transaction should not be mined by nodes that enforce a particular bit, authors set that bit in the transaction version. Opt-out is enforced by consensus among nodes enforcing each bit.An implementation will relay, process and mine transactions that opt out of other blockchain forks; just not those that opt out of its own fork. For example, via soft fork, all implementations may begin enforcing hard fork opt-out bit 30. Post-soft fork, setting this bit would make a transaction invalid unless a fork emerges that has stopped enforcing bit 30. BIP109 implementations may stop enforcing bit 30 and begin enforcing bit 28 when the BIP109 hard fork is activated for a chain they are tracking.Enforcing more than one hard fork opt-out bit would imply that an implementation is actively participating in building more than one blockchain fork, and therefore providing a way to opt out of each.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-11T19:15:06.359799+00:00</i></p>
-    
-
     
 
     <footer>

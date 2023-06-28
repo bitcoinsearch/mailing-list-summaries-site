@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC: empty scriptPubKeys and OP_RETURN for marking unspendable txouts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2013-02-12 17:42:37
+            <br><i>Published on: 2013-02-12T17:42:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2013/combined_RFC-empty-scriptPubKeys-and-OP-RETURN-for-marking-unspendable-txouts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-February/002161.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Peter Todd and Gavin Andresen, Todd expressed his support for the fidelity bond concept. However, he had reservations about using the OP_RETURN opcode due to its history of causing bugs in Bitcoin. He suggested using OP_FALSE or OP_INVALIDOPCODE instead for "provably unspendable" transactions. When it came to anyone-can-spend transactions, Todd wondered if they could cause "spend storms" on the network if suddenly there were 11 BTC available for anyone to spend. He speculated that this could result in a race among users to spend it before others, assuming that some miners may be too ignorant to claim it for themselves.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T10:07:50.640136+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

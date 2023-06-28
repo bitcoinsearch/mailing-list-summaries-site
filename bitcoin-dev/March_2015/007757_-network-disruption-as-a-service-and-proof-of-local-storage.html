@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>&#34;network disruption as a service&#34; and	proof of local storage</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thy Shizzle 2015-03-28 02:55:00
+            <br><i>Published on: 2015-03-28T02:55:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2015/combined_-network-disruption-as-a-service-and-proof-of-local-storage.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-March/007757.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange between Robert McKay and Matt Whitlock on 27th and 28th March, 2015 discusses the issue of a single entity running multiple nodes to harvest transaction origin IPs. To address this problem, onion routing is proposed as a solution where transactions would have an additional layer of encryption to prevent IP discovery. However, this would cause overhead and slow down transaction relay slightly, so it would be made an optional feature for those who are concerned about IP association. In response to Matt's suggestion that hosting hundreds of lightweight servers backed by a single copy of the blockchain could be more efficient, Robert points out that someone could set up a single full node with the blockchain and proxy any challenges to it from other non-full nodes. The email thread further discusses the challenge-response protocol to ensure local possession, which relies on the lack of a "partial getdata" command in the Bitcoin protocol. The suggested protocols involve sending encrypted blocks and Merkle tree root of hashes of encrypted blocks with N indexes selected by a pseudo-random function seeded by a challenge value. It is noted that not every node needs to implement the protocol, but only nodes that want to prove full-node-ness, such as those that want to receive bitnodes subsidy.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T18:59:03.327363+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction Merging (bip125 relaxation)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Sjors Provoost 2018-01-28 16:43:34
+            <br><i>Published on: 2018-01-28T16:43:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Transaction-Merging-bip125-relaxation-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015668.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on bitcoin-dev, users suggest modifying the rules of BIP125 to allow retroactive transaction merging to be more appealing. One user suggests that merging after-the-fact is more practical than appending existing transactions. Another user proposes dropping rule 3 and only having a fee per weight unit increase from rule 4. Rule 4 could be made stricter to address concerns about relay spam. The proposal may not be backward compatible but as long as there are enough nodes that follow the new rules, it should not matter. There is no punishment for relaying transactions that violate rule 3. Regarding the issue with pushing others' txs out of the mempool, one user asks for elaboration. Another user suggests that wallets (of users who deposit coins) will cooperate with an exchange API to consolidate in-mempool transactions. A potential problem with relaxing the rules of BIP125 is the complexity involved in smarter type of merging. If the retroactive transaction merge fails, or doesn't get confirmed, it has no impact. However, the rules of BIP125 currently make it unappealing because the absolute amount of fees cannot be lowered. Therefore, some users suggest relaxing the rules to support this approach if it can be done in a pretty risk-free way.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:59:42.841751+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

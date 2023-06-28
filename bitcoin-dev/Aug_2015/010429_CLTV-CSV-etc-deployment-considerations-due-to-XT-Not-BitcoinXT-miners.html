@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CLTV/CSV/etc. deployment considerations due to XT/Not-BitcoinXT miners</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeff Garzik 2015-08-19 14:01:25
+            <br><i>Published on: 2015-08-19T14:01:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_CLTV-CSV-etc-deployment-considerations-due-to-XT-Not-BitcoinXT-miners.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010429.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation on the bitcoin-dev mailing list, Tier Nolan and Mark Friedenbach discuss the use of nVersion bits to signal support for a specific upgrade fork in the Bitcoin protocol. They propose using nVersion & 0x8 to signal support while keeping the consensus rule as nVersion >= 4. However, Nolan raises concerns about conflicting upgrades and the need to reject blocks with versions lower than 8 if the new upgrade is accepted by a majority of nodes. They also discuss the possibility of using a specific version-bits proposal to handle upgrades, with a suggested standard already proposed in sipa's gist. The proposal involves reserving bits for feature upgrade forks, agreeing on a specific standard, and moving on. Additionally, they suggest a time window during which the new bit would be active before being permanently implemented, giving software and users time to upgrade.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T20:31:07.093619+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

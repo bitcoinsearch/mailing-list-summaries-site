@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Ionization Protocol: Flood Routing</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2015-09-25 03:38:59
-            <br><i>Published on: 2015-09-25T03:38:59+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2015/combined_Ionization-Protocol-Flood-Routing.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000236.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation between Rusty Russell and Pieter, they discuss the possibility of squeezing more bytes out. They suggest that the signature should be 64 bytes and should never be DER encoded. Additionally, the public key can be hashed bitcoin-address style and recovered from the signature. However, this leads to the question of why the pubkey is in the scriptSig. The reason for this is that crypto is hard, and many people may not know about this method. Public key recovery is possible on ECDSA, and the recovery id can be brute forced. In most cases, the recovery id will be 0 or 1. However, if EC-Schnorr scheme is used in libsecp256k1 instead of ECDSA, it produces 64-byte non-malleable signatures that support pubkey recovery without an additional recovery id. This scheme is experimental but is an implementation of a well researched mechanism.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-18T15:13:35.191508+00:00 </i></p>
     
     
 

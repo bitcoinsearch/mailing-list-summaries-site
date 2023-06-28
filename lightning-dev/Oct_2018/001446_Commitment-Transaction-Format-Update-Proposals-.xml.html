@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Commitment Transaction Format Update Proposals?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2018-10-12 04:56:03
-            <br><i>Published on: 2018-10-12T04:56:03+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2018/combined_Commitment-Transaction-Format-Update-Proposals-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001446.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposed change to the commitment transaction format has been suggested, combining into a single `commitment_style2` feature. The changes include using an OP_TRUE-style output to allow CPFP, making `remotepubkey` a BIP-32-style to avoid option_data_loss_protect "please tell me your current per_commitment_point" problem and symmetrical CLTV timeout to avoid gaming the peer into closing. This will mainly affect BOLT #3, where the feerate for commitment transactions is always 253 satoshi/Sipa, and fees and OP_TRUE are always paid by the initial funder. HTLC-timeout and HTLC-success txs sigs are SIGHASH_ANYONECANPAY|SIGHASH_SINGLE, and derivation now uses a two-stage unhardened BIP-32 derivation based on the commitment number. To_self_delay for both sides is the maximum of either the open_channel or accept_channel. To_remote is now a P2WSH of: `to_self_delay` OP_CSV OP_DROP  OP_CHECKSIG.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-25T14:27:40.283616+00:00 </i></p>
     
     
 

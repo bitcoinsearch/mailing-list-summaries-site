@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP 15] Aliases</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rick Wesson 2011-12-16 16:03:28
+            <br><i>Published on: 2011-12-16T16:03:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2011/combined_-BIP-15-Aliases.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-December/000878.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, Pieter Wuille proposed using URLs as address identifiers, optionally suffixed with a bitcoin address for authentication. For example, his "address" could be either "sipa.be/pw.btc" or "sipa.be/pw.btc$14TYdpodQQDKVgvUUcpaMzjJwhQ4KYsipa", where "https://" is an implicit default. Initiating a payment to either of these would result in a GET of <a href="https://sipa.be/pw.btc">https://sipa.be/pw.btc</a> and when a transaction is constructed, it is POSTed back to that URL. He suggested that if they could agree on reasonable hardcoded mapping, pw at sipa.be could just be a shorthand for either of these, though vulnerable to proofing. In response to this proposal, Rick Falkvinge suggested looking at DANE and reviewing their work on hardening certificate (x.509) infrastructure as any URI scheme will still leverage DNS and inherit any base issues with TXT records. He also advised reviewing some of the work done in the IETF which has a long history in addressing many of the issues being considered. Finally, he recommended that if they cannot reach nearly the same level of sophistication as the bitcoin protocols, then they should rethink their scheme, as the proposals in this thread are neither clear nor elegant.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T21:56:18.799200+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

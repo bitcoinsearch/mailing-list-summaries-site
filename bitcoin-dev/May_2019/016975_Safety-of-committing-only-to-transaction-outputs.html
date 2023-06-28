@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safety of committing only to transaction outputs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2019-05-25 07:53:34
+            <br><i>Published on: 2019-05-25T07:53:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Safety-of-committing-only-to-transaction-outputs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016975.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Jeremy suggested some ways to improve witness replay-ability. He proposed salting the taproot key or the taproot leaf script at the last stage of a congestion control tree. However, he noted that the salt won't help if the address is reused. Furthermore, he suggested making chaperone signatures opt-in as there may be cases where they are not necessary. He mentioned OP_COSHV as being compatible with an additional checksig operation. Additionally, he proposed other mechanisms, including OP_CHECKINPUTSHASHVERIFY and OP_CHECKFEEVERIFY, that can improve safety and restrict replayability. OP_CHECKINPUTSHASHVERIFY allows checking that the hash of the inputs is a particular value, which is useful for other applications as well. On the other hand, OP_CHECKFEEVERIFY allows explicit commitment to the exact amount of fee, limiting replay to transactions funded with the exact amount of the prior. However, transactions using it must have all inputs/outputs set. Overall, these proposals offer ways to enhance witness replay-ability and improve safety in blockchain transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:33:11.752837+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

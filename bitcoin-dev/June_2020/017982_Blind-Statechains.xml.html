@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Blind Statechains</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tom Trevethan 2020-06-14 22:24:47
-            <br><i>Published on: 2020-06-14T22:24:47+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2020/combined_Blind-Statechains.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017982.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email exchange discusses a statechain implementation and service co-signing 'backup' transactions to transfer ownership of a UTXO from one owner to the next. The SE can be engineered to be 'blind' to the transactions it is signing, which can give significant privacy benefits. However, the downside of a blind SE is that it can no longer enforce the rules governing the sequence of backup transactions it co-signs. In the case of a multisig, and Schnorr signatures, existing blind Schnorr protocols could be used to implement a blind SE. There is no current 2P ECDSA protocol that enables one of the two signers to be completely blinded, but it seems that this would require only minor modifications to an existing 2P ECDSA scheme. The email also discusses the need for users to validate the history of the chain and verify the uniqueness of the ownership of the previous owner. Additionally, the email suggests that in the case of a blinded SE, a new owner would need to check that there are exactly as many backup transactions as the SE had signed. Finally, the email suggests introducing a secondary "blinding key" to achieve the above-described functionality, and notes that another thing to consider is that you won't know when a statechain has been pegged out, so pruning will be impossible.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T02:30:03.629510+00:00 </i></p>
     
     
 

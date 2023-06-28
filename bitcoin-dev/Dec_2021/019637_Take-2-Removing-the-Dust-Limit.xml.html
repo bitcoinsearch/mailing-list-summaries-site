@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Take 2: Removing the Dust Limit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Ruben Somsen 2021-12-08 10:46:22
-            <br><i>Published on: 2021-12-08T10:46:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2021/combined_Take-2-Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019637.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange between developers, the idea of allowing 0 value outputs was brought up again. Jeremy proposed a carve out that would allow 0 value outputs as long as they were used as Intermediate Outputs and the parent had a higher feerate after CPFP'ing than the parent alone. This would prevent 0 value utxos from proliferating long and still allow them to be spent by the fee paying transaction later. The proposal presupposes a fully working package relay system and may be helpful for CTV based contracts and spacechains. However, it was noted that introducing this rule would complicate mempool. Ruben brought up a scenario in which the 0 sat output could still enter the UTXO set under certain rules. To prevent this from happening, the 0 sat output needs to be the only spendable output and a relative timelock on other outputs would do the trick. It's worth noting that a policy rule cannot be made to prevent the 0 sat output from being left unspent, as miners would get more fees if they evicted child C1. Finally, a diagram was provided to show where 0 sat outputs would be helpful for spacechains.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T03:24:41.029917+00:00 </i></p>
     
     
 

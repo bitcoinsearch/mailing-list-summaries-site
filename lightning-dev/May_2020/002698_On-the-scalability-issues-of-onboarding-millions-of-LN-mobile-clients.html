@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On the scalability issues of onboarding millions of LN mobile clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Braydon Fuller 2020-05-08 20:22:30
+            <br><i>Published on: 2020-05-08T20:22:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2020/combined_On-the-scalability-issues-of-onboarding-millions-of-LN-mobile-clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002698.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Keagan McClelland and others have pointed out that the RPC interface in Bitcoin Core is not ideal as it exposes functionality that is not necessary. Additionally, there seems to be a demand for something in between a peer interface and an owner interface that would allow for low-cost ways to serve peer services without giving full administrative access to the node. One idea proposed is to have three ports for a full node: the consensus bitcoin protocol, a wallet services protocol, and a control interface. The wallet services protocol would add additional functionality such as bloom filtering, compact block filters, and output and address indexes for Electrum-like support. The control interface would be the existing JSON-RPC interface without all wallet-related methods. By using separate ports, various middleware could be added to support different authentication and transports.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:14:02.709493+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

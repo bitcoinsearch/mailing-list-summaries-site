@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Onion routing design.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2015-09-18 23:39:44
-            <br><i>Published on: 2015-09-18T23:39:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2015/combined_Onion-routing-design-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000191.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author of the post has shared a format for onion routing which requires `required bytes route`. The node decrypts this using its own pubkey and any error in the decryption is considered as a failure of the routing. The nodes create the route backward to calculate the size, then pick a random total size between 1024 and 4096, and pads it with at least 32 bytes of random padding. This offers protection from guessing the route length. However, there is a potential vulnerability due to the lack of MAC. If a nosy node guesses the final destination right, they can replace the routing entirely, leading to a successful or failed HTLC. One partial defense could be disallowing two HTLCs with the same R value, forcing probe serialization. However, this would allow a simple way to probe back to the source. Probabilistic backoff of duplicate R values may be another option, but a sophisticated probe sequence could still get a probability. Another issue is that nodes should not leak information to passive observers on the route due to errors. Signing errors and using the 'sum' field as a secret key seems sensible. This means that the padding in the original message needs to be "random" so 'sum' is random. It is also noted that nodes can easily correlate HTLCs by R value, so onioning the routing only provides partial protection.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T20:11:00.626577+00:00 </i></p>
     
     
 

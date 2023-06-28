@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>#zerobasefee</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-08-21 04:46:38
+            <br><i>Published on: 2021-08-21T04:46:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_-zerobasefee.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003194.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>During a discussion on the Lightning Network, a debate arose regarding whether base fees accurately reflect costs associated with forwarding HTLCs. One participant suggested that proportional fees and minimum payment values would be a better way to capture costs, but Matt Corallo disagreed without providing a clear explanation. Corallo argued that this method does not capture costs equally well and used a hypothetical opportunity cost of 1 sat per second for HTLC slots. However, the other participant pointed out that using a proportional fee and minimum payment value can still achieve a minimum fee while capturing costs more accurately than a base fee structure.Another proposal discussed in the Lightning Network is to ignore nodes that don't set their fees to a particular structure in routing decisions. This has drawn criticism, as it would exclude three-quarters of the network and any node running with default parameters. Additionally, deploying such changes would make it difficult to do future protocol changes, which may better capture the time-value of node resources. However, old behaviors aren't locked in permanently, and consensus rules can be changed if necessary.There are also discussions about whether the HTLC slot limit needs to be kept as a limitation after switching to eltoo. While eltoo gives us the ability to have channel factories, it doesn't solve the issue of having a ton of transactions and transaction outputs and spends thereof to put on the chain in the case of closure with pending HTLCs.Regarding base fees, a $1/month cost is about 1/40k BTC/month equals 10e3/4 sat/month, which is about 10e3/10e6 sat/second or 1 msat/second. A $40/month linode provides 4 EPYC cores, so you should be able to do 100s of payments per second, giving you a per payment cost of 0.4msat or less. If you're ending up with 40msat after amortizing that's hundreds of failed payments per success, if you're ending up at 1sat, that's thousands of failed payments per success.Theoretical arguments in favor of the proposal to ignore nodes that don't set their fees to a particular structure have emerged, but it remains controversial.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T15:38:26.494313+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

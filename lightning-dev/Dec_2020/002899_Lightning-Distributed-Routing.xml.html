@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Lightning Distributed Routing</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-12-01 11:29:48
-            <br><i>Published on: 2020-12-01T11:29:48+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2020/combined_Lightning-Distributed-Routing.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002899.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion between Joao, Bastien and ZmnSCPxj, it was noted that the `feeadjuster` plugin for C-Lightning created by Darosior already adjusts channel fees according to balance. The plugin signals whether or not to use a channel based on its capacity in that direction. This is done without requiring substantial changes to existing algorithms and implementations. CLBoSS, another C-Lightning plugin, implements similar logic as one of the many things it does, with some differing details but with substantially the same fee-adjustment curve. The discussion also raised concerns about nodes gossiping biased or invalid information to their peers in order to attract more payments through their nodes. For example, a node could dishonestly share with another node knowing a path to another node with capacity although it only has a fraction of that amount currently available. This would cause the routing table of the other node to be updated incorrectly. However, this issue can be addressed by changing the way nodes choose the next best hop for a certain destination. Joao proposed randomizing the best next hop from the group of next hops for that destination where the maximum volume allowed is higher than the payment’s volume. This would diminish the incentive attacking nodes have to share fake gossip by not allowing them to set themselves as first in line to be chosen as next hop. A maximum fee that a node is willing to pay would also need to be set.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:12:57.252989+00:00 </i></p>
     
     
 

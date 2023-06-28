@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP Draft] Datastream compression of Blocks and Transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Patrick Strateman 2015-12-02 18:45:23
-            <br><i>Published on: 2015-12-02T18:45:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2015/combined_-BIP-Draft-Datastream-compression-of-Blocks-and-Transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011844.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Bitcoin data is largely incompressible outside of a tiny subset of fields, therefore, a custom compression algorithm should be written if compression is to be used. On December 1st, 2015, Simon Liu via bitcoin-dev wrote an email suggesting that despite the possibility of an attacker sending malicious data to take advantage of a compression library vulnerability, it is not worse than existing attack vectors which might also result in denial of service, crashes, and remote execution. Pavel Janik replied saying that he thinks it is scary/undesirable to expose such libraries to potential attackers and suggested selecting a preferable compression library and checking for CVEs (Common Vulnerabilities and Exposures). He also mentioned that zlib allows remote attackers to cause a denial of service (crash) via a crafted compressed stream and asked if they want to expose such a library to the potential attacker. Peter was also suggested to look at possible ways to isolate the decompression phase, such as having incoming compressed blocks be saved to a quarantine folder, and an external process/daemon decompress and verify the block's hash.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T01:31:43.690875+00:00 </i></p>
     
     
 

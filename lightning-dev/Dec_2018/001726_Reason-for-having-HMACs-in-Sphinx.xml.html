@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Reason for having HMACs in Sphinx</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2018-12-06 15:24:20
-            <br><i>Published on: 2018-12-06T15:24:20+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2018/combined_Reason-for-having-HMACs-in-Sphinx.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001726.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this conversation between Corné Plooy and Christian Decker, they discuss the issue of using the same payment hash and ephemeral key generation in the Lightning Network. They agree that mixing the two is unwise as the sender has very little control over the effective ephemeral key that will be used for the last hop. Path decorrelation replaces the payment hash/preimage part, and if the "H"TLC payment secret generation is coupled with the onion shared secret generation, the attack can be avoided. However, the use of rendezvous routing complicates matters as we have very little control over what ephemeral key will actually be presented to the last hop. The idea of having a last hop mode and a forwarding hop mode, and mixing in the payment secret somehow seems contorted. Instead, they suggest having the sender prove knowledge of the original invoice by adding a TLV field with a shared secret from the invoice.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T15:22:50.137241+00:00 </i></p>
     
     
 

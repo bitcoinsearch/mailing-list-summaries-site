@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Progress on bech32 for future Segwit Versions (BIP-173)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Ryan Grant 2020-12-08 17:39:23
-            <br><i>Published on: 2020-12-08T17:39:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2020/combined_Progress-on-bech32-for-future-Segwit-Versions-BIP-173-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018299.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A suggested strategy for a bech32 library external to Bitcoin Core is proposed, which includes defaulting to the new M, using an interface to explicitly use both M=1 and M=0x2bc830a3, throwing an error if decoding fails but informing whether the other M would have succeeded. An interface to peek at the witness version byte of the data part is also recommended, with return values such as "it's version zero, based on a clean decoding" or "too many errors to say anything more about decoding". While looking into the data that is supposed to be checksummed to determine which checksum to use may not be elegant, auto-correcting the witness version byte may be done, against BIP173's current version advice. Some of the libraries that will be contemplating these steps include those found in <a href="https://github.com/topics/bech32?o=desc&s=stars">https://github.com/topics/bech32?o=desc&s=stars</a>. Three existing uses of bech32 that are external to Bitcoin Core are provided in <a href="https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md,">https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md,</a> <a href="https://github.com/btcontract/lnurl-rfc,">https://github.com/btcontract/lnurl-rfc,</a> and <a href="https://github.com/bitcoin/bips/blob/master/bip-0136.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0136.mediawiki</a>. Finally, BIP136 can be unconditionally moved to M=0x2bc830a3 due to having little legacy burden.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T16:07:32.106322+00:00 </i></p>
     
     
 

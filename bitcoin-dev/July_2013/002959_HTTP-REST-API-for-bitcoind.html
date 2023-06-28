@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTTP REST API for bitcoind</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Michael Gronager 2013-07-23 08:45:51
+            <br><i>Published on: 2013-07-23T08:45:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_HTTP-REST-API-for-bitcoind.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/002959.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Andreas Schildbach and Jeff Garzik on Bitcoin-development mailing list, Jeff mentioned that the goal of the HTTP REST interface is to access unauthenticated, public blockchain information, and there are no plans to add wallet interfacing/manipulation via this API. Andreas inquired if it was planned to expose the UXTO set of a given address, which may be useful for SPV wallets to swipe previously unknown private keys (e.g., paper wallet). Access to the UTXO set can be done using libcoin, which also has a rest interface. Michael added that accessing the UTXO set per address/script requires indexing all scripts, which was easy in libcoin as the blockchain is stored in a sqlite database. However, integrating this in bitcoind would require setting up and maintaining such an index ad hoc.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T14:15:43.190121+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

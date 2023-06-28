@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fast Merkle Trees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2017-09-07 01:59:54
+            <br><i>Published on: 2017-09-07T01:59:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2017/combined_Fast-Merkle-Trees.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014935.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue with the fast hash for internal nodes is that it needs to use an IV that is not the standard SHA-256 IV. Instead, it needs to use some other fixed value, which should itself be the SHA-256 hash of some fixed string such as "BIP ???" or "Fast SHA-256". Currently, someone can claim a leaf node as an internal node by creating a proof that provides a phony right-hand branch claiming to have hash 0x80000..0000100, which is really the padding value for the second half of a double SHA-256 hash. Peter Todd had previously schooled the author on a similar issue in the past. The proposed solution can be found in the Fast Merkle Trees BIP and code provided in the links.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T18:32:44.127278+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

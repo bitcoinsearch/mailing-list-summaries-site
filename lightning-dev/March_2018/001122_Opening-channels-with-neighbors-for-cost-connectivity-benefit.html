@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Opening channels with neighbors for cost/connectivity benefit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Karan Verma 2018-03-27 03:57:57
+            <br><i>Published on: 2018-03-27T03:57:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2018/combined_Opening-channels-with-neighbors-for-cost-connectivity-benefit.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-March/001122.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The sender node may not always have a route to the receiving node accepting lightning payments, and opening new channels can be expensive. Therefore, there is a need for a smarter way to open channels that increases the connectedness of the sender node with other nodes in the network while saving money in the intended transaction. For example, if Bob wants to send money to Alice but doesn't have a route to her, he would need to open a new channel with her, which could be costly if it was the only transaction he ever wanted to do with Alice. However, if Alice was connected to Charlie and Dave, Bob could instead connect with Charlie/Dave or nodes connected with them which have a route to Alice through Charlie/Dave, minimizing the transaction cost to reaching Alice and maximizing the number of nodes Bob can reach through this channel.This approach involves sorting the choice of nodes to open a channel with by transaction fee and connectedness it brings to the origin node. By choosing the neighbor of Charlie, for instance, Bob can now reach at least three nodes - Charlie's neighbor, Charlie, and Alice - and pay less. This idea could benefit both Bob in the long term and the lightning network as a whole. Feedback on this concept would be appreciated.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T22:42:06.467320+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

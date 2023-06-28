@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Breach of contract?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-07-28 01:38:05
+            <br><i>Published on: 2015-07-28T01:38:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2015/combined_Breach-of-contract-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000073.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange between Joseph Poon and Rusty Russell, they discussed the need for a contestation period in order to prevent an older version of a transaction from being broadcast through a credible threat. According to the rule, all outputs which are redeemable by A must be delayed if it's A's commitment transaction. For HTLCs, this means that timeout returns for HTLCs A initiates must be OP_CSV delayed and payments for HTLCs A receives must be delayed. The scripts in the 0.1 draft were found to be a bit messed up and missing a delay. The fixed A offers HTLC to B case was later provided by Rusty Russell in the email thread. The current/unexpired HTLCs will have the same payout and enforcement, but there is a risk of broadcasting older commitments and stealing the HTLC payout. If A broadcasts an older commitment, B can steal the HTLC payout as designed.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T18:39:54.689452+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

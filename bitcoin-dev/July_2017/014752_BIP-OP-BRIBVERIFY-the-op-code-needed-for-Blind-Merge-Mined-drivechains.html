@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP: OP_BRIBVERIFY - the op code needed for Blind Merge Mined drivechains</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2017-07-12 13:39:17
+            <br><i>Published on: 2017-07-12T13:39:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2017/combined_BIP-OP-BRIBVERIFY-the-op-code-needed-for-Blind-Merge-Mined-drivechains.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014752.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development discussion, ZmnSCPxj proposed improvements to the OP_BRIBEVERIFY proposal. The first improvement suggested was to remove the need for coinbase commitments by having the miner commit to the sidechain_id and h* in the transaction that pays the OP_BRIBEVERIFY instead. This would allow the h* commitment to occur only once in the block. The second improvement suggested was to keep a set of sidechain IDs when verifying a block and fail the script processing if an OP_BRIBEVERIFY already exists for that specific sidechain ID. Additionally, a question was raised about eliminating the use of scripting entirely and instead using a special non-standard OP_RETURN output to hold the sidechain_id and h*. It was suggested that a soft fork rule could be implemented to limit this output to one per block per sidechain_id.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T03:04:38.075264+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

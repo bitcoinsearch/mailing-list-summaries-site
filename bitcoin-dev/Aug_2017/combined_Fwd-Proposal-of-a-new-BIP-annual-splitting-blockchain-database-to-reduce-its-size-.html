@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014831_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Алексей Мутовкин 2017-08-16 16:20:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014833_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Алексей Мутовкин 2017-08-16 17:37:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014832_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Nick ODell 2017-08-16 16:52:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014832_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Nick ODell 2017-08-16 16:52:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014834_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Luke Dashjr 2017-08-16 18:33:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014832_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Nick ODell 2017-08-16 16:52:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014834_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Luke Dashjr 2017-08-16 18:33:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014831_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Алексей Мутовкин 2017-08-16 16:20:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014833_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Алексей Мутовкин 2017-08-16 17:37:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014834_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Luke Dashjr 2017-08-16 18:33:47</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014831_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Алексей Мутовкин 2017-08-16 16:20:45</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014833_Fwd-Proposal-of-a-new-BIP-annual-splitting-blockchain-database-to-reduce-its-size-.html">Fwd: Proposal of a new BIP : annual splitting blockchain database to reduce its size.</a>
+                        <b>Алексей Мутовкин 2017-08-16 17:37:34</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014831.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-08-16T16:20:45+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>A proposal was made by Алексей Мутовкин via bitcoin-dev on August 16, 2017, to split the Bitcoin blockchain database (BBD) annually into two parts. The reason for this proposed improvement is that having a 140gb full wallet is inconvenient. The first part consists of old blocks before the date of the split and the second part comprises new blocks starting from the first technical block with all rolled totals on the date of the split. The proposal also includes the transfer of tiny totals due to their unprofitability to miners, which cuts the long tail of tiny holders. Additionally, old blocks packs into annual megablocks and stores in the side archive chain for some needs for FBI investigations or other goals.While the prune option can save disk space, the first synchronization still requires downloading the full database. Therefore, splitting the BBD into annual megablocks offers an alternative solution to reducing the database size and improving convenience for users. This approach allows almost all nodes to hold only the rolled database while much less archive nodes hold a full expanded database. The proposed routine aims to address the inconvenience caused by the 140GB full wallet and provide a more efficient solution to improve the BBD size. To implement this routine, one would need to explain not only *why* it is necessary but also *what specifically* to do and *how* to do it. This concept, historically known as "flip the chain" and/or "UTXO commitments," is not new, merely complicated to design and implement. Overall, the proposed approach offers a potential solution to improve the functionality and convenience of the Bitcoin blockchain database.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-12T14:58:49.831326+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

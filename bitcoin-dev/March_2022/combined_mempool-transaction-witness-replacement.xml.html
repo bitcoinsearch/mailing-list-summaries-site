@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>mempool transaction witness-replacement <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2022/020168_mempool-transaction-witness-replacement.xml.html">mempool transaction witness-replacement</a>
-                        <b>darosior 2022-03-22 19:57:23</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2022/020168_mempool-transaction-witness-replacement.xml.html">mempool transaction witness-replacement</a>
-                        <b>darosior 2022-03-22 19:57:23</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2022/020168_mempool-transaction-witness-replacement.xml.html">mempool transaction witness-replacement</a>
-                        <b>darosior 2022-03-22 19:57:23</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2022/020167_mempool-transaction-witness-replacement.xml.html">mempool transaction witness-replacement</a>
-                        <b>Larry Ruane 2022-03-22 19:04:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2022/020167_mempool-transaction-witness-replacement.xml.html">mempool transaction witness-replacement</a>
-                        <b>Larry Ruane 2022-03-22 19:04:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2022/020167_mempool-transaction-witness-replacement.xml.html">mempool transaction witness-replacement</a>
-                        <b>Larry Ruane 2022-03-22 19:04:26</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020168.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2022-03-22T19:57:23+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Larry Ruane's proposal to change the Bitcoin Core mempool would allow an existing transaction to be replaced by one with a smaller witness and higher feerate. This change is miner-incentive compatible, however, concerns around code complexity cost and transaction-relay DoS need to be considered. Witness replacement could defend against a mempool pinning attack, and Bip125 allows incoming transactions to replace conflicting ones if certain DoS-mitigation conditions are met. Witness-replacement is similar to RBF but differs in that it doesn't require evicting mempool descendant transactions and signaling isn't required since outputs can't change. The proposal may be implemented as a per-node setting, but it's preferable for the node network to agree on relay policies. Question 2 highlights a potential DoS tradeoff between rebroadcasting slightly smaller witness transactions many times or not being able to replace a transaction with a beneficially-smaller one.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-15T18:21:52.064177+00:00</i></p>
-    
-
     
 
     <footer>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP sighash_noinput</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2018-05-09 23:01:39
+            <br><i>Published on: 2018-05-09T23:01:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_BIP-sighash-noinput.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015940.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin development mailing list, Anthony Towns raised concerns about the proposed SIGHASH_NOINPUT feature. He pointed out that if an individual used the same key for multiple inputs, and signed one of them with SIGHASH_NOINPUT, they would have spent all of the inputs. While the proposal limits potential damage by still committing to the prevout amount, it still poses a big risk for people who reuse addresses. To mitigate this risk, he suggested having SIGHASH_NOINPUT be a flag to a signature for a hypothetical "OP_CHECK_SIG_FOR_SINGLE_USE_KEY" opcode instead. This would ensure that a NOINPUT signature is only ever valid for keys deliberately intended to be single-use rather than potentially valid for every key.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:10:09.958678+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

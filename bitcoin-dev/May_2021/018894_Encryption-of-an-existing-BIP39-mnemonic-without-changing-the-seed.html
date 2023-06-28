@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Encryption of an existing BIP39 mnemonic without changing the seed</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tobias Kaupat 2021-05-06 14:10:31
+            <br><i>Published on: 2021-05-06T14:10:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2021/combined_Encryption-of-an-existing-BIP39-mnemonic-without-changing-the-seed.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018894.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev mailing list, Tobias Kaupat suggested a solution for a use case where an existing mnemonic (for a hardware wallet) should be saved on a paper backup in a password-encrypted form. The encrypted form should be a mnemonic itself to keep all backup properties like error correction. The proposed solution included taking the existing mnemonic and extracting the related entropy, creating a SHA526 hash (key) from a user-defined password, using the key as input for an AES CTR (empty IV) to encrypt the entropy, and deriving a new mnemonic from the encrypted entropy to be stored on a paper backup. To restore the original mnemonic, one must know the password and follow the process above again. Erik Aronesty suggested stretching the password with pbkdf2 or argon2 with like 30k rounds first rather than just hashing it. Tobias agreed that PDKDF2 makes sense since it is already used in BIP39. Regarding SeedXOR, he found it less secure and stated that he would prefer a solution based on provably secure algorithms rather than a "rot23 derivation."</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:40:37.053842+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

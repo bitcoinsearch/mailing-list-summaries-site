@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP Proposal: Wallet Labels Export Format</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Billy Tetrud 2022-08-27 22:20:31
-            <br><i>Published on: 2022-08-27T22:20:31+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2022/combined_BIP-Proposal-Wallet-Labels-Export-Format.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020902.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made to create a standard for importing and exporting all the labels in a Bitcoin wallet through BIP-wallet-labels. The proposed format is a simple two-column CSV file that can be compressed using ZIP and optionally encrypted using AES. The CSV format was chosen for its wide accessibility, particularly to users without specific technical expertise. The first field in the record contains a reference to the transaction, address, input or output in the wallet, and the second field contains the label applied to the reference.The proposed format may be useful to include a hash of the wallet descriptor (hash for privacy) that can be compared against potential matching wallet descriptors. CSV files are already common and uncontroversial in Bitcoin wallet software such as Bitcoin Core, Electrum, Sparrow, and many others. This proposal attempts to make manual or bulk management of labels accessible to users without specific technical expertise.Using CSV instead of JSON allows users to integrate it with their business processes, which are driven by business tools such as Excel. Labelling provides an important function in UTXO and address management in these scenarios and needs to be accessible and manageable outside of wallet software. The proposal seeks to create a standard for transferring any labels the user may have applied to the transactions, addresses, inputs or outputs in their wallet.While some developers suggested using JSON, the author of the proposal believes that CSV is more forgiving and accessible than JSON in managing labels. Developers will be using a mature CSV library rather than handling character escaping themselves. The proposal attempts to ensure that weak encryption does not proliferate by requiring importers following this standard to refuse to import .zip files encrypted with the weaker Zip 2.0 standard.In summary, the proposed BIP-wallet-labels format specifies a standard for the export and import of labels from a Bitcoin wallet through a simple two-column CSV file that can be compressed using ZIP and optionally encrypted using AES. The proposal attempts to create a standard for transferring any labels the user may have applied to the transactions, addresses, inputs or outputs in their wallet. The CSV format was chosen for its wide accessibility, particularly to users without specific technical expertise.The email thread from the Bitcoin-dev mailing list discusses a new proposed feature for the Bitcoin protocol called "Schnorr signatures". The proposed feature aims to improve transaction privacy and efficiency. Schnorr signatures are an alternative to the current signature algorithm used in Bitcoin, ECDSA. They offer benefits such as smaller signatures, faster verification times, and improved privacy through the ability to create multi-signature transactions without revealing the identities of the signers. The email thread discusses various aspects of implementing Schnorr signatures, including potential security concerns, compatibility with existing software, and the timeline for implementation. Some members of the community express excitement about the proposal, while others raise questions and concerns.The Bitcoin-dev mailing list is a forum for discussion among developers working on the Bitcoin protocol. It is hosted by the Linux Foundation and allows developers to share ideas, propose changes, and collaborate on improving the functionality and security of the Bitcoin network. Overall, the email thread provides insight into the ongoing development work being done on the Bitcoin protocol and the collaborative nature of the Bitcoin development community.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T23:56:52.959732+00:00 </i></p>
     
     
 

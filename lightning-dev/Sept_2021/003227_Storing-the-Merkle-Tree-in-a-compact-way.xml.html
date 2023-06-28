@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Storing the Merkle Tree in a compact way</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> shymaa arafat 2021-09-11 03:00:12
-            <br><i>Published on: 2021-09-11T03:00:12+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Sept_2021/combined_Storing-the-Merkle-Tree-in-a-compact-way.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003227.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Introducing a simple idea that could be useful for storage saving in handling the UTXOS Merkle Tree/forest, Shymaa M Arafat discusses the issues with storing N internal nodes along with 2N pointers. To handle different traversing options, additional pointers may also be required in the special leaves nodes. A new approach proposed by Arafat gets rid of all the pointers and uses a 2D array with variable row size instead. This method is specially appealing when all trees are full (complete) in the forest but can work for any Merkle Tree. In this approach, R[j] is of length (N/2^j), where j represents the level of the tree. For example, when N=8 nodes, R[0]={0,1,2,...,7}, R[1]={8,9,10,11}, R[2]={12,13}, and R[3]={14}. The total storage needed is just 2N-1 nodes, and there is no need for pointers. Traversing could be done neatly in any direction with the right formula. A pseudo code to fetch proof[i] is provided, which involves determining the direction to move, fetching the sibling node, and adding the rest through a loop. This method transforms recursion to an iteration and can work for any Merkle Tree. Although the Utreexo team may have solved their problem differently, Arafat believes this approach is worth sharing.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T05:49:03.106474+00:00 </i></p>
     
     
 

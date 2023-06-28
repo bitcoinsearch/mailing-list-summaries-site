@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Dynamic Commitments: Upgrading Channels Without On-Chain Transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-07-21 14:50:39
-            <br><i>Published on: 2020-07-21T14:50:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2020/combined_Dynamic-Commitments-Upgrading-Channels-Without-On-Chain-Transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002765.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent post, ZmnSCPxj proposed an idea of upgrading from a Poon-Dryja channel to a newer Decker-Russell-Osuntokun mechanism through an off-chain update. Due to the requirements of `SIGHASH_ANYPREVOUT`, a new pubkey type and Taproot construction are needed for this upgrade. Therefore, an upgrade transaction that cuts-through a mutual close of the Poon-Dryja channel and a funding open of a Decker-Russell-Osuntokun channel can be created. Once signed by both parties, the participants can revoke the latest Poon-Dryja state and keep the upgrade transaction off-chain. This means that the funding outpoint of the upgrade transaction becomes the "internal funding outpoint" for future Decker-Russell-Osuntokun updates. However, since the on-chain funding outpoint remains a Poon-Dryja, retaining the entire HTLC history of the Poon-Dryja channel is necessary for protection against theft attempts. Nonetheless, future HTLCs in the Decker-Russell-Osuntokun domain need not be recorded permanently, which limits the information liability of the upgraded channel. Furthermore, the short-channel-id of the channel is retained, which may prove useful since a provably long-lived channel implies high reliability of both channel participants. If the channel is later mutually closed, the upgrade transaction never needs to appear on-chain, potentially saving blockchain space.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T01:51:17.006177+00:00 </i></p>
     
     
 

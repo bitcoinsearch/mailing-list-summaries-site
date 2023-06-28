@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Disclosure of a fee blackmail attack that can make a victim loose almost all funds of a non Wumbo channel	and potential fixes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-06-17 12:21:10
+            <br><i>Published on: 2020-06-17T12:21:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2020/combined_Disclosure-of-a-fee-blackmail-attack-that-can-make-a-victim-loose-almost-all-funds-of-a-non-Wumbo-channel-and-potential-fixes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002736.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The message discusses several potential solutions to the issue of fee spikes in commitment transactions. One solution is to limit the number of htlcs, with Eclaire and c-lightning by default only using up to 30 htlcs. Another potential solution is a PR to bitcoin core which would allow for low fees and require the person claiming outputs to pay fees, but the victim who offered the htlcs would still have to spend those outputs at some time. Fee futures could also help against this. Other suggestions include not overpaying fees in commitment transactions, avoiding adding htlcs for which the on chain fee is higher than the HTLCs value, and being able to aggregate htlcs. However, aggregating htlcs seems impossible as once you add the points of two unrelated PTLCs, it becomes difficult to separate them again. Combining timelocks is also problematic, as it presents various challenges. One possible solution is to try aggregating using `OP_CHECKTEMPLATEVERIFY` or with a pre-signed transaction, thus retaining the timelocks. Overall, there are several potential solutions to the issue of fee spikes in commitment transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:45:38.336042+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

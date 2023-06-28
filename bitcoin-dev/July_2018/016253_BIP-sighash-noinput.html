@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP sighash_noinput</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2018-07-13 11:07:48
+            <br><i>Published on: 2018-07-13T11:07:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_BIP-sighash-noinput.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016253.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Fred Savage raised some issues with sighash_noinput, stating that it cannot prevent address-reuse and users who would 'autopilot' LN and only see the GUI will have no clue what technicals are happening under the hood. The risks involve a user creating a channel could tweak their own LN node to make their counterparty sign a sighash-noinput as a term/condition of the channel, where a tx can be signed but then allow the out's to alter value using a different opcode. Additionally, by allowing certain things to change after signing brings back malleability for those that use a TXID to identify a tx has been confirmed. However, Christian argues that these points are moot since these are scripts used in very specialized contexts and should not be shown to any end-user. Furthermore, wallets that are not part of LN or eltoo won't even know how to sign with sighash-noinput. Christian also states that you cannot force the counterparty to sign with a sighash-flag that they don't choose themselves, and wallets should not even allow signing with it. He says that sighash-noinput is a sharp tool that should only be used in specific situations to enable more flexibility, and it can improve the safety of off-chain protocols a lot.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:47:04.328485+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

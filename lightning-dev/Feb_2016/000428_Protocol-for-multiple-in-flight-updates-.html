@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Protocol for multiple in-flight updates.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joseph Poon 2016-02-03 05:01:35
+            <br><i>Published on: 2016-02-03T05:01:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2016/combined_Protocol-for-multiple-in-flight-updates-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000428.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message thread from February 3, 2016, Rusty Russell discussed the use of a signature to cover an HTLC ID and how it pertains to request IDs. They concluded that it is more like a request "staging" ID and that two IDs sent in the commitment message allow for simultaneous action on accept/reject/etc. It's important to note that all messages sent must be in order, and if the replyer skips the requester's Add Requests when replying, the skipped are assumed to be request rejections (or an outright channel closeout) since it should never happen. This is to enforce accept/reject order as we need to know which modifications are included in the signature/transaction and not have that change after-the-fact.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:30:48.544897+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

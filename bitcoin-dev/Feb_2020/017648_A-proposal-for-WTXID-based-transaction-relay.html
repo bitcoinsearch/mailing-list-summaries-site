@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A proposal for WTXID-based transaction relay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Suhas Daftuar 2020-02-25 19:48:23
+            <br><i>Published on: 2020-02-25T19:48:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2020/combined_A-proposal-for-WTXID-based-transaction-relay.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017648.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Suhas has proposed a new feature to add support for relaying transactions based on their wtxid, rather than just their txid. Currently, the INV messages sent on the Bitcoin peer-to-peer network to announce transactions refer to transactions by their txid, which is a hash of the transaction that does not include the witness (see BIP 141). This creates inefficiencies as a transaction's witness can be malleated without altering the txid. To eliminate this concern, Suhas proposes using the wtxid in place of the txid when announcing and fetching transactions. Suhas seeks feedback on feature negotiation for efficiency purposes. He believes it makes sense for peers to negotiate at the beginning of a connection whether they are going to use wtxid- or txid-based, prior to announcing any transactions. His proposal is to send a message between receiving a VERSION message and prior to sending VERACK (to nodes advertising version at least 70016) to announce support for this new feature. If both sides send it then they each know to enable it on the link. Suhas thinks it would be great to use messages sent between VERSION and VERACK to negotiate features prior to fully initializing a peer connection. However, he welcomes feedback on whether inserting a message before VERACK would break any assumptions of other software on the network.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T21:48:27.077527+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Debate: 64 bytes in OP_RETURN VS taproot OP_FALSE OP_IF OP_PUSH</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2023-02-05 12:06:33
-            <br><i>Published on: 2023-02-05T12:06:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2023/combined_Debate-64-bytes-in-OP-RETURN-VS-taproot-OP-FALSE-OP-IF-OP-PUSH.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021435.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A discussion on storing large and small data using witness and OP_RETURN respectively was held by Aymeric Vitte on February 5, 2023. It was suggested that if one wants to store something big and can afford several transactions in their design, they should use witness. Whereas, if one wants to store small things like signatures, addresses hashes, and some metadata and their design does not make several transactions easy, then they should use OP_RETURN. However, the question arises of how to move forward with several OP_RETURN and no size limit. The answer lies in the fact that OpReturn isn't in UTXO space and doesn't even take advantage of the witness discount, so it clearly has minimal impact. Therefore, there's no reason to micromanage exactly how people use it. They should be allowed to decide for themselves with the fee market. This is similar to how artificial limits were not put on Taproot.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T04:13:42.087394+00:00 </i></p>
     
     
 

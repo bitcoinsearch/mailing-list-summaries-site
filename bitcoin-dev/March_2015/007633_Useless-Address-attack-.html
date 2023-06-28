@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Useless Address attack?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kevin Greene 2015-03-05 02:13:38
+            <br><i>Published on: 2015-03-05T02:13:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2015/combined_Useless-Address-attack-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-March/007633.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoind's address manager protects against attackers filling a user's database with their own nodes by organizing addresses into buckets. The bucket an address is stored in is chosen based on the IP of the peer that advertised the address message, as well as the address itself. The bucketing is done randomly to prevent any attacker from filling the entire table with their own nodes. Addresses that have not yet been tried go into 256 "new" buckets, while addresses of nodes that are known to be accessible go into 64 "tried" buckets. Bucket selection is based on cryptographic hashing using a randomly generated 256-bit key. Additionally, several indexes are kept for high performance.A user on the Bitcoin-development mailing list asked if they could slow down communication over the P2P network by popping up a heap of dummy nodes that exchange version and relay addresses. They wondered if they could send addr messages with all 1000 addresses pointing to their useless nodes, causing clients to connect to their dummy nodes instead of legitimate ones. The user noted that if they filled up a user's address pool with enough addresses to dumb nodes and kept them fresh time-wise, it could have an impact, especially if all 8 outbound connections were used up by their dumb nodes. However, Bitcoind's address manager prevents this type of attack by randomly organizing addresses into buckets and using cryptographic hashing to select buckets.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T18:22:49.289702+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

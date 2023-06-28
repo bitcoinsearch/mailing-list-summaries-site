@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 32 HD wallets, accounts should be labels not numbers</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2012-12-03 20:44:40
-            <br><i>Published on: 2012-12-03T20:44:40+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2012/combined_BIP-32-HD-wallets-accounts-should-be-labels-not-numbers.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-December/002053.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation on December 3rd, 2012, Amir Taaki asked about serializing points using a compressed format before going into the hash function. Pieter Wuille responded that there is no compelling reason to encourage uncompressed public keys anymore on the network. Uncompressed public keys take more space in the block chain for no additional value. He suggested that software may continue supporting uncompressed keys if they wish to provide compatibility, but for a new standard, it makes sense to standardize on just compressed keys. Additionally, he noted that software thus needs to support the compressed encoding, so there is no reason to use a different encoding inside the derivation scheme itself. Wuille explained that the encoding itself is not hard, and involves just 0x02 or 0x03 (depending on whether Y is even or odd) followed by the 32-byte encoding of X. Decoding is harder, but is never needed in the derivation. Software internally can use any representation, which in almost all circumstances stores both X and Y (and even more). Decoding compressed public keys is somewhat harder, as Y must be reconstructed (but the algorithm isn't hard) - this is only necessary when someone wants to import an extended public key though for watch-only wallets.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T16:18:07.403160+00:00 </i></p>
     
     
 

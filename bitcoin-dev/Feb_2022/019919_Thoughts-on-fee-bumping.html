@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Thoughts on fee bumping</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2022-02-16 20:36:04
+            <br><i>Published on: 2022-02-16T20:36:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_Thoughts-on-fee-bumping.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019919.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion, James O'Beirne explains that the validity of a sponsor transaction is "monotonically" true at any point after its inclusion in a block. This means that if sponsors were valid at any point in the future, not only would a utxo index be needed but an index of all transactions. However, not all nodes have this ability and a map of (txid -> transaction) for all time is a separate index that must be enabled via the `-txindex=1` flag. The current consensus threshold for transactions to become invalid is a 100 block reorg. In case of a reorg deeper than 100 blocks, it would permanently invalidate any transactions spending the recently-matured coinbase subsidy in any block between $new_reorg_tip and ($former_tip_height - 100). These invalidated spends would not be able to be reorganized into a new replacement chain.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T16:31:01.318316+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Increase channel-jamming capital requirements by not counting dust HTLCs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bastien TEINTURIER 2021-04-24 08:01:28
-            <br><i>Published on: 2021-04-24T08:01:28+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2021/combined_Increase-channel-jamming-capital-requirements-by-not-counting-dust-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003015.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion on the Lightning-dev mailing list revolves around a proposal by Eugene Siegel to increase the capital requirement of channel-jamming attacks. He suggests that in a commitment transaction, dust HTLC outputs should be trimmed as they do not appear in the commit tx and thus their exclusion from the 483 HTLC limit would not affect non-dust throughput of the channel. Matt Corallo clarifies that update_fee message does not change the dust limit for outputs in a channel, although he has suggested such a change. Bastien Teinturier points out that dust HTLCs count towards the 483 HTLC limit because if they are not counted and one exceeds the limit, it becomes impossible to lower the fee anymore, which may result in more than 483 HTLC outputs in the commitment and open the door to other kinds of attacks. Despite this, Eugene's proposal could still make sense as dust HTLCs will never appear in the commit tx regardless of subsequent update_fees. Overall, the proposal is a free mitigation without any downsides (besides code-writing), and can raise the capital requirement of channel-jamming so that each HTLC must be non-dust, rather than spamming 1 sat payments.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:58:13.288121+00:00 </i></p>
     
     
 

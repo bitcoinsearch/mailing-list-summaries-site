@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Possible attack: Keeping unconfirmed transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Raúl Martínez 2014-06-10 11:25:05
+            <br><i>Published on: 2014-06-10T11:25:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2014/combined_Possible-attack-Keeping-unconfirmed-transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/006002.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A member of the Bitcoin-development mailing list, Raúl Martínez, proposed a possible attack on Bitcoin transactions. The premise of this attack is that some transactions fail to confirm and are eventually purged by Bitcoin nodes due to a lack of fees. In this scenario, Alice is selling a pizza to Bob and he makes the payment with Bitcoin. The goal of the attack is for Alice to store an unconfirmed transaction sent by Bob for a few days, which will not be included in the blockchain due to no fee or other reasons. Bob might resend the payment or just cancel the deal with Alice. A couple of days later, Alice relays the transaction to the network or mines it directly with her own hash power. Bob does not know what is happening and thinks that the transaction was "canceled forever." Alice now has the bitcoins, and Bob does not know what happened with his money.This attack could also work with the Payment Protocol because when using it, Bob does not relay the transaction to the network. It is Alice's job to do it, and Alice stores it and tells Bob to resend the payment. Bob creates another transaction (if it has the same inputs as the first transaction, this does not work) and Alice relays it to the network. Alice comes back a couple of days later and mines with her hash rate the first transaction (the one she did not relay to the network). Alice now has two payments, and Bob does not know what happened.There is no known fix for this problem, and it is unclear if this kind of attack is possible.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T23:49:38.471105+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

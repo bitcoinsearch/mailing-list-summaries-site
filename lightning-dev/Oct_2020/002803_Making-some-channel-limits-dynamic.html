@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making (some) channel limits dynamic</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-10-05 11:46:12
+            <br><i>Published on: 2020-10-05T11:46:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_Making-some-channel-limits-dynamic.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002803.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The recent discussions around channel jamming have brought to light the importance of configuring channel parameters carefully. Certain parameters that are set only once at channel creation could benefit from being configurable throughout the lifetime of the channel, such as max_htlc_value_in_flight_msat, max_accepted_htlcs, htlc_minimum_msat, and htlc_maximum_msat. Although nodes can currently update these unilaterally through forwarding heuristics, it would be better to inform peers about the limits put in place to avoid unnecessary cycles of add/commit/revoke/fail messages. The suggestion is to add tlv records in `commitment_signed` to notify channel peers that there will be changes made in the values of these fields. Bastien asks whether anyone opposes this idea, if other fields should become dynamic as well, and if a new message is required instead of using extensions of `commitment_signed`.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:15:42.038412+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

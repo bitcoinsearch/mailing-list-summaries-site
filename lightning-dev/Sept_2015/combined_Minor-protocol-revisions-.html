@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Minor protocol revisions. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2015/000244_Minor-protocol-revisions-.html">Minor protocol revisions.</a>
+                        <b>Anthony Towns 2015-09-30 04:07:59</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2015/000242_Minor-protocol-revisions-.html">Minor protocol revisions.</a>
+                        <b>Anthony Towns 2015-09-29 06:47:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2015/000221_Minor-protocol-revisions-.html">Minor protocol revisions.</a>
+                        <b>Anthony Towns 2015-09-24 11:54:02</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-September/000244.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2015-09-30T04:07:59+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>On September 30, 2015, Rusty Russell shared his opinion that the current exhaustive testing of code was insufficient. He suggested that having optional output of traces for successful test cases would make it easier to understand what the code actually does. Rusty also pointed out that CLOSE should start tracking HTLCs just like when a commitment is published so that there is no need for unnecessary elevated fees or CSV delays. On September 24, 2015, Pierre requested an updated version of svg to understand the rationale behind all existing closing flows and states. Aj found a solution and updated state.py, which works in this flow: test/test_state_coverage --dump-states | tee STATES / ./state.py > update.dot / dot -Tsvg update.dot > update.svg. Rusty Russell suggested that instead of exhaustive testing, some optional output of traces for successful test cases would make it clear what the code actually does. On September 24, 2015, Pierre requested an updated version of svg to understand the rationale behind all the existing closing flows and states. Aj updated state.py, which works in this flow: test/test_state_coverage --dump-states | tee STATES / ./state.py > update.dot / dot -Tsvg update.dot > update.svg. Rusty Russell pointed out that CLOSE should start tracking HTLCs just like when a commitment is published so that there is no need for unnecessary elevated fees or CSV delays.Aj analyzed the HTLC precision increase with ceiling drops on September 24, 2015. The 32-bit puts a ceiling of 0.04 satoshi (currently about $10USD) on each HTLC. To send more than $10 via lightning, multiple transactions with different R values can be done. A maximum is also useful for routing, as it helps obscure how much is being spent. A maximum seems pretty helpful for planning how to fund a node too.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-18T20:18:08.358972+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

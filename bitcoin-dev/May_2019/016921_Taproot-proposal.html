@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-05-08 03:44:29
+            <br><i>Published on: 2019-05-08T03:44:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_Taproot-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016921.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation between Luke and ZmnSCPxj, they discuss the use of Taproot construct while retaining external script limitations that involved parties cannot agree to override. They consider enforcing unconditional CLTV off-chain by participants refusing to sign a transaction unless it has an `nLockTime` of the agreed-upon "unconditional CLTV". This way, the CLTV only needs to be on branches which have a strict subset of the participants as signers. ZmnSCPxj also suggests adding a salt to tap branches and asks if it would suffice to add `OP_PUSH() OP_DROP` to the leaves. However, he is uncertain whether salting every node is necessary. He mentions that using different public keys for each contract rather than reusing keys can help randomize and prevent creating rainbow tables of scripts. Additionally, they discuss signing an additional script not committed to by the witness program and suggest that the annex can be used for this by having it contain both the script and signature somehow concatenated.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:37:07.718145+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

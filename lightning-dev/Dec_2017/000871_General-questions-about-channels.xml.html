@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>General questions about channels</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Andy Schroder 2017-12-27 05:18:22
-            <br><i>Published on: 2017-12-27T05:18:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2017/combined_General-questions-about-channels.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-December/000871.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion between Rusty Russell and Andy Schroder, the use of millisatoshis in lightning channel transactions was questioned. While it is possible to lose up to 0.999 satoshi per payment due to rounding down to whole satoshis, payments of less than a few thousand satoshi are impractical even on the Lightning Network as they cost more than that to spend. The upper 32 bits must be zero for channels with chain_hash identifying the Bitcoin blockchain, which gives a maximum HTLC value of .04294967295 BTC, or about $10 back when the protocol was started. This limit is in place despite the extra 4 bytes being set to zero, and is intended for safety and decentralization purposes.Regarding optional initial push of millisatoshis during channel creation, it is for use in the common case where someone wants to connect to another party and make a payment immediately. It is also the only mechanism for the payer to have zero funds in a channel, but starting a channel with no funds in reserve is not recommended.As for the timeout closing out a channel when someone does not cooperate, if there is no in-progress payment, there is no reason to close a channel to an unreachable peer unless one wants to abandon the channel and get the funds back. If there is an in-progress payment, BOLT #2 specifies the requirements for closing the channel.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T17:16:47.118973+00:00 </i></p>
     
     
 

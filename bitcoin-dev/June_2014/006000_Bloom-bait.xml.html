@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Bloom bait</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2014-06-10 10:38:23
-            <br><i>Published on: 2014-06-10T10:38:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2014/combined_Bloom-bait.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/006000.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the implementation of bloom filters for privacy reasons in the Bitcoin network. The writer explains that implementing this feature would be costly and look like a denial-of-service attack on the network due to the O(n) cost per query. However, another person responds that prefix filtering may not save any disk seeks or could even make it worse for the current loads the network is handling. The cost of disk reads is mainly rotational latency, and modern kernels will adaptively read ahead when working through a disk file sequentially. Implementing prefix filtering requires calculating a sorted list of all data elements and tx hashes in the block, which takes up extra disk space and requires seeking through indexes. A smart implementation could pack the index next to each block, but it would slow down block relay. The additional data storage and increased pressure on the page cache may make prefix filtering worthwhile at some point, but it is unlikely for current traffic levels. It is suggested that finding ways to increase usage is more important than worrying about resources that are not presently scarce. The writer also mentions that exporting storage technology via a stats message would be neat since LevelDB is designed for HDDs, not SSDs.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T23:46:27.890167+00:00 </i></p>
     
     
 

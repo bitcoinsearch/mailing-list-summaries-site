@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decoy node_ids and short_channel_ids</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-02-04 14:09:16
+            <br><i>Published on: 2020-02-04T14:09:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Decoy-node-ids-and-short-channel-ids.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002497.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation discusses the implementation of a proposal and the use of temporary IDs or node_ids for better privacy in Lightning Network. The first use case is to always use a temporary ID for private channels to obscure on-chain footprints. The second use case is to apply a new temporary ID and node_id for every invoice, but implementing this securely requires brute-forcing the onion against N keys and pretending not to decrypt the onion when using a temporary key. However, a fast path can be used by looking up the invoice using payment_hash and checking if it has a temporary ID associated with it. If so, the temporary key can be used to decrypt the onion if it meets certain conditions, otherwise, the normal node key is used. The conversation also touches on the complexity of the implementation and compares it to other state management solutions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:41:46.291708+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal: NODE_NETWORK_LIMITED service bits</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2017-05-11 20:10:08
+            <br><i>Published on: 2017-05-11T20:10:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_BIP-proposal-NODE-NETWORK-LIMITED-service-bits.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014317.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, the discussion is about the usefulness of defining a deterministically chosen set of historical blocks within a certain timeframe and whether it would be better to leave it undefined. The proposal of using 49 days was made to allow SPV peers to catch up with a peer pruned to a datadir of approximately 10GB even if they were offline for a month. However, this may no longer be true after segwit activates. The BIP also suggests that peers should connect a limited amount of their available outbound connections to peers signaling one or both of the NODE_NETWORK_LIMITED_* service bits if they expect to request less blocks than the signaled number. It is not clear whether this refers to peers downloading blocks or serving them. Additionally, there is a concern that light clients who are not checking the nServiceFlags from a relayed addr-message may unwillingly connect to a pruned peer and ask for (filtered) blocks at a depth below their pruned depth. This could potentially be a problem already.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:44:43.026956+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

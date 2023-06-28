@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoind-in-background mode for SPV wallets</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tamas Blummer 2014-04-09 16:09:13
+            <br><i>Published on: 2014-04-09T16:09:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Bitcoind-in-background-mode-for-SPV-wallets.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005154.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin core can activate pruning to support a full node in 4GB or so, with enough space to store the UTXO of about 350MB and a few gigs for blocks to serve out. Users will not be hammered on space constraints as SPV clients of the border router will build their own archive and indices based on their interest of the chain, which means that the border router core does not need to store or process anything not needed for consensus. This makes the memory or disk footprint of the core as low as an optimal storage of UTXO. SPV is a sufficient API to a trusted node to build sophisticated features not offered by the core. Feedback from SPV wallet developers regarding how much disk usage agility they think is required is being sought.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T19:16:52.425432+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bitcoin scripting and lisp</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2022-03-09 14:30:34
+            <br><i>Published on: 2022-03-09T14:30:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_bitcoin-scripting-and-lisp.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020092.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, ZmnSCPxj discussed the benefits of cross-input signature aggregation (sigagg) for Bitcoin. Although sigagg has several complexities except when using BLS signatures, which can aggregate everything all the time after the fact noninteractively, it makes sense to have a special aggregated signature that always comes with a transaction or block. ZmnSCPxj suggested that saving bytes by having multiple inputs of a transaction use the same single signature is similar to saving bytes by having multiple inputs of a transaction use the same `scriptPubKey` template. He also pointed out that HTLCs in Bitcoin have 13 bytes if we remove the `OP_PUSH`es and that one could reduce their witness data by 13 bytes minus whatever number of bytes needed to indicate this. This amounts to about 3 vbytes per HTLC, which can be significant enough to be worth it. However, PTLCs remain more space-efficient than HTLCs. The conversation then moved on to the complexities of using covenant features and the risks associated with this approach.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T17:33:04.814140+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

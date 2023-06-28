@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Base64-encoded descriptors</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Spencer Dupre` 2019-12-24 19:09:33
-            <br><i>Published on: 2019-12-24T19:09:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2019/combined_Base64-encoded-descriptors.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017531.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A recent discussion on the bitcoin-dev mailing list addressed the issue of making descriptors easier to work with. While descriptors are nice to work with, users cannot easily copy and paste them due to containing parenthesis and commas which stop highlighting by double-clicking. An obvious solution is to base64 encode the descriptors so that users get a text blog as the master public key without any extra details to bother them, and developers can easily base64 decode for developing with them. However, a complication might be the descriptor checksum. If there's a typo in the base64 text then that could decode into multiple character errors in the descriptor, which might be problematic for the checksum. One potential solution is to attach the checksum to the end of the base64 text. The ideas for this solution came from discussions with achow101. Overall, this improvement would make using descriptors more user-friendly and efficient.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T22:53:38.298896+00:00 </i></p>
     
     
 

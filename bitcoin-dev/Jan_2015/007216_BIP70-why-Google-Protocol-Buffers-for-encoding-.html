@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70: why Google Protocol Buffers for encoding?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2015-01-28 15:42:42
+            <br><i>Published on: 2015-01-28T15:42:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_BIP70-why-Google-Protocol-Buffers-for-encoding-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007216.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>When developers charge the developer instead of the platform to check certificate validity, it means they must develop a separate codebase for all platforms targeted. This is because each platform stores trusted root certificates differently with different APIs and certificate representations. However, cross-platform abstraction libraries such as Java and Qt provide a key store library that can load from either the OS root store or a custom one, eliminating the need for separate codebases. Using a third-party service to convert things to JSON is one of the least obvious and highest effort solutions, and it is not a problem with the design choices in BIP70. It sounds like a bizarre hack around lack of features in the runtime being used. Developers are also reminded that there is no obligation to use the OS root store and can take a snapshot of Mozilla/Apple/MSFT etc stores and load it in their app to avoid issues where BIP70 requests work on some platforms and not others. Bitcoinj uses this approach by default, but developers can override this and use the OS root store instead.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:30:58.681605+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Time to worry about 80-bit collision attacks or not?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2016-01-07 23:39:58
+            <br><i>Published on: 2016-01-07T23:39:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2016/combined_Time-to-worry-about-80-bit-collision-attacks-or-not-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012206.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the security of SHA256(SHA256) over RIPEMD160(SHA256) and the implementation of segwitness. The difference in security between SHA256(SHA256) and RIPEMD160(SHA256) is considered negligible, with the risk of implementation errors caused by multiple ways of interpreting the segwitness hash in scriptPubKey being much greater. It is suggested that wallets should be coded to mitigate the risk of collision attacks, and a single 20-byte segwitness in scriptPubKey would be the best design from a security point of view. The capacity increase of smaller scriptPubKeys is also a factor to consider. In response to Gavin Andresen's question about the potential vulnerability of nested hash construction RIPEMD160(SHA256()), concerns are raised about targeted collision attacks and length extension attacks. Cascading the same hash function twice is shown to be weaker than using HMAC. While RIPEMD160(SHA256()) may be better than RIPEMD160(), security should not rest on the assumption that an attacker requires a large amount of memory. Links to relevant research papers are provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T02:58:32.785716+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

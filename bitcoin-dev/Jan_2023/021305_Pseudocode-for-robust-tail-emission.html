@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pseudocode for robust tail emission</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> jk_14 at op.pl 2023-01-01 21:23:37
+            <br><i>Published on: 2023-01-01T21:23:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2023/combined_Pseudocode-for-robust-tail-emission.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021305.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Bitcoin-dev mailing list, a proposal was made to execute consecutive halvings if mining activity is growing. However, if there is a miner exodus, delaying the next halving until mining activity recovers to previous levels may be necessary. The concern is that people will hoard Bitcoin more and more according to Gresham's law, leading to decreasing liquidity and transaction volume. While ASIC technology is already matured, any sudden drop of difficulty would always be an issue. A simple solution would be better than a complicated one. Billy Tetrud suggests that any scheme that only acts on the basis of difficulty may not be sufficient. If there is a sudden drop in mining difficulty, delaying the next halving or even ending halving altogether may not be enough to correct for whatever is causing hashrate to tank. There is no long-term relation between difficulty and any reasonable security target. To ensure security, Jaroslaw suggests using a chainwork parameter instead. The system could automatically adjust the subsidy up or down to attract more or fewer miners or adjust the block size up or down to change the fee market. Jaroslaw also proposes a concept where all users participate in ensuring security, achieving equilibrium regarding costs of security between two parties with opposing interests. The proposal is based on a free market as it has no hardcoded value of tail emission. The goal is to put the money where the mouth is: this safety measure will never be triggered, then (no risk of fork).</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T03:40:12.058385+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

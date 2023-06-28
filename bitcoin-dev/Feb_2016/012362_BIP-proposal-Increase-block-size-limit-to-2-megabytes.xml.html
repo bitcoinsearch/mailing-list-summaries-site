@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP proposal: Increase block size limit to 2 megabytes</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Luke Dashjr 2016-02-06 00:12:25
-            <br><i>Published on: 2016-02-06T00:12:25+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2016/combined_BIP-proposal-Increase-block-size-limit-to-2-megabytes.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012362.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On February 5, 2016, Gavin Andresen posted a blog post containing a couple of the constants chosen. The constants included in the post involve signature operations in un-executed branches of a Script not being counted and OP_CHECKMULTISIG evaluations being counted accurately. These constants may break static analysis entirely, which was a noted reason for creating BIP 16 to replace BIP 12. As part of this proposal, miners are expected to express their support for this BIP. However, miners don't get to decide hardforks, so it's essential that the economy also expresses their support for it. If miners trigger the hardfork without consent from the economy, it could lead to market disruption. The proposal states that SPV wallets are compatible with this change, but it's preferable to correct it to "Light clients" or something else. Actual SPV wallets do not exist at this time and would not be compatible with a hardfork. Furthermore, the rationale for limiting the amount of data hashed to compute signature hashes to 1,300,000,000 bytes per block wasn't included in the blog post. It's assumed to be based on the current theoretical max at 1 MB blocks. However, even with high-end PCs, hashing such a large amount of data could take 40-80 seconds, so it may be best to set a lower limit. In the short term, an increase is needed to continue the current economic policies with regards to fees and block space, matching market expectations and preventing market disruption. This sentence is the most controversial part of the draft, and it wouldn't suffer a loss by removing it (or at least making it subjective). According to the writer, any hardfork should address at least the simple tasks on the hardfork wishlist (e.g., enable some disabled opcodes; fix P2SH for N-of->15 multisig; etc.) and be deployed as a soft-hardfork to avoid leaving old nodes entirely insecure.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T03:41:54.037192+00:00 </i></p>
     
     
 

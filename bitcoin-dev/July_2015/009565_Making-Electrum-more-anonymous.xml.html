@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Making Electrum more anonymous</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Stefan Richter 2015-07-23 12:23:35
-            <br><i>Published on: 2015-07-23T12:23:35+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2015/combined_Making-Electrum-more-anonymous.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009565.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread on the Bitcoin-dev mailing list discusses an idea for creating an anonymous routing layer between Electrum servers and clients. Instead of using RSA, Eric Voskuil suggests using CurveZMQ, an implementation of CurveCP. The PIR library is suggested as a prime application for this purpose. The proposed process involves each server publishing an RSA public key, which is received by the client along with a list of available servers and their pubkeys. For each wallet address, a client chooses a server and an RSA keypair, creates a list of encrypted requests, chooses a main server, and sends the encrypted requests to it. The main server dispatches the requests to the corresponding servers without revealing the client's IP address. Each server decrypts the request, performs it, encrypts the result, and sends it back to the main server, which forwards it to the client.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-10T03:04:44.178209+00:00 </i></p>
     
     
 

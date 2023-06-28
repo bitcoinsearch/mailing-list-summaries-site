@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Annex Purpose Discussion: OP_ANNEX, Turing Completeness, and other considerations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2022-03-04 23:33:10
+            <br><i>Published on: 2022-03-04T23:33:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_Annex-Purpose-Discussion-OP-ANNEX-Turing-Completeness-and-other-considerations.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020046.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this message, the sender initially suggests that banning the use of OP_ANNEX may solve some issues. They argue that if it were meant to be accessible via script, it would not have been removed from the stack and may have been included as an opcode in taproot. However, they note that the annex is committed to by signature, meaning that it may still be possible to use clever tricks to get it onto the stack again. Later in the message, the sender reconsiders their initial suggestion and suggests that if the Annex is only meant for adding weight to a transaction, then it does not need to be covered by any signature. This would make it third-party malleable. They propose that if a malleated transaction has a lower Annex than the original, it fails validation and the current transaction stays in the mempool. If it has a higher Annex, it cannot replace the original in the mempool due to a lower feerate.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T17:39:05.971748+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

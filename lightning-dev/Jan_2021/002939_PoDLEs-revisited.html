@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PoDLEs revisited</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2021-01-28 23:50:24
+            <br><i>Published on: 2021-01-28T23:50:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2021/combined_PoDLEs-revisited.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002939.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article discusses the idea of using PoDLE to protect against parallel attacks. The author argues that immediate broadcast of signaling TX is a bad idea since it leaks the UTXO associated with the signaling TX is creating a channel and suggests lazy broadcast signaling TXs as a good way to protect against sequential attacks but are weak against parallel attacks. The article further explains the steps involved in implementing the PoDLE protocol. It also suggests alternative ways of dealing with UTXO probing outside the protocol such as maintaining a shared UTXO blacklist. While the author's bias is towards doing nothing and keeping things simple, he acknowledges that taproot will change the game for private channels but won't do much for public channels. Additionally, the article provides links to research on how effective chainalysis techniques are at associating funding UTXOs to nodes for the most common usage patterns. The article concludes by stating that adding PoDLE could be done later with a feature bit and not currently necessary.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:36:48.659120+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

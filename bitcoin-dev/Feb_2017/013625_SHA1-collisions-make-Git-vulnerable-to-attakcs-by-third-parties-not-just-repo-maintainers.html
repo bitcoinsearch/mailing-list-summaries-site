@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SHA1 collisions make Git vulnerable to attakcs by third-parties, not just repo maintainers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Steve Davis 2017-02-25 12:04:28
+            <br><i>Published on: 2017-02-25T12:04:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2017/combined_SHA1-collisions-make-Git-vulnerable-to-attakcs-by-third-parties-not-just-repo-maintainers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013625.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the Bitcoin-dev mailing list, Steve Davis questioned the security of RIPEMD-160 hash algorithm which is used as a foundation for Bitcoin addresses. Peter Todd replied that SHA1 is considered insecure because of its algorithm, not its 160-bit length. On the other hand, there aren't any known weaknesses in RIPEMD160, but it hasn't been studied as much as other hash algorithms. However, Bitcoin uses RIPEMD160(SHA256(msg)) which might make creating collisions harder if an attack is found. The use of this algorithm doesn't offer greater protection since the outputs only verify the public key against the final 20-byte hash. In the first case scenario, the challenge would be to find a private key that hashes to the final hash while in the second case scenario, a sha256 hash is added to the problem which doesn't seem to increase the difficulty by any significant amount. It is important to note that the dollar value held in existing utxos continues to increase and hence RIPEMD160's security may come under greater scrutiny in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:47:59.782903+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

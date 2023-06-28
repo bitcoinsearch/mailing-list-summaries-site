@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Laundry list of inter-peer wire protocol changes</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2016-01-29 02:35:17
-            <br><i>Published on: 2016-01-29T02:35:17+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2016/combined_Laundry-list-of-inter-peer-wire-protocol-changes.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-January/000413.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Amiko Pay protocol is discussed in detail by Rusty Russell, who highlights the various concept choices. The transport layer used is TCP, although it will be re-implemented in a higher layer as it isn't good enough and works well over TOR. For serialization, JSON with some added conventions will be used, which is bloated but easily debuggable and extensible. Message confirmation will be done manually so that a node knows which messages were received/need re-transmitted even after a crash and restart. Bi-directional routing is an important part of the protocol, allowing both payer and payee to route towards a meeting point without either needing a routable address on the network. Multiple channels per link are also available, and different channel classes are used for micro-transactions. Furthermore, reserving before locking is utilized for optimisation purposes.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T22:09:07.633205+00:00 </i></p>
     
     
 

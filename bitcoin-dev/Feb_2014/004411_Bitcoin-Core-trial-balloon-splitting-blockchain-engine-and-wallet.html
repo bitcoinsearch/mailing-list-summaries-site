@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Core trial balloon: splitting blockchain engine and wallet</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-02-21 10:41:06
+            <br><i>Published on: 2014-02-21T10:41:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_Bitcoin-Core-trial-balloon-splitting-blockchain-engine-and-wallet.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004411.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin Core reference implementation can be used as a payment network access and management tool, aside from its traditional role as wallet software. Version 0.9 will allow the bitcoind wallet to be disabled at compile time or runtime, allowing for a more optimized border router profile. Recent discussions have proposed running the Bitcoin Core wallet as a separate process, communicating with the blockchain engine using existing RPC and P2P channels to become a real SPV client. This would sandbox away wallet keys and sensitive data from the network-exposed P2P engine, among other benefits. While simple forking was explored, separate programs seems better, especially since Windows requires an exec-like method for process separation. Pieter is working on headers-first sync, but upping the review and test bandwidth is necessary for the wallet/blockchain engine split.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:14:00.004588+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP for OP_VAULT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Greg Sanders 2023-03-13 14:56:15
-            <br><i>Published on: 2023-03-13T14:56:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2023/combined_BIP-for-OP-VAULT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021535.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Luke Dashjr, in a message to the Bitcoin-dev mailing list, expressed his concerns with the current idealized functionality of deposit -> trigger -> withdrawal and suggested a new approach. He believes that the previous approach is too complicated for everyday use and would harm privacy quite a bit. Instead, he suggests that Joe receives funds with a taproot output like normal and sends funds to Fred, but Fred cannot spend them until N blocks later (covenant-enforced relative locktime). If Joe's funds were stolen, Joe can spend Fred's UTXO within the N block window to a recovery output. Luke admits that the implementation details for this kind of setup are non-obvious and will likely require yet another address format, but certainly seems within the scope of possibility. In other related correspondence on the same mailing list, James O'Beirne announced that a number of improvements have been made to the OP_VAULT draft. The improvements include no longer having a hard dependence on package relay/ephemeral anchors for fee management, all vault-related transactions can be bundled with unrelated inputs and outputs, facilitating fee management that is self-contained to the transaction, and specific output locations are no longer hardcoded in any of the transaction validation algorithms. James has written a BIP that fully describes the proposal and his next steps will be to try for a merge to the inquisition repo.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T15:40:16.679963+00:00 </i></p>
     
     
 

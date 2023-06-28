@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2018-06-15 23:34:40
+            <br><i>Published on: 2018-06-15T23:34:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016121.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter has raised some ideas related to the Partially Signed Bitcoin Transaction Format (BIP 174). One of the important considerations in this context is whether to use a key-value map model or a set model. The former can remove duplication even if future extensions are added while the latter reduces the size of PSBT by removing certain data encoded inside keys. Another idea is to enable combiners to verify two PSBT are for the same transaction by requiring the "transaction" record inside a PSBT to be in a canonical form. The signer responsibility should be optional to ensure forward compatibility with future developments, and there could be test vectors for signing for specific circumstances. Moreover, it is suggested that the derivation paths include the full public key and chaincode of the parent or master things are derived from instead of just the fingerprint of the parent or master xpub. Lastly, Pieter suggests adding generic key offset derivation as an additional derivation method and choosing a more compact way than hexadecimal to store PSBTs as text.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:05:34.021978+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

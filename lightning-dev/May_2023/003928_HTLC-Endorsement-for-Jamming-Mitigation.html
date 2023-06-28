@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTLC Endorsement for Jamming Mitigation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2023-05-06 20:54:17
+            <br><i>Published on: 2023-05-06T20:54:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2023/combined_HTLC-Endorsement-for-Jamming-Mitigation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003928.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the Lightning Network community, channel jamming has been a prevalent issue. To mitigate this, Carla and Clara have proposed a two-part scheme involving HTLC endorsement and reputation. Antoine points out that the HTLC endorsement scheme proposed still suffers from vulnerabilities, making it essential to establish reputational transitivity between incoming and outgoing traffic. He suggests that the acquisition cost of local reputation should be equal to the maximal time value damage one can inflict on a routing node channel accessible from its local counterparty granting this high-level of reputation. Antoine opened an issue on the repository to converge on a threat model. Carla provides updates on channel jamming, including next call details and data gathering efforts. The team aims to gather data about the use of HTLC endorsement and local reputation tracking for jamming mitigation and experiment with different algorithms for tracking local reputation. They suggest starting simple with a binary endorsement field and observing the effect of endorsement in the steady state with logging-only implementation. Each node locally tracks the reputation of its direct neighbors and allocates slots and liquidity reserved for endorsed HTLCs from high reputation peers. Reputation and endorsement are proposed as the first step in a two-part scheme for mitigating channel jamming. Carla invites further discussion during the upcoming call. Antoine adds that building data gathering infrastructure for Lightning is valuable as any jamming mitigation will have to adapt its upfront fees or reputation acquisition cost in function of HTLC traffic and market forces. Antoine also looks forward to giving an update on Staking Credentials, which is an end-to-end approach to mitigate channel jamming. The link for Staking Credentials is provided in the email. Overall, the Lightning Network community is actively working towards mitigating channel jamming and is experimenting with various schemes and reputation algorithms to achieve this goal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T12:53:08.634921+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

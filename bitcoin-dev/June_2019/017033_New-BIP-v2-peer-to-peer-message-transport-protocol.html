@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP - v2 peer-to-peer message transport protocol</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2019-06-17 16:20:32
+            <br><i>Published on: 2019-06-17T16:20:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_New-BIP-v2-peer-to-peer-message-transport-protocol.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017033.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the nonce for Chacha20, Elichai proposed using a "message sequence number" as the nonce. The BIP324 (v2 message transport protocol) proposed AEAD, ChaCha20Poly1305 at Bitcoin, uses a message sequence number which starts with 0 and the maximum traffic before a rekey must occur is 1GB. There is no such thing as a random nonce described in the BIP, hence the term "sequence number". It is impossible to reuse a nonce/key conceptually, but there could be implementation screw-ups. While XChaCha20 can be used with a random nonce, there seems to be no reason to use it in this case since the usage of a sequence number as nonce appears perfectly safe.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:30:16.096209+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

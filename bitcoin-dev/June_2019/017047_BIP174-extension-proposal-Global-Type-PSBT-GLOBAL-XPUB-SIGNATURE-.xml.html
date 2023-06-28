@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP174 extension proposal (Global Type: PSBT_GLOBAL_XPUB_SIGNATURE)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jonathan Underwood 2019-06-27 02:11:23
-            <br><i>Published on: 2019-06-27T02:11:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2019/combined_BIP174-extension-proposal-Global-Type-PSBT-GLOBAL-XPUB-SIGNATURE-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017047.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a message to a group, Jonathan Underwood asked for feedback on an idea for PSBT extension that aims to solve the problem of verifying that an address is not a hacker's address. The exchange wallet has a proprietary JSON-based encoding system and wants to move towards PSBT. BIP32_DERIVATION can verify the address from a certain XPUB, but it cannot verify the signature of that XPUB. He proposed a key-value specification and provided a draft of the proposal. The signing key path used in the spec is randomly chosen 31 x 4 bits shown as numbers with hardened paths. The flow would be to securely verify the XPUB of the warm/hot wallet. Then, using the airgap signing tool, sign the XPUB with all cold keys. After that, upload the signature/XPUB pairs to the online unsigned transaction generator. Include one keyval pair per coldkey/XPUB pairing. When offline signing, if the wallet detects there is a global keyval XPUB_SIGNATURE with its pubkey in the key, it must verify that all outputs have BIP32_DERIVATION and that it can verify the outputs through the derivation, to the XPUB, and to the signature.While the proposal slightly alters their current system, he requested feedback on this proposal.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T19:31:15.712459+00:00 </i></p>
     
     
 

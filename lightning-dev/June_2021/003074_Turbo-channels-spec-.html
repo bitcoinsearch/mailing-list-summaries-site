@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Turbo channels spec?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2021-06-29 05:34:18
+            <br><i>Published on: 2021-06-29T05:34:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2021/combined_Turbo-channels-spec-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003074.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell, a contributor to the Lightning Network protocol, recently raised the issue of zero-conf channels. Not all implementations accept these channels, but they can be useful. Roasbeef also noted that they are not specified. To address this, Rusty proposed a strawman proposal for implementing zero-conf channels. The proposal suggests assigning a new feature bit "I accept zeroconf channels" and if both nodes negotiate this, update_add_htlc (etc) can be sent before funding_locked without the peer getting upset. Nodes are advised not to forward HTLCs from an unconfirmed channel unless they have explicit reason to trust that node. Rusty believes that this is a simple change that would also create a new set of channel_types, altering that PR. Rusty intends to draft something this week.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T04:27:07.820422+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

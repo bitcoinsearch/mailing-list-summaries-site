@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>RFC: empty scriptPubKeys and OP_RETURN for marking unspendable txouts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-02-13 04:12:09
+            <br><i>Published on: 2013-02-13T04:12:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2013/combined_RFC-empty-scriptPubKeys-and-OP-RETURN-for-marking-unspendable-txouts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-February/002162.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion of the fidelity bond concept in Bitcoin, Gavin Andresen expressed his opposition to using the OP_RETURN opcode due to its history as the cause of a severe bug in Bitcoin's past. Instead, he suggested using either OP_FALSE or OP_INVALIDOPCODE for an "unspendable" transaction, with the latter specifically set as 0xFF and placed at the start of the scriptPubKey. However, Todd pointed out that using anyone-can-spend transactions might lead to a "spend storm" on the network if there were suddenly a large amount of BTC sitting in an unclaimed txout. This would encourage attempts to identify as many Bitcoin nodes as possible, particularly miners, and incentivize the development of infrastructure to exploit it. Todd suggested that this could be addressed by making empty scriptPubKeys standard and adding code so that miners would always try to spend such outputs at the same time. To make non-fidelity-bond uses viable as well, Todd proposed adding code to detect and spend fidelity bonds and making publish transactions IsStandard(). He also discussed various issues and potential optimization problems that could arise from implementing fidelity bonds, including transaction mutability, recursive publish transactions, and determining the true value sacrificed. Ultimately, both Todd and Andresen agreed that fidelity bonds require further thought and a testnet implementation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T10:08:42.862857+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

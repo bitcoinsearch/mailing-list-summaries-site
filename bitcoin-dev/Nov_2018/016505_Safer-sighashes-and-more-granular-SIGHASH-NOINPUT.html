@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2018-11-24 08:13:46
+            <br><i>Published on: 2018-11-24T08:13:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016505.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev email thread, Christian Decker and Anthony Towns discussed the commitment to sequence numbers in transactions. Committing only to sequence numbers would not prevent adding inputs as any input could be replaced by almost any arbitrary other transaction. Decker suggested that committing to the inputs directly would be a simpler solution than using a roundabout method like including a blanked field in BIP118. Decker proposed a new approach: always commit to the sequence of the same input, and only commit to hashSequence if all inputs and outputs are signed. He also mentioned that the next-generation SIGHASH will introduce signing of fees, previous scriptPubKey, and all input values, among other things. As such, it won't be a simple hack over BIP143. In conclusion, Decker suggested that BIP118 should be changed to an informational BIP, with a focus on the rationale and examples of NOINPUT and cross-referenced with the consensus BIP.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:06:14.645603+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal for new &#34;disabletx&#34; p2p message</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2021-01-14 05:32:57
-            <br><i>Published on: 2021-01-14T05:32:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2021/combined_Proposal-for-new-disabletx-p2p-message.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018347.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a bitcoin-dev discussion, Matt Corallo inquired about the interaction between fRelay and bloom disabling. He asked if it was possible to set fRelay later if bloom filters were not enabled due to resource constraints or new limits. The current bitcoin implementation does not allow for this. You either set m_tx_relay->fRelayTxes to true via the VERSION message or enable it later with FILTERLOAD or FILTERCLEAR, both of which will cause a disconnect if bloom filters are not supported. Bloom filter support is indicated via a service bit (BIP 111) which can be assumed to know whether they're supported as soon as you receive the VERSION line. BIP 37 specifies fRelay as a 1-byte field where if false, broadcast transactions will not be announced until a filter{load,add,clear} command is received. If missing or true, no change in protocol behavior occurs. BIP 60 defines the field as "relay" and references BIP 37 but it is not referenced in any other BIPs.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-21T00:31:57.989847+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Bluetooth on Android</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2013-09-13 16:21:19
-            <br><i>Published on: 2013-09-13T16:21:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2013/combined_Bluetooth-on-Android.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-September/003254.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Over a year ago, Andreas and the author of the article prototyped Bluetooth transaction submission on Android at a hackfest in Berlin. The feature will soon be available with support on-by-default for the sending side, which means anyone can enable it in the settings page and start receiving payments via Bluetooth as long as both sides use the Bitcoin Wallet app. The protocol used is proprietary, and once the payment protocol is implemented in bitcoinj, the authors plan to recast the Bluetooth support to use that and submit a BIP for it. However, currently, it wouldn't make sense to do so as they know the current protocol has a limited lifespan.The ability to send transactions via Bluetooth resolves one of the most common UX fails seen in Europe. People travel to conferences or events and want to spend their Bitcoins while abroad but cannot reasonably do so because data roaming is expensive. By allowing the receiver, i.e., the merchant, to receive the tx via Bluetooth, this problem is avoided, and often, the receiver is local and can broadcast the transaction on the user's behalf.The authors use an unauthenticated RFCOMM socket with the adapter MAC address in a new btcmac parameter in the bitcoin:URI QR code. No pairing is required, but MITM attacks on the connection are possible. However, all that's done with it is writing raw tx bytes out over the connection, so MITM is limited to DoS.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-07T16:57:21.495296+00:00 </i></p>
     
     
 

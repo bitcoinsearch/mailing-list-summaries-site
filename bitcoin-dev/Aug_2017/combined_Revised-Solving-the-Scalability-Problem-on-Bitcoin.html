@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Revised <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014871_Revised-Solving-the-Scalability-Problem-on-Bitcoin.html">Revised - Solving the Scalability Problem on Bitcoin</a>
+                        <b>Adam Tamir Shem-Tov 2017-08-27 04:09:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014871_Revised-Solving-the-Scalability-Problem-on-Bitcoin.html">Revised - Solving the Scalability Problem on Bitcoin</a>
+                        <b>Adam Tamir Shem-Tov 2017-08-27 04:09:08</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2017/014871_Revised-Solving-the-Scalability-Problem-on-Bitcoin.html">Revised - Solving the Scalability Problem on Bitcoin</a>
+                        <b>Adam Tamir Shem-Tov 2017-08-27 04:09:08</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014871.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-08-27T04:09:08+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin's blockchain is facing scalability issues due to its size, which is 140GB and growing quickly. A proposed solution involves creating a Genesis Pair of keys, preserving the Genesis Block, combining all blocks up to the most recent one, and cutting out intermediary transactions. The proposal suggests combining and pruning the blockchain every 999 blocks to create a maximum of 1000 blocks in the ledger. This would involve waiting for a special pruned block after every 999 blocks, which would prune everything from block 2 to block 1000, leaving only the genesis block.All relevant outputs needed to verify early transactions will be preserved in the pruning block, and the only information lost is of the intermediate transactions, not the final ones that have already been accepted by the community. While this pruning block could get extremely large in the future, it will not be the regular size of other blocks. The proposal aims to set storage growth at a reasonable number and ensure the blockchain has a maximum finite size. The blockchain has a theoretically infinite maximum size, which poses a problem for long-term storage. However, this issue can be addressed by creating a minimum transaction fee of 100 satoshis to ensure that the pruning block would not exceed 5PB in size, even in the most unlikely scenario. The pruning block can also be created gradually over time and named "Exodus Block." To rewrite the transaction and block chain, a special account called the Genesis Account can be created. This account's private and public key will be available to everyone, and it will be the source of all funds. The Genesis Account will only be used in the Exodus Block, which will show as though all the funds originated from and were sent with the Genesis private key. The number of Bitcoins keeps expanding, so the funds in the Genesis Account need to expand as well. This can be done by showing as though this account is the account which is mining the coins, and it will be the only account in the Exodus Block which “mines” the coins, and receives the mining bonus.If this proposal is not implemented, the blockchain may become too large for anyone to store, making us more dependent on private corporations to store it. By then, the corporations will have complete control of what happens next. It is urgent to acknowledge this problem and work towards a solution, which can be further developed by those with more technical understanding.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-12T15:07:40.840258+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Detecting OP_EVAL scriptPubKeys that are to you</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2011-10-27 09:08:53
+            <br><i>Published on: 2011-10-27T09:08:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2011/combined_Detecting-OP-EVAL-scriptPubKeys-that-are-to-you.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000696.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this discussion, Michael Grønager explains the problem he sees in mapping cryptographic keys to assets. He argues that a clean boundary remains between the script and the cryptographic key. However, knowing the script used is necessary to identify funds, making it impossible for clients to identify funds without the required information. The only way to gain the advantages of op_eval is by using it, but Michael opposes its support, claiming that it breaks an intrinsic logic of uint160s and transactions that have been quite nice and clean so far. He also opposes checkmultisig as a standard transaction type, as it seems that there is a serious misunderstanding regarding the bijection between hash160s and public keys and one between ECC private keys and spendable transactions. He fears that this misunderstanding will moot the flexibility of the script system, rendering every script that doesn't look like a direct mapping of hash160->pubkey->payee broken. This could result in tools being rendered insecure by unexpected transaction types.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T22:26:06.245387+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

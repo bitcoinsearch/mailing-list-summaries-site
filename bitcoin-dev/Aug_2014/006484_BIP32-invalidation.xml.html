@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP32 - invalidation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> second isogeny 2014-08-10 00:34:19
-            <br><i>Published on: 2014-08-10T00:34:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2014/combined_BIP32-invalidation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006484.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>There are concerns about the security of a proposed change, as it is less secure and incompatible with existing implementations of the specification. This incompatibility could cause users to believe a key is worthless or lose funds when unable to spend them. The proposal would also be inconsiderate to other parties who have done work to produce correct and compatible implementations. Furthermore, the proposed change would make the selection of private keys uneven, which is objectively less secure. This could potentially create a devastating weakness if an incorrect implementation reflects a large class of keys to a small number of values. Additionally, there are many corner cases that must be handled in cryptographic software, such as handling the point at infinity cases, handling zero-value signatures (which could leak the private key), and handling the special case of adding colinear points. While unit-testing can test the complex additional logic required for the bignum modulo operation, there may not be a suitable modulo available due to layering. Those unprepared to deal with these complications should perhaps leave writing this kind of software for other people.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T02:06:53.514583+00:00 </i></p>
     
     
 

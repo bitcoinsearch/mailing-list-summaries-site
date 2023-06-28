@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for P2P Wireless (Bluetooth LE) transfer of Payment URI</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> MⒶrtin HⒶboⓋštiak 2015-02-05 23:36:11
+            <br><i>Published on: 2015-02-05T23:36:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2015/combined_Proposal-for-P2P-Wireless-Bluetooth-LE-transfer-of-Payment-URI.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007347.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The use of a BIP-70 signed payment request during initial broadcast can address integrity issues. However, the public nature of the broadcast and strong public identity creates significant privacy concerns. Transactions are cryptographically tainted as a result. The problem is further compounded when using BIP-70 over the web. Despite TLS and other security measures, an interloper can capture payment requests and automatically correlate transactions to identities. Maintaining privacy between parties becomes challenging.One potential solution suggested is using encryption with forward secrecy. The merchant would generate a signed request containing a public ECDH part, while the buyer would send back a transaction encrypted with ECDH and their public ECDH part. If the receiving address or amount needs to be kept private, a commit protocol (such as ZRTP/RedPhone) and short authentication phrase could be used. The commit protocol makes it difficult to spoof the authentication phrase.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T16:35:58.300937+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Recovery of Lightning channels without backups</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2021-04-20 00:53:26
-            <br><i>Published on: 2021-04-20T00:53:26+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2021/combined_Recovery-of-Lightning-channels-without-backups.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002996.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Rusty Russell and Lloyd Fournier discussed implementing a change to the DF spec to eliminate all "basepoints" using node pubkey and randomizing it using the shared secret for each purpose. However, Rusty notes that one issue with this method is that you can't sign the commitment_tx or htlc_tx without knowing the node's secret key or the tweaked key. Currently, c-lightning sends a round-trip to the signing daemon to handle this, but Rusty would prefer to avoid requiring this step. As a solution, he suggests adding commit_basepoint from which others are derived or just replacing funding_pubkey.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:18:14.024500+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A state machine.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2015-08-31 01:04:21
-            <br><i>Published on: 2015-08-31T01:04:21+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2015/combined_A-state-machine-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000165.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email exchange, Rusty Russell suggests some changes to the state diagram of the lightning network protocol. He proposes laying out the diagram differently, with multiple graphs starting at INIT/NORMAL with a single cmd/pkt and ending at NORMAL'/CLOSED/ERROR. He also suggests combining error paths that apply to many states in the output. There is a discussion about the optimization of updating many HTLCs at once rather than using ADD_HTLC, COMPLETE_HTLC, TIMEOUT_HTLC, etc. Rusty thinks it's too early to do this. The PRIO stuff is discussed, and Rusty finds it klunky. He suggests having a constant tiebreak in case of simultaneous/overlapping channel updates, but this could lead to livelock. They also discuss the potential deadlock situation if both systems think they're high priority. Finally, Rusty proposes a PKT_REBALANCE_VIA_BLOCKCHAIN option for rebalancing the channel.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T19:55:28.228640+00:00 </i></p>
     
     
 

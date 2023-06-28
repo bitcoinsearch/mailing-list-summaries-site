@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Splicing Proposal: Feedback please!</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2018-10-16 22:30:15
-            <br><i>Published on: 2018-10-16T22:30:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2018/combined_Splicing-Proposal-Feedback-please-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001461.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Rusty Russell proposes a new protocol for side splice-in which treats splice-in and splice-out the same. The new protocol would require inline splice-in to have wait time, but since splice-out doesn't need this, it would not be necessary. The proposed protocol includes four types: `prepare any output with script of specific form`, `splice_in`, `update_splice_in_accept`, and `update_splice_in_reject`. The recipient of `splice_in` checks if the `blockheight` is far enough into the future and validates the claimed output before sending `update_splice_in_accept`. From that point onwards, all commitment transactions have one extra signature. However, Lisa found out that parallel splice does not work with Poon-Dryja channels as the counterparty can spend the old funding txout with a revoked spend. Rusty tried to come up with workarounds but nothing was successful, so he went back to Plan A.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-25T14:05:17.158997+00:00 </i></p>
     
     
 

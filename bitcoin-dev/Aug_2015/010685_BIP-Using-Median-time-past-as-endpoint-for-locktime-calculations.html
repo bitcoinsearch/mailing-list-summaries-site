@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP: Using Median time-past as endpoint for locktime calculations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-08-27 23:19:13
+            <br><i>Published on: 2015-08-27T23:19:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_BIP-Using-Median-time-past-as-endpoint-for-locktime-calculations.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010685.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Btc Drak has updated BIP 113 and added credits to Gregory Maxwell. He has also changed BIPS 112 and 113 to reflect the amended deployment strategy. There is a discussion about the issue created by Bitcoin XT, which produces blocks with nVersion=0b001...111. It is suggested to apply a mask of ~0b001...111 then trigger the soft-fork on nVersion >= 0b0...100 == 4, with miners producing blocks with nVersion=0b0...1000. However, this still uses up a version bit and blocks with nVersion=0b001...000 will be rejected by the nVersion >= 4 rule, hard-forking them off the network. An alternative proposal is to go with Peter Todd's stateless nVersion bits w/ time-expiration proposal instead, which leads to a hard-fork only if a soft-fork has been rejected by the time the upgrade deadline is reached. Another possibility discussed is to spend the time to implement the original stateful nVersion bits proposal, but there is higher risk due to the extra complexity of tracking soft-fork state.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T20:16:43.167717+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

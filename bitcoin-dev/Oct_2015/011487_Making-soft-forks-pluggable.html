@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making soft forks pluggable</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2015-10-09 03:58:12
+            <br><i>Published on: 2015-10-09T03:58:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_Making-soft-forks-pluggable.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011487.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Eric proposes the ability to define soft forks as standalone units that can be merged with Bitcoin Core. This would require changes in some areas of the consensus code, but could cover a wide class of potential soft forks through a small number of hooks primarily in main.cpp, consensus/*, script/interpreter.cpp, and primitives/*. Other hooks could also be added in non-consensus code such as rpcblockchain.cpp or the wallet. Unit tests could be built for each independent soft fork and compared for enforcement of different combinations. Eric is concerned about objections to the idea, but believes it can be done without moving large chunks of code around. He also questions whether supporting this feature is a good idea in the first place, as it may make soft fork deployments too easy. However, he recognizes that VersionBits (BIP0009) aims to make deployments faster and wonders if this initiative could be taken even further. Finally, Eric notes that his proposal is not required by the current versionbits deployment plan, but he is open to sincere objections if he is wrong.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:03:24.813021+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

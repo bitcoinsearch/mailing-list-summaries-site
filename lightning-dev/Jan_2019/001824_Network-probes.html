@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Network probes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrea RASPITZU 2019-01-18 16:46:16
+            <br><i>Published on: 2019-01-18T16:46:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Network-probes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001824.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the message is proposing a discussion on whether or not to probe the network to check for the liveliness of a path before sending out a payment. Currently, payments are issued with a random payment_hash that is not redeemable by anyone, and if the destination (and the path) is 'lively', it will respond with an error. The author believes that probing can help reduce the error rate of payments and even detect stale channels. In order to improve this process, the author suggests using the padding of the per_hop field of the onion and with a single bit of the padding, telling the final node that this is a probe and not an actual payment. This saves the receiving node from doing a database lookup and does not reveal anything to intermediate nodes. The author is seeking feedback on this proposal and plans to submit a draft.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T17:07:22.596248+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

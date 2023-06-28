@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SASE Invoices</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2022-01-18 01:48:38
+            <br><i>Published on: 2022-01-18T01:48:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2022/combined_SASE-Invoices.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019766.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent conversation, Casey R identified some infrastructural problems with addresses and suggested the creation of a new type of invoice that would simplify mail processing. This new type of invoice, called SASE (Self Addressed Stamped Envelope), could be used for Bitcoin payments and would include an address, a signature covering that address, and metadata required for the payment to be considered valid. The SASE Invoice can also specify certain parameters such as allowable amounts, expiration dates, or usage rights. Businesses could give users unique codes to put into their SASE generator to bind the address for their own use, ensuring the usage right of the address isn't transferrable. If the top-level TR key is a NUMS point, a NUMS point derived from the hash-to-curve of the SASE Invoice policy could be used if no signature could be produced. SASE Invoice standards would also help combat address reuse. A well-designed SASE spec could also cover things like EPKs and derivation paths. Previously, BIP-0070 was designed in a similar problem space, but SASE invoices would focus on generating fixed payment codes rather than initiating an online protocol/complicated handshaking.Jeremy Rubin noted that there's something even more like a single-use SASE where existing UTXOs with anyonecanpay and single are used to pay to an output which has the funds requested + the funds in the output. A payer paying this transaction has no choice but to pay the correct amount/fees for the specific txn, and it clearly cannot be reused.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T16:34:34.491469+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

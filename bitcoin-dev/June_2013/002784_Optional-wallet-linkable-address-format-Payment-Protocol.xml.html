@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Optional &#34;wallet-linkable&#34; address format - Payment Protocol</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy Spilman 2013-06-19 19:29:19
-            <br><i>Published on: 2013-06-19T19:29:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2013/combined_Optional-wallet-linkable-address-format-Payment-Protocol.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002784.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author proposes that the canonical way to form a persistent relationship between two parties who exchange and verify public keys beforehand is to exchange PubKey and ChainCode using BIP32. The author suggests that there is no use case for handing out individual multipliers if a persistent relationship is desired. By dedicating a child-wallet for receiving coins and saving a PubKey/ChainCode for sending coins, the two parties can transact securely forever without exchanging any more information or address reuse. Ideally, wallets should dedicate a new child node {PubKey, ChainCode} to each party they transact with by default. Each contact has a transaction history, and coins can be sent to a contact at any time. Internally, the wallet picks the next address in their sequence, and funds received on pubkeys from a contact's sequence are attributed to that contact. The author suggests a 'Contact Request' protocol, which is similar to a PaymentRequest but creates child wallets instead of sending actual payments. The protocol involves exchanging Contact+ContactDetails messages between parties, allowing them to transact securely and indefinitely.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T18:59:05.042489+00:00 </i></p>
     
     
 

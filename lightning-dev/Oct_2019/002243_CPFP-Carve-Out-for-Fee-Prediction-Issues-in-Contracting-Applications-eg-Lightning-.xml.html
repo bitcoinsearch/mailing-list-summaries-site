@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Johan Torås Halseth 2019-10-25 07:05:15
-            <br><i>Published on: 2019-10-25T07:05:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002243.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The carve-out rule was added to pave the way for more robust CPFP of on-chain contracts. This essentially changes the rule to always allow CPFP-ing the commitment as long as there is an output available without any descendants. The commitment now requires at least one non-CSV output per party, rather than exactly one. Johan Torås Halseth wonders if the special case rule should have been relaxed a bit. He suggests that the last transaction which is added to a package of dependent transactions in the mempool must have no more than one unconfirmed parent. This would allow adding a large transaction to each output of the unconfirmed parent and potentially exceed the MAX_PACKAGE_VIRTUAL_SIZE limit in some cases. Rusty Russell has proposed a simple RBF where 'you can replace if the feerate is higher, the new tx is in the first 4Msipa of the mempool, and the old tx isn't'.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T15:32:07.579708+00:00 </i></p>
     
     
 

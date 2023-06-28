@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>testnet-seed.bitcoin.petertodd.org is up again</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Robert McKay 2014-05-30 15:54:38
+            <br><i>Published on: 2014-05-30T15:54:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2014/combined_testnet-seed-bitcoin-petertodd-org-is-up-again.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005925.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the Bitcoin-development mailing list is about setting up DNS seeds for Bitcoin. The conversation includes suggestions for using matured DNS servers to serve zonefiles and forwarding non-matching requests to other DNS servers to cascade them. There is also a suggestion to write a zone file and use bind to serve it, which involves running a couple of `dig` scripts that every minute 'dig' the bitcoin-seed and write the results to two zone files that BIND can then serve. However, this solution has a problem as bind is stripping off the authoritative answer bit in the reply. Therefore, the recursor goes into a loop chasing the authority server, which again returns a non-authoritative answer with itself as the authority again. Alex Kotenko reported a problem with his DNS settings while trying to configure DNS seeds himself. He could reach his nameserver and get dnsseed response if he queried it directly but when he tried to nslookup testnet-seed.alexykot.me, it failed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T23:20:31.871720+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

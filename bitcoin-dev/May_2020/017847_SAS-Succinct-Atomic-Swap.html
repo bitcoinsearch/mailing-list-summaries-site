@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SAS: Succinct Atomic Swap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-05-11 16:45:21
+            <br><i>Published on: 2020-05-11T16:45:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_SAS-Succinct-Atomic-Swap.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017847.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The CoinSwap for privacy is a "cross" chain atomic swap that requires two on-chain transactions to complete. This set of ideas can be implemented using single signer ECDSA adaptor signatures or with Schnorr + MuSig. The protocol involves pre-signing transactions and requires the use of pubkeys and secrets to lock up funds. The advantage of CoinSwap is that it is scriptless, and one of the chains doesn't need to support timelocks. It can also be used for efficient privacy swaps such as Payswap. However, access to money is contingent on remembering secrets, and an online/watchtower requirement is necessary for the timelock supporting chain.The Refund tx does not need anything more than a 2-of-2 script. The "OR Alice in +1 day" branch can be implemented by signing a specific `nSequence` or using absolute locktimes and signing a specific `nLockTime`. If you are willing to accept protocol complexity, having a variety of different versions of the transactions with different feerates could be used. As long as the one resolving a particular side of the swap completes the signature, it would select the version of the transaction with the best feerate, which it effectively pays out to what it recovers.The protocol steps involve pre-signing success_tx, revoke_tx, refund_tx, and timeout_tx transactions. Alice and Bob lock up their funds using pubkeys and secrets, and if the protocol is aborted after step 1 or 2, they can publish transactions to get their funds back. To complete the protocol, Alice hands over an adaptor signature to Bob, who reveals secretBob and gives Alice control over the altcoins. Graceful protocol failure can be achieved by introducing a second refund_tx with timelock. The implementation of CoinSwap on chains that only support absolute timelocks requires Bob to spend his swapped coins before the timelock expires (or use the 3 tx protocol). Atomic swaps in and out of Lightning with only a single on-chain transaction may be possible with a secondary set of HTLCs. Tier Nolan Atomic Swap and Monero Atomic Swap are related works to CoinSwap.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:32:29.524776+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

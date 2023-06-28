@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Funds locked in channel and MAX_HTLC <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Dec_2018/001704_Funds-locked-in-channel-and-MAX-HTLC.html">Funds locked in channel and MAX_HTLC</a>
+                        <b>Cezary Dziemian 2018-12-02 16:31:42</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Dec_2018/001705_Funds-locked-in-channel-and-MAX-HTLC.html">Funds locked in channel and MAX_HTLC</a>
+                        <b>Rusty Russell 2018-12-02 22:43:52</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001704.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-12-02T16:31:42+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Cezary Dziemian posted a message on a forum seeking clarification on whether the max_accepted_htlcs feature in BOLT allows for a single channel to have multiple transactions pending simultaneously. Rusty replied confirming that it refers to the maximum number of pending transactions allowed for a single channel. However, there is also a limit on the maximum amount of total offered HTLCs which shouldn't exceed the remote's max_htlc_value_in_flight_msat. If the result would offer more than the remote's max_accepted_htlcs HTLCs or if the sum of total offered HTLCs would exceed the remote's max_htlc_value_in_flight_msat, then an HTLC cannot be added to the remote commitment transaction.The conversation thread between Cezary Dziemian and Rusty provides valuable insight into the max_accepted_htlcs feature in BOLT. It clarifies that this feature sets a limit on the maximum number of pending transactions allowed for a single channel. The thread also highlights that there is a limit on the total amount of offered HTLCs that should not exceed the remote's max_htlc_value_in_flight_msat. In conclusion, this discussion on the forum sheds light on the technicalities of the max_accepted_htlcs feature in BOLT and its limitations.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T20:59:35.409717+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

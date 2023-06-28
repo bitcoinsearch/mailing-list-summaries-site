@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP : fixed-schedule block size increase</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Patrick Strateman 2015-06-22 21:39:07
+            <br><i>Published on: 2015-06-22T21:39:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Draft-BIP-fixed-schedule-block-size-increase.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/009017.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin Development mailing list, Peter Todd raised a question regarding the stability of block height to work with and if block timestamps aren't chronological in order, what would happen if a block following a size increase trigger is back in the past before the size increase. Gavin Andresen responded by proposing that comparing the timestamp against the median time, which is guaranteed by the protocol rules to monotonically advance, could solve the issue. However, he acknowledged that this will complicate the implementation quite a bit. Instead, Gavin mostly implemented a variant that replaced the MAX_BLOCK_SIZE constant with a function that took both a timestamp and a block height. He further pointed out that digging out the block height or calculating the median timestamp for the block would involve changing quite a few functions in the call-chain or acquiring the cs_main lock to consult the current best chain.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T00:28:15.370506+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Revocations with OP_CSFS &amp; signed sequence commitments</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> James Chiang 2019-02-01 09:01:20
-            <br><i>Published on: 2019-02-01T09:01:20+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2019/combined_Revocations-with-OP-CSFS-signed-sequence-commitments.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001858.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this conversation, James is seeking clarification on how channel commitment transactions can be revoked with op_checksigfromstack(msg, sig, key) and signed sequence commitments. He asks ZmnSCPxj about the n++ ?> n inequality evaluation during the sweep of the revoked nth state. James wonders if n and n++ will necessarily be revealed during a unilateral close. ZmnSCPxj provides a link to a slide from Olaoluwa that describes a prior sequence number commitment being embedded in the commitment output. James asks about the arguments for the evaluation of n++ ?>n being supplied without revealing either commitment sequence numbers. Regarding Olaoluwa's proposal (slide linked above), James doesn't understand how the prior commitment opening and embedding of the commitment in the output script contributes to this. ZmnSCPxj explains that "n++" here is a SCRIPT input such that any "n  Then the SCRIPT itself contains the "n" it has. Thus `n` is embedded in the SCRIPT directly as a constant. Now the script itself is committed via P2WSH, and the output SCRIPT is committed to in the SIGHASH algorithm used.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T17:18:52.526446+00:00 </i></p>
     
     
 

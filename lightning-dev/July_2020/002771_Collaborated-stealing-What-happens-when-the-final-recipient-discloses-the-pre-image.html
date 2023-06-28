@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Collaborated stealing. What happens when the final recipient discloses the pre-image</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2020-07-29 12:21:25
+            <br><i>Published on: 2020-07-29T12:21:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2020/combined_Collaborated-stealing-What-happens-when-the-final-recipient-discloses-the-pre-image.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002771.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network uses the possession of a preimage as proof of payment, and if a breach of protocol occurs, where E gives the preimage to C instead of claiming the money from D, it is considered E's problem. Guessing the preimage is practically impossible, making possession of the preimage and signed payment hash from E strong evidence that A has paid. The Wormhole attack involves two forwarding nodes in a path coordinating with each other, teleporting the preimage from one to the other, skipping intermediate forwarding nodes. The case described in the context is a specific form of the Wormhole attack where one of the nodes performing the attack on a path is the payee itself. In this case, fees that skipped forwarding nodes should have earned for honestly forwarding are stolen, but it does not affect the proof of payment. The attacker must be able to collate HTLCs, which goes away with PTLCs to execute the Wormhole attack. As long as A can acquire the preimage, it has proof of payment, and even if E claims that it did not deliberately give the preimage and was hacked by C, C is liable in which case C and E have gained nothing at all. The Wormhole attack is fixed by using PTLCs and blinding factors. The preimage and invoice that have a signature from E are sufficient to show that E has an obligation to provide a service or product to A.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:47:35.012792+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Outsourcing route computation with trampoline payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-04-01 21:30:35
+            <br><i>Published on: 2019-04-01T21:30:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2019/combined_Outsourcing-route-computation-with-trampoline-payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001957.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network is proposing a multi-trampoline routing system which allows payments to be bounced through multiple trampolines without the trampolines learning their position in the nested path. The sender generates a small onion of, for example, 10 hops with a length of only 650 bytes and picks a random trampoline node 't_0' in its known neighbourhood before creating a routing onion containing the smaller onion as payload to 't_0' and signalling data. Upon receiving an incoming payment with trampoline instructions, a trampoline 't_i' unwraps the inner onion and finds a route to 't_{i+1}', serialising the inner onion and creating the outer routing onion with that as the payload. This construction reuses all the onion primitives already available and allows payments to be delegated by looking for some node in its smaller routemap that it believes to be more likely to route to the next trampoline.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:06:26.600546+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

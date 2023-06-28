@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>statoshi.info is now live</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jameson Lopp 2014-05-14 11:38:48
-            <br><i>Published on: 2014-05-14T11:38:48+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2014/combined_statoshi-info-is-now-live.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005771.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A post made by Jameson Lopp on coinchomp.com notes a lack of pong messages. He adds that tracking per-peer pings is a different type of metric than what he's currently collecting. He says that adding metrics for sent messages validated his theory: his node has never sent a single ping request to a peer and thus has never received a pong message. He also says that he can't even add sent pings or received pongs to the chart because they don't exist in his graphite instance.Josh Lehan, in an email to Jameson Lopp, suggests adding the ping time from one node to other peers. However, he says that it would be a challenge to fit that information into the current design as the graphs seem to be comprised of overall statistics for this node, not per-peer statistics that can vary between peers (such as ping time). He suggests sending the "ping" RPC command on a regular schedule to ensure the graph is updated with new information. He also notes that there is currently no support for overlapping pings.Wladimir comments on the graphs, saying that in the 'connected peers' chart, some larger quantities are visualized. This makes the smaller ones invisible due to scale. He suggests adding other stats such as the number of connected peers that are SPV clients or full nodes, current block height, number of transactions in mempool, number of transactions in UTXO set, maybe some fee statistics, and number of orphan blocks/orphan transactions.This all stems from Jameson Lopp setting up a public Statoshi instance and throwing a nicer interface on top of it.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T22:32:50.563631+00:00 </i></p>
     
     
 

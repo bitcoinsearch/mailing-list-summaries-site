@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Committing to dust</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-11-27 08:52:02
+            <br><i>Published on: 2015-11-27T08:52:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2015/combined_Committing-to-dust.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000354.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning Network mailing list, Mats Jerratsch suggested a new way to deal with micropayments. He proposed adding two HTLCs to the commit, where one would be 'I pay you 1.00000001 BTC and you pay me 1 BTC, so effectively I paid you 1 satoshi'. However, this approach increases fees by a lot as locked up capital also increases. Furthermore, it may not translate well over many hops when fees are different in each direction. Rusty Russell agreed that this issue could be problematic if there were any loopholes. It can result in someone exploiting the system to make a profit off of it. Russell also described a scenario where dust payments are sent across lightning channels. The third output will hit the IsDust() test, and the entire transaction will be rejected, so the channel cannot be closed at all. One solution is to account for them precisely in the lightning state but approximate the results in the actual commitments. Russell opened an issue on Github to make sure they track this problem. Jerratsch suggested tweaking the dual HTLC method to make attacks unattractive, such as having 42 satoshi from A -> B and 10042 satoshi for (B && R || A && 20days CLTV), 10000 satoshi for (A && R && 15 days CLTV || B && 20days CLTV). If it resolves on channel, then it is fine; otherwise, A has to wait 15 days even if R gets revealed to get their 3.5c back. Nonetheless, he is unsure whether this approach does any real good.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T16:02:11.329022+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

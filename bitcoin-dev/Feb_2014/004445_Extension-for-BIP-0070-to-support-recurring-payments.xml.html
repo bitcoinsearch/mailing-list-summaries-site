@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Extension for BIP-0070 to support recurring payments</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2014-02-25 16:29:44
-            <br><i>Published on: 2014-02-25T16:29:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2014/combined_Extension-for-BIP-0070-to-support-recurring-payments.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004445.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The protocol discussed includes an enum for PaymentFrequencyType with four options, as well as two messages: RecurringPaymentDetails and RecurringPaymentContract. The former includes a string for the merchant ID, bytes for subscription ID, and repeated contracts. The latter includes bytes for contract ID, string for polling URL, uint64 for starting timestamp, optional uint64 for ending timestamp, optional PaymentFrequencyType, optional uint64 for maximum payment per period, and optional uint64 for maximum payment amount. The writer suggests making RecurringPaymentDetails optional instead of required to avoid backwards compatibility issues, and also questions why there are only four options for recurrences. They also suggest being more explicit about units of measurement for amounts and timestamps, and ask for clarification on the purpose of repeating max_payment_amount. Additionally, they question when payments would occur based on the given contract, and suggest moving comments above field definitions. Finally, the writer suggests involving BitPay, Jeff, and Stephen to gain a better understanding of customer requirements, and notes that bitcoinj implementation may need restructuring to allow for recurring payments.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T01:57:56.340815+00:00 </i></p>
     
     
 

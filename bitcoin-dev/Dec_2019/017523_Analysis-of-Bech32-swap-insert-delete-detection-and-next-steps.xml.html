@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Analysis of Bech32 swap/insert/delete detection and next steps</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2019-12-10 06:36:20
-            <br><i>Published on: 2019-12-10T06:36:20+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2019/combined_Analysis-of-Bech32-swap-insert-delete-detection-and-next-steps.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017523.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The following steps are suggested to address the insertion weakness issue in BIP173 and SegWit addresses. Firstly, an erratum section should be added to BIP173 to document the issue and its analysis. Secondly, amending SegWit addresses is recommended by restricting them to only length 20 or 32 as fixed-length strings are unaffected by the insertion issue. Thirdly, defining a variant of Bech32 with the modified constant is proposed, which will allow non-BIP173 uses of Bech32 to choose a non-impacted version if they worry about this class of errors. Concerning readers of Bech32-based formats, two variants of checksum should be defined, and both variants should be supported. Current Bech32 checksum should be flagged or signaled with some deprecation warning if detected, and at some undefined point in the future, support for the current Bech32 checksum should be dropped. Lastly, it is suggested that using the modified Bech32 variant should only be implemented if there is a need for non-32-byte witness programs for a particular non-0 SegWit version.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T21:22:24.685190+00:00 </i></p>
     
     
 

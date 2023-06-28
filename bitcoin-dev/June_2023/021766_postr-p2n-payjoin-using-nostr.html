@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>postr: p2n payjoin using nostr</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> alicexbt 2023-06-12 19:28:47
+            <br><i>Published on: 2023-06-12T19:28:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2023/combined_postr-p2n-payjoin-using-nostr.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021766.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread is discussing a proof of concept for using nostr npub and relays for payjoin. SIGHASH_NONE is used when there is no change in the transaction and sender wants to spend whole UTXO for the payment, but this method enables the receiver to do whatever they want with the funds. It is also possible for anyone who sees the final broadcasted transaction to extract the sender's input and use it for any purpose they wish. The use of specific SIGHASH flags can be ignored and developers can use other flags or default. There are no incentives for sender or recipient to use RBF and double spend in a payjoin transaction. Based on the understanding of SIGHASH flags and a blog post by Raghav Sood, use of SIGHASH_ALL by the recipient will secure all outputs. However, it is still vulnerable in a tweet thread as mentioned by Symphonicbtc. The email suggests disabling the ability to use mainnet coins directly in the code as it is highly irresponsible to post in this state. Moreover, the email warns that this is not a proper implementation of a payjoin, even in a theoretical scenario, as it is trivial to discern which inputs belong to the sender and receiver respectively in the final transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:50:23.792157+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

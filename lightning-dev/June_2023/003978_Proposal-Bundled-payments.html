@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bundled payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2023-06-14 02:56:54+00:00
+            <br><i>Published on: 2023-06-14T02:56:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2023/combined_Proposal-Bundled-payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003978.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a proposal to extend BOLT-11, Thomas Voegtlin suggests the inclusion of two bundled payments in an invoice. This would cater to services that require prepayment of mining fees for non-custodial exchanges such as submarine swaps and JIT channels. Currently, services like Loop by Lightning Labs can ask for prepayment because their software can handle it. However, competitors like Boltz exchange, which do not require a dedicated wallet, cannot do the same as it would be impractical to show two invoices simultaneously. This vulnerability exposes Boltz to potential DoS attacks where attackers force them to pay on-chain fees. Similarly, providers offering JIT channels need to protect themselves against mining fee attacks. They often ask for the preimage of the main payment before opening the channel, making them custodians. This legal classification falls within European MICA regulation, excluding competitors like Electrum who refuse to offer custodian services. To address these issues, bundling the prepayment and main payment in the same BOLT-11 invoice is proposed.Under this proposal, the BOLT-11 invoice would contain two preimages and two amounts: prepayment and main payment. The receiver should wait for both HTLCs of both payments to arrive before fulfilling the HTLCs of the pre-payment. If the main payment does not arrive, they should fail the pre-payment with a MPP timeout. Once both HTLCs have arrived, the receiver fulfills the HTLCs of the prepayment and broadcasts their on-chain transaction. It's important to note that the main payment can still fail if the sender never reveals the preimage.While this proposal does not prevent service providers from stealing the pre-payment, it aims to level the playing field among lightning service providers. Currently, using Loop requires a dedicated client, leaving competitors without an established user base vulnerable to mining fee attacks. ACINQ could also benefit from this proposal by making their pay-to-open service fully non-custodial, thus avoiding falling into the scope of European MICA regulation. Thomas emphasizes that this change should be implemented in BOLT-11 rather than introducing new messages through BOLT-12 or onion messages. He believes that this can be achieved in a non-interactive way without the need for additional complexity.Source: [Lightning-dev Mailing List](<a href="https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev)">https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev)</a></p>
+    <hr>
+    <p><i> Updated on: 2023-06-28T03:25:20.516204+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

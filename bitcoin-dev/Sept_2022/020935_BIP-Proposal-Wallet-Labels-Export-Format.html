@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Wallet Labels Export Format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hugo Nguyen 2022-09-21 06:07:12
+            <br><i>Published on: 2022-09-21T06:07:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2022/combined_BIP-Proposal-Wallet-Labels-Export-Format.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020935.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, Craig Raw proposed a Bitcoin Improvement Proposal (BIP) that aims to allow users to import and export their wallet labels in a standardized way. The proposal is intended to make manual or bulk management of labels accessible to users without specific technical expertise. The proposed format is a simple two-column CSV file, with the reference to a transaction, address, input or output in the first column, and the label in the second column.However, there were concerns raised by some commentators regarding inherent conflicts between the two goals of the proposal. Engineering requirements such as data integrity, reliability, robustness, and performance should be prioritized for goal #1, while user experience requirements like convenience and ease of use should be prioritized for goal #2. Without separating these concerns, it could result in a Frankenstein standard that is the worst of both worlds. Some commentators suggested having two separate BIPs for this reason.Other issues discussed include the need for a version byte, file extension, compression format, encryption, password security, and the need for input and output formats. It was noted that the proposal aims to solve engineering challenges by offloading complexities onto end-users, which could lead to confusion and problems for engineers to maintain, as seen with SLIP-132.The BIP recommends a number of changes to the initial proposal, including converting the header into a version line with optional flags to extend the format without compatibility issues, removing the specification related to file compression, adding a third column for item type (address, transaction etc.), requiring double quotes around the label, sorting records according to the order they are stored in the wallet implementation, and removing Input and Output item types. Lastly, a more robust importer algorithm is needed because code in BIPs are frequently used as references for software.It is noted that applications may truncate labels if necessary, and the reference implementation is listed as "TBD" (to be determined). The proposed format is intended to ensure that users do not experience lock-in to a particular wallet application by using common formats.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T23:59:19.609592+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP Proposal: Wallet Labels Export Format</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Ali Sherief 2022-08-29 15:46:09
-            <br><i>Published on: 2022-08-29T15:46:09+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2022/combined_BIP-Proposal-Wallet-Labels-Export-Format.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020904.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal for a Bitcoin Improvement Protocol (BIP) has been made to export and import wallet labels as CSV files. The proposed format is a simple two-column CSV file, with the reference to a transaction, address, input or output in the first column and the label in the second column. The aim of this proposal is to make the import and export of labels as widely accessible as possible. CSV was chosen as it is widely supported by consumer, business, and scientific applications.The author suggests splitting the goals of the proposal into two separate BIPs due to feedback received. Goal 1 involves transferring labels between different wallet implementations, while Goal 2 focuses on managing labels in applications outside of Bitcoin wallets, such as Excel. While there is tension between these two goals, Goal 2 requires Goal 1's BIP, but Goal 1's BIP is independent due to different needs between wallet software and business spreadsheet processes.There is a discussion about file extensions, compression, and encryption for label export files. ZIP is chosen as it supports encryption, which is valuable for transferring labels without risking privacy. However, some suggest that ZIP does not have good performance or compression ratio, and the author agrees that it is not ideal as it is an archiving format that happens to have its own compression format. Files exported should use the .csv file extension. Regarding labeling inputs and outputs, UTXOs are frequently labeled as they link and reveal information when spent, but inputs are less frequently labeled. There is no particular reason to exclude labeling inputs, but it makes achieving Goal #2 more difficult for marginal benefit. Additionally, there is a suggestion to mandate RFC4180 for formatting label export files and to utilize a dedicated item type field to unambiguously identify items to make parsing much simpler and avoid implementation errors.Feedback from Ali Sherief suggests adding a version byte to the header line of the file, making the header line mandatory with a format like "BIP-wallet-labels," and using an unsigned 32-bit integer for the second column. The proposed ZIP compression option is criticized as insecure and unnecessary, and it is suggested that the optional encryption feature be removed. It is also recommended that input and output types not be included in the export due to potential privacy leaks, and that a third column be added for item type identification. Finally, a more sophisticated algorithm to unambiguously identify items upon import is suggested.In order to ensure that weak encryption does not proliferate, importers following this standard must refuse to import .zip files encrypted with the weaker Zip 2.0 standard. The textual representation of the wallet's extended public key (as defined by BIP32, with an xpub header) should be used as the password. The proposed BIP is licensed under the BSD 2-clause license. The full text of the BIP can be found at <a href="https://github.com/craigraw/bips/blob/master/bip-wallet-labels.mediawiki">https://github.com/craigraw/bips/blob/master/bip-wallet-labels.mediawiki</a> and also copied below. Feedback is appreciated.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T23:58:03.824405+00:00 </i></p>
     
     
 

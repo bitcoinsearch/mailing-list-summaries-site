@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mempool and Privacy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> alicexbt 2022-06-19 16:50:38
+            <br><i>Published on: 2022-06-19T16:50:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2022/combined_Mempool-and-Privacy.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020589.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A Bitcoin developer has experimented with a config option in Bitcoin knots to disallow address reuse in mempool. The config option called spkreuse=conflict can be found in the GUI -> Settings -> Options -> Mempool. The developer ran two nodes on signet and tested the option. Node 2 had 'spkreuse=conflict' saved in bitcoin_rw.conf, which rejected all transaction reusing addresses in mempool. Replacement transactions were ignored even if the address appeared twice in mempool. Debug=mempool did not print logs that could be helpful to know which transactions are getting rejected in mempool for address re-use, so running 2 nodes and comparing mempool transactions was done.The developer wondered what other things could affect privacy in mempool and not yet explored. Three things were mentioned: RBF policies, rebroadcasting mechanism, and different types of relay fee. While this may not be used by many Bitcoin nodes and miners, it was fun to play with and appreciated the options provided by knots.The email was sent using Proton Mail secure email.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T20:34:57.765442+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>On the scalability issues of onboarding millions of LN mobile clients</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Braydon Fuller 2020-05-08 20:22:30
-            <br><i>Published on: 2020-05-08T20:22:30+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2020/combined_On-the-scalability-issues-of-onboarding-millions-of-LN-mobile-clients.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017839.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email conversation, Keagan McClelland and another individual discussed the limitations of the RPC interface in Bitcoin Core and other platforms. The RPC interface exposes a lot of functionality that is not necessary and introduces risks. However, there seems to be a demand for something in between a peer interface and an owner interface. This would provide low-cost ways to serve peer services to people with explicit permission, without giving them full administrative control.To address this issue, the idea of having three ports for a full node was suggested. The first port would be for the consensus bitcoin protocol, which is the existing peer-to-peer protocol without additional services. The second port would be for wallet services protocol, which adds additional functionality for wallets such as bloom filtering, compact block filters, and potentially output and address indexes for electrum-like support. The third port would be for the control interface, which is the existing JSON-RPC interface without all wallet related RPC methods. This approach would allow for various middleware to be added to support various authentication and transports.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T01:13:03.965037+00:00 </i></p>
     
     
 

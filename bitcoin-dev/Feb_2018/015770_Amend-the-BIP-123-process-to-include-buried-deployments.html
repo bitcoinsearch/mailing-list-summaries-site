@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Amend the BIP 123 process to include buried deployments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Marco Falke 2018-02-18 18:57:03
+            <br><i>Published on: 2018-02-18T18:57:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2018/combined_Amend-the-BIP-123-process-to-include-buried-deployments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015770.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion begins with the question of whether BIPs are necessary for documentation regarding buried deployments in Bitcoin's consensus layer since they do not require software coordination. However, it is noted that consensus is not trivial and documentation is important, so the BIPs repository seems like a good place to host these documents. To prevent "two BIPs for every protocol change," related buried deployments could be bundled. Buried deployments are defined as a consensus rule change that affects the validity of blocks that are buried by a sufficiently large number of blocks in the current valid most-work chain while the current block (and all its parents) remain valid. A buried deployment can very well be a soft fork and should not be labeled "soft fork" or "hard fork" since they do not require community and miner coordination for a safe deployment. It is noted that buried deployments are *not* checkpoints and are *not* a solution to 50% attacks. The discussion then turns to the depth assumption required to ensure that buried deployments do not result in a chain split. The expected number of blocks in two weeks can be considered a lower bound, then multiplied by 10 or 20. There is also a debate about whether the 25,000 blocks number is an objective threshold for buried deployments to avoid a chain split. Finally, there is a disagreement over whether a massive chain reorganization must be produced off of a block in the very past for a chain fork to happen due to a buried deployment or if a buried deployment is a subjective subcategory of hard fork. It is noted that in the unlikely event of such a large chain reorganization, Bitcoin's general security assumptions would be violated regardless of the presence of a buried deployment.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T00:44:37.829611+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

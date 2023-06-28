@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Taproot proposal</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2019-08-09 18:29:55
-            <br><i>Published on: 2019-08-09T18:29:55+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2019/combined_Taproot-proposal.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017248.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On August 9, 2019, Elichai Turkel started a thread regarding the idea of implicitly even pubkeys that has potentially more general implications. He suggested adding to John Newbery's proposal of using implicit even/odd only public keys and tweaked public keys in taproot. However, Pieter Wuille, a Bitcoin developer, pointed out that if everything is implicit, we still need a bit in the control block to convey whether a negation was necessary to make P+H(P,m)G even, even if P and Q both have implied-even Y coordinates. This is necessary to maintain batch-verifiability of the taproot tweaking.Wuille suggested moving this bit to be the first OP_CODE of the tapscript itself. This way, having the script tells you what it means without needing to check the control block. It also separates the tapscript+leaf version from the control block being the merkle path to the script. On the other hand, if they keep the leaf version idea, he suggests keeping it separate from the script so that the script consists entirely of opcodes and can be treated uniformly by debug tools, rather than needing to treat the first byte special.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T20:19:51.992643+00:00 </i></p>
     
     
 

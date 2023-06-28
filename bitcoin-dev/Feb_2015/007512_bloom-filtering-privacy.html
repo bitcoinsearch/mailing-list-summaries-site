@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bloom filtering, privacy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-02-20 18:20:59
+            <br><i>Published on: 2015-02-20T18:20:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2015/combined_bloom-filtering-privacy.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-February/007512.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Adam Back and an unknown person, the use of "UTXO set" was deemed confusing as it may suggest the complete verification state. Instead, it refers to block-local data which avoids large IO overheads. The concept is straightforward - there is a scriptpubkey bitmap per block which is committed. Users can request the map and feel confident that they have received a faithful one. If there are hits, they can request the block knowing that there was no censoring. It is possible to structure additional layers to the bitmap so that one can incrementally query to trade-off map size for false request overhead, but it is unclear how much of a win this would be for normal parameters. Additionally, it is possible to extract the txout list for the whole block and commit to that too. This makes it possible to request just the outputs and obtain a faithful copy of them, which is much smaller than the entire block.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:49:14.444320+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

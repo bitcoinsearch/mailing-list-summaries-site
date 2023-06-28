@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Detailed protocol design for routed multi-transaction CoinSwap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Belcher 2020-09-03 10:50:57
+            <br><i>Published on: 2020-09-03T10:50:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2020/combined_Detailed-protocol-design-for-routed-multi-transaction-CoinSwap.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018153.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email exchange between ZmnSCPxj and Chris (CB), they discuss the vulnerability of coins remaining unspent indefinitely in a CoinSwap system. The longer a coin remains unspent, the smaller the anonymity set of the CoinSwap system becomes. The two explore possible solutions, including using collateral inputs for makers but not takers. In the case of maker-to-maker CoinSwaps, collateral payments are necessary. However, this creates an additional information leak that allows makers to know whether their previous peer was a taker or maker based on whether they used a collateral input. Nonetheless, this is not a significant concern since the first maker does not know the final destination of the coins. Additionally, if takers happen to own an extra UTXO, they may choose to use a collateral input anyway, pretending to be a maker.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T03:24:10.386216+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

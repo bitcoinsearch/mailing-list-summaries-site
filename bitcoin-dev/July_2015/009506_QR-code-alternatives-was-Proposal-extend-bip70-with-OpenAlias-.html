@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>QR code alternatives (was: Proposal: extend bip70 with OpenAlias)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2015-07-21 14:58:39
+            <br><i>Published on: 2015-07-21T14:58:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2015/combined_QR-code-alternatives-was-Proposal-extend-bip70-with-OpenAlias-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009506.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message from July 20, 2015, Mike Hearn proposed an idea for generating QR codes for Bitcoin payment requests. He suggested using a single payment address with no merge avoidance tricks and provided an example of what such a QR code could look like. However, this method would require text mode and waste bytes at the front for the URI type. To avoid this issue, it was suggested that assuming the payment request is a single standard output + amount would cover 99% of cases and generate a serialized bip70 PR from the parameters found in the URI. The string would then be signed, and the signature added to the URI. An example was provided, including a timestamp, duration of validity, domain name of the signer, and signature. This approach saves a few bits by expressing the duration of validity as one week. The resulting QR code can be scanned with a phone.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T02:59:21.707930+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

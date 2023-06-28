@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why not witnessless nodes?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-12-18 17:30:17
+            <br><i>Published on: 2017-12-18T17:30:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_Why-not-witnessless-nodes-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015424.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in the Bitcoin-dev mailing list revolves around the idea of witnessless nodes, which are nodes that do not download witness data for blocks they do not intend to validate. The assumption is that if a node is performing Initial Block Download (IBD) with assumevalid set to true and is also intending to prune history, then there is no reason to fetch those witnesses. However, it would be a disservice to the network for nodes intending to serve Simplified Payment Verification (SPV) clients to prune this portion of the block history. Eric Voskuil argues that the harm to the network by pruning is that eventually it can become harder and even impossible for anyone to validate the chain. But because you are fully validating you individually remain secure, so there is no individual incentive working against this system harm. Kalle Rosenbaum responds by questioning why a full node that does initial block download also must download witnesses when it is going to skip verification of the witnesses anyway. He suggests that witnessless nodes could sync faster and provide full service to SPV wallets and its local wallets as well as serving blocks to other witnessless nodes with the same or higher assumevalid block. However, there is concern that witnessless nodes could risk dividing the network into two parts, one witnessless and one with full nodes, with few connections between the parts.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:08:31.250494+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

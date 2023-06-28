@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP-0322 (generic signmessage) improvements</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2020-12-22 00:22:37
-            <br><i>Published on: 2020-12-22T00:22:37+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2020/combined_BIP-0322-generic-signmessage-improvements.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018316.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Pieter Wuille, a Bitcoin Core developer, responded to Karl-Johan Alm's request for feedback on changes to the BIP (Bitcoin Improvement Proposal) by suggesting a modification to the proposal. He agreed with the idea of allowing incomplete validators to return "inconclusive" results, which would make it more accessible to various software. However, he pointed out that this suggestion would break the original use of "inconclusive", which was to detect future features used in the signature. Pieter suggested that whenever validation fails due to any of the standardness features listed in the BIP, validators should report "inconclusive" instead of "invalid". This way, every signature has a well-defined result of valid, invalid, or inconclusive, and validators may choose to report "inconclusive" for anything they don't understand. In conclusion, this modification ensures that no two validators will ever claim valid and invalid for the same signature, only valid+inconclusive or invalid+inconclusive.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-21T00:27:42.604266+00:00 </i></p>
     
     
 

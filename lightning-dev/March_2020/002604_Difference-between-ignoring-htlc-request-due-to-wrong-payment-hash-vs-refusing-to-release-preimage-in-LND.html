@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Difference between ignoring htlc request due to wrong payment hash vs refusing to release preimage in LND</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-03-24 11:15:34
+            <br><i>Published on: 2020-03-24T11:15:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2020/combined_Difference-between-ignoring-htlc-request-due-to-wrong-payment-hash-vs-refusing-to-release-preimage-in-LND.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-March/002604.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Subhra and ZmnSCPxj, Subhra asked about c-lightning's HTLC acceptance process. ZmnSCPxj explained that irrevocably committed incoming HTLCs follow different paths depending on the result returned by the hook. Delaying the default "continue" result is enough to grief payments. On the other hand, Subhra asked about mimicking a scenario where B refuses to release the preimage in LND. ZmnSCPxj advised modifying LND code or asking the devs if there are hooks available. In C-Lightning, a plugin can be installed to handle htlc_accepted. The handler will wait for the target block height to grief before returning from the function.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T00:13:11.450625+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

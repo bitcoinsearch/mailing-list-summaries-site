@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>unlinakble static address? &amp; spv-privacy (Re: Stealth Addresses)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-01-16 01:02:10
+            <br><i>Published on: 2014-01-16T01:02:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_unlinakble-static-address-spv-privacy-Re-Stealth-Addresses-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004110.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email thread, Adam Back discusses the privacy properties of Simplified Payment Verification (SPV) nodes. He explains that while full-node use of SPV has nice unlinkable static addresses, they pose a problem for SPV nodes as they have no direct way to find payments. To solve this issue, Peter Todd's variant proposes using a second address to delegate scanning, enabling the SPV client to detect transactions without giving the full node private keys to spend. The load on a popular centralized service would be quite high, which some may consider a feature. An artificial prefix is proposed to constrain the query to a subset, but it can leak to everyone, making it a worse privacy leak than bloom filtering.Choosing how many bits to put in the prefix may be difficult, particularly if transaction loads change dramatically over time. Services could compete to offer monitoring for 0+ bit prefixes, and there is also a proposed version of the prefix computed via brute-force to make it somewhat stealthy. Adam suggests that in the payment address case, the service should choose the derivation factor and communicate it to the client with the static address, allowing it to tie the payment to the user's account. However, any change that requires more than a single published public message should be seen as solving an entirely different problem. Once you admit directed communication, you are swimming very close to the payment protocol.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:11:46.713024+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

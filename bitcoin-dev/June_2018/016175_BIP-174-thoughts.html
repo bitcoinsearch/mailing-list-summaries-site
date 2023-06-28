@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> matejcik 2018-06-27 14:04:06
+            <br><i>Published on: 2018-06-27T14:04:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016175.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Bitcoin-Dev mailing list, Pieter Wuille provided further explanation for the Combiner role in Partially Signed Bitcoin Transactions (PSBTs). The Combiner is intended to ensure forward compatibility with new script types. In cases where a transaction may spend inputs from different outputs with different script types, highly specialized software could be required to handle each script type involved in a single transaction. By having a key-value structure, Combiners can pick any of the values in case different PSBTs have different values for the same key, meaning that Combiners do not need to care about the contents. The Finalizer does need to understand the contents, but only operates once at the end. Combiners may be involved in any PSBT passing from one entity to another. Wuille also explained that computing pubkeys is possibly expensive in the case of BIP32 derivation and so others may want to use a matching approach to find keys that are relevant without pubkeys in the format because they would be forced to perform derivations for all keys present.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:17:27.585877+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

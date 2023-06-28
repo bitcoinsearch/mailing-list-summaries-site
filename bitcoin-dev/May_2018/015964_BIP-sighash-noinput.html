@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP sighash_noinput</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-05-14 09:23:29
+            <br><i>Published on: 2018-05-14T09:23:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_BIP-sighash-noinput.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015964.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about the risk of adding NOINPUT to Bitcoin's code. The concern is that if the same key is used for multiple inputs and one of them is signed with NOINPUT, all of them are spent which can lead to losing other coins as well. It was suggested to drop support for SIGHASH_NONE or limit it similarly to limiting SIGHASH_NOINPUT. Taproot and graftroot scripts have the same tradeoffs as NOINPUT. A new segwit version with taproot that includes an opcode was proposed. Two sorts of addresses can be generated from a public key X: addresses where you spend each coin individually, and different addresses where you spend the wallet of coins with that public key at once. It is more reasonable to worry about signing with NOINPUT compared to SIGHASH_NONE because if you want to use lightning v2, your wallet will be signing things with SIGHASH_NOINPUT. Finally, the benefit of a separate opcode is support can be soft-forked in independently of a new segwit version.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:09:31.189517+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

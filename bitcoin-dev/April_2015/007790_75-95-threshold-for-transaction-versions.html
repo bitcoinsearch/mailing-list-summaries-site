@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>75%/95% threshold for transaction versions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> s7r 2015-04-15 23:43:01
+            <br><i>Published on: 2015-04-15T23:43:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2015/combined_75-95-threshold-for-transaction-versions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-April/007790.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the post is proposing to add a consensus rule similar to the one for blocks to transaction versions. The proposed rule would mark previous transaction versions as non-standard or invalid if >75% or >95%, respectively, of transactions in the latest 1000 blocks are version 'n'. The current standard in consensus is v1 with nothing enforced related to transaction versions. BIP62 requires v2 transactions but does not mark previous v1 transactions as non-standard or invalid. Bitcoin core will treat both v1 and v2/v3 transactions as standard and relay/mine them with the same priority regardless of the tx version. The author asks if adding the proposed rule could break anything or affect functionality. Additionally, it is noted that BIP62 adds a newer transaction version which jumps directly to v3, skipping v2.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T19:11:50.452756+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

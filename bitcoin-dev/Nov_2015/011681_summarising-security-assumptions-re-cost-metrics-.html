@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>summarising security assumptions (re cost metrics)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2015-11-06 14:08:10
+            <br><i>Published on: 2015-11-06T14:08:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_summarising-security-assumptions-re-cost-metrics-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011681.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The use of APIs in Bitcoin has been discussed by Eric Voskuil and Adam Back on the Bitcoin-dev mailing list. While it is better to have more APIs than fewer, it depends on the type of API being used. Some APIs add a second signature via multisig, but if the user is not also checking their own full-node or checking SPV to make the first signature, then it can still be a mixed story for security. Power users and businesses using APIs instead of running a full-node, or instead of doing SPV checks, should be clear about the API and what security they are delegating to a third party. The bigger point is that widespread use of APIs as a sole means of interfacing with the blockchain reduces network security for everyone because it erodes the consensus rule validation security described under "Validators" in the OP. Weakening is not just occurring because of the proliferation of non-validating wallet software and centralized (web) wallets, but also centralized Bitcoin APIs. Developers tend to settle on a couple of API providers for a given problem, leading to all applications and users of them depending on an API service, reducing to a single validator. The presence of dozens of blockexplorer APIs makes them interchangeable, contributing to decentralization.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:53:52.755671+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

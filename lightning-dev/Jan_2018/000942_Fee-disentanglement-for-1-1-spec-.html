@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fee disentanglement for 1.1 spec?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2018-01-16 23:37:11
+            <br><i>Published on: 2018-01-16T23:37:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2018/combined_Fee-disentanglement-for-1-1-spec-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000942.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Johan and Rusty regarding the Lightning Network implementation, they discussed the current problem of one side (funder) setting fees while the other side needs to ensure they are sufficient. The solution proposed is to have both sides set fees independently, which will work well with dual-funder proposals. The implementation involves both sides setting an initial fee in 'open_channel', where the counterparty checks it's reasonable. An 'update_fee' message has no effect on the other side but is applied to the sender when they 'revoke_and_ack'. Any new HTLCs added must be paid for by the sender, and if the recipient cannot afford the fees, they must pull from their reserve and the other side. Another issue raised was predicting future fees, which can be solved by allowing multiple simultaneous fee levels, although this requires more work and storage due to multiple signatures in each 'commitment_signed' message.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T18:32:25.900727+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

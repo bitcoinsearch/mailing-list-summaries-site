@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Specifications of Broadcasting Layers <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2015/000263_Specifications-of-Broadcasting-Layers.html">Specifications of Broadcasting Layers</a>
+                        <b>Mats Jerratsch 2015-10-16 13:23:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2015/000278_Specifications-of-Broadcasting-Layers.html">Specifications of Broadcasting Layers</a>
+                        <b>Anthony Towns 2015-10-19 23:55:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2015/000274_Specifications-of-Broadcasting-Layers.html">Specifications of Broadcasting Layers</a>
+                        <b>Rusty Russell 2015-10-19 00:48:30</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Oct_2015/000281_Specifications-of-Broadcasting-Layers.html">Specifications of Broadcasting Layers</a>
+                        <b>Rusty Russell 2015-10-20 06:31:16</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000263.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2015-10-16T13:23:34+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network is considering using an IRC protocol to broadcast messages, as it is easy to debug and trivial to implement. There are three different broadcast messages that are differently dynamic: Pubkey-Channel-Relationships are very static and relayed every 10 days; Node addresses/IP depends on the nodes, whether they have a dynamic or static IP, and would be sent approximately every 12 hours; Channel-Status is highly dependent on actual traffic and node usage, and would be sent once an hour. The estimates for the byte size of each message seem about the right ballpark. Combining (1) and (3) to save space is not worth an hourly broadcast. Mats Jerratsch suggests using a gossip protocol or a DHT approach, with Bram Cohen supporting the use of BitTorrent's DHT. Rusty Russell has been aiming for a design point of 1 million nodes, ideally on a cell phone. The network will need to design a way of retrieving the full dataset for fresh nodes in some load-distributed way; however, rusty usually starts even higher than the 100k nodes that currently make up the network.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-23T21:04:13.190871+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

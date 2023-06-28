@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[softfork proposal] Strict DER signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2015-01-25 16:57:23
+            <br><i>Published on: 2015-01-25T16:57:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_-softfork-proposal-Strict-DER-signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007208.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email correspondence, Pieter is responding to Zooko Wilcox-OHearn regarding updates made to the BIP text and code for handling invalid signatures in Bitcoin transactions. The changes were synced up with the repository code and a comment was added to the BIP text regarding the sigsize=0 case, which was already being handled elsewhere. There are still multiple ways to encode a correctly encoded but invalid signature, including the 0-length string. While it would make sense to treat any other correctly-encoded-but-invalid sig as incorrectly-encoded, Pieter wants to keep the BIP minimal and uncontroversial. Pieter confirms that all the branches of the new IsDERSignature() function have been tested and extra test cases have been added for coverage of IsValidSignatureEncoding. However, there are still TODOs remaining for testing upgrade behavior, which requires significant changes to the codebase. Lastly, Pieter fixes a missing comment in the code.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:42:42.805367+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

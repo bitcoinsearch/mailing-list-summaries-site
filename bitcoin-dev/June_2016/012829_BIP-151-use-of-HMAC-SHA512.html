@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 151 use of HMAC_SHA512</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Arthur Chen 2016-06-28 08:31:51
+            <br><i>Published on: 2016-06-28T08:31:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2016/combined_BIP-151-use-of-HMAC-SHA512.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012829.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Based on previous crypto analysis, it has been stated that the actual security of SHA512 is not significantly higher than SHA256. Thus, there have been discussions about considering SHA3 as a potential alternative. In response to an email sent by Jonas Schnelli via bitcoin-dev, there was a debate about the use of SHA512_HMAC in BIP32 and whether it was necessary to introduce SHA512 in the mix. Jonas Schnelli suggested that a single SHA512_HMAC operation is cheaper and simpler than two SHA256_HMAC operations, but it was argued that SHA256_HMAC is also not used by the current p2p & consensus layer. Bitcoin-Core uses it for HTTP RPC auth and Tor control. Ultimately, there were no clear pros and cons identified for using SHA512_HMAC over SHA256_HMAC.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T18:53:18.181778+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

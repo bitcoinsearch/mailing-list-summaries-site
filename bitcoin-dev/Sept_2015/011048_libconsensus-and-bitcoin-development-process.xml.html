@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>libconsensus and bitcoin development process</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Wladimir J. van der Laan 2015-09-18 00:07:20
-            <br><i>Published on: 2015-09-18T00:07:20+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2015/combined_libconsensus-and-bitcoin-development-process.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011048.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion on the Bitcoin-dev mailing list, it was suggested that companies can maintain forks of Bitcoin Core unnecessarily when a different architecture could do what they need without including new logic in the codebase itself. The goal is to have a more modular, reusable, and maintainable codebase where new functionality can be plugged in easily. However, bitcoind's design is still too monolithic and adding a new feature requires the code to be touched all over the place, potentially breaking base node functionality. Therefore, if possible, functionality should be built without changing bitcoind's code at all. One example of this is Monero's 'simplewallet', which is a command-line utility wallet that communicates with the node software and remembers where it was in the chain. An index could be implemented entirely externally in a similar way while fully handling reorgs. To achieve this, it is suggested that a library communicate with the node and offer functionality abstractly similar to 'git pull'. The long-term vision of bitcoind is a P2P node with validation and blockchain store, with a couple of data sources that can be subscribed to or pulled from.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-10T22:29:44.470915+00:00 </i></p>
     
     
 

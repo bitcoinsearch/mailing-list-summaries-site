@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A proposal to reintroduce the disabled script opcodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ethan Heilman 2017-05-22 14:41:40
+            <br><i>Published on: 2017-05-22T14:41:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_A-proposal-to-reintroduce-the-disabled-script-opcodes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014370.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author is requesting the implementation of OP_CAT to help securely and compactly verify many hashes and hash preimages. This would significantly reduce the size of Tumblebit transactions, specifically when wanting to check a transaction TxA that releases preimages x1, x2,...,x10 such that y1=H(x1), y2=H(x2),...,y10=H(x10). Currently, one must put y1,...y10 and check that the preimages hash correctly. However, with OP_CAT, only one hash in TxA would need to be stored, yhash = H(OP_CAT(H(OP_CAT(y1, y2)),y3)...y10). TxA could then just hash all the preimages supplied by TxB and confirm they hash to TxA, reducing the size of TxA from approx 10*32B to 32+10*16B. Although most of the math OP codes aren't particularly helpful due to their 32bit nature and their strange overflow behavior.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T00:53:16.745781+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

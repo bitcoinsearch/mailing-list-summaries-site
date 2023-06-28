@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>does &#34;stubbing&#34; off Merkle trees reduce initial download bandwidth?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2012-01-05 23:30:16
-            <br><i>Published on: 2012-01-05T23:30:16+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2012/combined_does-stubbing-off-Merkle-trees-reduce-initial-download-bandwidth-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-January/001030.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>This thread discusses two separate topics - transaction pruning and simplified payment verification (SPV) mode. Transaction pruning, also called "stubbing," only saves disk space and does not affect initial chain download bandwidth or time. On the other hand, SPV clients can download only chain headers with no bodies, reducing initial setup time. However, this method is still linear in the length of Bitcoin's life and requires a regular series of checkpoints signed by a trusted developer and a circular block store for truly bounded overheads. The merkle tree is still useful because it allows for SPV clients to receive only transactions of interest while having nearly the same assurances as downloading full blocks. Contrary to popular belief, SPV clients do not use "number of blocks on top" to decide validity. They look for the best chain available. If an SPV node has access to the P2P network and is also talking to you, you can defraud it for as long as you can dominate the network's hash power (51% attack). However, your invalid blocks won't be accepted by the rest of the network, regardless of how many there are or how much work they represent. As soon as you stop dominating the network, the correct chain will catch up and replace yours, resulting in the fraud being detected and shown to the SPV user.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-05T01:38:48.338793+00:00 </i></p>
     
     
 

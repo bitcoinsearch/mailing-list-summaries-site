@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction Merging (bip125 relaxation)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rhavar 2018-01-23 22:19:59
+            <br><i>Published on: 2018-01-23T22:19:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Transaction-Merging-bip125-relaxation-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015633.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, Ryan proposed changing the fee requirement for transactions to support more use cases and make it more incentive compatible. He suggested that the new fee should be at least the minimum between the original fee rate times the replacement transaction size plus the relay fee, or one-third of the original absolute fee. This change would allow for "retroactive transaction merging" and would be resistant to attacks. Another participant in the discussion suggested that fee rates should be required to increase if users wished to replace multiple transactions with a single one, similar to RBF. However, this could introduce DoS vectors and make it easier to push other users' transactions out of the mempool. The original poster had been trying to use bip125 to merge unconfirmed transactions, but found it difficult to track changes and ensure payment safety without introducing complexity.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:59:15.895338+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

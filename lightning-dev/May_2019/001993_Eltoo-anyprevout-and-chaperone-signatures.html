@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Eltoo, anyprevout and chaperone signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-05-15 20:36:32
+            <br><i>Published on: 2019-05-15T20:36:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2019/combined_Eltoo-anyprevout-and-chaperone-signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-May/001993.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Christian proposes that both variants of Anthony Towns' anyprevout BIP proposal should be considered for Eltoo, but mainly applies to the update_tx settlement_tx link rather than the funding_tx update_tx link and update_tx update_tx link. The separation between anyprevout and anyprevoutanyscript is useful compared to the previous noinput proposal as it would simplify the funding tx to a simple multisig without cltv/csv and remove the need for the trigger tx. Christian also acknowledges that the more tricky part to integrate is the chaperone signature. He states that the update transactions would need modification to include this signature. In response, they could collapse those 1-of-2 multisigs into a single-sig if they just collaboratively create a shared private key that is specific to the instance of the protocol upon setup. Furthermore, Christian points out that there might be some interaction between the taproot and noinput, which means we can't make use of the collaborative path where we override an update_tx with a newer one in taproot. When updating the channel, Alice and Bob would exchange their anyprevoutanyscript signatures (for the 2-of-2 multisig). The chaperone signature can be provided by either Alice or Bob at transaction broadcast time. Christian mentions that using the same key for both signatures (the chaperone one and the anyprevoutanyscript one) is safe here, but if someone knows better, they should introduce another key-pair (chaperone key).However, Christian notes that he quite likes the chaperone idea, but it doesn't really play nice with taproot collaborative spends that require anyprevout / anyprevoutanyscript / noinput, which would make their transactions stand out quite a bit. Nonetheless, this is only the case for the unhappy, unilateral close path of the protocol, which should happen rarely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:35:08.356936+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

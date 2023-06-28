@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for rendez-vous routing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-11-05 00:26:06
+            <br><i>Published on: 2018-11-05T00:26:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Proposal-for-rendez-vous-routing.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001507.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the context provided, CJP points out that BOLT 4 assumes source routing and has a shared secret between hop and source. However, it may be possible to use rendezvous routing and only provide the blinding key. Rusty then proposes a "merchant forward" service for Alice who wants to remain anonymous even from the lightning network. Bob's node offers a forwarding service where Alice pays Bob (base + percentage) for a path Bob->Alice, and Bob gives Alice a short-channel-id (BobAliceSCID) and privkey (BobAliceSecretKey) to use. Anything sent from Bob to this short channel id and pubkey is forwarded via a new HTLC to Alice. To create an invoice, Alice uses BobAliceKey and includes a route-hint with pubkey=Bob and short_channel_id=BobAliceSCID. Alice signs the invoice and Bob decodes the incoming payment to create a new HTLC to pay Alice. The payer does not know about this arrangement as it looks like Alice has a private channel with Bob. The minor downside of this method is that Bob can issue invoices as Alice since invoice keys are conflated with onion keys. However, this is not very useful since Alice won't honor them, but it is an argument for a separate invoice key in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T15:12:27.739208+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

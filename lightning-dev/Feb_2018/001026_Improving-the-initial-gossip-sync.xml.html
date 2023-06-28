@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Improving the initial gossip sync</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Fabrice Drouin 2018-02-13 09:01:38
-            <br><i>Published on: 2018-02-13T09:01:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2018/combined_Improving-the-initial-gossip-sync.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001026.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email thread, Rusty Russell and Christian Decker discuss different approaches to synchronizing gossip messages between Lightning Network nodes. Specifically, they debate the merits of using a timestamp mechanism versus an Invertible Bloom Lookup Table (IBLT) approach. They also consider how to handle re-transmission of old channel_announcement and node_announcement messages, with Russell suggesting that it is simpler to only send messages >= routing_sync_timestamp, while Decker argues that channel_announcement cannot be omitted since a channel_update without a preceding announcement is invalid. They also discuss implementation details such as filters for received messages and timestamps to control which time windows to sync. Finally, Russell suggests exchanging all shortIds as a simple solution for syncing gossip messages.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T20:40:46.869883+00:00 </i></p>
     
     
 

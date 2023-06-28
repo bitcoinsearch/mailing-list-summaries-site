@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>New side channel attack that can recover Bitcoin keys</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gustav Simonsson 2014-03-08 19:29:15
-            <br><i>Published on: 2014-03-08T19:29:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2014/combined_New-side-channel-attack-that-can-recover-Bitcoin-keys.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004575.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The FLUSH+RELOAD paper mentions virtualization and claims that the clflush instruction works not only towards processes on the same OS but also against processes in a separate guest OS if executed on the host OS. Both the authors and Vulnerability Note VU#976534 claim disabling hypervisor memory page de-duplication prevents the attack. TRESOR is only applicable if running in a non-virtualized OS, and it only implements AES. However, it seems it could work for ECDSA as well, as they use the four x86 debug registers to fit a 256 bit privkey for the entire machine uptime. They actually do what Mike Hearn mentioned and disable preemption in Linux to ensure atomicity. One could imagine different levels of TRESOR-like ECDSA with different tradeoffs of complexity vs security. To handle multiple keys and get full TRESOR benefits, one could perhaps store a BIP 0032 starting string / seed + counter in the debug registers and have the atomic kernel code generate new keys and do the signing.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T04:01:23.166169+00:00 </i></p>
     
     
 

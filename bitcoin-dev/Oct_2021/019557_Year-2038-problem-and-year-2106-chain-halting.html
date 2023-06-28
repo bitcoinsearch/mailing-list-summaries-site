@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Year 2038 problem and year 2106 chain halting</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> vjudeu at gazeta.pl 2021-10-17 07:24:43
+            <br><i>Published on: 2021-10-17T07:24:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2021/combined_Year-2038-problem-and-year-2106-chain-halting.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019557.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The post describes the increment of timestamp in new blocks by post-softfork nodes. It suggests that the fastest rate can be achieved by incrementing timestamps once per 6 blocks, which would mean x3600 increase. However, the difficulty is always multiplied by four, and thus time needs to be increased once per difficulty change to keep it on a real level. The fastest rate would result in the difficulty calculation becoming astronomically high since pre-softfork nodes would think that blocks are arriving at the rate of 1 per second. The context also discusses what happens if a series of blocks has a timestamp of 0xFFFFFFFF at the appropriate time. The chain will halt for all old clients because there is no 32-bit value greater than 0xffffffff. The Bitcoin Core source code rejects timestamps that are "lower or equal to" the current timestamp. Post the soft fork, nodes just increment the timestamp by 1 on each new block starting at Unix Epoch 0x80000000. Even though this imposes a limit on the maximum number of blocks, the unit is now ~10 minutes instead of 1 second, a massive x600 increase in the amount of time forced to hardfork.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T02:46:56.102887+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

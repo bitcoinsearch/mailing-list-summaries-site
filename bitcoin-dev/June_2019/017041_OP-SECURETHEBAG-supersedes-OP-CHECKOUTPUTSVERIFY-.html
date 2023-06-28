@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_SECURETHEBAG (supersedes OP_CHECKOUTPUTSVERIFY)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2019-06-24 14:34:54
+            <br><i>Published on: 2019-06-24T14:34:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_OP-SECURETHEBAG-supersedes-OP-CHECKOUTPUTSVERIFY-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017041.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The OP_SECURETHEBAG opcode, which ensures that a transaction's input and output scripts cannot be modified without invalidating the signature, does not include the script being executed in its hash. This means that the ScriptPubKey, which is indirectly committed to through the input's prevoutpoint, cannot be reconstructed from the prevoutpoint in tapscript without implementation of public key tweaking in Bitcoin Script. In a thread on the bitcoin-dev mailing list, Jeremy Rubin asked for clarification on this comment and stated that the script and scriptsig are indeed committed to in OP_SECURETHEBAG. However, Russell O'Connor pointed out that creating covenants with OP_SECURETHEBAG is difficult without adding an OP_TWEEKPUBKEY operation to Script since the commitment of the script itself is not part of the opcode. ZmnSCPxj added that combining OP_LEFT and OP_CAT with OP_CHECKTXDIGESTVERIFY would allow for Turing-complete smart contracts.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:14:32.272847+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

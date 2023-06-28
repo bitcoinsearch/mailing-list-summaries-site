@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Using a storage engine without UTXO-index</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tomas 2017-04-08 07:28:48
-            <br><i>Published on: 2017-04-08T07:28:48+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2017/combined_Using-a-storage-engine-without-UTXO-index.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014087.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email conversation between Gregory Maxwell and Tomas discusses the resource costs and latency-related costs in Bitcoin Core. Resource cost is not just a measure of storage requirement, but data that needs to be accessed during peak load induces more cost than data only used during base load or rarely used. The aggregate resource usage for users depends significantly on outputs rather than inputs in transactions in a block. In Core, when a block comes, the inputs are checked against the UTXO set to verify order, even if pre-synced. However, in bitcrust, it is checked against the spend-tree. Although UTXO data is always a resource cost for script validation, the ratio of different costs is not necessarily identical across implementations. Bitcrust has a slower peak load verification if the last few blocks contain many inputs, which is not the case in Core.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T23:51:23.518858+00:00 </i></p>
     
     
 

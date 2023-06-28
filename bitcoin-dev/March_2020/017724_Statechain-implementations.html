@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Statechain implementations</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Greg Sanders 2020-03-26 17:17:13
+            <br><i>Published on: 2020-03-26T17:17:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Statechain-implementations.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017724.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, Ruben Somsen suggested using a kickoff transaction as a next-best option to eltoo for modification 1. Christian Decker agreed but noted that every previous owner would have a copy of it, so including a fee is not possible. Instead, a second output for Child-Pays-For-Parent (CPFP) can be used. Decker also suggested adopting the late fee binding in eltoo by having the kickoff transaction input spending the funding transaction signed with sighash_single to remove the need to guess the feerate days or months in advance and having to overestimate. In regards to modification 2, which involved using a regular 2-of-2 multisig, Greg Sanders raised concerns about whether it justifies the added complexity of using 2P ECDSA. Decker responded by noting that this approach would result in a changing pubkey at each update and would require an onchain move to be committed. The original proposal was also discussed, which did not presuppose the existence of MuSig. The conversation ended with both parties expressing excitement about seeing statechains becoming a reality.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:16:39.751325+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

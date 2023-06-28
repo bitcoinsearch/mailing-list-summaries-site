@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP72 amendment proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aaron Voisine 2014-09-12 18:43:32
+            <br><i>Published on: 2014-09-12T18:43:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2014/combined_BIP72-amendment-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-September/006603.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion is about whether or not signed payment requests should be from the same domain and require https as per BIP72. If the request object is signed by the owner of the domain, then the worst an attacker who doesn't have the signing key can do is replace the request with another validly signed request intended for someone else. Aaron Voisine suggests an approach that adds another marker param like &s to the end of the URL and another field to PaymentRequest that contains an ECC signature calculated using the public key that hashes to the address in the URI. Upgraded wallets look for the additional param and if it's there, expect to find the PaymentDetails signed with the address key. PKI signing of course is still useful to provide an actual identity for receipts, display on hardware wallets, dispute mediation etc. He also asks if signed payment requests be from the same domain and also require https as per BIP72.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:30:23.603802+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

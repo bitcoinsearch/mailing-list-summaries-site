@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 174 thoughts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Greg Sanders 2018-06-21 15:40:04
-            <br><i>Published on: 2018-06-21T15:40:04+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016143.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the revision of BIP 174 and its per-output data. The output redeem script can either be unknown or known, in which case it does not make sense to include it in PSBT. Signers have different requirements, and not adding any output information rules out change detection. The sighash type 0x03 needs coordination between parties; otherwise, there is no use for an advisory field that is not binding. Size is not a constraint, but keeping the format clear while avoiding duplication of data is essential. Using full xpub could lead to long strings of text, so keeping the BIP32 paths per-input is preferable. All keys can be fully reconstructed from their values, except for partial signatures. Deduplication of witness/redeem scripts is not worth considering because they need to be included in the resulting transaction.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T03:21:24.250654+00:00 </i></p>
     
     
 

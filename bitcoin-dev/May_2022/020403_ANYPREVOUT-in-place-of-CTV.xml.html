@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>ANYPREVOUT in place of CTV</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Billy Tetrud 2022-05-01 23:35:08
-            <br><i>Published on: 2022-05-01T23:35:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2022/combined_ANYPREVOUT-in-place-of-CTV.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020403.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The debate surrounding the potential impact of a large-scale theft of bitcoins on the overall value of the cryptocurrency has been ongoing. Some argue that such an event would only cause a temporary dip in price, but there are concerns about the long-term storage of bitcoins in non-quantum-computer vulnerable-bare-CTV-covenants that could become vulnerable if quantum computers become more powerful.There is also debate over whether activating CTV over APO to avoid this vulnerability is fair, as some believe that quantum computer fears may not be justified. Additionally, the cost and usefulness of implementing APO or CTV for vaulting purposes must be considered, along with the half-spend problem with APO that requires amending BIP 118 to fix.Despite these concerns, the stable txid property of CTV may be important for proposed use cases such as channel factories. The Bitcoin-dev mailing list has discussed the possibility of using SIGHASH_ANYPREVOUT (APO) as a replacement for CTV, but consensus was that APO would require further design and review iterations before it could be used as an alternative.While APO has been in development for over six years and has proven use cases, its implementation may not be as widely accepted as CTV's. However, APO-AS covenants can cover CTV's features and can be considered as an optimization of CTV. Some members who have been trying to implement practical vaults for the past two years doubt that CTV is necessary or sufficient for this purpose, believing that APO-AS covers it.If after some time, on-chain usage of APO proves to be less efficient, then CTV can be rolled out as an optimization. Meanwhile, new applications leveraging ANYPREVOUT, such as Eltoo and blind statechains, can be deployed. BIP118, which enables CTV's features, is a soft fork candidate that could benefit most Bitcoin users, given the interest in simple covenants and better off-chain protocols.There is also discussion about whether people would oppose the APO-AS part of BIP118 for the same reason they would oppose BIP119. SIGHASH_ANYPREVOUTANYSCRIPT can emulate CTV just fine if its "ANYONECANPAY" behavior is made optional. Although one cannot have bare or Segwit v0 CTV, it is still useful but slightly more expensive to use. Finally, the email contains links to related resources and discussions on Github and Twitter.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T19:23:08.945196+00:00 </i></p>
     
     
 

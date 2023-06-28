@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Matt Corallo 2019-01-08 14:46:45
-            <br><i>Published on: 2019-01-08T14:46:45+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2019/combined_CPFP-Carve-Out-for-Fee-Prediction-Issues-in-Contracting-Applications-eg-Lightning-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016610.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email conversation, Rusty Russell and Matt Corallo discuss the issue of defining a "near the top of the mempool" criteria for Bitcoin transactions. While it may be acceptable for large batched transactions, lightning's requirements are different as they require certainty that a transaction will confirm by a certain deadline. The problem with the alternative proposal suggested by Matt is that it does not guarantee the ability to RBF as fees change. The previous problem of the counterparty announcing a bogus package and leaving the user unable to add a new transaction to it still exists, with the difference being that it may be significantly more expensive to do so. Rusty defines "top of mempool" as "in the first 4 MSipa", i.e., next block, and assumes that RBF would only be allowed if the old package wasn't in the top and the replacement would be. However, even this criteria does not hold up due to block time variance. An attacker can make one pay next-block high fees, but it's still better than the current "*always* overpay and hope!" They agree that whatever is simplest to implement should win.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T18:31:19.570063+00:00 </i></p>
     
     
 

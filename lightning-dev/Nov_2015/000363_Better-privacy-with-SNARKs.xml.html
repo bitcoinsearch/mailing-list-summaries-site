@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Better privacy with SNARKs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2015-11-30 00:07:59
-            <br><i>Published on: 2015-11-30T00:07:59+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2015/combined_Better-privacy-with-SNARKs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000363.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion over email, Anthony Towns suggested a method for translating pseudocode into script for the purpose of adding privacy to how hash time-locked contracts (HTLCs) are cleared on the blockchain. By revealing P/Q/R, it is possible to add privacy at the cost of an extra 236 bytes per HTLC per channel when cleared on the blockchain. The extra cost is approximately 3 cents per HTLC. Furthermore, in order to include commitments in transactions, a minimal HTLC would require 117 bytes plus another 67 bytes for the signature and branch code. To spend an HTLC, additional bits for a txin are necessary, which adds 42 bytes. When claiming an HTLC, this overhead amounts to around an extra 80% while refunding only requires an extra 11%. With these costs in mind, it may be more economical to forget a 2 cent HTLC than to commit it. However, if remaining open to very small microtransactions, accounting for at least 4 cents per HTLC for closing fees may still be worth it.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-18T15:48:00.589239+00:00 </i></p>
     
     
 

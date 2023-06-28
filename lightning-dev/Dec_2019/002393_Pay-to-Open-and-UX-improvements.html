@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pay-to-Open and UX improvements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2019-12-18 04:49:35
+            <br><i>Published on: 2019-12-18T04:49:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Pay-to-Open-and-UX-improvements.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002393.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context of the conversation is about a slashing protocol for a Lightning Network (LN) node and a watchtower. The protocol is used to punish a lazy watchtower for not broadcasting a penalty transaction on a remote revoked state. The use case described by the person initiating the conversation is similar to that of the LN node and watchtower, where "if A don't do X unlock some funds for B". The proposed slashing protocol involves Alice and Bob locking funds in channel outpoint X and issuing commitment tx N. A watchtower locks funds in a 2-of-2 slashing outpoint Y with Bob as the client. When Alice and Bob update channels to N', Bob and Will use some output from commitment N to create an accountable tx M. M is either paying to Bob after timelock+Bob sig or paying to transaction success_penalty P with Will sig + Bob sig. Success_penalty P will have two inputs, one from M and from J the justice tx that Bob has given to Will. The topology of the protocol ensures that Bob cannot make false claims because he needs a revoked broadcast to enable the claim. At the same time, a justice tx output is used as proof that Will has done its monitoring and punishment job. If there is no channel breach, Will shouldn't learn the commitment balance, and Alice and Bob wouldn't be able to collude against Will if the watchtower has a penalty tx on Alice non-revoked commitment tx.In a separate part of the conversation, there is a discussion about OP_CAT and OP_SUBSTRING. The use of these opcodes can enforce ECDSA nonce reuse and fairness in layer two protocols. The conversation also touches on requiring RBF to be signaled for every spend of the output. This ensures that any output that is double-spent is directly revocable in favor of the miners. However, it requires the use of OP_CAT, which is a dangerous opcode that allows for powerful constructions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:25:53.601760+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>eltoo: A Simplified update Mechanism for Lightning and Off-Chain Contracts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2018-05-01 15:50:27
+            <br><i>Published on: 2018-05-01T15:50:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_eltoo-A-Simplified-update-Mechanism-for-Lightning-and-Off-Chain-Contracts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015915.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, Christian Decker and Jim Posen discuss the impact of a new construction on safe CLTV delta requirements. The concern is that with eltoo, if the CLTV delta is too small, it may be possible for downstream HTLCs to be claimed with the preimage on-chain even after upstream HTLCs have timed out. To address this, an offset of all the CLTVs to (less than) the maximum CSV timeout along the path is proposed. This would be a fixed offset for each channel and can be announced using the gossip protocol, so senders can take it into consideration when computing the routes. The offset is not really the CLTV delta, which would accumulate along the path, but an offset on which the CLTV deltas build on. Christian notes that in today's network, many nodes have a CLTV delta of 144 blocks, which quickly results in HTLC funds being unavailable for several days depending on the route length. He argues that adding a fixed offset is not much worse than the current situation and once watch-towers are implemented, both the offset and CLTV deltas can be reduced. With eltoo making watch-towers less expensive, he believes it's a net positive for the Lightning network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:39:41.734516+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

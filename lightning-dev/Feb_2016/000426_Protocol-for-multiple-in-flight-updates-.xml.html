@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Protocol for multiple in-flight updates.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Joseph Poon 2016-02-03 01:33:30
-            <br><i>Published on: 2016-02-03T01:33:30+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Feb_2016/combined_Protocol-for-multiple-in-flight-updates-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-February/000426.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email exchange between Rusty Russell and Joseph Poon discusses the Lightning Network's protocol for handling transactions. The parties discuss the necessary steps involved in securely committing to a transaction, including the requirement for each party to receive the signature for the N+1 commit tx before handing over the Nth revocation preimage. They also mention the simplicity of the three-way handshake protocol, which involves Alice sending a signature to Bob, and Bob sending the revocation of the previous commitment to Alice, and vice versa. The inclusion of modifications is enumerated by including both parties' highest HTLC ID in each Commitment signature message. The protocol is still being optimized, but any accepted modification by the other party is included. Two IDs, one for each party, are included in the Commitment signature message, allowing for timing issues with HTLC Add responses not being fully synced up. The protocol is in order, and updates to lnstate are expected soon.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T22:27:51.148725+00:00 </i></p>
     
     
 

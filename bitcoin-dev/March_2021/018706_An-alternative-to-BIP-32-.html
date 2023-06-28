@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An alternative to BIP 32?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> vjudeu 2021-03-20 20:25:03
+            <br><i>Published on: 2021-03-20T20:25:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_An-alternative-to-BIP-32-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018706.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the safety and suitability of a simple HD wallet design that uses pure ECDSA and SHA-256. The design involves generating a master public key and child public keys using SHA-256 and a nonce. The concern raised is whether this design is safe to implement in practice, given that SHA-256 suffers from certain attacks, such as length extension attacks. Erik Aronesty suggests using SHA3-256 instead, as it does not suffer from padding-related vulnerabilities. The main question posed by Arik Sosman is whether using sha256-hmac(nonce, publicKeyPoint) would be a safer alternative to SHA-256. However, Erik Aronesty maintains that SHA3-256 is still the better option. It should be noted that even if someone obtains a child public key, they cannot reverse-engineer it to obtain the parent public key as the output of SHA-256 is unknown. The scheme allows for potentially unlimited custom derivation paths by using a 256-bit nonce and all keys generated start with a 02 prefix.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T19:43:37.135721+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

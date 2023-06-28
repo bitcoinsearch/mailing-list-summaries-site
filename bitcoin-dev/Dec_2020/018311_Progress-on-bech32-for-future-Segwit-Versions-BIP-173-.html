@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Progress on bech32 for future Segwit Versions (BIP-173)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2020-12-18 02:02:04
+            <br><i>Published on: 2020-12-18T02:02:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2020/combined_Progress-on-bech32-for-future-Segwit-Versions-BIP-173-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018311.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Pieter Wuille, a Bitcoin Core developer, proposed a new strategy for a bech32 library that is external to Bitcoin Core. The strategy involves defaulting to the new M under the same bech32 brand and providing an interface for explicitly using both M=1 and M=0x2bc830a3. In case of decoding failure, an error would be thrown, but the other M would be informed of its potential success. Additionally, Pieter suggests providing an interface for a BIP173 implementation to peek at the witness version byte of the data part and checking the byte for errors using a BIP173-specific understanding of the appropriate checksum. There are two possible interfaces suggested by Pieter, which include having the caller explicitly specify whether they want bech32 or bech32m, or having the bech32 decoding function return a tristate (failed, valid as bech32, valid as bech32m). While the former is cleaner and the only choice for error location hinting, the latter is more efficient if decoding twice is a performance concern.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T23:57:48.244586+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

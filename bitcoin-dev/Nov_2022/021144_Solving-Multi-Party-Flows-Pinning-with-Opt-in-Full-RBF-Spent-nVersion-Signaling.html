@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Solving Multi-Party Flows Pinning with Opt-in Full-RBF Spent-nVersion Signaling</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2022-11-02 02:21:59
+            <br><i>Published on: 2022-11-02T02:21:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Solving-Multi-Party-Flows-Pinning-with-Opt-in-Full-RBF-Spent-nVersion-Signaling.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021144.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of pinning contracting protocols funding flows with opt-out double-spend is a challenge that can be solved by implementing an opt-in Full-Replace-by-Fee Spent-nVersion Signaling policy. The problem arises when multi-party collaborative flows are subjected to a low-cost and high-success DoS vector with asymmetric damages, where a single input can bleed the time value of the remaining inputs or engage in a MEV attack. Currently, there is no mechanism to require replacement signaling provable to a third party only on the knowledge of the UTXO spents. The solution proposed is that a confirmed transaction is considered to have opted-in to allowing replacement of any of its spends if the last bit of the nVersion field is set. This protects the collaborative participants of a multi-party flow that the target transaction should propagate to the miners if the fee/feerate offered are the best ones without opt-out based pinning. On the validation-side, there is one engineering issue as there is no access to the spent nversion fields by the mempool logic. For the contracting protocols wallets, if they don't know which coins are going to be used for a collaborative flow, they're better off marking all their coins nVersion fields opting fullrbf. However, this policy bookmarking comes as a protocol fingerprint leak for an observer of the transaction logs. For zeroconf operators, assuming they have access to the UTXO set, they can inspect the receiving transactions ancestors nVersion fields and sort those transactions in the wider set of replaceable ones.Long-term, this new policy enforcement efficiency is still dependent on the existence of relay paths and support at the endpoints that matter, the miner mempools. Therefore, it might be necessary to realize incentive alignment with hashrate is what matters in terms of transaction-relay rules. Credit goes to Greg Maxwell for this idea.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T22:42:04.636528+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

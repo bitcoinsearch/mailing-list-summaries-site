@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CTV vaults in the wild</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Antoine Riard 2022-03-10 21:12:44
-            <br><i>Published on: 2022-03-10T21:12:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2022/combined_CTV-vaults-in-the-wild.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020104.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation between Antoine and ZmnSCPxj focuses on the design of Taproot-based vaults and their vulnerabilities. While hashchain-based vault designs are immutable, they do not allow for modifications to the unvault_tx/tocold_tx transactions and therefore cannot recover from transaction field corruption or key endpoints compromise. With Taproot, a master key can back out of any contract, which could be buried in the desert to be guarded over by generations of Fremen riding giant sandworms until the Bitcoin Path prophesied by the Kwisatz Haderach, Satoshi Nakamoto, arrives. However, relying on presigned transactions comes with higher assumptions on the hardware hosting the flow keys. The presence of trusted hardware in the vault design may lead one to ask what's the security advantage of vaults compared to classic multisig setup. Vault users might be interested to pay the fee witness premium just to get the tower accountability feature. The conversation also addresses the issues of watchtowers used by both Lightning Network and vault users. A LN channel is likely to have high-frequency updates in both LN-penalty/Eltoo design, while a vault has low-frequency updates such as once-a-day spending. However, generating noise traffic from the vault entity to adopt a classic LN channel pattern may address this point. But, as a vault "high-stake" user, you might not be eager to leak your watchtower IP address or even Tor onion service to "low-stake" LN channel swarms of users. The conversation also touches on the usage of anchor outputs in order to allow mummified unvault transactions to have their feerate adjusted dynamically. While the usage of anchor output is safe for any vault deployment where the funds stakeholders trust each other or where the watchtowers are trusted, it is not so when a distrusted party can spend the anchor output.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T17:44:24.195904+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP draft: OP_CHECKBLOCKATHEIGHT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2016-09-23 16:18:17
+            <br><i>Published on: 2016-09-23T16:18:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2016/combined_BIP-draft-OP-CHECKBLOCKATHEIGHT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013157.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Luke Dashjr proposed a new opcode (OP_CHECKBLOCKATHEIGHT) for Bitcoin scripting system to address reissuing bitcoin transactions when the coins they spend have been conflicted/double-spent. The BIP, however, is a bit confusing as it refers to spending outputs with a small number of confirmations, instead of spending unconfirmed outputs which OP_CHECKBLOCKATHEIGHT cannot protect. If multi-block reorgs were a regular occurrence in the ecosystem, Bitcoin would be in trouble, but since they are rare, advising wallet authors to refuse transactions for some time after such a reorg may be a better solution. Multi-block reorgs are an indication that something is wrong with the network and it would be safer to stop using Bitcoin until things settle down.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T20:07:53.447648+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

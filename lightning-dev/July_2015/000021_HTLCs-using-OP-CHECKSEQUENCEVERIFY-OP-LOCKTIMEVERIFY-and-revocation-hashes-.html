@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>HTLCs using OP_CHECKSEQUENCEVERIFY/OP_LOCKTIMEVERIFY and revocation hashes.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2015-07-06 06:41:34
+            <br><i>Published on: 2015-07-06T06:41:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2015/combined_HTLCs-using-OP-CHECKSEQUENCEVERIFY-OP-LOCKTIMEVERIFY-and-revocation-hashes-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000021.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In order to generate hash time-locked contracts for lightning network, both commitment transactions get an additional output. This output is spendable under four conditions: recipient knows the R value (funds go to recipient), or HTLC has timed out (funds return to initiator), or HTLC has been revoked (funds to go "non-cheating" side), or the commit transaction has been revoked (funds to go "non-cheating" side). The last two failure modes are separate from each other because HTLCs have different lifetimes from commit transactions. The use of "revocation preimages" to revoke transactions rather than sending pubkeys as in the original draft paper results in a scriptPubKey from the commitment tx for the HTLC. We need to ensure delays in the cases where payment can go to A so that B has a chance to steal the funds if the HTLC or commitment tx has been revoked. The result is one of the following scriptPubKey from the commitment tx for the HTLC like so (note: unchecked and unoptimized!). If you've read this far, congratulations! AFAICT we don't need new SIGOPS here; the logic has all been moved to the commitment transaction output (thanks to OP_CLV and OP_CSV), so each side can generate the HTLC spending transaction without needing a signature from the other. Feedback, fixed and optimizations welcome.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T18:19:48.967058+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

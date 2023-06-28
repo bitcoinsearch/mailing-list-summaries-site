@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SHA1 collisions make Git vulnerable to attakcs by third-parties, not just repo maintainers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2017-02-23 21:28:02
+            <br><i>Published on: 2017-02-23T21:28:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2017/combined_SHA1-collisions-make-Git-vulnerable-to-attakcs-by-third-parties-not-just-repo-maintainers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013604.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Peter Todd, a core Bitcoin developer, has warned that the recent SHA-1 collision attack on Git is not limited to maintainers making maliciously colliding Git commits but also third-party's submitting pull-reqs containing commits, trees and files for which collisions have been found. This could be exploitable in practice with binary files, as reviewers are unlikely to notice garbage at the end of a file needed for the attack. Todd explains that he could prepare a pair of files with the same SHA-1 hash, taking into account the header that Git prepends when hashing files, and submit it via a pull-req to a project with the "clean" version of that file. Once the maintainer merges the pull-req, possibly PGP signing the git commit, Todd could take that signature and distribute the same repo, but with the "clean" version replaced by the malicious version of the file. Todd notes that tree objects are likely to be the most concerning avenue of attack, as many review tools don't pick up on garbage data at the end of these objects.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:49:52.322817+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>In-protocol liquidity probing and channel jamming mitigation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2021-10-14 07:48:27
+            <br><i>Published on: 2021-10-14T07:48:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2021/combined_In-protocol-liquidity-probing-and-channel-jamming-mitigation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003314.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Lightning wallets typically probe routes with an unknown payment hash to determine accurate routing fees before executing the actual payment, but this practice locks up liquidity for a short period of time. To address this issue, a proposal was put forth for a liquidity probing protocol message similar to `update_add_htlc` that would skip channel update machinery and only be forwarded to the next hop if the link can carry the htlc. While nodes can reject these probes, senders will not use that route, and the routing node misses out on routing fees. Another problem in the lightning network is susceptibility to channel jamming, which several proposed solutions exist for, including deterring attackers by making them pay actual satoshis. However, this solution has received criticism that it deteriorates user experience for honest users when multiple payment routes are attempted, and each attempt has a cost. The combination of making probing free and requiring senders to pay for failed payment attempts after a successful probe could potentially fix the UX issue with upfront fees. Custodial wallets could swallow the cost for failures, but non-custodial nodes must map out good routing nodes themselves, incurring a cost.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:26:52.040750+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pinging a route for capacity <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001058_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>Jim Posen 2018-03-01 14:45:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001060_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>gb 2018-03-01 21:16:02</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001068_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>Christian Decker 2018-03-04 22:18:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001059_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>René Pickhardt 2018-03-01 15:26:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001062_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>ZmnSCPxj 2018-03-02 07:53:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001063_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>Jim Posen 2018-03-02 14:42:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001067_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>Rusty Russell 2018-03-04 02:46:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2018/001066_Pinging-a-route-for-capacity.html">Pinging a route for capacity</a>
+                        <b>René Pickhardt 2018-03-01 15:13:43</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-March/001058.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-03-01T14:45:16+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network is a second-layer solution for Bitcoin that aims to improve scalability and transaction speed. One area of focus for the Lightning development team is payment routing optimization. Jim Posen proposed the idea of sending a ping over an onion route to check if every hop has the capacity to send a certain amount, which could prevent payment failures and reduce inefficiency.However, there are concerns about DoS attacks and information leakage regarding channel capacities. Rusty Russell suggested using fees and fast failure mechanisms instead of the full HTLC commitment handshake on each hop. More analysis is needed on reliable ways to mask active channel capacity. Another suggestion was to use IP fragmentation techniques to allow for dynamic fragmentation of payments and still work if a channel runs out of funds while routing payment. Rene Pickhardt suggested dynamically splitting payments into smaller parts and rerouting them through different channels as necessary.A proposal has been made on the Lightning-dev mailing list to create a new feature that would allow users to test payment routes without actually sending payments. The proposal suggests that this would be quicker and more efficient than sending actual payments since latency would be lower and the sender could ping all possible routes in parallel. However, the downside is that it could also make it faster and cheaper for someone to extract information about channel capacities on the network with a binary search. The proposal includes the idea that hops could respond with the latest fee rate in case channel updates are slow to propagate.Overall, the Lightning network is still testing and refining its routing strategies to optimize payment routing. While there are various ideas and proposals being discussed, more analysis and testing are needed to determine the most effective and secure solutions for payment routing optimization.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-24T21:27:36.206972+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

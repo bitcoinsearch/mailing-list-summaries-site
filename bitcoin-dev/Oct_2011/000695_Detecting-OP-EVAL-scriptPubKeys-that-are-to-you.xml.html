@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Detecting OP_EVAL scriptPubKeys that are to you</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Michael Grønager 2011-10-27 07:32:16
-            <br><i>Published on: 2011-10-27T07:32:16+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2011/combined_Detecting-OP-EVAL-scriptPubKeys-that-are-to-you.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000695.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The current one-to-one mapping between a public key and uint160 in Bitcoin is a clean setup that allows for cryptographic keys to be mapped to assets. However, the new use of the uint160 introduced by the OP_EVAL proposal breaks this clean mapping. This new proposal introduces an extra "public key," and there is no easy way to map private keys to public keys to uint160s that will result in the new condensed uint160 without knowledge of the script used. While it will work, it breaks the intrinsic logic of uint160s and transactions that has so far been quite nice and clean. Gavin Andresen proposed that CHECKMULTISIG becomes a standard transaction type, and using OP_EVAL is not mandatory. Michael Gronager expressed concern about being able to extract transactions from private keys, but Gavin argues that OP_EVAL lets him give a short address that represents an arbitrary number of keys combined in an arbitrary way. Only the people involved in the transaction need to know the details until after the transaction is complete. The tiered implementation for thin clients should not be significantly harder with OP_EVAL.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-04T20:56:45.124440+00:00 </i></p>
     
     
 

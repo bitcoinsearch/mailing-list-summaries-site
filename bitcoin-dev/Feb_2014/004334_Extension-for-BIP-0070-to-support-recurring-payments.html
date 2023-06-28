@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Extension for BIP-0070 to support recurring payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kevin Greene 2014-02-11 10:00:53
+            <br><i>Published on: 2014-02-11T10:00:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_Extension-for-BIP-0070-to-support-recurring-payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004334.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a proposed protocol to enable recurring payments in Bitcoin and can be seen as an extension of BIP-0070. The main goal is to have the customer subscribe to a service of some kind, agreeing on the terms of that subscription contract, and then having the wallet make recurring payments without any intervention from the customer as long as the payments match what the customer agreed to pay. A working prototype has been developed using Bitcoinj. There are ongoing discussions about how to trigger it off the existing payment protocol, data structures to define the payment schedule, and whether to allow pre-submission of time-locked transactions or not. The flow of operations includes creating the subscription, ongoing payments, subscription change (optional), and cancellation of the subscription. There are also discussions around what should happen if the client tries to fetch the PaymentRequest early or late, if the client tries to consume the same PaymentRequest twice during the same period, and if daily/weekly/monthly is flexible enough. It is suggested to have a concrete start time and end time when the next PaymentRequest will be valid, which also prevents the wallet from having to remember when it last sent a payment and getting skewed over time. Additionally, when a wallet hits the polling_url to download the next PaymentRequest, it seems there needs to be a way to communicate an error code to the wallet, for example, if the server canceled the contract without the wallet knowing. It is suggested to have a separate polling_status_url, with a corresponding ACK message to indicate if the PaymentRequest is available. Finally, it is noted that the wallet in this design doesn't have any way of knowing when the payments are supposed to end, which is important to show to the user before they start their wallet polling infinitely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T01:53:15.645940+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

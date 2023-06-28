@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Relative CHECKLOCKTIMEVERIFY (was CLTV proposal)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2015-05-05 20:38:44
+            <br><i>Published on: 2015-05-05T20:38:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_Relative-CHECKLOCKTIMEVERIFY-was-CLTV-proposal-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/007866.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the verification of a spending block's height in comparison to the height of the UTXO and sequence number. An exception is proposed for final inputs, which would count as a relative locktime of 0xFFFFFFFF. The concern is raised that invalidating previously valid transactions may reduce confidence in the currency. A workaround is suggested by enabling the sequence number to be checked using OP_RELATIVELOCKTIMEVERIFY and introducing OP_SEQUENCE_AS_RELATIVE_HEIGHT as a flag to enable the use of the sequence number as a relative block height. This can be achieved using a simple pattern match in the IsSequenceAsRelativeHeight function. The code for the implementation is provided along with the proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T18:48:23.582696+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

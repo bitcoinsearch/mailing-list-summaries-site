@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Question regarding Confidential Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Papp 2016-02-10 16:39:25
+            <br><i>Published on: 2016-02-10T16:39:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2016/combined_Question-regarding-Confidential-Transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012433.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation between Henning Kopp and Jeremy Papp, they discuss the blinding factor used in range proofs. They consider how the blinding factor would be included in the extra data that is incorporated into the ring signatures used in range proof. One possibility they suggest is encrypting the blinding factor with the public key of the receiver so that it is only visible for the receiver who can then check that the correct amount has been sent. However, they note that ECC works differently from RSA and you can't encrypt directly with a public key. Instead, you generate a shared secret between sender and receiver using ECDH. The shared secret can then be used as the basis for the key to some symmetric algorithm. Jeremy suggests that adding extraneous data isn't much of a problem since using it will pretty much require segwit. He also notes that the blinding factor would be protected from outside examination via some form of shared secret generation. However, this would require the sender to know the recipient's unhashed public key, which is normally not used in Bitcoin transactions. Instead, transactions are made to the hash of a public key because once the public key is known, it becomes easier to break it if we ever develop quantum computers. Since you can't do a shared secret with a public key hash, you'd have to know the public key of your recipient to be able to do ECDH. Overall, the discussion revolves around the technicalities of using blinding factors and shared secrets in Bitcoin transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T03:54:32.101873+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

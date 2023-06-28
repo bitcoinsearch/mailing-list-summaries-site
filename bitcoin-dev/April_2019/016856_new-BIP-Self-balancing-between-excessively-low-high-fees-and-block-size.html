@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>new BIP: Self balancing between excessively low/high fees and block size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-04-08 00:55:18
+            <br><i>Published on: 2019-04-08T00:55:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_new-BIP-Self-balancing-between-excessively-low-high-fees-and-block-size.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016856.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new Bitcoin Improvement Proposal (BIP) has been proposed by simondev1, which suggests that the logarithm of transaction fee limits block size. The motivation behind this BIP is to keep block space small and prevent spam transactions. It also seeks to auto-balance fees, allow larger sizes when the sender pays a lot, and enable wallets to calculate and display how much average free block space there is for each fee price. The proposal aims to allow senders to have more control over the fee/priority of their transaction in the case of increased adoption in the future.The specification of the proposal states that every transaction must fit into a specific block space determined by the input variable 'FeeInSatoshiPerByte'. This variable must be positive or zero, and its output will be in bytes unit. A formula must be applied to calculate the block size using the floor function, log10, and some multiplication. Transactions should then be sorted by FeeInSatoshiPerByte (lowest first), and their total space used must not exceed the calculated block size to validate the block.However, ZmnSCPxj warns that the algorithm could increase validation time and limit the practical block sizes that can be deployed. If the current limit is removed (as in a hardforked proposal), a 1Tb block could be used to attack the network since sorting would require looking through the entire block. Therefore, the proposal needs to consider backward compatibility and whether it should be implemented as a soft or hard fork.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:13:14.354612+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

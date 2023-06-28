@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Minimizing the redundancy in Golomb Coded Sets <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016029_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Pieter Wuille 2018-05-25 17:54:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016030_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Gregory Maxwell 2018-05-25 18:42:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016031_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Gregory Maxwell 2018-05-25 21:13:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016029_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Pieter Wuille 2018-05-25 17:54:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016030_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Gregory Maxwell 2018-05-25 18:42:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016039_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Jim Posen 2018-05-29 22:38:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016041_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Lucas Ontivero 2018-05-30 03:10:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016039_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Jim Posen 2018-05-29 22:38:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016031_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Gregory Maxwell 2018-05-25 21:13:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016041_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Lucas Ontivero 2018-05-30 03:10:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016029_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Pieter Wuille 2018-05-25 17:54:17</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016030_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Gregory Maxwell 2018-05-25 18:42:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016031_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Gregory Maxwell 2018-05-25 21:13:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016041_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Lucas Ontivero 2018-05-30 03:10:04</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2018/016039_Minimizing-the-redundancy-in-Golomb-Coded-Sets.html">Minimizing the redundancy in Golomb Coded Sets</a>
+                        <b>Jim Posen 2018-05-29 22:38:01</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/016029.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-05-25T17:54:17+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Pieter Wuille spent time working on the optimal parameter selection for the Golomb Coded Sets proposed in BIP158. He suggested that if an FP rate of exactly 1 in 2^20 is required, then the Rice parameter should be 19 instead of 20. If not, then an FP rate of 1 in a 1.4971*2^B should be picked. The approximations were used to analyze what parameters minimize total communications for lite wallet scanning. When using all-scripts inputs and outputs (but no txids), it is estimated that roughly 7500 bits will be set. Therefore, M=1569861 and rice parameter 19 should be used to achieve the actual optimal FP rate for total data transferred.In an email on May 25, 2018, Gregory Maxwell corrected a previous statement regarding configuration and stated that M=784931 and rice parameter 19 should be used. Jim Posen conducted an analysis of selecting a good P value to reduce total data downloaded using Golomb-Rice filters on mainnet. He determined that the optimal B parameter for different numbers of filter elements watched by the client ranges from 13 to 23. In particular, for C = 10, B = 13 is optimal; for C = 100, B = 16 is optimal; for C = 1,000, B = 20 is optimal; and for C = 10,000, B = 23 is optimal.The author has also conducted an analysis on selecting a good P value to reduce total data downloaded considering both filters themselves and blocks in the case of false positive matches, using data from mainnet. The quantity it minimizes is based on the number of filter elements per block (N), Golomb-Rice coding parameter (B), and the number of filter elements watched by the client (C). The main result shows that for different values of C, the optimal value of B ranges from 13 to 23. Any value of B in the range 16 to 20 seems reasonable, with M=1.4971 * 2^B for optimal compression. The selection of the parameter depends on the target number of elements that a client may watch.In response to Posen's findings, Pieter Wuille asked for the CSV to help with developing a Wallet that uses Golomb-Rice filters.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-13T02:57:21.236645+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

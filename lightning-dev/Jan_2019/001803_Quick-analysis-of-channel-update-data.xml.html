@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Quick analysis of channel_update data</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2019-01-08 05:23:10
-            <br><i>Published on: 2019-01-08T05:23:10+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2019/combined_Quick-analysis-of-channel-update-data.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001803.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Fabrice Drouin has shared detailed information on the data he collected, which includes 17,000 channel IDs and 130,000 different channel updates. On average, each channel has been updated eight times. However, only 18,000 pairs of channel updates carry actual fee and/or HTLC value change, meaning that 85% of the time, information was queried that had previously been received. This can happen in two legitimate cases: when a node is updated too fast or during the weekly refresh of channel_update. To handle this, Fabrice suggests discarding the newer duplicate unless it is more than one week old. Additionally, to avoid requesting duplicates again in future advanced reconstruction schemes, they could remember the latest timestamp of the duplicate. Fabrice also proposes adding a basic checksum that covers fees and HTLC min/max value to channel range queries as this would be a significant improvement. Such a checksum could also be used in inventory-based gossip messages and set reconciliation schemes. However, Rusty questions whether all these measures are necessary.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T16:49:36.307667+00:00 </i></p>
     
     
 

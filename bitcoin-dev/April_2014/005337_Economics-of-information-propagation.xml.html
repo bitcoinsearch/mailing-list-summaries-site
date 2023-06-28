@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Economics of information propagation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mark Friedenbach 2014-04-21 16:00:09
-            <br><i>Published on: 2014-04-21T16:00:09+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2014/combined_Economics-of-information-propagation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005337.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The current system for determining the primacy of a block is based on the time at which the "block" message is received. This can cause issues if a larger block with slow scripts is found before a smaller, empty block. However, headers-first has the option of basing primacy on the time the block header is received, which is much faster to transmit and validate. This means that miners will continue working on the old, known valid parent block until the contents of the larger block are received and processed. The larger block will only become stale if two blocks are found in the extra time it takes for it to propagate the network. Peter Todd argued that mining on just a block header would leave small miners disadvantaged as they would earn no profit while waiting for the information to validate the block and update their UTXO sets. This would result in the same problem as before, where large pools can validate either instantly or more quickly than smaller miners. Although smaller miners can mine on top of block headers and include no transactions and do no validation, this is harmful to the security of Bitcoin.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T20:29:32.366619+00:00 </i></p>
     
     
 

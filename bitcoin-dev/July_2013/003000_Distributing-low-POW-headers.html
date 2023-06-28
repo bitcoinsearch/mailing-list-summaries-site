@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Distributing low POW headers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-07-24 09:42:55
+            <br><i>Published on: 2013-07-24T09:42:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2013/combined_Distributing-low-POW-headers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-July/003000.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests a change to the rules for distinguishing between forks and a BIP. The proposed changes include broadcasting low POW headers by the network, miners using header information to decide on the longest chain, and the advantages of this approach. The proposal also includes distributing low POW headers and determining the longest chain. First block header messages that have more than 1/64 of the standard POW requirements would be forwarded to peers. Each link would get extra credit for headers received, and the POW for a block is equal to POW * (1 + (headers / 16)). If 75% of the miners follow this rule, then the top fork will eventually catch up and win, so it is in the interests of the other 25% to follow the rule too. Even if there isn't complete agreement on headers received, the fork that is getting the most hashing will naturally gain most of the headers, so ties will be broken quickly.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T14:28:11.801711+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

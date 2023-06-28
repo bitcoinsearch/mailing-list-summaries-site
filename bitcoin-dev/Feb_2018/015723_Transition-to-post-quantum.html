@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transition to post-quantum</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tristan Hoy 2018-02-12 21:32:35
+            <br><i>Published on: 2018-02-12T21:32:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2018/combined_Transition-to-post-quantum.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015723.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Tristan Hoy, a Bitcoin researcher, has proposed a strategy to mitigate the potential effects of a post-quantum attack on Bitcoin. Hoy's research focuses on identifying what such an attack would look like and how to prepare for it. Hoy identifies that none of the recommended post-quantum DSAs are scalable and committing to a specific post-quantum DSA would be premature as the field is rapidly advancing. Solution 3 in his draft proposes changing key generation only, which allows balances to be transferred into a post-quantum DSA address space securely. Wallet providers would implement the change. However, Tristan highlights some issues with Tim Ruffing's post-quantum address recovery approach. In a post-quantum world, the second "d" type transaction is completely forgeable, making it vulnerable to front-running. An adversary capable of breaking ECDSA needs only listen for these transactions, obtain "classic_sk," and then use a higher fee or relationship with a miner to turn the original "d" transaction into a double-spend, sending all funds to the adversary. PQ DSA is required to prevent front-running, and no commit-reveal scheme will be secure without one. Moreover, if Tristan's approach is rolled out today, it will effectively double transaction volumes. Solutions 2 and 3 in his article modify the address generation process to solve this problem.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T00:28:58.006147+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

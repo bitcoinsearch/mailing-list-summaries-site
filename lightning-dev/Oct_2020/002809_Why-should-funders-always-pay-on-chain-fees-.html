@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why should funders always pay on-chain fees?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2020-10-06 16:30:31
+            <br><i>Published on: 2020-10-06T16:30:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_Why-should-funders-always-pay-on-chain-fees-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002809.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a thread on the Lightning-dev mailing list, Antoine proposes a model where channel transactions are pre-signed with a minimal relay fee and the adjustment is done by the closer. The channel initiator should not have to pay for channel-closing as it is a liquidity allocation decision. However, a channel closing can be triggered due to a security mechanism like a HTLC to timeout on-chain. A malicious counterparty can easily loop a HTLC forwarding on an honest peer and then not cancel it on time to force the honest counterparty to pay on-chain fees to avoid an offered HTLC not being claimed back on time. Bastien responds that the "funder pays all the commit tx fees" rule exists solely for simplicity, but it becomes questionable as both peers earn value from the channel over time. He suggests that in some cases, fundees should be paying a portion of the commit-tx on-chain fees. Routing nodes may be at risk when they receive HTLCs, so he proposes that nodes pay for the on-chain fees of the HTLCs they offer while they're pending in the commit-tx, regardless of whether they're funder or fundee. Bastien proposes two models: one where the HTLC cost is deduced from the offerer's main output, and another where the total commit-tx fee is tied to the channel usage. In the latter model, if there are no pending HTLCs, the funder pays all the fee, and if there are pending HTLCs, each node pays a proportion of the fee proportional to the number of HTLCs they offered. Bastien believes this model forces the fundee to care about on-chain feerates, which is a healthy incentive. It may create a feedback loop between on-chain feerates and routing fees, which he believes is also a good long-term thing.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:20:53.895129+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

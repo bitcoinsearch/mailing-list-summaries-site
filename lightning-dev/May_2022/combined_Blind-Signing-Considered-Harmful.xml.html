@@ -11,41 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Blind Signing Considered Harmful <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/May_2022/003580_Blind-Signing-Considered-Harmful.xml.html">Blind Signing Considered Harmful</a>
-                        <b>ZmnSCPxj 2022-05-10 00:40:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/May_2022/003579_Blind-Signing-Considered-Harmful.xml.html">Blind Signing Considered Harmful</a>
-                        <b>Devrandom 2022-05-09 19:04:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/May_2022/003581_Blind-Signing-Considered-Harmful.xml.html">Blind Signing Considered Harmful</a>
-                        <b>Devrandom 2022-05-10 08:02:35</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-May/003580.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2022-05-10T00:40:26+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The article discusses the risks associated with blind signers in the context of Lightning network. Blind signers are insecure and vulnerable to several exploits, making them an unreliable option for deployment. To address this issue, the Validating Lightning Signer project has been introduced. It is an open-source Rust library and reference implementation that aims to secure the Lightning ecosystem by performing policy checks to ensure that keys are not misused.ZmnSCPxj and devrandom discuss the requirements for a true validating Lightning signer, which would need to be a Bitcoin node with active mitigation against eclipse attacks, the ability to monitor the blockheight, and the ability to broadcast transactions. The UTXO Oracle(s) were then mentioned as an alternative option with additional properties that improve on a plain Bitcoin node.The topic of broadcast was also addressed, with the intention being to have a disaster recovery procedure in place. Routing nodes were noted as needing to be aware of the on-chain status of incoming channels to avoid an attack scenario where a compromised node lies and tells the signer that the block height is much lower than it really is. The potential exploit of an HTLC being failed and removed on the input before it is removed on the output, leading to a loss of funds, was also discussed.Heartbeats would cease and the operator would manually intervene in this scenario. There is another potential mode where the value of HTLCs in flight is limited, routing is not done, and watchtowers are used instead of the UTXO Oracle component. It was also suggested that UTXO Oracles could be embedded into the network if compact-filters or utreexo roots are committed to in the consensus and SPV-style security is used. However, it is unclear when this might be plausibly deployed.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-04T03:40:08.918395+00:00</i></p>
-    
-
     
 
     <footer>

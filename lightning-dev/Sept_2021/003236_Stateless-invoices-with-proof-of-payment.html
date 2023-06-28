@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Stateless invoices with proof-of-payment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2021-09-21 10:08:06
+            <br><i>Published on: 2021-09-21T10:08:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2021/combined_Stateless-invoices-with-proof-of-payment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003236.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Lightning invoices can be generated without needing to keep any state at all, according to a recent proposal. The conventional approach to generating invoices on a node and storing them together with order details in a database results in the need for protection against unbounded generation of payment requests, which can be achieved through rate limiting. Stateless invoices, on the other hand, do not require storage or memory and can be used for an unlimited amount of invoices. However, two problems arise when payment arrives: the recipient does not know whom or what the payment is for and the recipient does not know the preimage that is needed to settle the htlc(s). To solve these issues, additional custom tlv records can be attached to the htlc to specify additional data for that record in a bolt11 invoice, or an existing invoice description field can be used. An alternative solution is to use a deterministic preimage based on a secret, the payment secret, and other relevant properties. This allows the recipient to derive the same preimage twice: once when the lightning invoice is generated and again when a payment arrives.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:54:52.373252+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

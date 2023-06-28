@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A couple questions about sequence number:</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy Rubin 2015-08-10 18:09:33
-            <br><i>Published on: 2015-08-10T18:09:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2015/combined_A-couple-questions-about-sequence-number-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000107.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the use of sequence numbers in Lightning, a payment channel network built on top of Bitcoin. Mark Friedenbach clarifies that Lightning uses the sequence number field of the transaction format to achieve relative lock-time. BIP 68 specifies a new consensus rule by which the sequence number field can mandate a required minimum age for each input. This allows Lightning to use relative lock-times. A sequence number of MAX_INT confirms on the blockchain in the same block or later as its parent. A sequence number one less than that cannot confirm any earlier than one block after its parent. A sequence number two less than MAX_INT requires two blocks to elapse, etc. Jeremy Rubin asks questions about the use of sequence numbers in Lightning. He queries if someone can better outline what the race conditions are and how it is addressed. Section 9.5 of the paper seems unsatisfactory. Secondly, he points out that using sequence numbers to select the right transaction to include may leak information about how many LN transactions took place. This could make it meterable by external parties, and miners could make the fee for settling proportional to it. He suggests incrementing by a random amount would alleviate the ability to reliably meter. Jorge Timón opines that the number inversion to "preserve the old nSequence semantics" is not worth it. It's less usable and harder to understand. Renaming nSequence to nMaturity and "check sequence verify" to "verify input maturity" may greatly simplify the documentation. However, he believes it may not be the right thread to repeat this.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T19:09:34.389359+00:00 </i></p>
     
     
 

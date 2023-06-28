@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unenforceable fee obligations in multiparty protocols with Taproot inputs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2023-02-08 14:04:16
+            <br><i>Published on: 2023-02-08T14:04:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2023/combined_Unenforceable-fee-obligations-in-multiparty-protocols-with-Taproot-inputs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021458.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On February 7th, 2023, Russell O'Connor notified the bitcoin-dev mailing list that there is a bug in Taproot where the same Tapleaf can be repeated multiple times in the same Taproot. This could lead to different Tapfee rates at different Taplevels. The countermeasure for this issue is to always know the entire Taptree when interacting with someone's Tapspend. Andrew Poelstra later clarified that in Taproot, the tapleaf hash is always covered by the signature, so signatures cannot migrate between tapbranches. The fix for the bug is to sign the entire tapbranch instead of the tapleaf. Michael Folkson pointed out that he wouldn't classify this as a bug unless there was a remedy for it that wasn't included in the Taproot design. He also mentioned that there seems to be a push to find "bugs" and "accidental blowups" in Taproot design currently.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T15:27:23.152071+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

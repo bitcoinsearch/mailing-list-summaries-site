@@ -11,36 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>terminology <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000485_terminology.xml.html">terminology</a>
-                        <b>Rusty Russell 2016-03-10 01:13:58</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2016/000483_terminology.xml.html">terminology</a>
-                        <b>Anthony Towns 2016-03-09 06:48:50</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000485.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2016-03-10T01:13:58+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The conversation revolves around the terminology to be used for a failure mode where a node uses a too tight timeout and ends up paying out an outgoing HTLC but unable to redeem the incoming HTLC. The term "one-sided redemption" was suggested, but it is not punchy enough for a situation where you have screwed up and lost money. One user suggests calling it "avoiding timeout on incoming HTLC when forwarding" or similar. The risks with HTLC timeouts are also discussed in the conversation. HTLCs tend to be chained across the network. If the timing is too close, there is a risk of "one-sided redemption", where the R preimage received from an offered HTLC is too late to be used for an incoming HTLC, leaving the node with unexpected liability.A node must estimate the deadline for successful redemption for each HTLC it offers. A node must not offer an HTLC after this deadline and must fail the connection if an HTLC which it offered is in either node's current commitment transaction past this deadline. The lack of an obvious abbreviation for the revocation preimage has bugged one of the users. He suggests saying we "void" the old commitment, and use "V" as the symbol for the hash/signature/whatever.</p>
-        <hr>
-        <p><i>Updated on: 2023-05-23T23:01:02.677780+00:00</i></p>
-    
-
     
 
     <footer>

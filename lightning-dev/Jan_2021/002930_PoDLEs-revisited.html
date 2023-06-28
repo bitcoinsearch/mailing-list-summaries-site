@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PoDLEs revisited</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-01-05 08:38:19
+            <br><i>Published on: 2021-01-05T08:38:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2021/combined_PoDLEs-revisited.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002930.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The article discusses a new protocol, which is simpler than the PoDLE protocol and achieves similar properties. This protocol involves using signaling transactions whenever the initiator adds an input in the interactive tx building. The peer checks that none of the inputs added by the initiator are in their mempool/chain before revealing any of their inputs. However, if the initiator aborts the protocol after learning one of the peer's inputs, the peer broadcasts one of the signaling transactions. The author suggests that each added input should add a one-input one-output signaling transaction to mitigate risks. The article compares the advantages of this protocol over the PoDLE proposal. The preference of protocol depends on how you weigh the importance of a malicious non-initiating peer griefing the initiator. Additionally, the article highlights that Layer-2 is full of opportunities to grief your counterparty, and PoDLEs have very weak griefing in the form of unfairly adding your UTXO to the blacklist but comes at the cost of complexity and a few difficult to answer questions. The author thinks that the simplicity of signaling transactions may be worth the extra griefing capabilities it offers a malicious peer given they are hardly as bad as the griefing capabilities they will have if you open a channel to them! The article concludes with a reminder that a node will prefer to initiate channels with existing nodes that have high uptime, good connectivity and capacity, and long-lived channels.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:35:23.751508+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

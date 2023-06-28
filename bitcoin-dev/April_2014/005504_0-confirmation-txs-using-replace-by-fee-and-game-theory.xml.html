@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>0 confirmation txs using replace-by-fee and game theory</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jorge Timón 2014-04-24 10:48:54
-            <br><i>Published on: 2014-04-24T10:48:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2014/combined_0-confirmation-txs-using-replace-by-fee-and-game-theory.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005504.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A solution to the problem of 0 confirmation transactions has been proposed using game theory and most miners implementing replace-by-fee and child-pays-for-parent. The general idea is that when Alice wants to buy something cheaper than a car, say a smartphone for $200 in BTC, Bob asks her to pay him $400 in BTC. Alice signs a tx with 400 and no fee with her old phone and sends it to Bob rather than the network. Bob creates a child transaction keeping $200 and giving back $199.9 (0.1 USD fee) to Alice. However, Alice double-spends $399.8 to herself (0.2 fee), so Bob double-spends the child: $200 to Bob, $199 to Alice (1 USD fee). When Alice stubbornly spends $398 to herself (2 USD fee), Bob double-spends the child: $400 in fees. This is similar to the general game theory "stag hunt" case. The game has two Nash equilibria, but cooperation is Pareto efficient. Replace-by-fee and child-pays-for-parent cannot be prohibited by a protocol rule. Miners are expected to implement these policies eventually because it is more rational for them to prioritize transactions. Finally, this solution would make 0-confirmation transactions possible as described in this post.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T21:10:19.659501+00:00 </i></p>
     
     
 

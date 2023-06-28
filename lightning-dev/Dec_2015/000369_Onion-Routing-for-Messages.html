@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onion-Routing for Messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2015-12-08 17:13:22
+            <br><i>Published on: 2015-12-08T17:13:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2015/combined_Onion-Routing-for-Messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-December/000369.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author discusses a design for a system to ensure privacy in payment transactions. The proposed system uses Onion Routing, which routes payments over a rendezvous point and encrypts them using an onion scheme. The sender and receiver of the payment would not learn any additional information about each other by default. If A wants to make a payment to E, E will choose a RP C and create an onion object which will allow C to route the payment further towards E. A will not know which node is receiving the payment, A only knows that it should route the payments towards C. The author explains that they have to decide whether the onion-routing should be one-time and one-directional or not. In the previous design, the onion objects were filled with zeros, making it impossible for the receiver to send a message back to the sender. Therefore, the payment request was one-time only. However, the author proposes that it would be possible to have a message system integrated where each node could encrypt and append the pubkey of the node it received the object from together with the ephemeral key used initially. When the receiver wants to send a message back, he encrypts it using some designated ephemeral key included by the sender and uses the onion object to send it back. This means that a payment request is just a way of contacting the receiver to obtain information about making a payment.The author also highlights some potential issues with this design, such as a possible security risk if someone obtains the onion object and 'hunts down' the sender by targeting the nodes consisting of the route one by one. Additionally, it is difficult to provide reasonable DoS protection against nodes spamming the network with unnecessary messages. The author suggests assigning super tiny payments to the process of sending a message to counter spam, but it might be difficult to implement.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:46:44.095628+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

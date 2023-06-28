@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Sats From the Eltoo Ratchet</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Rubin 2022-04-30 19:44:19
+            <br><i>Published on: 2022-04-30T19:44:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003572.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jeremy Rubin has proposed an idea to improve Eltoo like constructions by making the contract "optically isolated". The proposal suggests creating two outputs per channel, one for Amount: A, Key: MuSig(A,B) and another for Amount: Dust, Key: Musig(A', B'), which will sign ratchet updates. The Tx where {F, R using path with OP_CHECKINPUT} -> {A's amount, B's amount} must be signed, but F's signature must commit to R's script for Ratchet with N, not R's TXID. The proposal aims to provide various properties such as privacy, reuse, and unlinked funds from being a channel until the end of the contested close period. It also allows multiple ratchet outputs to drive multiple channel balances and enables splicing in funds indirectly into that ratchet without linking the funds on-chain. The author acknowledges that the proposal is handwave WRT the sighash flags/opcodes required, but he is merely here to inspire and figured the idea of abstracting the ratchet was novel.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-01T19:04:57.789661+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

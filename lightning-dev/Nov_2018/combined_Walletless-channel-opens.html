@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Walletless channel opens <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001539_Walletless-channel-opens.html">Walletless channel opens</a>
+                        <b>ZmnSCPxj 2018-11-07 22:30:12</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001556_Walletless-channel-opens.html">Walletless channel opens</a>
+                        <b>David A. Harding 2018-11-10 21:40:30</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001561_Walletless-channel-opens.html">Walletless channel opens</a>
+                        <b>ZmnSCPxj 2018-11-12 00:39:56</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001539.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-11-07T22:30:12+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>ZmnSCPxj, a member of the Lightning Development Summit 2018, discussed that every Lightning implementation needs to have its own onchain wallet implementation. SIGHASH_NOINPUT would allow Lightning implementations to be "walletless". The first pair of commitment transactions will need to be signed with SIGHASH_NOINPUT, then the funding transaction can be created using a normal wallet. This would reduce the number of transactions needed when users prefer to use a specific wallet implementation that may have features unavailable in the Lightning implementation. Additionally, this would reduce implementation complexity for Lightning implementations, as there would only need to trace status (unconfirmed/confirmed, spent/unspent) specific transaction outputs, not scan the blockchain for specific `scriptPubKey`. However, Dave Harding raised a concern that committing to the transaction fees for various delayed-broadcast transactions could lead to committing to an undesirable high feerate. Therefore, better ways to integrate onchain wallets with protocols that delay between signing and broadcast should be considered instead.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-25T15:39:05.613227+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV dramatically improves DLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Rubin 2022-01-28 19:38:29
+            <br><i>Published on: 2022-01-28T19:38:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2022/combined_CTV-dramatically-improves-DLCs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019831.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jeremy Rubin proposes a way to make the close portion of a DLC be an "optimistic" execution with a choice of justice scheme, enabling closing a DLC somewhat securely without exposing the oracles on-chain at all. Assuming honest oracles, the only cost of this mechanism over previous is that you have to do a script path spend (but it can be a top-level branch, since it's the "most likely" one). For every DLC branch add two branches allowing Alice or Bob to "lock in" a redemption of the contract that becomes spendable by them after CET-hash-* should include a nLockTime/nSequence such that it is at the same time as the attestation points should be known. Justice with punishment seems to be the better option since T is actively choosing this resolution (the CTV transition is signed), but justice with no punishment might be better if one thinks the oracles might collude to steal. One interesting question is if the justice transactions can be "compressed" to be fewer for a given outcome. The email also talks about added benefits/features of DLCs with CTV. Firstly, CTV enables a "trustless timeout" branch, whereby one can have a failover claim that returns funds to both sides. Secondly, CTV DLCs are non-interactive asynchronously third-party unilaterally creatable, which allows for use cases like pay-to-DLC addresses. Thirdly, CTV DLCs can be composed in interesting ways, opening up many exciting types of instruments. Fourthly, this satisfies Jeremy's request to make DLCs expressible as Sapio contracts. Lastly, an additional performance improvement can be had for iterative DLCs in Lightning where one might trade over a fixed set of attestation points with variable payout curves.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T15:23:37.289118+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,36 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Ask First, Shoot (PTLC/HTLC) Later <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Oct_2021/003331_Ask-First-Shoot-PTLC-HTLC-Later.xml.html">Ask First, Shoot (PTLC/HTLC) Later</a>
-                        <b>Joost Jager 2021-10-21 07:28:42</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2021/003256_Ask-First-Shoot-PTLC-HTLC-Later.xml.html">Ask First, Shoot (PTLC/HTLC) Later</a>
-                        <b>ZmnSCPxj 2021-09-29 03:40:01</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003331.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2021-10-21T07:28:42+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>A proposal has been made to improve the payment latency of the Lightning Network by asking first before shooting an HTLC. Currently, HTLCs are shot first and questions are asked later, which results in multiple round trips per hop in case of a failure along a route. The proposed method replaces this with a single large round trip from the payer to the failure point. This would reduce failures due to a node or channel failing along the way, making it more acceptable to charge for failed actual HTLCs. However, concerns have been raised that this approach may become a potential DoS vector as any node could trigger network activity by asking random stuff of random nodes. To mitigate this, the proposal suggests making generating an onion costly but validating and decrypting it cheap. Additionally, nodes could upgrade to accept "no" from any node along the path, but only accepting "yes" from the actual payee. Another suggestion was to let senders attach a random identifier to a probe. For multi-part probes, each probe would carry the same identifier. Routing nodes would deduct the outstanding probe amounts from the available balance, but only for probes within the same group (same id). This way, each probe(group) is isolated from everything else that is going on. The proposal could potentially improve payment latency, especially as multipath payments become more common. However, implementing it requires a whole-network upgrade, and intermediate nodes must upgrade as well.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-04T02:24:23.116203+00:00</i></p>
-    
-
     
 
     <footer>

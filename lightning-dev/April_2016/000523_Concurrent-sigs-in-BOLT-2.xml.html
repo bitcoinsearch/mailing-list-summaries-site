@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Concurrent sigs in BOLT #2</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Fabrice Drouin 2016-04-28 10:39:51
-            <br><i>Published on: 2016-04-28T10:39:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2016/combined_Concurrent-sigs-in-BOLT-2.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-April/000523.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange, Rusty Russell and Pierre discussed how to handle concurrent signatures. Pierre suggested using an ordering system to resolve conflicts, while Russell explained a simple rule-based approach that involves processing packets in order, updating states when sending or receiving something, and signing a commit tx based on the other side's state at the time. The diagram provided demonstrates the modification of state changes made by nodes during the process, and shows that outstanding changes are acknowledged by sending another SIG, which modifies the other state. Fabrice raised the question of what would happen if both parties decide to send each other a new HTLC instead of immediately sending a new SIG, and whether it could result in an infinite loop where both parties never converge on a commitment tx.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T23:27:32.935242+00:00 </i></p>
     
     
 

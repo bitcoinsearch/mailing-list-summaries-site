@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>URI scheme with optional bech32 address</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Federico Tenga 2018-07-24 12:05:27
+            <br><i>Published on: 2018-07-24T12:05:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_URI-scheme-with-optional-bech32-address.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016265.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A team is working on a walleting application that generates a bech32 address when receiving from a bech32 compatible wallet and a P2WPKH-nested-in-P2SH address when receiving for a legacy wallet. However, it is impossible for the payee to know in advance the technological capabilities of the payer. To solve this issue, the team proposed encoding both addresses in a Bitcoin URI, with the bech32 address being ignored by legacy wallets. The assumption is that wallets using this scheme will monitor incoming transactions on both addresses. To keep compatibility with BIP21, the field of the URI can be used for the P2WPKH-nested-in-P2SH address, and a new field can be used to encode the bech32 address. The team did not find any proposals addressing the same issue and is asking if anyone has already proposed something similar and if there are any major drawbacks to their proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:31:17.414290+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

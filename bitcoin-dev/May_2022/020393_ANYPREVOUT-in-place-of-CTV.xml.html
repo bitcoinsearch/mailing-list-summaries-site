@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>ANYPREVOUT in place of CTV</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Nadav Ivgi 2022-05-01 14:25:42
-            <br><i>Published on: 2022-05-01T14:25:42+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2022/combined_ANYPREVOUT-in-place-of-CTV.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020393.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the use of BIP118 in place of or before using BIP119. The author suggests committing to the number of inputs instead of committing to `sha_sequences` to ensure txid stability for single input transactions, as it allows inputs to set their own nSequence. The author also suggests not covering `sha_amounts` in the message hash or making it optional behind a flag as covering it can result in unusable covenant-encumbered spend paths due to sending incorrect amounts, and allowing additional inputs can fee-bump the covenant spending transaction. The APO/APOAS already commits to the nSequence of the current input, which guarantees that the scriptSig of the covenant input is empty. The author believes that APO-AS covenants can emulate CTV just fine with its "ANYONECANPAY" behavior made optional, and that APO-AS covers flagship use cases like vaults. The author proposes that BIP118 is a soft fork candidate that could benefit more Bitcoin users than BIP119.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T19:19:04.487701+00:00 </i></p>
     
     
 

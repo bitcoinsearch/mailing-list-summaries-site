@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70/71 issue, RFD</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-01-26 22:00:41
+            <br><i>Published on: 2014-01-26T22:00:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_BIP70-71-issue-RFD.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004210.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This email thread discusses the issue of using BIP70/71 (payment protocol) in face-to-face payments. The problem encountered is that protobufs are not self-delimiting, meaning that if one is reading from an undelimited stream, they may read endlessly because they don't know how much to read. Current BIP70 implementations work because they're either reading from a file or from an HTTP resource that sets the Content-Length header. However, the Content-Length header is optional and many types of streams don't have this built-in delimiting mechanism. The Java protobuf API solves this by offering delimited I/O, which writes the size of the message as a varint before writing the data. This leading varint is an incompatible change and would need to be added to the spec. The issue was encountered specifically with PaymentMessage and PaymentACK, but it might be a good idea to apply this to all messages if any. It's open for discussion.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:47:18.110070+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

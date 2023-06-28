@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Consensus-enforced transaction replacement via sequence numbers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2015-05-27 01:50:29
+            <br><i>Published on: 2015-05-27T01:50:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2015/combined_Consensus-enforced-transaction-replacement-via-sequence-numbers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008283.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Sequence numbers were originally created as a means of transaction replacement for multi-party transaction construction, such as micropayment channels. However, the lack of enforcement of the rule that miners include the most recent transaction in their blocks makes it impossible to rely on a transaction replacement policy. This issue can be resolved by giving sequence numbers new consensus-enforced semantics as a relative lock-time. In this way, one may construct bidirectional micropayment channels where each change of direction increments sequence numbers to make the transaction valid prior to any previously exchanged transactions. Additionally, this enables the implementation of the discussed relative-form of CHECKLOCKTIMEVERIFY through checking transaction data only and not requiring contextual information such as block height or timestamp. An example implementation of this concept is available on Github as a policy change to the mempool processing of Bitcoin Core.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T21:40:46.839330+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

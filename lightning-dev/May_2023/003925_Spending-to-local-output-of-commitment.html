@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Spending `to_local` output of commitment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Benjamin Weintraub 2023-05-02 22:00:44
+            <br><i>Published on: 2023-05-02T22:00:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2023/combined_Spending-to-local-output-of-commitment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003925.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread started with Benjamin Weintraub, who was testing failure scenarios in LND, and encountered an issue after force closing the channel using `lncli closechannel --force ....` He was able to see the commitment transaction in the mempool but not the subsequent HTLC/to_local spend. He asked for suggestions on how to generate the transaction that spends the to_local and HTLC output, ideally with lnd. Ken Sedgwick replied to his query by directing him to the necessary witness described in this link: <a href="https://github.com/lightning/bolts/blob/master/03-transactions.md">https://github.com/lightning/bolts/blob/master/03-transactions.md</a>#to_local-output. Benjamin further asked about the kind of witness script needed to redeem the to_local funds if a peer force closes a channel by sending a commitment to the blockchain. He mentioned that he had committed a specific transaction on a local simnet bitcoin blockchain and wanted to spend vout[2]. The transaction details were shared in the email thread.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T12:45:15.727996+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

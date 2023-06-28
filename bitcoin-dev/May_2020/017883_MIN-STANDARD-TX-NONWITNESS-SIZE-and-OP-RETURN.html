@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>MIN_STANDARD_TX_NONWITNESS_SIZE and OP_RETURN</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2020-05-23 14:49:03
+            <br><i>Published on: 2020-05-23T14:49:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_MIN-STANDARD-TX-NONWITNESS-SIZE-and-OP-RETURN.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017883.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a mailing list, Thomas asked about his attempt to CPFP (Child Pays For Parent) a transaction using OP_RETURN. He explained that the remaining output value would have been lower than the dust threshold. The scriptPubkey of the output was OP_RETURN + OP_0, and there was a single p2wsh input. However, the result is a 60 bytes transaction (without witness), which is lower than MIN_STANDARD_TX_NONWITNESS_SIZE, which is equal to 82 bytes. Thomas was curious about why the value of MIN_STANDARD_TX_NONWITNESS_SIZE is so high and whether it would make sense to lower it to 60.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:46:39.032739+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

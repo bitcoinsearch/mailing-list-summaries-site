@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Merkleize All The Things</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2023-05-26 11:45:17
+            <br><i>Published on: 2023-05-26T11:45:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_Merkleize-All-The-Things.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021719.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Johan Torås Halseth has implemented a proof-of-concept of OP_CICV and OP_COCV in btcd which, along with OP_CAT, enables interesting use cases. One such use case is CoinPools, where the opcodes allow verification of the legitimacy of a transaction and determine whether it permits a peer to exit with a portion of pooled funds. By committing the taproot as part of the data itself, Johan found that reusing the same taproot for the output (recursively) would be quite common. To make fully functioning CoinPools, functionality similar to OP_MERKLESUB is required.Salvatore Ingala suggests a more efficient alternative to naively hashing all the data twice during script execution. A Merkle tree commits to an entire vector that can be indexed positionally, making it versatile and easier to handle than more complex constructions like accumulators with exclusion proofs. A Merkle proof for 2^7 = 128 participants requires about 8 hashes, while 2^10 = 1024 should bring that to the ballpark of 350 bytes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T03:05:17.326219+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Design for a CoinSwap implementation for massively improving Bitcoin privacy and fungibility</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Belcher 2020-06-10 11:15:03
+            <br><i>Published on: 2020-06-10T11:15:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2020/combined_Design-for-a-CoinSwap-implementation-for-massively-improving-Bitcoin-privacy-and-fungibility.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017955.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange between Lee Chiffre and Bitcoin developer, Chris Belcher, scalability and privacy concerns were raised. Lee expressed his concern that bitcoin's large transaction sizes to achieve acceptable privacy on a distributed financial network were just as bad as Monero's. He also discussed the need for trustless coinswaps and how such a system could be developed without scalability issues. In response, Chris shared his thoughts on the issue, stating that Monero's full nodes can't know when a TXO has been spent, so pruning is impossible in Monero and the list of TXOs perpetually grows, unlike in bitcoin where full nodes know if a UTXO has been spent and can delete it in pruning. Chris explained that he has been careful to make sure his proposed CoinSwap system doesn't break pruning or other resource-saving features, making bitcoin-with-CoinSwap's scalability much better than Monero's. He also highlighted the problems with decoys and how CoinSwap improves privacy in a similar way to Lightning by moving information off-chain. Chris suggested that even if only 5% of transactions were CoinSwaps, this would destroy the transaction graph heuristic and common-input-ownership heuristic, improving users' privacy. Chris also demonstrated how CoinSwaps could be used as payment, giving an example of Alice depositing 5 BTC into her exchange account using 1-hop CoinSwap. He emphasized that CoinSwaps are still cheaper than Equal-Output Coinjoins, which are approximately 12 times bigger than regular bitcoin transactions. Finally, he noted that blockchains don't scale, and it's widely expected that most day-to-day bitcoin transactions will happen off-chain on something like the Lightning network, which also brings us privacy.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:53:51.827946+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning Pool: A Non-Custodial Channel Lease Marketplace</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2020-11-06 02:53:09
+            <br><i>Published on: 2020-11-06T02:53:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2020/combined_Lightning-Pool-A-Non-Custodial-Channel-Lease-Marketplace.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002877.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer responds to a set of questions regarding Loop and Pool client/server protocol, channel leasing, and orchestrator functionality. While long-form documentation on the client/server protocol has not yet been written, the current client/server protocol can be found in a set of protobufs listed at the provided link. The writer cautions that the protocol is not yet considered "stable" with the current release branded as an "alpha" release, but it is possible to use proper upgrade mechanisms to prevent breaking changes in the API. In regards to channel leasing, the writer agrees with the idea that the purchaser of a lease should be able to receive a fee rate guarantee along with channel lifetime enforcement. The protocol may need to be extended to allow nodes to advertise certain pair-wise channel updates that are only valid if both sides sign off on each other's advertisements. The purchaser of a lease also needs to consider effective utilization of the leased capital. The writer plans to extend the current "security analysis" section to cover these aspects and other considerations such as the interaction of Lifted UTXOs timeouts and batch confirmation/proposal in the context of Shadowchains. Regarding orchestrator functionality, the writer notes that if all onchain UTXOs were signed with n-of-n, all n participants would cooperatively act as an orchestrator. However, moving to an n-of-n structure between all participants runs into scalability, coordination, and availability issues. The existence of the orchestrator serves to reduce the availability requirements of the participants. With the addition of a merkle-tree/MMR/SMT over all chain state committed to in each block, an offline participant would still be able to "fully validate" all operations that happened while they were away. This structure could also be used to authenticate lease rate data in the context of CLM/Pool. The existence of the orchestrator allows Pool participants to make other tradeoffs given its slightly elevated signing position. Participants may be able to instantly start using any channels created via a lease as double spending the channel output itself requires coordination of all the participants as well as the orchestrator since all accounts are time lock encumbered. The writer suggests strengthening the incentives to make "safe zero conf channel lease usage" work by creating an on-chain bond that's threaded through with each execution auction batch.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T14:34:59.869828+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

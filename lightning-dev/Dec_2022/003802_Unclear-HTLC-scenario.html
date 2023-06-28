@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unclear HTLC scenario</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Benjamin Weintraub 2022-12-13 14:51:17
+            <br><i>Published on: 2022-12-13T14:51:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2022/combined_Unclear-HTLC-scenario.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003802.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a question posted to the mailing list, Ben asked about how update_fail_htlcs are handled in a scenario where a node forwards an HTLC along a channel that does not have enough funds to support a payment of that size. He was confused by a line in BOLT #2 which stated that until the corresponding HTLC is irrevocably committed in both sides' commitment transactions, nodes must not send an update_fulfill_htlc, update_fail_htlc, or update_fail_malformed_htlc. Ben wondered if this meant that even though the channel cannot support the payment, the nodes still need to commit to it. He assumed that this interpretation was not correct and asked for clarification on when it's okay for a node to send an update_fail_htlc.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T11:16:48.374577+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

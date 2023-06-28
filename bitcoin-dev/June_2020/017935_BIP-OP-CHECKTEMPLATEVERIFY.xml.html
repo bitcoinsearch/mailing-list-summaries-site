@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP OP_CHECKTEMPLATEVERIFY</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy 2020-06-07 22:45:16
-            <br><i>Published on: 2020-06-07T22:45:16+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2020/combined_BIP-OP-CHECKTEMPLATEVERIFY.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017935.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Recently, there have been some refinements to the BIP draft for OP_CHECKTEMPLATEVERIFY and the name has been changed. The opcode specification has also been changed to use the argument off of the stack with a primitive constexpr/literal tracker rather than script lookahead. It permits future soft-fork updates to loosen or remove "constexpr" restrictions. RPC functions are under preliminary development, to aid in testing and evaluation of OP_CHECKTEMPLATEVERIFY. In terms of today's scenario, exchanges can do this as a CTV txn that is one initial confirmation to a single output, and then that output expands to either all the payments in the batch, or to a histogram of single-layer CTVs based on priority/amount being spent. Exchanges pay reasonable fees for the transactions so it can expect to at least get to the bottom range of the mempool for children, and top of the mempool for the parent. Business wallets (like exchanges) are able to credit deposits from CTV trees without requiring full expansion. For long-dated futures, most likely the desirable radix for a tree is something like 4 or 5 which minimizes the amount of work on an individual basis and mempool broadcast still should work, but it's possible that for privacy reasons it's preferred to not broadcast through mempool. It's also possible that all payouts are into non-interactive lightning channels with N-of-N taproot at each layer. Eventually, we'll converge on a non-destructive way of adding fees and will resolve some really difficult challenges we face with application-DoS (pinning and other attacks) in the mempool beyond CTV.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T22:31:09.348711+00:00 </i></p>
     
     
 

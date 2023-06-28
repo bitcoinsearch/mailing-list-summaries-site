@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalised Replay Protection for Future Hard Forks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2017-11-13 10:03:04
+            <br><i>Published on: 2017-11-13T10:03:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Generalised-Replay-Protection-for-Future-Hard-Forks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015280.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the use of `nForkId` as a generic replay protection scheme to protect old transactions on multiple chains. Ad hoc schemes that break old transactions on one of the chains are not desirable, hence it's better to implement a generic scheme in advance. However, users need to be aware that `nForkId=0` transactions would be valid not only on future forks but also on past forks, which could potentially create minor pitfalls for them. When using `nForkId`, it's essential to protect the funding transaction to avoid replay attacks on past forks by setting `nForkId>=1`. For commitment transactions, `nForkId=0` can be used, making it valid on all chains, but users should note that the parent transaction exists only on two chains, the original one and the forked one.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:03:14.556496+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

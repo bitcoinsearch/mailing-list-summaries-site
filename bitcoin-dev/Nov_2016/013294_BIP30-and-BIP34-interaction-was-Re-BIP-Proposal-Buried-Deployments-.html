@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP30 and BIP34 interaction (was Re: [BIP Proposal] Buried Deployments)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2016-11-17 00:31:02
+            <br><i>Published on: 2016-11-17T00:31:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2016/combined_BIP30-and-BIP34-interaction-was-Re-BIP-Proposal-Buried-Deployments-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-November/013294.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, Eric Voskuil mentioned that the only way for two transactions to have the same txid is if their parents are identical. Coinbases, which have no parents, used to allow for the possibility of identical transactions, but duplicate outputs weren't possible in the database, so the later coinbase transaction overwrote the earlier one. This happened for two coinbases, which is what exceptions are for. However, neither of those coinbases were spent before the overwrite happened, and all future activate coinbase transactions will have a unique hash and therefore different txids. While there may not be an explicit rule mandating that txids be unique, the rules guarantee it unless the hash function is broken.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T20:36:01.392339+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

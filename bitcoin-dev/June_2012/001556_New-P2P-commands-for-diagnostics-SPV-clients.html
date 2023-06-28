@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New P2P commands for diagnostics, SPV clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Amir Taaki 2012-06-15 18:42:32
+            <br><i>Published on: 2012-06-15T18:42:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_New-P2P-commands-for-diagnostics-SPV-clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001556.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mike Hearn, a Bitcoin developer, suggested adding three steps to enhance the block propagation process in June 2012. First, he suggested adding the mempool command so that nodes synchronize their mempools on startup. Second, if protocol version is greater than or equal to X, the "block" message consists of a header + num transactions + vector instead of the full transactions themselves. Upon receiving such a block, each node goes to see which transactions they're missing from the mempool and request them with getdata. Once all transactions in the block message are in memory, the block is assembled and verified as per normal. This should speed up block propagation, and miners have an incentive to upgrade because it should reduce wasted work. Third, he suggested introducing a new message called getmerkletx that takes a vector and returns a merkletx message for each requested transaction. The filtering commands are added so that the block message now only lists transaction hashes that match the filter which can then be requested with getmerkletx. Matt's point that a branch-per-transaction may duplicate data is well-made, but Mike suspects a format that tries to fix this would be much more complicated. In conclusion, Mike proposed a few ways to improve Bitcoin's block propagation process, which included adding the mempool command, changing the "block" message, and introducing getmerkletx to filter transaction hashes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T05:01:19.335144+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,51 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Add support for proxying p2p connections to/from LND <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2022/003681_Proposal-Add-support-for-proxying-p2p-connections-to-from-LND.xml.html">Proposal: Add support for proxying p2p connections to/from LND</a>
-                        <b>Olaoluwa Osuntokun 2022-09-02 00:37:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2022/003682_Proposal-Add-support-for-proxying-p2p-connections-to-from-LND.xml.html">Proposal: Add support for proxying p2p connections to/from LND</a>
-                        <b>Antoine Riard 2022-09-02 00:47:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2022/003684_Proposal-Add-support-for-proxying-p2p-connections-to-from-LND.xml.html">Proposal: Add support for proxying p2p connections to/from LND</a>
-                        <b>Pierre 2022-09-03 13:04:22</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2022/003683_Proposal-Add-support-for-proxying-p2p-connections-to-from-LND.xml.html">Proposal: Add support for proxying p2p connections to/from LND</a>
-                        <b>Pierre 2022-09-03 13:09:15</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Sept_2022/003679_Proposal-Add-support-for-proxying-p2p-connections-to-from-LND.xml.html">Proposal: Add support for proxying p2p connections to/from LND</a>
-                        <b>Alex Akselrod 2022-09-01 17:56:04</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003681.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2022-09-02T00:37:14+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>A proposal has been made to separate peer communication of large Lightning Network Deployments (LND) into a separate process in order to reduce the attack area of the main node process. This would involve moving LN implementation architecture from a single, monolithic process towards a collection of processes that replicate and distribute critical components of the LN active defense security model. The aim is to guarantee redundant access to the chain view, enforce sandboxing access between processes, and monitor data flow to react on anomalies, making it easier for infrastructure to survive strong attacks. NYDIG is exploring this proposal, and a draft PR has been created on Github to demonstrate its core idea. NYDIG's Alex Akselrod proposed the separation of peer communication into a separate process because LND currently verifies the identity of external untrusted peers during the noise handshake before enforcing any potential key-based allow lists. To reduce the attack surface of the main node process, he suggests multiplexing connections over a single network connection initiated from the node to the proxy. Pierre-Marie Padiou from ACINQ also commented that their implementation was quite similar to eclair's cluster mode, which aimed to reduce the attack surface while improving scalability. Their implementation involves having multiple instances of a proxy that can be adjusted without downtime. Outgoing connections are initiated by the proxy, and incoming connections from Tor are directed to the proxy. A separate key hierarchy is introduced for channel management, and they also considered implementing a "lockdown mode" where the front only allows incoming connections from known peers that already have a channel.The proposal comes in response to scenarios where an adversary targets high-value "LiFi" infrastructure, such as a nation-state sponsored hacking-group with strong capabilities. They could launch various attacks, including time-dilation attacks, pinning attacks, and targeting pre-0.24 Bitcoin Core full-nodes. The LDK-side has been working on many security/safety hardening, including external signing, replicated chain monitoring, dynamic fee-bumping of time-sensitive transactions, and various attack vectors mitigations. They are also looking forward to collaborating with the wider Lightning community on reusable security modules across implementations and wished for "fix-the-annoying-holes" changes in Bitcoin Core.Alex Akselrod seeks early feedback on the direction of this proposal and plans to build it into a fully working feature if it proves interesting.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-04T04:04:17.564165+00:00</i></p>
-    
-
     
 
     <footer>

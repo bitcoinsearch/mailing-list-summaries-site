@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Questions on SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tomas 2017-11-13 09:38:41
+            <br><i>Published on: 2017-11-13T09:38:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2017/combined_Questions-on-SIGHASH-NOINPUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000780.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Rusty Russell and Tomas, malleation was identified as a problem for every commitment transaction. HTLC transactions are used to address this issue. SIGHASH_NOINPUT could also be used to work around malleation by allowing updates to dependent transactions, but separate keys on every output are needed to prevent transactions from being connected to the wrong outputs. Rusty Russell mentioned that the current specification already ensures that every key is only used once, cutting the number of updates down by about a factor of 2 under typical use, more under weird conditions. However, SIGHASH_NOINPUT is dangerous if keys are reused at all, so it should not be done. Tomas asked if the prescribed key derivation algorithm ensures uniqueness, and queried under what circumstances the keys could be reused.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T02:49:58.959101+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

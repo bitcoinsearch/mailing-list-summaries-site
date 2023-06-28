@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP39 word list</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Brooks Boyd 2013-11-02 04:31:33
+            <br><i>Published on: 2013-11-02T04:31:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2013/combined_BIP39-word-list.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003507.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin Improvement Proposal (BIP) is being discussed, specifically the use of similar characters in the wordlist. While culling words from the list based on similarity can help validate input, it does not necessarily help the user if they mis-translate a word. Brooks Boyd suggests including "words that are so similar to each other that we only kept one of them" and having them all refer to the same number, allowing a translation program to fix bad input. This could be implemented by having multiple words on a single line, with the first word being the "primary" or "real" word, and the other similar words included for assistance. However, this could become confusing if every number had a dozen variations, so the standard would need to be clear. Marek suggests a simpler solution: when a user types a word that isn't in the wordlist, the application may try to use a mapping of similar characters to find a combination which actually is in the mapping. For example, if a user types "ear", the application can calculate combinations of possible characters based on the similarity matrix. The user can then select only those combinations which are actually presented in the wordlist. Marek believes this feature does not need to be standardized directly into BIP, but it is just nice to have. Finally, Slush has pushed an updated wordlist which is filtered to similar characters taken from a matrix. This includes 36 total possibilities, only to cull it back to 2, in an example given by MidnightLightning. The current wordlist is open for review and comments.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T17:37:33.666303+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

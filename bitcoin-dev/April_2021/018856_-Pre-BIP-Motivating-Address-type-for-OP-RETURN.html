@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[Pre-BIP] Motivating Address type for OP_RETURN</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Zac Greenwood 2021-04-24 23:37:56
+            <br><i>Published on: 2021-04-24T23:37:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_-Pre-BIP-Motivating-Address-type-for-OP-RETURN.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018856.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list has turned to the idea of introducing a non-transaction data structure that allows for storing data on-chain while maximizing payload size versus on-chain size. The proposal suggests ensuring that using such data structure is almost as expensive in use per payload-byte as the next-cheapest alternative, which currently is using OP_RETURN with the help of weight units. The conversation also addresses concerns around the 10,000-byte limit applied when EvalScript is run and abuse of bech32m addressed outputs. The benefits of OP_RETURN include more data allowed in scriptSig (up to 80 bytes) versus 40 bytes for a BIP141 payload and exemption from the dust limit. However, there are also concerns over the potential for block chain graffiti. The conversation includes a demonstration of creating an 11,000 byte OP_RETURN on regtest.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:21:32.506378+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

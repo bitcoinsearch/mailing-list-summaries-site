@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Squashing redundant tx data in blocks on the wire</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2014-07-31 23:18:38
+            <br><i>Published on: 2014-07-31T23:18:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Squashing-redundant-tx-data-in-blocks-on-the-wire.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006395.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Kaz Wesley and others, the issue of filling in missing transactions was discussed. Kaz Wesley questioned the need for solving this problem since the protocol already involves exchanging the necessary information to determine what a peer is missing. However, there are concerns about false positives and false negatives, which could occur when dealing with more than one peer. Additionally, a conservative rule may need to be implemented to avoid creating huge storage requirements.It was suggested that channel memory sparseblocks could achieve most of the possible bandwidth savings, and FEC-based mempool synchronization could be implemented to reset the channel memory to the mutual mempool state each time mempool differences are exchanged. This would provide benefits similar to those of FEC-based block forwarding. However, there is a benefit to using FEC at block forwarding time- minimizing latency in the face of multiple peers. Despite this, it was agreed that implementing something simple first would be the best course of action.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:03:44.128029+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

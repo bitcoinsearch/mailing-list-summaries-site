@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Liquidity griefing for 0-conf dual-funded txs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2023-05-07 22:54:50
-            <br><i>Published on: 2023-05-07T22:54:50+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/May_2023/combined_Liquidity-griefing-for-0-conf-dual-funded-txs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003931.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The message discusses the safety of dual-funded 0-conf transactions. The author suggests that such transactions can be made safe if the initiator uses swap-in-potentiam addresses with the acceptor. If the initiator stalls, the acceptor can retaliate by refusing to sign the swap-in-potentiam UTXOs which will also lock their funds until the swap-in-potentiam times out. This prevents liquidity griefing from being cost-free. The expected use-case for dual-funded 0-conf transactions is when a user expects onchain operations to be slow and take multiple confirmations to receive. Once there is deep confirmation that a swap-in-potentiam address has been funded, it can be transferred immediately to a 0-conf Lightning channel.However, the initiator still needs to trust that the acceptor does not double-spend out from under the initiator. The author notes that LSPS3 Promise To Unconditionally Fund 0-conf could address this concern. Additionally, the author believes that the initiator can trust the acceptor in the case of dual-funding flow.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T13:00:44.712633+00:00 </i></p>
     
     
 

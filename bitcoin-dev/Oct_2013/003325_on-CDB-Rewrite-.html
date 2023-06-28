@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>on CDB::Rewrite()</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olivier Langlois 2013-10-04 03:23:49
+            <br><i>Published on: 2013-10-04T03:23:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2013/combined_on-CDB-Rewrite-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003325.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Upon examining the CDB:Rewrite() code in db.h and db.cpp files, it was discovered that while it is declared as bool static in db.h, it isn't so in db.cpp. It is unclear whether this is a problem or an intentional feature. However, the code has been determined to be perfect C++ code.CDB:Rewrite() is called only in wallet.cpp, specifically in CWallet::EncryptWallet(), but its return value is ignored. It is uncertain whether this is intentional or a bug. This may be considered a minor bug since over 99% of the time the function is called, it succeeds. One possible solution could be for CWallet::EncryptWallet() to return false to its callers when CDB::Rewrite fails.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T17:19:56.387602+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

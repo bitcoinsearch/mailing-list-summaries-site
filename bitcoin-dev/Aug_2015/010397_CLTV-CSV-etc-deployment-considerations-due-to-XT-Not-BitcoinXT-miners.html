@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CLTV/CSV/etc. deployment considerations due to XT/Not-BitcoinXT miners</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2015-08-19 06:10:25
+            <br><i>Published on: 2015-08-19T06:10:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_CLTV-CSV-etc-deployment-considerations-due-to-XT-Not-BitcoinXT-miners.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010397.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Recently, the deployment of the proposed CLTV, CSV, etc. soft-forks has been complicated by the existence of XT and Not-Bitcoin-XT miners. Both mine blocks with nVersion=0x20000007, which would falsely trigger the previously suggested implementation using the IsSuperMajority() mechanism and nVersion=4 blocks. Additionally, while the XT/Not-Bitcoin-XT software claims to support Wuille/Todd/Maxwell's nVersion soft-fork mechanism a key component of it - fork deadlines - is not implemented.The options for CLTV/CSV/etc. deployment are Plain IsSuperMajority() with nVersion=4, nVersion mask, with IsSuperMajority(), and Full nVersion bits implementation. The most complex option would be to deploy via full nVersion bits implementation using flag bit #4 to trigger the fork. Compliant miners would advertise 0x20000008 initially, followed by 0x20000000 once the fork had triggered. The lowest three bits would be unusable for forks for some time, although they could be eventually recovered as XT/Not-Bitcoin-XT mining ceases.The main disadvantage of the third option is high initial complexity, while the first option can be ruled out immediately due to the high risk of premature triggering without genuine 95% miner support. Therefore, the second option of using nVersion mask, with IsSuperMajority() is recommended. In this option, the nVersion bits set by XT/Not-Bitcoin-XT miners would be masked away, prior to applying standard IsSuperMajority() logic.This means that CLTV/CSV/etc. miners running Bitcoin Core would create blocks with nVersion=8, 0b1000. From the perspective of the CLTV/CSV/etc. IsSuperMajority() test, XT/Not-Bitcoin-XT miners would be advertising blocks that do not trigger the soft-fork. For the purpose of soft-fork warnings, the highest known version can remain nVersion=8, which is triggered by both XT/Not-Bitcoin-XT blocks as well as a future nVersion bits implementation. Equally, XT/Not-Bitcoin-XT soft-fork warnings will be triggered, by having an unknown bit set.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T20:30:45.215161+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

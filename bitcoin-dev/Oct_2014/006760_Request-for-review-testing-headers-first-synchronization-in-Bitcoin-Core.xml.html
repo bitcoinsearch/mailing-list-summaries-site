@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Request for review/testing: headers-first synchronization in Bitcoin Core</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rebroad (sourceforge) 2014-10-16 05:05:58
-            <br><i>Published on: 2014-10-16T05:05:58+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2014/combined_Request-for-review-testing-headers-first-synchronization-in-Bitcoin-Core.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-October/006760.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A developer named Edmund has made improvements to Pieter Wuille's headers-first synchronization pull request for Bitcoin Core. The code updates are available on Github at <a href="https://github.com/rebroad/bitcoin/">https://github.com/rebroad/bitcoin/</a> and the branch is "sipa-headersfirst8-patches". Edmund has improved the code by tracking the block as it downloads and avoiding node stalling due to many blocks being added to the ActiveTip. Additionally, he has added code ready to adapt the window size for download and make it prefer downloading from faster nodes. Pieter Wuille's headers-first synchronization changes the way the best chain is discovered, downloaded, and verified. It allows for parallel block downloading, no more stalled downloads, much more robustness against unresponsive or slow peers, removes a class of DoS attacks related to peers feeding low-difficulty valid large blocks on a side branch, reduces the need for checkpoints in the code, no orphan blocks stored in memory anymore, and is a major step towards an SPV mode using the reference codebase.The code is available as a GitHub pull request (<a href="https://github.com/bitcoin/bitcoin/pull/4468)">https://github.com/bitcoin/bitcoin/pull/4468)</a> or packaged on <a href="http://bitcoin.sipa.be/builds/headersfirst,">http://bitcoin.sipa.be/builds/headersfirst,</a> where binaries can be found to test with. There are known issues such as very slow downloading at the beginning of sync, blocks will be stored on disk out of order, and the block index database will now hold headers for which no block is stored on disk. However, if fully synced, it may still be possible to go back to an earlier version.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T03:05:04.521025+00:00 </i></p>
     
     
 

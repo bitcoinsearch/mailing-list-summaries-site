@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Hash of UTXO set as consensus-critical</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rune Kjær Svendsen 2015-09-19 15:45:49
-            <br><i>Published on: 2015-09-19T15:45:49+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2015/combined_Hash-of-UTXO-set-as-consensus-critical.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011104.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Bitcoin relies on the majority of mining power being honest in order to function properly. A 51% attack, where the majority of mining power is malicious, would render Bitcoin useless because the malicious miners could mine empty blocks or blocks with randomly generated transactions without confirming any legitimate transactions. This is why a majority of honest miners is a hard requirement for Bitcoin. A fork that exists because of a disagreement in the network, with total mining power split in two camps, each camp mining peacefully on their own chain is unproblematic regardless of whether we include the UTXO hash in the block (and make it consensus-critical) or not since the majority mining power on either chain isn’t malicious.If a majority of Bitcoin miners are mining invalid blocks, then they are no longer relevant to the Bitcoin consensus. However, there is a problem that light clients aren't always able to tell the difference between chains that are valid and chains that are not valid, but it's possible to create simple proofs that would do so. Justus Ranvier from the Open Bitcoin Privacy Project suggests implementing changes that would allow any node that knew a chain was invalid to produce a compact proof that anyone else in the network could verify, regardless of how much proof of work was used to create the invalid chain. Committed UTXO sets would need to be safe to rely upon if a similar set of proofs that a particular set was invalid existed.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-10T22:47:17.716425+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP] Normalized transaction IDs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2015-10-21 08:31:42
-            <br><i>Published on: 2015-10-21T08:31:42+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011580.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange between Luke Dashjr and Christian Decker on October 21, 2015, the issue of malleability in Bitcoin transactions was discussed. Christian suggested that the use of sighash flags that are not SIGHASH_ALL is a remaining venue for malleability. However, Luke argued that signer malleability is still a notable concern needing consideration, as wallets should be trying to actively CoinJoin, bump fees on, etc any pending transactions in the background. He proposed specifying flags upfront in the UTXO-creating transaction specifying which parts the signature will cover, allowing implementation of fully malleability-proof wallets. Christian asked how signer malleability is still a problem if signatures are removed from the transaction ID of the transaction and all preceding transactions. Luke responded that it is still possible to double-spend transactions that do not have enough fees, so starting a new round of CoinJoin is sufficient to bump fees for all parties that participate, and that would also result in the double-spent low fee transaction to be discarded, resolving the state of all coins in the first CoinJoin tx.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T00:30:55.860104+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Covenants through merkelized txids.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2017-11-10 01:31:14
-            <br><i>Published on: 2017-11-10T01:31:14+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2017/combined_Covenants-through-merkelized-txids-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015274.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author presents an alternative to jl2012's BIPZZZ (OP_PUSHTXDATA[1]). The new proposal builds on the use of OP_CHECKSIGFROMSTACK that Russell used to implement covenants. The idea is to provide an OP_TXMERKLEVERIFY that compares the top stack element against a merkle tree of the current tx. TXMERKLE is constructed by using a combination of nVersion | nLockTime | fee, inputs & outputs. Inputs & outputs are calculated using a combination of inputmerkle and outputmerkle. Input is calculated by using prevoutpoint, nSequence | inputAmount while output is calculated using nValue, scriptPubkey. The author suggests that many variants are possible but if we have OP_CAT, it makes it fairly easy to test a particular tx property. A dedicated OP_MERKLE would make it even easier.If one day there's a hard fork, and merklized TXIDs are added, this method could also be used to inspect the tx *being spent*.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T22:06:46.818289+00:00 </i></p>
     
     
 

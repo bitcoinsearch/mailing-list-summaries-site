@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Idea: Efficient bitcoin block propagation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2015-08-06 18:42:38
+            <br><i>Published on: 2015-08-06T18:42:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2015/combined_Idea-Efficient-bitcoin-block-propagation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/009968.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion thread on Bitcoin-dev mailing list, Tom Harding inquired about whether the relay network would validate block version numbers in the future. It was clarified that the relay network already validates block version numbers and only relays valid transactions. However, the block relaying itself is explicitly "unvalidated", and the software client can only be used with a mempool maintaining full node, meaning many stateless checks are performed. Sergio Demian Lerner asked if there was any up-to-date documentation about TheBlueMatt relay network, including what kind of block compression it was currently doing. In response, it was mentioned that Matt did not have an extensive write-up, but the basic optimization performed by the network was trivial. This optimization involves relaying transactions verified by a local node and keeping a FIFO (first-in-first-out) of the relayed transactions in both directions, which is synchronous on each side. When a block is received, it replaces transactions with their indexes in the FIFO and relays it along. Transactions not in the FIFO are escaped and sent whole. On the other side, the block is reconstructed using the stored data and handed to the node. There is some elaboration for resource management, such as multiple queues for different transaction sizes, and more recently, using block templates to learn transaction priority to be a bit more immune to spam attacks. However, better management of queues or efficient transmission of membership sets could be done, and it's just basically the simplest thing that isn't completely stupid.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T21:13:34.288943+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Split payments within one LN invoice</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-12-16 23:44:12
+            <br><i>Published on: 2021-12-16T23:44:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_Split-payments-within-one-LN-invoice.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003418.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses a possible implementation of a "Poor man's rendez-vous" demo, which would require each intermediate payee to sign an invoice for which it does not know the preimage. A command called `signfakeinvoice` could be used to generate and sign the invoice, but not insert it into the database at all. The last payee generates a normal invoice, and from the last payee to the second, each one passes its invoice to the previous payee. The previous payee then creates its own signed invoice with `signfakeinvoice` to itself, adding its payout plus a fee budget, as well as adding its own delay budget. The first payee sends the sender the invoice, and on payment, the sender sends the payment to the first hop. From the first payee to the second-to-last, the plugin checks if the incoming payment has a hash that is in this scheme stored in the database and gathers `htlc_accepted` hook invocations until they sum up to the expected amount (this handles multipath between payees). The plugin checks if there is already an outgoing payment for that hash, and if it exists and is pending, waits for it to resolve to either success or failure. If the outgoing payment exists and succeeded, it resolves all the gathered `htlc_accepted` hooks. If the outgoing payment exists and failed, it fails all the gathered `htlc_accepted` hooks. Otherwise, it performs a `pay`, giving `maxfeepercent` and `maxdelay` based on its fee budget and delay budget. When the `pay` succeeds or fails, it propagates it to the gathered `htlc_accepted` hooks. Finally, the last payee receives a normal payment using the normal invoice-receive scheme.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:00:54.558432+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Lightning RPC</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2022-01-24 03:24:49
-            <br><i>Published on: 2022-01-24T03:24:49+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2022/combined_Lightning-RPC.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-January/003450.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Christian Decker and Rusty Russell discussed the commando c-lightning plugin that uses the JSON-RPC payload. They both agree that JSON-RPC is not good with binary data and doesn't have any concept of streaming. Christian suggested using grpc as it is more compact and rpc-friendly. It also offers secure transport over TLS, mutual authentication via mTLS, possibility to add metadata to calls which can help us use macaroons/runes in future, streaming support, and a compact binary format. Rusty added that having an IDL to describe the interface is nice, as it generates conversion code to/from JSON-RPC and grpc that can transparently map them back and forth.Rusty believes that either the JSON-RPC or grpc can serve as a basis for a common RPC definition that can have any number of bindings. He thinks that exchanging the transport layer underneath grpc doesn't change semantics, but does unlock a number of potential use-cases. The end goal of an RPC bolt would be super powerful, so that lnsocket could talk to any lightning node, but that could be further down the line. They conclude that they don't think they'll end up with a control standard, but a common subset would be nice.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T07:22:57.247929+00:00 </i></p>
     
     
 

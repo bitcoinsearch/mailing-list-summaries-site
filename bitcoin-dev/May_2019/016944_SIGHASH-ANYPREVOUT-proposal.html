@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>SIGHASH_ANYPREVOUT proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-05-22 20:11:31
+            <br><i>Published on: 2019-05-22T20:11:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_SIGHASH-ANYPREVOUT-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016944.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell, a Bitcoin developer, suggested that the bip introduction be changed to explicitly say "THESE SIGNATURE HASHES ARE UNSAFE FOR NORMAL WALLET USAGE" and renamed SIGHASH_UNSAFE_ANYPREVOUT. He also expressed discomfort with the new power in Bitcoin called rebinding but insists that objections must be supported by facts. In his opinion, if something is deemed unsafe enough to require a warning, then it should not be included in the consensus layer. Russell suggests finding a way of making ANYPREVOUT safe enough that it doesn't need warnings. Chaperone sigs were proposed as a solution. Moreover, chaparones can be opt-in and do not need to burden the protocol. Eltoo seems like the most obvious use case for ANYPREVOUT; however, it may not be a good solution if it is going to opt-out or is not going to opt-in. Russell's theory is that as long as individuals only use ANYPREVOUT to sign transactions that pay the money back to themselves, their funds will remain safe. The only way they can lose funds is if they are "sufficiently" buried in confirmations, and once they are, they won't disappear. Replaying signatures is not an issue if they follow this rule. Making ANYPREVOUT only available via script is aligned with this because if one is paying to oneself, complicated rules that need encoding in script are necessary. Russell thinks this covers the major security property for Bitcoin, but other ways in which ANYPREVOUT is scary may be formalized and addressed. It is not compatible with Luke's "malleability proof" wallet idea, but if someone else reuses its addresses, it does not add any systemic risk.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:28:36.766610+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

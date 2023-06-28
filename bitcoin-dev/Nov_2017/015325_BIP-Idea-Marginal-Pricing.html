@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Idea: Marginal Pricing</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2017-11-30 09:12:48
+            <br><i>Published on: 2017-11-30T09:12:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_BIP-Idea-Marginal-Pricing.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015325.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal to maximize total transaction fees and reduce individual transaction fees is to accept zero fees natively in the protocol and instead accept actual fees out-of-band or via OP_TRUE outputs which the miner can collect. Miners today already accept such out-of-band fees. Long term, tx fees must support hash power by themselves. The economic approach to this is to remove the block size limit and allow miners to implicitly choose the market sat/byte rate with the cheapest-fee transaction included in their block. Excess transaction fees are refunded to the inputs. This will result in a dynamic block size limit regulated by profit motive. Transaction fees will be maximized for every block and all fees will be fair. Miners are incentivized to ignore low-fee transactions because they would shave the profits of their other transactions and increase their hash time. Rarely, sections of the backlog would become large enough to be profitable. This means every so many blocks, lower-fee transactions would be included en masse after having been ignored long enough. Low-fee transactions thus gain a liveness property not previously enjoyed: low-fee transactions will eventually confirm. Users targeting the backlog market would match the price of the largest backlog section in order to be included in the next backlog block.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:26:15.777594+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

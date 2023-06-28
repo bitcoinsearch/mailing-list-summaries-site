@@ -11,33 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Rescuing funding mistakes</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2021-03-11 00:24:32
-            <br><i>Published on: 2021-03-11T00:24:32+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002981.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent update, Christian Decker has suggested that Lightning Network can be used to resend funds lost in the event of an incorrect transaction ID being used. This is achieved through a temporary solution by adding feature 104/105 as OPT_SHUTDOWN_WRONG_FUNDING, and adding a TLV stream to the shutdown message. The recipient supports it (config setting is called 'experimental-shutdown-wrong-funding') and makes sure the channel is unused. They use these values as the input for the shutdown negotiation and continue normally. The peer will forget the channel 2016 blocks after proposal but it can still be fished out of the database. In addition, the Lightning Network team is considering a stub state for old channels to allow some limited interaction with such dead channels. However, this does not help in cases where users accidentally send all their funds to the channel 2of2 address because we do not allow variation of the amount, and only one shutdown flow is allowed. To improve the system, Christian suggested sending a signature for the last tx in the reestablish message. Alternatively, Lightning Network could sign anything they ask for dead channels. Rusty Russell also suggested giving them the private key in this case, which would allow late post-hoc rescue of any strangeness they did. However, revealing a secret key is not a decision taken lightly.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-01T18:38:51.897179+00:00 </i></p>
     
     
 

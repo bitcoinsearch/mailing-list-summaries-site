@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Nonce blinding protocol for hardware wallets and airgapped signers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dustin Dettmer 2020-03-02 19:45:02
+            <br><i>Published on: 2020-03-02T19:45:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Nonce-blinding-protocol-for-hardware-wallets-and-airgapped-signers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017664.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Marko thanked the initiator of a protocol implementation for PSBT anti nonce covert channel which has been his long-standing goal. He backported the scheme to ECDSA in the secp256k1 library for current transactions. The generalized sign-to-contract scheme, where the final nonce is computed as `k' = k + H(k*G, n)` instead of `k'=k+n`, was suggested to be used in PSBT. Proprietary fields or key-value pairs can be added to BIP-174 depending on whether anyone else is interested in using the protocol or not. Careful verification against state stored by the host for the PSBT is required when using PSBT with an air-gapped signer to avoid implementing the protocol wrongly and leaking private keys. Best practices and guidelines to avoid pitfalls would be helpful.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T23:49:48.586820+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

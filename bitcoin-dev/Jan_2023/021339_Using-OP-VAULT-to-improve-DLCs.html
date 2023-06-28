@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using OP_VAULT to improve DLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ben Carman 2023-01-12 12:32:06
+            <br><i>Published on: 2023-01-12T12:32:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2023/combined_Using-OP-VAULT-to-improve-DLCs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021339.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to use OP_UNVAULT output as a not-so simple covenant with the 'unvault-target-hash' being set to whatever output restrictions one wants to create. This construction can recreate a lot of what CTV promises, including Lloyd's improvement to DLCs. A similar construction could be done by creating a taproot tree similar to Lloyd's construction, with each leaf looking like `0 OP_UNVAULT CHECKSIG`. Compared to the original CTV proposal, this should get all the same computational savings but would use more blockchain space. The main downside is that the final spending script will be slightly larger. Instead of just having `OP_CTV`, it will be replaced with `0 OP_UNVAULT` (34 bytes extra, not including the witness discount). However, this may be negligible in the case of a DLC with many outcomes as a lot of the input size will be coming from the control block. The idea was inspired by James O'Beirne's OP_VAULT proposal and credits were given to Lloyd Fournier for the original proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T23:23:03.739615+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

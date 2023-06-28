@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 38 NFC normalisation issue</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Andreas Schildbach 2014-07-16 11:04:08
-            <br><i>Published on: 2014-07-16T11:04:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2014/combined_BIP-38-NFC-normalisation-issue.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006264.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The context starts with the realization that only the decoding side of BIP38 has been implemented, and therefore a complete test vector cannot be proposed. The author provides a passphrase and its bytes after removing ISO control characters and NFC normalization, along with a Bitcoin address and an unencrypted private key (WIF). They request someone to calculate the encrypted key from the given information using any implementation, which they will verify decodes properly in bitcoinj. A discussion ensues between Andreas Schildbach and Mike Hearn regarding the issue with Unicode astral plane and plain old (ASCII) control character where this problem starts and likely ends: \u0000. Andreas suggests banning/filtering ISO control characters. It is suggested that any implementation that wishes to be compatible with JVM based wallets just refuse any passphrase that includes characters outside the BMP. The discussion concludes with a link to Black Duck Code Sight for easy access to code.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T00:58:31.171233+00:00 </i></p>
     
     
 

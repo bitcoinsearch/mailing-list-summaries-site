@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Gossip Propagation, Anti-spam, and Set Reconciliation</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Matt Corallo 2022-05-27 05:12:43
-            <br><i>Published on: 2022-05-27T05:12:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/May_2022/combined_Gossip-Propagation-Anti-spam-and-Set-Reconciliation.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-May/003593.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this discussion, two individuals are proposing different methods for gossip sync in Bitcoin's Lightning Network. The first individual proposes a new protocol that would only work for taproot channels and requires a hard fork, while the second individual suggests a soft fork with a constricted ruleset that would limit gossip to predefined intervals. The first proposal implies keeping old-gossip for a long time, causing parallel systems to exist, and the possibility of network splitting if some nodes have different block heights. Additionally, it may add complexity to the protocol with unused code and may create edge cases prone to bugs. The second proposal includes a spam-proof for messages violating the set reconciliation rate limit and a rolling global sketch to send to all peers at once. However, it also has inflexibility towards future changes in relay policy and requires exact consensus on valid channel updates across nodes. Despite these concerns, both proposals aim to reduce overhead in adding additional gossip peers and maximizing the utility of sketches by adding the full gossip store if possible.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T08:26:12.282592+00:00 </i></p>
     
     
 

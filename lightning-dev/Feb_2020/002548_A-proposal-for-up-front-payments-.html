@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A proposal for up-front payments.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2020-02-20 03:22:30
+            <br><i>Published on: 2020-02-20T03:22:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_A-proposal-for-up-front-payments-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002548.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A potential solution to a jamming attack in payment networks is proposed by Joost Jager, which involves reversing the direction in which the bond is paid. In this case, nodes need to pay to receive an htlc instead of paying to offer one, and a further extension of the route results in greater payments. Each node except the last one receives +1 msat/minute, while the last node pays n msat/minute, where n is the number of hops to have gotten up to the last one. The last node can either collect the payment and cover their cost, forward the payment, or cancel the payment releasing all the locked-up funds all the way back. Payments could have a grace period, which would prevent peers from lying about the time. This approach might also require a different protocol for HTLC forwarding, where Alice sends the HTLC onion packet to B, who decrypts it, makes sure it makes sense, and sends a half-signed updated channel state back to A. A accepts it and forwards the other half-signed channel update to B. This means 1.5 round-trips before Bob can really forward the HTLC on to Carol, but it is parallelizable, so Bob and Carol could start at (1) as soon as Alice/Bob has finished(2). If made to work, it doesn't require much crypto or bitcoin consensus changes, or even much deployment coordination.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T02:18:54.490257+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

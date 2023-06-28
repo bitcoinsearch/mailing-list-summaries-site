@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Reuse of payment_hash in lightning invoices</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrea RASPITZU 2019-01-03 15:35:01
+            <br><i>Published on: 2019-01-03T15:35:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2019/combined_Reuse-of-payment-hash-in-lightning-invoices.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-January/001786.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The knowledge of a preimage for a certain payment_hash is the sufficient and only payment proof for the payer, however, the reuse of payment_hashes should be strongly discouraged. If two donors send a payment for the same preimage in a donations scenario, an intermediate routing node can effectively steal the payment from the recipient if the routes overlap. A warning should be added to BOLT11 regarding the reuse of payment_hash in invoices. The fact that ultimate payer has received the payment preimage is considered sufficient proof of payment. In case of reuse, whatever the receiver claims is to be ignored, as the payment preimage in possession of the ultimate payee is considered the whole of the proof of payment. If the receiver knows it does not control the entire Lightning Network, it should not reuse payment hashes since intermediate nodes it does not control could claim the payment and give the proof-of-payment to the ultimate payer. Possession of the payment preimage is itself the entirety of the proof of the payment, regardless of what the receiver claims.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T16:59:27.476560+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

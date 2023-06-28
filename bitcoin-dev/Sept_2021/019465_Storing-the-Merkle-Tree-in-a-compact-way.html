@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Storing the Merkle Tree in a compact way</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> shymaa arafat 2021-09-16 15:05:24
+            <br><i>Published on: 2021-09-16T15:05:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2021/combined_Storing-the-Merkle-Tree-in-a-compact-way.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019465.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses a simple idea to compress the Merkle Tree of Utreexo project, which could be useful in saving storage space and traversing issues. The idea involves getting rid of all pointers by using a 2D array with variable row size where each row length is N/2^j. The total storage required is just 2N-1 nodes, and traversing can be done neatly in any direction with the right formula. The formula involves fetching proof[i] through pseudo-code with direction to know + or - and adding the rest through loop. This simple approach of transforming a recursion to an iteration can work for any Merkle Tree. The lecture notes and video link are provided for reference, along with a more detailed explanation on BitcoinTalk forum by Shymaa M Arafat.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T01:50:31.147868+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

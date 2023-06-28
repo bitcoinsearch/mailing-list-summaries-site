@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bitcoind stops responding</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olivier Langlois 2013-10-04 03:52:18
+            <br><i>Published on: 2013-10-04T03:52:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2013/combined_bitcoind-stops-responding.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-October/003323.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context is a log from Bitcoin, where the `getinfo` RPC function takes more than two seconds to return. The circumstances leading to this delay include receiving a block, committing 1015 changed transactions to the coin database, and setting a new best chain. During this process, `ThreadFlushWalletDB` locks the wallet database, causing `getinfo` to wait until it completes to finish calling `GetOldestKeyPoolTime()`. The author suggests some ideas to reduce the time taken by `getinfo`, including closing and reopening the database asynchronously rather than synchronously, removing unnecessary options from BDB, and experimenting with an optional boolean parameter for `getinfo` that could skip gathering information that may prolong the call.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T17:12:25.285793+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

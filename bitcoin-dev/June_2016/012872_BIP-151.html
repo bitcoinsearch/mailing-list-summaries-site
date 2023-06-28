@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 151</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2016-06-30 15:22:08
+            <br><i>Published on: 2016-06-30T15:22:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2016/combined_BIP-151.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012872.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses the problem of a man in the middle (MITM) attack on privacy by an anonymous peer. BIP151 is proposed as a solution, which would require one peer to trust that another peer is not an attacker. However, it is pointed out that an attack on privacy by an anonymous peer can be undetectable. If Mallory substitutes ephemeral keys in both directions, Alice and Bob can detect him when they do authentication because they know he is listening. However, this assumes that no other peer can connect to these two nodes and maintain the chain. The "middle" in this sense does not have to be the wire directly between these two peers. It can be between either of them and any anonymous connection they allow. This creates pressure to expand their tunnel, leading to the problem of expanding node identity in an effort to preserve privacy. Pieter raises valid points that there will always be tunnels between trusting nodes, and if people become reliant on good node registration, it could lead to the registrar controlling access to the network. Therefore, the proposal of BIP151 becoming widely adopted raises concerns. A simple dummy example is given to explain how BIP151 could detect a MITM attack, but it is clarified that it is not an authentication proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:00:24.053051+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

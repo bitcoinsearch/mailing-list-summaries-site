@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-03-21 09:06:14
+            <br><i>Published on: 2019-03-21T09:06:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016794.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A Lightning-dev member, ZmnSCPxj, responded to an earlier post suggesting that either of two scripts would be okay for eltoo. They then asked if it would be safe for Watchtower to know about the SIGHASH_NOINPUT and q private key in the blob sent to them by Alice/Bob. The author believes it is safe since NOINPUT sig ensures they control their money from Alice/Bob's point-of-view and Q private key being shared makes the tx no worse than a 1-of-n multisig setup from the network's point-of-view.The update transaction pays out to a script with OP_IF, OP_ELSE, and OP_ENDIF. The author suggests shortening this using IF OP_CODESEPARATOR and OP_CHECKDLSVERIFY OP_CHECKDLS. Signing with NOINPUT,NOSCRIPT and codeseparatorpos=1 enforces CLTV and allows binding to any prior update tx while signing with codeseparatorpos=-1 and NOINPUT but committing to the script code and nSequence(for CSV delay) allows binding to only that update tx so works for the settlement tx. This requires two pubkeys, two sigs, and the taproot point reveal.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:03:14.973194+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

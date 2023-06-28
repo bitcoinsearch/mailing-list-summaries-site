@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP] OP_CHECKPRIVPUBPAIR</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2015-11-29 23:41:43
-            <br><i>Published on: 2015-11-29T23:41:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2015/combined_-BIP-OP-CHECKPRIVPUBPAIR.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011834.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a bitcoin-dev mailing list discussion on November 27, 2015, Mats Jerratsch proposed introducing a new general OP_CRYPTO to allow for all sorts of general crypto operations in script. He suggested using a single prefixed 0x01 byte to push "OP_CRYPTO" onto the stack and have OP_CRYPTO look at the top item on the stack to determine what to do. This would not be a softfork and could lead to arbitrarily expandable multi-byte pushes. Jerratsch also discussed some constructions that could break the signature scheme but were either too large or expensive to calculate. In response, there was a suggestion to add more crypto ops into a BIP for a check-verify crypto toolkit op like this. The only ones mentioned with practical uses in the near term were base-point multiply on secp256k1 (CHECKPUBPRIVPAIR) and Schnorr-signature of transaction with secp256k1 curve (smaller, faster, more-anonymous N-of-N multisig). Other suggestions included general point addition/multiply on secp256k1, SHA3-256/SHA2-512/SHA3-512, and ECDSA/Schnorr signature of value from stack.It was also noted that if the segregated witness soft-fork is plausible, any opcode could be re-enabled/changed/added as a soft-fork, not just turning a NOP into CHECK_foo_VERIFY. It was suggested to wait and see how the segregated witness soft-fork goes before drafting a BIP or similar.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T22:25:37.780604+00:00 </i></p>
     
     
 

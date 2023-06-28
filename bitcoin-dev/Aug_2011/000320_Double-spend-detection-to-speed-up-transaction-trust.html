@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Double spend detection to speed up transaction trust</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andy Parkins 2011-08-05 13:03:05
+            <br><i>Published on: 2011-08-05T13:03:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2011/combined_Double-spend-detection-to-speed-up-transaction-trust.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000320.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, the discussion is about the relevant metric for measuring the number of connections on a network. Matt Corallo argues that the number of connections should be considered carefully because having too many connections may fill everyone's connection slots, while having too few may result in isolated networks. He suggests that if a client is not relaying, each connection takes almost no bandwidth and proposes using bandwidth calculations rather than connection counts to determine how many connections are needed to be considered secure. Andy Parkins disagrees with the idea of using the number of connection slots as a metric and argues that instead of limiting the number of connections, the client should accept incoming connections until it has allocated its bandwidth. He suggests a system where the client maintains an average bandwidth over all connections and makes new outgoing connections only if that average is less than threshold0 and stops accepting incoming connections if it exceeds threshold1. If the average exceeds threshold2, established incoming connections are dropped, and if it exceeds threshold3, established outgoing connections are dropped.Andy concludes by stating that limiting by connection count may lead to a network filled with non-relaying listeners, resulting in zero bandwidth but maximum connection count, which can lock the client out. Therefore, using bandwidth calculations is a better metric than limiting the number of connections.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T20:03:36.577656+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

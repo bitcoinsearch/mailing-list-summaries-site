@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Compact Client Side Filtering for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2017-06-19 22:41:49
+            <br><i>Published on: 2017-06-19T22:41:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2017/combined_BIP-Proposal-Compact-Client-Side-Filtering-for-Light-Clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014623.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The use of BIP37 in Bitcoin transactions has been debated several times. Several methods of private filtering have been suggested, including not filtering unconfirmed transactions at all. The author suggests that there is very little use of BIP37 at present based on incoming connections to nodes. Sending just the output addresses of each transaction would use about 1 kilobit/s of data, while sending the entire transaction would use ~14kbit/sec data. This seems like a sustainable amount of data to use while an application is running. SPV wallets are highly vulnerable to unconfirmed transactions and many become corrupted once given a fake transaction.The author questions whether saving no more than the figures mentioned above would justify the near total loss of privacy that filtering gives. The argument that "they already do it" is not a good justification for a new protocol feature. Things which already use BIP37 will presumably continue to do so.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T02:40:23.863707+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

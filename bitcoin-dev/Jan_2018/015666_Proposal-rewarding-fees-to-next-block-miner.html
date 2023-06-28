@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: rewarding fees to next block miner</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2018-01-27 23:48:10
+            <br><i>Published on: 2018-01-27T23:48:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Proposal-rewarding-fees-to-next-block-miner.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015666.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There are two flawed premises that have been identified in the context. The first premise is related to fee recovery and is explained in detail at <a href="https://github.com/libbitcoin/libbitcoin/wiki/Fee-Recovery-Fallacy">https://github.com/libbitcoin/libbitcoin/wiki/Fee-Recovery-Fallacy</a>. The second premise is related to side fees and can be found at <a href="https://github.com/libbitcoin/libbitcoin/wiki/Side-Fee-Fallacy">https://github.com/libbitcoin/libbitcoin/wiki/Side-Fee-Fallacy</a>. A proposal was made on bitcoin-dev mailing list by Nathan Parker on January 27, 2018, which suggested a solution for miners filling their blocks with transactions paying high fees. Parker proposed to reward the fees of the current block to the miner of the next block (or X blocks after the current one). This would discourage flooding blocks with fake transactions while still encouraging filling blocks with real transactions paying real fees. However, this solution would require a soft fork. A possible downside of this proposal is that during the fork activation, the miners won't get any reward for mining blocks for a period of 100 blocks. They could choose to power off the mining equipment for maintenance or to save power over that period. Gregory Maxwell responded to Parker's proposal and pointed out that it is not incentive compatible. Miners would prefer to include transactions paying fees via alternative mechanisms, such as anyone-can-spend outputs, direct pay to miner outputs, or completely out of band. Users would accordingly pay much lower fees if they used these alternatives instead of directly, so the equilibrium state is almost everyone bypassing. Bypass fee mechanisms have been supported by miners since 2011 too, so it isn't just conjecture.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T00:16:43.501395+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

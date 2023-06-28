@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH] Add spellcheck tool (requires `aspell`), also spellcheck. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000693_-PATCH-Add-spellcheck-tool-requires-aspell-also-spellcheck-.html">[PATCH] Add spellcheck tool (requires `aspell`), also spellcheck.</a>
+                        <b>Rusty Russell 2017-05-03 03:39:26</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/April_2017/000684_-PATCH-Add-spellcheck-tool-requires-aspell-also-spellcheck-.html">[PATCH] Add spellcheck tool (requires `aspell`), also spellcheck.</a>
+                        <b>ZmnSCPxj 2017-04-29 03:19:07</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2017/000697_-PATCH-Add-spellcheck-tool-requires-aspell-also-spellcheck-.html">[PATCH] Add spellcheck tool (requires `aspell`), also spellcheck.</a>
+                        <b>ZmnSCPxj 2017-05-04 14:26:07</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000693.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2017-05-03T03:39:26+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network is a protocol for off-chain bitcoin transactions, and this context covers various aspects of generating and processing packets in the network. One of the patches submitted by ZmnSCPxj had errors, but Rusty fixed them and added a check to prevent new errors from being introduced. The Lightning Network Specification requires that messages between nodes use printable ASCII characters, and commitment transactions use unique keys. The packet structure includes an onion routing layer, Sphinx header, encrypted payload, and HMAC for packet integrity verification.The `cltv-expiry-delta` value plays a crucial role in determining if an HTLC can be forwarded or not. The context also explains the different error packets used in the network. The Noise Protocol Framework is used in the Lightning Protocol, and `ChaChaPoly-1305` is the AEAD construction. ECDH and SHA-256 are also used in the protocol, and the responder's public key is mixed into the handshake state.The three ways a channel can end are discussed, and each output has its own action required for resolution. Handling on-chain HTLC outputs involves using the payment preimage to prove payment, and either party can use it depending on whose commitment transaction is being spent. During packet generation, a 32-byte EC private key serves as the session key, and the node's public key blinded with previous blinding factors acts as the public key. In the processing phase, the node's private key is used as the secret, and the ephemeral public key from the packet is incrementally blinded by predecessors.Nonidealities such as spelling errors in test vectors and pluralizations for HTLC are mentioned. To avoid storing every commitment transaction, per-commitment-secret values and revocation-basepoint and delayed-payment-basepoint can be used to regenerate required scripts for penalty transactions. A spellcheck script was added to the tools directory of the repository, and a Travis check was introduced to prevent the introduction of new spelling errors in the RFC.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-24T01:28:15.017532+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Strawman BOLT11 static &#34;offer&#34; format using probes. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001616_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>ZmnSCPxj 2018-11-16 03:07:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001603_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>ZmnSCPxj 2018-11-15 04:42:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001611_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>ZmnSCPxj 2018-11-15 16:22:29</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001615_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>Rusty Russell 2018-11-16 00:15:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001623_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>René Pickhardt 2018-11-16 07:47:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001625_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>ZmnSCPxj 2018-11-16 09:01:35</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001633_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>Rusty Russell 2018-11-17 23:20:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2018/001602_Strawman-BOLT11-static-offer-format-using-probes-.html">Strawman BOLT11 static &#34;offer&#34; format using probes.</a>
+                        <b>Rusty Russell 2018-11-15 03:56:31</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001616.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2018-11-16T03:07:15+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>ZmnSCPxj apologized for not providing enough details about Scriptless Scripts before the summit. Implementation of SS without Schnorr requires OP_CODESEPARATOR code magic, and for static invoicing, payees need to provide a new payment hash or payment point under SS dynamically. ZmnSCPxj suggested a separate BOLT for type, len, data and proposed generating BOLT15 advertisement document to create BOLT11 invoices with a unique secret to the payer as separate proofs-of-payment.Rusty's proposal suggests reusable BOLT11 offers that provide almost-spontaneous payments without generating a BOLT11 invoice for each sale. The payer uses a new lightning probe message using the current onion format used for HTLCs to retrieve the complete invoice. Invoices have a `p` field of 26 bytes and optional types such as quantity can be defined. Rusty also proposed a mechanism to stream invoices using a payment network, allowing non-transferrable proof-of-payment and recurring payments, and suggested attaching payments for each HORNET-style messaging system.In an email to Rusty, a member of the Lightning Development mailing list asked for clarification on a proposal for reusable BOLT11 "offers", and Rusty provided details on how it would function. Rusty also described the format of the final-hop lightning onion containing various fields, including quantity and delivery-address. This method gives static invoicing and can be used for recurring payments. Rusty apologized for not fleshing out the proposal before the summit.The member suggested building a connection-oriented communication layer on top of the protocol, but Rusty pointed out that this would be complicated to implement and raise privacy concerns, as well as lack incentives.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-25T17:05:41.347131+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

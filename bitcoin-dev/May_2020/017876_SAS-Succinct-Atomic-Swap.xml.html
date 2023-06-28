@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>SAS: Succinct Atomic Swap</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-05-15 04:39:33
-            <br><i>Published on: 2020-05-15T04:39:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2020/combined_SAS-Succinct-Atomic-Swap.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017876.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation revolves around a hypothetical situation where Alice and Bob are participating in a protocol. A script is added to refund tx #1, which won't be visible with taproot. The attack scenario involves Alice completing the protocol up to handing over `sigSuccessAlice` to Bob, then stalling the protocol and never sending the `Alice` privkey, waiting for 1 day, then sneaking the refund tx #1 and spending the LTC via direct miner collusion. It is suggested that Bob should broadcast success tx before the refund tx #1 becomes valid to avoid chaos. Additionally, it is proposed that in client-server CoinSwap, the server should take Alice's position and the client should take Bob's position. Multiple CoinSwaps should be made in sequence to obscure history, as the server might secretly be a surveillor and recording swaps. Since Bob should spend received coin before timeout, it is best for Bob to be the client. Finally, if the client needs to spend to a classic, address-using service, then nothing in the SAS protocol allows Alice to receive its funds directly into a specific third-party address. However, Bob can hand over a specific third-party address to use in the success tx.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T01:31:53.582089+00:00 </i></p>
     
     
 

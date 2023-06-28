@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>vtxPrev</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Michael Grønager 2011-10-05 13:44:08
-            <br><i>Published on: 2011-10-05T13:44:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2011/combined_vtxPrev.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000637.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange between Michael Grønager and Gregory Maxwell on October 5th, 2011, Grønager misread the code for AddSupportingTransactions. After reviewing the code again, he realized that vtxPrev only contains a list of supporting confirmations up to three confirmations back. It is only relevant and filled if coins that are less than three confirmations old are accepted. In this case, the depending transactions should be resent to the network in case of chain splits. This feature is only relevant when accepting newly earned coins and will only be useful for about half an hour. Maxwell corrected Grønager's statement that transactions need seven blocks to maturity and respendability. The software can use older inputs when available, but if not, it will use what it has. The software is also prone to respending its own outputs quickly because it trusts it won't double spend its own transactions. In the event of a deep split, inputs might have been spent differently in the new split, making it possible for transactions to become invalid after they have been confirmed. Retransmitting one of the transaction's parents if it was dropped but not yet impossible sounds prudent to Maxwell.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-04T20:24:09.909521+00:00 </i></p>
     
     
 

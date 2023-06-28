@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>More thoughts on NOINPUT safety</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2019-03-22 02:58:46
-            <br><i>Published on: 2019-03-22T02:58:46+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016799.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent email exchange, ZmnSCPxj and aj discussed the possibility of enforcing timelocks in settlement transactions. ZmnSCPxj suggested using OP_CHECKLOCKTIMEVERIFY and OP_CHECKDLSVERIFY to ensure that update transactions set their own timelocks and settlement transactions have absolute or relative timelocks via sequence. However, ZmnSCPxj expressed concern over the lack of OP_CSV in the settlement branch. aj responded by explaining that the relative timelock can be enforced simply by refusing to sign a settlement transaction that doesn't have the timelock set. They also noted that settlement-1, which was signed by ZmnSCPxj, is not immediately spendable by update-1 due to BIP-68 being enforced by consensus and NOINPUT sigs committing to nsequence. Overall, the email exchange highlighted the technical details involved in enforcing timelocks in settlement transactions for offchain channels.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T20:02:53.346638+00:00 </i></p>
     
     
 

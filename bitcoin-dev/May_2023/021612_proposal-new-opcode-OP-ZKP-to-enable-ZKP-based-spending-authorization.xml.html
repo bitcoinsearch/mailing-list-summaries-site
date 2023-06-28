@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>proposal: new opcode OP_ZKP to enable ZKP-based spending authorization</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Weiji Guo 2023-05-04 15:31:22
-            <br><i>Published on: 2023-05-04T15:31:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2023/combined_proposal-new-opcode-OP-ZKP-to-enable-ZKP-based-spending-authorization.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021612.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Weiji, a Bitcoin contributor, has proposed the use of ZKPs (Zero-Knowledge Proofs) in Bitcoin transactions. Responding to queries about the practicality of such a system, he has suggested that specialized computing power vendors could optimize ZKP computations, and that such vendors could be from both miners and non-miners who are focused on cryptographic engineering. While the verification cost was previously estimated to be high, Weiji now reports that Groth16 verification can be as fast as 1ms while Plonk verification is around 1.6ms, indicating that even a common full node could handle thousands of OP_ZKP transactions. In this case, the ZKP transactions could be put into the mempool and be open to aggregation by some vendor. Full nodes should verify these transactions as well. Weiji believes that it would not be a good idea to treat these transactions with special rules as there is no guarantee that certain OP_ZKP transactions will be aggregated or recursively verified. The cost for standalone OP_ZKP transactions might be higher due to more data and/or higher weighting. This incentivizes vendors to develop aggregation/recursive verification services to drive down fee requirements and profit from doing so (fee extraction). Weiji expects an open market where various vendors can compete against each other, so it makes sense to have these transactions openly visible to all participants. However, some transactions are meant to be off-chain. For example, a would-be smart contract can aggregate many related transactions in an OP_ZKP transaction. Those aggregated transactions should not be transmitted within the Bitcoin network and could even be invalid Bitcoin transactions. Usually, the smart contract operator or its community could host such a service. In the future, Weiji predicts a situation where there are thousands of active smart contracts based on OP_ZKP and each block contains a few hundred OP_ZKP transactions. Each one of them aggregates/recursively verifies many transactions. The effective TPS (transactions per second) of the Bitcoin network could far exceed the current value, reaching the range of thousands or even more.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T18:02:35.424614+00:00 </i></p>
     
     
 

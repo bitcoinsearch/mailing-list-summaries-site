@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CTV Signet Parameters</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Nadav Ivgi 2022-04-20 17:05:36
-            <br><i>Published on: 2022-04-20T17:05:36+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2022/combined_CTV-Signet-Parameters.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020236.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread on bitcoin-dev discusses the lack of practical experimentation with CTV. Anthony Towns notes that while there have been over 2,200 transactions on the CTV signet, only 317 have been CTV spends, and none have been bare CTV or via P2SH. Of the CTV spends, 314 have been via P2WSH, using scripts that take the form of [PUSH 32 bytes] [OP_NOP4] [OP_DROP] [OP_1]. However, Towns questions whether DROP/1 is necessary here, given Taproot's CLEANSTACK rule. He suggests it may be useful to always use `DROP OP_1` outside of Taproot to keep things consistent and avoid potential errors when switching from non-Taproot to Taproot. Towns also notes that there are no demos of Jamesob's simple-ctv-vault, which uses a P2WSH of "IF n CSV DROP hotkey CHECKSIG ELSE lockcoldtx CTV ENDIF," rather than taproot branches. Additionally, he points out that there are no examples of "this CTV immediately; or if fees are too high, this other CTV that pays more fees after X days," though they could potentially be hidden in the untaken taproot merkle branches. There are also no examples of two CTV outputs being combined and spent in a single transaction. Regarding the lack of practical exploration of CTV, Towns suggests that it could be an indication that CTV could be substantially simplified and still get all the benefits that people are particularly eager for. Jeremy Rubin responds by suggesting that "learning in public" is required for a consensus system like Bitcoin, as part of the learning process involves determining whether a change is valuable enough to others to justify the risk.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T16:52:11.345804+00:00 </i></p>
     
     
 

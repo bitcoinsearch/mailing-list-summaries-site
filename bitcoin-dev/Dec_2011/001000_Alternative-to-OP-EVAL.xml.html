@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Alternative to OP_EVAL</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> roconnor at theorem.ca 2011-12-29 16:42:56
-            <br><i>Published on: 2011-12-29T16:42:56+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2011/combined_Alternative-to-OP-EVAL.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-December/001000.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On December 29, 2011, a discussion took place between theymos and roconnor at theorem.ca. They were discussing the number of operations that can be executed, which is limited by the number of operations in the script. The OP_EVAL proposal was mentioned, which would make the script language Turing complete, with only an artificial limit on recursion depth preventing arbitrary computation. However, there is no way to know what code will run without executing it. Theymos disagreed and suggested that even if OP_EVAL allowed infinite depth, one would still need to explicitly specify all operations performed since there is no way of looping. Gavin, on the other hand, showed how to use OP_EVAL to loop using OP_PUSHDATA {OP_DUP OP_EVAL} OP_DUP OP_EVAL. The key to looping is the use of OP_DUP, which duplicates the code on the stack. It is believed that from here, Turing completeness can be achieved. Using the stack operations, it is expected that the SK-calculus can be implemented given an OP_EVAL that allows arbitrary depth. However, OP_EVAL adds dangerously expressive power to the scripting language. A quote from the general counsel of the American Graphophone Company was also included: "All talk about 'theft' is the merest claptrap, for there exists no property in ideas musical, literary or artistic, except as defined by statute."</p>
-    <hr>
-    <p><i> Updated on: 2023-06-05T01:27:32.295277+00:00 </i></p>
     
     
 

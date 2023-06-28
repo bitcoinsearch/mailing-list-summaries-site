@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP - limiting OP_RETURN / HF</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> yanmaani at cock.li 2021-04-20 01:22:51
+            <br><i>Published on: 2021-04-20T01:22:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2021/combined_BIP-limiting-OP-RETURN-HF.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018819.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The idea of replacing SHA-256d with another solution has been proposed in various papers and articles. However, there are some issues that need to be addressed. One such issue is determining who goes first when calculating the expensive Proof of Work (PoW) and then doing a cheap SHA-256d around it. This can be malleable by changing the outer PoW. On the other hand, if the cheap SHA-256d is calculated first, followed by an expensive PoW around it, the Peer-to-Peer (P2P) protocol would need to be retooled. Additionally, the incentive for miners to upgrade is another concern. In a typical soft-fork, miners upgrade because their blocks will be orphaned if they don't. However, in this case, miners can produce an alternate chain that appears valid to old clients, which new miners won't be able to orphan since their hash power is much weaker. Overall, while the idea of replacing SHA-256d seems promising, these issues must be addressed before implementing any changes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T20:07:44.529620+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

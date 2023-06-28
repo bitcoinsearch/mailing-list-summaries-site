@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Wumbological local AND global features</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-13 09:31:33
+            <br><i>Published on: 2018-11-13T09:31:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Wumbological-local-AND-global-features.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001576.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to implement both a local and global wumbo feature bit. The local wumbo feature would mean "I am willing to wumbo with you," while the global wumbo feature would mean "I am willing to wumbo with anyone." The primary reasoning for limited channel sizes is the risk associated with new software, but with the development of new features, it may be time to consider allowing for more limitations to wumbo. To address this concern, the proposal suggests creating a whitelist of node pubkeys that the node owner considers safe to accept making wumbo channels with. Additionally, reckless users could set an option in the software to be willing to wumbo with any node.The proposal includes creating a local feature bit `option_i_wumbo_you_wumbo` to indicate that the node is willing to wumbo with its counterparty in the connection and a global feature bit `option_anyone_can_wumbo` to indicate that the node is willing to wumbo with any node. A node must set the local feature bit if it sets the global feature bit in its announcement and may clear the global feature bit even if it sends a set `option_i_wumbo_you_wumbo` to its peer. Additionally, a node may report different values for `option_i_wumbo_you_wumbo` to different nodes. If a node did not set the `option_i_wumbo_you_wumbo` feature bit reported to its counterparty, it must respond with an `error` if it receives an `open_channel` with a `funding_satoshis` value beyond the indicated limit for the chain.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:24:52.560333+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

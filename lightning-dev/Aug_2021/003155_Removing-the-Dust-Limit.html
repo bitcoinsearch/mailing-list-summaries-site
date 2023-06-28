@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Removing the Dust Limit</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2021-08-10 06:14:41
+            <br><i>Published on: 2021-08-10T06:14:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_Removing-the-Dust-Limit.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003155.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, Antoine Riard expressed his reluctance to increase the standard dust limit as it would convert a higher percentage of Lightning Network (LN) channel capacity into dust, lowering funds safety. However, Dave pointed out that this reasoning is incomplete and mentioned two related things - uneconomical outputs and the dust limit. Increasing the minimum necessary feerate to get a transaction confirmed in an appropriate amount of time also "converts a higher percentage of LN channel capacity into dust". Dave suggested that developers have no control over prevailing feerates and this is a problem that LN needs to deal with regardless of Bitcoin Core's dust limit. Furthermore, Dave argued that any trust vector is introduced not by the dust limit but by the economics of outputs being worth less than they cost to spend. He also suggested that LN node operators could use trustless probabilistic payments or rely on smarter engineering such as utreexo on the base-layer side to handle the issue of small payments. However, he pointed out that Utreexo doesn't solve this problem entirely as many nodes will still want to store the full UTXO set and access it quickly. Overall, Dave believes that the status quo is good enough for now and there are alternative ways to handle the issue of small payments in LN.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:22:38.628161+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

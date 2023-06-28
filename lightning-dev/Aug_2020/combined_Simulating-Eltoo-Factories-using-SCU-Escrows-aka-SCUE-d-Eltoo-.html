@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Simulating Eltoo Factories using SCU Escrows (aka SCUE&#39;d Eltoo) <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2020/002792_Simulating-Eltoo-Factories-using-SCU-Escrows-aka-SCUE-d-Eltoo-.html">Simulating Eltoo Factories using SCU Escrows (aka SCUE&#39;d Eltoo)</a>
+                        <b>Christian Decker 2020-09-01 12:38:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2020/002794_Simulating-Eltoo-Factories-using-SCU-Escrows-aka-SCUE-d-Eltoo-.html">Simulating Eltoo Factories using SCU Escrows (aka SCUE&#39;d Eltoo)</a>
+                        <b>ZmnSCPxj 2020-09-03 06:48:40</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002790_Simulating-Eltoo-Factories-using-SCU-Escrows-aka-SCUE-d-Eltoo-.html">Simulating Eltoo Factories using SCU Escrows (aka SCUE&#39;d Eltoo)</a>
+                        <b>Nadav Kohen 2020-08-31 23:06:34</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2020/002802_Simulating-Eltoo-Factories-using-SCU-Escrows-aka-SCUE-d-Eltoo-.html">Simulating Eltoo Factories using SCU Escrows (aka SCUE&#39;d Eltoo)</a>
+                        <b>Christian Decker 2020-09-22 09:38:45</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-September/002792.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2020-09-01T12:38:58+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The proposal aims to simplify the way update transactions can be attached only to prior updates by comparing the state-number committed to in the prevout script with the current timelock through CLTV, replacing the use of ANYPREVOUT with a federation of SCU Escrows. The escrows will enforce state updates by only generating signatures to spend older states with newer ones. The article discusses the potential for collusion in escrow and suggests that even if the number of participants increases, trust that the escrow does not perform collusion with any of the participants must still exist, which can be mitigated by having the escrow be a k-of-n federation. Channel factories, which host channels, "degrade gracefully", and the general use of updating the factory layer would be to rebalance the channels inside it.SCU is a participant-chosen "federation" of "escrows" that enforce contracts by giving users signatures of transactions produced by these contracts. Transactions include funding transaction, commitment transaction, state transaction, commitment update transaction, and state update transaction. Update mechanism is the same as expected for a multi-party payment channel, but all parties must sign the commitment State(k) before they sign State Transaction k. Settlement includes cooperative and non-cooperative closes. ZmnSCPxj discussed the possibility of merging watchtower and escrow functionality through the use of a Smart Contract Unchained Escrowed Decker-Russell-Osuntokun channel factory.For eltoo, the watchtower does not need to know the funding outpoint. Instead, any information that would allow a watchtower to collate encrypted updates would be sufficient for it to be able to discard earlier ones. The session-based collation that the lnd watchtower protocol uses can be one such collation key. Alternatively, Poon-Dryja style encryption with the trigger transaction hash can also be used as the encryption key. This transaction being the first step towards closing a channel unilaterally forces any cheating party to reveal the decryption key for the update txs that'll override its actions. Multiple updates can be coalesced and flushed to the watchtower after some time. A link to the lnd watchtower protocol documentation was provided.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-04T00:35:17.642873+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Johnson Lau 2018-11-22 20:52:54
-            <br><i>Published on: 2018-11-22T20:52:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016498.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion on the Bitcoin-dev mailing list revolves around finding a replacement for OP_CODESEPARATOR, which is slowing down script processing as it takes O(script-size) time. One suggestion is to add an internal counter that increments on every control flow operator and has the signature cover the value of this counter. Alternatively, a Merklized Script tree of the same depth could replace a sequence of OP_IF ... OP_ENDIF. MAST in taproot makes OP_IF mostly redundant, and to maximize fungibility, people should be encouraged to use MAST instead of further complicating the protocol by improving the functionality of OP_IF. However, at script creation time, computing a Merkle root of depth 'n' takes exponential time, and benchmarks or estimates are needed to know how long it takes to compute a Merkle root of various depths on typical consumer hardware.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T18:07:30.573071+00:00 </i></p>
     
     
 

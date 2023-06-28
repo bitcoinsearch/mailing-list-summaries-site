@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[patch] Switching Bitcoin Core to sqlite db</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter R 2015-11-15 01:45:03
+            <br><i>Published on: 2015-11-15T01:45:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_-patch-Switching-Bitcoin-Core-to-sqlite-db.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011761.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Gregory Maxwell and Peter R, the issue of using multiple database technologies in blockchain was discussed. The problem with this is not that one node would prove a block as valid while another proves it invalid, but rather that one node may say "valid" while the other says "I don't know". It was noted that some errors can be detected, while others are undetectable.There are two types of consensus failures to consider: Type 1 where one implementation says "yes" or "no" while the other says "I don't know", and Type 2 where one implementation says "yes" and the other says "no" due to a bug. It was noted that Type 1 consensus failures can be safely dealt with, while Type 2 failures are more severe but less likely. Multiple competing implementations were suggested as a solution to these issues. In the event of a Type 2 failure such as the 92 million bitcoin bug from August 2010, it was suggested that Core should accept a rogue transaction that creates more bitcoins and let other implementations fork away from it as opposed to having bug-for-bug compatibility.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:37:19.468017+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

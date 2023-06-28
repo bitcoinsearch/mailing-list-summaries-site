@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Alternative way to count sigops</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-02-17 02:33:32
+            <br><i>Published on: 2018-02-17T02:33:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2018/combined_Alternative-way-to-count-sigops.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015765.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent thread on bitcoin-dev, Johnson Lau pointed out the current block weight limit of 4,000,000 and sigop limit of 80,000, which means each sigop couldn't use more than 50 weight units. For new script proposals, there is a suggestion to count the actual number of sigops at execution and ensure that the number of executed sigops multiplied by 50 does not exceed the size of the input. Bitcoin Core has had a related policy rule for some time where the weight of a transaction for mining purposes is max(weight,lambda*sigops), but lambda has been set lower than ideal due to limitations in checkmultisig. This policy replaced an earlier one that rejected transactions with too many sigops per byte count, but it was found to block sensible transactions. Going forward, this may not be an ideal framework since many new operation proposals may have computational costs that require relatively small amounts of additional input, such as aggregation.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T05:13:51.220360+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>General question on routing difficulties</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2017-11-17 14:30:14
+            <br><i>Published on: 2017-11-17T14:30:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2017/combined_General-question-on-routing-difficulties.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000791.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread discussing Lightning Network's routing protocol, Christian Decker responds to Benjamin Mord's question regarding cryptographic primitives being used in Lightning and the specific assumptions being made about them. Decker explains that while the minimally viable routing protocol is set in stone for now, the project is actively working on finding better solutions to the problem of finding routes across a vast network of millions if not billions of nodes. Distance vector routing such as BGP uses may be one option like Ben suggested. Decker also addresses concerns about the possibility of hubs forming and centralizing flow through small numbers of liquidity providers, explaining that creating such a hub is extremely costly since it'll have to allocate sufficient funds to cover the maximum imbalance of all of its channels ahead of time. The fees must cover the opportunity cost of allocating all of those funds to channels instead of investing them somewhere else. Moreover, the high fees make the hub channels a bad choice for payment as it opens up an opportunity for nodes to open bypasses that grab some of the traffic and associated fees from the expensive hub. He adds that nobody can really be sure about what'll happen in terms of topology.The Lightning Network project hopes to reduce the load on the on-chain network sufficiently to allow timely on-chain settlements by aggregating payments off-chain, which can also aggregate the fees and then use them to pay on-chain fees. They are building automations that should take care of this. Ultimately, this should encourage participants to open channels that support the network as a whole, not just themselves.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T03:17:33.329189+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

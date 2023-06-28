@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_CODESEPARATOR and FindAndDelete in non-segwit scripts non-standard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-11-15 19:54:17
+            <br><i>Published on: 2017-11-15T19:54:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Making-OP-CODESEPARATOR-and-FindAndDelete-in-non-segwit-scripts-non-standard.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015293.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal to make OP_CODESEPARATOR and FindAndDelete non-standard in non-segwit scripts has been put forward by Johnson Lau via bitcoin-dev. However, removing these features from the code base could potentially destroy value and cross a boundary that has not been previously crossed except under extraordinary circumstances. The nature of bitcoin means that there may be pre-signed transactions using these features, and it is impossible to know what they are. It may be a better idea to make these features non-standard to discourage their use without completely disabling them for all transactions. FindAndDelete is considered one of the most complicated and useless functions in the script language, and it is omitted from segwit but still needs to be supported in non-segwit scripts. Disabling both functions would guarantee that scriptCode serialized inside SignatureHash() must be constant. If a softfork were used to remove FindAndDelete() and OP_CODESEPARATOR from non-segwit scripts, it would be possible to completely remove FindAndDelete() from the consensus code later by whitelisting all blocks before the softfork block. However, OP_CODESEPARATOR in segwit scripts remains useful for Tumblebit and is not disabled in this proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:13:24.171924+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

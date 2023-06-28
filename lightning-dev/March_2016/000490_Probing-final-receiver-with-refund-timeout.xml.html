@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Probing final receiver with refund timeout</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2016-03-15 01:01:38
-            <br><i>Published on: 2016-03-15T01:01:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2016/combined_Probing-final-receiver-with-refund-timeout.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000490.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion on the Lightning Network mailing list, participants debated how to prevent a node from knowing that a payment is originating from another source rather than being relayed. The issue is caused by the fact that a payment's timeout duration is known to all nodes in its route. If one node sees many payments with similar timeouts, it can conclude that they are coming from the same source. One proposed solution involves making sure that payment timeouts differ between each other. Another solution was presented by Rusty Russell, who suggested that each node should publish their minimum timeout value. When the payer initiates a transaction, the payer sums the minimum timeout of each hop to get an initial HTLC timeout and then adds some random value to it. The payer also subtracts the last hops' MIN_TIMEOUT from the initial timeout and inserts this value into each subsequent layer of the onion routing packet.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T22:38:11.624900+00:00 </i></p>
     
     
 

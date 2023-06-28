@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP Proposal] Version bits with timeout and delay.</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tier Nolan 2015-09-16 17:53:20
+            <br><i>Published on: 2015-09-16T17:53:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_-BIP-Proposal-Version-bits-with-timeout-and-delay-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011021.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email dated September 13, 2015, contains a proposal for states associated with every softfork proposal. The state BState begins at defined and can be locked-in, activated, or failed. Transitions are considered after each retarget period. The writer believes that the 75% rule should be maintained to confirm that miners who are setting the bit are creating blocks that meet the new rule. In the tentative stage, if 75% of blocks of the last 2016 have the bit set, it goes to tentative. If 95% of blocks of the last 2016 have the bit set, it goes to locked-in. In the locked-in phase, miners still set the bit, reject blocks that don't follow the new rule, and after 2016 blocks, go to notice. In the activated stage, miners do not set the bit for at least 10080 blocks, and reject blocks that don't follow the new rule. A soft fork proposal should include a timeout, and counting in blocks is easier to be exact. If two bits were allocated per proposal, then miners could vote against forks to recover the bits. SPV clients should be recommended to monitor the version field. The proposal should also discuss effects on SPV clients and buggy miners.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T22:23:19.179474+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

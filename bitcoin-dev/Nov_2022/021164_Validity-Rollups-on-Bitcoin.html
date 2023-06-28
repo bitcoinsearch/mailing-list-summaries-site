@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Validity Rollups on Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Trey Del Bonis 2022-11-04 19:53:31
+            <br><i>Published on: 2022-11-04T19:53:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_Validity-Rollups-on-Bitcoin.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021164.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent post on the Bitcoin development mailing list, Trey Del Bonis discusses various possibilities for making rollups work with different tradeoffs. He outlines the core construction in his article [1], which involves storing some persistent "state" as part of the beginning of the script and updating it by the transaction according to rules asserted by the program, then constructing a new scriptPubKey that is asserted on the first output. Trey Del Bonis also suggests using granular transaction introspection opcodes from a list in Elements [2] and some math and byte manipulation opcodes that were disabled years ago but are re-added. He highlights the complicated part of actual proof verification and suggests building a verifying for a modern proof system if we used pairings as a primitive. Moreover, he suggests using lightning nodes to pick who gets to be in the quorum, semi-verifiably checking for long-lived nodes with a consistent level of activity as a proxy for honesty. However, he thinks this still feels like a centralizing force. He suggests several instances of these rollups with staggered batch submissions to run in parallel, hopefully with mostly disjoint sets of sequencers.He also points out that the current centralization in productionalized rollups is a cause for concern and believes that introducing something close to general-purpose offchain contracting that is provable with onchain crypto operations is required via soft fork. He suggests Simplicity or something like Chialisp for consideration.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T01:47:36.644510+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

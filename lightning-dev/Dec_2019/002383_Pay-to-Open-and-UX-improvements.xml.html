@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Pay-to-Open and UX improvements</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bastien TEINTURIER 2019-12-17 10:23:14
-            <br><i>Published on: 2019-12-17T10:23:14+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Dec_2019/combined_Pay-to-Open-and-UX-improvements.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002383.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a conversation thread, t-bast raised concerns about the trust relationship that appears in two places when using pay-to-open in Lightning wallets. The user releases the preimage and trusts that the funder won't double-spend the funding transaction. ZmnSCPxj suggested a construction to ensure atomicity using HTLC-like constructions, similar to what is used in HTLC-success/HTLC-timeout in BOLT 3. Channel opening could be done by creating a transaction from on-chain funds, paying out to an HTLC-like construction with logic "(hash_preimage && A && B) || (timelock && A)." Once the pre-funding is sufficiently confirmed as per Bob security parameter, Bob broadcasts the funding transaction, making it valid by adding the preimage to the witness stack. This setup ensures that the funder cannot double-spend funds that will eventually get into the channel after it is capable of receiving the preimage. However, this makes Alice vulnerable to Bob aborting after the pre-funding is confirmed, forcing Alice to pay for the pre-funding and the timelock branch. This can be fixed by forcing Bob to provide funds to the pre-funding, which get returned to the channel on Bob's side.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T22:24:54.519767+00:00 </i></p>
     
     
 

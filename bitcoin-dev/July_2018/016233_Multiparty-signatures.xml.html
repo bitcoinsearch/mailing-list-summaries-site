@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Multiparty signatures</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gregory Maxwell 2018-07-09 16:58:38
-            <br><i>Published on: 2018-07-09T16:58:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2018/combined_Multiparty-signatures.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016233.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent email exchange, Erik Aronesty questioned the level of security assumptions in the proposed Schnorr construction for multiparty signing compared to Musig. Musig provides instructions on using the original schnorr construction for multiparty signing, which is secure against participants adaptively choosing their keys. It works as preprocessing on the keys and then continues with the naive protocol. The verifier is the same. However, going back to using a cryptographic hash, it seems that the suggested approach is "use naive interpolation of schnorr signatures". This approach can be used with the verifier proposed in the BIP but is insecure against adaptive key choice and potentially adaptive R choice. Picking interpolation locations with the hash of each key isn't sufficient to prevent cancellation attacks due to the remarkable power of Wagner's algorithm.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T17:24:59.032565+00:00 </i></p>
     
     
 

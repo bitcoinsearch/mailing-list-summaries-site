@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Let&#39;s deploy BIP65 CHECKLOCKTIMEVERIFY!</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2015-09-28 15:38:28
+            <br><i>Published on: 2015-09-28T15:38:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2015/combined_Let-s-deploy-BIP65-CHECKLOCKTIMEVERIFY-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011229.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In order for a hard or soft fork to work, there must be support from a majority of the hash power. The usual SPV technique of following the highest work chain results in ignoring the minority chain produced by the hard fork. BIP 101 is SPV friendly because the wallets would simply follow the 75% chain and never even be aware anything has changed. It's backwards compatible with them in this respect: they already know how to ignore the no-bigger-blocks fork that'd be created if some miners didn't upgrade during the grace period. Miners bypassing IsStandard() risk creating invalid blocks in the event of a soft-fork. Equally, we design soft-forks to take advantage of this. However, this approach does make changing IsStandard() the same as changing AcceptBlock(), except without the advantage of telling anyone about it. The purpose of doing things this way is disputed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T23:09:59.949289+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

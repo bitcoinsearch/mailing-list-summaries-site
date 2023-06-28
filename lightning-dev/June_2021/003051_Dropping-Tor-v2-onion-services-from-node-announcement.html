@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dropping Tor v2 onion services from node_announcement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-06-10 20:40:21
+            <br><i>Published on: 2021-06-10T20:40:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2021/combined_Dropping-Tor-v2-onion-services-from-node-announcement.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003051.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On June 1, 2021, darosior via Lightning-dev informed that it has been almost nine months since Tor v2 hidden services have been deprecated. The Tor project plans to drop v2 support in about a month in the latest release and will entirely drop from all supported releases by October. Bitcoin Core defaults to v3 since 0.21.0 and is planning to drop v2 support for 0.22, which means that v2 onions will gradually stop being gossiped on the Bitcoin network. C-lightning is deprecating the configuration of Tor v2 services starting next release, and according to their deprecation policy, they should be able to drop its support three releases after this one. The author suggests doing the same for the Lightning network, stating that the timeline is tight, and the configuration is user-facing, which may make the transition trickier. The author asks for opinions and the state of other implementations regarding Tor v2 support. There isn't much to do at the spec level to deprecate them, but nodes need to start ignoring the addresses bug nodes always need to know the length/parse v2 Onion addresses forever as well as store and forward them. It could amend the spec to say that nodes shouldn’t produce them but it won’t change the receive/process end much.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T14:46:36.712840+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2019-10-03 10:01:58
-            <br><i>Published on: 2019-10-03T10:01:58+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002199.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made on the bitcoin-dev list regarding concerns over the use of `SIGHASH_NOINPUT` on ordinary UTXOs and how it could affect SegWit v1 outputs. The proposal suggests not allocating SegWit v16 for `SIGHASH_NOINPUT` and instead using SegWit v1 Tapscript v16 for it. This solves the issue of ordinary UTXOs not allocated for `SIGHASH_NOINPUT` use being inadvertently spent with it and of privacy concerns over output tagging. The proposal also allows for invisible tagging since opt-in to `noinput` is hidden inside committed scripts, which only get revealed when required. This would enable eltoo funding output to be invisibly tagged, and the cooperative close would use the taproot pubkey while the uncooperative close would require noinput opt-in, revealing the script, proving prior opt-in, and providing a matching signature. AJ's alternative pubkey encoding (0x01 or 0x00 prefixed pubkey) may be required to make the opt-in visible.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T20:37:45.287229+00:00 </i></p>
     
     
 

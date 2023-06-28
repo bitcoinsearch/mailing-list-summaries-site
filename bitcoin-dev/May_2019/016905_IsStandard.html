@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>IsStandard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Aymeric Vitte 2019-05-02 10:01:54
+            <br><i>Published on: 2019-05-02T10:01:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_IsStandard.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016905.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation revolves around the question of whether nodes will relay non-standard transactions or not, and how to know what they will accept or not. As long as a transaction matches P2PKH, P2SH, P2WPKH or P2WSH, everything is standard. The redeem scripts for the sha bounties are in op_return. However, the case of BCH is still unclear since it's related to bitcoin code unless they changed the policy. It is not known if nodes would not propagate the fix or if people did not want to take the risk to propagate it. It's also unclear why a non-segwit old bitcoin node would not accept it either. ZmnSCPxj, who was responding to the message, noted that P2PKH and P2WPKH cannot have custom script, but any custom script can be wrapped in P2SH and P2WSH and will be propagated. The P2SH/P2WSH hides the details of the custom script so filtering based on the custom script is not possible. Once a claim on a modified x-of-3 is propagated, the redeemScript is known, and someone can attempt to RBF with a modified witness stack or scriptSig to claim the UTXO. ZmnSCPxj could not answer for BCH, and the old SHA bounty transactions were propagated in the days before isStandard. An SHA bounty can still be propagated today if they are wrapped in a P2SH or P2WSH, but you have to publish the redeemScript yourself in some other method or bribe a miner if the transaction is not time-sensitive.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:30:18.426190+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

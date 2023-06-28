@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Committing to extra block data/a better merge-mine standard</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-11-15 22:06:48
+            <br><i>Published on: 2013-11-15T22:06:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2013/combined_Committing-to-extra-block-data-a-better-merge-mine-standard.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003696.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Mark Friedenbach proposed using per-purpose UUIDs to validate data committed to a jagged tree structure. The UUID bits are interpreted as allowed paths (0 = left, 1 = right) from the top of the tree, and when building the tree, everything that is going to be committed must use its allowed path. If everyone picks their random per-purpose UUIDs, the paths won't collide for very many levels on average, and path lengths will remain short. Validating that some given data was committed properly is simple and easy: just check the path and ensure that the directions from the top of the tree followed the spec. Peter Todd suggested using a hash256-to-UUID mechanism explicitly for this purpose. After previously proposing to this list, he’s now leaning towards using the hash of the genesis block directly to identify aux chains since level compression will allow longer keys with the same path length. Peter mentions that any large randomly picked integer is fine. He also suggests running the idea past forrestv, given p2pool will be affected as it'd need to adopt the standard and he's run into some oddness with mining hardware and nonces that would be good to understand (note how p2pool blocks don't commit to a fully random hash - there's some extra bytes in there due to stratum or something IIRC).</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T19:16:38.543475+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

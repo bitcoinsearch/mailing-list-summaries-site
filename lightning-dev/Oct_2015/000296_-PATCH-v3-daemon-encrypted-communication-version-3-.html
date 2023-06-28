@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH v3] daemon: encrypted communication (version 3)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2015-10-27 18:01:32
+            <br><i>Published on: 2015-10-27T18:01:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2015/combined_-PATCH-v3-daemon-encrypted-communication-version-3-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000296.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The code in question involves encrypted packets that are protected by an HMAC and include a serialized protobuf message. The totlen field is meant to track the total data transmitted, but it appears to actually track the size of the unencrypted message. Additionally, totlen includes its own length, which seems unnecessary since it doesn't define the encrypted message boundaries. The field was originally intended for replay protection, but as AES-CTR already provides this, totlen is not needed. This is because there is a dedicated counter in the IV that keeps track of all messages in each direction and prevents decryption if an attacker tries to replay the same message.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:14:10.151373+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

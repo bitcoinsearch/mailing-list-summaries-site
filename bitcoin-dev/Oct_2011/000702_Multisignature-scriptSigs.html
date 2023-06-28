@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Multisignature scriptSigs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gavin Andresen 2011-10-27 16:13:04
+            <br><i>Published on: 2011-10-27T16:13:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2011/combined_Multisignature-scriptSigs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000702.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email, Gavin Andresen discusses the issue of the IsStandard() function checking that the size of scriptSig is not above 200, which triggers a limit when an extra signature is added. He suggests implementing green addresses as an extra signature on the first scriptSig in a transaction once BIPS 11 and 12 are adopted. He also proposes a maximum of three signatures for an IsStandard() transaction, which would be a 600-byte scriptSig. However, he thinks it's best to stay conservative about IsStandard() transaction size until bitcoin-qt gets smarter about downloading just block headers and maybe downloading transactions without scriptSigs. He also believes that miners should make policy decisions on minimum fee per kilobyte or ECDSA signature check and how many free transactions they'll include in the blocks they create. Bitcoin clients should be smarter about looking at what transactions are getting into the chain so they can suggest appropriate fees to users.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T21:02:24.745780+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

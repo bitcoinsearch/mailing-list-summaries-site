@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>ScriptPubkey consensus translation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2018-01-18 21:00:03
+            <br><i>Published on: 2018-01-18T21:00:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_ScriptPubkey-consensus-translation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015585.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The utilization of new cryptographic systems like signature aggregation (sigagg) or segwit does not make the spending of existing outputs more efficient. This is because the redemption instructions for existing outputs have already been set, and they do not incorporate these new features. The good news is that no one is forced to expose their funds to new cryptosystems whose security they may not trust. If sigagg is deployed, for example, any cryptographic risk in it is borne by people who opted into using it.However, if sigagg is long deployed, widely used, and universally accepted as at least as good as an old P2PKH, including a hardfork consensus rule that lets someone spend scriptPubkey's matching specific templates as though they were an alternative template might be plausible. In this case, an idiomatic P2PKH or perhaps even a P2SH-multisig could be spent as though it used the analogous p2w-sigagg script. The downsides of implementing this dual interpretation could be mitigated somewhat by only making it apply to outputs older than a cutoff time after the activation of the new feature. For example, five years after the initial activation of the sigagg soft-fork, the sigagg rules will apply to pre-activation UTXOs as well. This would allow old UTXOs to be spent more cheaply, perhaps making some dust usable again, but anyone who purposefully sent funds to old-style outputs after the cutoff are not opened up to the dual interpretation.There is a limitation, however, that there is some risk of breaking the security assumptions of some complicated external protocol, such as those that assumed having a schnorr oracle for a key wouldn't let you spend coins connected to that key. This can be addressed by ample communication in advance, discouraging the creation of excessively fragile things like that, and finding out if any exist so they can be worked around.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:56:33.049358+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

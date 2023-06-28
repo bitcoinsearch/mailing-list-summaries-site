@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Coin Control, Send crash on MacOS X</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Warren Togami Jr. 2013-12-04 01:57:00
+            <br><i>Published on: 2013-12-04T01:57:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2013/combined_Coin-Control-Send-crash-on-MacOS-X.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-December/003792.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In December 2013, Warren Togami Jr. backported patches from master and Litecoin to make a Bitcoin 0.8 client with more features. The backported patches were working well on Linux and Win32. However, a rare crash was discovered on MacOS X. It seemed to be some kind of race condition involving SendCoinsEntry::clear(). Wladimir suggested that the setFocus should not be in clear() and instead moved to a separate function "focusPayTo". After removing both setFocus() calls that happen after Send is clicked, it caused another crash within qt. Warren continued trying other things to fix the issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T21:30:15.250559+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

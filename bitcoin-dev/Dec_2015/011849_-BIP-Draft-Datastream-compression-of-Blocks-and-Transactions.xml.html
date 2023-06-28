@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP Draft] Datastream compression of Blocks and Transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Tschipper 2015-12-02 23:05:10
-            <br><i>Published on: 2015-12-02T23:05:10+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2015/combined_-BIP-Draft-Datastream-compression-of-Blocks-and-Transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011849.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange dated November 30, 2015, Matt Corallo expressed his concern about adding a compression library directly accessible to the network on financial software. He found it to be a risky idea despite LZO having no current security issues and being configurable by each node operator. The improvement shown in compression was not significant enough for him, though it ranged from 15% to 27%. Corallo argued that if we are throughput-limited after the very beginning of IBD (Initial Block Download), we should fix that rather than compressing the blocks. Corallo only did the compression up to the 200,000 block to isolate the transmission of data from the post-processing of blocks and determine whether the compressing of data was adding too much to the total transmission time. As the size of the data (blocks and transactions) increases, they compress better and have a bigger and positive impact on improving performance when compressed, according to Corallo.Corallo also mentioned that he would be surprised if compressing blocks had any significant effect on the speed at which new blocks traverse the network. However, the data provided in Table 5 showed that as block size increased, the performance improvement by compressing data also increased. For example, at 120,000 blocks, the time to sync the chain was roughly the same for compressed and uncompressed. But after that point and as block sizes start increasing, all compression libraries performed much faster than uncompressed. Finally, Corallo noted that while compression is not helpful in post-processing and validating the block, it certainly helps in the pure transmission of the object directly proportional to the file size. The only issue he saw in adding compression was determining how much compression there would be and how much time the compression of the data would add to the sending of the data.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T01:32:09.768131+00:00 </i></p>
     
     
 

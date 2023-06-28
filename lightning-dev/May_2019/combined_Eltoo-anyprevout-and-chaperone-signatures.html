@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Eltoo, anyprevout and chaperone signatures <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/001994_Eltoo-anyprevout-and-chaperone-signatures.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>ZmnSCPxj 2019-05-16 01:48:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/001996_Eltoo-anyprevout-and-chaperone-signatures.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>Anthony Towns 2019-05-16 15:37:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/001992_Eltoo-anyprevout-and-chaperone-signatures.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>Bastien TEINTURIER 2019-05-15 09:23:09</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/001993_Eltoo-anyprevout-and-chaperone-signatures.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>Christian Decker 2019-05-15 20:36:32</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/001995_Eltoo-anyprevout-and-chaperone-signatures.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>Bastien TEINTURIER 2019-05-16 07:55:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/002000_Eltoo-anyprevout-and-chaperone-signatures.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>Christian Decker 2019-05-20 13:03:24</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2019/001997_Eltoo-anyprevout-and-chaperone-signatures.html">Eltoo, anyprevout and chaperone signatures</a>
+                        <b>ZmnSCPxj 2019-05-18 16:45:07</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-May/001994.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2019-05-16T01:48:51+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network's Eltoo update mechanism was discussed in several forums and mailing lists, with participants proposing ways to optimize it using taproot/tapscript. One suggestion was to use a shared private key to collapse 1-of-2 multisigs into a single-sig, while MuSig could be employed to reduce the need for `OP_CHECKMULTISIG`/`OP_CHECKSIGADD`. Additionally, there may not be a requirement for an explicit `OP_CHECKSEQUENCEVERIFY`, or separate keys for state and update paths. The chaperone signature was also debated, with suggestions made to modify the update transactions by using the proposed OP_IF/OP_ELSE structure. In this structure, Alice and Bob would exchange their anyprevoutanyscript signatures, and the chaperone signature could be provided by either party at transaction broadcast time. However, the chaperone idea might not play nice with taproot collaborative spends that require anyprevout/anyprevoutanyscript/noinput. ZmnSCPxj questioned the use of the "collaborative path" mentioned in a previous message, which refers to using the taproot-tweaked public key to sign without revealing any scripts. The bip-taproot proposal disallows all `SIGHASH` flags except for the current set of valid ones when using this path, which means it does not include `SIGHASH_NOINPUT`/`SIGHASH_ANYPREVOUT`. Participants suggested that the collaborative path is only useful unless parties are cooperatively closing anyway, since they don't need to require `SIGHASH_ANYPREVOUT` once they agree to spend the funding txo. Finally, Bastien Teinturier discussed the separation between anyprevout and anyprevoutanyscript, noting that it simplifies funding transactions and removes the need for a trigger transaction. However, integrating the chaperone signature is more complicated. Christian Decker proposed using a shared private key to collapse 1-of-2 multisigs into a single-sig, while also acknowledging that the chaperone idea might not be compatible with taproot collaborative spends that require anyprevout/anyprevoutanyscript/noinput. He concluded by noting the importance of ensuring Eltoo can support chaperone signatures, even though it is uncertain if they will eventually be needed.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-03T21:58:45.358999+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

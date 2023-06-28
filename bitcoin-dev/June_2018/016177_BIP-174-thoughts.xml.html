@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP 174 thoughts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2018-06-27 15:06:39
-            <br><i>Published on: 2018-06-27T15:06:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016177.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email conversation is about the PSBT file format. Pieter Wuille explains that the Combiner role is important to ensure forward compatibility with new script types and to combine inputs from different outputs with different script types. The Combiner does not need to understand the contents of the fields, and deduplication can be done through whole-record uniqueness or specified-length uniqueness. However, a key-value model allows dumb combiners to pick one of the keys in case of duplication and remove the necessity of dealing with duplication from all other implementations. A record-based model forces all implementations to deal with multiple partial signatures for a single key. The question arises as to why it is important that an agent which doesn't understand a particular field structure can still make decisions about its inclusion or omission from the result (based on a repeated prefix). This is because otherwise, you may need a separate Combiner for each type of script involved. In addition, the conversation also talks about BIP32 derivation and how computing pubkeys can be expensive.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T17:06:38.029683+00:00 </i></p>
     
     
 

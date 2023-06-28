@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>ThunderNetwork - A Java LightningNetwork Implementation Working Today</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2015-08-11 20:44:27
+            <br><i>Published on: 2015-08-11T20:44:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2015/combined_ThunderNetwork-A-Java-LightningNetwork-Implementation-Working-Today.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000121.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Joseph Poon and Mats Jerratsch focuses on the security issues with the Lightning Network Implementation. The implementation has two primary attack vectors, Funding and HTLCs which can be partially mitigated with a reserve. In the scenario where Alice broadcasts a mutated version of Commitment 20, Bob is out 1 BTC. However, if Alice attacks Bob, she's not out any money, but Bob has funds locked up in a 2-of-2. Bob must then negotiate with Alice to get his money back. Alice will probably want some convenience fee. It’s impossible to mitigate this by setting some reserve requirement because as long as Alice has more money than Bob, she can do it. It is possible to say that the minimum (stealable) amount of Alice must be higher than any sum of concurrent payments minus the blockchain fees. This way Bob can always claim all the payments of all Commitments of the Channel and still stay in positive net balance. However, only open payments are problematic, settled balance can always be stolen with just one transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T19:14:39.701790+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

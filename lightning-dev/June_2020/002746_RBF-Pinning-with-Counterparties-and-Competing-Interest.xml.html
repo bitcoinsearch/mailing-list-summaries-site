@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>RBF Pinning with Counterparties and Competing Interest</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-06-21 02:10:32
-            <br><i>Published on: 2020-06-21T02:10:32+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2020/combined_RBF-Pinning-with-Counterparties-and-Competing-Interest.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002746.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a message exchange, ZmnSCPxj pointed out that pay-to-preimage doesn't work with PTLCs. The requester was hoping for a solution from Bitcoin's cryptographers to create a pubkey with which the transaction could be made. The pubkey would be designed to be spendable by anyone with the final signature in a way that revealed the hidden value to the pubkey's creator, allowing them to resolve the PTLC. However, if it is not possible, they thought of advocating for making pay-to-revealed-adaptor-signature possible using something like OP_CHECKSIGFROMSTACK. The signed message could be a signature to SIGHASH_NONE finally, an actual use for that flag. If the message is going to embed in an OP_RETURN in the same transaction, then it also needs SIGHASH_ANYPREVOUT; otherwise, you cannot embed the adaptor signature for spending from that transaction in the transaction being spent. It also implies A[p4s] = a[p4s] * G is a one-time-use keypair.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T00:51:28.573039+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BOLT3: Commitment Transaction Outputs is weak to malleability</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Nicolas Dorier 2017-11-29 07:11:33
-            <br><i>Published on: 2017-11-29T07:11:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2017/combined_BOLT3-Commitment-Transaction-Outputs-is-weak-to-malleability.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000808.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Commitment Transaction Output script is vulnerable to malleability, which can be exploited to delay the confirmation of the revocation. This can have a negative impact on Lightning as it relies on time locks. The issue is that an attacker can delay the Penalty Transaction by malleating OP_1 into a positive, huge number. This would fill the mempool with the malleated version, resulting in a higher fee rate and further delays in confirmation. However, there is a policy rule called SCRIPT_VERIFY_MINIMALIF, created by jl2012, which was merged into v0.15.1. This fix does not require extensive development and only has a 2-byte overhead. By the time Lightning Network is ready, it is expected that enough miners will have adopted v0.15.1 to prevent this vulnerability.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T03:19:13.668395+00:00 </i></p>
     
     
 

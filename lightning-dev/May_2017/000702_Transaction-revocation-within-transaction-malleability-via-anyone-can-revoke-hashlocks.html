@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction revocation within transaction	malleability via anyone-can-revoke hashlocks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2017-05-05 02:36:31
+            <br><i>Published on: 2017-05-05T02:36:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2017/combined_Transaction-revocation-within-transaction-malleability-via-anyone-can-revoke-hashlocks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000702.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, ZmnSCPxj discusses the issue of transaction revocation with Rusty. From what ZmnSCPxj has gathered, it seems that the issue has been solved even with transaction malleability. However, ZmnSCPxj proposes an idea that supports selfish untrustworthy watchers and wonders if it is better than what Lightning Network currently has or if it has different tradeoffs. At first glance, ZmnSCPxj believes that their idea is equivalent to the current technique if the revocation key is not publicized but sent only to the counterparty. The receiving counterparty has the option of publishing the revocation key in order to allow anyone to enforce and get free money, even with malleability. ZmnSCPxj then asks Rusty if it's a good idea to publish revocation keys and have the condition that allows revocation immediately if you are online or anyone can poach it if you let the CSV+1 lapse. Rusty responds that it might be a good idea to use segwit instead of relying on these kinds of games. Rusty suggests that trusted watchers can know your revocation keys, which have a very compact form and require ~log2(num-transactions) storage. ZmnSCPxj clarifies that they meant A could share the key, which allows A to spend B's old commitment transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:04:52.243376+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

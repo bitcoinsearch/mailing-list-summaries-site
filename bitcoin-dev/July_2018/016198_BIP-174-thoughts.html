@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Achow101 2018-07-04 18:35:16
+            <br><i>Published on: 2018-07-04T18:35:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2018/combined_BIP-174-thoughts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016198.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email, Matejcik raises concerns about the proposed Bitcoin Improvement Proposal (BIP) regarding strictness and security. The first concern is that the current resolution strategy for choosing from duplicate keys when combining is not a good one. They suggest changing it to "in case of conflicts, software MUST reject the conflicting PSBTs" or explaining why picking at random is safe. Rejecting PSBTs with conflicting values for the same key cannot be done because there could be two completely valid signatures for the same pubkey. Allowing combiners to choose any value also allows for intelligent combiners to choose the correct values in case of conflicts.The second concern is that there should be a clear strategy for signers when unknown fields are encountered. They suggest implementing the rule that signers will not sign an input with any unknown fields present. Finally, they suggest some minor points such as spelling out explicitly that if a field definition states that the key data is empty, an implementation must enforce this and reject PSBTs that contain non-empty data. Additionally, they recommend changing the wording of the "Combiner can detect inconsistencies" section to prescribe what the combiner is allowed to do rather than describe what it is capable of doing.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T17:08:35.217388+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>High level fee mechanics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Benjamin Mord 2018-04-11 16:00:47
+            <br><i>Published on: 2018-04-11T16:00:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_High-level-fee-mechanics.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001164.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The question of whether channels should have the option to publicize their balances for routing performance and scalability in a large network, as well as competitive differentiation among routes, was raised on the Lightning-dev mailing list. However, revealing channel balances would compromise privacy, since each balance represents the amount of money each peer owns on that channel, and each change represents a send or receive. Real-life implementations like c-lightning use brute-force trial-and-error to get payment routes, which means probing to discover the capacities in each path. The sender risks its funds if a node along the route stalls, but only gets one bit of information about whether the channel balance in a particular direction is greater than X. This technique is less desirable than getting exact channel balances at each update, but still provides some information while preserving some privacy.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T22:05:30.247568+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

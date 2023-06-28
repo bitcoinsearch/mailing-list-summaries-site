@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Can we penalize peers who relay rejected replacement txs?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Matt Whitlock 2015-07-10 01:36:38
-            <br><i>Published on: 2015-07-10T01:36:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2015/combined_Can-we-penalize-peers-who-relay-rejected-replacement-txs-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009371.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Matt Whitlock is running his full node with Peter Todd's full replace-by-fee patch set. Due to the ongoing spam attack, Matt is seeing a steady stream of replacement transaction rejection messages which could happen legitimately from time to time. However, due to the flood of spam transactions being mostly invalid under RBF rules, he wants to cut off the flood coming into his node by temp-banning the peers who are relaying such invalid replacement transactions. By doing so, the CPU load due to Bitcoind could be reduced as presently there are periods of time in which Bitcoind is pegging a CPU core. Moreover, if enough other nodes also implement this banning rule, then we could potentially cut off the flood of spam right at the source. This would force the spammer to build and publish non-conflicting transactions to continue the attack which could eventually have their fees collected by miners, not just some non-conflicting subset of the spam. Patrick Strateman questioned the practicality of banning peers doing this but Matt did not respond to that. The link to Peter Todd's full replace-by-fee patch set has been provided in the context.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-10T02:14:14.114257+00:00 </i></p>
     
     
 

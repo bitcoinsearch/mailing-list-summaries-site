@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Analysis: alternative DoS prevention concept</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> CJP 2016-11-10 23:11:54
+            <br><i>Published on: 2016-11-10T23:11:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2016/combined_Analysis-alternative-DoS-prevention-concept.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-November/000648.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network is vulnerable to DoS attacks where attackers can send large transactions to themselves over extended routes, and let them time out, which locks up funds and causes a lot of loss to innocent nodes. A solution was proposed in Milan, where nodes require either fast commit or roll-back within 30 seconds, or proof that another channel was closed. This solution forces nodes to reveal their channel state in certain situations to remote nodes, limiting the freedom in channel design for a heterogeneous network. As an alternative, the payer of the transaction could pay some transaction fees at the beginning of the transaction to compensate intermediate nodes for damage caused by a DoS attack. There are two variations of this solution: one with a constant in-advance fee and one depending on the time it takes for the transaction to roll back. However, these fees cannot fully compensate intermediate nodes, and they do not significantly impact attackers. There is also an upper limit to the total fee, so this solution does not scale well with the length of the route. In conclusion, there is currently no alternative solution to address the DoS mode vulnerability, and peer relationships may need to become somewhat trusted to avoid exposing each other to long-duration transactions. The spreadsheet used to evaluate incentives for the proposed solution may be of interest for future exploration.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:46:17.219800+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

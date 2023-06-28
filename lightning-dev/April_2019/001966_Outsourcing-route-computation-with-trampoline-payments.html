@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Outsourcing route computation with trampoline payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2019-04-04 10:39:13
+            <br><i>Published on: 2019-04-04T10:39:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2019/combined_Outsourcing-route-computation-with-trampoline-payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001966.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to ZmnSCPzj, Christian proposed not trying to recover from a node not finding the next hop in the trampoline and instead reusing the existing onion construction as is and expecting the trampolines to fail a payment if they can't find the next hop. He gave an example of a route with sender "a" and recipient "j", with trampolines "D" and "G". Sender "a" selects trampolines "D" and "G" at random from their partial (possibly outdated) routing table and creates the inner onion using those two trampolines. Upon receiving the onion, "D" decrypts the outer onion to find the TLV payload containing the "t" entry, which indicates that it should act as a trampoline. It then decodes the inner trampoline onion and finds the "node_id" of "G". "D" then computes the outer onion to the next trampoline "D -> e -> f -> G" and adds the trampoline payload for "G" (the inner trampoline onion decoded earlier). Upon receiving the onion, "G" processes the onion like normal and finds again an inner trampoline onion and decrypts it. Since "j" did not indicate that it understands the trampoline protocol, "G" is instructed to downgrade the onion into a normal non-trampoline onion. The entire job of trampolines is to provide base routing capability, and no special provisions should be made for myopic trampoline nodes, since routing is their entire reason for existence. ZmnSCPzj asked if this could be implemented by replacing only the front of the trampoline-level onion, to which Christian proposed that for the "inner" trampoline-level onion, the first hop be sent "in the clear". If a node cannot find the front of the trampoline-level onion, then it can route it to another node that it suspects is more likely to know the destination. Christian gave an example of payer Z creating a trampoline-level onion C->D->E and routing to link-level onion A->B->C, with the payload to C being the above trampoline-level onion. Upon reaching C, if C is unable to find D in its local map, it can delegate it to some other node.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:04:46.068304+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

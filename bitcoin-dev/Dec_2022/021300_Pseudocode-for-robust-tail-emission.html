@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pseudocode for robust tail emission</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> jk_14 at op.pl 2022-12-27 15:34:07
+            <br><i>Published on: 2022-12-27T15:34:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2022/combined_Pseudocode-for-robust-tail-emission.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021300.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to improve the Bitcoin network's security. The proposal suggests using a chainwork parameter instead of the existing method. Specifically, the last 210,000 block interval will have higher chainwork difference compared to any other such inter-halving interval before. This mechanism ensures that all users participate in ensuring the network's security and actively prevent free riders. The proposal is based on achieving equilibrium regarding costs of security between two parties with opposing interests. It has no hardcoded value of tail emission, which proves that it is based on a free market. Additionally, if someone is sure that income from transactions will take over security support from block subsidy, accepting the proposal means putting the money where one's mouth is, and this safety measure will never be triggered.The proposal suggests that every 210,000 blocks, the code should calculate the average difficulty of the last 100 retargets and compare it with the maximum of all previous average difficulties. If the average difficulty of the last 100 retargets is greater than the maximum of all previous average difficulties, then halving occurs; otherwise, nothing happens. This way, the system cannot be played, and in case of destructive halving, the system waits for the recovery of network security.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T03:38:31.032982+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

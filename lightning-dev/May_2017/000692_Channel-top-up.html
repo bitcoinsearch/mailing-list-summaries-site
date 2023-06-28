@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Channel top-up</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2017-05-03 16:51:46
+            <br><i>Published on: 2017-05-03T16:51:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2017/combined_Channel-top-up.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000692.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network protocol could be expanded with a new operation, according to a proposal by user ZmnSCPxj. The top-up system would allow users to add funds to a micropayment channel to pay for services. The concept already exists outside of the Lightning Network, and many new users might reasonably expect it to be available. The proposed procedure involves Alice generating a preimage, proposing a top-up operation to Bob, who responds with a new public key hash as payment target. Alice then generates a recovery public key hash and creates an HTLC transaction containing the top-up amount from her funds, signs it and broadcasts it to the Bitcoin network. When the transaction confirms on the blockchain, Alice provides the transaction ID to Bob as well as the hash of the random number preimage. Bob sends a (standard) update_add_htlc to Alice, referring to their channel, with a 1-day timeout. After Bob confirms that the preimage hashes to the random number preimage, he fulfils the update_fulfill_htlc, allowing Alice to spend via Lightning for Bob's service.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T01:33:03.429629+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

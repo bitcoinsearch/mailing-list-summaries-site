@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BOLT Draft] Onion Routing Spec</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2016-10-21 08:30:59
+            <br><i>Published on: 2016-10-21T08:30:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2016/combined_-BOLT-Draft-Onion-Routing-Spec.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-October/000638.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email discussion, Olaoluwa Osuntokun expressed concern about the payment hash being included in the MAC check of the header. He assumed that the packet format would not be modified to include the payment hash in either the header or e2e payload. Instead, he proposed that the payment hash be a parameter to the packet processing/creation function, where it would be concatenated to the material being authenticated similar to the "associated data" in AEAD cipher modes. This way, there would be no additional data added to the packets, but the payment hash would be authenticated as part of packet processing at each hop. This would make replay attempts by adversaries fail, assuming all nodes remember all payment hashes, and come at a direct monetary cost to the attacker. Christian Lundkvist acknowledged the oversight and promised to add it to the spec and implementations.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T23:58:03.472683+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using a storage engine without UTXO-index</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tomas 2017-04-06 22:12:27
+            <br><i>Published on: 2017-04-06T22:12:27+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Using-a-storage-engine-without-UTXO-index.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014048.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Tomas van der Wansem, the creator of Bitcrust, has been working on a bitcoin implementation that uses a unique approach for verifying the order of transactions. Instead of using an index of unspent outputs, Bitcrust verifies double spends by using a spend-tree where spends are scanned against spent outputs, allowing for better concurrency as blocks and individual inputs can be verified in parallel. The approach is explained on the Bitcrust website, and the source code is available on GitHub.Van der Wansem is sharing this information not only to ask for feedback but also to call for a clear separation of protocol and implementation. He believes that since the solution seems to have excellent performance characteristics, updates to the protocol addressing UTXO growth may not be worth considering as protocol improvements. Instead, it might be best to address these concerns as implementation details.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T23:50:22.381225+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

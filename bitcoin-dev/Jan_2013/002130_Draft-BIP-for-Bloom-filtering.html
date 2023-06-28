@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Draft BIP for Bloom filtering</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2013-01-16 15:00:47
+            <br><i>Published on: 2013-01-16T15:00:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2013/combined_Draft-BIP-for-Bloom-filtering.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-January/002130.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Matt has suggested a minor algorithmic change to the hash function which he will finish up by the end of the day. According to Mike Hearn's message, Andreas tested Matt's latest code and it seems to work correctly. However, he had to extend the client to refresh the filter every 25k blocks because the filter degrades into uselessness even with an extra flag. Despite this, the situation has still improved significantly. Mike Hearn has reviewed the code several times, and as it is unit tested and has an interoperable implementation that has been tested by Andreas in a build of his smartphone app, he is going to ACK the current code and request that it be merged in to 0.8. Gavin's opinion is also being sought. The next step after merging would be profiling for performance improvement for SPV clients. Although it is already a big improvement, it is not as much as anticipated, so there may be a simple bottleneck or missed optimization somewhere. This can be addressed after 0.8.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T15:58:10.877961+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

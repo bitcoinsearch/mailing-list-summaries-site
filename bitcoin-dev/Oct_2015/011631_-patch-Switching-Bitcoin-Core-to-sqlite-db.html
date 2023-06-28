@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[patch] Switching Bitcoin Core to sqlite db</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> telemaco 2015-10-29 06:57:39
+            <br><i>Published on: 2015-10-29T06:57:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_-patch-Switching-Bitcoin-Core-to-sqlite-db.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011631.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal suggests having two options for Bitcoin node users: a default RocksDB/SQLite/LevelDB or an alternative option that allows users to connect to any other RDBMS using ODBC or JDBC. The traditional approach has been to use the open standard for database connectivity, but this limits users to slower databases. By allowing async disk writes or faster databases, users can benefit from increased speed and better data management.With this proposal, users would only need to have one machine with their Bitcoin node and an RDBMS client installed (such as SAP Sybase, Oracle, or Microsoft). The Bitcoin node would store data using the ODBC/JDBC protocol on any RDBMS installed in their organization, enabling them to take advantage of async and indexes and to use their already licensed and configured system of choice. This would make Bitcoin information available to thousands of software packages and programmers who work with RDBMS, not just "RocksDB" or some obscure database system.By outsourcing data management to the existing database world, users could easily create Bitcoin statistics, graphs, and analysis with existing software packages or connect Bitcoin data to their own sources. They could even analyze Bitcoin data on a data warehouse or any imaginable approach. However, every transaction would still have to go through the Bitcoin node, with only the data management being handled by the RDBMS side.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:38:31.279923+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

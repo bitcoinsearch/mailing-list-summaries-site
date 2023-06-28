@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Onion messages rate-limiting</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bastien TEINTURIER 2022-07-26 08:16:24
-            <br><i>Published on: 2022-07-26T08:16:24+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2022/combined_Onion-messages-rate-limiting.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003664.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email thread, Bastien responds to comments from other members of the Lightning Network community regarding a proposal for rate-limiting onion messages in the network. When asked why the proposed scheme couldn't be used for rate-limiting HTLCs as well, Bastien explains that HTLC DoS attacks are fundamentally different from onion message attacks because the culprit isn't always upstream, and back pressure cannot work. Regarding concerns about an attacker generating spam forever, Bastien argues that there is no per-message cost borne by nodes, and back pressure within the network should prevent denial of service to other participants. Joost provides a simulation to test the proposal, which shows that while spammers can still hit the next hop rate limit with enough channels, legitimate users will not typically reach the point of decreased limits unless they require much less rate than is available. Joost also suggests that the idea could be extended to HTLC forwarding rate limiters to combat short-lived HTLC spam.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T09:19:50.620385+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Compressed block headers</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Will Clark 2020-05-08 12:31:06
-            <br><i>Published on: 2020-05-08T12:31:06+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2020/combined_Compressed-block-headers.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017834.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a post to the Bitcoin development mailing list, Will Clark proposed a compressed block header scheme for Initial Block Download (IBD) and block announcements. The proposal is a derivative of previous proposals, with some modifications and clarifications. Currently, block headers as exchanged by nodes over the p2p network are 81 bytes each. Reducing the size of the headers can provide a significant bandwidth saving, especially for low bandwidth nodes who are doing a headers-only sync. The proposal suggests compressing fields in the headers under certain conditions, which can result in a maximum reduction from an 81 byte header to a best-case 39 byte header. This compression results in a saving of 49% of the required bandwidth. A new service bit would be required so that the nodes can advertise their ability to supply compact headers. Three new messages would be used by nodes that enable compact block header support, two query messages: getheaders2 and sendheaders2 and one response: headers2.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T01:24:40.083835+00:00 </i></p>
     
     
 

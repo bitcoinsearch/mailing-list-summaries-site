@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recurring bitcoin/LN payments using DLCs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Chris Stewart 2022-03-06 14:05:25
+            <br><i>Published on: 2022-03-06T14:05:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2022/combined_Recurring-bitcoin-LN-payments-using-DLCs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020065.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Chris and ZmnSCPxj, the former highlighted that multisig requires interactiveness at settlement time, which means that the escrow provider needs to know the exact details about the bitcoin transaction and needs to issue a signature. However, with PTLCs, this isn't the case, giving an improvement in user experience for Alice & Bob using the escrow provider. The oracle just issues attestations, and Bob or Alice take those attestations and complete the adaptor signature. This reduces the bi-directional communication requirement at settlement time and only requires unidirectional communication. Non-interactive settlement is one of the big selling points of DLC style applications.ZmnSCPxj proposed an example application that might benefit from this scheme, where a transaction's signature can be completed only if the oracle releases a proper scalar, which can be handed over to a workperson to perform some work. After the work has been completed, the workperson asks the oracle to judge if the work has been completed, and if so, compensation can be made. Additionally, ZmnSCPxj stated that the above, where the oracle determines when the fund can be spent, can also be implemented by a simple 2-of-3, called an "escrow," as the oracle attestation can be a partial signature as well, not just a scalar. Finally, they discussed the possibility of multiple PTLCs triggered by a single oracle.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T17:28:56.399196+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

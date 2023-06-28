@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New serialization/encoding format for key material</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2018-05-29 09:13:37
+            <br><i>Published on: 2018-05-29T09:13:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_New-serialization-encoding-format-for-key-material.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/016038.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal discusses an error tolerant encoding format for key material up to 520 bits with a minimal amount of metadata. The format includes a version bit, key-birthday expressed in days since genesis, script type restrictions, and gap limit delta. The encoding format must hint the total length and allow calculating the key material length. Bech32 is used as the encoding format, and different HRP prefixes are used for mainnet and testnet keys. The proposal aims to replace the WIF standard and make BIP 178 obsolete. The recovery of a wallet by its extended private master key is discussed as a complex task with risks of failing to recover all available funds. It is suggested that recovering funds based on the sole existence of an xpriv (or seed) without further metadata is a fragile concept. Additionally, the current BIP44 gap limit is set to 20, which can result in funds being destroyed or not detected during recovery. High load merchants may need a different gap limit value than individuals who create a transaction once a year. Future proposals may want to limit an extended key to a single derivation scheme.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:58:26.772485+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

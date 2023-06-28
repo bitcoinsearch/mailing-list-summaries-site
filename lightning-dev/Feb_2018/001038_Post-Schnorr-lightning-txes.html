@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Post-Schnorr lightning txes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-02-22 19:28:45
+            <br><i>Published on: 2018-02-22T19:28:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2018/combined_Post-Schnorr-lightning-txes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001038.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Lightning Network mailing list, Anthony Towns talked about the mechanics of the HTLC-Timeout and HTLC-Success transactions in Lightning and suggested an alternative approach that might be better for some cases. He explained that he was not completely sure how his approach works compared to the current one. He said it is possible to redo all the current txes with Schnorr/muSig/scriptless-scripts. The drawback with this approach is that to outsource claiming funds (without covenants or SIGHASH_NOINPUT), you'd need to send signatures for 2+2N outputs for every channel update, rather than just 1, and the claiming transactions would be a lot larger. If you update the channel immediately whenever a new HTLC starts or ends, that's 50 HTLCs per second on average; if they last for 20 seconds on average, it's 1000 HTLCs at any one time on average.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:06:10.067111+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

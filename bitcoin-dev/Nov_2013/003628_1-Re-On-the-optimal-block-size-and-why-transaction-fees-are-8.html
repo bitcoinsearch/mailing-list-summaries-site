@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>1. Re: On the optimal block size and why transaction fees are 8</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Goss, Brian C., M.D. 2013-11-08 16:21:35
+            <br><i>Published on: 2013-11-08T16:21:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2013/combined_1-Re-On-the-optimal-block-size-and-why-transaction-fees-are-8.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003628.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange on the Bitcoin development mailing list from November 2013, Peter Todd responds to a question about propagation time within a mining pool. He explains that the probability of forking is dependent on the amount of hashing power a miner has and outlines three potential outcomes: the block propagates without any other miner finding a block; during propagation another miner finds a block and there's a tie, which the original miner wins or loses; or another miner finds a block before propagation is complete. Todd defines t_prop as the time it takes for a block to propagate from a miner to 100% of the hashing power and t_int as the average interval between blocks. He also defines Q as the probability that a miner will find the next block. Todd calculates probabilities for each outcome, taking into account Q, and defines P_fork(Q) = (t_prop/t_int * (1-Q))(1-Q) = t_pop/t_int * (1-Q)^2. He then recalculates break-even fee/KB using Q and finds that larger pools have a significant advantage because they can charge lower fees for transactions and earn more money. Todd notes that this problem is inherent to Bitcoin's design and regardless of the block size or network speed, the current consensus protocol rewards larger mining pools with lower costs per KB to include transactions. He argues that an unlimited block size would make the problem worse by increasing fixed costs, but keeping the block size at 1MB forever doesn't solve the underlying issue either. Todd warns that the perverse incentives to publish blocks to only a minority of hashing power is a disaster for decentralization.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T19:58:48.097914+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

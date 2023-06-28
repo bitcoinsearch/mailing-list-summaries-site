@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[RFC] Canonical input and output ordering in transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2015-06-08 21:36:11
-            <br><i>Published on: 2015-06-08T21:36:11+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2015/combined_-RFC-Canonical-input-and-output-ordering-in-transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008521.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email thread, Danny Thorpe discussed how the Open Assets colored coin protocol (CoinPrism) places special significance on the zeroth input and the position of the OP_RETURN colored coin marker output. He noted that reordering the inputs or outputs would break the colored coin representation, and while recommending sorting of the inputs and outputs as a best practice is fine, it should not be part of IsStandard() or consensus rules due to certain cases where the order of the inputs and outputs is significant. Peter Todd chimed in to mention that timestamping is another case where order matters, as putting the digest in the last vout can reduce the size of the timestamp proof using SHA256 midstate's. Overall, they concluded that there was no need to rush any changes to IsStandard().</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T22:18:35.431053+00:00 </i></p>
     
     
 

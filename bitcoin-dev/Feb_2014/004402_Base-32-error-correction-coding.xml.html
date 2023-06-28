@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Base-32 error correction coding</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mark Friedenbach 2014-02-21 02:41:05
-            <br><i>Published on: 2014-02-21T02:41:05+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2014/combined_Base-32-error-correction-coding.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004402.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>This document proposes a BIP for human-friendly base-32 serialization with error correction encoding. The proposed format is anticipated to be useful for helpdesk-related data and future wallet backup & paper wallet serialization formats. It differs from the default hexadecimal or base58 encodings in that it includes the full range of alphanumeric digits in its base-32 encoding, except the characters 0, l, v, and 2, which are too easily confused with 1, i, u, r, or z in font or handwriting. It also has automatic correction of up to 1 transcription error per 31 coded digits (130 bits of payload data), highly probable detection of errors beyond the error correction threshold, and case-insensitive encoding. The bitcoin reference client already has one implementation of base-32 encoding following the RFC 3548 standard, using the alphabet "abcdefghijklmnopqrstuvwxyz234567". For error correction coded strings this BIP specifies usage of Phil Zimmermann's z-base-32 encoding alphabet[], which provides better resistance to transcriptive errors than the RFC 3548 standard: "ybndrfg8ejkmcpqxot1uwisza345h769". The same RFC 3548 coder is used for z-base-32, except that unnecessary '=' padding characters are stripped before performing the alphabet substitution.In addition to the error correction code transformation of base-32 data, a padding scheme is specified for extending numbers or bit vectors of any length to a multiple of 5 bits suitable for base-32 encoding. Herein we describe an error correction encoding using cyclic redundancy check polynomial division[], which requires 5 error correction digits per 26 digits of input, instead of the theoretically optimal 4, but is much easier to implement correctly then available non-patented error correction codes. Although providing an error correction coder for base-32 data interesting and useful in contexts where base-32 is already deployed, many applications involve encoding of integers which are powers of two in length. This section provides a standard scheme for the encoding of any sized bitstring into a multiple of 5 bits in length, suitable for direct encoding into base-32.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T03:11:46.309535+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Merkleize All The Things</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Salvatore Ingala 2022-11-12 15:04:20
-            <br><i>Published on: 2022-11-12T15:04:20+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2022/combined_Merkleize-All-The-Things.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021205.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The bisection protocol is used in a larger protocol that ensures scalability by not ending up on the chain and only resulting in a longer chain of transactions in case of a challenge. In a simpler example, Alice and Bob make a bet where Alice claims to know how to multiply by 256 and Bob disagrees. They commit one coin each, with Bob choosing a number x and Alice computing y = 256*x. If Bob's independently computed result is not equal to y, a challenge begins. The bisection protocol is used to settle the disagreement, with Alice and Bob building Merkle trees that commit to the state of computation before the leftmost leaf in the subtree, the state after the rightmost leaf, and the hash of sub-trace for the sub-tree. The challenge continues until the root of the computation trace is reached. The operation in the final step is simple enough that Script can verify its correctness. While the protocol has some missing aspects, such as the need for bonds to incentivize cooperation and additional transitions at every step, the code and scripts of the bisection protocol are independent of the actual execution and can be precomputed before the initial covenant is created.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T03:05:57.871031+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Standardisation of an unstructured taproot annex</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Joost Jager 2023-06-03 12:35:51
-            <br><i>Published on: 2023-06-03T12:35:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2023/combined_Standardisation-of-an-unstructured-taproot-annex.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021742.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The issue at hand is related to annex malleability vector which could deceive developers into thinking their transactions are safe from replacement, when in reality they may not be. The problem arises when a transaction is denied entry into the mempool because someone submitted a strictly worse transaction for miners with no gain, by bloating its weight instead of adding fees. An example scenario would be a transaction with inputs A' and B' signed by two parties A and B, where A has a fully signed transaction in hand but cannot publish it due to B creating and publishing an alternative version of it with a large annex for input B'. In this case, it is assumed that the user has a direct connection to a miner, ignoring any potential concerns related to p2p transport. It is important to find reasonable methods for mitigating this issue.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T18:44:33.204008+00:00 </i></p>
     
     
 

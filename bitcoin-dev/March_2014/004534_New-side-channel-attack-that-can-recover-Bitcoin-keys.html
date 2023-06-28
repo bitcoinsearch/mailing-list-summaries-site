@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New side channel attack that can recover Bitcoin keys</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-03-06 08:38:40
+            <br><i>Published on: 2014-03-06T08:38:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_New-side-channel-attack-that-can-recover-Bitcoin-keys.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004534.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the implementation of a hardened secp256k1 signer in userspace and whether it would be preferable to moving signing into the kernel. It is suggested that using MTRRs to disable caching entirely for a small scratch region of memory could work, but it may not be necessary. The conversation also covers topics such as branchless code, uniform memory access, and avoiding data dependent loads to hide memory timing side-channels. It is noted that even with branchless code, other defense measures such as avoiding reuse, multsig with multiple devices, and not sharing hardware are still important. The vulnerability of FLUSH+RELOAD attacks is also discussed, and it is believed that using a branchless implementation where each phase of the operation executes the exact same code and accesses the exact same stack frames would not be vulnerable to this attack.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T04:00:46.419913+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

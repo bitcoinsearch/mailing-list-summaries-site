@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Test cases for Taproot signature message <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019466_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-09-16 21:36:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019472_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-09-18 11:32:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2021/019521_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-10-06 20:35:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019472_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-09-18 11:32:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019466_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-09-16 21:36:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019472_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-09-18 11:32:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019466_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-09-16 21:36:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2021/019521_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-10-06 20:35:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019467_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Pieter Wuille 2021-09-16 22:30:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019468_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Riccardo Casatta 2021-09-17 07:07:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019467_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Pieter Wuille 2021-09-16 22:30:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019468_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Riccardo Casatta 2021-09-17 07:07:48</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Oct_2021/019521_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Giacomo Caironi 2021-10-06 20:35:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019467_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Pieter Wuille 2021-09-16 22:30:19</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2021/019468_Test-cases-for-Taproot-signature-message.html">Test cases for Taproot signature message</a>
+                        <b>Riccardo Casatta 2021-09-17 07:07:48</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019466.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2021-09-16T21:36:48+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>On the bitcoin-dev forum, Giacomo Caironi raised concerns about the documentation of Taproot signature message. He found that Segwit signature messaging had better documentation than Taproot. Caironi suggested creating a separate BIP for Taproot signature message like Segwit. However, Pieter Wuille pointed out that there is no separate BIP for the signature message function as the message function is different for BIP341 and BIP342.Wuille suggested improving existing documentation instead of creating a new BIP. Caironi also highlighted the issue of test vectors for Taproot having no documentation and not being atomic, making it difficult to debug signature messages that don't pass validation. The existing tests are intended for verifying an implementation against and have much higher coverage than the segwit tests had but they aren't useful as documentation.Caironi proposed writing test cases for Taproot if the idea is accepted. Wuille encouraged Caironi to write test vectors that are more aimed at helping debugging issues, such as for certain P2TR scriptPubKeys, derived from certain internal keys and script trees. Wuille stated that he is happy to help integrate such vectors in Bitcoin Core and the BIP(s).In response to Caironi's concerns, a developer named Riccardo Casatta has written the Rust implementation of Bitcoin signature messages and created some test vectors to double-check. These test vectors can be found on GitHub. Meanwhile, Caironi has worked on a Python implementation of Bitcoin signature messages and noticed that there is better documentation for Segwit signature message than Taproot.He suggests creating a different BIP only for Taproot signature message instead of defining it in BIP 341 and keeping the test vectors in a different BIP. Caironi is willing to write the test cases for Taproot if his idea is accepted. Wuille welcomed Caironi's offer to write test cases and offered to help integrate them in Bitcoin Core and the BIPs. Caironi apologized for any mistakes in his language as English is not his first language, and this is his first contribution to Bitcoin.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-15T02:23:40.150853+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

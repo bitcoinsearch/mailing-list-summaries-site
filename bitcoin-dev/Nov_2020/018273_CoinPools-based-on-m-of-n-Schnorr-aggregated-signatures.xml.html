@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CoinPools based on m-of-n Schnorr aggregated signatures</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-11-16 01:32:11
-            <br><i>Published on: 2020-11-16T01:32:11+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2020/combined_CoinPools-based-on-m-of-n-Schnorr-aggregated-signatures.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018273.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author proposes a model for m-of-n multisig transactions using Schnorr aggregate signatures to enable CoinPools for off-chain scalability. The proposal involves creating a 'pool' with all the 'N' public keys and noting down the threshold M for this pool. Deposits can be made to a pool with an OP_LOAD_POOL_AGG_PUB_KEY OP_CHECKSIG script. Redeem script would contain the aggregated signature from all signers and the bitmap of signers. The author introduces two new opcodes: OP_POOL and OP_LOAD_POOL_AGG_PUB_KEY. The opcode uses the top two elements from the stack- the first element from the stack specifies the POOL_ID to load, which will load the public keys from the pool. SIGNERS_BITMAP is a 32 byte value and represents a bitmap of which public keys from the pool have signed the transaction.The proposed scheme enables scalability of m-of-n multisig transactions and trust minimized off-chain scalability solutions due to the use of a sufficiently large pool of signers. However, the downsides are that the public keys of the members of the pool need to be exposed. The author also discusses the possibility of generating an m-of-n aggregated pubkey, which requires an interactive setup and extra data storage. The current plan is to implement an OP_CHECKSIGADD, where your script would be: OP_CHECKSIGADD OP_CHECKSIGADD OP_CHECKSIGADD OP_EQUAL. However, OP_POOL would have a single m-of-m signature.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T16:19:04.528551+00:00 </i></p>
     
     
 

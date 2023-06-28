@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>答复:  Block compression</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> lonsdale aseaday 2017-11-27 02:32:04
+            <br><i>Published on: 2017-11-27T02:32:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_-Block-compression.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015316.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A possible solution to increase the amount of data in a Bitcoin block without increasing its size on disk, memory or during transmission over the internet has been suggested. Applying various compression algorithms yields about a 50% compression ratio. LZ4 is found to be the fastest method in terms of decompression speed, CPU and memory usage, while ZStandard provides the best compression ratio with good decompression ratios. Implementation would require a specified compression type in a set of bits, so that future compression algorithms could be added. Miners could choose to compress blocks and keep the compressed size under the limit, while client code would need to handle appropriate compression bits and signature data limits modified to deal with the compression. Schnorr signatures are also on the roadmap as a 25% compression gain which could compress even further when compressed with the above compression methods. Compression time was found to be "instant" and decompression speed for LZ4 was 3.3GB/second, slightly less than half the speed of memcpy, according to char at <a href="https://github.com/lz4/lz4">https://github.com/lz4/lz4</a>. Decompression speed, not compression time, matters as blocks will be decompressed billions of times more than they will be compressed. The raw block size was 998,198 bytes, while the compressed sizes of the same block using Gzip, LZMA, ZStandard and LZ4 were 521,212 bytes (52% ratio), 415,308 bytes (41% ratio), 469,179 bytes (47% ratio) and 641,063 bytes (64% ratio) respectively. Jeff Johnson posted his findings on the bitcoin-dev mailing list. Links to bitcointalk.org pages and a compressed Bitcoin block were also provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:21:29.203364+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

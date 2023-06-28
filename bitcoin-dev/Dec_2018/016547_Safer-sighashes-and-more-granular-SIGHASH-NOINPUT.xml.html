@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2018-12-13 00:24:38
-            <br><i>Published on: 2018-12-13T00:24:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016547.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The bitcoin-dev mailing list has been discussing a combined proposal by Pieter Wuille, which includes the addition of three new sighash flags: SIGHASH_NOINPUT, SIGHASH_NOFEE, and SIGHASH_SCRIPTMASK. The new opcode OP_MASK would act as a NOP during execution. The sighash is computed like in BIP143, however, if SIGHASH_SCRIPTMASK is present, for every OP_MASK in scriptCode the subsequent opcode/push is removed. Rusty Russell raises concerns about the redundancy of having SIGHASH_SCRIPTMASK flag, as it seems to be always necessary for mask-removal when signing. Andrew Poelstra explains there are four levels of knowledge that could be had about the input when generating a signature: ALL, SINGLE, SCRIPTPUBKEY and SCRIPTMASK. In the context of a taproot world, where the alternate script is both hidden and general, the SCRIPTMASK feature allows for the preparation of a signature for one particular script in advance, even before deciding on the other scripts or building an actual transaction.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T18:04:19.794470+00:00 </i></p>
     
     
 

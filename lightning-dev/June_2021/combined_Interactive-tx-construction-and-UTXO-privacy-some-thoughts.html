@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Interactive tx construction and UTXO privacy, some thoughts <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003079_Interactive-tx-construction-and-UTXO-privacy-some-thoughts.html">Interactive tx construction and UTXO privacy, some thoughts</a>
+                        <b>ZmnSCPxj 2021-06-29 13:03:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003082_Interactive-tx-construction-and-UTXO-privacy-some-thoughts.html">Interactive tx construction and UTXO privacy, some thoughts</a>
+                        <b>Cycryptr 2021-06-29 15:27:52</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2021/003073_Interactive-tx-construction-and-UTXO-privacy-some-thoughts.html">Interactive tx construction and UTXO privacy, some thoughts</a>
+                        <b>lisa neigut 2021-06-29 02:21:58</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003079.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2021-06-29T13:03:33+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning Network has adopted a modified version of the interactive transaction protocol used by the Discreet Log Contracts team, which allows for batching to transmit input/output sets. This modification makes it possible to interleave UTXOs from multiple sources, enabling multiparty coinjoins on lightning. The dual-funding proposal has been reviewed and objections have been raised regarding sharing UTXOs with a channel peer. However, the interactive transaction protocol makes it more difficult for outside observers to tell which UTXOs belong to whom compared to the current protocol.An active prober can use the interactive transaction protocol to discover a wallet's entire UTXO set, but the PoDLE protocol can make this discovery more costly for potential attackers. Further measures have been taken to counter these concerns, including modifying the interactive transaction protocol to use batching to transmit input/output sets and allowing multiparty coinjoins on Lightning. While UTXO privacy is important, what is more crucial is not associating one's identity with their Lightning node. It remains unclear whether Taproot scripts will address the issue of on-chain transactions being assignable to a node given gossip data. Overall, best practice is to not tie one's identity to their Lightning node and to reconsider the source of funds used for announced channel opens.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-04T01:25:15.481233+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

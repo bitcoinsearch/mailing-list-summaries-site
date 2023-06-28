@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version 1 witness programs (first draft)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2017-10-02 20:38:49
+            <br><i>Published on: 2017-10-02T20:38:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015160.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Mark Friedenbach and Russell O'Connor discussed the difficulty of creating a Bitcoin script that does not allow malleability and requires wasting a lot of bytes. Script validation flags check for these things, but they weren't made consensus rules with Segwit v0 due to concern over scope creep. Script operations are not aware of whether the stack items they are processing are witness malleable items or Script computed values. Signatures are a fine place to aim to restrict witness malleability because if signatures could securely cover all witness data, it would prevent the worst effects of witness malleability without burdening Script development. Additionally, Luke's suggestion of having both SIGHASH_WITNESS_SIZE and SIGHASH_WITNESS_DEPTH flag is better because it is simpler.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:29:00.357018+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

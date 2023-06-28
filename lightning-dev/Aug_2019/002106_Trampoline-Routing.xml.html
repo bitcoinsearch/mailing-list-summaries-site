@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Trampoline Routing</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bastien TEINTURIER 2019-08-05 07:37:52
-            <br><i>Published on: 2019-08-05T07:37:52+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2019/combined_Trampoline-Routing.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-August/002106.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Trampoline routing is a payment method on the Lightning Network that allows users to send payments without needing knowledge of the entire network graph. Instead, trampoline nodes are used to defer the calculation of the route to the recipient. The process involves building an onion with a small trampoline onion inside and sending it through the chosen trampoline nodes until it reaches the recipient. However, as the network grows larger, maintaining a strongly connected network graph may not be possible. Therefore, hierarchical/packet switched routing architecture may be required in the future, and trampoline routing can be seen as a first step towards enabling this architecture.To ensure that fees and cltv requirements are estimated correctly for trampoline nodes, users may have to pay higher fees. While this comes at the cost of ease of use and payment reliability, it ensures that trampoline nodes are compensated fairly. Additionally, a filter system similar to BIP37 is proposed to exchange updates between the sender and their peers. This system works by having the sender send gossip filters to their peers and only receiving updates that match those filters.Bastien, a contributor to the Lightning Network, has proposed a new routing algorithm that could potentially reduce transaction fees. The algorithm uses a simple XOR or node distance comparison to determine the best route for a given transaction. Bastien has requested feedback on the concept and specifically asked for input on the gossip and fee estimation portions of the proposal. Technical details can be found on the GitHub pull request linked in the post.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T19:46:34.601248+00:00 </i></p>
     
     
 

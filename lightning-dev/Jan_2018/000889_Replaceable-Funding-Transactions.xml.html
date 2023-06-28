@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Replaceable Funding Transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2018-01-02 00:12:31
-            <br><i>Published on: 2018-01-02T00:12:31+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2018/combined_Replaceable-Funding-Transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-January/000889.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author of this email is inquiring about the possibility of using replaceable funding transactions (replace-by-fee) in BOLT v1.0 to address the issue of slow transaction confirmation on the blockchain level. The BOLT spec suggests that a non-funding node should forget the channel if it does not see the funding transaction after a reasonable timeout. The author believes it is possible to do RBF funding transactions as long as the counterparty allows multiple channels per peer. The suggested consideration includes sending an open_channel for channel #1, receiving accept_channel for channel #1, creating an RBF-able funding transaction for low feerate, sending funding_created for channel #1, receiving funding_signed for channel #1, waiting on the blockchain, increasing the fee rate, sending open_channel for channel #2 to the same party, receiving accept_channel for channel #2, creating a replacement funding transaction for high feerate, sending funding_created for channel #2, receiving funding_signed for channel #2, waiting on the blockchain, sending funding_locked for channel #2, receiving funding_locked for channel #2, and letting the counterparty forget channel #1. The author asks if this is possible in the current BOLT spec, except for the fact that c-lightning restricts channels.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T18:09:00.856561+00:00 </i></p>
     
     
 

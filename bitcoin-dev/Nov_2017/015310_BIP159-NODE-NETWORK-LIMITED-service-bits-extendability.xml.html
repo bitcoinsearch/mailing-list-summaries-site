@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP159 - NODE_NETWORK_LIMITED service bits, extendability</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gregory Maxwell 2017-11-21 18:45:33
-            <br><i>Published on: 2017-11-21T18:45:33+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2017/combined_BIP159-NODE-NETWORK-LIMITED-service-bits-extendability.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015310.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The proposed Bitcoin Core implementation of BIP159 aims to allow pruned nodes to serve a limited number of historical blocks, instead of none at all. However, there is a concern that this would be wasteful as pruned nodes with 10-100 GB of storage would only be able to share the most recent 288 blocks. To address this, a future extension of the BIP could allow more flexibility by limiting the number of choices to e.g. 288 + 1000 * 2^n. To avoid fingerprinting nodes, upgraded nodes may need a new message type to communicate the chosen prune depth, and waiting for BIP150 may be appropriate. It is suggested to add a link to mailing list discussions in the reference section of the BIP, and to explain that 288 is not just the minimum limit for Bitcoin Core, but also the bulk of traffic. Currently, virtually no one sets any parameter other than the minimum for pruning, but in the future, further pruning identifying bits will be set so that nodes would answer for their blocks. However, defining additional levels has been delayed as it appeared that there was insufficient experience from practice to specify what height it should mean exactly, and proposals sounded like they would likely interact poorly with other future proposals. Part of the concern regarding fetching additional blocks is mooted by the logistics of actually fetching them, as the network today has a superabundance of nodes that serve anything, making rare handles for these blocks. There is no reason to believe that "like the pruning thing but more blocks" is useful, as once you go back more than a handful of weeks, the probability of fetching gets pretty close to uniform, and those fetches are only for newly initializing nodes that need all the blocks.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T04:23:22.945844+00:00 </i></p>
     
     
 

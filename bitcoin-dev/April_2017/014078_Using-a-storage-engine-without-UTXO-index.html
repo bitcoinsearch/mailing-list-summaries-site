@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using a storage engine without UTXO-index</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tomas 2017-04-07 21:14:51
+            <br><i>Published on: 2017-04-07T21:14:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Using-a-storage-engine-without-UTXO-index.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014078.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list revolves around the long term resource requirements of proposals with regards to unspent output data. Bram Cohen asks if the target of optimization should be about cramming as much as possible in memory and minimizing disk accesses, given that hard drive access isn't parallel and memory accesses are very fast. The minimal disk storage requirement is not something that BitCrust attempts to address, but the storage accessed during peak load (block validation with pre-synced transactions) is minimized by storing only the transaction index, the tip of the spend-tree, and the tip of the spend-index in a cache efficient way. Script validation is not something that BitCrust directly addresses, but uses libbitcoinconsensus for actual validation and lookups to outputs are mostly similar. The UTXO index has little drawbacks for this part and bitcrust seems to have a small advantage due to the awesomeness of Rayon's parallelization and the lock-free data structures.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T23:55:17.719700+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Lightning in a Taproot future</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2019-12-17 14:02:29
+            <br><i>Published on: 2019-12-17T14:02:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2019/combined_Lightning-in-a-Taproot-future.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002385.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network development team has been discussing an upgrade from Hash Time-Locked Contracts (HTLCs) to Pointlocked Timelocked Contracts (PTLCs). They have determined that Decker-Russell-Osuntokun is a better option than Poon-Dryja only if all required features are enabled simultaneously. This includes using MuSig for the internal key, which is always superior to a NUMS point, and implementing an alternative script path to reduce communication round trips needed to generate signatures.To set up payment channels on the lightning network, the funding transaction output is MuSig(A,B), and commitment transactions are held by A with obscured commitment numbers. PTLCs pay to MuSig(Rn,B), while HTLCs pay to MuSig(Rn,B) but are tweaked by a script. B needs to provide A with signatures for various transactions, including the funding tx and each PTLC/HTLC paying/refunding to A from A's commitment and B's commitment. Each of these signatures needs to be updated every commitment update.The team also discussed "purely scriptless" PTLCs as a potential replacement for revocable HTLCs in current Poon-Dryja Lightning Network channels. The author proposes using Poon-Dryja PTLCs prior to eltoo, scriptless revocation via MuSig(Rn,B) internal keys, support for HTLCs via taproot, and optionally allowing the use of script paths to minimize round trip delay. In case A unilaterally closes the channel by publishing the commitment tx, symmetric delays are possible, and the settlement tx can be simplified. By implementing these upgrades and improvements, the Lightning Network can become even more efficient and secure for users.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T02:44:22.500721+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>How to create a pull tester JAR</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-08-05 15:00:10
+            <br><i>Published on: 2014-08-05T15:00:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_How-to-create-a-pull-tester-JAR.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006407.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>To create a pull tester JAR, one needs to have a Java Development Kit (JDK) version 6 or higher, Apache Maven, and git installed on their system. Once these requirements are met, bitcoinj can be cloned from the git master and built using the command "mvn -DskipTests package". This will download the necessary libraries, compile the code, and create a bundled executable JAR file called core/target/pull-tests.jar. The JAR file can be used with the QA scripts in the bitcoin core qa/pull-tester directory or run directly using the commands "./bitcoind -regtest -connect=0.0.0.0 -listen -whitelist=127.0.0.1 -datadir=/tmp/pulltester" followed by "java -jar core/target/pull-tests.jar". It is also mentioned that Java JARs can easily be reproduced if the same version of javac and bitcoinj are used. Finally, the author offers to provide a pull-tests.jar from their local machine if anyone would like to do this.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:51:27.314307+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

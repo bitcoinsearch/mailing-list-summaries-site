@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP proposal - Dandelion: Privacy Preserving Transaction Propagation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bradley Denby 2018-06-26 00:12:02
+            <br><i>Published on: 2018-06-26T00:12:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-proposal-Dandelion-Privacy-Preserving-Transaction-Propagation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016162.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>This email exchange is regarding feedback on the Dandelion BIP. It is suggested not to allow fee filters from peers to influence the choice of route as malicious nodes can exploit that and launch serious deanonymization attacks. The suggestion of automatically fluffing or applying fee filters in the stempool is discussed as solutions. Nodes may choose to either drop stem transactions or immediately start diffusion when a transaction would otherwise be sent to a Dandelion node whose filter is not satisfied. The reference implementation adds any mempool transactions to the stempool but not vice-versa so that the stempool becomes a superset of the mempool. Stem orphans can occur when a node on the stem shuffles its route between sending dependent transactions. The solution is to wait for the fluff phase to begin, at which point the orphans will be resolved. Making Dandelion routing decisions based on claims made by peer nodes can cause problems and therefore it is recommended against biasing the peer selection code. On the implementation side, discussion is planned later. The focus is on writing up a clearer spec for node behavior in the BIP.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T02:21:50.796218+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

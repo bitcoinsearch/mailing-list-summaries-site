@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV Signet Parameters</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2022-04-21 13:22:21
+            <br><i>Published on: 2022-04-21T13:22:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_CTV-Signet-Parameters.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020256.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the bitcoin-dev mailing list, Anthony Towns raised concerns about the usefulness of bare-CTV, a proposed feature for Bitcoin's taproot upgrade that enables advanced commitment to future transactions. While he acknowledges the benefits of constructing "smart contracts" with multiple potential payout schemes, Towns is skeptical of the bare-CTV part of BIP-119, which he says lacks any branches and can only commit to a subsequent transaction's outputs. He questions the advantages of this type of commitment and its overhead costs, particularly since there are fee-rate situations where it would be cheaper to wait to do the payout at a low-fee time. Towns notes that while the proposed use cases for bare-CTV include delaying a "trigger"-transaction and coaxing a second input into existence, it is currently unaddressable, making it impossible to receive funds directly into a vault or express those outputs as an address. He suggests that everything that bare-CTV can do can also be done by tapscript-CTV. He argues that if bare-CTV were not part of the spec, using an OP_SUCCESS code from tapscript instead would be a better alternative, along with push-style semantics for CTV or a hybrid push-or-verify semantics depending on the size of the input. Overall, Towns is struggling to understand the justification for bare-CTV, given its limitations and additional blockspace usage, and believes that a more general TXHASH would be even better.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T16:51:29.314859+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

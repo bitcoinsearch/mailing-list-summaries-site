@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-10-02 02:03:43
-            <br><i>Published on: 2019-10-02T02:03:43+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017339.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>ZmnSCPxj proposed a radical idea to remove the "SIGHASH" flags from signatures, which he believes are a misdesign retained from the original Bitcoin 0.1.0 Alpha for Windows design. He suggested putting "SIGHASH" on public keys instead and encoding them as either 33-bytes (implicit `SIGHASH_ALL`) or 34-bytes. Then, `OP_CHECKSIG` and friends will look at the public key to determine the sighash algorithm rather than the signature. ZmnSCPxj also proposed adding an opcode called "OP_SETPUBKEYSIGHASH," which would allow the selection of `SIGHASH` flag at time-of-signing if the script is formed to do so. By default, public keys will not have an attached `SIGHASH` byte, implying `SIGHASH_ALL`. This proposal removes the problems with `SIGHASH_NONE` and `SIGHASH_SINGLE`, as they are allowed only if the output specifically says they are allowed.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T21:30:40.149507+00:00 </i></p>
     
     
 

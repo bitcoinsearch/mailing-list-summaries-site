@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Removing BIP-125 Rule #5 Pinning with the Always-Replaceable Invariant</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter Todd 2022-11-07 21:27:16
-            <br><i>Published on: 2022-11-07T21:27:16+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2022/combined_Removing-BIP-125-Rule-5-Pinning-with-the-Always-Replaceable-Invariant.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021178.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a message posted on the Bitcoin-dev mailing list, Suhas Daftuar pointed out that the proposal to limit the number of descendants of each in-mempool transaction to MAX_REPLACEMENT_CANDIDATES was broken because a single transaction can conflict with multiple in-mempool transactions due to the fact that Bitcoin transactions can have multiple inputs. This could result in more evictions than intended. Peter Todd responded by suggesting that the issue could be fixed by summing up the number of nReplacementCandidates for each input in the multiple input case. The goal is to ensure that a transaction can always be replaced by double-spending an output to defeat pinning, not to make every possible way of double-spending multiple outputs at once work.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T02:56:22.320802+00:00 </i></p>
     
     
 

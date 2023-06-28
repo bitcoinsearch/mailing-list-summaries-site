@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Optional &#34;wallet-linkable&#34; address format - Payment Protocol</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2013-06-20 07:32:22
-            <br><i>Published on: 2013-06-20T07:32:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2013/combined_Optional-wallet-linkable-address-format-Payment-Protocol.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002794.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion takes place between two individuals, Jeremy and an unidentified person, about the implementation of HD wallets in Bitcoinj. The unidentified person suggests defining an extension that allows for the push-style sending of payment requests containing public keys and chain codes. They also mention experimentation with how apps will arrange their chains internally. Jeremy mentions that BIP 32 already specifies the use of the first three tree levels: M/i/j/k, and that creating new wallets would not be free unless the levels are redefined. They both discuss generating new receive chains from a watch-only wallet, with the options being to either keep a cache of PubKey/ChainCode for unused [m/i'] or simply increment 'j' past 1 for an existing [m/i'/j]. Jeremy notes that the "default" layout of BIP32 does not mean that implementations should not check for transactions with j > 1. He suggests adding to the 'Compatibility' section some minimum expectations about how a wallet should be 'probed' when imported. Regarding whether extra wallet chains behave as different wallets or sub-wallets, they could, but it is not required. A single-wallet implementation treats this merely as an address-generation algorithm and does not expose any hierarchy to the user interface. The user just gets the ability to send multiple payments to their contacts without immediately sacrificing their privacy. They both discuss using static public keys as a means for persistent identity and hence security from MitM. If a shared public key across multiple services is desired, combining both ideas would get all the benefits by making the data structure { ParentPubKey, Addend, ChainCode }. In conclusion, the discussion revolves around the implementation of HD wallets in Bitcoinj and ideas on how to generate and receive payments into BIP32-style addresses. They discuss the creation of new receive chains from a watch-only wallet, probing wallets when imported, and the benefits and possibilities of using static public keys for persistent identity and security from MitM.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T18:59:39.916924+00:00 </i></p>
     
     
 

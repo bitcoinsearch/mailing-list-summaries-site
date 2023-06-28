@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[Pre-BIP] Fee Accounts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Billy Tetrud 2022-01-19 16:51:48
+            <br><i>Published on: 2022-01-19T16:51:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Jan_2022/combined_-Pre-BIP-Fee-Accounts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-January/003447.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made for a new account system in Bitcoin that could be used to clean up the fee paying semantics. Currently, fees are a part of transactions, which makes it difficult to write DoS resistant payment channels and other long-lived smart contracts. The proposed account-based approach would define a special "fee account" output type that anyone can spend. This could potentially fix dust leakage for eltoo-like protocols and make the API less vulnerable to pinning issues.The proposed design involves using separate UTXO databases for fee accounts and only allowing two types of transactions to be signed by fee accounts. These transactions are committed in an extension block merkle tree and can be released into fees or consolidated together. The design is considered scalable and could potentially be modified for improved privacy. The Lightning Network is mentioned as a potential use case for this design. However, the proposal is still at the conceptual review stage, and the design space is wide open. There are concerns about centralization if this type of design were done as a federated network that bribes miners, as such an approach would mean there is a centralizing layer interfering with normal mining. Previously, a special type of transaction called a "Sponsor" was proposed to allow arbitrarily appending fees to a transaction to bump it up in the mempool. The account-based approach is an alternative to this. The current system of fees being a part of transactions they occur in makes writing DoS resistant payment channels and other long-lived smart contracts difficult. In summary, the proposed account-based approach to handling fees in Bitcoin transactions could potentially improve the overall system. However, the proposal is still in the conceptual review stage, and further work is needed to determine the best way to implement this approach while avoiding any potential centralization issues.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T07:19:40.107265+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

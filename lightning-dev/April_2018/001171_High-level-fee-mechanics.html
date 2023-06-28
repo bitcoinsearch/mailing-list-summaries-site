@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>High level fee mechanics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-12 04:49:23
+            <br><i>Published on: 2018-04-12T04:49:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_High-level-fee-mechanics.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001171.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a message to Benjamin, ZmnSCPxj proposes the idea of channels having the option to publicize their balances in order to improve routing performance and scalability in a large network. This would allow channel owners to balance privacy with efficiency while also providing competitive differentiation among competing routes. Brute force trial and error seems expensive at scale and reduces privacy for the sender, so leaving this decision to the market could be a useful hedge if technically practical.ZmnSCPxj notes that it is possible to hint the suitability of a channel for routing in a particular direction without completely leaking the balance in detail by adjusting the on-Lightning `fee_base_msat` and `fee_proportional_millionths` of channels. If a high balance is present on a channel, the fee for that channel is reduced to encourage others to use it and hopefully pay the owner on a depleted channel. Conversely, if a low balance exists, the fee is increased. However, no current node software implements this yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T22:02:16.368260+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

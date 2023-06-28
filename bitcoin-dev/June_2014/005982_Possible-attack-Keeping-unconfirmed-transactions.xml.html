@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Possible attack: Keeping unconfirmed transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Raúl Martínez 2014-06-06 22:02:36
-            <br><i>Published on: 2014-06-06T22:02:36+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2014/combined_Possible-attack-Keeping-unconfirmed-transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-June/005982.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>There is a possible attack that involves storing an unconfirmed transaction for a few days before relaying it to the Bitcoin network. Transactions are often purged by nodes due to lack of fees, and this attack could be carried out on transactions that have not been included in the blockchain. For example, if Alice sells Bob a pizza and Bob pays with Bitcoin, the goal of the attack would be to store the unconfirmed transaction sent by Bob and then relay it to the network or mine it directly with Alice's own hashpower a couple of days later. If Bob forgets about the failed trade, Alice can use the signed transaction to gain access to the bitcoins and Bob will not know what happened to his money. This attack could also work with the Payment Protocol because when using it, Alice relays the transaction to the network instead of Bob. If Bob resends the payment, Alice could create another transaction and relay it to the network, while mining the first transaction a couple of days later. Alice would then have two payments and Bob would have no knowledge of what happened to his money. It is unclear if there is already a fix for this problem or if it is simply impossible to execute this kind of attack.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T23:48:56.534475+00:00 </i></p>
     
     
 

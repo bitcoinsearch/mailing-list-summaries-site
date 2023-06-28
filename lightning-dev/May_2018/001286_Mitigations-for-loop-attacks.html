@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigations for loop attacks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jim Posen 2018-05-16 01:48:33
+            <br><i>Published on: 2018-05-16T01:48:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2018/combined_Mitigations-for-loop-attacks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001286.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses how an attacker can manipulate the reputation view of two nodes by routing payments through them. By opening a direct channel to one node, the attacker can route payments that succeed quickly and then route payments that stall through another node in order to make the first node's reputation go down. However, if the attacker compensates the victim node for experiencing payment delays, it becomes less of an attack and more of a pricing of resource utilization. The system is designed with the assumption that the best way to defend an anonymous/decentralized network that allows sybils is by pricing resource utilization appropriately. The CLTV total can leak information on how far the payee is, and it is suggested that keeping track of a reputation score for the entire network could be a useful protection against loop attacks/payment delays. Reputation is increased in the case of successful payments by the fee collected, but decreased on the downstream peer proportional to time T regardless of whether the payment succeeds or fails. If the payment fails, the upstream peer's reputation does not change and the downstream peer's reputation always decreases proportional to time T.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T00:47:12.431808+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

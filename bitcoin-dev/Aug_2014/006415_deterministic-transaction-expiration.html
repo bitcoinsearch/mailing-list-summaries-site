@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>deterministic transaction expiration</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2014-08-05 18:54:08
+            <br><i>Published on: 2014-08-05T18:54:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_deterministic-transaction-expiration.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006415.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of unconfirmed transactions sitting in limbo for a long time has been a horrible user experience. Although Bitcoin software has improved in attaching fees to reduce such behavior, the problem still persists. The author suspects that most legitimate unconfirmed transactions that are not part of Denial-of-Service (DoS) attacks can be linked back to the blockchain within two hops or less. This means that people send a transaction that uses up their coin age, and then immediately those coins are respent again, but then those final new coins are not spent. On the other hand, DoS attacks involve bouncing coins around over and over forever, which creates more than two or three hops back to the chain. The author suggests that making priority look back two or three transactions but not more would significantly help real users without opening up any significant new potential for DoS.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:42:43.481327+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 118 and SIGHASH_ANYPREVOUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Richard Myers 2020-08-07 15:34:43
+            <br><i>Published on: 2020-08-07T15:34:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2020/combined_BIP-118-and-SIGHASH-ANYPREVOUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018078.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the context of ANYPREVOUT*, a special relay network could potentially be more intelligent about replacement. This would involve relaying only the higher up-front fee-rate transactions from a lower total fee package (Package B) which get spent by the high absolute fee child transactions from a higher total fee package (Package A). The result is Package A', which includes the higher fee rate versions of the ANYPREVOUT* transactions from Package B, but with an overall lower total fee. However, implementing this solution requires nodes to be "smart" about replacement when they see a SIGHASH_NOINPUT spend which can spend an output that something else in the mempool already spends. While this complexity may not be feasible to push into the Bitcoin P2P network, it could potentially be handled by a relay network of lightning nodes doing the calculation and passing the transactions to their local full nodes. Overall, using SIGHASH_NOINPUT would greatly simplify these issues if nodes can handle the necessary replacements intelligently.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T02:52:26.453271+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

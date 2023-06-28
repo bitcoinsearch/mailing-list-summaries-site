@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>MIN_STANDARD_TX_NONWITNESS_SIZE and OP_RETURN</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2020-05-27 15:15:47
+            <br><i>Published on: 2020-05-27T15:15:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2020/combined_MIN-STANDARD-TX-NONWITNESS-SIZE-and-OP-RETURN.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017904.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the bitcoin-dev mailing list, Thomas Voegtlin inquired about the reasoning behind the current minimum transaction size of 82 bytes. Specifically, he was looking to construct a 60-byte transaction that was being rejected due to this minimum size requirement. ZmnSCPxj responded by explaining that the reason for the high minimum size is to protect against the CVE-2017-12842 attack, which involves using a 32-bit hash collision to create a 'bad' block. ZmnSCPxj further explained that even with SHA256 padding, which includes a length value of the original message data, it is not safe to accept 60-byte transactions, as they will be padded to 64 bytes and could still be vulnerable to attacks. It may be safe to accept 65-byte or larger transactions, but this would not help Thomas's specific application. Lastly, ZmnSCPxj noted that SHA256 also includes 10* padding, which ensures that messages of different lengths have different padding.Overall, the discussion centered around the reasoning behind the minimum transaction size of 82 bytes and the potential vulnerabilities associated with smaller transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T01:46:30.158780+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

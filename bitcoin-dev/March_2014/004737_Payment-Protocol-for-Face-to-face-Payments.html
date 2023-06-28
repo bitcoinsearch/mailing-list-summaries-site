@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment Protocol for Face-to-face Payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alex Kotenko 2014-03-20 02:22:19
+            <br><i>Published on: 2014-03-20T02:22:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_Payment-Protocol-for-Face-to-face-Payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004737.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email is from Alex Kotenko who wants to implement support for BIP70 in his point of sale (POS) system. However, he realizes that the use case he needs is not covered by the options proposed by Andreas. Before BIP70, Alex was sending BIP21 URI via NFC or QR code and still needs to use it for backward compatibility. He also wants to support BIP70 but avoid using external servers as his POS concept is that everything happens between payer's phone and payee's POS device. Therefore, the BIP72 HTTP(S) link inside Bitcoin URI is not suitable for him. Andreas offered an option to include Base43 encoded PR body inside the Bitcoin URI, but it is not backward compatible with BIP21. This means there is no way for Alex to keep backward compatibility with all wallets not supporting NFC and BIP70 while keeping things inside the POS without the need for external servers. Alex understands the intention behind base43 encoding and non-compatible URI, but he wonders whether base43 encoding is compared to base64 encoded request in a binary QR code format. He questions how much is actually won in total bytes capacity at the price of non-compatibility and increased complexity. He suggests extending BIP72 to include encoded payment request in the URL directly in a backward-compatible way. The email thread includes a response from Mike Hearn regarding BIP standardization, where he thinks the VIEW intent seems like an obvious one. Bluetooth support should come later if/when encryption/auth on the RFCOMM link is put in place (probably SSL).</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:56:24.816161+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Safety of committing only to transaction outputs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy 2019-05-24 20:59:03
-            <br><i>Published on: 2019-05-24T20:59:03+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2019/combined_Safety-of-committing-only-to-transaction-outputs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016978.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Jeremy Rubin proposed mechanisms to improve safety and replayability in a congestion control tree. Salting the taproot key or leaf script at the last stage is suggested for witness replayability. He also suggests making chaperone signatures opt-in, as there could be cases where it may not be necessary. OP_COSHV is compatible with an additional checksig operation. Other proposed mechanisms include OP_CHECKINPUTSHASHVERIFY which allows checking that the hash of inputs is a particular value, and OP_CHECKFEEVERIFY which enables an explicit commitment to the exact amount of fee. This limits replays to transactions funded with the exact amount of the prior. Johnson Lau initiated a discussion on allowing witnesses to commit only to transaction outputs but not inputs. He noted that not committing to outputs without a chaperone signature is inherently insecure. Three active proposals are put forward, namely CAT and CHECKSIGFROMSTACK (CSFS), ANYPREVOUT (aka NOINPUT), and CHECKOUTPUTSHASHVERIFY (COHV). Redirecting payment is not possible if outputs are committed. However, not committing to any input means the witness is replayable without the consent of the address owner. The ANYPREVOUT proposal fixes this by requiring a chaperone signature that commits to input. Johnson suggests always requiring a "safe" signature that commits to at least one input to improve security.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T19:08:25.636967+00:00 </i></p>
     
     
 

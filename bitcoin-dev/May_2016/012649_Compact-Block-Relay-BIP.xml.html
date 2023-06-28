@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Compact Block Relay BIP</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Peter R 2016-05-10 01:42:45
-            <br><i>Published on: 2016-05-10T01:42:45+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2016/combined_Compact-Block-Relay-BIP.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012649.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On May 9th, 2016, Peter R via bitcoin-dev wrote to Greg Maxwell. He was trying to understand the collision attack that Maxwell was explaining to Tom Zander. Peter stated that he followed up to a point where he found out that there is a good chance that a pair of transactions from a set of 2^32 will have a collision in the first 64 bits. However, he was perplexed about how to find that pair from within a large set. He explained that the only way he could think of was to check if the first 64-bits are equal for every possible pair until it is found. Peter then calculated the number of possible pairs there would be in a set of 2^32 transactions. He used the formula m! / [n! (m-n)!] and got the result as (2^32)! / [2! (2^32 - 2)!] ~ 2^63. This meant that there were approximately 2^63 comparisons required to identify which pair of transactions are the two that collide. Later on, on the same day (May 9th, 2016), at 6:40 PDT, Peter shared an update with those interested in the hash collision attack discussion. He mentioned that there is a faster way to scan your set of transactions to find the collision. He suggested keeping a sorted list of hashes for each transaction generated and then using binary search to check that list for a collision for each new transaction randomly generated. He mentioned that performing these operations could probably be reduced to N lg N complexity, which is doable for N ~2^32. Peter now agreed that the attack was feasible.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T04:49:54.732569+00:00 </i></p>
     
     
 

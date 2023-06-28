@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal to update BIP-32</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2016-04-21 15:28:45
+            <br><i>Published on: 2016-04-21T15:28:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2016/combined_Proposal-to-update-BIP-32.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-April/012613.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jochen Hoenicke proposed an update to BIP-32, which specifies that if for some node in the hierarchy the computed hash is larger or equal to the prime or 0, then the node is invalid and should be skipped in the BIP-32 tree. He suggested modifying the procedure by repeating the hashing with slightly different input data until a valid private key is found. This way, the library will always return a valid node for all paths. The chance of this affecting anyone is less than 10^-30. Jochen believes that the backward compatibility issues are minimal. The current requirement shifts the burden to the application developer instead of being able to handle it in the BIP-32 library. He also suggests updating other derivation functions in a similar manner. Many app developers feel like the additional complexity of properly handling this case is not worth the effort, but if the handling of this case is simple to implement and easy to isolate in the program flow, he is in favor of doing something along those lines.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:44:12.442867+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

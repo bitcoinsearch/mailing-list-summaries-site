@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>unlinakble static address? &amp; spv-privacy (Re: Stealth Addresses)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy Spilman 2014-01-21 04:00:05
+            <br><i>Published on: 2014-01-21T04:00:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_unlinakble-static-address-spv-privacy-Re-Stealth-Addresses-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004183.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the length of encoded prefixes in reusable addresses, Gregory Maxwell suggests that the prefix should always be constant length in all reusable addresses. He thinks that if a sender doesn't want a particular prefix, then they should just pick random data for the rest of the space without publishing any additional distinguishing data in the form of how long the prefix is. However, there seems to be some confusion about how this would work practically. For instance, if the payee's reusable address has 2 bytes without any length indicator, what will the payer put on the blockchain? They would have to put the whole thing verbatim into the OP_RETURN without knowing how many bits of the payee actually wants to see there. To solve this problem, it's suggested that the reusable address should contain a byte representing the number of bits of prefix that should be fixed. If this is the case, then the payer will know how much of the address should be taken verbatim, and the rest of the two bytes would be replaced with random data, and exactly two bytes would be put in the OP_RETURN. If the byte representing the number of bits of prefix that should be fixed is zero, then the 2-byte prefix in the reusable address must be ignored, and an entirely random 2-byte prefix would be put into the OP_RETURN.There is, however, a concern about broken implementations copying the byte from the reusable address into OP_RETURN when it is zero, and ending up identifying the payee. This is the only reason why 'byte' is optional in the reusable address, to prevent the opportunity to screw it up. Regardless, a 2-byte random prefix would still be put in the OP_RETURN, even if the fields weren't in the address at all.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:10:41.591889+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

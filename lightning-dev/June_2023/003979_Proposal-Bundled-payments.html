@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bundled payments</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2023-06-14 08:09:45+00:00
+            <br><i>Published on: 2023-06-14T08:09:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2023/combined_Proposal-Bundled-payments.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003979.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The context discusses the possibility of distributing a submarine swap client separate from the lightning wallet of the user, which would enable competition. Boltz is mentioned as an example, as they distribute a Progressive Web App (PWA) that serves javascript to conduct proper checks and sweep funds. However, it is unclear whether their app is doing everything correctly. The separation between wallet and submarine swap providers could benefit Lightning Loop by increasing its potential user base, but it requires bundling fee prepayment and main payment in the same invoice.The discussion also mentions an ongoing standardization effort for LSP protocols and states that Boltz is working to add submarine swaps to it. Another topic addressed is the need for dedicated logic in a non-custodial submarine swap client. This includes the ability to unilaterally sweep or timeout an on-chain HTLC and validate all swap parameters. The web-based flow described requires manual involvement from users to obtain a signed sweep transaction. However, this still requires the wallet to sign the HTLC sweep path, necessitating dedicated logic. The discussion emphasizes that while users can trust the service to send funds or pay an invoice, it does not constitute a trust-minimized swap.The proposal put forward by Thomas Voegtlin suggests extending BOLT-11 to allow invoices with two bundled payments: a prepayment and a main payment. This is aimed at services that require prepayment of mining fees for non-custodian exchanges, such as submarine swaps and JIT channels. The current situation creates vulnerabilities and limitations for certain service providers, including exposure to DoS attacks and exclusion from regulations. Bundling the prepayment and main payment in the same invoice would address these issues.Voegtlin believes that implementing this change in BOLT-11, rather than using BOLT-12 or onion messages, is more practical and less complicated. He argues that no new messages are required, and the proposed solution can be achieved in a non-interactive way.Overall, the context highlights the potential benefits of separating submarine swap clients from lightning wallets to enable competition and discusses the need for dedicated logic in a non-custodial submarine swap client. It also presents a proposal to bundle prepayment and main payment in the same BOLT-11 invoice to address vulnerabilities and limitations faced by service providers.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-28T03:24:48.500479+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

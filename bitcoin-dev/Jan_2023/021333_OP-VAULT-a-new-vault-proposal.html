@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_VAULT: a new vault proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2023-01-11 06:52:28
+            <br><i>Published on: 2023-01-11T06:52:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2023/combined_OP-VAULT-a-new-vault-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021333.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, James O'Beirne and Andrew Poelstra discussed the design of OP_VAULT, a new opcode for Bitcoin script that enables secure storage of funds in cold storage. The conversation covered various aspects of the design, including the size and complexity of the witness script, the use of recovery-path construction, and the potential for batching inputs and outputs with compatible vault parameters. Poelstra suggested that the witness script should be designed to make it easy to do common operations, easily reusable, and easy to analyze once written. He also proposed using a pay-to-contract construction for the recovery path instead of an empty witness and suggested making the recovery-path authorization behavior variable on a single byte flag preceding the 32 byte data push. Additionally, he discussed using a generic op_unvault to simulate OP_CTV and batching or generalizing checking that input/output amounts match. Finally, he highlighted the benefits of hiding the OP_VAULT side of things in taproot (or p2wsh) and combining operations from multiple different vaults into a single transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T23:20:09.782312+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

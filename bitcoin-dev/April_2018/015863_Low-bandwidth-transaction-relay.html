@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Low-bandwidth transaction relay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gleb Naumenko 2018-04-02 22:18:07
+            <br><i>Published on: 2018-04-02T22:18:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2018/combined_Low-bandwidth-transaction-relay.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015863.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A user has shared some ideas regarding a transaction relay protocol and is seeking feedback. The user conducted emulation and simulation tests and found that 90% of INV messages sent by public-IP nodes are idle duplicates, which consumes significant bandwidth. The proposed idea involves filtering transactions while joining the network to decrease redundancy. Each new node will agree on a filter with each of the eight nodes it connects to, and the nodes will relay only a subset of transactions. The protocol aims to maintain zero-trust, decentralization guarantees, robustness, and latency while reducing redundancy. To ensure consistency, redundancy in sending INV messages over two links will be kept. To make the system attack-resistant, the user proposes two extensions: set reconciliation and rotating the filters every N minutes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T01:21:28.502920+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A proposal for up-front payments.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Joost Jager 2019-11-06 15:53:57
-            <br><i>Published on: 2019-11-06T15:53:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2019/combined_A-proposal-for-up-front-payments-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002290.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Lightning Network is an attractive payment system for micro-payments, with potential to outshine other systems. However, prepayment can become prohibitively expensive for long routes or multiple payment attempts. The concern is that interfering with the micro-payment use case could prevent future world domination. Spam can be addressed through rate limits for failures, which isolates the spammer and diminishes their disruptive abilities. Joost proposes employing large routing nodes to agree on service levels that define these rate limits. Rusty Russell has proposed a solution to avoid Type 2 spam by implementing up-front payments for messages. This involves adding an HTLC to push a number of msat on commitment_signed and a hash, with failing/succeeding returning some of those msat and a count and preimage. The final node gets a variable number of preimages, which adds noise, taking all and subtracting from the minimum required invoice amount on success, or taking some random number on failure. This proposal makes an explicit tradeoff for the sender between amount spent and privacy, but it's the best he's been able to come up with.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T21:17:40.132830+00:00 </i></p>
     
     
 

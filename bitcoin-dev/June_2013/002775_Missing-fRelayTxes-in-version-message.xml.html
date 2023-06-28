@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Missing fRelayTxes in version message</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2013-06-19 13:20:10
-            <br><i>Published on: 2013-06-19T13:20:10+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2013/combined_Missing-fRelayTxes-in-version-message.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-June/002775.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The Bitcoin protocol has variable message length, which is also the case with ping messages. The issue may be a problem for some parsers who cannot handle it, but it has always been that way, and if you experience issues now, it means no sufficiently old nodes were talking to yours. The standard does not say the version message field should appear. There was a recent change to make bitcoind/qt always send the fRelayTxes field anyway, although it doesn't affect anything. The Bitcoin protocol has allowed tx messages to have arbitrary data appended after them that gets relayed.  A fixed number of fields per protocol version would be good if messages always had them. This was detailed in BIP 60, which proposed a protocol upgrade.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-06T19:06:43.700323+00:00 </i></p>
     
     
 

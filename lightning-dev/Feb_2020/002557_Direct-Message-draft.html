@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Direct Message draft</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-02-21 00:03:33
+            <br><i>Published on: 2020-02-21T00:03:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Direct-Message-draft.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002557.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj is concerned that in a conversation where multiple requests and responses are exchanged between two parties, the timing of the messages can provide hints to an intermediate node about the distance between the two parties. To avoid this, ZmnSCPxj suggests creating a circular path instead of using the same path each time. This would eliminate timing attacks as Alice and Bob could be anywhere along the circle. It would also eliminate storage requirements for intermediaries. The lack of "reply" function currently makes it impossible to fit the reply onion inside the existing onion, but Christian has a solution for it. Rusty notes that this approach is ideal for "offers" which cause an invoice request, followed by an invoice reply. However, its usefulness may not justify setting up a circuit for just two uses. Rusty mentions having tied this to an HTLC in an attempt to provide a spam-limit, but was not successful. He proposes some hashcash scheme combined with the ability to buy a single-use token to weaken it to prevent information leaks. ZmnSCPxj asks how this approach compares to requiring all Lightning nodes to have a Tor .onion address and just doing direct messaging over Tor. Rusty acknowledges that using Tor would be far better, but it's not happening. Lnurl over https is happening, so using lightning to tunnel messages is a strict improvement over that.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T23:46:17.831575+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

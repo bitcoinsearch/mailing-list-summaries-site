@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Authentication BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2016-08-08 15:00:51
+            <br><i>Published on: 2016-08-08T15:00:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_Authentication-BIP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/012947.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jonas Schnelli has proposed an authentication scheme to allow MITM detection and rejection in conjunction with BIP151, which requires node operators to build trusted connections for various reasons. The proposed authentication BIP uses ECDSA, secrets will never be transmitted. Authentication initialization must only happen if encrypted channels have been established according to BIP-151. The identity-public-keys used for the authentication must be pre-shared over a different channel (Mail/PGP, physical paper exchange, etc.). Each peer that supports p2p authentication must provide two users editable "databases". The authentication state must be kept until the encryption/connection terminates. Only one authentication process is allowed per connection. The peers should display/log the identity-public-key as an identity-address to the users, which is a base58-check encoded ripemd160(sha256) hash.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T19:23:10.877851+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

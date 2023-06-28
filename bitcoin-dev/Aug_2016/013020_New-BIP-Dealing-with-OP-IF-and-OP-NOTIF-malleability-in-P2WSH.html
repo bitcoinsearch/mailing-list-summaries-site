@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP: Dealing with OP_IF and OP_NOTIF malleability in P2WSH</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2016-08-16 22:30:52
+            <br><i>Published on: 2016-08-16T22:30:52+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_New-BIP-Dealing-with-OP-IF-and-OP-NOTIF-malleability-in-P2WSH.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013020.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread on the Bitcoin-dev mailing list, Russell O'Connor suggested that it is more effective to not relay a transaction rather than mess with its witness data if one's goal is to prevent it from being mined. If two transactions have the same transaction ID but different witness data, miners and good nodes are expected to mine/relay the version with the lower cost. However, this implies that everyone will see both versions and be able to make that choice, which could lead to conflict and only one version paying a fee. This could also expose the peer-to-peer network to a cheap DDoS attack. Although Segwit's third party malleability protection makes it not an issue for dependent contracts if transactions are mauled, there are still reasons for senders to not make their transactions extensible in size or other resources.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:44:41.230360+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

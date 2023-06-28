@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CHECKSIGFROMSTACK/{Verify} BIP for Bitcoin</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy 2021-07-03 18:30:45
-            <br><i>Published on: 2021-07-03T18:30:45+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2021/combined_CHECKSIGFROMSTACK-Verify-BIP-for-Bitcoin.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019194.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a bitcoin-dev mailing list, Jeremy asked for links to an updated OP_CHECKSIGFROMSTACK implementation for tapscript on elements. Russell O'Connor replied with details about the plan to support BIP-0340 schnorr signatures which do not require DER encoding and are batch verifiable along with other transaction signatures and taproot tweak verification. A discussion on variable length messages in BIP-0340 has been done and an implementation has been merged in secp256k1/pull/844. The CHECKSIGFROMSTACK operation in tapscript would use a stack item for message value to BIP-0340 signature verification and would not necessarily have to be 32 bytes. It is believed that this design would be perfectly suited for Bitcoin as well.In the same thread, Jeremy provided specifications for OP_CHECKDATASIG and OP_CHECKDATASIGVERIFY and asked if anyone had any issue with adapting the exact text and implementation to a BIP for Bitcoin using 2 OP_SUCCESSX opcodes. This document describes a modification of Andrew Stone's OP_DATASIGVERIFY proposal. The modified version includes predicates that result in the message being consumed and a true/false condition left on the stack: (txpubkey, txsig, boolean). The specification includes an OP_IF clause that duplicates txpubkey, hashes it using OP_HASH160, and verifies that it is equal to the P2PKH spend address.The document provides references for the following topics: OP_CHECKSIG, Strict DER Encoding, Low-S and Nullfail Specification, Bitcoin ABC implementation, Andrew Stone’s OP_DATASIGVERIFY, Andrew Stone's article on Scripting, and Peer Review of Andrew Stone's Proposal.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T23:58:59.071449+00:00 </i></p>
     
     
 

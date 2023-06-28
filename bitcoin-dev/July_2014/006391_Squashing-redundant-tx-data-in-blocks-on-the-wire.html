@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Squashing redundant tx data in blocks on the wire</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2014-07-31 21:29:40
+            <br><i>Published on: 2014-07-31T21:29:40+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2014/combined_Squashing-redundant-tx-data-in-blocks-on-the-wire.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-July/006391.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange from July 31, 2014, Kaz Wesley suggests a method for retrieving missing transactions using forward error correcting (FEC) code data. The process involves knowing the sizes and orders of the transactions beforehand and then sending non-syndromic FEC code data, which is slightly larger than the estimated amount of missing data. After dropping the known data into place, the missing blocks can be recovered using the FEC code. This approach has no overhead except for FEC blocks that are incompletely missing and the need to send the transaction list and sizes initially, which requires more bandwidth but not an additional round trip. Wesley provides further details on how to implement this method on the network block coding page.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T19:02:49.118246+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

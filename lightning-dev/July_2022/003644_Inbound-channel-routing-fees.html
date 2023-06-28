@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Inbound channel routing fees</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Joost Jager 2022-07-01 11:10:09
+            <br><i>Published on: 2022-07-01T11:10:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2022/combined_Inbound-channel-routing-fees.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003644.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Path-finding algorithms currently in use do not support negative fees, but the sum of inbound and outbound fees is still positive and therefore not a problem. However, if routing nodes set their policies accidentally or intentionally so that the sum of fees turns out negative, senders can just round up to zero and find a path as normal. It's important to note that the sum of inbound and outbound fees are not set by a single routing node. When path-finding considers a candidate hop, this adds the outbound fee of the "from" node and the inbound fee of the "to" node. Because those nodes don't necessarily coordinate fees, it may happen more often that the fee goes negative. Rounding up to zero is still a quick fix and better than ignoring inbound fees completely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T09:34:19.345903+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

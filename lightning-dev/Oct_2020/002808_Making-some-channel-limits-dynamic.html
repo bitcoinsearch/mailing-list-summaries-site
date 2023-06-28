@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making (some) channel limits dynamic</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2020-10-06 16:14:34
+            <br><i>Published on: 2020-10-06T16:14:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2020/combined_Making-some-channel-limits-dynamic.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002808.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange between Antoine and Bastien discusses the issue of channel jamming in Lightning Network and the need to approach channel parameters configurations carefully. Bastien proposes that certain parameters, such as max_htlc_value_in_flight_msat and max_accepted_htlcs, should be configurable throughout the lifetime of the channel to avoid closing channels when trying to reconfigure them. He suggests adding tlv records in `commitment_signed` to inform the channel peer about the limits being put in place. Antoine raises doubts on whether straighter channel parameters are the best solution for channel jamming, suggesting evaluating the packet forwarder instead of the packet itself through a web-of-trust/reputation system based on counterparty reputation. However, he acknowledges that this presents hurdles such as off-chain liquidity and on-chain fees trade-offs. Another alternative proposed by Antoine is an upfront payment system where a relay node doesn't have to account for a HTLC issuer reputation to decide acceptance and can just forward a HTLC as long it paid enough. Both parties agree that negotiating policies first before opening channels can help avoid overstaking liquidity more than what can be gained from it. They also suggest hybrid models where good behaving peers can be rewarded with a discount on upfront payment policy.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T02:16:23.754672+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

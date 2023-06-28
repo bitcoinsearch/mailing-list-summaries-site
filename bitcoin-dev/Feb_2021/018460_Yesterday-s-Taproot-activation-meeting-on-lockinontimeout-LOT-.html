@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Yesterday&#39;s Taproot activation meeting on lockinontimeout (LOT)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2021-02-22 05:16:24
+            <br><i>Published on: 2021-02-22T05:16:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2021/combined_Yesterday-s-Taproot-activation-meeting-on-lockinontimeout-LOT-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018460.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion thread on bitcoin-dev, it was mentioned that the software complexity for Bitcoin Core to implement an option like lockinontimeout=true is not practical. This is due to the fact that Bitcoin Core does not have the infrastructure to handle switching consensus rules with the same datadir. Matt Corallo had pointed this out earlier. However, a participant in the discussion, AJ Towns, disagrees and suggests that with the current proposed bip8 code, switching to lockinontimeout=true will not cause valid blocks to be marked as invalid. According to AJ, if a node running lockinontimeout=true accepts the header, it will apply the same consensus rules as a lockinontimeout=false node. Additionally, he believes that an invalid header will not be added to the block index at all, so a node restart should always cleanly allow it to be reconsidered. He cites a test case in the bip8 code that demonstrates that a node that had rejected a chain due to lockinontimeout=true will reorg to that chain after being restarted.However, AJ also notes that if one switches from lockinontimeout=false to lockinontimeout=true and the tip of the current most work chain is after the timeoutheight and did not lockin, then the node will continue following that chain until a taproot-invalid transaction is included, rather than immediately reorging to a shorter chain that complies with the lockinontimeout=true rules.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T00:59:09.697659+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

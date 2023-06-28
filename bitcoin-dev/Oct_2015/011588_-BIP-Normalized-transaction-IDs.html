@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Danny Thorpe 2015-10-21 18:22:25
+            <br><i>Published on: 2015-10-21T18:22:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011588.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list revolved around the issue of transaction malleability. A concern was raised about signers modifying the order of inputs or changing outputs when re-signing a transaction which already has dependent child transactions spending its outputs. This was deemed a different hazard than a third party maliciously modifying a transaction in the mempool by twiddling opcodes in the signature scripts. The former hazard was considered as more of an internal affair and the latter as an external threat beyond the control of the transaction writer. While canonical ordering for inputs and outputs might be useful in some cases, there are also use cases where the relative positions of inputs and outputs are significant, and reordering would change the semantics of the transaction. SIGHASH_SINGLE and Open Asset colored coins are examples that make an association between an input index and an output index. Therefore, it was suggested to keep canonical ordering separate from the normalized transaction ID proposal, with the focus on normalized transaction IDs providing an immediate benefit against the hazard of third-party manipulation of transactions in the mempool, even without canonical ordering. Luke Dashjr pointed out that if multiple signers were involved in a transaction, then modifying the order of inputs and changing outputs would invalidate the signatures of other signers. However, Christian Decker suggested that the other signers could re-sign with the modified version, and this form of malleability should also be addressed in the BIP proposal.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:31:07.570392+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

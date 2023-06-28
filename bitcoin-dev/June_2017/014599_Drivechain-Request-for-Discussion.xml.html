@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Drivechain -- Request for Discussion</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Chris Stewart 2017-06-18 14:36:24
-            <br><i>Published on: 2017-06-18T14:36:24+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2017/combined_Drivechain-Request-for-Discussion.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-June/014599.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion on the bitcoin-dev mailing list revolves around the commitment structure for the coinbase transaction in drivechain implementation. The OP_RETURN is considered redundant and can be implicitly assumed as there is a fixed set of drivechains with specific indexes defined. It is suggested to include a version byte to enable future upgradation of the commitment structure. The concern is raised that if OP_BRIBE_VERIFY takes an argument, then it may take away the blindness from BMM. The proposal is to add a rule that only the first hash with a particular sidechain ID counts and that forces the miner to accept the bribe from only one miner per sidechain per block. In case multiple bribes are accepted by the miner, then only the first one counts. The transactions can be serialized into a single push to reduce the number of drops, and subsequently, OP_BRIBE_VERIFY can operate as discussed. The propagation of these transactions over the network can be facilitated by requiring that they are near the current block height and should be removed from the memory pool once the block height has arrived to allow losing miners to re-spend those outputs.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T00:57:51.581696+00:00 </i></p>
     
     
 

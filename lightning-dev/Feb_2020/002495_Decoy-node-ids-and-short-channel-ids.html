@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decoy node_ids and short_channel_ids</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-02-04 04:29:09
+            <br><i>Published on: 2020-02-04T04:29:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Decoy-node-ids-and-short-channel-ids.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002495.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion thread, Rusty Russell and Bastien Teinturier were discussing the implementation of an extra layer of transience for privacy in Bitcoin Lightning Network. Russell suggests using temporary ids to obscure onchain footprint and applying a new one on every invoice for added protection. However, implementing this securely is challenging as it requires brute-forcing the onion against N keys and returning WIRE_INVALID_ONION_HMAC for all code paths between them. It is essential to do so; otherwise, malicious actors can send malformed payments to Alice, using the transient key in the invoice to decrypt and steal funds. However, Russell later realizes that payment_hash can be used as a fast path to improve this process. By looking up an invoice using payment_hash and checking if it has a temporary id, Alice can try to use it to decrypt the onion. If successful, she can go back and use the temporary key to decrypt the onion. Nonetheless, he acknowledges that the implementation of this approach will still require complex coding.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:43:48.571229+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

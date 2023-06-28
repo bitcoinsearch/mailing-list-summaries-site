@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Miners Dust Inflation attacks on Lightning Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2020-05-19 22:03:02
+            <br><i>Published on: 2020-05-19T22:03:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2020/combined_Miners-Dust-Inflation-attacks-on-Lightning-Network.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002716.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation is about setting up an `htlc_minimum_msat` higher than remote's `dust_limit_satoshis`. This can be done to forbid dust HTLC, but it will outlaw low-value payments. The cost-to-spend will increase with fees going higher and HTLC outputs being encumbered. It is suggested that an honest forwarder can hold an HTLC for a while once it notices that the next hop has a bunch of dusty HTLCs in-flight that are beyond the negotiated `max_dust_htlc_value_in_flight_msat`, which might help reliability of micropayments slightly, but there is still the reduction of reliability.Negotiating a new `max_dust_htlc_value_in_flight_msat` enforced by HTLC recipient can mitigate attacks, therefore expressing its maximum trust tolerance with regards to dust. However, this will lead to reduced reliability on micropayments. Even without a spec change, such a setting may be enforced by a forwarding node by refusing to forward an HTLC once a certain level of incoming dust HTLCs are currently in-flight. The attack requires that the forwarding node actually forward the HTLC, after all. It is suggested that adding this to the spec does have the advantage that an honest forwarder can hold an HTLC for a while once it notices that the next hop has a bunch of dusty HTLCs in-flight that are beyond the negotiated `max_dust_htlc_value_in_flight_msat`, which might help reliability of micropayments slightly, but there is still the reduction of reliability. Not to mention that the easiest code change to respect such a limit would be simply to fail forwarding anyway.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:27:14.296076+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

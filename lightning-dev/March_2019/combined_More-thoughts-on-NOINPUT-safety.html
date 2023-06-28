@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001893_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Anthony Towns 2019-03-13 01:41:43</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001934_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Johnson Lau 2019-03-22 04:23:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001933_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Anthony Towns 2019-03-22 02:58:46</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001931_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Anthony Towns 2019-03-21 11:55:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001929_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Anthony Towns 2019-03-21 09:06:14</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001917_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Anthony Towns 2019-03-18 06:38:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001895_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Anthony Towns 2019-03-13 11:10:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001928_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Johnson Lau 2019-03-21 08:37:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2019/001900_More-thoughts-on-NOINPUT-safety.html">More thoughts on NOINPUT safety</a>
+                        <b>Anthony Towns 2019-03-14 07:24:56</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001893.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2019-03-13T01:41:43+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning-dev mailing list has a thread discussing the eltoo protocol, which is a layer 2 scaling solution for Bitcoin's blockchain. The conversation focuses on the use of NOINPUT signatures in eltoo and how it could reintroduce third-party malleability to transactions. This concern could cause problems for individuals accepting bitcoins resulting from a non-cooperative close of an eltoo channel.Participants in the conversation evaluate the use of tags in output transactions and different scripts to enforce certain conditions in the update and settlement transactions. They also consider the storage and communication requirements needed to implement these changes. One participant suggests that output tagging does not provide a workable defense against third-party malleability via deeper-than-the-CSV-delay reorg and that requiring a non-NOINPUT signature may be necessary.Another participant proposes a script that enforces the relative timelock in the settlement branch by refusing to sign a settlement tx that doesn't have the timelock set, thereby avoiding the need for an OP_CSV. The discussion also considers the use of MuSig for Lightning Network channels and proposes a new approach that would reduce the number of required signatures, making it cheaper.The author notes that maximizing privacy may require more signatures but can also keep more information off-chain for better privacy. Overall, the goal is to create a safer and more efficient version of eltoo that will improve scalability and security on the Bitcoin network.The context also discusses the use of NOINPUT signatures in the eltoo update mechanism for Lightning Network channels and suggests that taproot should make it possible to hide this information and make cooperative closes appear like ordinary 2-of-2 spends. It also touches upon the need for NOINPUT signatures when claiming funds with in-flight HTLCs, as well as watchtower usage and different signature styles for multiple parties.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-23T02:03:29.094505+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

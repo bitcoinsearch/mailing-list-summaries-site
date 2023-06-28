@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Speedy covenants (OP_CAT2)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2022-05-08 02:19:57
+            <br><i>Published on: 2022-05-08T02:19:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2022/combined_Speedy-covenants-OP-CAT2-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020441.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the Bitcoin-dev mailing list, ZmnSCPxj raised a question regarding the use of `OP_CAT` in enabling recursive covenants. In response to this, it was noted that even with `OP_CAT`, non-recursive covenants can be enabled without recursive covenants being enabled. However, when `OP_CAT` is used in conjunction with `OP_CHECKSIGFROMSTACK`, recursive covenants can be enabled. The question was then asked as to why `CTV+CAT` does not enable recursive covenants while `CSFS+CAT` does. It was suggested that this may be due to the fact that CTV does not allow for a verified copy of the input's prevout scriptPubKey on the stack, whereas with `OP_CSFS` this is possible because the signature hash covers it. However, it was noted that having a verified copy of the scriptPubKey on the stack is not actually necessary for recursion. Instead, it was suggested that the script could simply contain a copy of itself as an initial push (minus this push), allowing for the reconstruction of the full script quine using `OP_CAT`. It was then concluded that while `OP_CAT` does not by itself make recursive covenants possible, it makes all covenant opcodes recursive since it allows for quining. It was further noted that `OP_CAT` is not enabled until after it has been determined that recursive covenants are not unsafe.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T20:32:37.288586+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

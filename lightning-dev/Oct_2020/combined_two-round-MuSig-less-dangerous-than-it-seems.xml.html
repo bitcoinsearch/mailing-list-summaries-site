@@ -11,36 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>two-round MuSig less dangerous than it seems <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/Oct_2020/002823_two-round-MuSig-less-dangerous-than-it-seems.xml.html">two-round MuSig less dangerous than it seems</a>
-                        <b>Lloyd Fournier 2020-10-10 23:47:11</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Oct_2020/002820_two-round-MuSig-less-dangerous-than-it-seems.xml.html">two-round MuSig less dangerous than it seems</a>
-                        <b>Lloyd Fournier 2020-10-09 04:31:28</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002823.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2020-10-10T23:47:11+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Lloyd Fournier proposed on the Lightning-dev mailing list that a two-round MuSig protocol can be safely used in the context of lightning. He suggests that using this protocol would reduce the extra round of communication required before forwarding a payment in a three-round MuSig protocol. Fournier explains how PTLCs could work using the two-round MuSig protocol and claims that there is a protocol for fully scriptless lightning that incurs no extra rounds of communication to get to the irrevocably committed state. However, it does incur extra storage for each PTLC in the present commitment transaction and includes an extra round to "fully" update the state between two parties but does not delay payment forwarding.In contrast, Z's evaluation of "purely scriptless" lightning channels after taproot/schnorr showed that even in the most optimized case, the 3 round MuSig protocol leads to an extra round of communication before forwarding a payment. The original MuSig paper suggested using a two-round MuSig signing algorithm once two keys A and B had already been established for Alice and Bob. This algorithm can be used without MuSig-DN magic and involves Alice picking ra randomly and calculating Ra = ra * G. Bob picks rb randomly and calculates Rb = rb * G. They then use these values to calculate c = H(Ra + Rb || A + B || m) and sb = rb + cb.Fournier notes that the original MuSig paper suggested a signing algorithm that was insecure under parallel composition, but he believes that two-round MuSig is secure under sequential composition, which is what happens in a lightning channel. Fournier provides links to both the original MuSig paper and Zeeman's evaluation of purely scriptless lightning channels for further reading. While Fournier admits that this may not be the optimal path forward, he wanted to make the observation to see what others thought.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-04T00:42:47.310390+00:00</i></p>
-    
-
     
 
     <footer>

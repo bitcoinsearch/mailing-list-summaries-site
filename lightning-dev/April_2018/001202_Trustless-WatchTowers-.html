@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Trustless WatchTowers?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-04-17 09:44:50
+            <br><i>Published on: 2018-04-17T09:44:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2018/combined_Trustless-WatchTowers-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001202.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email suggests an idea to simplify the construction of WatchTowers. The current approach involves creating a single blob containing data for multiple justice transactions, but the proposed idea is to create one-blob-one-justice pairs for each outpoint of the revoked commitment transaction. Each blob would contain encrypted information such as the outnum on the watched transaction, the witness stack, and the scriptpubkey to pay out to. This simplifies the WatchTower construction process, as justice transactions will only be simple one-input, one-output transactions or two-output transactions with the other output being the WatchTower bounty. The proposed approach also allows for more insurance by providing the same blob to different WatchTowers and enables easy adaptation to changes in channel commitment structure without requiring changes to existing WatchTowers.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T23:23:58.113768+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

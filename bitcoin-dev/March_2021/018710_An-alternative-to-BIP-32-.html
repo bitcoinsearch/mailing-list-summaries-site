@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An alternative to BIP 32?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2021-03-22 12:05:13
+            <br><i>Published on: 2021-03-22T12:05:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_An-alternative-to-BIP-32-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018710.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email thread on the Bitcoin-dev mailing list, Erik Aronesty suggested using sha3-256 for generating hashes instead of sha256 due to certain attacks such as length extension. A user named Arik Sosman asked if sha256-hmac(nonce, publicKeyPoint) would be a suitable and safe alternative. The original post was about an interesting and simple HD wallet design that used pure ECDSA and SHA-256. The design had some nice properties, such as all keys starting with 02 prefix and potentially unlimited custom derivation path using 256-bit nonce. The original poster asked if there were any flaws in the design or if it was safe enough to implement in practice. Erik's advice was to use sha3-256 instead of sha256 because padding doesn't matter in sha3 and it is more provably secure.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T19:43:19.277681+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

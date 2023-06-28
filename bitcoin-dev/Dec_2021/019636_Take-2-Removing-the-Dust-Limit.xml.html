@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Take 2: Removing the Dust Limit</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Bastien TEINTURIER 2021-12-08 08:34:32
-            <br><i>Published on: 2021-12-08T08:34:32+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2021/combined_Take-2-Removing-the-Dust-Limit.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019636.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent email exchange between Jeremy and Bastien on the Bitcoin-dev mailing list, the discussion centered around lightning anchor outputs for committing transactions. The current system uses 330 sats amount, with two commitment transactions having such outputs. One output remains untouched, leading to bloat in the UTXO set, while the other is spent to confirm transactions. Anyone can spend these after a CSV of 16 blocks, but this trick wouldn't work for 0-value outputs. Bastien notes that N-party protocols would need N such outputs to avoid pinning, but he's not sure. In contrast, Jeremy proposes a change to the carve-out rule that allows 0 value outputs to be used as intermediate outputs, requiring them to be spent by another transaction before being created in the mempool. This rule also presupposes a fully functional package relay system. Jeremy believes this will solve issues with allowing 0 value outputs to be created, specifically for immediately spendable outputs.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T03:24:17.425093+00:00 </i></p>
     
     
 

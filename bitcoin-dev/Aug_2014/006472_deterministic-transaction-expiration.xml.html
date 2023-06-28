@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>deterministic transaction expiration</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tom Harding 2014-08-08 17:38:08
-            <br><i>Published on: 2014-08-08T17:38:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2014/combined_deterministic-transaction-expiration.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006472.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been put forth by Kaz, which suggests setting nLockTime to the current height by default in newly created transactions. This discourages fee-sniping and helps in case of reorg. Bitcoin-qt #2340 has already implemented this idea, with a slightly cautious approach of setting it to current-height - 10 by default with randomness to mitigate privacy concerns.The proposal also includes actions #2, #3, and #4 for future implementation. The fourth action suggests adding a new IsStandard rule that rejects transactions with an nLockTime more than N blocks behind the current tip (for some fixed value N, to be determined). A janitor mechanism is desirable to purge mempool of transactions more than N behind current-height.Nodes dropping a transaction N blocks after they became eligible to be mined makes sense. It is not an overloading or new use for nLockTime but a logical extension of it. This solves the problem of unintentional resurrection that arises with locally measured age.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T01:45:17.866409+00:00 </i></p>
     
     
 

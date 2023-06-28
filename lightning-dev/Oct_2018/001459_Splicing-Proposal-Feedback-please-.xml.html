@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Splicing Proposal: Feedback please!</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2018-10-16 12:38:17
-            <br><i>Published on: 2018-10-16T12:38:17+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2018/combined_Splicing-Proposal-Feedback-please-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001459.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a Lightning-dev discussion, a user suggests implementing the "pre-seating of inputs" from the multiple funding output approach. This would allow clients to generate addresses that others could deposit to and then splice directly into the channel. The process involves two public-key-derivation paths for each channel to create on-chain addresses and initiating a splice-in automatically when someone sends to one of the on-chain addresses in the path. This process can be implemented as a feature without requiring changes to the Lightning Network BOLT protocol. There are concerns about the safety of this approach without trust in the other peer, as the other party could refuse to create the new commit transaction. However, using a Taproot address can solve this issue by revealing the script it commits to, which is just a time-locked refund that requires a single signature. In case of an uncollaborative refund, the entirety of the funds needs to be claimed by one endpoint, and third-party funds will come from an on-chain wallet that is under the control of either party so the refund should go back to that party anyway.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-25T14:04:53.461540+00:00 </i></p>
     
     
 

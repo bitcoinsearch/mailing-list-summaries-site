@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blinded channel observation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2016-08-10 02:03:46
+            <br><i>Published on: 2016-08-10T02:03:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2016/combined_Blinded-channel-observation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-August/000571.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a mailing list thread, Rusty Russell and Joseph Poon discuss the need for a "filter hint" to avoid an excessive amount of outsourced work. The proposed solution involves pre-computing HMAC by the outsourcer. The outsourcer takes the txid, HMAC(txid+salt1) and encrypts the blob, gives the 32-byte hmac and blob to the watcher, who adds the 32-byte hmac and the blob to a key-value store and when it receives a new block, they HMAC(txid+salt1) all transactions and compare against the key-value store. Russell suggests inserting some randomness in the tx (OP_RETURN? Different addresses each time?) and extracting the input signature from the witness, which is unguessable, as a filter. Poon likes the idea of using one's own input sig as the key for the encrypted blob too, and if Alice is outsourcing Bob's Commitment broadcasts, a hash of her input signature is a solid way to derive a key as well without malleability concerns. However, this rests on the assumption that there are no unknown malleability issues on signatures.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:14:41.634032+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

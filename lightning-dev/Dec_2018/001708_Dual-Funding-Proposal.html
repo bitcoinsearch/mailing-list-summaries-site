@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Dual Funding Proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> lisa neigut 2018-12-03 18:33:16
+            <br><i>Published on: 2018-12-03T18:33:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2018/combined_Dual-Funding-Proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001708.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The message is regarding a proposed implementation of a payment channel protocol and contains technical details for handling various scenarios. The terms "opener" and "accepter" are proposed instead of "funder" and "fundee" in the context of channel establishment version 2. The `feerate_per_kw` field applies to both the first commitment transaction and the funding transaction itself. If the `option_dual_fund` has been negotiated, the receiving node must fail the channel. It is suggested to relax the limit for `num_inputs` and `num_outputs` when `option_will_fund_for_food` is used. However, the initiator will fail the channel if the sum of `num_inputs` and `num_outputs` is greater than the `put_limit`. The maximum length that the signatures can add is calculated as 74 per signature and 34 per pubkey, so it is recommended that it should be less than 500. The "funding_locked2" message is suggested to be reused instead of creating a new message. If the most recent funding transaction is unlikely to be confirmed in reasonable time, the "init_rbf" message can be sent by the initiator. Only the opener is allowed to add new inputs/outputs which significantly reduces the scope of an RBF. Once an "init_rbf" has been accepted by the dual-funding node, the message flow returns to "commitment_signed2" and proceeds as above, except that the `temporary_channel_id` remains as the `channel_id` for the currently published but unmined transaction. It is suggested to include the temporary channel ID until the funding_locked2 is sent, adding a `temporary_channel_id` field for `commitment_signed2`, `funding_signed2`, and `funding_locked2`, in addition to `channel_id`. The empty message "accept_rbf" is suggested as an acknowledgement. Finally, the message suggests adding a 128-bit seed to the open_channel2 protocol to prevent unnecessary information leaks, with sorting by SHA(seed | input>) and SHA(seed | ). Overall, the message contains several technical details and suggestions for improving the payment channel protocol.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T15:18:25.135569+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

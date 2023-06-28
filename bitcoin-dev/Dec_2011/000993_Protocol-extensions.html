@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Protocol extensions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Zell Faze 2011-12-25 02:55:08
+            <br><i>Published on: 2011-12-25T02:55:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2011/combined_Protocol-extensions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-December/000993.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposed protocol extension for Bitcoin is to start nodes off with a certain level of trust, such as the arbitrary number 5. High trust nodes (e.g. 10) can forward transactions without checking them, while low trust nodes (e.g. 0) will have their transactions discarded. For nodes with trust levels between 1 and 9, 1-9 out of every 10 transactions are forwarded without checking, with the rest being checked. Valid transactions increase trust by 1 and invalid decrease trust by 3. The numbers used are arbitrary and should be determined by user preferences rather than the protocol. By decreasing trust faster than it increases, it becomes harder for untrustworthy clients to cheat. Having a cut-off point prevents DDoS attacks while random verification makes it harder for new clients to conduct DDoS attacks. One issue raised is that if a node trusts another node at a high level, it may forward invalid transactions from new nodes that it trusts less. This could be mitigated by having a message not to trust a particular node. Another idea is to create positive/negative/neutral announce messages to classify forwarding, but this requires a web of trust and assigning enough trust to forward a classified transaction without checking it yourself.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-05T00:52:15.410250+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

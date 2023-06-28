@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP] Normalized Transaction IDs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tier Nolan 2015-05-13 18:11:30
-            <br><i>Published on: 2015-05-13T18:11:30+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2015/combined_-BIP-Normalized-Transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008154.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the issue of malleability in bitcoin transactions and proposes a hard fork solution that allows transactions to refer to their inputs by either txid or txid-norm. Pieter Wuille argues that allowing mixed usage of the two types of txids does not effectively guarantee non-malleability, and suggests a soft fork alternative where transactions would get two txids, one for reference and one for an extended sighash. However, this approach is vulnerable to two-level malleability. The email suggests recursively replacing all input txids with txid-norms when computing the txid-norm for a transaction as a solution to this problem. This would ensure that mutated transactions within two levels of dependencies would still have the same txid-norm and therefore be valid.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T20:59:02.384422+00:00 </i></p>
     
     
 

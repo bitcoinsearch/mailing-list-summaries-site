@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>OP_CODESEPARATOR Re: BIP Proposal: The Great Consensus Cleanup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2019-03-07 15:03:17
+            <br><i>Published on: 2019-03-07T15:03:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_OP-CODESEPARATOR-Re-BIP-Proposal-The-Great-Consensus-Cleanup.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016724.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>OP_CODESEPARATOR is a mechanism that allows users to sign which particular branch they are authorizing for within scripts that have multiple possible conditions that reuse the same public key. However, in non-BIP 143 scripts, OP_CODESEPARATOR fails the script validation, including OP_CODESEPARATORs in unexecuted branches of if statements, similar to other disabled opcodes, but unlike OP_RETURN. P2SH makes it impossible to know whether someone is currently using this feature, and activating a soft-fork as described above means these sorts of funds would be permanently lost, putting people's money at risk. Therefore, an alternative is suggested whereby the execution of OP_CODESEPARATOR increases the transaction's weight suitably as to temper the vulnerability caused by it. Another potential solution is to place a limit on the maximum number of OP_CODESEPARATORs allowed to be executed per script, but this would require an argument as to why exceeding that limit isn't reasonable. The goal is to prevent the loss of funds without compromising security.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:29:23.011905+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

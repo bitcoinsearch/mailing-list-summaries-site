@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Thoughts on fee bumping</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Billy Tetrud 2022-02-15 17:09:56
-            <br><i>Published on: 2022-02-15T17:09:56+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2022/combined_Thoughts-on-fee-bumping.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019909.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion on the bitcoin-dev mailing list, multiple concerns were raised about the use of transaction sponsors as a fee-bumping primitive. One concern was that in a distributed system like Bitcoin's p2p network, it is difficult to know if a target transaction has been dropped from the majority of network nodes since the last broadcast. However, it was suggested that specifying a sponsorship transaction that points to a specific transaction ID could be done without requiring rebroadcasting of the original transaction data, as long as the partner node already has the transaction. If not, the partner node can request it. Another concern was that pre-committing to a fee-bumping key in CPFP outputs could become problematic if the key is compromised later on, but this issue may be unique to vault use cases. It was also mentioned that package relay and fixing RBF behavior are important considerations, and that sponsors may be useful for their targeted replacement policy. Overall, while there are some concerns with transaction sponsors, they may still have benefits for fee management in certain use cases.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T16:31:34.025659+00:00 </i></p>
     
     
 

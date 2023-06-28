@@ -11,86 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>SIGHASH_ANYPREVOUT proposal <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016929_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Anthony Towns 2019-05-10 20:38:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016983_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Rusty Russell 2019-05-27 01:26:01</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016944_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Anthony Towns 2019-05-22 20:11:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016983_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Rusty Russell 2019-05-27 01:26:01</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016944_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Anthony Towns 2019-05-22 20:11:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016929_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Anthony Towns 2019-05-10 20:38:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016983_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Rusty Russell 2019-05-27 01:26:01</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016929_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Anthony Towns 2019-05-10 20:38:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016938_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Rusty Russell 2019-05-22 02:47:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016938_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Rusty Russell 2019-05-22 02:47:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016944_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Anthony Towns 2019-05-22 20:11:31</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/May_2019/016938_SIGHASH-ANYPREVOUT-proposal.xml.html">SIGHASH_ANYPREVOUT proposal</a>
-                        <b>Rusty Russell 2019-05-22 02:47:31</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2019-05-10T20:38:04+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Bitcoin developer Rusty Russell has proposed changes to the SIGHASH_ANYPREVOUT feature in a BIP draft shared on bitcoin-dev. While he believes that taproot is ready for implementation, he expresses less confidence in ANYPREVOUT's readiness due to potential unforeseen problems despite its existence for years.Russell suggests renaming it to SIGHASH_UNSAFE_ANYPREVOUT and adding a warning about its unsafe nature for general wallet usage. He also proposes finding a way to make ANYPREVOUT safe enough so that it doesn't require scary warnings. However, he disagrees with Anthony Towns' suggestion that an individual only uses ANYPREVOUT to sign transactions that pay the money back to themselves, believing that sharing with an untrusted party is insecure without further complex arrangements.The discussion on the safety of ANYPREVOUT continues between Rusty and Anthony. Rusty notes the concern of using correctly but nasty gotchas inherent in rebinding. However, that concern is fully addressed by Don't Reuse Addresses. Finally, he highlights four reasons why he believes the benefits of chaparones do not justify enshrining their complexity into the protocol, including that they don't seem to help with accidental key reuse and that miners can reorg and invalidate downstream txs.Anthony Towns shares a follow-up BIP draft enabling SIGHASH_ANYPREVOUT and SIGHASH_ANYPREVOUTANYSCRIPT on top of taproot/tapscript. The BIP draft and a sample implementation based on the taproot branch are available via links provided by the author. The implementation includes interesting features such as how to upgrade tapscript's existing opcodes for new SIGHASH methods or potentially a new signature scheme, a new elliptic curve, or other public key schemes. Additionally, there are two variants of ANYPREVOUT: ANYPREVOUT and ANYPREVOUTANYSCRIPT, which seems useful for eltoo.Russell believes that making ANYPREVOUT only available via script is aligned with keeping funds safe. Although it is not compatible with Luke's "malleability proof" wallet idea, it does not add any systemic risk if someone else reuses its addresses. He suggests eliminating chaparone signature requirements due to their complexity not being justified by their benefits. However, he notes that this principle will remain true with ANYPREV because for lightning, the locktime will be fairly high before these transactions are generally spendable and doing this would require special software. Lastly, he feels that objections to rebinding must be backed by facts.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-13T18:52:10.115322+00:00</i></p>
-    
-
     
 
     <footer>

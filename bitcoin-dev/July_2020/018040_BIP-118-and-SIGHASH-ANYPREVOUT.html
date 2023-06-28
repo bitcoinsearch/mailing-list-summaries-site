@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 118 and SIGHASH_ANYPREVOUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-07-10 03:29:39
+            <br><i>Published on: 2020-07-10T03:29:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2020/combined_BIP-118-and-SIGHASH-ANYPREVOUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018040.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>ZmnSCPxj proposed a Decker-Russell-Osuntokun construction that could have only a single internal taproot pubkey, `P = MuSig(A, B)` for a channel between A and B. Transactions would be signed with the internal taproot pubkey using `SIGHASH_ANYPREVOUTANYSCRIPT`. Update transactions would require a monotonically-increasing `nLockTime`, while state transaction input would have an `nSequence` requiring a relative locktime of the agreed-upon unilateral close delay. The assumption is MuSig signing, which requires 1.5 round trips for a channel, or three broadcast rounds for a multiparticipant (n >=3) construction. Andrew Poelstra has updated BIP 118 to the latest thinking with the ANYPREVOUT bip, and opened a draft pull request to update it. There are some significant changes since previous discussion, including complete lack of chaperone signatures or anything like it and that ANYPREVOUTANYSCRIPT no longer commits to the value. The pull request doesn't come with tested code at this point.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T02:52:49.825549+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

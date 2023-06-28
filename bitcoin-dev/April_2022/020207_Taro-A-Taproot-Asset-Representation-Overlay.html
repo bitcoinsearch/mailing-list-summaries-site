@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taro: A Taproot Asset Representation Overlay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2022-04-08 17:48:02
+            <br><i>Published on: 2022-04-08T17:48:02+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_Taro-A-Taproot-Asset-Representation-Overlay.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020207.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Taro protocol is a straightforward protocol that allows for the creation of assets on the Bitcoin network. It is built on Bitcoin Script and strongly bound to Bitcoin UTXOs, which helps resolve issues related to double spending or duplicate assets. Assets can be burnt if a user doesn't supply a valid witness. There are two possible designs for asset issuance: token histories can remain separate or get merged. To keep asset histories compressed, the compatibility with the Lightning Network layer will be the primary way without relying on another trust model. However, there are no privacy guarantees beyond those of the base chain. Any privacy-enhancing protocol used for on-chain top-level Bitcoin UTXOs can also be applied to Taro.The author of the article discusses the implementation of Taproot and Taro tokens. They suggest three options to prevent a taproot tree from containing more than one Taro tree, which would enable the owner of the commitment to show different histories to different people. The sparse merkle tree in the design serves several purposes, such as non-inclusion proofs, tracking issuance events for a given asset, ensuring uniqueness of certain items/commitments, and making validation simpler. When transferring Taro token ownership from one Bitcoin UTXO to another, the UTXOs generated are just part of the MIMO transaction. For sending via the address format, a new non-dust output is created, which holds the new commitment and uses an internal key provided by the receiver. Lastly, the author is not familiar with the RGB "teleport" technique and asks for a coherent explanation of the technique to compare/contrast it with Taro tokens.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T18:51:59.481959+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Announcement: Full-RBF Miner Bounty</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2022-12-05 17:00:56
+            <br><i>Published on: 2022-12-05T17:00:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2022/combined_Announcement-Full-RBF-Miner-Bounty.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021247.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, members were discussing an attack on Bitcoin's opt-in replace-by-fee (RBF) and 0-conf usage. One solution proposed was to work on a Bitcoin core implementation that stops propagation of full-RBF replaced blocks. However, implementing such a rule could lead to unintended chainsplits, and it is not feasible to make a consensus rule that enforces mempool consistency. Additionally, Bitcoin does not promise consistency across mempools. The risk of double-spending remains when conflicting transactions are broadcasted with minimal fees, leading to a situation where the miner creates a block with a different transaction from what one sees in their mempool. Peter Todd, who had been attacking opt-in RBF, had received donations worth a few hundred dollars for his efforts to double-spend. He had raised the reward to about 0.02 BTC or $400 USD at current prices. He turned it back on when the mempool settled down, but there was a risk of the mempool filling up again. The second full-RBF double-spend was initiated by Bob's calendar. There is no significant hash rate mining with full-RBF policies, despite the bounty having been collected. While there was good reason to think some miners were mining full-RBF before a few years back, they probably did not bother to reapply their patches each upgrade, making mempoolfullrbf=1 much simpler to use.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T02:48:00.979416+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

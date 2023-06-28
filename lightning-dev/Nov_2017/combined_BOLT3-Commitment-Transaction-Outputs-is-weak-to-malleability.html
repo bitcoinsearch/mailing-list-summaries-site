@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BOLT3: Commitment Transaction Outputs is weak to malleability <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2017/000808_BOLT3-Commitment-Transaction-Outputs-is-weak-to-malleability.html">BOLT3: Commitment Transaction Outputs is weak to malleability</a>
+                        <b>Nicolas Dorier 2017-11-29 07:11:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2017/000810_BOLT3-Commitment-Transaction-Outputs-is-weak-to-malleability.html">BOLT3: Commitment Transaction Outputs is weak to malleability</a>
+                        <b>Olaoluwa Osuntokun 2017-11-29 09:22:22</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Nov_2017/000809_BOLT3-Commitment-Transaction-Outputs-is-weak-to-malleability.html">BOLT3: Commitment Transaction Outputs is weak to malleability</a>
+                        <b>Nicolas Dorier 2017-11-29 07:40:13</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000808.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2017-11-29T07:11:33+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Commitment Transaction Output script is vulnerable to malleability, which can delay the confirmation of revocation. The penalty transaction can be delayed by an attacker through malleating it, leading to bad outcomes as Lightning is dependent on time locks. This vulnerability can create a problem in which Eve can malleate OP_1 into a positive, huge number, leading to filling of mempool of nodes/miners with the malleated version, which has higher fee rates, delaying the confirmation of the penalty transaction. A policy rule called SCRIPT_VERIFY_MINIMALIF was merged into v0.15.1, fixing the situation with 2 bytes overhead. To fix this issue, RBF can be enabled for Penalty Transaction so that Eve's transaction would be replaced by the initial one. Laolu recommends implementing a scorched earth policy when responding to on-chain contract breach event, gradually bleeding away the funds of the violator while bumping up the fee on the transaction using RBF. This policy addresses Dorier's malleability concern and further stacks the incentives against attempting a contract breach.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-24T03:20:07.042605+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

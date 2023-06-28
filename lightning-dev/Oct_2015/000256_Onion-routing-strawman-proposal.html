@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onion routing strawman proposal</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2015-10-06 14:01:34
+            <br><i>Published on: 2015-10-06T14:01:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2015/combined_Onion-routing-strawman-proposal.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-October/000256.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell has reworked test_onion and Makefile test to separate generate and decode, with the inclusion of the python version. The branch has been updated on Github, which includes changes such as disabling flip_key(), making the 02/03 prefix explicit, tweaking onion_key to avoid the for loop and cut calls, and changing the "Message for blah..." to serialize the pubkey before turning it into hex. Onion_key was also changed to pass both privkey and pubkey directly to pyelliptic, instead of generating a pubkey given a privkey. Running decoding through python is slow due to loading the interpretor and crypto modules, so it may not be desirable to improve it by running decodes in a single python process. Anthony Towns asked about documenting lightning protocol/technology decisions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T15:25:06.016145+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

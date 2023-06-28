@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Time-Dilation Attacks on Offchain Protocols <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Dec_2019/002379_Time-Dilation-Attacks-on-Offchain-Protocols.html">Time-Dilation Attacks on Offchain Protocols</a>
+                        <b>Matt Corallo 2019-12-16 15:29:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Dec_2019/002370_Time-Dilation-Attacks-on-Offchain-Protocols.html">Time-Dilation Attacks on Offchain Protocols</a>
+                        <b>Matt Corallo 2019-12-10 02:05:31</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002379.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2019-12-16T15:29:28+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The Lightning network is a popular off-chain protocol for Bitcoin transactions that is vulnerable to time-dilation attacks. These attacks enable attackers to steal from lightning nodes and pose a significant danger to off-chain protocols that rely on time for their security model. Eclipse attacks involve an attacker controlling the view of the blockchain from a victim's node. Various countermeasures have been implemented to prevent these attacks, but they may still be possible for an off-path attacker.In one scenario involving the Lightning Network, an attacker maintains an eclipse for a week and gains more than a day of height advance on a victim's view of the blockchain. The attacker can then broadcast a previous commitment transaction with a balance far more favorable than the legit one at the synchronized height with the rest of the network. In another scenario, an attacker can exploit the time difference in HTLC expiration heights to claim the payment while the victim is stuck.To protect against these attacks, Lightning node authors and operators are advised to ensure they have multiple, redundant, trusted methods of receiving Bitcoin block data in a timely fashion. Multiple full-nodes with multi-homing and reconciliation of blockchain views every N hour/minute, along with the use of multiple watchtowers and the control plane as a safety mechanism, can also help prevent these types of attacks.While there is currently limited risk to funds, LN implementation teams acknowledge the issue and recognize its long-term impact on processing nodes. Light clients using LN nodes should be specially considered since it would be easy for an attacker to run multiple servers and control the blockchain view of these LN nodes. Inter-layer mapping techniques could be developed to make it easier to map LN nodes to their full-nodes.</p>
+        <hr>
+        <p><i>Updated on: 2023-05-23T02:38:12.722770+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

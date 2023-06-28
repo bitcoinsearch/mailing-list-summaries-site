@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Adding callback hooks to the satoshi client</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2012-03-22 15:23:17
+            <br><i>Published on: 2012-03-22T15:23:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2012/combined_Adding-callback-hooks-to-the-satoshi-client.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-March/001340.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author suggests that a callback architecture could be implemented in applications to handle events related to Bitcoin transactions without requiring access to the wallet space. The author proposes the use of HTTP POST requests to subscribe to specific events such as new transactions or blocks being seen, which is supported by libcoin. Other types of events, including node connections and disconnections, potential attacks, and alerts related to the status of bitcoind, could also be useful.The proposed system would allow for all I/O to be done via IPC or over network sockets, ensuring that other code never needs to enter into the wallet-handling process/memory space. This would make it easier to handle events without requiring direct access to the underlying Bitcoin process.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T03:44:19.560243+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

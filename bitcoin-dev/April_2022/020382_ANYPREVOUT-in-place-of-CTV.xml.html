@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>ANYPREVOUT in place of CTV</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Swambo, Jacob 2022-04-29 13:22:14
-            <br><i>Published on: 2022-04-29T13:22:14+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2022/combined_ANYPREVOUT-in-place-of-CTV.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020382.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author acknowledges the benefits of using (optional ANYONECANPAY) APOAS instead of CTV in the short-term, as it enables Eltoo. However, they argue that there is a point in favor of CTV in the long-term beyond optimization. With APOAS-based covenants, the signature message algorithm is tied to both the covenant commitment and transaction validation, which introduces a trade-off between safety and flexibility with covenant-based applications. The maximally safe and restricted covenant commits to all inputs and outputs of the transaction (using SIGHASH ALL), while a less restricted covenant commits to a single input and a single output (using ANYONECANPAY|SINGLE) but opens itself up to attacks making use of transaction malleability and signature replay. To bypass this trade-off, the author suggests separating the covenant commitment from the signatures to validate transactions (as with CTV and TXHASH + CHECKSIGFROMSTACK). This separation provides additional flexibility for new templates with new CTV versions or with the TXHASH primitive, which can enable significantly more utility for covenant-based applications.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T19:25:00.318010+00:00 </i></p>
     
     
 

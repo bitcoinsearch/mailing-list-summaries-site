@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Some thoughts on removing timestamps in PoW</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Daniele Pinna 2018-02-19 13:41:21
-            <br><i>Published on: 2018-02-19T13:41:21+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2018/combined_Some-thoughts-on-removing-timestamps-in-PoW.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015778.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made to modify the Bitcoin blockchain's difficulty adjustment algorithm by removing timestamps. The author suggests that timestamps may be unnecessary for the blockchain to operate with the same security guarantees and that the chain selection rule should remain "chain with most proof of work." Under this proposal, miners would be free to mine blocks of any difficulty they choose, up to a maximum deviation, and could modify the difficulty in an arbitrary direction. Powerful miners would be incentivized to raise the difficulty to remove competitors as is true today. A timestamp may still be included in blocks but would no longer need to be used or represent anything significant other than metadata about when the miner claims to have produced the block. The proposal carries some risks, such as potential centralization pressures, but two mitigations exist to address them: introducing state checkpoints into the chain itself and implementing a sharded protocol that uses a sufficiently different PoW algorithm. In response, a member of the Bitcoin community suggests that the Y% difficulty adjustment should still be calculated through some averaging of a certain number N of past blocks to prevent a network halt caused by two lucky high difficulty blocks in a row. They also propose a logarithmic scaling reward function that depends on past average difficulty and the total number of mined coins which could disincentivize mining blocks with excessively large difficulties while retaining something close to the 21M coin cap.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T00:47:06.917681+00:00 </i></p>
     
     
 

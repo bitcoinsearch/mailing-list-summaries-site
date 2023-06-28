@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>deterministic transaction expiration</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Harding 2014-08-06 14:44:25
+            <br><i>Published on: 2014-08-06T14:44:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_deterministic-transaction-expiration.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006423.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about introducing a new field in a new transaction version, Jeff Garzik raised concerns that existing users and uses of nLockTime would become worthless, breaking payment channel refunds and other active uses of nLockTime. He argued that it cannot be assumed that the user is around to rewrite their nLockTime if it fails to be confirmed before some arbitrary deadline being set. Tom Harding responded by pointing out that if nLockTime is used for expiration, the transaction creator can't lie to help the transaction live longer without pushing initial confirmation eligibility into the future. This would allow for "fill or kill" transactions with a backdated nLockTime, which must be confirmed in a few blocks or start vanishing from mempools.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T01:45:05.740482+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

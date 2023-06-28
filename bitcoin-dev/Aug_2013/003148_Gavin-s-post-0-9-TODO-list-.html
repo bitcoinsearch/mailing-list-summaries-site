@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Gavin&#39;s post-0.9 TODO list...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mike Hearn 2013-08-16 15:13:28
+            <br><i>Published on: 2013-08-16T15:13:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2013/combined_Gavin-s-post-0-9-TODO-list-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-August/003148.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposed approach for prioritization is to use signed timestamps, which clients remember and present to the node when re-connecting. The node then gives priority to those with older timestamps. This process does not require any state on the node side, and the signing and checking can be passed onto the general ECDSA thread pool that works through pending signature operations. This method ensures that the timestamp checks are prioritized lower than checking blocks/broadcasts.An additional advantage of this approach is that it is stateless on the server side and up to the client whether or not they present the cookie. The node can disconnect clients that do not present their cookie but may choose not to request it if it has sufficient resources. Clients who believe the server is bluffing can wait to see if they get disconnected and present the cookie upfront next time.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T15:57:19.662901+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

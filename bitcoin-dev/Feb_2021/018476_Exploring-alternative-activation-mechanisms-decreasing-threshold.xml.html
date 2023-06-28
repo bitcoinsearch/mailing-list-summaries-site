@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Exploring alternative activation mechanisms: decreasing threshold</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gregorio Guidi 2021-02-25 22:33:25
-            <br><i>Published on: 2021-02-25T22:33:25+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2021/combined_Exploring-alternative-activation-mechanisms-decreasing-threshold.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018476.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal called "decreasing threshold activation" has been suggested as an alternative to the LOT=true/false dichotomy. It is a relatively conservative approach in which the threshold that triggers the STARTED -> LOCKED_IN transition starts at 100% for the first retargeting period and then gradually reduces in steps of 24 blocks (~1.2%) on each period. This approach is easy to implement and requires no parameters to set, making it more predictable and robust. Activation occurs only when there is clear majority signaling hashrate, ensuring relative safety. The risk of reorgs and involuntary forks around activation are mitigated, as chain split occurs only when an invalid block is created. The decreasing threshold activation approach removes motivation to create UASF clients that force activation. Compared to LOT=true, activation is cleaner and quicker when it is relatively safe to do so. Activation is pushed further in time when it is less safe. A snippet of pseudocode for the decreasing thresholds in the style of BIP8 and BIP9 is included for reference.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-21T01:14:46.620544+00:00 </i></p>
     
     
 

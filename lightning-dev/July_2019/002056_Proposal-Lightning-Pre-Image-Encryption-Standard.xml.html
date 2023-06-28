@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Lightning Pre-Image Encryption Standard</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Alexander Leishman 2019-07-04 22:17:41
-            <br><i>Published on: 2019-07-04T22:17:41+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2019/combined_Proposal-Lightning-Pre-Image-Encryption-Standard.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002056.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange on the Lightning-dev mailing list, concerns were raised about a proposal that requires customers to trust merchants. The proposed standard would only be useful for pre-downloading data before payment, but still trusting the merchant. There is a need for a higher-level abstraction to handle more mainstream use-cases. Additionally, it was suggested that including a ZKP for ZKCP-compatible data transfers might be helpful, although there are limitations to consider with those. Another concern was raised about why to MAC, then encrypt. Generally, it is recommended to MAC the ciphertext + IV; otherwise, ciphertext integrity guarantees are lost. However, some argued that putting MAC inside the encryption would help ensure that data replacement can be detected over an insecure channel, and use of shared secret ensures only the intended recipient can decrypt. This added protection could allow for the option of sending data over a non-secure channel, which would avoid imposing additional encryption/decryption overhead on top of a secure channel like HTTPS.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T19:10:05.586314+00:00 </i></p>
     
     
 

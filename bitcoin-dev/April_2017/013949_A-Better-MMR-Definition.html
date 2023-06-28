@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Better MMR Definition</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> praxeology_guy 2017-04-01 19:46:12
+            <br><i>Published on: 2017-04-01T19:46:12+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_A-Better-MMR-Definition.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/013949.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion with gmaxwell, the idea of keeping a full copy of the top of the MMR (Modified Merkle Mountain Range) tree was brought up. However, there are two problems that arise from this: MMR proofs change over time and finding a way to coordinate nodes to keep different portions of the MMR so that pruning can occur while still retaining multiple copies of the full MMR throughout the network. To solve these issues, a policy can be implemented where deltaLeafHeight is defined as the number of tree layers between a node and the leaves in the MMR data structure. Nodes will be expected to have all nodes above deltaLeafHeight equal to or greater than DLH_REQUIRED, but can prune any nodes with a deltaLeafHeight less than this value. This would allow for coordination among nodes to achieve efficient pruning while ensuring multiple copies of the full MMR are retained throughout the network.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:39:36.619106+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

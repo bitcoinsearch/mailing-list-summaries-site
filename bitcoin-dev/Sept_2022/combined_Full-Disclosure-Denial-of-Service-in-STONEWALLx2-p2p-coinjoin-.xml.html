@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Full Disclosure: Denial of Service in STONEWALLx2 (p2p coinjoin) <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020737_Full-Disclosure-Denial-of-Service-in-STONEWALLx2-p2p-coinjoin-.xml.html">Full Disclosure: Denial of Service in STONEWALLx2 (p2p coinjoin)</a>
-                        <b>alicexbt 2022-07-14 09:25:56</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020737_Full-Disclosure-Denial-of-Service-in-STONEWALLx2-p2p-coinjoin-.xml.html">Full Disclosure: Denial of Service in STONEWALLx2 (p2p coinjoin)</a>
-                        <b>alicexbt 2022-07-14 09:25:56</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2022/020914_Full-Disclosure-Denial-of-Service-in-STONEWALLx2-p2p-coinjoin-.xml.html">Full Disclosure: Denial of Service in STONEWALLx2 (p2p coinjoin)</a>
-                        <b>alicexbt 2022-09-10 10:20:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2022/020737_Full-Disclosure-Denial-of-Service-in-STONEWALLx2-p2p-coinjoin-.xml.html">Full Disclosure: Denial of Service in STONEWALLx2 (p2p coinjoin)</a>
-                        <b>alicexbt 2022-07-14 09:25:56</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2022/020914_Full-Disclosure-Denial-of-Service-in-STONEWALLx2-p2p-coinjoin-.xml.html">Full Disclosure: Denial of Service in STONEWALLx2 (p2p coinjoin)</a>
-                        <b>alicexbt 2022-09-10 10:20:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2022/020914_Full-Disclosure-Denial-of-Service-in-STONEWALLx2-p2p-coinjoin-.xml.html">Full Disclosure: Denial of Service in STONEWALLx2 (p2p coinjoin)</a>
-                        <b>alicexbt 2022-09-10 10:20:48</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020737.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2022-07-14T09:25:56+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>Samourai Wallet's p2p coinjoin transaction, STONEWALLx2, has a vulnerability that has been assigned CVE-2022-35913. Antoine Riard discovered the denial-of-service (DoS) attack in an email on June 21, 2022, where one participant prevents the other from completing the transaction by spending the UTXO used in STONEWALLx2 before it is completed. The Samourai Wallet team came up with two suggestions to prevent such attacks. First, they proposed an error message that suggests doing such transactions only with trusted users and ending the p2p coinjoin process. Second, once full RBF is used by some nodes and miners, replacing the attacker's transaction with a higher fee rate. However, bumping the fee won't be simple as fees are shared 50/50 for STONEWALLx2 spends.The issue was acknowledged by Samourai on July 7, 2022, and conclusions were shared on July 14, 2022. The problem involves a DoS attack where the collaborator spends the UTXO used in STONEWALLx2 before the transaction is completed, resulting in an error message for the spender. Suggestions for mitigating the issue include an error message that suggests doing such transactions only with trusted users and, once full RBF is used by some nodes and miners, replacing the attacker's transaction with a higher fee rate. Samourai's conclusions state that the threat surface is not important as it involves the collaborator attacking the spender, and the change to bump fees would have to be recalculated for both spender and collaborator. Antoine Riard discovered the DoS vector and helped during testing.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-15T22:57:02.437534+00:00</i></p>
-    
-
     
 
     <footer>

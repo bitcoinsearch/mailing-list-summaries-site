@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decoy node_ids and short_channel_ids</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2020-02-10 03:40:10
+            <br><i>Published on: 2020-02-10T03:40:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Decoy-node-ids-and-short-channel-ids.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002512.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion, Bastien Teinturier and Rusty Russell talked about a proposed solution to prevent an attack on Lightning Network where a malicious node, Mallory, could use the wrong invoice for Bob. In response to Teinturier's suggestion, Russell agreed that his proposal would need the same mitigation as Teinturier's. Russell planned to add an argument to the invoice to ensure the behavior of the node is similar to other nodes that have no idea about this node ID if Mallory tries to pay another invoice using a temporary node ID or probes the outgoing channels using this routing hint. Furthermore, Russell suggested that if any self-assigned SCID schemes are used, Alice has to respond to unknown scids in update_add_htlc with some BADONION code. Russell was nervous about custodial lightning services restricting what they will pay to. He believes there are enough non-custodial wallets to let motivated users pay whatever they want. However, he mentioned that if KYC pressure kicks in, users may be required to completely reveal who they are paying, making normal payments not protecting them. The regulation could disallow paying via unannounced channels entirely or require users to show the funding tx associated with their unannounced channel. Despite this concern, Russell expects such payments to become significant in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:42:29.674660+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

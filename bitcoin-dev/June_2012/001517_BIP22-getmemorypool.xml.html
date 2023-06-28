@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP22/getmemorypool</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2012-06-10 14:18:47
-            <br><i>Published on: 2012-06-10T14:18:47+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2012/combined_BIP22-getmemorypool.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001517.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Pieter, a member of the Bitcoin community, has expressed concerns about the complexity of the BIP22 standard for negotiating block generation. While he believes that having a stable and flexible API is important, he feels that too few people understand the details well enough to judge their necessity. He suggests that the standard should not be more complex than necessary and its purpose and intended use cases should be clear. The current BIP22 standard includes three sub-requests: template, proposal, and submit. Pieter would like to see this process described in the BIP. He also questions why full transactions (serialized in hex) are sent in templates and submissions, suggesting that transferring txids may be sufficient. He believes there are too many optional features in the standard, such as variations in coinbase outputs and noncerange limiting, making it unnecessarily complex for clients. Additionally, Pieter dislikes several ways of specifying the same behavior. For example, txrequires specifies that the first N transactions are mandatory, a 'required' field in the transaction list itself specifies that that transaction is mandatory, and the lack of transactions as a variation means that they must not be touched at all. He recommends picking one flexible way and discarding the others. In summary, Pieter suggests simplifying the standard to include only `getblocktemplate` and `submitblocktemplate`. The former creates a new block template and returns it, while the latter submits an object containing a hex serialized block header, hex serialized coinbase transaction, and a list of txids. Proof of work is checked last, so that error is only returned if there is no other problem with the suggested block.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T00:39:05.291839+00:00 </i></p>
     
     
 

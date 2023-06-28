@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Arbitrary Bitcoin Contracts over LN</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2018-08-01 12:04:47
-            <br><i>Published on: 2018-08-01T12:04:47+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2018/combined_Arbitrary-Bitcoin-Contracts-over-LN.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001385.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A member of the Lightning-dev community has raised questions about the use of LN-penalty in Bitcoin SCRIPTs. The concern is that CLTV-branches and nLocktimed spending transactions need to be guarded with an additional `OP_CSV` condition since they may leak on-chain and become immediately valid. To address this issue, a two-stage HTLC resolution was introduced, with the first stage acting as the `OP_CSV` guard and keeping the second stage clean. The CSV belongs in the output script, not the input script, and if C contains a CLTV-branch whose timeout expires before attempting on-chain mediation, then both branches become valid, resulting in a race. The Poon-Dryja method is considered superior for transportation of *arbitrary* contracts compared to Decker-Wattenhofer or Decker-Osuntokun-Russell. The only smart contract one really wants to transport is HTLC or equivalent in scriptless script. Any Bitcoin SCRIPT may be expressed as a Boolean computation whether or not the contract has been fulfilled by the transaction that attempts to claim it. Under Poon-Dryja, the transaction series involves the creation of symmetrical transactions from [/*arbitrary*/, A && B] -> [signA signB, (revoke) || (A && B && C)] -> [signA signB witnessCbyA, revoke || (A && CSV)] /* held by A */ and [/*arbitrary*/, A && B] -> [signA signB, (revoke) || (A && B && C)] -> [signA signB witnessCbyB, revoke || (B && CSV)] /* held by B */.  Under Decker-Osuntokun-Russell eltoo, the transaction series is [/*arbitrary*/, A && B] -> [signA signB, (CSV && A && B) || (CLTV && A && B)] -> [nSequence signA signB, C]. The CSV in the second transaction is potentially interfering with the contract C if C is time-sensitive. In contrast, Poon-Dryja requires CSV only for revocability, and the CSV cannot prevent the enforcement of time-sensitive C. HTLCs seem to be an important building block for digital value transfers, and they (and their equivalents under scriptless) are sufficient for most practical transfers. Moving forward, Decker-Osuntokun-Russell remains a superior technology over Poon-Dryja.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-25T02:04:36.958729+00:00 </i></p>
     
     
 

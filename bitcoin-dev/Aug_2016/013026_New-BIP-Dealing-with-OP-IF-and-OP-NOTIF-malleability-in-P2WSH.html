@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP: Dealing with OP_IF and OP_NOTIF malleability in P2WSH</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2016-08-17 00:18:09
+            <br><i>Published on: 2016-08-17T00:18:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2016/combined_New-BIP-Dealing-with-OP-IF-and-OP-NOTIF-malleability-in-P2WSH.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/013026.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on bitcoin-dev, Russell O'Connor questioned the need for a soft fork on an issue related to witness data. He suggested making it a relay rule instead, stating that miners are already incentivized to modify transactions to drop excess witness data and prioritize transactions based on cost. However, Peter Todd cautioned against relying solely on relay rules, which can be fragile and often lack proper error handling. Todd believes that relay rules should only be used if there is a plausible chance that something could be made invalid in the future. One potential concern with adversarial behavior by miners was also raised, specifically the ability to mine blocks with mutated witnesses using a keyed mac, potentially giving them a propagation advantage. While not a major concern, parties who do this could avoid leaving behind fee-paying public transactions by using malleability instead of creating new transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:44:29.319523+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

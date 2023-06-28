@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Moving towards user activated soft fork activation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2017-02-27 16:50:07
+            <br><i>Published on: 2017-02-27T16:50:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2017/combined_Moving-towards-user-activated-soft-fork-activation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-February/013651.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Bitcoin-dev mailing list, a discussion was had regarding the scalability of mining pool operator complexity with regards to soft forks. The concern was raised that if there are multiple soft forks and a pool does not want to opt-in to any of them, they may have to run multiple "chained" border nodes across different software implementations. However, it was noted that it is unlikely that there would be a high number of active parallel deployments at any given time. Additionally, conflicting soft forks would not meet consensus from the technical community on the basis of safety and sanity. The relationship between a codebase and chain fork implementations is similar to vendor lock-in and has been utilized in a similar manner. While it is not the norm, libbitcoin now utilizes an approach where a single codebase implements all forks and exposes the option to apply any non-conflicting combination of them. Currently, the options to apply any activated Bitcoin forks are exposed via config. The implementation of non-activated forks is not a priority at this point.There was also discussion surrounding BIP90, which is presented as a code simplification and performance optimization. It was shown that it was neither, but the additional code was implemented regardless and users have the option to apply it or not. Its application produces no performance benefit, but it ensures that the choice of forks remains in the hands of the user.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T21:54:36.057856+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

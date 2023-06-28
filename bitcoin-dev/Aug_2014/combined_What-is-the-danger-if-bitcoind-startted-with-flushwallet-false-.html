@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>What is the danger if bitcoind startted with -flushwallet=false ? <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006499_What-is-the-danger-if-bitcoind-startted-with-flushwallet-false-.html">What is the danger if bitcoind startted with -flushwallet=false ?</a>
+                        <b>Wladimir 2014-08-13 20:29:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006499_What-is-the-danger-if-bitcoind-startted-with-flushwallet-false-.html">What is the danger if bitcoind startted with -flushwallet=false ?</a>
+                        <b>Wladimir 2014-08-13 20:29:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006496_What-is-the-danger-if-bitcoind-startted-with-flushwallet-false-.html">What is the danger if bitcoind startted with -flushwallet=false ?</a>
+                        <b>KingK.Pan 2014-08-13 16:27:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006496_What-is-the-danger-if-bitcoind-startted-with-flushwallet-false-.html">What is the danger if bitcoind startted with -flushwallet=false ?</a>
+                        <b>KingK.Pan 2014-08-13 16:27:16</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006499_What-is-the-danger-if-bitcoind-startted-with-flushwallet-false-.html">What is the danger if bitcoind startted with -flushwallet=false ?</a>
+                        <b>Wladimir 2014-08-13 20:29:28</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2014/006496_What-is-the-danger-if-bitcoind-startted-with-flushwallet-false-.html">What is the danger if bitcoind startted with -flushwallet=false ?</a>
+                        <b>KingK.Pan 2014-08-13 16:27:16</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006499.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-08-13T20:29:28+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In August 2014, a user named 潘庆庆 emailed the Bitcoind community asking why '-flushwallet' was true by default. They had disabled it and noticed that their IO reduced greatly, but they lost all of their coins in testnet after one crash. Wladimir explained that when flushwallet is disabled, the wallet is not flushed periodically, which can result in an inconsistent state when the process stops unexpectedly. This can happen due to a crash or external causes like power turning off. With the wallet in a non-self-contained state, the next time bitcoind BerkeleyDB starts, log files need processing, which might fail and require manual recovery. The wallet is usually critical, so it's unwise to disable that option.Qing Qing Pan from okcoin.com shared his experience of reducing bitcoind's IO by using the "-flushwallet=false" option. He found that after trying it, his IO reduced greatly. However, he questioned why "flushwallet" is true by default and whether there is any danger if closing the flush wallet thread. Pan also mentioned that he lost all his coins in testnet after one crash with "-flushwallet=false". He wondered whether this was because of no flush wallet thread. The post raises questions about the default settings of the 'flushwallet' option and its impact on the security of Bitcoin transactions.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-09T02:09:25.666393+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

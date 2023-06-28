@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal to Remove BIP35 P2P &#39;mempool&#39; Message</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> David A. Harding 2023-04-18 16:57:41
-            <br><i>Published on: 2023-04-18T16:57:41+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2023/combined_Proposal-to-Remove-BIP35-P2P-mempool-Message.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021563.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The `savemempool` RPC can be used to load the mempool directly into a client for trusted users. In the past, lightweight clients loaded a BIP37 filter and requested `mempool` using `getdata`. The node would then only send transactions matching the filter and false positives to the client. This approach reduced the amount of data transferred, which is crucial for lite clients with limited bandwidth or metered connections. During a backlog, the mempool contents in the `savemempool` format are about 300 MB, which is too much to transfer to lite clients.Although BIP37 and BIP35 interfaces are problematic, it's essential to build interfaces that enable people to use third-party wallets with their trusted nodes easily. It's possible to use `getheaders`, BIP157/8, and `getdata(block)` with their nodes to learn about all confirmed transactions affecting their wallet. Lite clients using a trusted node should receive a replacement for BIP35/7 support before those protocols are removed. Support for BIP324 and countersign should also be added to allow an authenticated and encrypted connection from a lite client to a trusted node. An authenticated connection is necessary to be secure, and it should ideally be encrypted.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T17:27:50.015224+00:00 </i></p>
     
     
 

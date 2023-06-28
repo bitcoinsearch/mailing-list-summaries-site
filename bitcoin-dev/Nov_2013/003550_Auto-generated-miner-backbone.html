@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Auto-generated miner backbone</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2013-11-04 15:46:39
+            <br><i>Published on: 2013-11-04T15:46:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2013/combined_Auto-generated-miner-backbone.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003550.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Ittay and Peter in 2013, the former asked how Peter could guarantee that the majority mines on the non-selfish block. Peter responded by explaining that feedback is the key. He gave an example of hashing power being split equally between two blocks with a near-target threshold of 1/64th, meaning a block header with difficulty 1/64th of the actual difficulty will be broadcast around the network by nodes. At a 10 minute block interval, near-target block headers are found on average every 9.4 seconds. Once one of the halves finds a near-target PoW solution, the corresponding block-header will be broadcast on the network. If a miner receives such a PoW solution, they know that the block has more hashing power than other competing blocks and would switch to mine it to extend that block. This forms a feedback effect that quickly brings everyone to consensus as everyone starts mining to extend the same block. There's nothing the selfish miner can do as there's no disagreement to exploit.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T19:09:28.874772+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

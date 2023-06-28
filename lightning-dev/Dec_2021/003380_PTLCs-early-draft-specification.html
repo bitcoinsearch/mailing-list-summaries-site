@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>PTLCs early draft specification</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2021-12-07 08:04:09
+            <br><i>Published on: 2021-12-07T08:04:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_PTLCs-early-draft-specification.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003380.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation between LL, t-bast, and ZmnSCPxj, they discuss the process of providing an adaptor signature in the `update_add_ptlc` message. The PTLC-offerrer is responsible for providing the signature, and it needs to be included in the message. However, all previous PTLC adaptor signatures would need to be re-sent for each update_add_ptlc message because they would no longer be valid once the commit tx changes. It is suggested that it's better to put the adaptor signature in `commitment_signed` if possible, as is currently done with pre-signed HTLC signatures. Fast-forwards are also mentioned as a way to avoid this issue since they delay the change of the commitment tx.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T06:41:25.631737+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

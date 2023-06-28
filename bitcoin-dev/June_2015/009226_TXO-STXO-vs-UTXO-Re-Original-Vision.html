@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>TXO + STXO vs UTXO Re:  Original Vision</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jorge Timón 2015-06-28 17:47:22
+            <br><i>Published on: 2015-06-28T17:47:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_TXO-STXO-vs-UTXO-Re-Original-Vision.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/009226.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion, Mark Friedenbach explains that the slow down factor of TXO/STXO trees has to do with the depth of the tree and they are always growing. However, these trees can be pruned. While it's not necessary to have constant time updates, there are alternatives like updating the TXO tree and requiring blocks and transactions to carry proofs with them. This pushes the problem to whoever generated or assembled the proof. The proposal is useful for building UTXO at any height from committed txo + stxo trees and updating it yourself from there. For the SPV use case, you would need a committed UTXO but that could be done separately later. Committing validator state in each block would require maintaining a hash tree commitment over validator state which is insanely expensive. With the UTXO commitment scheme, this ends up requiring 15-22x more I/O during block validation leading to slower validation speed. Therefore, if one wants this commitment scheme for fraud proofs, they should be arguing for a block size limit decrease (to 500kB), not an increase. A proposal for a TXO and STXO O(1)-append commitment is also presented, which shouldn't cause much overhead and can build UTXO from TXO-STXO.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T01:38:19.557552+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

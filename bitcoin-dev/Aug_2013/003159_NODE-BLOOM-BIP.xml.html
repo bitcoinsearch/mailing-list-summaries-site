@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>NODE_BLOOM BIP</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2013-08-18 22:00:23
-            <br><i>Published on: 2013-08-18T22:00:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2013/combined_NODE-BLOOM-BIP.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-August/003159.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author of the email is opposing the proposed BIP, which suggests extending BIP 37 by defining a service bit for Bloom filters. The author argues that making every possible feature optional is not smart design and notes that there are currently no nodes that cannot support this feature. The proposed BIP aims to allow peers to advertise their support for Bloom filters explicitly, as opposed to assuming that all nodes that serve peers data support it. The specification includes adding the protocol bit NODE_BLOOM, which should be set by nodes that support Bloom filters; otherwise, it should remain unset. If a node does not support Bloom filters but receives a "filterload," "filteradd," or "filterclear" message from a peer, the node should disconnect that peer immediately. The proposed change is backward compatible, and nodes that require the Bloom filter service can set NODE_BLOOM for peers advertising an unchanged protocol version. The proposed BIP also suggests that DNS seeds and other peer discovery mechanisms support the ability to specify the required services. The document has been placed in the public domain, and a reference implementation is available on GitHub.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-07T16:07:54.419512+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Questions on SIGHASH_NOINPUT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2017-11-12 03:04:55
-            <br><i>Published on: 2017-11-12T03:04:55+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2017/combined_Questions-on-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000779.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The writer has some questions about the proposal of using SIGHASH_NOINPUT on the bitcoin-dev mailing list. They ask whether with SIGHASH_NOINPUT, no other malleability fix would have been needed for LN to work, and if LN could function without SegWit if SIGHASH_NOINPUT would be in place. The writer also asks whether the argument that SIGHASH_NOINPUT is important to prevent excessive recreation and routing of punishment transaction to 3rd party monitoring services still holds true or if other solutions have presented themselves, and whether work is still being done in this area. The response explains that malleation is a problem for every commitment transaction including HTLC transactions, but SIGHASH_NOINPUT could be used to work around malleation by allowing updating of the dependent transaction. However, separate keys are required on every output to ensure transactions cannot be connected to the wrong outputs. It is argued that SIGHASH_NOINPUT is a generally nice thing to have, but it is extremely dangerous if keys are reused. It is mentioned that under typical use, SIGHASH_NOINPUT cuts the number of updates down by a factor of 2, and more under weird conditions, so you can re-attach the HTLC transaction instead of needing a new one.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-24T02:50:33.694714+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scaling by Partitioning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dave Scotese 2015-12-10 04:14:17
+            <br><i>Published on: 2015-12-10T04:14:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Scaling-by-Partitioning.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011930.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Akiva Lichtner, a developer with experience in the payment industry and process groups, proposed an idea for scaling Bitcoin by running more than one simultaneous chain. Each chain would defeat double spending on only part of the coin by partitioning it by radix or modulus. For example, to multiply throughput by a factor of ten, ten parallel chains would be run, one on each coin that ends in a different number. The number of chains could increase automatically over time based on the moving average of transaction volume. Blocks would have to contain the number of the partition they belong to, and miners would have to round-robin through partitions to avoid giving an attacker an unfair advantage working on just one partition. Lichtner suggested that there wouldn't be much impact on miners, but clients would need to send more than one message to spend money on different partitions. Client messages would need to enumerate coins using some form of compression to save space. Additionally, using this method could encourage assembly of blocks by miners who work on single partitions to get them out there with a one-partition solution.In response to Lichtner's proposal, Loi Luu, one of the authors of the SCP protocol, expressed doubts about the effectiveness of simply splitting coins or transactions into several partitions, stating that it would not bring any advantage over techniques such as publishing more blocks in one epoch, like Bitcoin-NG or Ghost. Luu argued that sharding should localize the bandwidth used and broadcast only minimal data to the network. Luu proposed the SCP protocol, which is able to localize bandwidth usage, with the cost being that recipients need to verify whether a transaction is double-spending.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:55:37.399033+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

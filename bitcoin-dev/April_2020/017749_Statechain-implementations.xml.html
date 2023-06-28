@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Statechain implementations</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-04-05 18:24:39
-            <br><i>Published on: 2020-04-05T18:24:39+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2020/combined_Statechain-implementations.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017749.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion is about the security assumptions of statechains. It is mentioned that an attack on statechains requires collaboration with the current UTXO owner, who is transferring the UXTO to a non-statechain entity and knows the target of the transfer, obtaining the target pubkey for the transfer out-of-band with respect to the SE or the SE can MITM that. The security assumption is that the sender or receiver does not collude with the SE. If either does, then the attack is generally possible. The SE cannot be allowed to be both operator of the SE and a customer of it as this clearly violates the no-receiver collusion principle. Adding a new user key doesn't change the situation as the user has already acquiesced to the transfer. Any past owner of the coin can collude with the statechain authority in order to steal the onchain funds regardless of who the current owner is within the statechain. So, trust must still be put in the statechain authority. The security assumptions should be that the statechain authority really does delete keys and does not make backups, and no past or current owner of the coin colludes with the statechain authority.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T00:19:51.334410+00:00 </i></p>
     
     
 

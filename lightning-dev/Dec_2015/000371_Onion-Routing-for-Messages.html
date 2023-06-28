@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Onion-Routing for Messages</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2015-12-09 09:45:20
+            <br><i>Published on: 2015-12-09T09:45:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2015/combined_Onion-Routing-for-Messages.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-December/000371.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this message, Mats Jerratsch discusses the issue of what should be sent through onion routing versus what should not be. The last time this issue was discussed, only the pubkey of the next hop was included in the onion object, with no additional message to the final receiver. To have the added privacy of changing R value, a random number would likely be added as well. Jerratsch suggests implementing an interactive wallet-to-wallet protocol while both sides are busy communicating with the onion routing network for actual payment route negotiation. Once a path is found, the recipient would then communicate over the wallet-to-wallet channel to pass over the fully-constructed onion routing information. However, defining the wallet-to-wallet channel and which techniques could/should be used without leaking information may be an issue. Jerratsch notes that increasing the total load for nodes to handle these additional messages could be problematic but suggests a simplified message-delivery-system where each hop costs like 1 satoshi. If it remains a problem, they might either find a way to proof this behavior or even use HTLCs for these, although this would probably be impractical and bloat commit transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:46:02.298465+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

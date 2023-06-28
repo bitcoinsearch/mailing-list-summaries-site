@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>New PSBT version proposal</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Sanket Kanjalkar 2020-12-10 11:28:23
-            <br><i>Published on: 2020-12-10T11:28:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2020/combined_New-PSBT-version-proposal.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018302.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal for a new PSBT version has been made to address some deficiencies in the current PSBT v0. The main change is to have all input and output data for each in their respective maps, which would eliminate the need for an annoying lookup to a global field. A number of fields would be added to both Global and Input/Output sections for this purpose. One important thing to note in this proposal are the fields PSBT_GLOBAL_PREFERRED_LOCKTIME and PSBT_IN_REQUIRED_LOCKTIME. A Bitcoin transaction only has a single locktime yet a PSBT may have multiple locktimes. To choose the locktime for the transaction, finalizers must choose the maximum of all of the *_LOCKTIME fields. PSBT_IN_REQUIRED_LOCKTIME is added because some inputs, such as those involving OP_CHECKLOCKTIMEVERIFY, require a specific minimum locktime to be set. This field allows finalizers to choose a locktime that is high enough for all inputs without needing to understand the scripts involved. The PSBT_GLOBAL_PREFERRED_LOCKTIME is the locktime to use if no inputs require a particular locktime. The proposed changes disallow the PSBT_GLOBAL_UNSIGNED_TX field, so PSBT v1 needs a version number bump to enforce backwards incompatibility. However, once the inputs and outputs of a PSBT are decided, a PSBT could be "downgraded" back to v0 by creating the unsigned transaction from the above fields, and then dropping these new fields. If the list finds these changes reasonable, a PR will be written to modify BIP 174 to incorporate them.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T16:30:57.901741+00:00 </i></p>
     
     
 

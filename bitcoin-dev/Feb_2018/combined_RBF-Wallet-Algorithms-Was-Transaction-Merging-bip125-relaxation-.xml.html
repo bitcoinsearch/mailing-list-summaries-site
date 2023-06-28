@@ -11,41 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>RBF Wallet Algorithms (Was: Transaction Merging (bip125 relaxation)) <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2018/015699_RBF-Wallet-Algorithms-Was-Transaction-Merging-bip125-relaxation-.xml.html">RBF Wallet Algorithms (Was: Transaction Merging (bip125 relaxation))</a>
-                        <b>ZmnSCPxj 2018-02-04 22:24:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2018/015699_RBF-Wallet-Algorithms-Was-Transaction-Merging-bip125-relaxation-.xml.html">RBF Wallet Algorithms (Was: Transaction Merging (bip125 relaxation))</a>
-                        <b>ZmnSCPxj 2018-02-04 22:24:36</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2018/015699_RBF-Wallet-Algorithms-Was-Transaction-Merging-bip125-relaxation-.xml.html">RBF Wallet Algorithms (Was: Transaction Merging (bip125 relaxation))</a>
-                        <b>ZmnSCPxj 2018-02-04 22:24:36</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015699.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2018-02-04T22:24:36+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The author of the message is attempting to create a precise algorithm for Opt-in Full Replace-by-Fee (RBF) in order to perform "transaction merging" on the fly. The aim is to allow an unconfirmed transaction to be replaced without creating a new one. The issue lies in tracking the mess that occurs when a replacement transaction is confirmed after the original transaction has already been confirmed.One possible solution is to only consider a transaction "replaceable" if it has change. This allows payments to be made immediately if the original transaction confirms, providing safety in a reorg. However, this solution only works if there is change and opens up complexities.The problematic sequence of events has been described, and the author proposes ensuring that a new transaction is incompatible with the original one by spending an input that the new transaction spends but the original doesn't. This ensures that either the original and new transactions confirm or just the new one does.In addition, the author suggests using a vector of candidate TXOs controlled by the user to solve the problem with transaction optimization.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-13T00:23:48.989304+00:00</i></p>
-    
-
     
 
     <footer>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Pseudocode for robust tail emission</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> jk_14 at op.pl 2023-01-01 22:27:38
-            <br><i>Published on: 2023-01-01T22:27:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2023/combined_Pseudocode-for-robust-tail-emission.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021306.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The proposal is to calculate the average difficulty of 100 last retargets and compare it with the maximum of all such values calculated before every 210,000 blocks. If the average difficulty of the last 100 retargets is greater than the maximum of all previous average difficulties, halving will be done, otherwise, nothing will be done. However, this proposal cannot address the immediate danger we have with halvings, in which profit margins tend towards marginal costs rather than total costs. This could lead to a significant amount of hashing power just barely able to afford prior to the halving, resulting in all that hashing power immediately having to shut down, leading to fees increasing dramatically and chaotically. On the other hand, a demurrage soft-fork has a much more plausible route towards implementation. The demurrage fee is averaged out over many future blocks but is not a hardcoded value and is regulated by a free market. The problem with demurrage is that the fee is taken when you spend, and there is no additional income for miners if people are still hoarding. In tail emission, even if people are still hoarding, the fee is taken immediately and is distributed to miners. Despite the possibility of hoarding in demurrage due to an appealing long-term risk/reward, it may still exist because of global adoption ahead, which may increase the price and market cap of Bitcoin by an order of magnitude.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T03:39:10.517015+00:00 </i></p>
     
     
 

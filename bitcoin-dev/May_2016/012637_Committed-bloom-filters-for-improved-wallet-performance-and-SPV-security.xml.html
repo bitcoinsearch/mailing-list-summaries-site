@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Committed bloom filters for improved wallet performance and SPV security</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gregory Maxwell 2016-05-09 08:57:08
-            <br><i>Published on: 2016-05-09T08:57:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2016/combined_Committed-bloom-filters-for-improved-wallet-performance-and-SPV-security.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012637.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made to rework the lightweight Bitcoin client model in a secure, efficient and privacy compatible manner. The proposal suggests creating a Bloom Filter Digest of every block to improve communication bandwidth. However, it has been noted that when the filter is transmitted but not updated, the bloom filter is not the most communication efficient data structure. A more efficient data structure can be created that uses more bits and only one hash function resulting in mostly zero bits. Entropy coding is then used to compress the data, making it about 45% more space efficient than a bloom filter. While the simple hash-bitmap is great, it is space inefficient if compression is not used. A bloom filter improves the situation by using multiple filters to increase ones density to 50% but increased collisions create overhead. One suggestion is to consult some PIR after finding matches for the blocks of interest, thus preventing a leak of which blocks were being sought.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T23:25:57.990993+00:00 </i></p>
     
     
 

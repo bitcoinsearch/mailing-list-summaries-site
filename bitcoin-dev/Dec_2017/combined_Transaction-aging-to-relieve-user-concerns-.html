@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Transaction aging to relieve user concerns. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015483_Transaction-aging-to-relieve-user-concerns-.html">Transaction aging to relieve user concerns.</a>
+                        <b>Dan Bryant 2017-12-28 19:55:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015484_Transaction-aging-to-relieve-user-concerns-.html">Transaction aging to relieve user concerns.</a>
+                        <b>Mark Friedenbach 2017-12-28 20:49:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015483_Transaction-aging-to-relieve-user-concerns-.html">Transaction aging to relieve user concerns.</a>
+                        <b>Dan Bryant 2017-12-28 19:55:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015484_Transaction-aging-to-relieve-user-concerns-.html">Transaction aging to relieve user concerns.</a>
+                        <b>Mark Friedenbach 2017-12-28 20:49:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015483_Transaction-aging-to-relieve-user-concerns-.html">Transaction aging to relieve user concerns.</a>
+                        <b>Dan Bryant 2017-12-28 19:55:01</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Dec_2017/015484_Transaction-aging-to-relieve-user-concerns-.html">Transaction aging to relieve user concerns.</a>
+                        <b>Mark Friedenbach 2017-12-28 20:49:38</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015483.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2017-12-28T19:55:01+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Dan Bryant has proposed a solution to make it easier for Bitcoin users to know when a transaction will age out with more certainty. Currently, the relay policy indicates when transactions will age out, but exceeding the specified timeout does not stop a miner from including it in the blockchain. The proposed solution is to expand the transaction format to include chain-height (block number) in the TXN, which would allow nodes/miners to age the TXN and choose not to rebroadcast it after a certain age threshold. This would make it easier for users to know with better certainty when a TXN is going to age out.Currently, nodes/miners keep a "seen-list" of TXNs and age them based on when they were last seen. However, those TXNs could be broadcast forever, assuming the UTXO never got spent. The goal is not to enhance the protocol but rather make it easier for users to know when a TXN is going to age out. One possible abuse vector could be a bad party broadcasting a low fee TXN at the edge of the age-out threshold and trying to get goods, realizing the TXN will age out at the very next block.If this proposal might be something that core would entertain in a BIP proposal, the author will start drafting something. The proposed BIP would not enhance the protocol but would make it easier for users to know with better certainty when a TXN is going to age out. The inclusion of chain-height (block number) in the TXN would allow nodes/miners to age the TXN and choose not to rebroadcast it after a certain age threshold.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-12T23:22:07.443733+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

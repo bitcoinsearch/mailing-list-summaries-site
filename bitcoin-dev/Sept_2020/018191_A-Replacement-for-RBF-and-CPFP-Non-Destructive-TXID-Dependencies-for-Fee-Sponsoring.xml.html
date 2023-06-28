@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A Replacement for RBF and CPFP: Non-Destructive TXID Dependencies for Fee Sponsoring</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Antoine Riard 2020-09-21 23:40:44
-            <br><i>Published on: 2020-09-21T23:40:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Sept_2020/combined_A-Replacement-for-RBF-and-CPFP-Non-Destructive-TXID-Dependencies-for-Fee-Sponsoring.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018191.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation discusses the use of sponsor transactions in off-chain protocols. The idea is that by sponsoring an outpoint, participants can increase the feerate of the package locally known without assuming about the concrete state. However, a malicious counterparty can still broadcast a heavy-weighted transaction and prevent the sponsoree from being timely confirmed. This is a function of package malleability allowed by the off-chain protocol. To address this issue, one suggestion is to have sponsor vectors pointing to input outpoints instead of txids. This would allow miners to include the sponsor transaction in any block that has a transaction with an input of the specified outpoint. Another suggestion is to use a fee-burning equilibrium for any pinning solution, where Mallet shouldn't force Alice to overpay in fee more than Mallet is ready to feerate-bid in network mempools.There are also discussions about the limitations of using feerate-based package relay to solve RBF transaction pinning, as an adversary with knowledge of the tx-relay topology can block compelling feerate bids from propagating by leveraging conflicts and RBF logic. One suggestion to simplify package relay with sponsors is to do a sponsor-only package relay that is always limited to two transactions - one sponsor and one sponsoree. This could allow users to successfully get parents with insufficient fee into the mempool. Overall, it is suggested that both package relay and sponsor transactions should be used together to solve different but related problems.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T15:26:17.285973+00:00 </i></p>
     
     
 

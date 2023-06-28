@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New BIP32 structure</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tamas Blummer 2014-04-08 14:00:14
+            <br><i>Published on: 2014-04-08T14:00:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_New-BIP32-structure.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005129.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, Pieter Wuille suggested using one seed across different chains but with separate master nodes to avoid using the same keys, which is not safe. He also proposed replacing the key string "Bitcoin seed" with something chain-specific to derive the master node from the seed and ensure that each encoded node has a chain-specific serialization magic. Slush disagreed with the serialization magic of BIP32 seed, saying that it was unnecessary since most software doesn't care about it and suggested using the same seed (xprv) and then separating the chains inside the bip32 path instead. Tamas Blummer responded to Pieter's suggestion, saying that it had charm since "Bitcoin seed" would be self-describing and wouldn't need a global dictionary like the interpretation of the first level.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T16:11:41.908820+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

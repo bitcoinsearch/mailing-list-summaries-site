@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Merged mining a side chain with proof of burn	on parent chain</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tamas Blummer 2014-12-15 13:06:32
+            <br><i>Published on: 2014-12-15T13:06:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2014/combined_Merged-mining-a-side-chain-with-proof-of-burn-on-parent-chain.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-December/006996.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Tamas Blummer of Bits of Proof has proposed the concept of side chains based on burn mining. He believes that the lottery component suggested by him makes it more resilient to “outspend” attack as the attacker would need to outspend and win the lottery for a reorg, thus raising the cost of the attack by magnitudes above the regular miner burn cost. In addition, he suggests the burn transaction should include the Bitcoin block height, thereby disabling reuse of a burn for a later reorg. Peter Todd points out that this is not a new idea and outlines a system he called "zookeyv" based on the notion of sacrificing bitcoins to achieve consensus a year and a half ago on #bitcoin-wizards. Todd also suggests that the transactions commit to a nonce in advance in some way indistinguishable from normal transactions, and then making the selection criteria be some function of H(nonce | blockhash) - for instance highest wins. So long as the chain selection is based on cumulative difficulty based on a fixed target - as is the case in Bitcoin proper - you should get a proper incentive to publish blocks, as well as the "total work information ratchet" effect Bitcoin has against attackers.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T14:43:02.125709+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

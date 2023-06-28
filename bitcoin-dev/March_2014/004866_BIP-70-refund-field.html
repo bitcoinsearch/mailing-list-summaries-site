@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 70 refund field</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andreas Schildbach 2014-03-28 11:25:53
+            <br><i>Published on: 2014-03-28T11:25:53+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_BIP-70-refund-field.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004866.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The problem with PaymentDetails as an answer to a specific issue is that none of the fields, other than outputs and network, can be known in advance at the time of initial payment. The expiry field for PaymentRequests, which allows payments to eventually stop loading keys into RAM, could be useful, but there's no equivalent for refund addresses. If there's no time limit for receiving a refund, wallets have to look out for refunds for payments made years ago. To address this, a new refund field that embeds a PaymentDetails structure instead of just a list of outputs could be added. Alternatively, a wallet-specific swapping process in which Bloom filters are calculated without all keys being held in memory at once could be used to create "infinite" wallets. However, key expiry seems fundamental to scalability.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T16:48:50.886973+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

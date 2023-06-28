@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalizing feature negotiation when new p2p connections are setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2020-08-18 16:54:58
+            <br><i>Published on: 2020-08-18T16:54:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2020/combined_Generalizing-feature-negotiation-when-new-p2p-connections-are-setup.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018099.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin protocol has implemented version negotiation, which is the opposite of expecting clients to ignore unknown messages. Clients not validating the protocol does not mean it is an expectation that the protocol should not be validated. Optional features can exist within a protocol, and post-handshake negotiations have been implemented for optional messages that are valid at negotiated versions. The protocol can remain flexible while being validated, and there is no reason to force a client to accept unknown message traffic. A generalized versioning change can be implemented in or after the handshake, and there is no need to complicate negotiations with additional messages. In recent history, Bitcoin protocol changes have been made via new dummy "negotiation" messages, but now it makes sense to have an explicit negotiation phase after the version and before verack by sending the list of features that the connection supports to negotiate what the connection will be capable of. This pattern captures the essence of network upgrades, keeping consistency.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T15:07:12.959323+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal for skip channel confirmation. <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002780_Proposal-for-skip-channel-confirmation-.html">Proposal for skip channel confirmation.</a>
+                        <b>Roei Erez 2020-08-24 08:16:44</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002787_Proposal-for-skip-channel-confirmation-.html">Proposal for skip channel confirmation.</a>
+                        <b>Antoine Riard 2020-08-25 18:16:56</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002782_Proposal-for-skip-channel-confirmation-.html">Proposal for skip channel confirmation.</a>
+                        <b>Antoine Riard 2020-08-24 19:56:50</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002783_Proposal-for-skip-channel-confirmation-.html">Proposal for skip channel confirmation.</a>
+                        <b>ZmnSCPxj 2020-08-25 02:38:15</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002788_Proposal-for-skip-channel-confirmation-.html">Proposal for skip channel confirmation.</a>
+                        <b>ZmnSCPxj 2020-08-27 01:29:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002781_Proposal-for-skip-channel-confirmation-.html">Proposal for skip channel confirmation.</a>
+                        <b>Matt Corallo 2020-08-24 19:22:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2020/002784_Proposal-for-skip-channel-confirmation-.html">Proposal for skip channel confirmation.</a>
+                        <b>Roei Erez 2020-08-25 10:01:53</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002780.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2020-08-24T08:16:44+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The discussion revolves around the ability to skip a channel funding transaction confirmation and create a zero-conf channel. This channel requires trust between the parties until it's confirmed, and there are different implementations that support it in different ways. The proposed changes to support this flow include accepting the channel message and sending minimum_depth=0 if the fundee wants to skip confirmation. The funding_locked message is sent from both parties, with the channel_id derived using a convention agreed upon by both. In a conversation between Antoine and Zeeman, they discuss the security of such channels and suggest methods to increase their security. They conclude that while 0-conf channels involve some level of trust, once a channel is confirmed, it becomes perfectly safe. Matt Corallo adds notes to the discussion, stating that gossip messages will be rejected by many nodes if no on-chain transaction exists, and unidirectional 0-conf is not captured in this protocol.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-04T00:31:15.615562+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

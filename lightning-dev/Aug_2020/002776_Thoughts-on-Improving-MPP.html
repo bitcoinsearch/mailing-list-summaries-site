@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Thoughts on Improving MPP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-08-12 18:20:13
+            <br><i>Published on: 2020-08-12T18:20:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2020/combined_Thoughts-on-Improving-MPP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002776.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The C-Lightning MPP implementation is facing a limit on the number of HTLCs a channel can have. The initial consideration was to count the number of channels with outgoing capacity and allocate 10 HTLCs for every channel. However, the incoming number-of-HTLCs limit of the payee was neglected, which resulted in overloading local connectivity. The use of the same failure code temporary_channel_failure for hitting both msat capacity and number of HTLCs limits exacerbated the issue. To fix this, it is suggested to count the number of channels the payee has and use it as the basis of the number of HTLCs the receiver can get, and get the lower of this and the outgoing channels of the payer. Considering the number of channels of both the payer and the payee may solve the issue, and limiting based on the smaller of these two numbers may be sufficient.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:54:55.133482+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

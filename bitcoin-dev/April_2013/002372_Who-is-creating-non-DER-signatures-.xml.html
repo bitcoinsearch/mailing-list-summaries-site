@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Who is creating non-DER signatures?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2013-04-07 16:21:00
-            <br><i>Published on: 2013-04-07T16:21:00+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2013/combined_Who-is-creating-non-DER-signatures-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002372.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email thread dated April 7th, 2013, Mike Hearn requested more information on how signatures were invalid. Pieter replied stating that the majority of invalid signatures (~90%) had negative R or S values which are interpreted as unsigned by OpenSSL. However, if the top byte has its highest bit set, it must be preceded by a 0x00 according to DER. A smaller number of invalid signatures used excessively padded R or S values with a 0x00 in front when it's not necessary. Additionally, there were four signatures with an incorrect length marker in the beginning which likely means they contain some garbage at the end.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T16:46:06.959295+00:00 </i></p>
     
     
 

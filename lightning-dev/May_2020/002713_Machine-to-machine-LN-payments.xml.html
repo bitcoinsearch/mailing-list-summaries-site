@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Machine-to-machine LN payments</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Eugene 2020-05-17 06:27:15
-            <br><i>Published on: 2020-05-17T06:27:15+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/May_2020/combined_Machine-to-machine-LN-payments.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002713.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email conversation discusses a use case where a client can initiate a payment from another using spontaneous keysend payments. The flow involves the payee sending a keysend payment of a negligible amount to the payer who accepts it and verifies that it comes from a trusted node. The payer then makes a keysend payment of the required amount back to the payee, who accepts the payment. A custom plugin should be used to check incoming keysend messages and pay valid ones back. The email also explores the possibility of supporting a subscription-based service through Lightning Network. The proposed use case involves a user subscribing to a service by opening a channel with it and setting their LN node to trust invoices coming from the service. Upon subscription renewal, the service would send an invoice to the client's LN node, which would pay it straight away since it trusts the service's node. The user can cancel the subscription at any time by removing the service's LN node public key from the list of trusted nodes or set a limit on the amount and frequency of payments accepted from the trusted node.The email raises two questions: whether it is possible to send invoices just by LN means and if it is possible to enable automatic machine-to-machine payments by accepting invoices from trusted nodes. The use of TLVs is suggested for invoicing via LN.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T01:26:12.910097+00:00 </i></p>
     
     
 

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>CoinPool, exploring generic payment pools for Fun and Privacy</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Antoine Riard 2020-06-13 00:28:27
-            <br><i>Published on: 2020-06-13T00:28:27+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2020/combined_CoinPool-exploring-generic-payment-pools-for-Fun-and-Privacy.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017978.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The CoinPool proposal involves a multiparticipant offchain update mechanism, where the output at each state of the update mechanism is a splitting construction. At each update of the state, all participants must sign off on the new state. The proposal suggests using the WabiSabi protocol during negotiation of a new state. Participants can operate as WabiSabi clients and use credentials to sum up to the correct value. They can exchange credentials among the participants to perform value transfers inside the WabiSabi construction. To hide transfers from the elected WabiSabi server, participants can maintain two coins in every state, and move coins randomly across the two coins they own at each state update. It is noted that a desired feature for CoinPool is that a participant can exit, and the CoinPool would still remain valid, but only for the remaining participants. However, this is arguably a mild privacy leak, as every other participant now knows how much that particular participant took out from the CoinPool. In order to hide how much each participant owns in the CoinPool from other participants, unilateral closes must expose all the current outputs, without trying to identify which participant exited the CoinPool, preventing anyone else from figuring out exactly how much each other participant actually owns in the CoinPool on exit.To disincentivize a participant from closing unilaterally for trivial reasons, the SIGHASH_ANYPREVOUT can be used to force whoever performs a unilateral close of the CoinPool to pay the onchain fees involved.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T02:23:41.611538+00:00 </i></p>
     
     
 

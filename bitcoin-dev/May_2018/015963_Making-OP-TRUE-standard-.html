@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_TRUE standard?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-05-11 02:44:13
+            <br><i>Published on: 2018-05-11T02:44:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_Making-OP-TRUE-standard-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015963.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread, ZmnSCPxj cleared up a misunderstanding regarding the template-script idea for Lightning. They clarified that it would not make it mandatory to spend in the same block, but rather the UTXO would cease to be valid after that block. This means that the 0-value output does not take up a UTXO db entry when left unused. Luke and the rest of the list thanked ZmnSCPxj for the clarification and stated that their previous rumination about having two options for Lightning was incorrect. For Lightning, they simply need to add a 0-value OP_TRUE output always to transactions that require both side signatures such as commitment, HTLC-timeout, HTLC-success. This 0-value output will serve as a "hook" for adding more fees if needed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:06:39.267031+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

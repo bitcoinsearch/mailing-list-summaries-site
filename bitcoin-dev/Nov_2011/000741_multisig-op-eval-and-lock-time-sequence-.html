@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>multisig, op_eval and lock_time/sequence...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Alan Reiner 2011-11-09 15:22:57
+            <br><i>Published on: 2011-11-09T15:22:57+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2011/combined_multisig-op-eval-and-lock-time-sequence-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-November/000741.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the Bitcoin-development mailing list focused on the possibility of enabling super-lightweight clients that only sign transactions without needing the blockchain. Michael Grønager proposed a solution for multisig transactions where client1 issues a transaction with one signature, and client2 adds the second signature before retransmitting it. However, there are concerns about the validity of the first transaction and the lack of information in TxIns to determine input values for dumb tx-signers with no blockchain. Alan Reiner's proposal in BIP 0010 aims to address this issue, but there is a minor problem with TxIns not containing the value of TxOuts they are spending. This makes it difficult for dumb tx-signers to determine the transaction fee or how much money is in each TxIn they are signing. Third-party services could conveniently host a service for this kind of exchange. While most users/clients will have access to the blockchain, it's something to consider if we want to bring the complicated protocol closer to earth.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-04T21:11:31.126619+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

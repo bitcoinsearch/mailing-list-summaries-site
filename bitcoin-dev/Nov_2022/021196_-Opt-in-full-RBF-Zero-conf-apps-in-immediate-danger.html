@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[Opt-in full-RBF] Zero-conf apps in immediate danger</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ArmchairCryptologist 2022-11-09 13:19:28
+            <br><i>Published on: 2022-11-09T13:19:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2022/combined_-Opt-in-full-RBF-Zero-conf-apps-in-immediate-danger.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021196.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion thread on the bitcoin-dev mailing list, Anthony Towns suggested that maybe bitcoin would be better off if zeroconf apps that don't adapt immediately all die horribly as a lesson to others not to make similarly bad assumptions. In response, ArmchairCryptologist proposed a third solution outside of "leave lightning vulnerable to pinning by non-RBF translations" and "kill zeroconf by introducing full-RBF". The proposal is to add a form of simple recursive covenant that "all descendant transactions of this transaction must use opt-in RBF for x blocks after this transaction is mined". This could be introduced either as a relay/mempool policy like RBF, or in a full-fledged softfork. ArmchairCryptologist suggests that unused bits in nSequence, which is already used to flag RBF, might be repurposed to flag the duration of this lock. Two bits could be used to flag that the restriction is not used, or active for 100, 1000 and 10000 blocks. The proposal may have other and potentially better ways of enabling this type of covenant, but it is left to the people who actually live and breathe the bitcoin transaction format.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T00:45:15.056513+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

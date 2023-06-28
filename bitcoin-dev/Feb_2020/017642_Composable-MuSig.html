@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Composable MuSig</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tim Ruffing 2020-02-24 16:56:06
+            <br><i>Published on: 2020-02-24T16:56:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2020/combined_Composable-MuSig.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017642.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion on the bitcoin-dev mailing list revolves around preventing repeated signings of the same message and using a "validity" time window to limit the amount of state an attacker can control. The Drijvers, et al paper focuses on parallel and aborted signings where ksums can be used. The more variables an attacker can control, the more "k" lists they can form, making it easier to find collisions. One solution is to add a signature timeout to the message (say a block height), which participants would refuse to sign if that time is too far in the future, or at all in the past, or if a message M is the same as any previous message within that time window.The safety of two-phase MuSig is also discussed, with a reference to a paper that argues it is potentially unsafe due to the number of parallel sessions. If the number of parallel sessions is limited to 2 or 3, the scheme may be secure, but the efficiency of Wagner's attack in practice is uncertain. Timeouts alone won't help, and instead, using 3-round MuSig could eliminate the entire issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T22:24:00.976632+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

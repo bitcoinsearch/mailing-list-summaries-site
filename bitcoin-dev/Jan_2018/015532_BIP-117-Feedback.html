@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 117 Feedback</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2018-01-09 14:21:08
+            <br><i>Published on: 2018-01-09T14:21:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_BIP-117-Feedback.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015532.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On Jan 9, 2018, Mark Friedenbach via bitcoin-dev discussed the use of the alt stack as a hack for segwit script version 0 which has the clean stack rule. Anticipated future improvements here are to switch to a witness script version and a new segwit output version which supports native MAST to save an additional 40 or so witness bytes. Either approach would allow getting rid of the alt stack hack. The proposal does not have any benefits over Johnson Lau's MAST idea. Native MAST outputs would need a new witness script version, which the current proposal does not need. Static analyzing the number of opcodes and sigops gets absolutely nothing. Removing them entirely and complicating the future ability to introduce unified costing towards weight of execution cost seems the wrong way to go. One suggestion to reduce the impact of this is limiting the per-script execution to something proportional to the script size. Another idea that has been suggested is to mark pushes of potentially executable code on the stack/witness explicitly. If tail call semantics are adopted, an approach like that is strongly preferred to blindly throwing out all limits and analysis.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:45:02.244881+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

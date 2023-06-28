@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>New BIP32 structure for P2SH multisig wallets</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2014-04-26 09:43:23
-            <br><i>Published on: 2014-04-26T09:43:23+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2014/combined_New-BIP32-structure-for-P2SH-multisig-wallets.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005569.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Manuel Araoz, part of the team that developed Copay, a multisignature P2SH HD wallet, shared their approach to a new standard for the structure of branches in such wallets. The assumptions behind the current discussions were found not to be true for a multisig hd wallet. In this approach, each party generates their own extended master keypair and shares the extended purpose’ public key with the others, which is stored encrypted. Each party can generate any of the other's derived public keys but only their own private keys. When generating an address, each party can independently generate the N needed public keys, and then generate the multisig script and the corresponding p2sh address. Cosigner_index is the index of the party creating this address; change is 0 for change, 1 for receiving address; and address_index numbers addresses from index 0 in sequentially increasing manner. All parties must be able to generate all public keys, and transaction creation and signing requires communication between parties. The specifics of how a Transaction Proposal is structured, and the protocol to accept or reject it, belong to another BIP.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T21:40:51.585041+00:00 </i></p>
     
     
 

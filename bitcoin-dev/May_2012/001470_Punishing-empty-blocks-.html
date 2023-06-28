@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Punishing empty blocks?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Arthur Britto 2012-05-24 17:05:29
+            <br><i>Published on: 2012-05-24T17:05:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2012/combined_Punishing-empty-blocks-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-May/001470.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Jeff Garzik, a Bitcoin developer, raised the issue of empty blocks being mined despite Satoshi's key observation that miners can hash only the fixed 80-byte header. Some miners still find it easier to mine empty blocks than to monitor the network for new transactions. Garzik suggested two client implementation changes: not storing or relaying empty blocks if time since the last block is greater than 60 minutes, and ensuring the latest block includes at least X percent of mempool unconfirmed TXs. However, there may be some issues with both approaches. The former may lead to no-TX miners including statically generated transactions, while the latter may refuse to relay quickly found blocks. Arthur also chimed in, recommending a stronger change to prevent a mystery miner from masking his block by putting in a few transactions to himself.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T04:42:58.260053+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

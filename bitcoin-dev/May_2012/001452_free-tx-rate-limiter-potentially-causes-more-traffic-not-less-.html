@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>free tx rate limiter potentially causes more traffic not less?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rebroad (sourceforge) 2012-05-05 08:37:05
+            <br><i>Published on: 2012-05-05T08:37:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2012/combined_free-tx-rate-limiter-potentially-causes-more-traffic-not-less-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-May/001452.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The writer experimented with the AskFor() function and observed that changing the time waited from 2 minutes to 10 seconds caused an increase in traffic between peers when used with the -limitfreerelay option. This is because the transaction is asked for from all connected peers, but AlwaysHave never becomes true as it's never stored, always rejected, so it effectively getdatas the transaction from every single connected peer. The writer suggests setting up a memory pool for rejected transactions and blocks to continue ignoring them. The writer admits to being at the "trying to understand the code/protocol/algorithm" stage and acknowledges the possibility of making false assumptions about the code's intentions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T04:30:42.394660+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

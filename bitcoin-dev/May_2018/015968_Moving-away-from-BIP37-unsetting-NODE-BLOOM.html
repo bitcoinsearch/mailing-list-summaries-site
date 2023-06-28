@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Moving away from BIP37, unsetting NODE_BLOOM</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Caius Cosades 2018-05-16 21:22:47
+            <br><i>Published on: 2018-05-16T21:22:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_Moving-away-from-BIP37-unsetting-NODE-BLOOM.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015968.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>There is a growing consensus among developers to disable BIP37 in network nodes, due to significant denial of service issues. BIP37 allows "lightweight wallets" to connect to nodes and request that they load an arbitrary bloom filter to their block files and mempool. This puts undue load on the network and doesn't provide an acceptable amount of security and reliability to lightweight wallets. In addition, BIP37 was intended to have stronger privacy than it does in reality, as any node that can capture `filterload` and `filteradd` responses can trivially de-anonymize an entire wallet that has connected irrespective of the amount of noise they add to their filters. This is counter-able by further destroying privacy and loading down the network by having multiple peers simultaneously return filter results and hoping that at least one isn't lying.NODE_BLOOM has been implemented which allows nodes to signal whether or not they support filtering. The author suggests that in the next major release, this should be defaulted to 0, and any software relying on BIP37 move to using other filtering options or a dedicated piece of software to serve the requests. Future releases of the reference software should remove BIP37 commands entirely. Links to mailing lists, github issues, and research papers are provided to support the argument against BIP37.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T08:20:43.850115+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

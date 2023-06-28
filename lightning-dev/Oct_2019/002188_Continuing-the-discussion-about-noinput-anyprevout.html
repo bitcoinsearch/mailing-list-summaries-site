@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-10-01 15:42:08
+            <br><i>Published on: 2019-10-01T15:42:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002188.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the Bitcoin-dev mailing list, ZmnSCPxj suggests the creation of a new opcode called `OP_CHECKSIG_WITHOUT_INPUT` as an alternative to `SIGHASH_NOINPUT`. However, another member points out that there is no meaningful difference between creating a new opcode and a new tapscript public key type. The latter can redefine how sighash flags are treated. Under Tapscript v0, `OP_1` can be given as the public key to `OP_CHECKSIG` to reuse the internal Taproot pubkey. ZmnSCPxj proposes a similar mechanism for copying the internal Taproot pubkey while enabling new `SIGHASH` flags for a particular script. This would allow Decker-Russell-Osuntokun funding transactions between nodes A, B, and C to have a Taproot internal key of `P = MuSig(A,B,C)` and Script 1: leaf version 0, ` OP_CHECKSIG`. Update transactions could use `MuSig(A,B,C)` for signing along the "update" path with unique "state" keys, while cooperative closes would sign using `P + h(P | MAST( OPCHECKSIG)) * G`, without revealing that it was a Decker-Russell-Osuntokun output.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T20:37:12.069523+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Transaction Relay over Nostr</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> alicexbt 2023-05-23 13:25:31
+            <br><i>Published on: 2023-05-23T13:25:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_Bitcoin-Transaction-Relay-over-Nostr.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021704.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Joost Jager wrote to Bitcoin-dev mailing list to introduce an alternative approach for Bitcoin transaction relay that can address the limitations of the peer-to-peer system. The current P2P transaction relay system has limitations that may negatively impact applications, notably those like Lightning that make extensive use of pre-signed transactions. Nostr, an open and decentralized network of relays for public and ephemeral messages between pseudonymous entities, could help address these shortcomings. With the standards defined in NIP-89, it becomes possible to broadcast arbitrary Bitcoin transaction packages, overcoming one of the key hurdles in the current relay system. This proposed alternative relay mechanism allows miners to listen for the broadcasted transaction packages and insert them into their local mempool. They can take advantage of the `submitpackage` RPC, limited to safe topologies only - specifically child and direct parents, tree only. This feature could serve as an interim solution for package relay until it becomes available through the traditional P2P method. A notable advantage of this approach is that it delegates the responsibility of dealing with Denial-of-Service (DoS) threats to the relays themselves.Implementing Nostr as a relay mechanism also has the potential to democratize access to miner mempools, thus leveling the playing field in the Bitcoin network. In the current state, those with direct connections or certain privileges can more readily submit transactions to miners, perhaps even through means as informal as email. There are paid nostr relays already in operation that would result in a clear separation between the Bitcoin transaction layer and DoS protection, introducing more flexibility in the system and potentially boosting its resilience. Joost has been working on a prototype of this concept and has captured its workings in a demonstration video.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:39:02.943902+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

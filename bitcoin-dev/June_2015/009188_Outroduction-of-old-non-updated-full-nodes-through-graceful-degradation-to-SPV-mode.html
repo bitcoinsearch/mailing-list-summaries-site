@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Outroduction of old non-updated full nodes through graceful degradation to SPV mode</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Natanael 2015-06-27 22:53:07
+            <br><i>Published on: 2015-06-27T22:53:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Outroduction-of-old-non-updated-full-nodes-through-graceful-degradation-to-SPV-mode.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/009188.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Old software versions that can't be sandboxed need to be deprecated eventually, else they will be exploited and counter their intended use. Full nodes in Bitcoin validate new transactions against their own rules and policies. When the global consensus agrees on a change of rules, old full nodes incompatible with the new ruleset will be removed from the blockchain. It's hard to tell when a node is outdated, so behaviors have been suggested to simplify transition to new versions over time with minimal disruption. One behavior is having expiration dates for old nodes that are behind by numerous soft forks, switching them to SPV mode automatically while alerting the owner, extending their lifetime, and allowing owners to realize an update is necessary. Explicit declaration of block policy/rules for miner votes for changes and incompatibility with old versions is another suggestion. This protects against old abandoned nodes trusting fresh longer chains that may be malicious. It also ensures the nodes know they can't validate blocks with old code and allows node owners to investigate and update as necessary. The primary reason for suggesting switching to SPV mode is that it buys time for everyone and hard forks no longer become a critical deadline for getting the entire network upgraded. There is still a need for information campaigns to get SPV fallback nodes updated, but it won't need to be rushed.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-10T01:33:33.896368+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

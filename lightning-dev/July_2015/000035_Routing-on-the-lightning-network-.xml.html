@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Routing on the lightning network?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Joseph Poon 2015-07-15 18:54:47
-            <br><i>Published on: 2015-07-15T18:54:47+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/July_2015/combined_Routing-on-the-lightning-network-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-July/000035.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email exchange, Rusty Russell asks Joseph Poon if it's possible to rig a system that requires recipients to pay more depending on time. Joseph responds that it is possible and mentions an idea previously brought up by Tadge where the timelock could be used for decay of payments with one's counterparty for on-chain enforceability. He explains that with this system, commitments would have sub-commitments that pay out different lightning fee values with later locktimes. For example, Commitment #123 would have Commitment123_1, Commitment123_2, and Commitment123_3, each with very similar payouts but different HTLC fees paid and locktimes. Using full on-chain Replace-By-Fee, Commitment123_3 can be prioritized over Commitment123_2, but Commitment123_3 will also have a higher fee on lightning as well. However, Commitment123_3 can only be broadcast at a later date, so "earlier" Commitment123 values can still be valid. This system would require arranging fees in a way that ensures intermediary nodes don't lose out due to time asynchronousness along the chain.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T18:07:24.332518+00:00 </i></p>
     
     
 

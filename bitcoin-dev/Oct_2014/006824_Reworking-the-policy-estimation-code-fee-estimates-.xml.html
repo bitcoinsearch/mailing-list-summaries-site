@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Reworking the policy estimation code (fee estimates)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Alex Morcos 2014-10-28 12:12:57
-            <br><i>Published on: 2014-10-28T12:12:57+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2014/combined_Reworking-the-policy-estimation-code-fee-estimates-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-October/006824.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The current approach for estimating Bitcoin transaction fees is statistically incorrect, according to Alex Morcos, who has reworked the code. The existing code tries to answer the question of what fee is required to be confirmed within a certain number of blocks by calculating the median fee for each possible block confirmation time instead of gathering statistics for each possible fee rate. This leads to certain fee rates dominating the statistics at all possible times. Morcos' code divides all possible fee rates up into logarithmic fee rate buckets and updates the appropriate bucket with how many blocks it took for a transaction to confirm. He then scans through all of the fee buckets from the most expensive down until he finds the last bucket with more than 80% of transactions confirmed within the specified time frame. However, there aren't enough data points for non-typical fee rates, meaning that the estimates are still a bit conservative.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T03:37:29.267913+00:00 </i></p>
     
     
 

@@ -11,71 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Raw Transaction RPC calls for bitcoind <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001532_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Gavin Andresen 2012-06-14 20:00:57</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001528_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Gavin Andresen 2012-06-14 13:22:08</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001532_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Gavin Andresen 2012-06-14 20:00:57</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001531_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Peter Vessenes 2012-06-14 14:37:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001528_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Gavin Andresen 2012-06-14 13:22:08</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001532_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Gavin Andresen 2012-06-14 20:00:57</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001528_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Gavin Andresen 2012-06-14 13:22:08</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001531_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Peter Vessenes 2012-06-14 14:37:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2012/001531_Raw-Transaction-RPC-calls-for-bitcoind.xml.html">Raw Transaction RPC calls for bitcoind</a>
-                        <b>Peter Vessenes 2012-06-14 14:37:26</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001532.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2012-06-14T20:00:57+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>In June 2012, Peter Vessenes sent an email to Gavin Andresen requesting a feature that would allow private keys to be provided at the command line with the signature. This would enable the client to function as a wallet-less signature machine. Andresen liked the idea and suggested adding a third argument to support an array of private keys. The third argument would allow the client to sign using only the private key(s) given and ignore the bitcoind wallet entirely. The private keys would stay in bitcoind memory only for the duration of the RPC call.A pull request has been submitted for an API that implements low-level "raw" transactions. Feedback is being sought on the API and assistance in testing it. The signrawtx method is the key new method; it takes a raw transaction, signs as many inputs as possible and returns the same raw transaction with signatures. The API is intended for people writing services on top of bitcoind rather than for command line usage. Appropriate transaction fees should be included, or the sendrawtx method is likely to fail. The design doc, pull request, and test plan are available at <a href="https://gist.github.com/2839617,">https://gist.github.com/2839617,</a> <a href="https://github.com/bitcoin/bitcoin/pull/1456,">https://github.com/bitcoin/bitcoin/pull/1456,</a> and <a href="https://secure.bettermeans.com/projects/4180/wiki/Raw_Transaction_RPC_Test_Plan">https://secure.bettermeans.com/projects/4180/wiki/Raw_Transaction_RPC_Test_Plan</a> respectively. A list of all new RPC calls along with their help output and example use is also provided. These include listunspent [minconf=1] [maxconf=999999], getrawtx, createrawtx [["txid",n],...] {address:amount,...}, signrawtx  [,...] and sendrawtx.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-06T05:11:06.626413+00:00</i></p>
-    
-
     
 
     <footer>

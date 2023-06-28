@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segregated Witness in the context of Scaling Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2015-12-19 07:50:41
+            <br><i>Published on: 2015-12-19T07:50:41+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Segregated-Witness-in-the-context-of-Scaling-Bitcoin.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/012037.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in this email thread centers around the potential gains in block size from implementing Segwit and BIP 102. While Segwit is described as having a maximum combined block size of 4MB, BIP 102 + Segwit would allow for a maximum relay of 8MB. However, it is noted that even with this larger relay size, an actual block full of transactions would likely be closer to 3.5MB. The conversation then delves into calculating the potential gains from using Segwit in multi-sig transactions. With segregated witness, 2-2 multisig transactions are made up of 94B of base data plus about 214B of witness data; discounting the witness data by 75% gives 94+214/4=148 bytes. This compares to about 301B for a 2-2 multisig transaction with P2SH rather than segwit, and 301/148 gives about a 2.03x gain, not a 4x gain. Further improvements can be gained with 3-of-3 multisig, but the full theoretical 4x gain would require a fairly degenerate looking transaction.Finally, it is suggested that pay-to-public-key-hash with Segwit could bring about a 1.6x improvement in block size. Based on these calculations, it is estimated that BIP 102 + Segwit could bring a maximum virtual block size equal to 1MB * 2 * 1.8 = 3.6MB.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T02:13:36.361863+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

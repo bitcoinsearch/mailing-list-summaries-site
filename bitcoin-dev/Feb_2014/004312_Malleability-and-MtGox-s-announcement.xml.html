@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Malleability and MtGox&#39;s announcement</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Pieter Wuille 2014-02-10 12:28:42
-            <br><i>Published on: 2014-02-10T12:28:42+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2014/combined_Malleability-and-MtGox-s-announcement.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004312.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Pieter, a Bitcoin developer, responded to the recent announcement by MtGox about transaction malleability. He noted that this issue has been known for years and while it is not a big problem in itself, it does make it harder for infrastructure to interact with Bitcoin. He also mentioned that if Bitcoin were designed today, they would try to avoid this issue altogether. However, changing all existing infrastructure will take a long time. Pieter identified two more direct problems: wallets that deal badly with modified txids and services that use the transaction id to detect unconfirming transactions. The first problem needs to be addressed correctly in software, while the second problem requires double-spending of the first transaction. Pieter suggested that defining a standard way to identify transactions unambiguously could benefit the community, despite being an issue that needs to be solved at the layer above - the infrastructure building on the Bitcoin system. Pieter proposed defining the normalized transaction id as SHA256^2(normalized_tx + 0x01000000), where normalized_tx is the transaction with all input scripts replaced by empty scripts. This proposal is not a solution for all problems related to malleability, but it can make people more aware of it in a tangible way. An implementation of this proposal can be found on GitHub.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-19T18:11:00.662507+00:00 </i></p>
     
     
 

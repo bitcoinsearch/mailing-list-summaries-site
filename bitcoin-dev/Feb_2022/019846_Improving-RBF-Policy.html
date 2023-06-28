@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving RBF Policy</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-02-01 01:56:37
+            <br><i>Published on: 2022-02-01T01:56:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_Improving-RBF-Policy.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019846.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a Bitcoin Dev mailing list, Bastien Teinturier suggested an alternative approach to designing new rules for descendants. He argued that limiting the impact on descendant transactions was only important for DoS protection and not for incentive compatibility. However, another member of the mailing list pointed out that the goal is to discourage people from wasting network bandwidth by publishing transactions that will never get confirmed. The proposal was to have a relay rate limit and prioritize by ancestor fee rate. This way, any low fee rate tx spam will sit as "relayed=false" until they are replaced or the network becomes less busy. The actual mempool accept policy can be "is this tx a higher fee rate than the txs it replaces." Regarding updated RBF rules, a wallet can continue to use old rules for a long time if they want to be safe, even if Bitcoin Core releases a new version with updated rules. However, all that is needed is for there to be *a* path that follows the new relay rules and gets from a node/wallet to perhaps 10% of hashpower. Wallet providers could construct such a path relatively quickly.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T16:59:24.391098+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

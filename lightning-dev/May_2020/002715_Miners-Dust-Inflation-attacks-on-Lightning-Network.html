@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Miners Dust Inflation attacks on Lightning Network</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-05-19 00:52:09
+            <br><i>Published on: 2020-05-19T00:52:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2020/combined_Miners-Dust-Inflation-attacks-on-Lightning-Network.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002715.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The message discusses the potential mitigation of an attack on the Lightning Network. The suggested solution involves negotiating a new `max_dust_htlc_value_in_flight_msat` enforced by the HTLC recipient, which expresses its maximum trust tolerance with regards to dust. A cost on the HTLC holder would also make the attack more expensive, although a different order of magnitude may be needed for spam-protection efficiency. In the absence of a spec change, a forwarding node can refuse to forward an HTLC once a certain level of incoming dust HTLCs are currently in-flight. However, this leads to reduced reliability on micropayments. Adding this to the spec has the advantage that an honest forwarder can hold an HTLC for a while once it notices that the next hop has a bunch of dusty HTLCs in-flight that are beyond the negotiated `max_dust_htlc_value_in_flight_msat`, which might help reliability of micropayments slightly.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T01:26:45.752227+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

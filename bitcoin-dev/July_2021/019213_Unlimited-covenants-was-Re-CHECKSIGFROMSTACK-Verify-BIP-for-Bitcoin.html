@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unlimited covenants, was Re: CHECKSIGFROMSTACK/{Verify} BIP for Bitcoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2021-07-05 17:20:22
+            <br><i>Published on: 2021-07-05T17:20:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2021/combined_Unlimited-covenants-was-Re-CHECKSIGFROMSTACK-Verify-BIP-for-Bitcoin.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019213.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the bitcoin-dev mailing list, Jeremy noted that the broader community is unconvinced by the cost benefit of arbitrary covenants. However, Dave believes that arbitrary covenants should not be prohibited for the sake of banning Turing completeness. He emphasized that transaction and block validation should not be unduly burdensome for nodes, and suggested bounding the resources needed to execute Bitcoin Script as a linear function of weight. Additionally, he argued for simple primitive operations with clear and precise semantics that are easy to parse and avoid security vulnerabilities within node software. Although these design constraints imply a prohibition on Turing complete computation within a single Script, they do not prohibit arbitrary, covenant-enabled computations that span across multiple transactions. Further, Dave suggested that some kind of STARK or SNARK tapleaf version could represent arbitrary computations succinctly, so long as validation costs remain bounded. While this could potentially allow users to put their funds at risk through weird machines that manipulate their money on the blockchain, Dave argued that keeping Script simple and maintaining an understanding that Script programs are untrusted inputs can keep potential weirdness at bay. ZmnSCPxj agreed with Dave's argument, noting that respecting the concerns of others doesn't require lobotomizing useful tools. He argued that being respectful can also be accomplished by politely showing that their concerns are unfounded. ZmnSCPxj also stated that inescapable covenants are basically Turing machines and equivalent to a `while (true);` loop, which allows unbounded infinite loops. However, he suggested that codata processing does allow for unbounded loops without requiring full Turing-completeness and proposed that covenants could encode an upper bound on the number of recursions to prevent full Turing-completeness while allowing for a large number of use-cases.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T00:02:42.364882+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

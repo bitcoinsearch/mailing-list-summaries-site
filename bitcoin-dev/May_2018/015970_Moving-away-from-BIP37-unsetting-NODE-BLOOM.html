@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Moving away from BIP37, unsetting NODE_BLOOM</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2018-05-17 07:47:34
+            <br><i>Published on: 2018-05-17T07:47:34+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_Moving-away-from-BIP37-unsetting-NODE-BLOOM.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015970.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Bitcoin network is facing issues with BIP37, a lightweight wallet that connects to nodes in the network and requests an arbitrary bloom filter on their block files and mempool. This poses significant denial of service problems, introduces undue load on the network by default, and doesn't provide an acceptable amount of security and reliability to lightweight wallets. Additionally, there are major privacy and load-distribution issues with BIP37, risking the breaking of existing SPV client models and pushing users towards complete centralized validation solutions, which may result in making privacy and security even worse. Caius Cosades suggests NODE_BLOOM services be defaulted to zero in the next major release, and any software relying on BIP37 move to other filtering options or another piece of dedicated software to serve the requests. Future releases of reference software should remove BIP37 commands entirely.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:25:29.670418+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

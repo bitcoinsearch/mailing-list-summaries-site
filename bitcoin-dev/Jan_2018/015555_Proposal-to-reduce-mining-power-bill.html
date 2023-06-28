@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal to reduce mining power bill</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> nullius 2018-01-16 00:10:38
+            <br><i>Published on: 2018-01-16T00:10:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Proposal-to-reduce-mining-power-bill.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015555.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal for reducing Bitcoin's power consumption was discussed on a mailing list. The concept of "next-coinbase" for miners was introduced, where any miner submitting a block will submit the "next-coinbase" for any new block mined by itself. The consensus algorithm will add next checks, and a hash from the just mined block and the previous one will have to match up to N bits for the next "next-coinbase" from the next block to be valid. However, this scheme drastically increases the upfront investment required for a new miner to start mining. Additionally, the proposal potentially destroys Bitcoin's transaction-ordering security, as a 51% attack could be executed by any miner who has >50% of the hashpower proportionate to miners allowed to mine a particular block instead of >50% of global hashpower. Furthermore, there are several potential attacks and issues with the proposal that need to be addressed, including how N is determined, how reorgs are handled, how it interacts with the difficulty adjustment algorithm, what happens to coinbase fees from a “new-miner-block,” and how miner anonymity can be preserved. Overall, there are many questions and concerns about the proposal that need further investigation before it can be implemented.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:50:12.608377+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

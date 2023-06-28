@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Recovery of Lightning channels without backups</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2021-04-28 20:14:38
+            <br><i>Published on: 2021-04-28T20:14:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/April_2021/combined_Recovery-of-Lightning-channels-without-backups.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003027.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about recovering lightning channels after losing channel state, Lloyd Fournier suggested the use of "static channel backups" which are essentially lists of channel ids and nodes. This backup enables one to remember who they had channels with, connect to them, and then ask them to force close the channel. However, another user named Dave suggested that altering funding might not be necessary in such cases. Dave suggested that if Alice recovers from her backup and has the private key necessary to sign messages for it, she can sign a message that gets gossiped across the network asking other nodes to close the channel with node_id 0xa11ce. Dave also proposed that the message should include a signed timestamp or block height to ensure only channels with funding transactions confirmed before that time/height are closed, preventing future replays of the message from closing Alice's later channels opened with the same seed/node_id.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:21:46.608840+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Segwit v2</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Johnson Lau 2017-04-26 19:31:38
-            <br><i>Published on: 2017-04-26T19:31:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2017/combined_Segwit-v2.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014236.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent discussion on the Bitcoin-dev mailing list, Luke Dashjr proposed some minor tweaks to BIP 141's version bit assignment, which will soon need renewal. The first suggestion was to change the dummy marker to 0xFF instead of 0 to avoid ambiguity with incomplete zero-input transactions, which has been a source of confusion for raw transaction APIs. The second proposal is to relax the consensus rules on when witness data is allowed for an input. Currently, it is only allowed when the scriptSig is null, and the scriptPubKey being spent matches a very specific pattern. Instead, Luke suggests allowing it in combination with scriptSig and with any scriptPubKey, and consider these cases to be "upgrade-safe" policy ignoring. Luke believes that these changes are not critical, so it is perfectly fine if BIP 141 activates as-is (potentially with BIP 148), but it would be an improvement if a new deployment (non-BIP148 UASF and/or new versionbit) is needed. His purpose behind the second change is to be more flexible to any future softforks. While he considers it minor because they do not know of any possibilities where it would actually be useful, he believes the change is still worth considering. Thoughts on the proposals were requested from the mailing list participants.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T02:07:14.061889+00:00 </i></p>
     
     
 

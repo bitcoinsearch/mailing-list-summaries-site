@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV BIP Meeting #9 Notes <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020501_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>alicexbt 2022-05-19 15:57:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020502_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>ZmnSCPxj 2022-05-20 01:03:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020504_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>alicexbt 2022-05-20 23:23:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020503_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>ZmnSCPxj 2022-05-20 23:47:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020504_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>alicexbt 2022-05-20 23:23:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020505_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>Bram Cohen 2022-05-21 15:37:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020505_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>Bram Cohen 2022-05-21 15:37:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020501_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>alicexbt 2022-05-19 15:57:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020504_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>alicexbt 2022-05-20 23:23:58</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020503_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>ZmnSCPxj 2022-05-20 23:47:54</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020505_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>Bram Cohen 2022-05-21 15:37:51</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020502_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>ZmnSCPxj 2022-05-20 01:03:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020501_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>alicexbt 2022-05-19 15:57:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020502_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>ZmnSCPxj 2022-05-20 01:03:11</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/May_2022/020503_CTV-BIP-Meeting-9-Notes.html">CTV BIP Meeting #9 Notes</a>
+                        <b>ZmnSCPxj 2022-05-20 23:47:54</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020501.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2022-05-19T15:57:55+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The recent CTV meeting covered a range of topics related to Bitcoin development. Jeremy Rubin suggested that if OP_TX is seen as a superior upgrading path, he would be willing to shift focus, but prefers a more thorough evaluation of CTV/NOP upgradability versus the multibyte op-success. Anthony Towns didn't find OP_TX interesting if it only does CTV from the start. Regarding General Covenants, Harding believes concerns are unfounded and thinks CAT+CSFS add the smallest amount of consensus complexity to enable the greatest amount of experimentation with covenants and other features. However, ZmnSCPxj discusses the vulnerability of covenant mechanisms to Miner-Extractable Value (MEV). MEV is when miners analyze the most profitable contract executions and order transactions on the block they are building accordingly, leading to centralization. To reduce MEV, contracts should be as little-revealed as possible, with privacy mechanisms like Taproot.ZmnSCPxj mentions `OP_CSFS` and `OP_CAT`, which require parts of the transaction to be copied into the witness data to use for covenants. However, he suggests creating an opcode that explicitly supports recursion instead of one that enables it to avoid pushing too much data on the witness stack and repetition in the code. A user named alicexbt raised concerns about MEV and its association with general covenants, recommending checking out resources available on mev.day. The discussion also covers concerns related to general bitcoin covenants such as scripts being harder to analyze, consensus stability, and censorship.One proposed solution to address MEV is to ensure all transactions in a block occur simultaneously. This could be achieved by limiting price oracles to only report one price per block, preventing manipulation of both high and low prices. Cross-transaction introspection should require an adaptor signature that is kept secret by the participants from the miner that might want to manipulate the transactions to make other alternate branches more favorable to the miner. The disputant that is inherently "wrong" should be burdened with the larger witness to prevent fee-maximizing miners from preferring the smaller-witness branch of the contract.The discussion ended with some thoughts on how to do script enforcement in light of wanting to keep doing things the way we did for taproot, and whether we need to re-evaluate how we do it. Overall, the meeting provided insight into various topics related to Bitcoin development, including MEV, covenants, and script enforcement.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-15T21:17:44.754785+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

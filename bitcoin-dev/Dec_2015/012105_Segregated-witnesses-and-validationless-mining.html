@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Segregated witnesses and validationless mining</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2015-12-23 15:41:43
+            <br><i>Published on: 2015-12-23T15:41:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Segregated-witnesses-and-validationless-mining.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/012105.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Peter Todd, a bitcoin developer, proposed a solution to return segregated witnesses to the status quo. This requires making having the previous block's witness data be a precondition to creating a block with transactions. Blocks must include the previous witness data, hashed with a different hash function that the commitment in the previous block. A possible implementation would be to compute the hash of the current block's coinbase txouts as well as the previous block hash. The calculation can only be done by a trusted entity with access to all witness data from the previous block. This solution is a soft-fork and is compatible with existing miner/hasher setups. However, it may face pushback from miners who are currently using validationless mining techniques. This fix can be designed to retain the possibility of validationless mining by allowing empty blocks to be created if the previous witness data proof is omitted.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T02:44:14.287790+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

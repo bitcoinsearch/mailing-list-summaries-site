@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 151 use of HMAC_SHA512</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ethan Heilman 2016-06-29 14:38:43
+            <br><i>Published on: 2016-06-29T14:38:43+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2016/combined_BIP-151-use-of-HMAC-SHA512.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-June/012858.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A discussion on the Bitcoin developer mailing list has been had regarding BIP-0151 and the inclusion of cipher-type into the symmetric cipher key to avoid weak-cipher attacks. It was questioned whether the cipher-type referred to ECDH negotiation parameters. In response, Pieter Wuille explains that SHA256(key|cipher-type|mesg) is insecure due to the length extension property of SHA256. Although this property does not technically apply here, it is an example of why a hash function cannot be used generically in places where a MAC is needed. Furthermore, if a hash function is already being used, HMAC is easy to construct on top of it.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T18:53:35.659324+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Formalizing Blind Statechains as a minimalistic blind signing server</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2019-06-12 21:26:01
+            <br><i>Published on: 2019-06-12T21:26:01+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_Formalizing-Blind-Statechains-as-a-minimalistic-blind-signing-server.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017025.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Ruben Somsen, a Bitcoin developer, shared an early draft of Statechains with ZmnSCPxj. Statechains is essentially channel factories without eltoo and can be used off-chain to make use of blind signatures and transfer ownership of Bitcoin UTXOs. However, if `SIGHASH_ANYPREVOUT` ends up requiring a chaperone signature, the transitory/common key can be used for that purpose. While adding scripting is not Ruben's preferred approach, Smart Contracts Unchained (SCU) can be inserted as a separate smart contracting layer. Ruben noted that anything that can be done with a UTXO on-chain can also be done off-chain via Statechains, including SCU. ZmnSCPxj remarked that utilizing blind signatures makes Statechains more interesting. The lack of `SIGHASH_ANYPREVOUT` makes it difficult to operate a channel factory, but this could be fixed by using `SIGHASH_ANYPREVOUT` on channel update transactions or running channels rooted on both the previous and next factory states. The worst-case scenario for security still comes down to having to trust the federation, but the transitory key and blind signature scheme add an interesting layer of separation that makes it essentially "non-custodial". Trust can be distributed by turning the server into a multisig threshold key, so serverPubkey A becomes e.g. 8-of-12 multisig, which is similar to how ZmnSCPxj replaced the escrow key with a federation in “Smart Contracts Unchained”.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:25:07.589064+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

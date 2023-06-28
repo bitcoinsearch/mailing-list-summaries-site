@@ -11,46 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Mesh network problem <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/lightning-dev/June_2018/001319_Mesh-network-problem.xml.html">Mesh network problem</a>
-                        <b>Oleg Sadov 2018-06-22 19:59:09</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/June_2018/001315_Mesh-network-problem.xml.html">Mesh network problem</a>
-                        <b>Andy Schroder 2018-06-20 18:57:54</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/June_2018/001314_Mesh-network-problem.xml.html">Mesh network problem</a>
-                        <b>Joseph Hoane 2018-06-20 18:15:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/June_2018/001320_Mesh-network-problem.xml.html">Mesh network problem</a>
-                        <b>ZmnSCPxj 2018-06-23 02:06:15</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-June/001319.html">Click here to read the original discussion on the lightning-dev mailing list</a>
-        
-        <p><i>Published on: 2018-06-22T19:59:09+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The Lightning Network's inherent weakness is the lack of architecture for routing tables that can help senders choose an efficient path to the ultimate receiver. The current solution in use involves each participant sharing their views of the entire graph with each other, and the payer using its own local view of the entire network to create a route from payer to payee. No guesswork is necessary, and either there is knowledge of a route and it can be provided entirely, or there is no route available. Channels are backed by a 2-of-2 multisig UTXO, and when sharing views of network graph, each channel in the view includes a reference to the UTXO backing it. The so-called "Lightning Network scaling problem" is mostly the problem of these local network views becoming too large for low-end devices to keep. Meanwhile, the mesh network routing problem in general can be solved by self-addressing packets like IP uses. When a node receives a packet that is not addressed to it, it looks up the destination address in its routing table. If it does not exist in the routing table, then the node simply throws it to some other peer, which at least is progress. A "payment packet" can offer a forwarding fee and the payment, and when a node receives it, it could deduct some part of the fee for itself and attempt to forward it to one of its other peers. Even a simple "try all your peers" approach would result in a breadth-first search of the network graph.</p>
-        <hr>
-        <p><i>Updated on: 2023-05-25T01:29:44.234560+00:00</i></p>
-    
-
     
 
     <footer>

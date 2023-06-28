@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Speeding up &#34;getbalance &lt;account&gt;&#34; calls</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> John Smith 2011-06-24 05:30:54
+            <br><i>Published on: 2011-06-24T05:30:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2011/combined_Speeding-up-getbalance-account-calls.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-June/000063.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email sent on June 23, 2011, the creator of Instawallet reached out to a mailing list asking for help on how to improve the speed of "getbalance" due to its bottleneck in processing time. One suggestion provided was to scan the wallet every time a block comes in or something else changes in the block chain, and then accumulate balances for all accounts using a hash_map. This method reduces the time the API takes to return the balance for an account to a predictable, very short time. Additionally, it is less bug-prone than incremental caching and does not require determining which accounts are influenced by a new block. Lastly, block chain reorgs are no problem with this suggested method.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-26T18:29:16.721145+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

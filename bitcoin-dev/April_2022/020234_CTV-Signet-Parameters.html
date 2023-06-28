@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>CTV Signet Parameters</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2022-04-20 02:31:07
+            <br><i>Published on: 2022-04-20T02:31:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2022/combined_CTV-Signet-Parameters.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020234.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email thread on bitcoin-dev, AJ expressed concern over the lack of third-party experimentation with CTV signet, stating that its emptiness was a bad sign. However, there have been approximately 2,200 transactions on CTV signet, with 317 being CTV spends. None of these have been bare CTV or via P2SH, but three have been via taproot, with alternative merkle paths. The remaining 314 were via P2WSH, and all scripts follow the pattern of [PUSH 32 bytes] [OP_NOP4] [OP_DROP] [OP_1]. There are no examples of Jamesob's simple-ctv-vault, which uses a P2WSH of "IF n CSV DROP hotkey CHECKSIG ELSE lockcoldtx CTV ENDIF," nor any examples of two CTV outputs being combined and spent in a single transaction. NSequence has not been set meaningfully, but most CTV spends seem to set it to 0x00400000. AJ asserts that part of learning in a consensus system is determining whether changes are valuable enough to others to be worth the risk, which requires public experimentation. Building a soft fork can be challenging because individuals do not want to commit time and resources to features that may never be deployed, but deploying changes without proof of their usefulness can also be risky. In short, proving the usefulness of a consensus change is an essential part of the "proof of work" for deploying it.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T19:25:19.998106+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

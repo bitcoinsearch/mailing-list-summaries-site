@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Peer Selection</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2017-12-15 19:06:13
+            <br><i>Published on: 2017-12-15T19:06:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-December/000846.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>When using Lightning Network, it's possible to receive incoming payments even if you don't announce the existence of the channel to the wider network. By adding the `r` parameter to the payment request, you can selectively inform the sender about the channel and they can use that information to construct the route and initiate the payment. Even if you have only one channel, people may still want to route through you by using the channel twice. This may be useful to hide the real origin/destination of the payment or for auditing purposes.The decision whether to announce a channel is important as it allows for bidirectional payments but doesn't allow random people to route through you. Implementations may eventually add an "endpoint mode" that rejects any HTLC for which the node is not the origin or destination, further enforcing this.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T17:06:18.916872+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

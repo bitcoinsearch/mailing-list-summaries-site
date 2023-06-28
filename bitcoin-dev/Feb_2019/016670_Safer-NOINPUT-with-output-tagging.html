@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer NOINPUT with output tagging</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johnson Lau 2019-02-09 10:15:17
+            <br><i>Published on: 2019-02-09T10:15:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2019/combined_Safer-NOINPUT-with-output-tagging.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016670.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The concept of semi-cooperative channel closing (SCCC) is a solution to avoid fungibility loss in multiparty eltoo channels when one party becomes unresponsive. In such cases, the remaining participants can remove the unresponsive party by creating settlement transactions that pay them off and fund a new channel with the remaining participants. However, the funding output of the new channel must be NOINPUT tagged, which may cause a loss of fungibility if the remaining parties later settle cooperatively. To minimize this loss, it is suggested to make all outputs tagged as NOINPUT-spendable when signing with NOINPUT, as a social norm.However, the use of NOINPUT brings with it the risk of signature replay, due to key-pair reuse being a norm since the creation of Bitcoin. The proposed solution is to tag an output as spendable with NOINPUT, explicitly made by the payer. This can be done by setting a certain bit in the transaction version or scriptPubKey. ScriptPubKey tagging allows per-output basis tagging but is only possible with native-segwit, not P2SH, while version tagging will protect P2SH-segwit, and all existing wallets are protected by default. However, an extension to the version tagging could make NOINPUT even safer by requiring it to sign the version of the previous transaction using randomized tx version to make accidental replay unlikely.It should be noted that there is no similar eltoo-like protocol that works if the absence of a party cannot be predicted. Therefore, SCCC remains a useful solution for avoiding fungibility loss in multiparty eltoo channels when one party becomes unresponsive.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T18:54:53.729443+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Do we really want users to solve an NP-hard problem when they wish to find a cheap way of paying each other on the Lightning Network?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> René Pickhardt 2021-08-26 14:33:23
+            <br><i>Published on: 2021-08-26T14:33:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2021/combined_Do-we-really-want-users-to-solve-an-NP-hard-problem-when-they-wish-to-find-a-cheap-way-of-paying-each-other-on-the-Lightning-Network-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003203.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Lightning Network has been the subject of a recent email exchange among developers regarding the optimization of payment flows. The author expressed surprise at the hesitation demonstrated by some individuals and companies in response to their paper on optimally reliable and cheap payment flows on the network. The email aimed to clarify misunderstandings, stop opinionated discussions about mathematical facts, and find agreement on how to move forward.One of the results discussed is that finding the cheapest payment flow is an NP-hard problem because the fee function is neither linear nor convex. The current fee function is defined as `f(x) = rx + b`. To address this issue, the paper suggests dropping the base fee or modifying the optimization goal to optimize for reliability instead of fees. Linear approximations could also be used to approximate such problems. The author concludes with the rhetorical question of whether users really want to solve an NP-hard problem when they wish to find a cheap way of paying each other on the Lightning Network.Meanwhile, Rusty Russell, an Australian software programmer working on the Bitcoin Lightning Network, made a statement regarding the need for node operators to change a parameter to a new pathfinding algorithm. However, Rene Pickhardt contradicted Russell's statement, stating that there is an exceptionally strong need to change something, and a very good reason to do so sooner rather than later. Pickhardt and Stefan Richter have used this method in production and have verified that it works better than the pay implementation used in LND.The parameter change is not about a novel algorithm but rather about the mathematical structure of the optimization problem that users face when delivering payments. Pickhardt strongly disagrees with Russell's statement, and he suggests that node operators who seek channel partners and nodes with whom to open channels can open their channels with other nodes who already support zero base fee on their channels. As more wallets should use optimal payment flows, it is reasonable to expect that a lot of routing is likely to happen in the #zerobasefee part of the network, which is already pretty large.Pickhardt further mentions that he will not engage in further bike shedding discussions on the zero base fee discussions unless substantial new information comes up. It is now for the community to decide and not for him to argue. Pickhardt mentioned that the high reliability and large amounts that they could deliver through the use of their method with a standard min convex cost flow solver as the algorithm comes from the fact that they used probabilistic pathfinding as the cost function. This already works much better for single paths when used as a weight in dijsktra than the stuff current implementations do.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:38:34.927860+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

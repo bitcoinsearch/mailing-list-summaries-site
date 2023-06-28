@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Unjamming lightning (new research paper)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Clara Shikhelman 2022-11-03 17:24:26
+            <br><i>Published on: 2022-11-03T17:24:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2022/combined_Unjamming-lightning-new-research-paper-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003740.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The researchers propose a combination of unconditional fees and local reputation to fight jamming in Lightning. They classify jams into quick and slow, with fees disincentivizing an attack where quick jams are constantly resolved and sent again. Reputation, in turn, allows nodes to deprioritize peers who consistently forward slow jams. The proposal is practical and efficient, with the additional (unconditional) fees being relatively low (as low as 2% of the total fee) to fully compensate jamming victims for the lost routing revenue. A PoC implementation demonstrates one approach to implementing the fee-related aspect of their proposal. Jamming is a DoS attack where a malicious sender initiates payments but delays finalizing them, blocking channels along the route until the jams are resolved. The researchers distinguish between quick and slow jamming. Quick jamming implies that jams are failed and re-sent every few seconds, making them hardly distinguishable from honest failing payments. In slow jamming, jams remain in-flight for hours.The researchers propose unconditional fees to discourage quick jamming. Currently, jams are free because routing nodes don’t charge for failed payment attempts. With unconditional fees, however, jamming is no longer free. Their simulations indicate that unconditional fees don’t have to be too high. Under certain assumptions about the honest payment flow, a fee increase by just 2% (paid upfront) fully compensates a routing node under attack. Fees are not very effective in preventing slow jamming: this type of attack requires only a few jams, therefore, fees would have to be too high to be effective. Instead, the researchers address slow jamming using local reputation. Nodes keep track of their peers’ past behavior. A routing node considers its peer “good” if it only forwards honest payments that resolve quickly and bring sufficient fee revenue. A peer that forwards jams, in contrast, loses reputation. Payments endorsed by a high-reputation peer are forwarded on the best efforts basis, while other (“high-risk”) payments can only use a predefined quota of liquidity and slots. The researchers strive for a systematic approach. First, they list five properties a potential mitigation strategy should have: effectiveness, incentive compatibility, user experience, privacy and security, and ease of implementation. Then, they go over the design decisions to be made when constructing a countermeasure against jamming. Based on the desired criteria and the available options, they converge on a solution. They believe that their solution strikes a good balance: it addresses the problem in question and is relatively straightforward to implement.The researchers plan to discuss their proposal at the next spec meeting.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T10:32:09.615677+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ark: An Alternative Privacy-preserving Second Layer Solution</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> adiabat 2023-05-24 20:20:35
+            <br><i>Published on: 2023-05-24T20:20:35+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_Ark-An-Alternative-Privacy-preserving-Second-Layer-Solution.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021713.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The person has two questions regarding the Ark write-up. Firstly, they ask what happens every 5 seconds when pool transactions are created by ASPs. They question if the ASP signs a new transaction which spends the same ASP funding inputs as the previous pool transaction or if it spends the outputs from the previous PoolTx. They also ask what the ASP does with the pool transaction once it is created, whether they broadcast it to the gossip network or share it with other pool participants. They discuss three possible methods and their respective issues with each method.Secondly, they question what prevents the ASP from taking all the money. They state that before even getting to vTXOs and connector outputs, there are only ASP inputs funding the pool transaction. If the pool transaction is confirmed, the vTXOs are locked in place, since the vTXO output cannot be changed and commits to all "constrained outs" via OP_CTV. If the pool transaction is unconfirmed, the ASP can create & sign a transaction spending all ASP funding inputs sending the money back to the ASP, or anywhere else. In this case, users don't have any assurance that their vTXO can ever turn into a real UTXO.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:33:11.548160+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

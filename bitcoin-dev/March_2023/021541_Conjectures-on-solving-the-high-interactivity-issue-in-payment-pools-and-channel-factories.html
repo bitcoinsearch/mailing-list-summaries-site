@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Conjectures on solving the high interactivity issue in payment pools and channel factories</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> jlspc 2023-03-17 20:54:51
+            <br><i>Published on: 2023-03-17T20:54:51+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2023/combined_Conjectures-on-solving-the-high-interactivity-issue-in-payment-pools-and-channel-factories.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021541.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in this email thread revolves around the issue of interactivity and liveliness requirements in Bitcoin's Lightning Network. The author suggests that constructions requiring all users to be online and exchange round of signatures for balance distribution would get stalled with just one lazy, buggy, or offline user. While the design of LN was envisioned for a network of always-online/self-hosted participants, the early deployment of LN showed the resort to delegated channel hosting solutions, relieving users from the liveliness requirement. The author further suggests that we need a trust-minimized solution enabling non-interactive, off-chain updates of the pool/factory, with no or minimal consumption of blockspace. However, such solutions should be completely trust-free if possible, while respecting users' actual availability.  The email also discusses the double-spend issue and highlights that it is already addressed on the Bitcoin base-layer due to nodes consensus convergence on the most-proof-of-work accumulated valid chain of blocks. This security model can be said to be prophylactic, and an invalid block cannot be applied to a node's state and should be rejected. Similarly, payment channels offer a corrective security model where incorrect transactions put on-chain can be revoked by the wronged channel users.The email also proposes a third class of solutions that use separate control transactions and value transactions. An example of such a solution is the Tunable-Penalty Factory protocol, which is a multi-party protocol in which every dishonest party is penalized, and there is no economic disequilibrium.Furthermore, the email discusses the limitations of correction as a security model in the context of multi-party, which are producing an economic disequilibrium. The author suggests that leveraging covenants, a revocation mechanism could be attached to any equivocating branch of transactions, allowing for a single honest user to punish the publication. Finally, the email discusses the penalty mechanism that allows a "wronged" user to take some or all of a dishonest user's funds and how it can be exploited by a malicious coalition.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T19:57:38.818535+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

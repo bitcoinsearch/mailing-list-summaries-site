@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>32 vs 64-bit timestamp fields</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> John Dillon 2013-05-09 02:33:11
+            <br><i>Published on: 2013-05-09T02:33:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2013/combined_32-vs-64-bit-timestamp-fields.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002550.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email conversation, Peter Todd and another person discuss the intricacies of interpreting timestamps on blocks for timestamping purposes. The discussion focuses on two types of timestamps: proofs that data existed before a time, and proofs that data existed after. The latter is more conservative, so adding two hours to a block's timestamp is not always accurate. Instead, a median time calculation for the blocks around one's timestamp would be better, as it is probabilistic based on the percentage of hashing power the attacker controls.The conversation goes on to suggest that an easy solution would be to have a flag day where blocks after a certain height are considered to have a different epoch from the standard 1970 one when computing their time. This solution works fine and only needs updating every few decades. Furthermore, the discussion also highlights the midstate idea as being clever and suggests discussing it with ASIC manufacturers as a potential firmware or FPGA upgrade in the future.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T16:32:50.280585+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

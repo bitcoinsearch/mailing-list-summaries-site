@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2018-12-13 00:37:28
+            <br><i>Published on: 2018-12-13T00:37:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016548.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell in a message thread mentioned that he is uncertain if there is any useful NOINPUT case with unmasked script. However, someone corrected him stating it is not true for Eltoo, as the script itself need not change for the rebinding. But Rusty re-checked and found out the constant for timelock comparison changes on each new update. Therefore, his opinion changed, and he wonders what’s the use of NOINPUT && !NOMASK. He questions whether it is worthwhile doing the mask complexity rather than just removing the commitment to script with NOINPUT. He also points out that NOINPUT is only helpful when you cannot re-sign the transaction, and you need to be able to create a new one even if this input is spent once. An attacker can do this with SIGHASH_MASK or not. Furthermore, he notes that both key-reuse and amount-reuse need to be exploited. Additionally, he explains that an attacker can clone channel state to another channel. Rusty concludes that it's not worth using SIGHASH_NOINPUT because it's simply dangerous with key-reuse, and Don't Do That.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:22:45.995250+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

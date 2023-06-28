@@ -11,86 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>bip39 <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019763_bip39.xml.html">bip39</a>
-                        <b>Erik Aronesty 2022-01-17 21:51:55</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019764_bip39.xml.html">bip39</a>
-                        <b>Jeremy 2022-01-17 22:38:12</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019763_bip39.xml.html">bip39</a>
-                        <b>Erik Aronesty 2022-01-17 21:51:55</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019763_bip39.xml.html">bip39</a>
-                        <b>Erik Aronesty 2022-01-17 21:51:55</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019771_bip39.xml.html">bip39</a>
-                        <b>Billy Tetrud 2022-01-18 16:33:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019764_bip39.xml.html">bip39</a>
-                        <b>Jeremy 2022-01-17 22:38:12</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019765_bip39.xml.html">bip39</a>
-                        <b>Pavol Rusnak 2022-01-17 22:45:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019765_bip39.xml.html">bip39</a>
-                        <b>Pavol Rusnak 2022-01-17 22:45:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019771_bip39.xml.html">bip39</a>
-                        <b>Billy Tetrud 2022-01-18 16:33:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019764_bip39.xml.html">bip39</a>
-                        <b>Jeremy 2022-01-17 22:38:12</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019765_bip39.xml.html">bip39</a>
-                        <b>Pavol Rusnak 2022-01-17 22:45:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2022/019771_bip39.xml.html">bip39</a>
-                        <b>Billy Tetrud 2022-01-18 16:33:04</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019763.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2022-01-17T21:51:55+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The bitcoin-dev mailing list has been discussing the potential confusion caused by similar-sounding words in seed recovery cards. This issue arises from BIP39, which uses a standard list of words for seed generation. One solution proposed is to add non-void whitespace characters between words, while changing the BIP39 itself would be difficult as software expects the standard list. Another suggestion involves rejecting seeds that contain pairs of similar-sounding words, but it is unclear how much entropy would be lost. There were also discussions regarding adjacent ambiguity in the English language, where similar-sounding words can lead to confusion when writing things down. Erik Aronesty suggested cleaning up adjacent ambiguity, pointing out that "art", "work", and "artwork" are three different words. There were also duplicates listed, such as "canal" and "arm" vs. "can" and "alarm". Jeremy Rubin suggested addressing this issue by having a non-void whitespace character. The original commenter expressed dislike for the fact that "art", "work", and "artwork" are three different words, and suggested cleaning up such ambiguities. They provided a list of duplicated word pairs such as "canal/arm" and "can/alarm", "card/anger" and "car/danger", and "feed/anger" and "fee/danger", among others.The issue was further discussed in relation to Trezor recovery cards, which feature a box around each word and require the user to write the words one under the other, not next to each other. Pavol Rusnak, co-founder of SatoshiLabs, shared an example of a Trezor recovery card and suggested removing words that are a strict subset of another word, such as "add" being a subset of "addict" and "address". In terms of entropy loss, it was noted that even with a 1000-word list and a 12-word seed, it would be unlikely to come across a duplicate randomly generated seed in a time far longer than the age of the universe. Therefore, entropy loss is not seen as a significant concern. The bitcoin-dev mailing list is a platform for developers to discuss technical aspects of the Bitcoin protocol and related projects.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-15T15:17:05.091194+00:00</i></p>
-    
-
     
 
     <footer>

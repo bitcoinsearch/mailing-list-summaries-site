@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP for OP_VAULT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> James O&#39;Beirne 2023-03-06 15:25:38
+            <br><i>Published on: 2023-03-06T15:25:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2023/combined_BIP-for-OP-VAULT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021526.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal being discussed involves TLUV-ifying the OP_VAULT process, which would eliminate the need for hashed commitments and recursive script execution. This change would make the spec easier to reason about and reduce general indirection. The proposed change also introduces different opcodes to facilitate consistent witness structure.In addition, the discussion includes a plan to reuse OP_CHECKTEMPLATEVERIFY for withdrawal target spends. This development is seen as a satisfying one, as it reduces the conceptual surface area added by OP_VAULT.The new mechanics of the proposal involve required opcodes such as OP_VAULT, OP_VAULT_RECOVER, and OP_CHECKTEMPLATEVERIFY. Creating an initial deposit would require spending vaulted coins to an output with the taproot structure. Triggering a withdrawal request would involve tapping into the validation rules that are unchanged from the existing proposal.The finalization of withdrawal and recovery processes are similar to those in the existing OP_VAULT proposal. All aspects of the existing proposal are either preserved or improved upon in terms of malleability reduction, composability, and flexibility. The proposed changes will be implemented in the coming days to verify their workability.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T15:33:05.536665+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

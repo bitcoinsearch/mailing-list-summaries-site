@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Advancing the security of Neutrino using minimally trusted oracles</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> enclade 2022-02-11 02:39:15
+            <br><i>Published on: 2022-02-11T02:39:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2022/combined_Advancing-the-security-of-Neutrino-using-minimally-trusted-oracles.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019887.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposal has been made to make the protocol design completely interactive for the Validating Lightning Signer project, where the client sends a nonce over DNS and the oracle responds by signing the nonce. However, it was pointed out that making them use quantized timestamps could mitigate many issues regarding denial of service and make fault proofs stronger. The oracles' messages can be delivered over a write-only channel like Kryptoradio or Blockstream Satellite, which would scale well. When the oracles produce agreeing messages, the additional data is only 64 bytes per additional signer, so it makes sense to broadcast any a client may want to trust. It is suggested that the oracles be non-interactive to reduce their attack surface, instead of signing over a client-provided timestamp, they could pre-quantize the timestamp and emit attestations for each quantum time step. This proposal is related to the design doc at <a href="https://gitlab.com/lightning-signer/docs/-/blob/master/oracle.md">https://gitlab.com/lightning-signer/docs/-/blob/master/oracle.md</a>.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T16:27:04.387299+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

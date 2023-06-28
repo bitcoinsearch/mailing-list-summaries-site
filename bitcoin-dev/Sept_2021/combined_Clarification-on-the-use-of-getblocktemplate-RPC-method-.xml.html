@@ -11,56 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Clarification on the use of getblocktemplate RPC method. <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2021/019425_Clarification-on-the-use-of-getblocktemplate-RPC-method-.xml.html">Clarification on the use of getblocktemplate RPC method.</a>
-                        <b>Mike Rosset 2021-09-09 12:54:18</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2021/019426_Clarification-on-the-use-of-getblocktemplate-RPC-method-.xml.html">Clarification on the use of getblocktemplate RPC method.</a>
-                        <b>Luke Dashjr 2021-09-09 17:36:17</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2021/019425_Clarification-on-the-use-of-getblocktemplate-RPC-method-.xml.html">Clarification on the use of getblocktemplate RPC method.</a>
-                        <b>Mike Rosset 2021-09-09 12:54:18</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2021/019426_Clarification-on-the-use-of-getblocktemplate-RPC-method-.xml.html">Clarification on the use of getblocktemplate RPC method.</a>
-                        <b>Luke Dashjr 2021-09-09 17:36:17</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2021/019425_Clarification-on-the-use-of-getblocktemplate-RPC-method-.xml.html">Clarification on the use of getblocktemplate RPC method.</a>
-                        <b>Mike Rosset 2021-09-09 12:54:18</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Sept_2021/019426_Clarification-on-the-use-of-getblocktemplate-RPC-method-.xml.html">Clarification on the use of getblocktemplate RPC method.</a>
-                        <b>Luke Dashjr 2021-09-09 17:36:17</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019425.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2021-09-09T12:54:18+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The author of the post is experimenting with the bitcoin protocol using GNU guile scheme and has found inconsistencies with the documentation on <a href="https://en.bitcoin.it/wiki/Getblocktemplate">https://en.bitcoin.it/wiki/Getblocktemplate</a> regarding the creation of templates for the Merkle root. The author believes that a coinbase transaction should have the transaction data concatenated before creating the Merkle root, but getblocktemplate does not have a json cointbasetxn field, leaving the author unsure how to create a coinbase transaction without it. The author has provided links to a test template response data and a modified version of the merkle python reference script found on the wiki page, which enabled them to create a Merkle root hash but minus the coinbase transaction. Mike Rosset, a developer, posted a message on the bitcoin-dev mailing list seeking help with the inconsistencies he encountered while experimenting with Bitcoin using GNU Guile Scheme. He was unable to create a coinbase transaction without the json cointbasetxn field in getblocktemplate and requested assistance in acquiring the coinbase transaction and ensuring that his Python and Guile Merkle roots matched. Mike provided a test template response data and a modified version of the merkle python reference script found on the wiki page, which allowed him to replicate a Merkle root hash, except it did not include the coinbase transaction.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-15T01:50:21.075833+00:00</i></p>
-    
-
     
 
     <footer>

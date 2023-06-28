@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>ECDH for spontaneous payments and offline vending machines</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Stepan Snigirev 2019-06-09 19:39:11
+            <br><i>Published on: 2019-06-09T19:39:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/June_2019/combined_ECDH-for-spontaneous-payments-and-offline-vending-machines.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002009.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Two interesting ideas have been presented in the lightning network community recently. The first idea involves being able to make spontaneous lightning payments only with the knowledge of a node id, similar to a bitcoin address for lightning. This is accomplished by calculating a common secret with ECDH and using it as a payment hash for the htlc. Christian Decker has implemented this feature as a plugin for c-lightning. The second idea involves generating invoices for offline vending machines with arbitrary amounts without exposing node secrets to it. This is done by having the vending machine generate an ephemeral key and corresponding ephemeral node id and then generating an invoice signed with this key. The preimage is calculated from the amount encoded in the short channel id and the secret x. This construction allows for generating invoices on a vending machine or web server without ever talking to the node itself. It is suggested that a plugin/add-on with such functionality could be interesting.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T18:40:07.703413+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

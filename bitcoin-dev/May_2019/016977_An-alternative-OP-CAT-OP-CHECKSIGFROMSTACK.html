@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An alternative: OP_CAT &amp; OP_CHECKSIGFROMSTACK</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2019-05-24 20:51:21
+            <br><i>Published on: 2019-05-24T20:51:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_An-alternative-OP-CAT-OP-CHECKSIGFROMSTACK.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016977.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, the speaker thanks Russell for a detailed comparison. They discuss the benefits of OP_CHECKSIGFROMSTACKVERIFY and ANYPREVOUT, with the speaker noting that the power from CHECKSIGFROMSTACKVERIFY is impressive and enables many new use cases. However, they caution that it may be too powerful for covenants, as it enables a non-computationally enumerable set of restrictions. The speaker also notes that working with OP_COSHV is much simpler from a developer point of view and uses less per-block bandwidth, making it preferable for decongesting blocks. They suggest that OP_COSHV has less potential for negative interaction with future opcodes like OP_PUBKEYTWEAK. The exact byte cost for OP_CHECKSIGFROMSTACK is unknown, whereas OP_COSHV scripts can be a single byte with templating changes to taproot. If the main complaint about OP_COSHV is that it peeks at surrounding data, the speaker suggests implementing it more closely to a multi-byte pushdata opcode or doing the template optimization. Finally, they note that OP_LEFT is safer to implement than OP_CAT and should be more efficient for OP_CHECKSIGFROMSTACK scripts.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:58:54.572408+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pre BIP: Solving for spam and other abuse with an HTLB</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-19 00:22:25
+            <br><i>Published on: 2019-03-19T00:22:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_Pre-BIP-Solving-for-spam-and-other-abuse-with-an-HTLB.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016786.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange between Alistair Mann and ZmnSCPxj discusses a BIP for "Good Behaviour Bonds". ZmnSCPxj suggests using HTLB over HTLC to improve privacy, but this requires the redundant and [HASHOP] not be standardized. The conversation then shifts to whether Bob could immediately fail the HTLB to Alice's benefit, with Alistair modifying his proof-of-concept code to investigate this change. However, this is at odds with the suggestion to transport HTLBs over HTLCs, which already has a standard template defined by BIP-199. ZmnSCPxj suggests an early return to Alice can be implemented by Bob without any input from her. The overall flow of messages is described, with Alice sending the preimage, [HASHOP], and a new address for "early return", making a transaction to the HTLC pattern. Bob has until the [HASHOP] timeout to decide whether to claim the money or return it to Alice, and if he hasn't decided by the timeout, Alice can get her money back.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:39:32.678140+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

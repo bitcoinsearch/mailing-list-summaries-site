@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2015-10-22 11:54:17
+            <br><i>Published on: 2015-10-22T11:54:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011596.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussions surrounding the use of normalized transaction IDs within smart contracts with multiple signers have been ongoing. The general consensus is that the BIP is an improvement for smart-contracts as well as the third-party modification scenario, but there is a cost involved. The increased UTXO size is due to the additional hash being stored per transaction with unclaimed outputs, and additional computations are needed for the normalized ID computation and swapping in of normalized IDs during verification. However, no additional coin lookups are needed as they are retrieved and cached anyway when verifying the transaction. Suggestions were made regarding treating singlesig transactions as 1-of-1 transactions and using Schnorr signatures for the new opcode, which would provide a multitude of advantages such as batch validation. Additionally, it was suggested that the bitmap of flags could be replaced with a simple version number, maintaining soft-fork semantics to build more future signing and verification methods. While these ideas are good and important, they should not be oversold, according to Gregory Maxwell.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:31:36.278445+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

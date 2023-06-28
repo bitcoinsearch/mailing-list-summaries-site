@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Thoughts on Improving MPP</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-08-14 02:59:30
-            <br><i>Published on: 2020-08-14T02:59:30+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2020/combined_Thoughts-on-Improving-MPP.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002777.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>C-Lightning MPP implementation is facing a limit on the number of HTLCs a channel can have. The initial consideration was for every channel with outgoing capacity, 10 HTLCs would be allocated, but they neglected to consider the incoming number-of-HTLCs limit of the payee, which caused an issue. The use of the same failure code `temporary_channel_failure` for hitting both msat capacity and number of HTLCs limits exacerbated the problem. The payment subsystem kept on splitting payments into more smaller payments, leading to >100 payments outgoing, further preventing the receiver from being able to receive and further crashing themselves into the problem. To fix this issue, it would be reasonable to count the number of channels the payee has and use it as well as the basis of the number of HTLCs the receiver can get, and to get the lower of this and the outgoing channels of the payer. Overall, the issue is probably fixable if they consider the number of channels of the payer and also the number of channels of the payee.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T01:55:19.597969+00:00 </i></p>
     
     
 

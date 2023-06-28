@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Re-enabling simple tx replacement</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ross Nicoll 2015-01-04 17:22:11
+            <br><i>Published on: 2015-01-04T17:22:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_Re-enabling-simple-tx-replacement.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007079.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On January 4th, 2015, Ross Nicoll raised the issue of a block in legitimate spend transactions caused by the relay of refund transactions before spend transactions in atomic cross-chain trading between Bitcoin and Dogecoin blockchains. Gregory Maxwell responded to this issue, stating that it would not be a problem, as unlocked transactions are not relayable and will not be mempooled until right before they lock. Nicoll proposed a patch for this issue on GitHub but was looking for feedback before raising a pull request. Maxwell expressed concerns about potential denial of service attacks with this patch. However, Nicoll argued that only one replacement could take place, and any further replacements would be attempting to replace a final transaction, which would fail. They could expand twice the bandwidth compared to a non-replacement, but Nicoll didn't think that was a major issue.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:15:21.943181+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

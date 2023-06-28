@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Using a storage engine without UTXO-index</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2017-04-08 22:12:09
+            <br><i>Published on: 2017-04-08T22:12:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Using-a-storage-engine-without-UTXO-index.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014109.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion was about pre-synced transactions and mempool optimization. It was suggested that the optimisation of mempool is required to improve transaction verification. However, Bitcoin Core software intentionally avoids using this technique as it can lead to consensus faults, which has happened in the past. The software does not exploit mempool pre-validation due to the risk of splitting the network. There have been bugs in the past where the use of such optimization could have resulted in nodes accepting an invalid block while other nodes rejected it. Signature validation takes up most of the block validation time, and the speedup from the optimization is not significant. There are other ways to optimize the system, such as Pieter's change to the per-txout management model and the new non-atomic flushing logic, but they do not make the system more consensus-critical.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T01:54:24.553006+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

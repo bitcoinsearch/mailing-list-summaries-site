@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PROPOSAL] Emergency RBF (BIP 125)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Rusty Russell 2019-06-14 05:50:17
+            <br><i>Published on: 2019-06-14T05:50:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2019/combined_-PROPOSAL-Emergency-RBF-BIP-125-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017028.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the Bitcoin-dev mailing list, Rusty Russell stated that he did not think a proposed change to RBF (Replace-By-Fee) would make things worse. However, David A. Harding disagreed and provided a scenario that he thinks shows the proposal being at least 20 times worse. He believes that the current rules are insufficient and that changes need to be made. Although he understands the desire not to make things worse, he will roll in some changes and re-propose. Harding also expressed his concern about the constraints of the proposal, which he believes produce a recipe for paying extremely high feerates. He worries that this may not be significantly better than dealing with the existing transaction pinning issue where one needs to pay a high total fee to evict a bunch of junk descendents. Rusty responded by stating that without RBF changes, a lightning wallet needs to assume it needs to replace a 400kSipa tx @feerate-for-next-block. With some RBF change, it need only replace @feerate-for-next-block. He also noted that when you see a block, you can guess the fees required for the next block. You need some smoothing to avoid wild spikes, but in practice, you can start this “desperation mode” ten blocks before your deadline.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T19:22:41.597025+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Determine input addresses of a transaction</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Gavin Andresen 2011-10-24 14:55:14
-            <br><i>Published on: 2011-10-24T14:55:14+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2011/combined_Determine-input-addresses-of-a-transaction.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-October/000677.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The author's first attempt at verifying the validity of a transaction was to check if the scriptSig field contained only two opcodes. If this was true, they would calculate the bitcoin address from it. However, the author wondered if this method was secure and whether it could be tricked. There are non-standard scriptPubKey scripts that can validate the input with a simple OP_NOP opcode. If the client has all previous transactions, it is possible to get the transaction input's prevout and ExtractAddress() from it. However, this may not be efficient for listtransactions since fetching all the previous inputs from disk to check if they're 'green' violates design principles.Green addresses could be implemented as a second signature in the scriptSig, which would require hacking the bitcoin client. This would involve generating a transaction with     ... as the input instead of  . Old clients would ignore this and consider the transaction standard. Bitcoin could be taught to look for signatures in wallet transactions.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-04T20:51:27.955559+00:00 </i></p>
     
     
 

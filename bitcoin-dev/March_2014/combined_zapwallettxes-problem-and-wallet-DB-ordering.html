@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>zapwallettxes problem and wallet DB ordering <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2014/004632_zapwallettxes-problem-and-wallet-DB-ordering.html">zapwallettxes problem and wallet DB ordering</a>
+                        <b>Travis Johansen 2014-03-12 19:30:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2014/004632_zapwallettxes-problem-and-wallet-DB-ordering.html">zapwallettxes problem and wallet DB ordering</a>
+                        <b>Travis Johansen 2014-03-12 19:30:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2014/004632_zapwallettxes-problem-and-wallet-DB-ordering.html">zapwallettxes problem and wallet DB ordering</a>
+                        <b>Travis Johansen 2014-03-12 19:30:49</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004632.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2014-03-12T19:30:49+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The issue with the ordering of transactions in CWalletDB::ReorderTransactions after using zapwallettxes has been identified. New transaction records were being given low nOrderPos numbers while old acentry records were ordered at the end of listtransactions consistently. The cause is due to two issues; ReorderTransactions only collects acentry records from "" and tries too hard to maintain previous ordering which likely fails. A simpler solution involves reordering the records using a loop and changing the collection of acentry records from "" to "*". These fixes appear to have corrected the ordering in the wallet DB, but concerns are raised about potentially breaking something else. The author, who is new to the code, seeks advice on whether this is a bad idea.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-08T14:59:32.500512+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

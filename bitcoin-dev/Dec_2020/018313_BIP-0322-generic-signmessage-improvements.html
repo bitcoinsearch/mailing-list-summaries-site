@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP-0322 (generic signmessage) improvements</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Poelstra 2020-12-18 15:27:20
+            <br><i>Published on: 2020-12-18T15:27:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2020/combined_BIP-0322-generic-signmessage-improvements.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018313.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of BIP-0322 has rewritten the text to make it easier to follow and address objections regarding signmessage functionality. The consensus and upgradeable rules have been merged, and a new "Extensions" section allows validators to output the state "consensus-valid" if they don't want to check additional restrictions. The goal is to enable implementors to use BIP-0322 while supporting a subset of Script. However, there has been opposition due to the requirement for a full script interpreter. The author has shared the new text and welcomes comments on Github.In addition to BIP-0322, the document outlines a specification for a new message signing scheme called "signet." These signatures are intended to serve as proof of funds, indicating that a set of coins is under the control of a particular address. Validators require access to the current UTXO set and scriptPubKeys to confirm the claimed inputs exist on the blockchain. The specification includes detailed restrictions and requirements for all signature types except legacy, including the use of SIGHASH_ALL flag and forbidden use of CODESEPARATOR or FindAndDelete.The validation process involves confirming message_hash as the correct hash of the message, confirming message_challenge as the scriptPubKey corresponding to the given address, and more. If all conditions are met, the signature is considered valid; otherwise, it's invalid. The document also includes information on signing, extensions, compatibility, and references.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-21T00:28:50.025437+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

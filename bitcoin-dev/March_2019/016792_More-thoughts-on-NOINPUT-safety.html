@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>More thoughts on NOINPUT safety</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-03-20 08:07:00
+            <br><i>Published on: 2019-03-20T08:07:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2019/combined_More-thoughts-on-NOINPUT-safety.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016792.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the Lightning-dev mailing list, ZmnSCPxj raised a question regarding the proposal of "must have a non-SIGHASH_NOINPUT" rule. He asked how it would work with watchtowers and said that as he understood it, the current plan for eltoo watchtowers would be to store both `SIGHASH_NOINPUT` signatures from both sides in the blob sent to the watchtower. He further questioned, if one of the signatures MUST be non-`SIGHASH_NOINPUT`, how does the watchtower create such a non-`SIGHASH_NOINPUT` signature? Rusty Russell replied stating that future segwit versions may choose to relax the rule. ZmnSCPxj suggested that "the must have a sig that commits to the input tx" seems like it should be pretty safe, not too expensive, and keeps taproot's privacy benefits in the cases where we end up needing to use NOINPUT.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T17:41:34.185125+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

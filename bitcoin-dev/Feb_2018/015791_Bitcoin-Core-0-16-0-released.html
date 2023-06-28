@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Bitcoin Core 0.16.0 released</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Wladimir J. van der Laan 2018-02-26 07:54:17
+            <br><i>Published on: 2018-02-26T07:54:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2018/combined_Bitcoin-Core-0-16-0-released.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015791.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin Core version 0.16.0 has been released with several changes and improvements. The release introduces full support for segwit in the wallet and user interfaces, as well as a new argument `address_type` that has been added to the `getnewaddress` and `addmultisigaddress` RPCs to specify which type of address to generate. Full support for native segwit addresses (BIP173 / Bech32) has also been added. Due to a backward-incompatible change in the wallet database, wallets created with version 0.16.0 will be rejected by previous versions.In addition to these updates, the send screen now uses BIP125 RBF by default, regardless of `-walletrbf`, and a new RPC `rescanblockchain` has been added to manually invoke a blockchain rescan. Safe mode is now disabled by default and must be manually enabled (with `-disablesafemode=0`) if users wish to use it. The SHA256 hashing optimizations for architectures supporting SSE4 have now been enabled by default.There are notable changes in the wallets directory configuration (`-walletdir`) where Bitcoin Core now has more flexibility in where the wallets directory can be located. Tests have been carried out on versionbits_computeblockversion, Connect benchmarks, and mining incentives.The latest Bitcoin Core upgrade has added several new features to the cryptocurrency's network, including an "errors" field to `getblockchaininfo` and unify "errors" field in `get*info` RPCs. Other updates include a fix for `getchaintxstats()`, a process improvement for shutdown, and measures to avoid slow transaction searches with `txindex` enabled. The new version also includes improvements to the GUI, build system, testing, and QA.The Bitcoin Core team has been working on improving the functional test of the software. Apart from the functional test, the team has also been working on documentation. They have fixed inconsistencies and grammar in various files, added comments on the use of prevector in script, documented the preference of `nullptr` over `NULL` or `(void*)0`, updated release notes and manpages for 0.16, and made various other fixes and updates to the documentation.The latest release of Bitcoin Core has brought a number of fixes, refactoring, and miscellaneous updates to the codebase. Among the notable updates are the addition of the `const` keyword to methods that do not modify objects, the replacement of the deprecated `throw()` with the `noexcept` specifier, and the use of `nullptr` instead of zero as the null pointer constant. Additionally, there have been updates to the RPC URI format, clarification of wallet directory usage, and improvements in documentation. Other updates include changes to the build process, testing, and debugging features.Lastly, the list provided consists of the names of individuals who have contributed to the development of Bitcoin. The list includes developers, translators, and other contributors who have helped in various aspects of the project. It is a diverse group of people from around the world, including Akira Takizawa, Alejandro Avilés, Alex Morcos, Alin Rus, Anditto Heristyo, and many others. The message is signed with a PGP signature.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T00:51:39.198308+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

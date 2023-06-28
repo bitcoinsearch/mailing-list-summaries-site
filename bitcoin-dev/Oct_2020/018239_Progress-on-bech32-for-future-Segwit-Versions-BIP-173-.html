@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Progress on bech32 for future Segwit Versions (BIP-173)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2020-10-08 14:59:38
+            <br><i>Published on: 2020-10-08T14:59:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2020/combined_Progress-on-bech32-for-future-Segwit-Versions-BIP-173-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018239.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent message to the bitcoin-dev mailing list, Rusty Russell proposed an alternative to length restrictions suggested by Russell in a BIPs pull request. The proposed alternative suggests using a checksum change based on the first byte, unless the first byte is 0. The first proposal would restrict future segwit versions and may require new encoding if a different length is needed. The second proposal would weaken guarantees against typos in the first two data-part letters to 1 in a billion and be less backward compatible. Russell stated that he prefers the second option because it forces upgrades since it breaks so clearly. However, Dave argued that the second option does not force upgrades but creates another opt-in address format that means we will spend several years with every wallet having two address buttons. Dave prefers the backwards compatible proposal from BIPs PR#945 and consensus restrict v1 witness program size to maximize safety. By the time segwit v2 is used, most software will have implemented length limits and additional consensus restrictions will not be necessary.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T16:07:00.055739+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

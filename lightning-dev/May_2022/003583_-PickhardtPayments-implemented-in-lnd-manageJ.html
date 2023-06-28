@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>#PickhardtPayments implemented in lnd-manageJ</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Carsten Otto 2022-05-15 20:01:58
+            <br><i>Published on: 2022-05-15T20:01:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2022/combined_-PickhardtPayments-implemented-in-lnd-manageJ.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-May/003583.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The latest version of lnd-manageJ now includes basic support for #PickhardtPayments, which allows for the optimal routing of multi-path payments (MPPs) on the Lightning Network (LN). The biggest challenge with sending payments on the LN is failure, especially with larger amounts. Splitting a large payment into smaller shards using MPP can be helpful, but the success probability drops exponentially with the number of channels included, and finding routes through the LN is tricky due to uncertain channel liquidity. #PickhardtPayments solves these problems by offering an approach that is optimal, based on the well-known minimum-cost flow problem in computer science, which considers both reliability and fee rates. It takes into account liquidity information obtained from previous failures to guide future attempts, and the underlying algorithm finds routes that may be long but have a high probability of success. The code for #PickhardtPayments in lnd-manageJ is still highly experimental, but first results are promising.The implementation of #PickhardtPayments only works with lnd and doesn't handle all corner cases, but the creator welcomes discussion about implementation details and help with upcoming benchmarks and experiments. René Pickhardt is interested in helping with this as well. Despite its limitations, #PickhardtPayments offers a potentially powerful solution to the challenge of routing MPPs on the LN.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T08:42:37.293945+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

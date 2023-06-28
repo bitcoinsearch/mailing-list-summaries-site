@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Backward deterministic R Value</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nicolas Dorier 2016-03-07 12:35:30
+            <br><i>Published on: 2016-03-07T12:35:30+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2016/combined_Backward-deterministic-R-Value.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000459.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The proposal discusses a new method for deterministic RValue generation which offers a solution to the problem of saving off-chain one signature per commitment. The proposal suggests keeping the actual HTLC/Payment channel contracts, but making the "RValues" backward deterministic. The RValue is chosen in such a way that RValue(n+1) = PreImage(RValue(n)), where n is the commitment index. In case Alice cheats Bob at commitment 100 by sending revocated commitment 50, Bob only has to remember RValue(99) from the 99th revocation and then hash this value 49 times to find out RValue(50). However, Bob doesn't know RValue(100) because RValue(100) = PreImage(99).For Alice, she generates a random number, then generates let's say, 1000 hashes. Then she uses hashes 1000 for RValue(0), hashes 999 for RValue(1), etc. Commitment Revocation is only accepted by the party if RValue(n+1) = PreImage(RValue(n)). The only downside is that Alice needs to regenerate all hashes every time she needs a new commitment. This can be mitigated by her storing some pre-computed values along the path.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:54:24.237529+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

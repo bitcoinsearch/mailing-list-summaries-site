@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Recovery of Lightning channels without backups</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Lloyd Fournier 2021-04-20 04:09:54
-            <br><i>Published on: 2021-04-20T04:09:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/April_2021/combined_Recovery-of-Lightning-channels-without-backups.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002997.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange, Rusty Russell and Lloyd Fournier discussed the elimination of "basepoints" in Lightning Network's funding protocol. Rusty suggested using SHA256 to create two different r values for each counter value. Lloyd agreed that this was a good approach but also suggested eliminating all "basepoints" using the node pubkey as the basepoint for everything and randomizing it using the shared secret for each purpose. However, one issue with this idea is that it requires knowledge of the node's secret key to sign the commitment_tx or htlc_tx. To overcome this, Rusty reluctantly added `commit_basepoint` from which the others are derived. An implementation can use hardened derivation from its privkey (e.g. SHA256(node_privkey || ss || counter)) to create this in a deterministic but still private manner. Alternatively, nodes can set their funding_pubkey to a specified DH tweak of the nodeid to offer the feature, and those who want backup-free channel recovery can refuse to carry on the funding protocol if the funding_pubkey is not set the way they want it.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:18:42.854064+00:00 </i></p>
     
     
 

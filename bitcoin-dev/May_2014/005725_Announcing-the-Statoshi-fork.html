@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Announcing the Statoshi fork</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jameson Lopp 2014-05-07 20:35:06
+            <br><i>Published on: 2014-05-07T20:35:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2014/combined_Announcing-the-Statoshi-fork.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-May/005725.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Recently, Jameson Lopp shared that he chose StatsD for sending the stats via UDP rather than TCP. He chose it because it is a non-blocking operation and he didn't want the sending of stats to affect the node's performance. Wladimir suggested having statistics available as part of the installer for running a (wallet-less) node as an OS background service. They had already decided that they would need something like Python for the stats service. Implementing things like web services in C++ is not realistic given the time constraints and the great already-written code that is out there. As an optional tool, it should be external, not part of `bitcoind` itself. The chart rendering happens client-side. In that case, the web service just has to collect and provide the data, and serve static HTML/JS files.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T22:24:00.504816+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

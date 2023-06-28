@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Splice Pinning Prevention w/o Anchors</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Eugene Siegel 2022-08-10 16:20:10
-            <br><i>Published on: 2022-08-10T16:20:10+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Aug_2022/combined_Splice-Pinning-Prevention-w-o-Anchors.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-August/003669.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The conversation is about the ancestor bulking variant of pinning where one can't add a new descendant due to ancestor/descendant limits. Greg Sanders noted that this variant matters when trying to replace-by-fee (RBF) a transaction, as low feerate ancestor junk puts the transaction at the bottom of the mempool, forcing one to pay "full freight" to replace it via bip125 rule#3 even though it's not going to be mined. However, he wasn't sure if it applies in this case. Eugene Siegel added that the ancestor bulking variant doesn't matter for RBF since one wouldn't be replacing any of the ancestors, only the splice tx. He also said that the new funding output can't have `1 OP_CSV` unless they change the commit tx format, and enabling the bit might be tricky. If it's not encumbered, pinning exists since an attacker can make a junk tree using the anchor output, but it is replaceable using RBF since there is one's own commit tx (with anchor) to broadcast.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T09:41:44.711640+00:00 </i></p>
     
     
 

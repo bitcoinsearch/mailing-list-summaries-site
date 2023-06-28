@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 174 thoughts</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Schnelli 2018-06-19 09:38:24
+            <br><i>Published on: 2018-06-19T09:38:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2018/combined_BIP-174-thoughts.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016128.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The post discusses various features and concerns related to the Bitcoin Improvement Proposal 174 (BIP174). One of the key topics is the choice between the key-value map model or the set model. The author believes that while all points made by Pieter are valid, changing existing implementations to adopt the k/v set model may not be worth it. Additionally, the post covers the use of Combiners to verify two PSBTs for the same transaction, optional signing, derivation from xpub or fingerprint, generic key offset derivation, and hex encoding.The post also delves into key derivation in multisig and how signers and creators must agree on a key derivation scheme. While BIP32 derivation is commonly used, sharing xpubs may be a concern in non-trust relationships. To address this, the post suggests a more flexible and generic approach to support faster derivation of required keys for signing a particular input.Overall, the author suggests that for practical multisig with hardware wallets, a simple BIP32-child-key-index or BIP32-keypath derivation support field should be sufficient, and a generic "derivation support field" provided from the signer to the creator during address-generation that just "loops" back during the PSBT use-cases is probably overkill.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T03:22:15.412845+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

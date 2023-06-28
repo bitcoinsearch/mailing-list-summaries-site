@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Why not witnessless nodes?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kalle Rosenbaum 2017-12-18 21:27:14
+            <br><i>Published on: 2017-12-18T21:27:14+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_Why-not-witnessless-nodes-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015429.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion in this email thread revolves around the use and necessity of Bitcoin witnesses. Witnesses are used to authenticate updates to the UTXO set and once they have been buried deep enough in the blockchain, they are no longer needed as consensus has formed around the UTXO set update. The question arises if sign-to-contract protocols can work in a witnessless environment. While witnesses are required for SPV nodes validating these protocols, it is argued that full nodes do not need to download witnesses when they skip signature verification for blocks earlier than X, as their purpose is mainly to be able to send witnesses to other nodes and verify the witness root hash of the blocks.It is suggested that witnessless nodes could potentially sync faster and serve blocks to other witnessless nodes with the same or higher assumevalid block, making them useful for providing full service to SPV wallets and local wallets. However, concerns are raised about the potential risk of dividing the network into two parts, one with full nodes and one with witnessless nodes, with few connections between the parts.In conclusion, while witnesses may be necessary for certain types of nodes, there is a debate over their importance for full nodes and whether witnessless nodes could provide benefits in terms of faster syncing and serving blocks to other nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T23:08:52.508378+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Base AMP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-11-14 01:59:18
+            <br><i>Published on: 2018-11-14T01:59:18+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2018/combined_Base-AMP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001592.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent communication, ZmnSCPxj proposed to remove `intended_payment_amount`. As per his proposal, it was suggested that both intermediate nodes and the payee node need not have `intended_payment_amount`. The sender would have to make the onions identical past the merge point so that any one of them could be used. However, Rusty expressed concerns about complexity outweighing benefits for such a move. For now, Rusty suggested sticking with BOLT #4. ZmnSCPxj suggested an even simpler solution. If `amt_to_forward` plus the fees charged by this node is greater than the actual incoming HTLC, this is an AMP attempt. No additional flag needs to be added. An explicit flags field would also allow delivery of higher-layer application data in each payment.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T16:31:32.923495+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

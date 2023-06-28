@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>General questions about channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2017-12-27 06:06:17
+            <br><i>Published on: 2017-12-27T06:06:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2017/combined_General-questions-about-channels.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-December/000874.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Andy Schroder and ZmnSCPxj regarding the maximum channel funding size, it was revealed that the upper 32 bits of the amount_msat must be zero for channels with `chain_hash` identifying the Bitcoin blockchain. This gives a maximum HTLC value of 0.04294967295 BTC. Rusty, who made this decision, believed that 42mBTC was a reasonable amount to transfer on Lightning, so as not to lose a lot of money in case of trouble. However, ZmnSCPxj believes that a channel limit of 167mBTC is good as it encourages decentralization by encouraging people to make many small channels than one large channel. Regarding the max HTLC value and maximum channel size, ZmnSCPxj discovered from BOLT 2 that "funding_satoshis should be set to less than 2^24 satoshi". However, he still doesn't understand why max funding_satoshis doesn't equal max amount_msat or where the values of (2^24)*10^3 and 2^32 milli satoshis came from. He also questioned why units of millisatoshis aren't used everywhere in the spec, to which ZmnSCPxj explained that everything that touches the chain uses satoshis while everything offchain uses millisatoshis.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T17:18:01.450696+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

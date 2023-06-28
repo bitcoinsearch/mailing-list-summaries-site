@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>eltoo: A Simplified update Mechanism for Lightning and Off-Chain Contracts</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Christian Decker 2018-05-01 16:29:09
-            <br><i>Published on: 2018-05-01T16:29:09+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2018/combined_eltoo-A-Simplified-update-Mechanism-for-Lightning-and-Off-Chain-Contracts.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015916.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In response to a query regarding fixed offset in Lightning Network (LN), Jim Posen explains how it ensures safety. To explain this, he assumes a path `A->B->C->D->E` with each having a CLTV delta and CSV timeout of 144 blocks, and an HTLC with the following CLTV deltas: `A -(576)-> B -(432)-> C -(288)-> D -(144)-> E`. When the absolute CLTV approaches, channel closure is initiated for safe preimage fetching. This duration can be higher if the final destination is obfuscated by building a shadow route behind the real recipient. With eltoo, settlement transaction confirmation must precede the desired CLTV timeout delta countdown, which means that the time difference between the current time and the last HTLC's CLTV delta increases, but only as a fixed offset, not accumulating along the path. The length of the route also impacts this offset's actual value, resulting in a smaller impact for longer routes.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T01:39:53.045431+00:00 </i></p>
     
     
 

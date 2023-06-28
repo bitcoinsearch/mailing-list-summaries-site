@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 117 Feedback</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2018-01-16 03:27:26
+            <br><i>Published on: 2018-01-16T03:27:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_BIP-117-Feedback.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015557.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion on the bitcoin-dev mailing list, Rusty Russell stated that "standard transactions must still work" and that this principle was violated with low-S. However, he argues that the transformation was arguably trivial. He goes on to explain that the applicability of this principle is modulated by specific facts, and in the case of low-s, there were mitigating factors that made it less critical.Russell identifies three specific facts that were critical in the case of low-S. Firstly, any third party could malleate non-conforming transactions to make them conform, and code to do this was written and run. Secondly, S-value malleation was being actively attacked at the time. Lastly, the intention to eventually enforce lowS had been made clear a long time ahead and the vast majority of transactions were already conforming.These specific facts meant that the change could not result in the confiscation of funds, except in the case of a key-destroyed unconfirmed chain of timelock transactions, which was already highly vulnerable due to the malleation attacks. Moreover, even in such cases, the non-standardness step itself wouldn't destroy the funds, and redemption of that sort of chain would probably be best accomplished with the collaboration of a miner.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:44:42.480224+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

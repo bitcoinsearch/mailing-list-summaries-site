@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>OP_BEFOREBLOCKVERIFY - discussing and opcode that invalidates a spend path after a certain block</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Billy Tetrud 2021-06-13 22:12:21
-            <br><i>Published on: 2021-06-13T22:12:21+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/June_2021/combined_OP-BEFOREBLOCKVERIFY-discussing-and-opcode-that-invalidates-a-spend-path-after-a-certain-block.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019067.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made to mitigate an attack vector in Bitcoin involving the use of OP_BBV spend-paths. The proposed solution involves increasing the weight of a transaction by 1% for each block within 100 blocks that the transaction is mined into. This would make it much more expensive to program a passive auto-double-spend wallet, as miners would be unlikely to mine the transaction during a reorg if it expires within 101 blocks. Three different solutions were presented to address this attack vector, including modifying receiver finalization definition, disallowing inputs to the script to determine block height, and gradual transaction weight increase near expiry.A discussion also took place regarding the use of annex fields in Bitcoin, which are additional inputs to a script with additional constraints put on them. The proposal suggests adding a consensus rule that transaction with one or more maxheight fields are invalid in blocks whose height exceeds this (or any) maxheight value. An indirection would be added to push a copy of the (smallest) maxheight value from the annex onto the stack. This indirection makes script validity cacheable because script remains a function of the transaction data only. It was noted that changing the definition of what counts as finalization for receivers may not be an adequate solution, as it cannot solve security problems through optional and completely voluntary transaction relay policy. A proposal was made to require that the input to OP_BBV be in the script itself and not originate from the witness, but it was recognized that this may not achieve broad community support.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-14T22:32:47.846052+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New opcodes and transaction version numbers (was &#39;relax the IsStandard rules for P2SH transactions&#39;)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2014-09-29 05:35:26
+            <br><i>Published on: 2014-09-29T05:35:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2014/combined_New-opcodes-and-transaction-version-numbers-was-relax-the-IsStandard-rules-for-P2SH-transactions-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-September/006661.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion regarding the addition of new opcodes to P2SH, Alan Reiner suggested that the address format be updated to allow for a transaction version number to be included in the address serialization. However, Peter Todd pointed out that this would require new addresses for every new opcode, which defeats the purpose of P2SH. He also noted that when a wallet creates a transaction, the scriptPubKeys in the transaction outputs are specified by the receiver(s) and aren't executed until they are spent. Therefore, there is no reason why the wallet should care what the contents of those scriptPubKeys are at all. Additionally, if there are multiple recipients of a transaction, it becomes difficult to determine which version number to use. Todd argued that using transaction version numbers to enable new opcodes rather than just enabling them globally based on block version numbers doesn't make sense. Todd also criticized Satoshi's implementation of a per-block sigop limit, stating that it computes the limit based on the contents of all scriptSigs and scriptPubKeys in the block, even though the contents of the latter are not executed. This allows for the creation of blocks that pass the sigop limit, yet execute millions of expensive signature operations by being filled with scriptSigs spending txouts with large numbers of sigops in their scriptPubKeys. Although P2SH improves on this situation somewhat by counting the sigops in redeemScripts towards the limit, it misses the opportunity to count all sigops in all scriptSigs directly.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:48:21.123510+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

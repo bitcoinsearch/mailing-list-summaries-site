@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Decoupling BIP70 Payment Protocol from Wallets</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> James Hilliard 2018-01-01 18:50:04
-            <br><i>Published on: 2018-01-01T18:50:04+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Jan_2018/combined_Decoupling-BIP70-Payment-Protocol-from-Wallets.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015490.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A merchant payment processor has decided to drop support for BIP21 payment URI's in favor of accepting exclusively BIP70 payments, which has brought up several issues with BIP70. Many wallets do not support BIP70 and have no intention of doing so in the near future. BIP70 requires large complex PKI dependencies like X.509 and TLS support, which have a large attack surface and poor track record when it comes to vulnerabilities. Signing transactions with keys resident in the same application that handles TLS greatly increases the possibility of keys being leaked due to vulnerabilities in TLS libraries like openssl.Sending payments first to a BIP70 compatible wallet before sending them to the merchant increases fees and uses more block space than sending directly since users often cannot fully migrate funds to a BIP70 compatible wallet. Paying a BIP70 invoice with an incompatible wallet currently needs manual non-user-friendly workarounds. Therefore, the proposal is to move the BIP70 protocol implementation into a browser extension that can communicate with wallets over a simple IPC mechanism.The browser extension will serve as a translation layer that can convert BIP70 URLs into standard BIP21 URI's for wallets that do not want to support BIP70 or other custom schemes. This process provides several benefits over the current method of implementing BIP70 directly within wallets. It removes complex/risky dependencies from wallets and moves them into the browser which already has to implement full PKI support. It re-enables payment support for wallets that only support BIP21/normal addresses. Finally, it makes offline/custom signing schemes easier to use with BIP70.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T23:23:43.577457+00:00 </i></p>
     
     
 

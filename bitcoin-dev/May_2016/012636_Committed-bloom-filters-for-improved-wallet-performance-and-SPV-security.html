@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Committed bloom filters for improved wallet performance and SPV security</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> bfd at cock.lu 2016-05-09 08:26:06
+            <br><i>Published on: 2016-05-09T08:26:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Committed-bloom-filters-for-improved-wallet-performance-and-SPV-security.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012636.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The BIP37 SPV lightweight Bitcoin client model is not as secure, efficient and privacy compatible as previously thought. The probabilistic nature of bloom filters does not provide the expected privacy, and significant processing load is placed on nodes in the Bitcoin network. Wallet clients cannot have strong consistency or security expectations, while nodes in the network can denial of service attack all BIP37 SPV wallet clients. To address these issues, a new concept called Bloom Filter Digest (BFD) is proposed. The BFD is deterministically created for every block by encompassing the inputs and outputs of the containing transactions. A binary comparison between the two filters returns true if there are probably matching transactions and false if there are certainly no matching transactions. For better probabilistic security, semi-trusted oracles can present the bloom filters to lightweight clients. The oracles do not learn any additional information about the client wallet, and the client can download the block data from either nodes on the network or any other out-of-band communication method that provides the desired privacy.  The security model of the oracle bloom filter can be improved by committing a hash of the BFD inside every block as a soft-fork consensus rule change. This allows for significantly greater privacy and takes load away from the P2P Bitcoin network. Committing the BFD is not a hard forking change and does not require alterations to mining software.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T04:56:03.592762+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

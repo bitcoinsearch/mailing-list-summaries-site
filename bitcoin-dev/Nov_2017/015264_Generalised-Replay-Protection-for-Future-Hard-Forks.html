@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Generalised Replay Protection for Future Hard Forks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jacob Eliosoff 2017-11-06 19:21:28
+            <br><i>Published on: 2017-11-06T19:21:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2017/combined_Generalised-Replay-Protection-for-Future-Hard-Forks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015264.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a proposal for replay protection and fork-specific addresses to be implemented in the Bitcoin protocol. This proposal aims to standardize replay protection across different forks, which is currently done on an ad-hoc basis. The introduction of fork-specific incompatible address space ensures users are protected against accidentally sending coins on the wrong chain, as the coin/token type is encoded in the address itself. The proposed schema assigns a unique `nForkId` to each hard fork, which is appended to the final template when preparing a transaction for signing or validation. Payment addresses will also contain the fork id, allowing wallets to parse the address and display which token the user is about to spend. For light clients, the `nForkId` can be enforced in the coinbase/block header, or a new P2P message type can be introduced for sending transactions. The proposal suggests allowing signatures with `nForkId=1` through a soft fork by incrementing the script version of SegWit.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T22:02:51.823151+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

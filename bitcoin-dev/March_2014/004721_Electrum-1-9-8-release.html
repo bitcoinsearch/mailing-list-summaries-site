@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Electrum 1.9.8 release</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2014-03-16 14:31:24
+            <br><i>Published on: 2014-03-16T14:31:24+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_Electrum-1-9-8-release.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004721.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Gregory Maxwell and Thomas Voegtlin dated March 16, 2014, Maxwell informed Voegtlin that the encryption algorithm used in the code from <a href="https://github.com/jackjack-jj/jeeq">https://github.com/jackjack-jj/jeeq</a> was insecure in several ways and was not actually implementing ECIES. The most significant issue with the cryptosystem was that instead of using a cryptographically strong mac tied to the ephemeral secret, it used a trivial 16-bit check value. This allowed anyone with access to a decryption oracle to decrypt any message encrypted to a third person by making no more than 65536 queries. In addition, in the event that a random query to a decryption oracle yields a result, the result directly reveals the ECDH value because it is only combined additively with the message value. If the implementation does not check if the nonce point is on the curve, the result can yield a point on the twist instead of the curve, which is far more vulnerable to recovery of the private key. Maxwell also noted that there may be other problems or mitigating factors, as it was challenging for him to follow what the code was doing. Although the particular implementation had a number of other issues, such as apparently not using a cryptographically strong RNG for its EC nonce, Maxwell assumed that Voegtlin did not copy that particular flaw. In response to this feedback, Voegtlin thanked Maxwell for informing him about the flaws in the implementation and promised to fix the code.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T15:07:50.667132+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>PoDLEs revisited</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Lloyd Fournier 2021-01-04 06:13:05
-            <br><i>Published on: 2021-01-04T06:13:05+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2021/combined_PoDLEs-revisited.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002929.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A Lightning developer has been examining a dual funding proposal that uses DLEQ proof (PoDLE) to prevent attackers from learning which available UTXOs are controlled by LN users. The post aims to see if the PoDLE idea is understood correctly and refine the ideas of others.Desirable properties for a dual-funding protocol include that a malicious initiator should not be able to use the same UTXOs in parallel with multiple peers, and honest initiators should not have to spend their UTXOs if they execute with a malicious peer. To solve the problem, Waxwing had the idea of turning knowledge of a secret key for a particular UTXO into an unlinkable credential. Darosior's proposal is to have the taker provide their inputs in a ready-to-broadcast state using SIGHASH_SINGLE|SIGHASH_ANYONECANPAY.The article discusses two different proposals for Lightning Network channel establishment that aim to prevent griefing by malicious non-initiating peers. The first proposal involves signaling transactions, which are used to share inputs and confirm the funding of a new channel. The transactions can be replaced with a higher fee rate if necessary, allowing the initiator time to use their input before the transaction confirms. The second proposal is PoDLE, which blacklists UTXOs instead of forcing them to be spent. The author notes that while PoDLE may be more secure, it is also more complex. Ultimately, the choice of protocol depends on how much weight is given to preventing griefing versus simplicity and ease of use.Finally, the post presents a simple but unintuitive protocol that achieves roughly the same properties as the PoDLE protocol but without lightning gossip messages.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T03:32:22.267682+00:00 </i></p>
     
     
 

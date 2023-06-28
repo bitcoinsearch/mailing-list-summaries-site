@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: SPV Fee Discovery mechanism</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Harding 2015-06-11 17:10:22
+            <br><i>Published on: 2015-06-11T17:10:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2015/combined_Proposal-SPV-Fee-Discovery-mechanism.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-June/008573.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Peter Todd and Aaron Voisine on June 11th, 2015, Aaron mentions that network congestion will be a lagging indicator based on the last time you connected. This is due to transactions being dropped unpredictably when blocks are full. Thus, it is critical to know the network congestion at the present moment. Peter Todd suggests that transaction fees can be increased after initial broadcast through replace-by-fee and child-pays-for-parent.Peter also brings up the point that transactions with unconfirmed inputs should be among the first to get dropped, as discussed in the "Dropped-transaction spam" thread. He further states that deploying any policy rules would work in proportion to its deployment. However, he warns that pull request #6068 stresses that the network will never have consistent mempool/relay policies. Instead, it needs a framework that supports and encourages pluggable, generally parameterized policies that could conflict wildly with each other.Peter concludes by mentioning that deploying a new policy would not be easier than deploying a patched version, and notes that nobody has proposed a policy rule engine yet.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T22:47:18.388133+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

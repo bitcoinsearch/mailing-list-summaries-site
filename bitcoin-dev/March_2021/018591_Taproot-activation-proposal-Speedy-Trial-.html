@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot activation proposal &#34;Speedy Trial&#34;</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Voskuil 2021-03-06 10:26:32
+            <br><i>Published on: 2021-03-06T10:26:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2021/combined_Taproot-activation-proposal-Speedy-Trial-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018591.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bitcoin developers are proposing a new activation protocol for Taproot, which can be implemented on top of either Bitcoin Core's existing BIP9 code or its proposed BIP8 patchset. A PR has been created to update bip9 to support an extra parameter to delay the transition from LOCKED_IN to ACTIVE until a particular timestamp is reached, and to reduce the activation threshold to 90%. Signaling begins with the first retarget period whose parent's median time is at least April 14th, and concludes with the last retarget period whose final block's median time is prior to July 14th. Activation is delayed until the first retarget period where the final block of the previous retarget period has a timestamp of at least October 1st. It is important to note that the timeout is before the expected timestamp of the startheight block specified in the proposal for bip8 parameters and earliest activation is after the expected release of 22.0 and hence the maintenance end of 0.20. The delay specified is a deadline, not a delta between lock-in and activation.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T19:18:19.242448+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

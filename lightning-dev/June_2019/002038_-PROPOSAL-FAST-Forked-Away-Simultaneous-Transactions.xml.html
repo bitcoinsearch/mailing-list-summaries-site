@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[PROPOSAL]: FAST - Forked Away Simultaneous Transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2019-06-25 23:04:54
-            <br><i>Published on: 2019-06-25T23:04:54+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2019/combined_-PROPOSAL-FAST-Forked-Away-Simultaneous-Transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002038.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The context discusses the issue of fork points and join points along a multipart path in a payment system. It is noted that the lack of a later join point in the system allows for potential attacks. There are two choices to address this issue: either both forked branches must succeed for the fork node to claim its incoming payment or either forked branch can succeed and the fork node can claim its incoming payment. If the first choice is implemented, attackers can exploit fork nodes by routing a self-payment through a fork node, with the other branch going nowhere, causing the fork node to be unable to claim its incoming payment. If the second choice is implemented, fork nodes can attack opportunistically by only paying out to the smaller-valued branch, which allows them to claim their incoming payment and forget about the other branch of payment. A plausible solution is to choose the second option and have Eric and Grace coordinate to only take incoming payment if both of them receive it. However, this requires trust between them. The discussion concludes by highlighting that multipart payments have a later join point, preventing fork nodes from performing opportunistic attacks.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T19:00:57.605882+00:00 </i></p>
     
     
 

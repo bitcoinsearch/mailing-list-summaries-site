@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving SPV security with PoW fraud proofs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Ruben Somsen 2019-04-20 03:26:03
+            <br><i>Published on: 2019-04-20T03:26:03+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_Improving-SPV-security-with-PoW-fraud-proofs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016885.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Ruben Somsen and ZmnSCPxj, the topic of UTXO sets was raised. ZmnSCPxj stated that there is no safe way to use UTXO sets without identifying who is telling you those sets are valid or making it expensive to lie. The first option requires trust and is weaker than SPV, while the second requires committing to a proof-of-work. Ruben Somsen suggested that an alternative to UTXO set commitments could be the old fraud proofs idea for segwit. Miners would commit to the location of the UTXOs being spent, allowing full nodes to succinctly prove invalidity to SPV clients. However, ZmnSCPxj argued that in order to validate block N, all UTXOs spent by transactions in block N must be valid, and the non-existent fraud proof can only be validated by loading the block of the UTXO purported to be spent and every block between that and the current block being verified, i.e. fullnode.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:18:07.329652+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

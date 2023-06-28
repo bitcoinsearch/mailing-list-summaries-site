@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Getting trusted metrics from the block chain in an untrusted environment ?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Clément Elbaz 2014-01-08 22:29:15
+            <br><i>Published on: 2014-01-08T22:29:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_Getting-trusted-metrics-from-the-block-chain-in-an-untrusted-environment-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004030.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email conversation is between Clément Elbaz and a group of people. Clément needs to design a program that requires metrics computed from the Bitcoin block chain. However, his program will run on lightweight/embedded hardware and does not provide enough resources to set up a trusted node along with it. He trusts the global Bitcoin network but no individual node. Therefore, he needs a way to ask an untrusted Bitcoin node to compute some 'metric request' on his behalf and having the result of that metric request validated by the network. Clément suggests using an alternate, small and fixed-length 'metric request block chain' to store structures defined as [metric request | current block number when request was made | hash of the response] instead of financial transactions. These structures are verifiable so it could work the same way as a regular financial blockchain. It should not be part of the main Bitcoin protocol but could be a plugin interacting with the data managed by the fullnode bitcoin software.Metrics requests can be expensive to compute and validate, so it would make sense to pay a fee every time you ask one. Clément is looking for available or work-in-progress projects that would fit this need or he would do it himself if there is none.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-07T23:56:51.793124+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

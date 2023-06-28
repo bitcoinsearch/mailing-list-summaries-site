@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Block Batch Filters for Light Clients</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> admin at bitaps.com 2019-09-19 17:20:13
+            <br><i>Published on: 2019-09-19T17:20:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2019/combined_Block-Batch-Filters-for-Light-Clients.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017315.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Aleksey Karpov has shared a draft BIP for compact probabilistic block filters, an alternative to BIP 158. While BIP 158 has a low false positive rate, it does not support filter batching due to the design of its parameters for siphash and Golomb coding. The proposed alternative uses delta coding and splits data into two bit string sequences, with one sequence containing data without prefixes and the second containing information about the bit length written to the first sequence. The second sequence is compressed using two rounds of the Huffman algorithm, resulting in an effectiveness of about 98% compared to Golomb with optimal parameters. Batching block filters reduces their size significantly, and separating filters by address type allows lite clients to avoid downloading redundant information without compromising privacy. The recommended strategy for lite client filters download is to get the biggest filter (smallest blocks/size rate) for a blocks range, then, in case of a positive test, get medium filters to reduce the blocks range, followed by getting block filters for the affected range and downloading affected blocks over TOR. An implementation of this can be found in Python at <a href="https://github.com/bitaps-com/pybtc/blob/bugfix/pybtc/functions/filters.py">https://github.com/bitaps-com/pybtc/blob/bugfix/pybtc/functions/filters.py</a>#L172. Aleksey Karpov plans to add exact information from mainnet about size for separated filters by address types and batch size within a few days. Feedback is welcome.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T21:26:21.888496+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

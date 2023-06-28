@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Suggestion for enhancements to getblock</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2011-07-07 15:42:12
-            <br><i>Published on: 2011-07-07T15:42:12+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2011/combined_Suggestion-for-enhancements-to-getblock.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000145.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email thread, Andy Parkins discussed a situation where he is only interested in the history of his wallet addresses and stores block headers only. When he receives a block broadcast with a transaction that sends coins to one of his addresses, he wants to request those transactions and ensure their validity and presence in blocks. However, he cannot prove the transaction is not a double spend without knowledge of all transactions. The article linked explains that this is a common thought process among alternative client creators, but it is impossible to prove a transaction's validity without an index of all transactions. Currently, lightweight/SPV clients must rely on appearing deep in the chain as proof of validity. In the future, when speeds are lower, users may have to wait longer or use a trusted node for safety.To address the issue of requesting the current pending transaction list, a better approach would be to implement filtering suggestions that have been made. Downloading the entire memory pool does not scale well, so it would be best to give remote nodes a filter to match against transactions and only relay those. After setting a filter, transactions matching the filter would be sent in one big inventory, allowing for new transactions to be learned about without "drinking from the firehose." Probabilistic filters can be set on different nodes to reduce privacy implications.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-26T19:11:56.007383+00:00 </i></p>
     
     
 

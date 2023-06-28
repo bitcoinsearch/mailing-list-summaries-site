@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[softfork proposal] Strict DER signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Zooko Wilcox-OHearn 2015-01-22 22:41:47
+            <br><i>Published on: 2015-01-22T22:41:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2015/combined_-softfork-proposal-Strict-DER-signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-January/007184.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Zooko has reviewed the links provided by the author and suggests that it seems like a good idea to use the upgrade mechanism from BIP 34. He inquires about whether bipstrictder should provide a rationale or link to accept the 0-length sig as correctly-encoded-but-invalid and whether there are still multiple ways to encode a correctly encoded but invalid signature. Zooko also recommends verifying all branches of the new IsDERSignature() from <a href="https://github.com/sipa/bitcoin/commit/0c427135151a6bed657438ffb2e670be84eb3642">https://github.com/sipa/bitcoin/commit/0c427135151a6bed657438ffb2e670be84eb3642</a> are tested by the test vectors in <a href="https://github.com/sipa/bitcoin/commit/f94e806f8bfa007a3de4b45fa3c9860f2747e427">https://github.com/sipa/bitcoin/commit/f94e806f8bfa007a3de4b45fa3c9860f2747e427</a> and finishing the TODOs in <a href="https://github.com/sipa/bitcoin/commit/b7986119a5d41337fea1e83804ed6223438158ec">https://github.com/sipa/bitcoin/commit/b7986119a5d41337fea1e83804ed6223438158ec</a> so that it actually tests the upgrade behavior. Additionally, he points out a missing comment: <a href="https://github.com/sipa/bitcoin/commit/e186f6a80161f9fa45fbced82ab1d22f081b942c">https://github.com/sipa/bitcoin/commit/e186f6a80161f9fa45fbced82ab1d22f081b942c</a>#commitcomment-9406643. Overall, he thanks the author for their good work and hopes his comments help.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T15:45:30.385183+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

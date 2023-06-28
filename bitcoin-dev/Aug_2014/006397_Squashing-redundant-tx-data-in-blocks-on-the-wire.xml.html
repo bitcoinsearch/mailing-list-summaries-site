@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Squashing redundant tx data in blocks on the wire</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Kaz Wesley 2014-08-01 01:00:06
-            <br><i>Published on: 2014-08-01T01:00:06+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2014/combined_Squashing-redundant-tx-data-in-blocks-on-the-wire.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006397.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email exchange between Gregory Maxwell and Kaz Wesley, they discussed the possibility of developing a rule for what to keep in order to avoid false negatives or a huge storage requirement. The prototype Kaz is working on will provide data on the false-positive-missing-tx rate with something like "remember-last-N". There are various ways this rule could be upgraded to nearly eliminate the false-positive-missing rate, including learning what txes a peer has dropped via periodic mempool syncing or specifying the rule explicitly with priority scripts. All of these changes synergize, but as long as the simplistic remembering rule yields worthwhile improvement over the current approach, they can all be done independently as incremental improvements. The idea of mempool synchronization brings up the issue of transaction expiration since lack of mempool syncing is currently the mechanism for tx expiry. They also discussed the benefits of channel memory sparseblocks and FEC-based mempool synchronization. Gregory believes that minimizing latency in the face of multiple peers is the only reason to implement FEC at block forwarding time that can't be realized by FEC-based mempool synchronization, implemented separately from channel-memory based index-coding.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-09T01:08:16.055980+00:00 </i></p>
     
     
 

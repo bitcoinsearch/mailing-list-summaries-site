@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>What is the danger if bitcoind startted with -flushwallet=false ?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Wladimir 2014-08-13 20:29:28
+            <br><i>Published on: 2014-08-13T20:29:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2014/combined_What-is-the-danger-if-bitcoind-startted-with-flushwallet-false-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-August/006499.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email dated August 13th, 2014, a user named 潘庆庆 asked the Bitcoind community why '-flushwallet' is true by default. They had tried disabling it and found that their IO reduced greatly, but they also lost all of their coins in testnet after one crash. Wladimir explained that when flushwallet is disabled, the wallet is not flushed periodically, which means that there's a larger chance that the wallet database is in an inconsistent state when the process stops unexpectedly. This can happen either due to a crash or an external cause such as the power turning off unexpectedly. With the wallet in a non-self-contained state, the next time that you start bitcoind BerkeleyDB will have to process log files. There is a non-zero chance that this will fail, and manual recovery is needed. As the wallet is usually critical, it is unwise to disable that option.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-09T02:09:02.480395+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

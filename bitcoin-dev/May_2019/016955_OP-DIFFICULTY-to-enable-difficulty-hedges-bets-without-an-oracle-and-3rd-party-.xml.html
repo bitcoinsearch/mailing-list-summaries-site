@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>OP_DIFFICULTY to enable difficulty hedges (bets) without an oracle and 3rd party.</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tamas Blummer 2019-05-23 19:10:53
-            <br><i>Published on: 2019-05-23T19:10:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/May_2019/combined_OP-DIFFICULTY-to-enable-difficulty-hedges-bets-without-an-oracle-and-3rd-party-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016955.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>Tamas Blummer has proposed a new opcode, OP_DIFFICULTY, that would put the value of difficulty for the block the transaction is included in onto the stack. The output script can then compare that value with a strike which key can spend it. The input of the transaction would be a multi-sig escrow of those who entered the bet, and the winner would broadcast. This transaction using nLocktime denominated in block height, would be valid after the difficulty adjusted block in the future. Commodity markets offer futures and options to hedge risks on traditional trading venues, but a better solution could be done natively within Bitcoin. Difficulty changes have a profound impact on miners' production, thereby introducing the biggest risk while considering an investment. Tamas believes this new opcode would serve significant economic interest of Bitcoin economy and is compatible with Bitcoin’s aim not to introduce 3rd party to do so. The parameter used is property of the block just like the block height is a property and is already evaluated in scripts, so no new kind of dependency or encapsulation break. The transaction itself was not invalid in a re-org but evtl. others spending it if the difficulty on that fork is different, this is however intended as then on that fork the other was the winner. Some concerns about this proposal include the possibility of the same transaction becoming invalid in a reorg and the implementation breaking existing encapsulations, but these are just implementation details not that relevant.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T19:04:50.948617+00:00 </i></p>
     
     
 

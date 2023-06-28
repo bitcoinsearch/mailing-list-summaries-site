@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Highly Available Lightning Channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2023-02-15 04:44:32
+            <br><i>Published on: 2023-02-15T04:44:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2023/combined_Highly-Available-Lightning-Channels.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003853.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Antoine Riard and Joost on February 14, 2023, the idea of building forward-error-correction code on top of MPP to increase competitiveness with centralized payment systems was discussed. The rough idea is to send more payment shards than the requested sum, and then reveal the payment secrets to the receiver after an onion interactivity round to finalize payment. This method would be less capital-efficient but would allow for over-commitment upfront, reducing the impact of failed HTLCs on payment latency. While the extra round-trip to request the "unlock keys" for the correct set of HTLCs adds to total latency, this feature is incredibly powerful for building a reliable lightning network out of unreliable nodes. It is not super complicated to implement, but it is unclear how to get good data from trials. Therefore, simulations using real probing success rates are needed to figure out how successful this would be and propose a concrete sender strategy that would improve success rates.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T11:51:35.037961+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

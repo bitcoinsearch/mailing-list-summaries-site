@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Chain pruning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2014-04-10 19:36:39
+            <br><i>Published on: 2014-04-10T19:36:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2014/combined_Chain-pruning.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-April/005223.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this context, Paul Rabahy responded to a quote out of context about synchronization mechanism while discussing the security of UTXO commitments. The synchronization mechanism would be to determine the most-work block header and sync the UTXO set committed to within that block, which is less secure than building the UTXO set yourself because it is vulnerable to a 51% attack that violates protocol rules. Paul Rabahy proposed a soft fork to proceed with UTXO commitments, where miners would begin including UTXO commitments and rejecting blocks with invalid or no UTXO commitments. To start a fresh client, one should sync headers, pick a committed UTXO deep enough to not get orphaned, and sync blocks from commitment to head. He argued that this methodology is more secure than SPV and not less secure than a full client. Although it is susceptible to a 51% attack, so is the traditional blockchain. He also did not see any sybil attacks strengthened by this change because it does not modify networking code. However, if the soft fork happened, and miners stopped including UTXO commitments, it would lower the overall network hash rate, but it would be self-harming for the miners, so they have an incentive to not do it. Paul Rabahy asked if he missed anything and requested additional information.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T19:34:02.406400+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

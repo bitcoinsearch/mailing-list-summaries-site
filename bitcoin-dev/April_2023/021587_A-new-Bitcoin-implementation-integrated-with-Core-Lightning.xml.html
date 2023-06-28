@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>A new Bitcoin implementation integrated with Core Lightning</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> niftynei 2023-04-24 16:06:59
-            <br><i>Published on: 2023-04-24T16:06:59+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2023/combined_A-new-Bitcoin-implementation-integrated-with-Core-Lightning.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021587.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the decoupling of CLN from the block source and how it allows for a separation of concerns. Bitcoin core, on the other hand, implements a broad swath of functionality, which limits opportunities for building block sources for different projects. There is an opportunity to "comingle" the peering of LN gossip and block data networks, but this has not been seriously pursued by the LN side. Separating the peering functions of bitcoin-core into a more composable/reusable piece would be a good first step towards this goal. Michael suggests that with upcoming proposed changes to default policy, a tighter coupling between the full node and the Lightning node could make sense. He thinks that having two separate P2P networks and protocols wouldn't make much sense in a world where transaction fees were much higher and every full node would also want to be a Lightning node. He also suggests focusing on Knots style consensus compatible forks of Core with limited additional functionality. Michael mentions his long-term idea of a bare bones Knots style Bitcoin implementation integrated with Core Lightning, but the dysfunction on the Bitcoin Core project is making him take the idea more seriously. He believes that the current way the Bitcoin Core project is being managed is not how an open-source project should be managed, with little discussion happening publicly and decisions being made behind closed doors or private IRC channels. However, Core Lightning seems to manage its project effectively in the open, although it doesn't have as many contributors or usage as Bitcoin Core. Michael proposes floating the idea of merging Bitcoin Core and Core Lightning to hear from people who are familiar with the entirety of the codebases. Although it would be an ambitious long-term project, he thinks it would be nice to focus on some ambitious projects given the lull in soft fork activation chaos.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T03:57:45.842155+00:00 </i></p>
     
     
 

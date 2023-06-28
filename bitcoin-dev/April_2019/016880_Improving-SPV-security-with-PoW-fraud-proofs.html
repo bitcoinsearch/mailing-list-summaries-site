@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Improving SPV security with PoW fraud proofs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2019-04-19 04:48:23
+            <br><i>Published on: 2019-04-19T04:48:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2019/combined_Improving-SPV-security-with-PoW-fraud-proofs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016880.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email exchange discusses the approach of making SPV clients download only S+1 instead of both S+1 and S+2. The weakness of this approach is that miners can make SPV clients do more work. However, mining a block which will never be accepted is expensive. SPV clients may not even learn about these splits because it requires someone to relay the split to them, and honest full nodes should not relay such splits. Having SPV clients slow down or become full nodes when a malicious miner with significant mining power is attempting to disrupt the network is probably a best case outcome. It requires UTXO commitments to be mandatory. Any service that can provide the actual UTXO set at each block would potentially be attackable by simply requesting enough past blocks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:18:40.751602+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

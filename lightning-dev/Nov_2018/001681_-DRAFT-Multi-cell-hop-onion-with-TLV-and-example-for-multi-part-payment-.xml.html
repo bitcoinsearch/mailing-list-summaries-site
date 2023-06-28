@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[DRAFT] Multi-cell-hop onion with TLV (and example for multi-part-payment)</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Rusty Russell 2018-11-28 00:21:59
-            <br><i>Published on: 2018-11-28T00:21:59+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2018/combined_-DRAFT-Multi-cell-hop-onion-with-TLV-and-example-for-multi-part-payment-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001681.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The proposal suggests a multi-cell structure for the "use TLV" and "multi-cell-onion" ideas. The structure includes an expanded 'realm' or 'per_hop_type', where the lower 4 bits represent the number of extra cells to use, while the upper 4 bits are reserved for dropping. HMAC covers that many per-hops, and padding contains TLV. The TLVs follow the unknown-odd-is-ok rule and are in lexicographical order. There is no 0-type, which terminates the backwards compatibility. Additionally, the proposal defines a new onion error value called "tlv_element_invalid", which has a type of PERM|22 and an offset within the tlv field. The TLVs defined for the initial onion include the chain_id of the new chain and are used to switch chains during transit or at the final hop. Type 4 is used for the total payment, with a variable length. The writer must set the byte offset within the tlv field of the tlv element rejected and should use the offset the type byte of the TLV element if it didn't understand it, the offset the len byte of the TLV element if it was an incorrect length, or otherwise within the value if the value was somehow invalid.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T15:08:46.869757+00:00 </i></p>
     
     
 

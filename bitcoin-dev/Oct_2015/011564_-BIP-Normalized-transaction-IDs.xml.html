@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP] Normalized transaction IDs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Tier Nolan 2015-10-19 15:23:53
-            <br><i>Published on: 2015-10-19T15:23:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2015/combined_-BIP-Normalized-transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011564.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In an email dated October 19, 2015, Christian Decker via bitcoin-dev proposed a new version for normalizing transaction IDs. Similar to the previous version, this proposal also uses a hard fork and only computes the non-malleable parts of a transaction by stripping its signatures before hashing it. For a Coinbase transaction, the normalized transaction ID is equal to the transaction ID (n-txid = txid). However, for non-coinbase transactions, the sigScripts are replaced with empty strings and the txids in TxIns are replaced with n-txid for parents. The second step of this process is recursive starting from the coinbases. Therefore, the rule is that txids are what they would have been if n-txids had been used right from the start.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T00:33:02.028748+00:00 </i></p>
     
     
 

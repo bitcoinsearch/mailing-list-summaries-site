@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Manual file cleanup on exit, safe? [coredump backtrace] <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2012/001562_Manual-file-cleanup-on-exit-safe-coredump-backtrace-.html">Manual file cleanup on exit, safe? [coredump backtrace]</a>
+                        <b>Pieter Wuille 2012-06-15 23:11:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2012/001561_Manual-file-cleanup-on-exit-safe-coredump-backtrace-.html">Manual file cleanup on exit, safe? [coredump backtrace]</a>
+                        <b>grarpamp 2012-06-15 20:58:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2012/001562_Manual-file-cleanup-on-exit-safe-coredump-backtrace-.html">Manual file cleanup on exit, safe? [coredump backtrace]</a>
+                        <b>Pieter Wuille 2012-06-15 23:11:39</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2012/001561_Manual-file-cleanup-on-exit-safe-coredump-backtrace-.html">Manual file cleanup on exit, safe? [coredump backtrace]</a>
+                        <b>grarpamp 2012-06-15 20:58:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2012/001561_Manual-file-cleanup-on-exit-safe-coredump-backtrace-.html">Manual file cleanup on exit, safe? [coredump backtrace]</a>
+                        <b>grarpamp 2012-06-15 20:58:55</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/June_2012/001562_Manual-file-cleanup-on-exit-safe-coredump-backtrace-.html">Manual file cleanup on exit, safe? [coredump backtrace]</a>
+                        <b>Pieter Wuille 2012-06-15 23:11:39</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001562.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2012-06-15T23:11:39+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The article discusses the issue of cleaning up files and directories when Bitcoin server exits cleanly or crashes. It is not safe to use the 'rm -r' command to clean up the hierarchy, which includes database/, db.log, .lock, debug.log, addr.dat, and wallet.dat. Additionally, __db.* should also be added to the list in case bitcoind crashes. The article questions if there is an option available to flush/roll the above-mentioned files on exit so that they can be removed or ported. Regardless of the answer, bitcoind should not be dumping core.On June 15, 2012, a user named grarpamp raised a concern about the safety of cleaning up the blockchain hierarchy when bitcoind exits cleanly. In response to this, Pieter, another user suggested using the -detachdb argument if the user wants to detach the blockchain database files from the database environment at exit. However, Pieter mentioned that this feature was turned off by default in version 0.6.0 to speed up the shutdown process significantly and only a few people have a need to manually fiddle with their blockchain database files.The article provides details about the version of Bitcoin v0.6.2.2-unk-beta () and the default data directory /.../.bitcoin. It also displays an EXCEPTION: 11DbException error caused by invalid arguments while opening a database. The error message suggests that it may be caused by moving a database from one database environment to another without clearing the database LSNs or by removing all of the log files from a database environment.Lastly, the article mentions a gdb backtrace command that shows information about the threads and functions.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-06T05:24:33.528898+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

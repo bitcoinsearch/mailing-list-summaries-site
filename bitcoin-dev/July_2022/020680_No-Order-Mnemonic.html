@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>No Order Mnemonic</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anton Shevchenko 2022-07-09 23:46:19
+            <br><i>Published on: 2022-07-09T23:46:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2022/combined_No-Order-Mnemonic.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020680.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The entropy of a 12-word seed decreases by 25 bits, not 29, when the ordering is removed. This reduction is due to the addition of a 4-bit checksum, as 12 words encode 132 bits instead of 128. The initial idea for this project was to use an AI story generator such as GPT-3 to assist users in remembering a story, rather than a set of ordered words. However, others have suggested that 12 unordered words may be sufficient for memory purposes. As a result, the proposed encoding method may not be necessary unless the remembered story has gaps or errors, in which case recovering a few words may be easier with the unordered encoding. In response to a previous mailing list message, sorting a seed alphabetically reduces entropy by approximately 29 bits. James MacWhyte suggests randomly choosing 11 words and then sorting them alphabetically before assigning a checksum to considerably reduce entropy. However, this method would still leave around 10 trillion possible combinations to exhaust through bruteforce, requiring a couple of months with hardware capable of one million guesses per second.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T22:23:06.187976+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

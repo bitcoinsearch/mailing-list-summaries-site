@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[PATCH] First draft of option_simplfied_commitment</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2019-11-14 23:43:50
+            <br><i>Published on: 2019-11-14T23:43:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2019/combined_-PATCH-First-draft-of-option-simplfied-commitment.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002336.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The dust limit in Bitcoin exists to prevent people from filling the UTXO set with non-economical UTXOs when feerates are low. It makes the minimum cost per created P2WPKH UTXO 30 sat + 294 sat = $0.0275, or about $1,760,000 per UTXO set doubling. If feerates increase, the cost of a UTXO-filling attack rises proportionally. Somewhere around sustained minimum feerates of 11 sat/vbyte, feerates alone become more expensive than the current level of protection provided by the dust limit at 1 sat/vbyte. In short, the dust limits are not expected to rise unless the BTC/fiat price drops so far that UTXO-filling attacks become much more affordable than they are with today's limits. The dust limit is not incentive-aligned with short-term miner interests. If there's actual legitimate demand to create transactions paying reasonable feerates and containing uneconomical-to-spend outputs, then miners are going to start accepting those transactions no matter what policies are implemented on the P2P transaction relay network. Dust limits may instead decrease (or be removed), but it's not a problem for anchor outputs. LN implementations should strive to create anchor outputs that are economical to spend and that may require using a negotiable output amount to compensate for rises in feerates making small-value outputs less economical, especially if you're using different anchor outputs for each channel party.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T17:50:40.914769+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

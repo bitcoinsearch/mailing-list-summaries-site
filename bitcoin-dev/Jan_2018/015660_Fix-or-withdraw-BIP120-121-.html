@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fix or withdraw BIP120/121?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Kalle Rosenbaum 2018-01-26 15:52:10
+            <br><i>Published on: 2018-01-26T15:52:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2018/combined_Fix-or-withdraw-BIP120-121-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015660.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent communication, Kalle Rosenbaum identifies an inherent problem with BIP120, Proof of Payment. In particular, he points out that if there is a soft fork, a server that verifies PoPs will accept a PoP as valid without checking any of the new Bitcoin rules. The issue arises because a server will be fooled by a segwit transaction, since it doesn't have a witness to verify and hence will accept any PoP with an empty scriptSig. Apart from this issue, on-chain payments are no longer in demand, and interest or need for PoP as a concept seems low. Kalle admits that he has no good solution for the soft fork problem. Requiring all software using PoP to upgrade to a new PoP specification on each soft-fork is not good enough. He invites any ideas on how to fix the problem.If there is no good solution to the soft-fork issue, Kalle suggests withdrawing BIP120 and BIP121. He notes that Mycelium currently implements BIP120, but he is uncertain if any other software aside from his own implements it. He requests information about such implementations so that he can discuss them.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T05:03:42.394711+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

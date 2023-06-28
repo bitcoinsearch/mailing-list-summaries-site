@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Compact Block Relay BIP</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Pieter Wuille 2016-05-09 17:06:06
+            <br><i>Published on: 2016-05-09T17:06:06+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2016/combined_Compact-Block-Relay-BIP.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012645.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Matt Corallo has designed a BIP-formatted design spec for compact block relay. The aim of the spec is to limit on wire bytes during block relay. Several new data structures have been added to the P2P network to relay compact blocks: PrefilledTransaction, HeaderAndShortIDs, BlockTransactionsRequest, and BlockTransactions. A new variable-length integer encoding has also been introduced for use in these data structures. CompactSize refers to the variable-length integer encoding used across the existing P2P protocol to encode array lengths, among other things, in 1, 3, 5 or 9 bytes. A HeaderAndShortIDs structure is used to relay a block header, the short transactions IDs used for matching already-available transactions, and a select few transactions which we expect a peer may be missing. Short transaction IDs are used to represent a transaction without sending a full 256-bit hash. An alternative would be using SipHash-1-3. Using SipHash-1-3 on modern hardware would take ~32 CPU cycles per txid.There are a few more heuristics that MAY be used to improve performance. Receivers should treat short txids in blocks that match multiple mempool transactions as non-matches, and request the transactions. When constructing a compact block to send, the sender can verify it against its own mempool to check for collisions, and if so, choose to either try another nonce, or increase the short txid length.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T23:20:28.509188+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd:  Lightning in the setting of blockchain hardforks</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Natanael 2017-08-17 13:38:26
+            <br><i>Published on: 2017-08-17T13:38:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2017/combined_Fwd-Lightning-in-the-setting-of-blockchain-hardforks.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014837.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion among Bitcoin developers is centered around the issue of payment channels during a hardfork. Hardforks like Bitcoin ABC without a malleability fix are unlikely to have payment channels, so the problem does not exist for those. However, in the case of a hardfork with a malleability fix, replay protection that allows the execution of old commitments can be built by timestamping commitments and integrating them into the channel design. Timestamps can be one bit and if the replay protection only accepts old commitments for something like a year, it can be reused for more hardforks later on. However, hardforking while having channels open will always be problematic as an open channel requires watching the blockchain. Anyone who is unaware of the hardfork or updates their client too late could have their money stolen by an old commitment transaction where they forget to retaliate on the new chain. The risk of retaliation is not too big for an attacker as others can likely figure out the client version. Channels that are open during the fork will have to be settled twice if no replay protection was implemented on the fork. If replay protection was implemented, then commitments become invalid on the fork, and people will lose money.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T14:59:14.617355+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Soft Fork Threshold Signaling</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Thomas Voegtlin 2017-04-13 17:30:08
-            <br><i>Published on: 2017-04-13T17:30:08+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/April_2017/combined_Proposal-Soft-Fork-Threshold-Signaling.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014150.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>There is a discussion regarding the use of coinbase and the potential for it to clash with other proposals, as it is not part of the block header. The idea of using a small set of standard thresholds is suggested, with a 4-bit system being able to encode 15 different thresholds plus zero. This allows for all thresholds between 25% and 95%, separated by 5%. Using 4 bits per soft-fork proposal leaves enough room to fit seven simultaneous proposals in version bits. While some agree with this suggestion, others still prefer the coinbase idea, as it is more appealing than using up the BIP9 versionbits range for verbose signaling. BIP9 currently assumes that participants will coordinate to agree on what the bits mean in terms of change deployments. However, it would be easy to agree on a set of "standard" threshold levels and map those onto one byte. In the coinbase, pairs of bit numbers and bytes could be used, where byte values correspond to standardized deployment schedules that people find useful. This would allow for compact yet readable signaling, with a large enough space of values to minimize contention.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T00:07:28.784553+00:00 </i></p>
     
     
 

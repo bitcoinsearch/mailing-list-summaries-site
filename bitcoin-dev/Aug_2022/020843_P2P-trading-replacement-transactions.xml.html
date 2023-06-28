@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>P2P trading replacement transactions</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> alicexbt 2022-08-08 13:12:44
-            <br><i>Published on: 2022-08-08T13:12:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Aug_2022/combined_P2P-trading-replacement-transactions.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020843.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email thread discusses the idea of trading replacement transactions for privacy. Alice and Bob can share outputs, which are swapped in the replacement transactions. A 2of3 multisig with Carol is required to prevent cheating. Trading of private keys is not required, and PGP is not needed to share them securely. The process is similar to an HTLC, but with the addition of trading private keys for actual trades. Taproot may be used to selectively reveal certain script branches, but details are unclear. The proposed implementation involves creating an API managed by Carol, using a 2of3 multisig with Alice, Bob, and Carol's keys. Alice and Bob create orders for replacement, either matched automatically or accepted manually by Bob. Bob locks 0.01 BTC in the multisig and shares outputs e2 and f2 with Alice. Alice signs tx2 and shares it with Bob. Alice locks 0.011 BTC in the multisig and shares outputs b2 and c2 with Bob. Bob signs tx2 and shares it with Alice. Both replacement transactions can be broadcasted, and funds are released from the multisig with a transaction having three outputs, with one output paying the fee which goes to Carol. The positives of this process are privacy, while the negatives include extra fees and time taken to manage everything with the API provided by Carol. It requires locking bitcoin with the same amount as used in tx1, and amounts could still be used to link transactions in some cases.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T23:39:45.853970+00:00 </i></p>
     
     
 

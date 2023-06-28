@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Interesting thing about Offered HTLCs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> darosior 2022-03-16 10:03:29
-            <br><i>Published on: 2022-03-16T10:03:29+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/March_2022/combined_Interesting-thing-about-Offered-HTLCs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003518.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The email conversation discusses the use of Miniscript in Lightning to prevent unintended paths from being taken. It is noted that Miniscripts with duplicate keys are considered insane as it makes it too hard to reason about malleability. A policy compiler would never produce such a Miniscript. The conversation also touches on the issue of offered HTLC outputs and the three claim paths associated with them. The offering party can claim via the HTLC-timeout case on their commitment transaction with their signature and the remote's signature after the cltv_expiry timeout. However, they can only spend with the HTLC-timeout transaction because of SIGHASH_ALL. It is suggested that splitting the Script branches in two tapleaves and having bip342 signature digest committing to the tapleaf_hash could solve this issue.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T07:43:30.251819+00:00 </i></p>
     
     
 

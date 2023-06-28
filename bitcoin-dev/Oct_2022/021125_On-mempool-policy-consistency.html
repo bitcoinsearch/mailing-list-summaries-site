@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>On mempool policy consistency</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Suhas Daftuar 2022-10-27 17:35:28
+            <br><i>Published on: 2022-10-27T17:35:28+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2022/combined_On-mempool-policy-consistency.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021125.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on the bitcoin-dev mailing list, Anthony Towns brought up the claim made by Antoine that opt-in RBF (replace-by-fee) isn't enough to avoid a DoS (denial-of-service) issue when UTXOs (unspent transaction outputs) are jointly funded by untrusting partners. Antoine presented a scenario where A, B, and C create a transaction with inputs A1, B1, and C1, and all of them opt-in to RBF. However, just before publishing the transaction, A spams the network with an alternative transaction double-spending her input A1, but without opting in to RBF. If A gets the timing right, this can cause problems for B and C as they have already populated their mempool with the first transaction, while everyone else sees the second one instead. However, Suhas argues that this is not a real example of a DoS vector that is available because non-RBF signaling transactions are supported. Even if all transactions were replaceable, A could still double-spend their input in a way that is annoying for B and C. Suhas finds the example unconvincing and asks if there are any other examples where having a non-replacement policy for some transactions causes problems for protocols people are trying to build.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-22T22:09:29.414308+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Defeating the block withholding attack</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Luke-Jr 2012-06-04 21:05:25
+            <br><i>Published on: 2012-06-04T21:05:25+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2012/combined_Defeating-the-block-withholding-attack.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-June/001511.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion on June 4, 2012, Mike Koss explained that in a mining pool attack, the attacker gets compensated for the shares they earn, but the pool will be denied any valid blocks found. However, the attacker does not have access to the Bitcoins earned in the unreported block. With decentralized pools, the attacker has access to the block and can potentially submit it to the Bitcoin network directly bypassing the pool if it benefits them to do so. Koss believes that there is a possibility an attacker can make a profit because of this. The only way to detect such an attack now is to look for "unlucky" miners as the attacker can also create many fake identities, avoiding detection indefinitely by abandoning each account after a million earned shares. There are other modes of detection, but nobody has bothered to implement them since attackers can easily do a simple workaround in an arms race. Koss doesn't understand a proposal to fix the issue, where miners would need to come up with a scheme to detect a qualifying hash to earn a share, but not be able to tell if the hash is for a valid block. He suggests a solution where a secret part of a block is shared to the pool, which is used in a secondary hash. A valid block would have to exhibit a valid Share Hash AND a valid Pool Hash in order to be accepted. However, this only works for centralized pools, which are contrary to the health of the Bitcoin network. Decentralized pools cannot have a secret.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T04:53:47.486096+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

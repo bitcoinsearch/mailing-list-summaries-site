@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Witness serialization in PSBT non-witness UTXOs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016297_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Gregory Maxwell 2018-08-13 20:39:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016295_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Pieter Wuille 2018-08-13 18:56:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016296_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Achow101 2018-08-13 20:32:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016296_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Achow101 2018-08-13 20:32:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016297_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Gregory Maxwell 2018-08-13 20:39:38</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016295_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Pieter Wuille 2018-08-13 18:56:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016296_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Achow101 2018-08-13 20:32:33</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016295_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Pieter Wuille 2018-08-13 18:56:41</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2018/016297_Witness-serialization-in-PSBT-non-witness-UTXOs.html">Witness serialization in PSBT non-witness UTXOs</a>
+                        <b>Gregory Maxwell 2018-08-13 20:39:38</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016297.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2018-08-13T20:39:38+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Bitcoin developers and contributors have been discussing an update to the Bitcoin Improvement Proposal (BIP) 174 specification regarding non-witness UTXOs on the bitcoin-dev mailing list. Currently, the specification requires that these transactions be serialized in network format. However, Pieter Wuille, a developer and contributor to BIP174, has raised concerns about this approach. He argues that including witness data in these transactions is unnecessary for PSBT and that the term "network format" is ambiguous, which could cause compatibility issues in the future. Wuille suggests that the specification should be updated to require non-witness UTXOs to be serialized without the witness. He proposes explicitly specifying whether the transaction should include or exclude the witness, but believes it's safe to drop the witness altogether. Andrew Chow, another developer, agrees with Wuille's proposal and adds that specifying non-witness UTXOs as "witness or non-witness" serialization would maintain both backward and forward compatibility. It was mentioned that two years from now, nothing will write the witnesses, and the requirement to support reading them could be dropped.Overall, the group seems to agree that the specification needs to be clarified for forward compatibility and maintaining compatibility with existing signers. The discussion revolves around ensuring that non-witness UTXOs are serialized in a way that does not cause compatibility issues in the future and is consistent with the purpose of PSBT.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-13T14:08:05.260104+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

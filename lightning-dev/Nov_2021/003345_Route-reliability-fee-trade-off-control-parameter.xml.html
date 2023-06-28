@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Route reliability&lt;-&gt;fee trade-off control parameter</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Joost Jager 2021-11-15 19:26:51
-            <br><i>Published on: 2021-11-15T19:26:51+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Nov_2021/combined_Route-reliability-fee-trade-off-control-parameter.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003345.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The context of the conversation is about probability-based routing and feature engineering. The speaker mentions that reliability can and should be expressed as a probability, which is discussed in a prior article. They go on to explain that they implemented a form of probability-based routing in lnd in March 2019 and refined it through several rounds. Regarding feature engineering, there are two steps: feature selection and combining features. Feature selection involves computing a min cost flow with a chosen cost function that represents the weights on the edges of the graph. The cost function should represent a combination of fees and reliability, but there are other potential features that could be used in the future to deliver more optimal results. Combining features involves using a weighted linear sum or harmonic mean to combine selected features. The speaker wants something anchored to an understandable starting point, so they worked with payment attempt cost, which is a virtual satoshi amount that represents the cost of a failed attempt. By putting a high price on failed attempts, pathfinding will tend towards more reliable routes even if they require a higher fee. Ultimately, the fee/reliability trade-off is up to the user to decide on.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-03T06:29:46.707255+00:00 </i></p>
     
     
 

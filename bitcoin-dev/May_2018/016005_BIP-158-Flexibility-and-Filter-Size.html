@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP 158 Flexibility and Filter Size</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Johan Torås Halseth 2018-05-22 09:23:29
+            <br><i>Published on: 2018-05-22T09:23:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_BIP-158-Flexibility-and-Filter-Size.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/016005.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Johan Torås Halseth proposed a method for light wallets to download the minimum amount of data required to operate by letting full nodes decide which subsets of elements they serve filters for. The full node would advertise that it could serve filters for the subsets 110 (txid+script+outpoint), 100 (txid only), 011 (script+outpoint) etc. This essentially removes the notion of decided filter types and instead leaves the decision to full-nodes. This would require a "getcftypes" message. The obvious benefit of this would be minimal bandwidth usage for the light client, but there are also some less obvious ones. We wouldn’t have to decide up front what each filter type should contain, only the possible elements a filter can contain. The main disadvantage of this as Johan sees it is that there’s an exponential blowup in the number of possible filter types in the number of element types. However, this would let us start out small with only the elements we need, and in the worst case the node operators just choose to serve the subsets corresponding to what now is called “regular” + “extended” filters anyway, requiring no more resources.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:31:27.598678+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

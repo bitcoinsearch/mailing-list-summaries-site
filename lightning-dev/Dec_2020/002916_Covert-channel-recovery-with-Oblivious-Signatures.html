@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Covert channel recovery with Oblivious Signatures</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2020-12-14 13:12:48
+            <br><i>Published on: 2020-12-14T13:12:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2020/combined_Covert-channel-recovery-with-Oblivious-Signatures.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002916.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses various aspects of Lightning Network protocol. The first part clarifies the goal of offering a cooperative settlement transaction upfront to the recovering party, rather than a commitment transaction. The second part talks about the consequences of using revocable signature-based channels, where if a node posts a revoked commitment tx, it loses its static secret key and all funds from all its channels with all its peers. The third part corrects a mistake regarding LND's "static channel backups" (option_data_loss_protect). The fourth part discusses the issue of data loss during network connectivity, where Ariel Lorenzo-Luaces suggests that any party refusing to go first cannot be assumed to have lost data. The fifth part counters this point, saying that there is plausible deniability because knowingly not answering a request can't be distinguished from just having connection issues or distinguished from a machine that is just turned off. It goes on to explain how dishonest counterparties can gather evidence about a recently reconnected node to evaluate the probability of data loss. The sixth part explores the idea of data loss honeypots but highlights some limitations to their implementation. Finally, the author concludes by expressing hope that most nodes are honest and that high-value channels are being handled with live replication, so there have been no issues so far.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T03:22:08.796127+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

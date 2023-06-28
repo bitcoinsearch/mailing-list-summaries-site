@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Proposal: Bitcoin Secure Multisig Setup</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Hugo Nguyen 2021-02-08 23:14:17
+            <br><i>Published on: 2021-02-08T23:14:17+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2021/combined_Proposal-Bitcoin-Secure-Multisig-Setup.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018385.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A new Bitcoin Improvement Proposal (BIP) has been proposed for Bitcoin Secure Multisig Setup (BSMS) to securely set up multisig wallets across different vendors. The proposal seeks to mitigate the risk of tampering during the initial setup phase and define an interoperable multisig configuration format, while concerns regarding Signers' storage being tamper-proof and using the multisig configuration to generate and verify receive and change addresses are out of scope. The Coordinator initiates the multisig setup and determines what type of multisig is used and how many members and signatures are needed, while the Signer provides its XPUB to the Coordinator, verifies that its XPUB is included in the descriptor record and persists the descriptor record in its storage. The setup process involves two rounds, and security is enforced through a temporary secret token used to encrypt communication between Signers and the Coordinator and descriptor checksum and visual inspection. The proposal introduces two layers of protection, namely the secret token and descriptor checksum and visual inspection. Attackers can modify the membership set by changing an existing member, removing an existing member, or adding a new member, but participating Signers can detect the changes made to their membership and reject the final descriptor.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T17:32:52.441175+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

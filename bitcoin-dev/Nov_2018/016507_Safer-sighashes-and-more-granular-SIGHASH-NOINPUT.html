@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bob McElrath 2018-11-28 00:54:16
+            <br><i>Published on: 2018-11-28T00:54:16+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016507.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author has been working on an experimental wallet that implements Bitcoin Covenants/Vaults. The concept is to deposit to an address for which you don't know the private key and instead construct a second transaction locking it for some time with a staging address for which you have the privkey. The author used Pay-to-Timelock Signed Transaction (P2TST) to achieve this. To avoid circular dependency issues, the author's construction of covenants/vaults requires NOINPUT. Sipa's proposal, which uses SIGHASH_NOINPUT | SIGHASH_SCRIPTMASK to remove scriptPubKey/redeemScript from the sighash, is compatible with the above vaulted construction. One would want to provide the fee from a separate wallet so as to be able to account for fluctuating fee pressures when the unvaulting occurs a long time after vaulting. Thus one would want to use SIGHASH_SINGLE so that a fee-wallet can add fees (or for composability of P2TSTs), and SIGHASH_NOFEE as well. The author is also excited to combine this idea with Taproot/Graftroot/g'Root.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T15:25:01.077318+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

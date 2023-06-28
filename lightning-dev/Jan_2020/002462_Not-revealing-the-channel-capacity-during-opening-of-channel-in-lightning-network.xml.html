@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Not revealing the channel capacity during opening of channel in lightning network</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> ZmnSCPxj 2020-01-27 15:19:01
-            <br><i>Published on: 2020-01-27T15:19:01+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Jan_2020/combined_Not-revealing-the-channel-capacity-during-opening-of-channel-in-lightning-network.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002462.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In the Lightning Network, nodes require proof-of-funds-locked for DoS resistance so as to rate-limit flooding the global routing table with garbage. However, allowing non-lightning "channels" (such as a contractual agreement to settle up later between two mutually-trusting parties) could be accomplished via other means. Nodes can cheat by broadcasting false information in the channel_announcement message, hence, it is required that nodes announce the outpoint (txid and vout) of the funding transaction along with the public keys and the signatures of the public keys that were used to lock the funding transaction. This information is broadcasted in the short_channel_id field which includes the block number, transaction number, and vout. Revealing channel capacity makes the channels susceptible to channel exhaustion attack or targeted node isolation attack. To prevent this, a potential solution is introducing proof of knowledge of fund locked instead of revealing the amount of fund locked by counterparties. However, the added complexity might end up requiring more data than the spam it stops. Pathfinding algorithms can just use the lower limit of the rangeproof to filter out channels too small to pass a particular payment through, as some implementations already do. Nonetheless, changing the encodings of short-channel-ids is necessary at some point even just to support channel factories.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T22:50:42.620849+00:00 </i></p>
     
     
 

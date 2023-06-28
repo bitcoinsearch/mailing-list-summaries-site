@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>blind symmetric commitment for stronger byzantine voting resilience (Re: bitcoin taint &amp; unilateral revocability)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2013-05-15 10:25:09
+            <br><i>Published on: 2013-05-15T10:25:09+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2013/combined_blind-symmetric-commitment-for-stronger-byzantine-voting-resilience-Re-bitcoin-taint-unilateral-revocability-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002589.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email, Adam Back proposes a simple, efficient, and easy-to-implement symmetric key commitment that can improve the Byzantine generals problem in Bitcoin. The commitment protocol is zero-trust in the server, but it can still extract service and some guarantees from the server. Dishonest miners/voters can refuse to include transactions in blocks that don't match their policy. However, using the commitment protocol, the sender can send the transaction direct to the receiver over a secure or non-eavesdropped channel with no P2P flood of the transaction. Once the recipient has enough confirmations, he reveals the commitment to the transaction by publishing it. Dishonest voters who apply their policy when they see the reveal triggers it must redo the work of the six-commitments that they computed themselves. The approach is composable, and the network doesn't learn the size of the transaction even though the spend grows each time. Eventually, someone will publish the confirmations to trim the transaction size. The commitment could be described as a blind symmetric commitment.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-06T17:01:03.069543+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Detailed protocol design for routed multi-transaction CoinSwap</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2020-08-25 03:16:05
+            <br><i>Published on: 2020-08-25T03:16:05+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2020/combined_Detailed-protocol-design-for-routed-multi-transaction-CoinSwap.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018141.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the usage of relative and absolute locktimes in contract transactions involving Scriptless Script, using the example of Pointlock transactions. It is explained that with absolute locktimes, participants hold only their own transaction and can define their range of fees for RBFed versions without negotiation with the other participant. Private key turnover is also discussed as a way to reduce funding lockup time for multi-hop swaps, as seen in the example of A->B->C->A routing, where private key turnover reduces blockspace required by each hop. Without private key turnover, the funding of A&B would be claimed before funding of A&C which leads to a much higher timelock. The email provides diagrams to illustrate different scenarios.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T03:17:40.012902+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Eltoo / Anyprevout &amp; Baked in Sequences</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jeremy 2021-07-12 22:07:29
+            <br><i>Published on: 2021-07-12T22:07:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2021/combined_Eltoo-Anyprevout-Baked-in-Sequences.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003129.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Anthony Towns and Jeremy on July 11, 2021, they discussed the use of a relative locktime and an absolute locktime for the same input in Bitcoin transactions. There was a disagreement over whether it should be disallowed or not. Towns suggested that using nSequence for a per-input absolute locktime would prevent reusing the same input's nSequence for a per-input relative locktime. He also mentioned a possible use case for this: cut-through of PTLC refunds when the timeout expires well after the channel settlement delay has passed. However, Jeremy clarified that he meant disallowing a relative locktime and a sequence locktime. The conversation then moved on to the topic of sequence tagged keys and sequencing restrictions. Towns shared his opinion that sequencing restrictions should be obvious from some simple combination of nlocktime/nsequence/annex so that one doesn't have to evaluate scripts/signatures to determine if a transaction is final. He proposed a general principle that evaluating a script should only return one bit of info: "bool tx_is_invalid_script_failed," while all other information should already be obvious from a "simple" parsing of the transaction. Jeremy pointed out that they don't currently have this property in Bitcoin transactions. He gave an example of a transaction that cannot be included without running the script and argued that although it is a useful property, it may not be practical. They both agreed that sequence tagged keys have the property of a transaction being either valid or invalid, which never changes without any external information needing to be passed up. Finally, they expressed their desire to separate all locktime types per input to get rid of all weirdness/overlap.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-03T05:04:31.727849+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

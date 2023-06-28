@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>New side channel attack that can recover Bitcoin keys</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Mike Hearn 2014-03-05 12:49:22
-            <br><i>Published on: 2014-03-05T12:49:22+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/March_2014/combined_New-side-channel-attack-that-can-recover-Bitcoin-keys.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004515.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A technique has been published that can recover secp256k1 private keys with the observation of OpenSSL calculating as little as 200 signatures. The attack is based on last year's FLUSH+RELOAD technique and works by observing L3 CPU cache timings and forcing cache line flushes using the clflush opcode. This technique is applicable to any x86 environment where an attacker may be able to run on the same hardware, such as virtualised hosting environments where keys are being reused. The OpenSSL's secp256k1 implementation does not seem to be completely side channel free in all aspects and many people have reimplemented ECDSA themselves, so even if OpenSSL gets fixed, the custom implementations probably won't be. In response, hot wallet users should start walking towards the exits of these shared cloud services and manage their hot wallets with dedicated hardware. While other parts of the service, like the website, are less sensitive and can still run in the cloud, it doesn't feel safe to sign transactions on these platforms. The researchers will unlikely release the code to do the side channel attack and it is rather complex to reimplement, so this gives some time for mitigation. However, with the huge sums being held in some "bitbank" style hot wallets, attackers are well motivated to pull off even quite complex attacks.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-08T03:59:48.085538+00:00 </i></p>
     
     
 

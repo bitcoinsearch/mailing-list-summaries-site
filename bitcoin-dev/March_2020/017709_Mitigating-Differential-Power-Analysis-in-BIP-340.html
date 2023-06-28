@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Mitigating Differential Power Analysis in BIP-340</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Lloyd Fournier 2020-03-24 13:00:45
+            <br><i>Published on: 2020-03-24T13:00:45+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2020/combined_Mitigating-Differential-Power-Analysis-in-BIP-340.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017709.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The post discusses the security of a new PR to change BIP-340, which includes adding random auxiliary data into the nonce derivation function to make it more secure against "differential power analysis" (DPA) attacks. The post questions the claim that this new approach is more secure than the simpler and more efficient method currently being used. The author argues that there is no advantage of the new approach over the current one against DPA attacks. The post provides an explanation of DPA attacks and how they work, as well as two papers that may have been the origin of the idea for the new approach. The post goes on to explain that the original nonce derivation in BIP-340 was vulnerable to DPA attacks because the SHA256 compression function run on (sec_key || message) may leak information about sec_key. The new approach adds secret randomness before each sensitive operation and then strips off the secret randomness afterwards to fix this problem. However, the author argues that this new approach does not provide any extra protection over the current method. The post concludes that the current method is preferable because it is simpler and more efficient, and no less secure against DPA attacks. The author suggests that if there is a justification for the new approach over the current one that they do not understand, someone needs to write it down. The post provides links to relevant papers and sources for further reading.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-14T00:12:13.756265+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

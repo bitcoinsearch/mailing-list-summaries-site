@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Splicing Proposal: Feedback please!</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-10-16 11:16:26
+            <br><i>Published on: 2018-10-16T11:16:26+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Oct_2018/combined_Splicing-Proposal-Feedback-please-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001458.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The architecture of c-lightning assigns a separate process to each peer, which handles only a single channel. Changing this architecture would be difficult as some of the channel initiation and shutdown protocols are written directly in C code. There is no fundamental reason why nodes cannot create multiple channels, but personally, there may not be a need to do so as it can become less like a network and more like specific channels to big businesses. Initiator distinction should not be done away with as an initiatee could be forced to pay fees they did not voluntarily consider paying.There is no agency that prescribes what should or should not be developed, and anyone can start working on items they think are a higher priority than splicing. "Pre-seating of inputs" is cool as it would allow clients to generate addresses where others can deposit funds, which can then be spliced directly into the channel. This can be done by the client software without modifications to the Lightning Network BOLT protocol.Each channel has two public-key-derivation paths to create on-chain addresses, and when somebody sends to one of the on-chain addresses, their client detects this and initiates a splice-in automatically from this UTXO paying to that address into the channel. The base of this is a combined private-public keypair of both sides created via MuSig or some other protocol. However, this seems unsafe without trust in the other peer as the other party can refuse to create the new commit transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-25T14:25:18.486285+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

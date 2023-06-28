@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Generalised Replay Protection for Future Hard Forks</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Sjors Provoost 2017-11-09 21:01:10
-            <br><i>Published on: 2017-11-09T21:01:10+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2017/combined_Generalised-Replay-Protection-for-Future-Hard-Forks.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-November/015272.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion on the bitcoin-dev mailing list, Jacob Eliosoff asked about the validity of an address across various forks. He suggested that while a private key in cold storage would remain valid across hard forks, an address would only be valid for the fork it was generated for. However, he raised the possibility of scenarios where it might be necessary for an address to be valid across all chains, such as to intentionally allow replay protection. The proposal suggests that nForkId could be used to specify the fork in bech32. While nForkId is only in the transaction signature pre-image and not in the serialized transaction, a node would just need to check if the signature is valid. The purpose of nForkId 1 is unclear, but it may provide a way to opt-out of replay protection of any fork, where deemed necessary (can be beneficial for some L2 applications). In Spoonnet, the version number is added to the SIGHASH_TYPE in the pre-image.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T22:02:01.517508+00:00 </i></p>
     
     
 

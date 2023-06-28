@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Taproot activates - A time/block line</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> 0xB10C 2021-11-24 17:29:54
+            <br><i>Published on: 2021-11-24T17:29:54+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2021/combined_Taproot-activates-A-time-block-line.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019608.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The recent soft fork activation has highlighted some issues with Taproot readiness among mining pools. F2Pool and AntPool, the third and fifth biggest pools respectively, were slow to upgrade their nodes to include P2TR spends. An engineer from F2Pool reached out for help debugging the issue and it was discovered that they were not connected to any P2TR-spend-relaying peers. This issue was caused by a custom patch to their node's peer selection behavior based on a heuristic that had broken unnoticed. F2Pool has since fixed this problem.AntPool also had issues with P2TR spends, but they were quick to react once notified. They had tested version 22.0 and planned to update soon. The old peer issue that F2Pool faced "may be the issue" according to Alejandro De La Torre (@bitentrepreneur), who communicated with AntPool.It is believed that some mining pools were signaling readiness without being fully prepared due to community pressure or running nodes with custom patches. It was suggested that there could be a feature implemented to alert/warn a node operator if his node does not have any peers relaying a particular soft-fork transaction. This could be done through a getnodealerts RPC that a node operator can hook up to his monitoring. Additionally, for the next soft-fork where relay is affected, instructions for mining pool signaling could state: "Upgrade to version Z and make sure you have a few version Z peers before starting to signal readiness".</p>
+    <hr>
+    <p><i> Updated on: 2023-06-15T03:00:33.409347+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

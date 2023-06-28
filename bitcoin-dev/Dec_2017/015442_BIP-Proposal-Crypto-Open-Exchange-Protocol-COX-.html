@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP Proposal: Crypto Open Exchange Protocol (COX)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Nicolas Dorier 2017-12-20 06:28:07
+            <br><i>Published on: 2017-12-20T06:28:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2017/combined_BIP-Proposal-Crypto-Open-Exchange-Protocol-COX-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015442.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Nicolas Dorier, a developer, has proposed a simple protocol called Crypto Open Exchange Protocol (COX), which aims to decouple payment processors from exchanges. The existing cryptocurrency merchant adoption solutions fall into one of two categories: self-hosted with the customer paying in cryptocurrency and the merchant receiving it directly; or centralized and coupled with an exchange feature, with the customer paying in cryptocurrency to the merchant, and then receiving fiat or cryptocurrency on his exchange account. Both have their own issues, ranging from volatility concerns to being locked-in to a particular payment processor. COX aims to solve these issues by giving customers the freedom to choose their own payment processor solution while exchanges give them a way to protect against cryptocurrency volatility. The COX protocol is a simple process where the merchant logs in to their exchange website, goes to the "Address sources" section of it, and clicks on "Create a new address source". They are then asked what to do when cryptocurrency is sent to this address source, and receive an "address source URI" which they can input inside the payment processor. An exchange compatible with COX would reply to any HTTP POST request to this "address source URI", returning the following information: a deposit address for accepting payment, the current rate, and if willing to take the risk of rate fluctuation, until when this rate is guaranteed and under which conditions.The COX protocol is aimed towards local exchanges that do not have the resources to develop their own payment solutions, and COX will give them a way to compete with larger exchanges like Bitpay. Although local exchanges have incentives to implement this simple protocol, it is not strictly needed. An alternative is to develop an adapter server which exposes a COX endpoint and connects to underlying exchange's API, but this means that the rate cannot be guaranteed.The protocol is currently a draft and can be found on Github. It is dual-licensed as BSD 3-clause and Creative Commons CC0 1.0 Universal.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T04:35:07.711281+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

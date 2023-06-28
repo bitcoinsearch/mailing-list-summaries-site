@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ark: An Alternative Privacy-preserving Second Layer Solution</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2023-05-24 00:40:42
+            <br><i>Published on: 2023-05-24T00:40:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2023/combined_Ark-An-Alternative-Privacy-preserving-Second-Layer-Solution.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021709.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The conversation between Burak and ZmnSPCxj revolves around the risks involved in Lightning payments. Lightning payments are routed through ASPs, which may not cooperate in forwarding HTLC(s) after double-spending their pool transaction. However, it's a footgun if ASP forwards HTLC(s) before double-spending their pool transaction. Competent coders test their code for footguns before deploying in production. The difference between Ark and Lightning is that once confirmed, the LSP can no longer attack you, whereas with Ark, there is always an unconfirmed transaction that can be double-spent by the ASP, so that the ASP can attack at any time. Swap-ins require users to wait for on-chain confirmations before revealing their preimage of the HODL invoice; otherwise, the swap service provider can steal users' sats by double-spending their zero-conf HTLC. If by "swap-in" you mean "onchain-to-offchain swap" then it is the user who can double-spend their onchain 0-conf HTLC, not the swap service provider.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:32:30.630397+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

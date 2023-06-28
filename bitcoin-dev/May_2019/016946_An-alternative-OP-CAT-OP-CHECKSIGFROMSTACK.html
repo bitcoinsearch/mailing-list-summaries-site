@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>An alternative: OP_CAT &amp; OP_CHECKSIGFROMSTACK</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Russell O&#39;Connor 2019-05-22 21:01:21
+            <br><i>Published on: 2019-05-22T21:01:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2019/combined_An-alternative-OP-CAT-OP-CHECKSIGFROMSTACK.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016946.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In recent times, there have been two tapscript proposals, SIGHASH_ANYPREVOUT and OP_CHECKOUTPUTHASHVERIFY, that aim to enable specific new features for Bitcoin via new Script operations. However, the author argues that these proposals miss the mark when it comes to how Bitcoin Script and language features should be approached. Bitcoin Script is intended to be a flexible programmable system that provides generic features to achieve various purposes. Therefore, new language features for Script should strive to build general-purpose tools that can be used for a variety of purposes. The author feels that the SIGHASH_ANYPREVOUT and OP_CHECKOUTPUTHASHVERIFY proposals fail to achieve these design goals as they are designed with very narrow applications in mind, while also extending the semantic domain of the interpretation of Bitcoin operations in new ways that complicate their specification. Instead, the author proposes the implementation of OP_CAT and OP_CHECKSIGFROMSTACKVERIFY, which are straightforward opcodes whose semantics are pure computational operations on stack values. The OP_CAT opcode pops two byte arrays off the stack and pushes their concatenation back onto the stack, whereas the OP_CHECKSIGFROMSTACKVERIFY opcode pops a signature, message, and pubkey off the stack and performs a bip-schnorr verification on the SHA256 hash of the message. These two operations enable Oracle signature verification, amortized secure multiparty computations, transaction introspection, weak covenants, and more applications. The author believes that this style of generic building blocks truly embodies what is meant by "programmable money." Although without an OP_PUBKEYTWEEK operation available, the more interesting recursive-covenants remain largely out of reach, with the exception of a recursive covenant that is only able to send back to its own address, possibly abusing its own TXO value as a state variable. Furthermore, adding these operations does not preclude adding more specialized opcodes in the future as an optimization for whatever popular constructions come up, once we know what those are.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T18:59:24.739853+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

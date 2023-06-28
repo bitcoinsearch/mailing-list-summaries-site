@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Standardisation of an unstructured taproot annex</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2023-06-13 08:51:39
+            <br><i>Published on: 2023-06-13T08:51:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/June_2023/combined_Standardisation-of-an-unstructured-taproot-annex.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021767.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between Joost Jager and Dave, they discussed the issue of op-dropped partial signature for an ephemeral key not being committed to and can be modified by anyone before it is mined. Joost was looking for a bitcoin-native solution to leverage bitcoin's robustness and security properties. Dave pointed out that storing signatures for each potential transaction in the annex would make the vault protocol less scalable and less efficient. He suggested storing a large amount of data offchain with high robustness instead. Dave also mentioned that a presigned vault might have advantages over a solution like OP_VAULT as all actions could use keypath spends, making it highly efficient and more private. Additionally, he said it would be interesting to have an alternative vault protocol that offered different tradeoffs.Dave responded to Joost's point that the years-long timeline for witness replacement to become effective is indicative of the need to have an alternative way to relay transactions to miners besides the p2p network. He stated that any alternative relay system would need to solve the same problems as Bitcoin Core's policy, which is designed to prevent abuse of relay node resources and serve the transaction selection needs of miners. He said that ideas for alternative relay-like those previously proposed on the list avoid certain problems but create new ones. Dave provided specific examples of how an alternative relay network naively implementing annex relay could reduce a transaction's feerate, leading to miners receiving lesser revenue. He also added that there is no clear winner for general-purpose transactions, and it's a matter of tradeoffs. Finally, Dave suggested that a good solution is not to use the blockchain to store backup data.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-16T18:43:29.645903+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

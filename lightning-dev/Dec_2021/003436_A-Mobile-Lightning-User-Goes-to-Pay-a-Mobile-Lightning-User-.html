@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>A Mobile Lightning User Goes to Pay a Mobile Lightning User...</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Matt Corallo 2021-12-27 19:12:10
+            <br><i>Published on: 2021-12-27T19:12:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Dec_2021/combined_A-Mobile-Lightning-User-Goes-to-Pay-a-Mobile-Lightning-User-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003436.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email discussion, Matt Corallo and Rusty Russell talked about the challenges of sending invoices when using bolt12. One issue that arose was the inability to preprint amountless invoices because each invoice must contain an amount. This is different from bolt11, where you can receive a receipt but no amount. To address this problem, they proposed a generic authorization mechanism with a fallback node. The offer would contain a fallback node that would either return an invoice signed by the expected node or one signed by itself and an authorization from the expected node. The authorization could be specific to a certain offer or amount, or have an expiry. This method allows for users to choose the trust model they want. Additionally, the fallback node could provide an onion message notification service to avoid polling. Matt agreed with this proposal and suggested that for the tipping use-case, it would be acceptable to include a BOLT-12 response without an amount included under the signature, as long as a signed amount from the fallback node is provided.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T16:42:39.907895+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

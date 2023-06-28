@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment channel without timeout protected from malleability</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2015-11-27 09:10:13
+            <br><i>Published on: 2015-11-27T09:10:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2015/combined_Payment-channel-without-timeout-protected-from-malleability.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000356.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email thread discusses a way to open a channel without suffering from malleability attack. It is suggested by adapting an idea from gmaxwell, which requires A to ask B pubkey and then create the first commitment transaction. A extracts the hash that B needs to sign to be able to broadcast the commitment and then asks B to sign the hash but does not disclose the commitment. After broadcasting the anchor and confirmation, A announces the anchor to B. However, there are some concerns raised regarding the process. Firstly, 'without timeout' is only possible with OP_CSV - not naturally with what we have currently. Secondly, to build a valid payment channel on top of the anchor, B has to be sure that A cannot get her money back at any point in the future. Lastly, while this is a fair setup already, it does only protect against targeted attacks against a specific transaction, leaving a chance for someone to lose money doing that.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T21:44:42.000461+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

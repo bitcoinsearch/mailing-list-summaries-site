@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[VERY ROUGH DRAFT] BOLT 12: Offers</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Yaacov Akiba Slama 2019-11-13 21:46:49
+            <br><i>Published on: 2019-11-13T21:46:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2019/combined_-VERY-ROUGH-DRAFT-BOLT-12-Offers.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002325.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Rusty Russell, a developer in the Lightning Network (LN), has expressed his opinion on integrating LN with Universal Business Language (UBL). He compared UBL treating LN as a dumb payment layer to faxing email and not something he would promote. However, he acknowledged that we can integrate between them without intermixing the semantics of the protocols, but only defining the interaction points between them. For instance, the seller can use H(Quotation (UBL)||Order(UBL)||Prepayment Invoice(UBL)) in the LN invoice and use H(Receipt(UBL)) as preimage to tie the workflow. Despite the property of UBL being non-machine handlable, the cryptographic properties of LN are still used to tie the workflow. Russell noted that the full UBL specification is machine-parsable but not designed to be machine-handlable. However, for the simpler case of an offer->purchase flow, we can define a subset of UBL for which this can be done and a further-limited subset, which must be examined by the user. In addition, the atomic nature of LN needs to be baked into the protocol. We need to define UBL extensions for the LN fields to tie them all together (e.g. payment_hash, node_id) and define a transport mechanism for these over the Lightning Network. Russell believes that this is quite possible, but it will take time and a significant amount of work. Thus, he needs to be sure that others feel the same way before embarking on this project. Finally, Rusty Russell pointed out that none of the UBL examples fit into the 1023 byte limit of the existing invoice format, even when compressed. Moreover, he agreed that duplication should be avoided, and proposed using only ubl structure and adding in the ln standard invoice an ubl "opaque" field, which will be self-contained and only add the fields specific to ln. However, he noted that many UBL fields are not amenable to machine interpretation (e.g. note fields), which must be explicitly exposed to the buyer in case the seller uses them, such as shipping conditions, or explicitly forbidden/ignored. Therefore, he called on experts in this area to form a sub-group to investigate this properly.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T21:39:44.701040+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Probing final receiver with refund timeout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2016-03-08 15:36:21
+            <br><i>Published on: 2016-03-08T15:36:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2016/combined_Probing-final-receiver-with-refund-timeout.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000472.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>On the Lightning-dev mailing list, Mats Jerratsch of Blockchain.com has discovered a vulnerability in onion routing that could allow an attacker to initiate a probing attack by setting too short of an absolute CLTV refund timeout. Rusty Russell suggests mitigating this particular attack by remembering the onion and always failing an identical one. Furthermore, Rusty suggests randomizing the timeout for the next hop, at least subtracting (MIN_TIMEOUT to MIN_TIMEOUT*2), and also questions what the HTLC timeout should be set to initially. Rusty suggests using timestamps in the onion object as the described attack vector still exists.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:39:14.281935+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>New side channel attack that can recover Bitcoin keys</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Eric Lombrozo 2014-03-05 22:14:20
+            <br><i>Published on: 2014-03-05T22:14:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2014/combined_New-side-channel-attack-that-can-recover-Bitcoin-keys.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-March/004526.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this conversation, Eric Lombrozo suggests a way to implement a constant-time constant-cache-access-pattern secp256k1 based on the concept of branchless implementations of the field and group operations. Gregory Maxwell warns that branchless does not necessarily mean side-channel free and uniform memory accesses are also needed for non-trivial hardware. He also mentions the importance of avoiding address reuse and using a blinding approach to protect against side-channels. The main attack point discussed is differences in how squaring and multiplication or doubling and point addition are performed in the case of field exponentiation or ECDSA, respectively. A branchless implementation where each phase of the operation executes the exact same code and accesses the exact same stack frames would not be vulnerable to FLUSH+RELOAD. The suggested approach makes doubling operations indistinguishable from point additions from the perspective of cache access. The spy program mentioned in the discussion recovers the sequence of point additions and doublings by distinguishing between consecutive doubling operations and ordering them with respect to point additions.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T03:59:08.504115+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

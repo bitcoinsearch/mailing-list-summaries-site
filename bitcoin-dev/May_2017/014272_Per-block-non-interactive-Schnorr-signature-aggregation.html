@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Per-block non-interactive Schnorr signature aggregation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> adiabat 2017-05-07 06:45:00
+            <br><i>Published on: 2017-05-07T06:45:00+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2017/combined_Per-block-non-interactive-Schnorr-signature-aggregation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014272.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The implementation of Schnorr signatures in a future witness version could lead to non-interactive partial aggregation of the signatures on a per-block basis, thereby saving space. It appears to have no security issues, but the author is seeking feedback from the mailing list to identify any vulnerabilities. The signature process involves private keys multiplied by a generator to get a public key, after which signers calculate 's' values that are used to create a signature. Interactively, aggregate signatures can be made by cosigners who share their R values to build an aggregate R value. Non-interactively, half the signature can be aggregated, and the s-values can be summed up. When making transactions, wallets can sign in the normal way, and the signature consisting of [R, s] goes into the witness stack. Miners remove the s-value from all compatible inputs when generating a block and commit to the aggregate s-value in the coinbase transaction. The advantages of this method include the ability to fit more signatures in a block, taking up less disk and network space, and speeding up block verification.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T02:11:38.782938+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

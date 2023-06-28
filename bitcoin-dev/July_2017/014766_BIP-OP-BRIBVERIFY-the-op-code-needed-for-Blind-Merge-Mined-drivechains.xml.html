@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BIP: OP_BRIBVERIFY - the op code needed for Blind Merge Mined drivechains</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Paul Sztorc 2017-07-13 00:00:29
-            <br><i>Published on: 2017-07-13T00:00:29+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/July_2017/combined_BIP-OP-BRIBVERIFY-the-op-code-needed-for-Blind-Merge-Mined-drivechains.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-July/014766.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion revolves around the efficiency of Bitcoin in equilibrium, including Lightning Network or something LN-like. The scenario assumes N sidechains, with two different versions: coinbase and OP_RETURN. In the coinbase version, there is a single event per N that causes nodes to notice a new sidechain has been created. Per block, there are N hash commitments and N instances of the ratchet's block counter. A miner may redeem an OP Bribe that pays BTC from a sidechain node operator to the miner, but they are likely to negotiate the payment through the Lightning Network. Sidechains running in SPV mode know exactly where to find the information they need to discover the "longest" chain. In the OP_RETURN version, there is no need for a new transaction. Due to Rusty's soft fork rule of only one h* per sidechain per block, sidechains need just a merkle tree path, but they don't necessarily know where it is. They must store extra data to help them find the data's location. The purpose of Rusty's soft fork rule about only including one per sidechain is to ensure miners have one "slot" per sidechain, which would incentivize them to select the highest fee txn to fill each slot.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-12T03:02:46.525770+00:00 </i></p>
     
     
 

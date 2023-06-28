@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Continuing the discussion about noinput / anyprevout</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Anthony Towns 2019-10-03 01:47:58
-            <br><i>Published on: 2019-10-03T01:47:58+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/Oct_2019/combined_Continuing-the-discussion-about-noinput-anyprevout.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002193.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>A proposal has been made on the Lightning-dev mailing list to remove SIGHASH from signatures and put it on public keys. This proposal would solve issues with SIGHASH_NONE and SIGHASH_SINGLE, as they would only be allowed if specified by the output. However, the proposed solution may be confusing for key path versus script path spends. The proposed change does not appear to be reasonable for key path spends, as including the sighash as part of the scriptpubkey could lose some of the indistinguishability of taproot addresses and be more expensive than having the sighash in witness data. Problems with NONE and SINGLE are no worse than using SIGHASH_ALL to pay to "1*G". NOINPUT/ANYPREVOUT is a greater concern and committing to enabling NOINPUT for an address may make sense. According to one perspective, a transaction spending UTXO "U" to address "A" can be viewed as having "script", "sighash", nlocktime, nsequence, and taproot annex expressions of conditions on the transaction. In this view, sighash is actually an extremely simple scripting language with a total of six possible scripts. Additionally, graftroot allows updating of conditions for address "A" after the fact.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-23T02:15:55.864525+00:00 </i></p>
     
     
 

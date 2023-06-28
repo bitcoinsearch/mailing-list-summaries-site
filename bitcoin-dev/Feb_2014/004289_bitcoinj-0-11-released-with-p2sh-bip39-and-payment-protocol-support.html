@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>bitcoinj 0.11 released, with p2sh, bip39 and payment protocol support</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Brooks Boyd 2014-02-05 15:09:31
+            <br><i>Published on: 2014-02-05T15:09:31+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Feb_2014/combined_bitcoinj-0-11-released-with-p2sh-bip39-and-payment-protocol-support.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-February/004289.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The discussion revolves around the use of XOR in a Merkle Tree to timestamp data at the bottom of the tree. While it is possible to successfully timestamp the top digest in the Bitcoin blockchain, there are concerns about the digests at the bottom of the tree. The problem arises because an attacker can create arbitrary values that XOR together into the root hash of the tree, and claim that a particular value is part of the tree by providing its sibling. To illustrate this, a tree with five levels is provided, where G is the root hash and A is the legitimate data included in the tree. An attacker could make up an arbitrary set of values that XOR together into G and claim that Z is part of the tree by providing Y. However, if A is also trying to prove that it is part of G, then one of the two users is lying, and the deceit is obvious.To make the attack more convincing, the attacker can work off of the lowest branch provided by A in its verification and create fake data such that it can claim that Z is part of G by supplying Y, C, and F. Since G was verified by timestamp, it appears that Z existed before that timestamp, when in reality, it could be added at any time by calculating Z XOR D.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T02:18:23.524844+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Changing the fee on already sent transactions <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002240_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Peter Todd 2013-03-12 09:47:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002257_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Gregory Maxwell 2013-03-12 13:06:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002257_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Gregory Maxwell 2013-03-12 13:06:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002258_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Luke-Jr 2013-03-12 13:10:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002257_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Gregory Maxwell 2013-03-12 13:06:49</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002240_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Peter Todd 2013-03-12 09:47:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002258_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Luke-Jr 2013-03-12 13:10:20</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002240_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Peter Todd 2013-03-12 09:47:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/March_2013/002258_Changing-the-fee-on-already-sent-transactions.html">Changing the fee on already sent transactions</a>
+                        <b>Luke-Jr 2013-03-12 13:10:20</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-March/002240.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2013-03-12T09:47:00+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The proposal of allowing transaction replacement for adding fees to existing transactions without the risk of double-spending has been suggested. The stubbed out replacement code would be used to replace a transaction only if another transaction spending the same tx is not already present in the mempool. The replacement code checks for conflicts with in-memory transactions and sets up a new transaction in place of the old one if the condition mentioned above is met. To ensure safety, it is crucial to check for any conflicting transactions in the mempool before replacing the old one. Peter Todd, a Bitcoin developer, proposed changing the replacement logic for Bitcoin transactions to evaluate if the candidate replacement does not remove or decrease the value of any existing outputs. This change would prevent DoS attacks by only accepting replacements that increase the fees paid by at least MIN_RELAY_TX_FEE * size. He believes that implementing this new logic correctly would be easier than child-pays-for-parent and could reduce the urgency of including child-pays-for-parent in Bitcoin. In a message sent on March 12, 2013, Peter Todd discussed the possibility of transaction replacement for adding fees to existing transactions. He noted that adding fees was already possible by respending change, at least for miners running an Eligius branch (both 0.6.0 and 0.8.0).</p>
+        <hr>
+        <p><i>Updated on: 2023-06-06T10:57:35.766912+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Debate: 64 bytes in OP_RETURN VS taproot OP_FALSE OP_IF OP_PUSH</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Russell O&#39;Connor 2023-02-05 00:11:35
-            <br><i>Published on: 2023-02-05T00:11:35+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2023/combined_Debate-64-bytes-in-OP-RETURN-VS-taproot-OP-FALSE-OP-IF-OP-PUSH.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021432.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The discussion on the bitcoin-dev mailing list centers around the cost of bytes in the witness versus the script pubkey. There is a crossover point in data size where it becomes cheaper to use witness data, but the specific number depends on the overhead of each method. A calculation based on reasonable assumptions could be used to propose an OP_RETURN proposal. A member of the mailing list, Aymeric Vitte, asks for advice on a number to use as a limit for the bitcoin-transactions nodejs module. He notes that the current limit from the specs is 512B and that increasing the limit is necessary due to the IF/ENDIF "unlimited" storage rule in bitcoin which mimics ethereum for the worse and is questionable to use. Christopher Allen suggests using 520 as the limit since it is similar to the limit in taproot, while also considering hash, signature, and metadata to satisfy others. The discussion continues on the mailing list.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-16T04:13:32.487073+00:00 </i></p>
     
     
 

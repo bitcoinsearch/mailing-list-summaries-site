@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[RFC] Lightning payment format</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Olaoluwa Osuntokun 2017-05-01 18:03:08
+            <br><i>Published on: 2017-05-01T18:03:08+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/May_2017/combined_-RFC-Lightning-payment-format.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000686.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Laolu is responding to Rusty's draft format for requesting lightning payments and implementation. He expresses his appreciation for the flexibility of the tag format and discusses how developers can utilize tag-based payment requests in conjunction with either spare bytes of the onion payload or an abuse of the encrypted back errors. Laolu also shares his opinion on using bech32 outside of the initial prefix and questions its usefulness since payment requests can get long, making manual entry unlikely. He also suggests replacing chanID with the compressed serialized public key to enable users to immediately verify the signature without the use of an external mapping.Rusty's draft format for requesting lightning payments uses an 8-byte chanid to refer to the destination instead of a full 33-byte pubkey, and it relies on the fact that the network topology is well-known. The representation size ranges from ~181 characters upwards, and at least 5 characters could be squeezed out if optimization was necessary. Bech32 only guarantees to detect three errors beyond 1024, but the signature serves as the final error detection. Rusty welcomes feedback on the draft format.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-19T15:59:55.743544+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

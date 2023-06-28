@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Bech32 weakness and impact on bip-taproot addresses</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Eric Voskuil 2019-11-08 03:15:53
-            <br><i>Published on: 2019-11-08T03:15:53+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2019/combined_Bech32-weakness-and-impact-on-bip-taproot-addresses.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017447.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a recent email thread among Bitcoin developers, Pieter Wuille noted that in the current draft, witness v1 outputs of length other than 32 remain unencumbered. This means that such an insertion or erasure would result in an output that can be spent by anyone, which might be considered unacceptable. One possible solution to prevent this is to outlaw v1 witness outputs of length 31 and 33. However, this would require everyone using a bech32 library supporting v1+ segwit to upgrade their library, as users of old libraries will still attempt to pay v1 witness outputs of length 31 or 33. As an alternative solution, David A. Harding suggests fixing the problem at the bech32 algorithm level rather than at the consensus/standardness layer. This way, upgrading the bech32 library would be sufficient to prevent the issue, without requiring additional changes to the consensus rules. As an implementer of both the address encoding and script validation, he agrees with this approach. Overall, this discussion highlights the importance of addressing potential issues related to changes in the Bitcoin protocol, and the need for developers to stay up-to-date with the latest developments.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-13T22:07:52.683371+00:00 </i></p>
     
     
 

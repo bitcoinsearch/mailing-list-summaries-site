@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Malice Reactive Proof of Work Additions (MR POWA): Protecting Bitcoin from malicious miners</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Natanael 2017-04-17 22:34:55
+            <br><i>Published on: 2017-04-17T22:34:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/April_2017/combined_Malice-Reactive-Proof-of-Work-Additions-MR-POWA-Protecting-Bitcoin-from-malicious-miners.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-April/014194.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev message, Erik Aronesty expressed his regret over the inability to make Proof-of-Work (PoW) dynamic enough to prevent specialized hardware and allow only GPU/FPGA. He suggested using a variant of Keccak where the sponge size increases with additional zero bits required. However, for this to work, SHA3 would have to be compromised, or else it would resist specialized hardware. SHA3 already has a mode called SHAKE, an extensible output function (XOF), which is like a hash with arbitrary output length.A possible solution to changing PoW could be an algorithm that's moderately processing heavy, resists partial state reuse, and has an existing reference implementation for hardware that's close in performance to the theoretical ideal implementation. Anything relying on memory or other expensive components is likely to fail eventually as fast memory becomes more compact, cheaper, and closer to the cores. To level the playing field in ASIC manufacturing, there shouldn't be any fancy tricks to deploy to give one player an unfair advantage. The competition should mostly be about packing similar gate designs closely and energy efficiency.Finally, the nonce in the header should be larger if possible, reducing the incentive to mess with the entropy elsewhere in blocks.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T22:15:39.321769+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

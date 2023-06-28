@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Making OP_TRUE standard?</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2018-05-09 03:02:37
+            <br><i>Published on: 2018-05-09T03:02:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/May_2018/combined_Making-OP-TRUE-standard-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015934.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion among Bitcoin developers, Rusty Russell expressed that the largest problem with the Lightning protocol is trying to predict future fees. To address this issue, he proposed including a 546 satoshi OP_TRUE output in commitment transactions. However, as a raw 'OP_TRUE' is non-standard, it would have to be P2SHed at the moment. Olaoluwa Osuntokun suggested using p2wsh instead, which can be rolled out immediately without requiring policy changes. In response, ZmnSCPxj explained that P2WSH is larger due to the script hash commitment in the `scriptPubKey` as well as the actual script revelation in the `witnessScript`, whereas a flat OP_TRUE in the `scriptPubKey` is much smaller and can be spent with an empty `scriptSig`. The desire for an isStandard OP_TRUE seems to be solely based on its smaller size.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-13T02:05:51.403569+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

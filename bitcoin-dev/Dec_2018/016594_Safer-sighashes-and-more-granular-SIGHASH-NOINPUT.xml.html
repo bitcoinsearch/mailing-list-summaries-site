@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Safer sighashes and more granular SIGHASH_NOINPUT</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Johnson Lau 2018-12-24 21:23:44
-            <br><i>Published on: 2018-12-24T21:23:44+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Dec_2018/combined_Safer-sighashes-and-more-granular-SIGHASH-NOINPUT.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016594.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In a discussion about proposed uses of CODESEPARATOR, a script was provided that involved two separate scripts. The first script (S1) contained the OP_CHECKSIGVERIFY and OP_CHECKSIG commands, while the second script (S2) contained the commands OP_CSV, OP_DROP, and OP_CHECKSIG. Under taproot, it is possible to make Q = P + H(P||S2)G, where P = MuSig(KeyA, KeyB), making S1 a direct spending with Q, eliminating the need for OP_IF or CODESEPARATOR in S2 altogether. There was also discussion of using CODESEPARATOR to force R reuse, but it was noted that this could be achieved with fewer bytes without its use. It was suggested that a much better way would be to use SWAP CAT CHECKSIG. Additionally, it was mentioned that the discrete log of R could be a shared secret between A and B, and if the purpose was to publish the private key to the whole world, R = G could be used.Finally, there was mention of a previous email on Lightning-dev about the use of CODESEPARATOR to impose Scriptless Script even without Schnorr. This involved three signatures with different CODESEPARATOR places and forced R reuse so that the signatures to claim funds revealed the privkey. However, the script shown had all CODESEPARATOR in a single branch, and the details were difficult to parse through the mailing list.</p>
-    <hr>
-    <p><i> Updated on: 2023-05-20T18:01:50.451364+00:00 </i></p>
     
     
 

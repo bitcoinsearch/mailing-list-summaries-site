@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[BIP] Normalized transaction IDs</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> s7r 2015-11-05 22:46:19
-            <br><i>Published on: 2015-11-05T22:46:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2015/combined_-BIP-Normalized-transaction-IDs.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011670.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The message discusses the issue of malleability in Bitcoin transactions. It is stated that wallets are covering malleability in acceptable ways, but there are problems with second and third level malleability. For example, if Alice sends txB to Bob which spends from txA that is unconfirmed, and txA changes its transaction ID due to malleability, txB becomes useless and invalidates Alice's payment. Looking at scriptPubKeys instead of transaction IDs doesn't help in this context.The author also mentions that some types of contracts are not workable or not 100% safe due to malleability. One cannot pre-sign a refund transaction with an nLockTime in the future because if the transaction ID of the funding transaction is affected by malleability, the refund transaction becomes useless. The author disagrees with Luke Dashjr's point that "signature malleability" alone is not particularly problematic or interesting. The author states that segregated witnesses can be very useful in some practical cases by solving all signature malleability. However, the author notes that they do not want to eliminate all forms of malleability, although they may want to "address them" at some level. Wallets should be looking at scriptPubKeys, not transaction IDs, but this is orthogonal to segregated witnesses, a normalized tx ID, and signature malleability.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T00:31:59.411484+00:00 </i></p>
     
     
 

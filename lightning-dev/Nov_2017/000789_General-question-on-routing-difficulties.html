@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>General question on routing difficulties</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christian Decker 2017-11-17 13:04:21
+            <br><i>Published on: 2017-11-17T13:04:21+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Nov_2017/combined_General-question-on-routing-difficulties.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-November/000789.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation between Benjamin Mord and Ivan, routing protocol in the Lightning Network was discussed. The current protocol is a minimally viable one where the entire network’s topology is pushed to the edges, allowing local computation of routes. However, it is still in flux and better solutions are being explored. For now, the network can scale up to about 1 million channels and upgrading to another protocol later on is simple. Centralizing flow through a small number of liquidity providers is economically probable at present unless off-chain channel rebalancing mechanisms like the recently proposed “revive” protocol come about. There are doubts that hubs will form as they are extremely costly to create since they will have to allocate sufficient funds to cover the maximum imbalance of all their channels ahead of time. Furthermore, the fees must cover the opportunity cost of allocating all those funds to channels instead of investing them somewhere else. It opens up an opportunity for nodes to open bypasses that grab some of the traffic and associated fees from the expensive hub. Rebalancing is possible, even without existing techniques, as long-term imbalances can be solved by opening another channel. Transaction fees are greatly reduced as only channel setup/teardown is required. Even if txin fees made fraud claims marginally unprofitable (yet practical), that would still be okay. By aggregating payments off-chain, fees can be aggregated and used to pay on-chain fees. Automations are being built to take care of this and improve the network topology without user intervention.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T02:58:22.974514+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scaling by Partitioning</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Akiva Lichtner 2015-12-08 21:41:07
+            <br><i>Published on: 2015-12-08T21:41:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Dec_2015/combined_Scaling-by-Partitioning.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011905.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The idea proposed for scaling Bitcoin involves running more than one simultaneous chain, each chain defeating double spending on only part of the coin. The coin would be partitioned by radix or modulus, for example, to multiply throughput by a factor of ten, ten parallel chains could be run, one working on coins that end in "0," one on coins that end in "1," and so on up to "9." The number of chains could increase automatically over time based on the moving average of transaction volume. Payment recipients would need to operate a daemon for each chain, thus guaranteeing no scaling advantage. Blocks would have to contain the number of the partition they belong to, and miners would have to round-robin through partitions so that an attacker would not have an unfair advantage working on just one partition. If the system is modified to scale up, that means the number of transactions is going up. That means the number of miners can also go up, and so will the portion of malicious nodes. Since there are N times more miners, each miner still does the same amount of work. The system scales by partitioning the money supply and increasing the number of miners.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T01:54:56.833265+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

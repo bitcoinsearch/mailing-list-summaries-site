@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>[patch] Switching Bitcoin Core to sqlite db</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Simon Liu 2015-10-30 03:04:19
-            <br><i>Published on: 2015-10-30T03:04:19+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Oct_2015/combined_-patch-Switching-Bitcoin-Core-to-sqlite-db.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011634.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>The storage of unspent transaction output (UTXO) data is considered critical, and its implementation plays a vital role in ensuring consensus protocol success. Despite UTXO storage being an implementation detail, the choice of database could affect the chances of consensus protocol failure. Btcd, a full node implementation written in Go, provides a database interface that supports different backends such as LevelDB, SQLite, Oracle, and DB2. As UTXO storage is crucial, it's reasonable to allow node operators to decide for themselves the type of database they want to use. If the storage requirements are simple, consisting mainly of puts and gets, using a dedicated key-value store could provide superior performance over a traditional SQL database. However, from a practical perspective, users with resources to operate big iron databases should be allowed to do so.However, on 29th October 2015, Luke Dashjr, via bitcoin-dev, predicted that allowing different storage engines would lead to disaster. UTXO storage is consensus-critical code, and any divergence in implementation behavior, including bugs and bugfixes, might cause consensus failure. Therefore, it's essential to choose one storage engine and maintain consensus compatibility ourselves since nobody else cares. Dashjr thinks fixing LevelDB is easier than switching to anything SQL-based, which would require more difficult-to-get consensus-compatible code that most people are unfamiliar with.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-11T00:37:50.083313+00:00 </i></p>
     
     
 

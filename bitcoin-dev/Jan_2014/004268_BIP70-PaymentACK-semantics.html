@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP70: PaymentACK semantics</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Christophe Biocca 2014-01-31 16:21:59
+            <br><i>Published on: 2014-01-31T16:21:59+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Jan_2014/combined_BIP70-PaymentACK-semantics.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-January/004268.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue of a merchant acting maliciously by not delivering goods after receiving payment is addressed in a payment protocol by requiring proof of their misconduct. An additional ACK of unsigned transactions before payment is irreversible has been suggested, but it is unclear if this would be necessary. A potential way for a malicious merchant to exploit the payment system is by accepting payment without broadcasting it and then trying to make multiple small payments before returning all of them at once, thereby stealing more funds than the user intended to risk in the transaction. However, this can easily be guarded against at the wallet level by making every new payment conflict with all previous non-acked payments. The problem of getting memo/refund fields is separate, but BitcoinJ's approach seems to address this well. There are two issues that need to be separated: reliably obtaining refund/memo fields and who broadcasts a transaction, how it's retried, how outputs are 'locked,' and if/when they should be [double]-spent to clear them. The first issue can be solved without fully specifying behavior for the second. It is in both the customer and the merchant's best interest to have transactions confirmed. One possible solution is for the customer to include the unsigned transactions as well as the hashes of the fully signed transactions (and only the hashes) until the merchant ACKs the unsigned versions. If the merchant has the hash of the fully signed transaction, he can monitor the network for delivery of the signed transaction.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-08T00:52:33.393793+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Probing final receiver with refund timeout</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mats Jerratsch 2016-03-02 11:29:39
+            <br><i>Published on: 2016-03-02T11:29:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/March_2016/combined_Probing-final-receiver-with-refund-timeout.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-March/000452.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>It has been discovered that it is possible to attack the onion routing with probing too short of an absolute CLTV refund timeout. When accepting a payment, one will check if the remaining timeout > MIN_TIMEOUT. When relaying the payment to the next node, one can either decide to check directly if the next node would accept it or just relay and see what happens. Checking directly is equivalent to checking for 2 * MIN_TIMEOUT before accepting it. However, as the next node will check for 2 * MIN_TIMEOUT again, this is running in circles and just blindly increasing the final MIN_TIMEOUT. For an attacker, it is now possible to choose a timeout that is lower than 2 * MIN_TIMEOUT.If the payment succeeds, the attacker knows that the next node was the final receiver, and if it doesn't, he can redo the payment with a larger timeout without any drawback, basically probing all payments once. Testing for a larger timeout before accepting / relaying does not solve this problem. If all nodes only accept payments with timeout > 10 * MIN_TIMEOUT, you can still probe with 10.5 * MIN_TIMEOUT. The only way to solve this would be to include the timeout the previous node should have sent you and the timeout you should use for the next node into the onion object and test it accordingly.If you discover that the previous node messed with the timeout, you directly refund it. It further complicates routing though, as the source of the payment needs to know all MIN_TIMEOUT of the nodes in the route. It also needs more coordination when doing RP-routing, as the receiver has to include the timeout he chose for the first hop of his route. It probably also opens up another attack vector for attacking the network with unroutable payments.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-23T22:37:37.866485+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

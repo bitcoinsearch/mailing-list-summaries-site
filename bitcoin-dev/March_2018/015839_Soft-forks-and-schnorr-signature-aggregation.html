@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Soft-forks and schnorr signature aggregation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2018-03-21 11:21:19
+            <br><i>Published on: 2018-03-21T11:21:19+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/March_2018/combined_Soft-forks-and-schnorr-signature-aggregation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015839.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email conversation, Zeeman suggested a simplified solution 2 for aggregated signatures which uses OP_ADD_AGG_PUBKEY and OP_CHECK_AGG_SIG[VERIFY] opcodes. However, AJ explained that checking the gathered public keys match the aggregated signature only happens for the entire transaction as a whole, so there is no need for an opcode for it in the scripts as they are per-input. AJ further explained that during the script, public keys and messages are collected which then go into the signing/verification algorithm to produce/check the signature. While gathering signatures from each private key holder when producing the aggregate signature happens at the wallet/p2p level, rather than the consensus level.AJ also mentioned that pre-softfork nodes not doing any checking does not work with cross-input signature aggregation. If it did, it would be possible to steal people's funds by mining a non-standard transaction. This is because every node sees the OP_RETURN_TRUE and stops validating signatures, accepting the transaction as valid, even though the sender cannot actually produce the recipient's signature. Finally, AJ provided a detailed explanation of the Bellare-Neven verification algorithm which requires two communication phases amongst the signers. The algorithm involves generating a random variable r_i and sharing the corresponding curve point R_i=r_i*G, and then calculating R=sum(R_i) and m, and hence H(R,L,i,m), at which point each party calculates a partial signature using their respective private key, x_i. These s_i values are then communicated to each signer to give the final signature (s,R), allowing each signer to verify that the signing protocol completed successfully, and any signer can broadcast the transaction to the blockchain.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T05:20:32.133802+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>multisig, op_eval and lock_time/sequence...</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Alan Reiner 2011-11-09 14:43:37
-            <br><i>Published on: 2011-11-09T14:43:37+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Nov_2011/combined_multisig-op-eval-and-lock-time-sequence-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-November/000740.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In 2011, a proposal was made in BIP 0010 to enable super-lightweight clients that only sign transactions without needing the blockchain. However, a minor problem was identified where TxIns do not contain the value of the TxOuts they are spending, making it difficult for the dumb tx-signers with no blockchain to tell how much input there is. They can only see the output values and recipients without figuring out the tx fee or how much money is in each of the TxIns they are signing. This could be a big step towards bringing the complicated protocol closer to Earth, but most users/clients will have access to the blockchain. Additionally, in 2011, Michael Grønager proposed an alternative solution for multisig/op_eval BIPs by using a 2 of 3 multisig. The proposed solution involves issuing a transaction containing one of the signatures from client1, with a locktime and a sequence. Once client2 discovers the transaction and modifies it to include the second signature, changes the sequence, and retransmits the transaction, the transaction becomes valid and final, and will be approved by the miners. However, for this setup to be possible, the replacement of transaction in the client needs to be reenabled, or the transactions would need to be sent between clients using another protocol.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-04T21:14:58.309031+00:00 </i></p>
     
     
 

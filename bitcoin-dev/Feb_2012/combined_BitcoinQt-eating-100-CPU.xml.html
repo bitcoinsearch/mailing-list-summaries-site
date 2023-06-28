@@ -11,86 +11,9 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>BitcoinQt eating 100% CPU <span class="combined-summary">[combined summary]</span></h1>
+    <h1></h1>
     <hr class="solid">
-    <br><b>Individual post summaries:</b>
     
-        <ul>
-            
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001243_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Michael Gronager 2012-02-23 20:02:46</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001245_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Luke-Jr 2012-02-23 20:33:41</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001244_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Gavin Andresen 2012-02-23 20:26:40</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001245_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Luke-Jr 2012-02-23 20:33:41</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001235_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Michael Grønager 2012-02-21 20:33:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001235_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Michael Grønager 2012-02-21 20:33:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001243_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Michael Gronager 2012-02-23 20:02:46</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001244_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Gavin Andresen 2012-02-23 20:26:40</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001245_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Luke-Jr 2012-02-23 20:33:41</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001235_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Michael Grønager 2012-02-21 20:33:14</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001243_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Michael Gronager 2012-02-23 20:02:46</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Feb_2012/001244_BitcoinQt-eating-100-CPU.xml.html">BitcoinQt eating 100% CPU</a>
-                        <b>Gavin Andresen 2012-02-23 20:26:40</b>
-                    </li>
-                
-            
-        </ul>
-        
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2012-February/001243.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
-        
-        <p><i>Published on: 2012-02-23T20:02:46+00:00</i></p>
-        <hr>
-        <h3>Summary:</h3>
-        <p>The email is a follow-up on an issue with Bitcoin-Qt, which was using 100% CPU after initial block chain download. The sender, Michael Grønager, built the latest program source using qt-creator on MacOSX 10.7.3, but it was still consuming CPU despite normal activity in debug.log. Sampling showed that most of the time in each thread was used for operations like __semwait_signal and kevent. The sender identified line 31 in qtipcserver.cpp as the culprit, which consumed CPU. After inserting `ipcShutdown()` into the ipcThread, the problem was fixed, and Bitcoin-Qt now runs at around 0.9% CPU. Gavin Andresen suggested a possible solution for the Mac version of Bitcoin-Qt that does not register itself as a bitcoin URL handler by not launching the ipcThread in the 0.6 release. However, it was unclear whether this would prevent users from registering it. The writer asked if anyone had experienced a similar issue.</p>
-        <hr>
-        <p><i>Updated on: 2023-06-06T03:03:56.453688+00:00</i></p>
-    
-
     
 
     <footer>

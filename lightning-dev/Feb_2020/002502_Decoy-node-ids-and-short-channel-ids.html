@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Decoy node_ids and short_channel_ids</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2020-02-05 09:00:32
+            <br><i>Published on: 2020-02-05T09:00:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Feb_2020/combined_Decoy-node-ids-and-short-channel-ids.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002502.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion between Bastien and Rusty Russell, they explore potential attacks on Lightning Network payments, specifically the scenario where Mallory receives two invoices and wants to verify if they are from the same node. Bastien proposes a solution that uses `payment_secret` and `decoy_key` to derive the `decoy_scid`, which should defend against this attack. However, Rusty points out that Mallory can still include the P_I from the wrong invoice for Bob. To mitigate this, Bob needs to include the scid he used in the update_add_htlc message so that Alice can check. They also discuss their concerns about custodial lightning services restricting what they will pay to due to potential KYC pressure. Bastien believes that there are enough non-custodial wallets available for motivated users to pay whatever they want, even running their own node if needed. Rusty argues that none of the solutions they provide will be useful if regulation requires users to completely reveal who they are paying, regardless of the payment method used. Ultimately, it will be up to the recipient to decide whether they want to use a normal invoice and reveal their identity or pass on that payment.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-02T22:42:08.246840+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

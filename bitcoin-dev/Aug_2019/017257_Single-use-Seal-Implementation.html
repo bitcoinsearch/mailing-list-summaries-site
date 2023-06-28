@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Single-use-Seal Implementation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2019-08-12 14:40:23
+            <br><i>Published on: 2019-08-12T14:40:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2019/combined_Single-use-Seal-Implementation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017257.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a bitcoin-dev mailing list, Bryan Bishop proposed that his proposal demonstrated a practical way to implement Peter Todd's single-use seals concept. Single-use seals are like a public key with the unique property that it can only be signed once. This feature is impossible with mathematics alone but can be implemented using trust or physics-based mechanisms like PoW. The globally unique seal can be closed over a message to create a witness attesting that the seal was closed over that message. A single-use-seal protocol is considered secure if it is impossible to trick the validation function into thinking that a single seal was closed over two different messages. The proposed implementation with Bitcoin is defining the seal as a specified txout and the witness as a transaction that spends that txout in a transaction with an OP_RETURN output committing to the hash of the message as the first output. For applications requiring a chain of single-use seals, two txouts for seals can be kept in the wallet and alternated as the chain is extended. A fancier implementation could use a pay-to-pubkey-style commitment. The RGB¹ uses something along these lines. Bryan Bishop is hesitant to say that his proposal demonstrated a practical way to implement Peter Todd's single-use seals concept because he thinks Todd would ask for a more sophisticated way to verify seal closure. The context also includes a link to the RGB specifications.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-20T20:54:18.741004+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Why CTV, why now?</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Jeremy Rubin 2022-02-02 01:43:38
-            <br><i>Published on: 2022-02-02T01:43:38+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/bitcoin-dev/Feb_2022/combined_Why-CTV-why-now-.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019852.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>On the Bitcoin-dev mailing list, Anthony Towns shared a script template that can be used to simulate CTV on the Liquid blockchain using new element opcodes. This approach is less efficient than having a dedicated opcode, but it can work well for many useful applications. The script template provided by Anthony involves several INSPECT and SHA256 opcodes, which are used to determine the spending transaction's txid. If NUMINPUTS is greater than one, you would need to limit what other inputs could be used somehow, which would be application-specific. Anthony believes that this emulation might be compatible with confidential assets/values, but he is not entirely sure. He also thinks that it should be possible to use a similar approach with CHECKSIGFROMSTACK instead of "EQUAL" to construct APO-style signatures on elements/liquid. However, he suggests wrapping the output inspection blocks with "INSPECTNUMOUTPUTS GREATERTHAN IF .. ENDIF" and starting with "PUSH[FakeAPOSig] SHA256 DUP SHA256INITIALIZE SHA256UPDATE" to avoid signing something that might be misused in a different context later. Anthony notes that since the Liquid network is not congested and mostly does not have lightning channels built on top of it, the vaulting application is the only interesting one to build on top of Liquid today. There is approximately $120M worth of BTC and $36M worth of USDT on Liquid, which could justify some vault-related work. Real experience with CTV-like constructs seems like it would be very informative.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-15T16:21:10.857224+00:00 </i></p>
     
     
 

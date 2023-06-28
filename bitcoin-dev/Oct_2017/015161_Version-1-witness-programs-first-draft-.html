@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Version 1 witness programs (first draft)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Mark Friedenbach 2017-10-05 20:33:56
+            <br><i>Published on: 2017-10-05T20:33:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Oct_2017/combined_Version-1-witness-programs-first-draft-.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015161.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A first draft for Segwit and Bitcoin scripting has been created by Luke Dashjr. The draft introduces 5 changes that include a new witness version 1, and the elimination of the need to guess signature size in advance. The ability for signatures to commit to additional conditions is also introduced, expressed in the form of a serialized script in the signature itself. The final stack element can now be interpreted as a tail-call Script and executed if it is not exactly true or false. Undefined opcodes now cause the script to exit with success, making future opcode softforks more flexible. One of the changes was suggested by Russell O'Connor, which is to replace the requirement that the last item popped off the stack in a CHECKMULTISIG be zero, with a bitfield specifying which pubkeys are used, allowing signatures to be matched to pubkeys in the order given, and batch validated, with no risk of 3rd party malleability.The signature must commit to the script interpreter flags and internal "sigversion", which basically serve the same purpose, to prevent someone from moving the signature to a different context in an attempt to exploit differences in the various Script interpretation modes. Draft code implementing this on the consensus side is available on Github.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-12T21:29:38.154006+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

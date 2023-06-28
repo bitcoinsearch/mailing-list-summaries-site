@@ -11,37 +11,8 @@
 
 <body BGCOLOR="#fffffb">
     
-    <h1>Proposal: Lightning Pre-Image Encryption Standard</h1>
+    <h1></h1>
     <hr class="solid">
-    
-    <ul>
-        
-        
-            <p><b>Author:</b> Stepan Snigirev 2019-06-26 04:07:50
-            <br><i>Published on: 2019-06-26T04:07:50+00:00</i></p>
-
-        
-        
-
-        
-        
-        <li>
-        <a href="/lightning-dev/June_2019/combined_Proposal-Lightning-Pre-Image-Encryption-Standard.xml.html"> Combined Summary of all posts in thread </a>
-        </li>
-        
-        <li>
-            
-                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002040.html">Click here to read original discussion on the lightning-dev mailing list</a>
-            
-        </li>
-
-    </ul>
-
-    <hr>
-    <h3> Summary:</h3>
-    <p>In this email conversation, Stepan suggests two improvements to Nadav's proposal concerning encrypted data and payment protocols. First, he recommends using authenticated encryption with HMAC-SHA256 to ensure that even if an insecure connection is used, the encrypted data cannot be changed by an attacker. Second, he proposes a modified payment protocol where only the buyer can decrypt the data. This involves Bob generating a random private key and corresponding public key, sharing the public key with Sally, who in turn generates her own keys and calculates a secret key to encrypt the data. The invoice includes the preimage, which is the x-coordinate of a point to make it 32-bytes long. When Bob pays the invoice, he learns the value of the public key and can use his private key to derive the encryption key and decrypt the data. No one else will learn the key.</p>
-    <hr>
-    <p><i> Updated on: 2023-06-02T19:10:23.287913+00:00 </i></p>
     
     
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>[BIP] Normalized transaction IDs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Adam Back 2015-11-05 22:29:46
+            <br><i>Published on: 2015-11-05T22:29:46+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Nov_2015/combined_-BIP-Normalized-transaction-IDs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011669.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>A proposed solution to the problem of conflicting spends by the private key holder is discussed. The solution involves creating a new public key type, r,Q, and a new address type, a=H(r,Q). A new signature type is also created, which requires that the r from sig=(r,s) matches the r committed to in the address. As the ECDSA signature is s=(H(m)+r*x)/k mod n, if two different messages are signed with the same r value, they reveal the private key via simultaneous equation, allowing anyone who sees both double spends to spend as they can replace the signature with their own one. This converts double signatures into miner can spend. The solution does not necessarily enforce no pubkey reuse (Q), but it does enforce no extended-address reuse (H=(r,Q)). Binary failure address reuse could be an issue and puts pressure on transactional storage on wallets. There is also discussion about the terminology confusion between "signature malleability" and "conflicting spends," with some arguing that addressing all kinds of malleability is necessary for a practically-useful solution.</p>
+    <hr>
+    <p><i> Updated on: 2023-06-11T00:21:14.671923+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

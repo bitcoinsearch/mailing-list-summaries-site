@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Double spend detection to speed up transaction trust</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gregory Maxwell 2011-08-04 20:08:07
+            <br><i>Published on: 2011-08-04T20:08:07+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2011/combined_Double-spend-detection-to-speed-up-transaction-trust.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-August/000294.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email exchange between Andy Parkins and Matt Corallo on August 4th, 2011, Corallo questions the addition of a new message that would result in slightly more network traffic. Parkins argues that "slightly" is an understatement and that it would add more network traffic for every double spend attempt, which does not happen very often. However, Corallo points out that double spends can be easily generated on demand and could cause unbounded flooding, rendering normal anti-DDOS logic ineffective. To solve this issue, rather than NAK the transaction, conflicts on each of the conflicted inputs should be propagated. For example, if two transactions recently tried to spend input X, proof of this would be given by sharing their two txn IDs. This input (and perhaps all inputs with an identical script) would then be temporarily suspect. However, this feature would not be very useful since the software already waits for a fair number of confirms before considering something confirmed. Additionally, a sybil can filter these messages, diminishing their usefulness.Overall, the email exchange discusses the potential consequences of adding a new message to the Bitcoin network, highlighting the importance of considering the impact on network traffic and potential vulnerabilities.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-18T22:04:18.783550+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

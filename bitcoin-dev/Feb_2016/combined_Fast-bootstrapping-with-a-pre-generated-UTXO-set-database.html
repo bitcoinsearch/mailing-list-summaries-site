@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fast bootstrapping with a pre-generated UTXO-set database <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2016/012478_Fast-bootstrapping-with-a-pre-generated-UTXO-set-database.html">Fast bootstrapping with a pre-generated UTXO-set database</a>
+                        <b>Jonas Schnelli 2016-02-29 10:29:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2016/012480_Fast-bootstrapping-with-a-pre-generated-UTXO-set-database.html">Fast bootstrapping with a pre-generated UTXO-set database</a>
+                        <b>Tier Nolan 2016-02-29 11:49:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2016/012478_Fast-bootstrapping-with-a-pre-generated-UTXO-set-database.html">Fast bootstrapping with a pre-generated UTXO-set database</a>
+                        <b>Jonas Schnelli 2016-02-29 10:29:05</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2016/012480_Fast-bootstrapping-with-a-pre-generated-UTXO-set-database.html">Fast bootstrapping with a pre-generated UTXO-set database</a>
+                        <b>Tier Nolan 2016-02-29 11:49:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2016/012480_Fast-bootstrapping-with-a-pre-generated-UTXO-set-database.html">Fast bootstrapping with a pre-generated UTXO-set database</a>
+                        <b>Tier Nolan 2016-02-29 11:49:57</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Feb_2016/012478_Fast-bootstrapping-with-a-pre-generated-UTXO-set-database.html">Fast bootstrapping with a pre-generated UTXO-set database</a>
+                        <b>Jonas Schnelli 2016-02-29 10:29:05</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-February/012478.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2016-02-29T10:29:05+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The proposals aim to reduce the bootstrap time and network usage of bitcoin nodes. One proposal suggests building the UTXO set backwards, starting from the newest block and working backwards. This involves checking each transaction in last-to-first ordering and adding it to the UTXO set if it's not already in the UFTXI set. The other proposal involves loading a pre-generated UTXO-set datafile, which will be deterministically linearized at a specified height and hashed with a double SHA256 after appending serialized form of the current chain-index. A group of developers will sign this hash with ECDSA, and full node client implementations that support bootstrapping from a pre-generated UTXO-set need to include a set of pubkeys from trusted developers, the hash (or hashes) of the pre-generated UTXO-set-datafile(s), and n signatures of the hash(es) from a subset of developers defined in the pubkeys. To ensure the integrity of developer pubkeys & signatures, methods like the current gitian build must be used. New nodes can download a copy of the pre-generated UTXO-set and continue bootstrapping from the specified height if the users accept the amount of valid signatures. Sharing of the pre-generated UTXO-set can be done over CDNs, BitTorrent or any other file hosting solution. It is also possible to extend the bitcoin p2p layer with features to distribute/share such a pre-generated UTXO-set.</p>
+        <hr>
+        <p><i>Updated on: 2023-06-11T04:13:01.160722+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

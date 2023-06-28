@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blinded channel observation</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tadge Dryja 2016-08-10 14:52:13
+            <br><i>Published on: 2016-08-10T14:52:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2016/combined_Blinded-channel-observation.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-August/000573.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author describes a revocation key method that is compatible with shachain/elkrem and has log(n) storage. They developed a script that omits hashing in the commit script and uses only signature verification. The script consists of DUP, [Revocable Pubkey], CHECKSIG, NOTIF, [Timeout Pubkey], CHECKSIGVERIFY, [timeout period], and CHECKSEQUENCEVERIFY. As an if statement, it ends up being: if (revocable sig) || (timeout sig && CSV > timeout). To build the revocable pubkey, Alice takes their elkrem sender hash from state n, multiplies EHn * G, getting a point EPn. Alice sends EPn to Bob, who adds their commitment pubkey (BP) to EPn. The result, (RPub n = BP + EPn), is the revocable pubkey for state n.For the timeout key, Alice adds a point to their own timeout key. It obscures the commitment script by making both pubkeys different each state, as they're all generated from the hash tree. Bob only needs to keep track of the most recent "elkrem points" and the hash tree itself.The author notes that if Laolu has made a different key revocation scheme he is not aware, but encourages him to post about it if so.</p>
+    <hr>
+    <p><i> Updated on: 2023-05-24T00:11:59.299138+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
