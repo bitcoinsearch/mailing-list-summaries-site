@@ -39,7 +39,7 @@
 
     <hr>
     <h3> Summary:</h3>
-    <p>Timo Hanke has suggested that if someone knows a parent public key they can generate arbitrary pairs {PublicKeyParent, Multiplier} that lead to the same "destination". This could be an unwanted feature depending on what the transaction should "prove" regarding its actual receiver or regarding the receiver's PubKeyParent. To address this issue, Timo suggests replacing PubKeyParent * Multiplier[i] by PubKeyParent * HMAC(Multiplier[i],PubKeyParent). However, Alan Reiner argues that the most-obvious attack vector is discrete log problem:  spoofing a relationship between a target public key and one that you control.  In this case, you have to find the multiplier, M that solves:  M*PubC = PubB which is a discrete logarithm problem.</p>
+    <p>Timo Hanke has suggested that if someone knows a parent public key they can generate arbitrary pairs {PublicKeyParent, Multiplier} that lead to the same "destination". This could be an unwanted feature depending on what the transaction should "prove" regarding its actual receiver or regarding the receiver's PubKeyParent. To address this issue, Timo suggests replacing PubKeyParent * Multiplier[i] by PubKeyParent * HMAC(Multiplier[i],PubKeyParent). However, Alan Reiner argues that the most-obvious attack vector is discrete log problem:  spoofing a relationship between a target public key and one that you control. In this case, you have to find the multiplier, M that solves:  M*PubC = PubB which is a discrete logarithm problem.</p>
     <hr>
     <p><i> Updated on: 2023-06-06T18:58:29.330281+00:00 </i></p>
     
