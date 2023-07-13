@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Denial of Service using Package Relay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Andrew Chow 2023-07-06 17:24:47+00:00
+            <br><i>Published on: 2023-07-06T17:24:47+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2023/combined_Denial-of-Service-using-Package-Relay.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021785.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email on 07/06/2023, a user named alicexbt raised concerns about the acceptance of unconfirmed inputs in a coinjoin transaction. They pointed out that allowing unconfirmed inputs could be unsafe because the sender of the unconfirmed transaction can replace it and potentially invalidate the coinjoin. The user also mentioned that the coordinator B should not accept the unconfirmed UTXO from step 2 because it is not even aware of that transaction and it has zero fee, making it unlikely to be relayed.The user also noted that a similar attack could already be carried out by registering the same UTXO with multiple coordinators, without the need for package relay. However, they acknowledged that package relay could still be beneficial for coinjoins. They explained that with package relay, any participant in the coinjoin can rebroadcast it with a further Child Pays for Parent (CPFP) if the coinjoin falls below the minimum relay fee. They also mentioned that upcoming proposals for Replace-By-Fee (RBF) in package transactions could allow other child transactions in the package to RBF the entire transaction, eliminating the need for all participants to re-sign the coinjoin for RBF.Overall, the user highlighted concerns about the acceptance of unconfirmed inputs in coinjoins and discussed the potential benefits of package relay and upcoming RBF proposals for improving the security and efficiency of coinjoin transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-13T17:25:57.818543+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

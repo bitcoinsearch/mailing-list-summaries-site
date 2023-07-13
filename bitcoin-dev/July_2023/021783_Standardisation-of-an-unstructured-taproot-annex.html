@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Standardisation of an unstructured taproot annex</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2023-07-04 20:18:23+00:00
+            <br><i>Published on: 2023-07-04T20:18:23+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2023/combined_Standardisation-of-an-unstructured-taproot-annex.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021783.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent email exchange, Antoine and Joost discussed the potential benefits of using the annex feature for Bitcoin's time-locked vault applications. Joost emphasized that the annex data is not included in the calculation of transaction IDs, making it a powerful tool for applications that could benefit from covenants. He specifically mentioned time-locked vaults as a critical application that could greatly benefit from the annex.Joost explained that backing up the ephemeral signatures of pre-signed transactions on the blockchain itself is an excellent way to ensure that the vault can always be accessed. However, without the annex, this process is not as safe as it could be. Due to a circular reference problem, the vault creation and signature backup cannot be executed in one atomic operation. This means that if the backup does not confirm, the funds can be lost even if the vault is confirmed.Despite being labeled as speculative, Joost argued that the use case for the annex in time-locked vaults is relevant, especially considering the difficulty of implementing soft forks like OP_VAULT. To support this use case, Joost created a simple demo application that demonstrates how coins can be spent to a special address and later moved to a predefined final destination. The demo uses the annex to store the ephemeral signature of the pre-signed transaction, ensuring that the coin cannot be lost.Joost also highlighted the importance of raising awareness about the on-chain ephemeral signature backup functionality enabled by the annex. He provided a link to his demo application on GitHub, which showcases the potential of the annex for implementing more advanced covenants, such as time-locked vaults.Overall, Joost and Antoine's discussion sheds light on the potential benefits of using the annex for time-locked vault applications and emphasizes the need for further exploration and adoption of the annex feature.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-13T17:22:48.899338+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

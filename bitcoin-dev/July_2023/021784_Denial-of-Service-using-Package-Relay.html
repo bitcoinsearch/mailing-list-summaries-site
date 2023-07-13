@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Denial of Service using Package Relay</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> alicexbt 2023-07-06 16:22:44+00:00
+            <br><i>Published on: 2023-07-06T16:22:44+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2023/combined_Denial-of-Service-using-Package-Relay.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021784.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Hello Bitcoin Developers,I wanted to bring to your attention a potential vulnerability in coinjoin that could be exploited for a Denial of Service (DoS) attack. This vulnerability is related to the use of the package relay feature. It is important to note that this proposal introduces new P2P messages, transaction relay, and other functionalities, making it just as significant as any soft fork.To illustrate the vulnerability, let's consider two coinjoin implementations, A and B. The attack begins by registering an input in implementation A. Then, the attacker double-spends the same input with zero fees to their own address. Next, the attacker registers the unconfirmed UTXO from step 2 in implementation B. At this point, implementation B relays a package containing a coinjoin transaction (child) that pays for the double-spent input (parent).Both users and implementation B have incentives to engage in this type of attack. Additionally, there is an alternative approach where the attacker registers the same input in both implementations A and B. However, this approach presents some tradeoffs. If the input gets included in a coinjoin transaction broadcasted by A, there is little that B can do about it. Implementing RBF with multiple users is not straightforward and can be costly. Furthermore, implementations with fewer users participating in a round would have an advantage in this scenario.It is crucial to address this vulnerability promptly to ensure the security and integrity of coinjoin transactions. Please review the details provided in the [package relay proposal][0] and let me know if there are any aspects that I may have overlooked.Best regards,/dev/fd0floppy disk guySent with Proton Mail secure email.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-13T17:25:46.693054+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
