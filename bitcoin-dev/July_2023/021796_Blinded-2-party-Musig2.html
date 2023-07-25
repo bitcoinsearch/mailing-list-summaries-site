@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blinded 2-party Musig2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Erik Aronesty 2023-07-24 14:40:10+00:00
+            <br><i>Published on: 2023-07-24T14:40:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2023/combined_Blinded-2-party-Musig2.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021796.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email thread on the bitcoin-dev mailing list, Jonas Nick raises concerns about the proposed blind musig scheme. He states that blind musig is still an open research problem and questions the effectiveness of the proposed scheme in preventing the client from obtaining additional Schnorr signatures. He suggests that a variant of the attack used to make MuSig1 insecure could be applied if certain conditions are met.Jonas outlines the steps a malicious client could take to exploit the vulnerability in the proposed scheme. The client would obtain K R-values from the server and calculate new values based on them. Using Wagner's algorithm, the client would choose additional R-values such that the sum of the commitments equals the commitment for the aggregate of the R-values obtained from the server. The client would then send the commitments to the server to obtain corresponding signatures.To address the issue, Jonas proposes an alternative scheme. In this scheme, the client sends a commitment to the public key X2, nonce R2, and message m to the server. The server replies with a nonce R1. The client then proves in zero knowledge that the commitment is derived correctly using SHA256. The server replies with a signature s1.Jonas acknowledges that this alternative scheme is based on quick intuition and is unsure if it would work effectively. However, he believes it may be worth exploring further.The email concludes with the standard footer of the bitcoin-dev mailing list, providing information on how to subscribe to the mailing list and access its archives. No further context or information is provided beyond the email thread.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-25T02:22:05.720432+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
