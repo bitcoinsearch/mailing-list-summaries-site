@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blinded 2-party Musig2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Jonas Nick 2023-07-26 14:59:42+00:00
+            <br><i>Published on: 2023-07-26T14:59:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2023/combined_Blinded-2-party-Musig2.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021810.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The issue at hand is that while the proposed solution may address the problem of blinding, it does not solve the issue of client-controlled challenge e', which allows for signature forgery. This vulnerability is not unique to MuSig(2) but also applies to original blind Schnorr signatures, as demonstrated in David Wagner's "A Generalized Birthday Problem" paper.For those interested in recent developments regarding blind Schnorr signatures, two papers are worth exploring. The first paper titled "Blind Schnorr Signatures and Signed ElGamal Encryption in the Algebraic Group Mode" (available at <a href="https://eprint.iacr.org/2019/877.pdf)">https://eprint.iacr.org/2019/877.pdf)</a> proposes a less efficient variant of blind Schnorr signatures that is secure under concurrent signing, assuming the hardness of the "mROS" problem, which is deemed plausible. Another potential approach discussed in the thread involves using commitments and a Zero-Knowledge Proof (ZKP). This approach, often referred to as "folklore", has been mentioned sporadically but lacks a detailed specification and a security proof to the best of my knowledge.These references provide additional insights and alternative perspectives on blind Schnorr signatures, offering further avenues for exploration and potential solutions to the security concerns raised.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-27T01:55:57.768459+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

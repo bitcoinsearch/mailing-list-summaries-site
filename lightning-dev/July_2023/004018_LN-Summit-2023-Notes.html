@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>LN Summit 2023 Notes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2023-07-26 00:57:39+00:00
+            <br><i>Published on: 2023-07-26T00:57:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2023/combined_LN-Summit-2023-Notes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004018.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a recent discussion, Antoine proposed a solution for commitment transactions in the Signal group. He suggested not using MuSig2 signing for unilateral closes, but instead adding a tapscript branch with just `OP_CHECKSIGVERIFY OP_CHECKSIG` for unilateral closes. MuSig2 would only be used for mutual closes after negotiating closing fees. This approach would eliminate the need to store nonces in persistent storage, as counterparty nonces could be kept in volatile RAM, and if a disconnection occurs, the negotiation can be restarted on reconnection.Antoine also addressed the issue of static fees in the Lightning Network. While dynamic fees are already implemented, some proposals have suggested static or unconditional fees. However, Antoine argued that static fees may not be suitable in an ecosystem driven by demand and liquidity pricing. He mentioned that conditional fees already exist and can be adjusted based on demand.The discussion then shifted to the topic of reputation in the network. It was noted that setting a bar that attackers cannot fall below is challenging. Reputation accumulation should align with the normal operation of nodes to prevent attackers from gaining an unfair advantage. The concept of jamming was also discussed, with the subjective valuation of resources being a key factor. The question of what constitutes a stereotypical forwarding node and how it deviates from other nodes was raised.The conversation then touched upon the idea of paying for the time a HTLC is held in flight. However, it was pointed out that without a universal clock, proving the duration becomes difficult. The Bitcoin chain height advances were mentioned as a potential universal clock, but it was acknowledged that it is too coarse-grained for precise timing.Finally, the issue of halting channel progress was brought up. It was questioned whether halting channel progress should lead to a reputation downgrade. Instead of a strict downgrade, it was suggested that a grace period could be negotiated to allow for temporary halts due to software upgrades or connectivity issues.Overall, the discussion covered various proposals and considerations related to commitment transactions, fees, reputation, and channel progress in the Lightning Network.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-27T02:07:14.232521+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

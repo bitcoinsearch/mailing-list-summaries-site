@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Equalizing Packet Size <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/July_2023/004019_Equalizing-Packet-Size.html">Equalizing Packet Size</a>
+                        <b>Antoine Riard 2023-07-26 01:30:20+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2023/004000_Equalizing-Packet-Size.html">Equalizing Packet Size</a>
+                        <b>ZmnSCPxj  + 2023-06-29 18:13:10+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2023/004000_Equalizing-Packet-Size.html">Equalizing Packet Size</a>
+                        <b>ZmnSCPxj  + 2023-06-29 18:13:10+00:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004019.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2023-07-26T01:30:20+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>Recently, it has been discovered that even with Noise encryption, a third-party eavesdropper can infer the content of messages exchanged between Lightning Network (LN) nodes by analyzing the sizes of IP packets transmitted. This poses a potential security risk as it enables the eavesdropper to deduce the routing of payments across the network. To address this issue, a solution proposed is to ensure that all packet sizes are uniform.The BOLT8 specification, which builds on top of TCP, allows the receiver to perceive the incoming data as a continuous stream of bytes, despite being transmitted in packets at the IP level. Most implementations have an object responsible for encrypting messages for BOLT8 tunnels. To enhance its functionality, this object can be transformed into a "buffer" in addition to being a tunnel encrypter.The modified object would feature entry points for sending BOLT8 messages and flushing the buffer. It would maintain an internal buffer of fixed size, into which ciphertext from the "send BOLT8 message" interface is stored. When the buffer becomes full, the object utilizes the POSIX `send` API to transmit it as a packet, ensuring that packets sent are of uniform size.The "flush" entry point monitors the fill level of the buffer and appends a `pong` message to pad it until the entire buffer reaches capacity. In the case where the buffer is almost full and adding the mandatory 2-byte message length and 2-byte message ID might cause an overflow, the object should handle this correctly.Since the object inserts `pong` messages, it must modify the encryptor state by incorporating the `pong` message into the stream of BOLT8 messages. This approach allows a sequence of `update_add_htlc` messages followed by a `commitment_signed` message to potentially be combined into a single fixed-size packet or a sequence of fixed-size packets. The "flush" entry point needs to be called by the implementation to ensure that the counterparty receives the complete tail end of the `commitment_signed` message.To enhance robustness against internal bugs and for defensive programming purposes, the object can be equipped with an individual randomized timer. This timer periodically triggers a self-flush operation, even if the implementation fails to initiate a flush while awaiting a response from the counterparty. This serves as a workaround for such bugs, transforming them from interop bugs into performance bugs.It is recommended that the buffer size matches the packet size of `update_add_htlc` as it is expected to fit within a single IP packet for optimal latency. By implementing these measures, the security of communication between LN nodes can be strengthened.For more information on global internet access statistics, refer to the link provided: [0].</p>
+        <hr>
+        <p><i>Updated on: 2023-07-27T02:06:37.597086+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
