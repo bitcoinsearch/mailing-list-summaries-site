@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Fwd:  Blinded 2-party Musig2</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Trevethan 2023-07-27 13:25:33+00:00
+            <br><i>Published on: 2023-07-27T13:25:33+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021822.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a conversation between two individuals, Jonas and another person (referred to as "@Jonas"), they discuss a potential attack on a scheme involving statechains. @Jonas suggests that the attack can be mitigated by having the receiver of a coin verify the construction of all previous challenges.According to @Jonas, the sender of a coin would record R2[K-1] (a value) along with m (message) and any c blinding nonce used for the signature generated with the server. These values, along with all previous R2 values (i = 0, ..., K-2), would then be sent to the receiver.The receiver, in turn, would query the server for the full set of R1[i] values it has generated (i = 0, ..., K-1) and the corresponding blinded c[i] values used for each co-signing performed on this key. The receiver would then verify that each previous c[i] (i = 0, ..., K-1) has been correctly formed and includes the server-generated R1[i].If any of the c values fail to verify against the provided R1 values from the server, then the coin is considered invalid.In a separate email, @Jonas explains that proof of knowledge of the r values used to generate each R does not prevent Wagner's attack. He clarifies that Wagner's algorithm involves choosing R2[0], ..., R2[K-1] such that the sum of c[0] + ... + c[K-1] equals c[K]. This can be thought of as choosing scalars r2[0], ..., r2[K-1] and defining R2[i] = r2[i]*G, where G is a generator point. The attacker chooses r2[i] in this scenario.Overall, the discussion highlights the importance of verifying the construction of previous challenges in order to mitigate potential attacks on the statechains scheme.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-28T02:09:31.484217+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

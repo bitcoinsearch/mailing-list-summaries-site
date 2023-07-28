@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Blinded Paths Doom Scenario</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tony Giorgio PM 2023-07-27 05:35:20+00:00
+            <br><i>Published on: 2023-07-27T05:35:20+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/July_2023/combined_Blinded-Paths-Doom-Scenario.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004023.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Blinded paths in the context of Bitcoin payments involve encrypting specific paths to reach the destination node. These paths have introduction points, which provide privacy benefits for the receiving node by allowing them to hide among an anonymous set of anyone within a certain number of hops from the introduction node. However, there is a potential downside to this approach.One potential downside is that with blinded paths, the sender must use one of the given paths to pay the recipient since they do not know the destination node. This can be used to enforce that only "compliant" nodes are used to reach a given destination. Currently, some regulated businesses, such as Cash App and River, only open channels with specific peers they trust. With blinded paths, these businesses could potentially enforce that payments must go through a certain number of compliant nodes before reaching them, bypassing the pleb routing nodes that exist today.While this may enhance privacy for the receiver, it can also impact the sender's privacy. As the number of hops increases, payment reliability decreases, leading to a need for the sender to be closely connected to the introduction node or any of the nodes along the blinded path. If all these compliant nodes are data sharing, they can track a payment through basic timing analysis, compromising the sender's privacy.There is a concern that lightning "chain analysis" companies could pressure businesses into adopting this approach under the guise of preventing the receipt of OFAC coins. It is uncertain if this issue is fixable or if it is a trade-off that needs to be made to ensure receiver privacy in the Lightning Network.Overall, while blinded paths offer privacy benefits for the receiver, they also present potential challenges in terms of decentralization and sender privacy. The use of compliant nodes in payment routing may limit the routes available to users and increase the risk of tracking through timing analysis. It remains to be seen how this issue will be addressed in the development of the Lightning Network.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-28T02:10:11.228420+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
