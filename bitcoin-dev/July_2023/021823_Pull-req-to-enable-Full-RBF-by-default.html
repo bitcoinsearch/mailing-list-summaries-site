@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pull-req to enable Full-RBF by default</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Peter Todd 2023-07-30 15:44:36+00:00
+            <br><i>Published on: 2023-07-30T15:44:36+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021823.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The author of the context has submitted a pull request to Bitcoin Core to enable full-replace-by-fee (full-rbf) by default. Currently, around 40% of the total Bitcoin hash power is mining full-rbf replacements across 8 different pools. Several block explorers, including blockstream.info and mempool.space, have enabled full-rbf on all their nodes. Additionally, nodes installed via BTCPay Server and MyNode also enable full-rbf by default. Measurements indicate that a significant percentage of nodes have manually enabled full-rbf, and there is a well-connected set of nodes running the author's full-rbf peering patch.Successful full-rbf replacements are fairly common, as shown on <a href="https://mempool.space/rbf">https://mempool.space/rbf</a>#fullrbf. However, the fact that only a minority of nodes relay full-rbf replacements poses a barrier to taking advantage of them in multi-party transactions. The author believes that enabling full-rbf by default will address this issue.During previous discussions on full-rbf, the only opposition came from Bitrefill, who claimed to have an actual use for unconfirmed transactions. However, the author has found no evidence that Bitrefill still accepts unconfirmed transactions as payment, despite their payment page claiming otherwise. All test transactions conducted by the author required confirmation.On-chain wallets have been moving towards removing the ability to set non-BIP125-rbf transactions. For example, Electrum removed the ability to turn off BIP125 last year, and other wallets like Phoenix, Green, Nunchuck, and Zeus also do not provide a way to turn off BIP125. These wallets consider "non-replaceable" transactions to be a support headache.The author argues that the dream of "on-chain coffee payments" is dead and that there is no value in maintaining the BIP125 distinction when a significant portion of hashing power ignores it. Enabling full-rbf by default in Bitcoin Core's GitHub master, to be released in v26.0, is proposed. Subsequently, the author suggests deprecating and eventually removing all BIP125 code and associated complexity in future releases.The context includes several references to support the points made. These references provide further information on block explorers enabling full-rbf, nodes running full-rbf, multi-party transactions with full-rbf, opposition to full-rbf from Bitrefill, removal of non-BIP125-rbf transactions in on-chain wallets, and the value of enabling full-rbf by default.</p>
+    <hr>
+    <p><i> Updated on: 2023-07-31T02:08:40.697389+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
