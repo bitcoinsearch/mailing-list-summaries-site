@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pull-req to enable Full-RBF by default</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Daniel Lipshitz 2023-07-31 10:26:11+00:00
+            <br><i>Published on: 2023-07-31T10:26:11+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/July_2023/combined_Pull-req-to-enable-Full-RBF-by-default.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021829.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The implementation of full Replace-By-Fee (RBF) in Bitcoin transactions without the addition of a "first seen safe" rule could have a highly negative impact on merchants and users who accept 0-conf transactions. Mitigation tools like GAP600 are being used to prevent this negative impact by requiring any replacement transactions to include the original outputs.GAP600 has observed strong usage of their service for BTC, with approximately 350k unique transaction hashes per month over the past three months. Some of their clients include Coinpayments, Coinspaid, and Changelly. During periods when the Mempool is full, there has been an increase in the fee required to be approved by GAP600 for transactions. This use case is significant and can be easily maintained as it currently stands.To support their claims, GAP600 has provided statistics and direct feedback from the CEO of Coinspaid in the Bitcoin-dev mailing list. The lack of impact on double spend rates for their transactions suggests that the stated figure of 40% adoption of full RBF by miners is questionable. If the adoption rate were truly that high, GAP600 would expect to see a considerable increase in double spends. However, they anticipate that once the default setting for RBF is changed, the adoption of their service will be greatly influenced.GAP600's model aims to minimize errors, as they reimburse their clients for any incorrect predictions of double spends. It is important to note that GAP600 is not a payment processor but rather provides services to payment processors, merchants, and non-custodial liquidity providers that serve non-custodial wallets.Overall, the addition of a "first seen safe" rule is crucial to avoid the negative consequences of implementing full RBF in Bitcoin transactions.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-01T02:13:48.566570+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
