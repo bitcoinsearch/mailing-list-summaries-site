@@ -19,76 +19,36 @@
             
                 
                     <li>
-                        <a href="/bitcoin-dev/Oct_2022/021107_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>woltx 2022-10-23 07:00:07</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Oct_2022/021107_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>woltx 2022-10-23 07:00:07</b>
-                    </li>
-                
-                    <li>
                         <a href="/bitcoin-dev/Oct_2022/021110_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>alicexbt 2022-10-23 20:54:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Oct_2022/021003_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>alicexbt 2022-10-12 09:04:35</b>
+                        <b>alicexbt 2022-10-23 20:54:26+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/Oct_2022/021107_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>woltx 2022-10-23 07:00:07</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Oct_2022/021110_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>alicexbt 2022-10-23 20:54:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Oct_2022/020994_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>woltx 2022-10-11 07:02:47</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Oct_2022/021110_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>alicexbt 2022-10-23 20:54:26</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Oct_2022/020994_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>woltx 2022-10-11 07:02:47</b>
+                        <b>woltx 2022-10-23 07:00:07+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/Oct_2022/021003_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>alicexbt 2022-10-12 09:04:35</b>
+                        <b>alicexbt 2022-10-12 09:04:35+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/Oct_2022/020994_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>woltx 2022-10-11 07:02:47</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Oct_2022/021003_Silent-Payment-v4-coinjoin-support-added-.html">Silent Payment v4 (coinjoin support added)</a>
-                        <b>alicexbt 2022-10-12 09:04:35</b>
+                        <b>woltx 2022-10-11 07:02:47+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021107.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021110.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2022-10-23T07:00:07+00:00</i></p>
+        <p><i>Published on: 2022-10-23T20:54:26+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>Silent Payment v4 has been released with significant improvements. The latest version aims to increase privacy and compatibility with coinjoin. One of the major improvements is that the new version uses all inputs to create transactions, unlike the previous version which only used the first input. This change was made to enhance privacy. Additionally, the `getspaddress` RPC has been renamed to `getsilentaddress` for clarity.Furthermore, support for silent payment in PSBT via the `walletcreatefundedpsbt` RPC has been added. A new index scheme has also been introduced which stores the sum of input public keys for each transaction. The new version also uses a different scheme for silent payments that allows for Taproot inputs. However, this introduced a new issue as `bitcoin-core/secp256k1` does not support x-only public key sum, possibly due to a missing prefix byte. To resolve this issue, a new PR (#1143) has been opened to add a function to convert from x-only to compressed public key with even y. The tutorial has been updated accordingly, and a warning has been included in the output for `getsilentaddress` RPC when used with a label. These changes are expected to enhance privacy and compatibility with coinjoin. It is recommended that users update to Silent Payment v4 to take advantage of these improvements.The message thanking the recipient for their work on silent payments and improvements made in each version was sent with Proton Mail secure email. A link is also provided for reference.</p>
+        <p>The latest update to Silent Payment, version 4, brings several important changes and improvements. One of the key enhancements is the use of all inputs to create transactions, which not only increases privacy but also makes it compatible with coinjoin. The `getspaddress` RPC command has been renamed to `getsilentaddress` for better clarity.Another significant addition is the support for silent payment in PSBT through the `walletcreatefundedpsbt` RPC. This allows for a more seamless integration of silent payments into the Bitcoin network.Furthermore, a new index scheme has been introduced, storing the sum of input public keys for each transaction. As a result, the previous index `bitcoin/signet/indexes/silentpaymentindex` has become incompatible with this new version and has been removed.Silent payments now rely solely on publicly available transaction data on the blockchain, eliminating the vulnerability to rogue-key attacks that can be present in multi-party schemes.However, the implementation of the new scheme encountered an issue due to the lack of support for x-only public key sum by `bitcoin-core/secp256k1`, possibly because of a missing prefix byte. To address this, a pull request (#1143) has been opened to introduce a function that converts x-only public keys to compressed public keys with even y.The tutorial has also been updated to reflect these changes, ensuring users have access to accurate and up-to-date information on how to utilize the new features and improvements.In summary, Silent Payment v4 introduces comprehensive improvements to enhance privacy, compatibility with coinjoin, and overall functionality. Users are encouraged to update to this latest version to leverage these advancements and enjoy a more secure and efficient silent payment experience.</p>
         <hr>
-        <p><i>Updated on: 2023-06-16T01:44:51.377412+00:00</i></p>
+        <p><i>Updated on: 2023-08-02T08:03:59.669673+00:00</i></p>
     
 
     

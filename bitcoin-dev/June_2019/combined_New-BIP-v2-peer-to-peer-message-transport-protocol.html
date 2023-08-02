@@ -19,61 +19,31 @@
             
                 
                     <li>
-                        <a href="/bitcoin-dev/June_2019/017033_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Jonas Schnelli 2019-06-17 16:20:32</b>
-                    </li>
-                
-                    <li>
                         <a href="/bitcoin-dev/June_2019/017034_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Elichai Turkel 2019-06-17 17:13:05</b>
+                        <b>Elichai Turkel 2019-06-17 17:13:05+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/June_2019/017033_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Jonas Schnelli 2019-06-17 16:20:32</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2019/017034_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Elichai Turkel 2019-06-17 17:13:05</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2019/017033_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Jonas Schnelli 2019-06-17 16:20:32</b>
+                        <b>Jonas Schnelli 2019-06-17 16:20:32+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/June_2019/017030_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Elichai Turkel 2019-06-17 02:06:21</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2019/017030_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Elichai Turkel 2019-06-17 02:06:21</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2019/017030_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Elichai Turkel 2019-06-17 02:06:21</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/June_2019/017034_New-BIP-v2-peer-to-peer-message-transport-protocol.html">New BIP - v2 peer-to-peer message transport protocol</a>
-                        <b>Elichai Turkel 2019-06-17 17:13:05</b>
+                        <b>Elichai Turkel 2019-06-17 02:06:21+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017033.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017034.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2019-06-17T16:20:32+00:00</i></p>
+        <p><i>Published on: 2019-06-17T17:13:05+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The email thread between Elichai Turkel and Jonas Schnelli discusses the use of a "message sequence number" as the nonce for Chacha20. The BIP324 proposed AEAD, ChaCha20Poly1305 at Bitcoin, uses this message sequence number which starts with 0 and can't be reset without rekeying. It is impossible to reuse a nonce/key conceptually, but there could be implementation screw-ups. While XChaCha20 allows for a random nonce, using a sequence number as a nonce is safe in this case. Moreover, the email conversation also highlights the change from a 64-bit to a 96-bit nonce in RFC7539, which is later referred to as xchacha. The discussion brings up the query of whether the message sequence number is randomly generated or a counter and if it can be reset without rekeying. If the number is randomly generated, then 64-bit is not secure enough and it is suggested to either move to the chacha20 from RFC7539 which has a 96-bit nonce and 32-bit counter or increment it manually every time. On the other hand, if it's simply a counter, then 64-bit nonce should be fine. Overall, the discussions underscore the significance of understanding nonce and its security implications.</p>
+        <p>In an email conversation between Elichai Turkel and Jonas Schnelli, the topic of the message sequence number for Chacha20 is discussed. Schnelli explains that the proposed AEAD in BIP324 uses a "message sequence number" as the nonce instead of a random nonce. The sequence number starts at 0 and cannot be reset without rekeying. Additionally, the maximum amount of traffic allowed before rekeying is 1GB, and there is no possibility of nonce/key reuse. While XChaCha20 allows for a random nonce, using a sequence number as a nonce is considered safe.The discussion also touches on the change from a 64-bit to a 96-bit nonce in RFC7539. Elichai suggests using the "message sequence number" as the nonce for Chacha20, which prompts a query about whether this number is randomly generated or a counter, and if it can be reset without rekeying. If the number is randomly generated, then a 64-bit nonce may not be secure enough, and it is suggested to either use Chacha20 from RFC7539, which has a 96-bit nonce and 32-bit counter, or manually increment the nonce every time. However, if the number is simply a counter, then a 64-bit nonce should suffice.This email thread emphasizes the importance of understanding nonce and its security implications when implementing cryptographic protocols.</p>
         <hr>
-        <p><i>Updated on: 2023-06-13T19:30:38.562412+00:00</i></p>
+        <p><i>Updated on: 2023-08-02T01:00:18.342511+00:00</i></p>
     
 
     

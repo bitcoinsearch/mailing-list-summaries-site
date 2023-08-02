@@ -20,32 +20,12 @@
                 
                     <li>
                         <a href="/bitcoin-dev/Dec_2022/021297_onion-addresses-to-try-At-least-17-of-Bitcoin-Core-24-x-listening-nodes-are-running-full-rbf-.html">onion addresses to try [At least 17% of Bitcoin Core 24.x listening nodes are running full-rbf]</a>
-                        <b>Peter Todd 2022-12-23 09:46:19</b>
+                        <b>Peter Todd 2022-12-23 09:46:19+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/Dec_2022/021298_onion-addresses-to-try-At-least-17-of-Bitcoin-Core-24-x-listening-nodes-are-running-full-rbf-.html">onion addresses to try [At least 17% of Bitcoin Core 24.x listening nodes are running full-rbf]</a>
-                        <b>Vasil Dimov 2022-12-23 07:39:13</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2022/021297_onion-addresses-to-try-At-least-17-of-Bitcoin-Core-24-x-listening-nodes-are-running-full-rbf-.html">onion addresses to try [At least 17% of Bitcoin Core 24.x listening nodes are running full-rbf]</a>
-                        <b>Peter Todd 2022-12-23 09:46:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2022/021297_onion-addresses-to-try-At-least-17-of-Bitcoin-Core-24-x-listening-nodes-are-running-full-rbf-.html">onion addresses to try [At least 17% of Bitcoin Core 24.x listening nodes are running full-rbf]</a>
-                        <b>Peter Todd 2022-12-23 09:46:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2022/021298_onion-addresses-to-try-At-least-17-of-Bitcoin-Core-24-x-listening-nodes-are-running-full-rbf-.html">onion addresses to try [At least 17% of Bitcoin Core 24.x listening nodes are running full-rbf]</a>
-                        <b>Vasil Dimov 2022-12-23 07:39:13</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2022/021298_onion-addresses-to-try-At-least-17-of-Bitcoin-Core-24-x-listening-nodes-are-running-full-rbf-.html">onion addresses to try [At least 17% of Bitcoin Core 24.x listening nodes are running full-rbf]</a>
-                        <b>Vasil Dimov 2022-12-23 07:39:13</b>
+                        <b>Vasil Dimov 2022-12-23 07:39:13+00:00</b>
                     </li>
                 
             
@@ -56,9 +36,9 @@
         <p><i>Published on: 2022-12-23T09:46:19+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>In a recent Bitcoin-dev thread, Peter Todd discussed the lack of convenient sources for onion addresses. Vasil Dimov responded with a potential solution but also pointed out the risks associated with trying onion addresses without checking their long-term track record. Dimov suggested using DNS seed records instead as they are tested over long time frames and have a better chance of representing real nodes. However, his DNS seed is not currently set up to track nodes using Tor.On December 22, 2022, Peter Todd posted on the bitcoin-dev forum about the issue of finding convenient sources for onion addresses. In response, Vasil Dimov provided a command that can be run in the terminal to obtain onion addresses. However, he cautioned against blindly trying them without verifying their long-term track record. Dimov recommended using DNS seed records instead as they are more reliable. He signed off his email with a quote about living life to the fullest.</p>
+        <p>In a recent Bitcoin-dev thread, Peter Todd expressed his concern about the lack of easily accessible sources for onion addresses to try. However, Vasil Dimov pointed out that the issue is more complex than it seems at first glance. Dimov highlighted the fact that obtaining onion addresses is inexpensive and trying them without considering their longer-term track record can lead to problems. There is a risk of inadvertently obtaining the addresses associated with a one-time Sybil attack.To address this challenge, Dimov proposed an alternative solution – using DNS seed records instead. These addresses have been tested over extended periods, offering a higher probability of representing genuine nodes. However, Dimov mentioned that his DNS seed is not currently configured to track nodes using Tor, which limits its effectiveness in this context.On December 22, 2022, Peter Todd shared his concerns on the bitcoin-dev forum regarding the limited availability of convenient sources for onion addresses. In response to Todd's post, Vasil Dimov offered a potential solution in the form of a command that can be executed in the terminal. The command, "bitcoin-cli getnodeaddresses 0 |jq -r 'map(select(.network == "onion")) | . [].address'", could help obtain onion addresses for testing purposes.Dimov concluded his email by including a quote emphasizing the importance of living life to the fullest.</p>
         <hr>
-        <p><i>Updated on: 2023-06-16T03:37:20.303908+00:00</i></p>
+        <p><i>Updated on: 2023-08-02T08:40:39.871016+00:00</i></p>
     
 
     

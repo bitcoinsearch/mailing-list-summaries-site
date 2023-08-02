@@ -19,61 +19,31 @@
             
                 
                     <li>
-                        <a href="/bitcoin-dev/Dec_2013/003751_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Warren Togami Jr. 2013-12-01 11:05:28</b>
+                        <a href="/bitcoin-dev/Dec_2013/003796_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
+                        <b>Wladimir 2013-12-04 07:02:48+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/Dec_2013/003792_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Warren Togami Jr. 2013-12-04 01:57:00</b>
+                        <b>Warren Togami Jr. 2013-12-04 01:57:00+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/Dec_2013/003751_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Warren Togami Jr. 2013-12-01 11:05:28</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2013/003792_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Warren Togami Jr. 2013-12-04 01:57:00</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2013/003796_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Wladimir 2013-12-04 07:02:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2013/003751_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Warren Togami Jr. 2013-12-01 11:05:28</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2013/003792_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Warren Togami Jr. 2013-12-04 01:57:00</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2013/003796_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Wladimir 2013-12-04 07:02:48</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Dec_2013/003796_Coin-Control-Send-crash-on-MacOS-X.html">Coin Control, Send crash on MacOS X</a>
-                        <b>Wladimir 2013-12-04 07:02:48</b>
+                        <b>Warren Togami Jr. 2013-12-01 11:05:28+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-December/003751.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-December/003796.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2013-12-01T11:05:28+00:00</i></p>
+        <p><i>Published on: 2013-12-04T07:02:48+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>In December 2013, Warren Togami Jr. backported patches from master and Litecoin to create a Bitcoin 0.8 client with more features, which was successful on Linux and Win32. Unfortunately, recently the team discovered a rare crash that can happen on MacOS X involving SendCoinsEntry::clear(). The issue is reproducible on MacOS X 10.9 and 10.6.8.Warren has been unsuccessful at building master due to an unfamiliar build environment and is trying qt-4.8.5 next, but it will be difficult to reproduce the crash. Wladimir suggested removing the setFocus() calls that happen after Send is clicked, and moving them to a separate function "focusPayTo" to resolve the issue. However, this caused another crash within qt. The sender then tried replacing a loop that deletes widgets with ->deleteLater() to avoid any potential crashes caused by deleting a QObject while pending events are waiting to be delivered. Despite these attempts, the program still crashes due to something else within Qt.</p>
+        <p>In December 2013, Warren Togami Jr. backported patches from master and Litecoin to create a Bitcoin 0.8 client with additional features. The backported patches were successful on Linux and Win32, but a rare crash was discovered on MacOS X. This crash seemed to be related to a race condition involving SendCoinsEntry::clear(). To address this issue, Wladimir suggested that the setFocus() should be moved from clear() to a separate function called "focusPayTo". After removing both setFocus() calls that occur after clicking Send, another crash occurred within qt. Warren has been actively working on backporting patches from master and Litecoin to enhance the Bitcoin client 0.8 for Linux and Win32. However, a rare crash has recently been identified on MacOS X, specifically involving SendCoinsEntry::clear(). Toffoo and coblee were able to replicate the issue on MacOS X 10.9, while Warren encountered it on 10.6.8. The build was created using Xcode 3.2.6 on MacOS X with MacPorts qt4-mac qt-4.8.4, aiming to simulate Gavin's build environment for the 0.8.x releases. Despite Warren's attempts to build master, he encountered difficulties due to being unfamiliar with the build environment. He plans to try qt-4.8.5 next, although reproducing the crash may prove challenging.</p>
         <hr>
-        <p><i>Updated on: 2023-06-07T21:30:39.978122+00:00</i></p>
+        <p><i>Updated on: 2023-08-01T06:43:54.127750+00:00</i></p>
     
 
     

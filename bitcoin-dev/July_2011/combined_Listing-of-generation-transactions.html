@@ -19,46 +19,26 @@
             
                 
                     <li>
-                        <a href="/bitcoin-dev/July_2011/000189_Listing-of-generation-transactions.html">Listing of generation transactions</a>
-                        <b>Stéphane Gimenez 2011-07-15 00:48:24</b>
-                    </li>
-                
-                    <li>
                         <a href="/bitcoin-dev/July_2011/000191_Listing-of-generation-transactions.html">Listing of generation transactions</a>
-                        <b>Stéphane Gimenez 2011-07-15 16:08:34</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000191_Listing-of-generation-transactions.html">Listing of generation transactions</a>
-                        <b>Stéphane Gimenez 2011-07-15 16:08:34</b>
+                        <b>Stéphane Gimenez 2011-07-15 16:08:34+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/July_2011/000189_Listing-of-generation-transactions.html">Listing of generation transactions</a>
-                        <b>Stéphane Gimenez 2011-07-15 00:48:24</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000189_Listing-of-generation-transactions.html">Listing of generation transactions</a>
-                        <b>Stéphane Gimenez 2011-07-15 00:48:24</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/July_2011/000191_Listing-of-generation-transactions.html">Listing of generation transactions</a>
-                        <b>Stéphane Gimenez 2011-07-15 16:08:34</b>
+                        <b>Stéphane Gimenez 2011-07-15 00:48:24+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000189.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2011-July/000191.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2011-07-15T00:48:24+00:00</i></p>
+        <p><i>Published on: 2011-07-15T16:08:34+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>After reading the pull/417, it has been noticed that generation transactions appear twice in the listtransaction output. The first item has an account of "" and category "generate"/"imature"/"orphan", while the second has the account associated with the destination address and category "received". Both items have the same txid. The author wonders if this is intended behavior or if the second item should be removed. Additionally, the author questions why account "" is enforced in the first item.For coinbase transactions, one "generated" item may be listed per txout that corresponds to an owned address. Accounts would be associated accordingly, in the same way as for usual "received" amounts. Account balances would also take into account these generated amounts in the obvious way. This change would not only simplify the code but also make few people happy who rely on specific details.Furthermore, the author notes that {list,get}receivedby{address,account} commands do not list or take into account generation transactions, despite the help message suggesting otherwise. As a user, the author would assume that generated transactions are included in these listings/amounts. It is not clear whether all of this is related to issues encountered by E-wallet providers.</p>
+        <p>The author of pull/417 has identified a recurring issue with generation transactions appearing twice in the listtransaction output. The first appearance includes transaction data, but has an account value of "" and a category of "generate"/"immature"/"orphan". The second appearance includes the same transaction data, but has the account associated with the destination address and a category of "received". Both appearances have the same txid. The author questions whether this is intentional or if the second appearance should be removed. Additionally, the author raises concerns about the enforced account value of "" in the first appearance.Furthermore, the author points out that the {list,get}receivedby{address,account} commands do not include or consider generation transactions, despite the help message suggesting otherwise. The author suggests that as a user, they would expect generated transactions to be included in these listings and amounts. The author also wonders if these issues are connected to the challenges faced by E-wallet providers.Overall, the author's observations highlight the need for clarification and potential improvements in handling generation transactions within the listtransaction output and related commands.</p>
         <hr>
-        <p><i>Updated on: 2023-06-04T17:20:41.028536+00:00</i></p>
+        <p><i>Updated on: 2023-08-01T02:07:30.134658+00:00</i></p>
     
 
     

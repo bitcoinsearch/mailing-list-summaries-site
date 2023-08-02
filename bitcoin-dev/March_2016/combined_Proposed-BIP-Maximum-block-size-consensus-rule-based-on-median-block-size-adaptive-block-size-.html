@@ -19,46 +19,26 @@
             
                 
                     <li>
-                        <a href="/bitcoin-dev/March_2016/012587_Proposed-BIP-Maximum-block-size-consensus-rule-based-on-median-block-size-adaptive-block-size-.html">Proposed BIP: Maximum block size consensus rule based on median block size (adaptive block size)</a>
-                        <b>Chris Kleeschulte 2016-03-25 17:27:30</b>
-                    </li>
-                
-                    <li>
                         <a href="/bitcoin-dev/March_2016/012589_Proposed-BIP-Maximum-block-size-consensus-rule-based-on-median-block-size-adaptive-block-size-.html">Proposed BIP: Maximum block size consensus rule based on median block size (adaptive block size)</a>
-                        <b>Tier Nolan 2016-03-25 18:48:15</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2016/012589_Proposed-BIP-Maximum-block-size-consensus-rule-based-on-median-block-size-adaptive-block-size-.html">Proposed BIP: Maximum block size consensus rule based on median block size (adaptive block size)</a>
-                        <b>Tier Nolan 2016-03-25 18:48:15</b>
+                        <b>Tier Nolan 2016-03-25 18:48:15+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/March_2016/012587_Proposed-BIP-Maximum-block-size-consensus-rule-based-on-median-block-size-adaptive-block-size-.html">Proposed BIP: Maximum block size consensus rule based on median block size (adaptive block size)</a>
-                        <b>Chris Kleeschulte 2016-03-25 17:27:30</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2016/012587_Proposed-BIP-Maximum-block-size-consensus-rule-based-on-median-block-size-adaptive-block-size-.html">Proposed BIP: Maximum block size consensus rule based on median block size (adaptive block size)</a>
-                        <b>Chris Kleeschulte 2016-03-25 17:27:30</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/March_2016/012589_Proposed-BIP-Maximum-block-size-consensus-rule-based-on-median-block-size-adaptive-block-size-.html">Proposed BIP: Maximum block size consensus rule based on median block size (adaptive block size)</a>
-                        <b>Tier Nolan 2016-03-25 18:48:15</b>
+                        <b>Chris Kleeschulte 2016-03-25 17:27:30+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-March/012587.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-March/012589.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2016-03-25T17:27:30+00:00</i></p>
+        <p><i>Published on: 2016-03-25T18:48:15+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>There is a proposal to change the MAX_BLOCK_SIZE consensus rule in Bitcoin, which would allow the maximum block size to increase or decrease based on actual network usage. The proposal was submitted by Chris Kleeschulte and is available on GitHub. The purpose of this change is to allow the network's capacity to adjust to changes in user demand and scaling advancements while still being protected from denial of service attacks. Using floating point calculations in consensus code is not recommended, so very large integers are used instead. The get median function could use an array of integers instead of floating point calculations. It's suggested that adding a second limiter to the growth rate could help gain acceptance, such as making it so that the size isn't allowed to more than double every year, similar to the 1MB limit on the lower end. The graphs likely understate the growth rate since the 1MB limit inherently restricts things to 1MB.</p>
+        <p>The email thread discusses the proposal to change the MAX_BLOCK_SIZE consensus rule in the Bitcoin network. The proposed change is based on the median block size over the last three months, allowing the maximum block size to increase or decrease based on actual network usage. The purpose of this consensus rule change is to allow the network's capacity to adjust to changes in user demand and scaling related technology advancements, while still being protected from denial of service attacks.The use of floating point calculations in consensus code is considered a bad idea, so the standard practice is to use very large integers instead. The suggestion is made to use an array of integers in the get median function, even though the block size has to be an integer. This would still allow for a rounded-up integer limit on the block size.To gain acceptance for the proposed change, it is suggested to add a second limiter to the growth rate. One idea is to make it so that the block size isn't allowed to more than double every year, similar to the 1MB limit on the lower end. The graphs provided likely underestimate the growth rate, as the current 1MB limit inherently restricts things to that size.A draft BIP (Bitcoin Improvement Proposal) has been created to formalize the proposed change to the MAX_BLOCK_SIZE consensus rule. The draft is available on GitHub and was submitted by Chris Kleeschulte.</p>
         <hr>
-        <p><i>Updated on: 2023-06-11T04:40:47.851526+00:00</i></p>
+        <p><i>Updated on: 2023-08-01T18:02:43.122261+00:00</i></p>
     
 
     

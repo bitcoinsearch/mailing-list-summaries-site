@@ -19,36 +19,36 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/Nov_2018/001497_Proposal-for-local-channel-announcements-.html">Proposal for &#34;local&#34; channel announcements.</a>
-                        <b>Rusty Russell 2018-11-04 04:21:30</b>
+                        <a href="/lightning-dev/Nov_2018/001502_Proposal-for-local-channel-announcements-.html">Proposal for &#34;local&#34; channel announcements.</a>
+                        <b>ZmnSCPxj 2018-11-04 15:04:14+00:00</b>
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/Nov_2018/001486_Proposal-for-local-channel-announcements-.html">Proposal for &#34;local&#34; channel announcements.</a>
-                        <b>Rusty Russell 2018-11-01 02:38:23</b>
+                        <a href="/lightning-dev/Nov_2018/001497_Proposal-for-local-channel-announcements-.html">Proposal for &#34;local&#34; channel announcements.</a>
+                        <b>Rusty Russell 2018-11-04 04:21:30+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/Nov_2018/001492_Proposal-for-local-channel-announcements-.html">Proposal for &#34;local&#34; channel announcements.</a>
-                        <b>ZmnSCPxj 2018-11-02 06:01:55</b>
+                        <b>ZmnSCPxj 2018-11-02 06:01:55+00:00</b>
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/Nov_2018/001502_Proposal-for-local-channel-announcements-.html">Proposal for &#34;local&#34; channel announcements.</a>
-                        <b>ZmnSCPxj 2018-11-04 15:04:14</b>
+                        <a href="/lightning-dev/Nov_2018/001486_Proposal-for-local-channel-announcements-.html">Proposal for &#34;local&#34; channel announcements.</a>
+                        <b>Rusty Russell 2018-11-01 02:38:23+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001497.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001502.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2018-11-04T04:21:30+00:00</i></p>
+        <p><i>Published on: 2018-11-04T15:04:14+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>A proposal has been made to increase deniability of payments through the creation of "local" channel announcements, which only propagate one hop. The mechanism would involve a fake short channel id suggested by the public node and a reply from the private node with a fake node id for the channel announcement. Non-public channels have been noted as having poor incentives, with users paying for their non-public channels by revealing that they are the only possible source/destination of payments. A different mechanism has been proposed where on channel open, the initiator indicates a "local" or "global" channel, with local channels gossiped up to some small number of nodes away. The issue of more routes meaning more fees was also acknowledged. Feedback has been welcomed.</p>
+        <p>In a recent email exchange between ZmnSCPxj and Rusty Russell, ZmnSCPxj raised concerns about the flawed incentives for non-public channels. These channels aim to keep public maps small, but users of these channels are not compensated for providing this service. Instead, they actually pay for their non-public channels by revealing to the other user that they are the sole source or destination of payments. To address this issue, ZmnSCPxj proposed an alternative mechanism where the initiator of a channel can indicate whether it is "local" or "global". "Local" channels would only be gossiped up to a limited number of nodes, reducing map sizes while increasing the anonymity set for possible users of the local channel.ZmnSCPxj suspects that there is a "last mile" problem with non-public channels and their incentives. Rusty Russell agrees that public nodes have an information advantage in this scenario, but he believes that more routes mean more fees. However, Rusty acknowledges that a peer can always offer substandard service, so he does not consider this situation to be worse.Further clarification was sought by ZmnSCPxj regarding private and public nodes in a channel. According to ZmnSCPxj, there is a "private" node with all non-published channels, and a public node that benefits from knowing that everything passing through the channel with the "private" node originates solely from it. Rusty confirms that this understanding is correct.Rusty also proposes a solution to increase deniability of payments for nodes with only private channels. Currently, these nodes lose deniability as unannounced channels reveal the sender. The suggested mechanism involves creating "local" channel announcements that only propagate one hop, thereby enhancing deniability. In this process, the public node suggests a fake short channel id unique to it. If the private node agrees to use this id for the channel announcement, it responds with a signature on the `local_channel_announcement` message using its chosen key. This generates a `local_channel_announcement` created by the public node, which is then sent to its peers. Although the peers may consider it a valid `channel_announcement`, they should not propagate it. The `Channel_update` operates as before, following a similar non-propagation rule.Overall, the exchange between ZmnSCPxj and Rusty Russell highlights concerns about the flawed incentives for non-public channels and proposes alternative mechanisms to address the issue. It also discusses the advantage of public nodes in terms of information and suggests ways to increase payment deniability for nodes with only private channels through the creation of "local" channel announcements. Feedback on these proposals is welcome.</p>
         <hr>
-        <p><i>Updated on: 2023-05-25T15:04:53.694090+00:00</i></p>
+        <p><i>Updated on: 2023-07-31T20:36:53.983988+00:00</i></p>
     
 
     

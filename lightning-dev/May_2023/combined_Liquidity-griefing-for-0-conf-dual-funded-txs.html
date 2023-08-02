@@ -19,41 +19,51 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/May_2023/003942_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
-                        <b>ZmnSCPxj 2023-05-10 00:07:06</b>
+                        <a href="/lightning-dev/June_2023/003975_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
+                        <b>Bastien TEINTURIER 2023-06-07 09:46:36+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/June_2023/003974_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
+                        <b>Antoine Riard 2023-06-07 00:41:12+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/May_2023/003943_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
-                        <b>Bastien TEINTURIER 2023-05-10 09:15:25</b>
+                        <b>Bastien TEINTURIER 2023-05-10 09:15:25+00:00</b>
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/May_2023/003920_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
-                        <b>Bastien TEINTURIER 2023-05-05 16:21:50</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/May_2023/003931_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
-                        <b>ZmnSCPxj 2023-05-07 22:54:50</b>
+                        <a href="/lightning-dev/May_2023/003942_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
+                        <b>ZmnSCPxj 2023-05-10 00:07:06+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/May_2023/003938_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
-                        <b>Matt Morehouse 2023-05-09 17:38:55</b>
+                        <b>Matt Morehouse 2023-05-09 17:38:55+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2023/003931_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
+                        <b>ZmnSCPxj 2023-05-07 22:54:50+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/May_2023/003920_Liquidity-griefing-for-0-conf-dual-funded-txs.html">Liquidity griefing for 0-conf dual-funded txs</a>
+                        <b>Bastien TEINTURIER 2023-05-05 16:21:50+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003942.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003975.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2023-05-10T00:07:06+00:00</i></p>
+        <p><i>Published on: 2023-06-07T09:46:36+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The Lightning Network's dual-funded transactions have created challenges when protecting against liquidity griefing attacks from malicious peers. One solution is to never lock utxos used in dual funded transactions, but this falls short when using 0-conf as accidental double-spending can result in the loss of funds for one of the peers. Nodes offering 0-conf services must ensure that the utxos they use for 0-conf are isolated from those used for non 0-conf. To address these issues, various solutions have been proposed, including locking UTXOs after tx_completes have been exchanged only if the node is the only contributor. Furthermore, the post highlights the safety of dual-funded 0-conf transactions when using swap-in-potentiam addresses with the acceptor, preventing liquidity griefing from being cost-free. However, trust is still required between parties, and the author suggests implementing LSPS3 Promise To Unconditionally Fund 0-conf to address concerns. Bastien Teinturier, a member of the Lightning Network development team, seeks input on improving the situation regarding 0-conf services and liquidity griefing attacks. The proposal is to lock UTXOs after tx_complete exchange if the channel has option_zeroconf and if the peer contributes any inputs to the funding transaction, the process should be aborted as 0-conf is unsafe. Eclair currently uses "opportunistic" 0-conf, but soft locks prevent upgrading to 0-conf when mixing 0-conf and non-0-conf funding attempts. The post aims to raise awareness and gather ideas to offer good-enough protections against liquidity griefing for nodes offering 0-conf services.</p>
+        <p>The discussion revolves around the challenges and potential solutions for liquidity griefing attacks in dual-funded transactions within the Lightning Network. One proposed solution is to never lock UTXOs used in dual-funded transactions, allowing them to be automatically reused if a remote node goes silent. However, this approach is not suitable for 0-conf channels, as accidental double-spending can result in fund loss.To address these issues, suggestions include implementing a "soft lock" when selecting UTXOs for non 0-conf funding attempts, disabling inbound payments, or using a longer `cltv_expiry_delta` to mitigate the impact of mempool fee spikes on 0-conf chain confirmations. Additionally, exploring solutions such as the Staking Credentials framework, which imposes fees and introduces privacy-preserving credentials, can protect against griefing attacks.The email also highlights the importance of isolating utxos used for 0-conf channels from those used for non 0-conf channels to avoid race scenarios and accidental double-spending. The current implementation of Eclair utilizes opportunistic 0-conf but faces challenges when attempting to mix both 0-conf and non 0-conf funding attempts due to soft-locked utxos.Overall, the discussion emphasizes the need to address mempool pinning issues and liquidity griefing in lightning network transactions. Implementing effective solutions is crucial in order to protect against these vulnerabilities and enhance the user experience in using 0-conf channels.</p>
         <hr>
-        <p><i>Updated on: 2023-06-04T05:02:30.772837+00:00</i></p>
+        <p><i>Updated on: 2023-08-01T01:12:27.686617+00:00</i></p>
     
 
     

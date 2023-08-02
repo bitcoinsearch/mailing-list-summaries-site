@@ -19,46 +19,46 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/Feb_2019/001857_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
-                        <b>ZmnSCPxj 2019-02-01 05:15:17</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Feb_2019/001858_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
-                        <b>James Chiang 2019-02-01 09:01:20</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/Feb_2019/001859_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
-                        <b>ZmnSCPxj 2019-02-01 09:33:53</b>
+                        <a href="/lightning-dev/Feb_2019/001861_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
+                        <b>ZmnSCPxj 2019-02-04 04:07:01+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/Feb_2019/001860_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
-                        <b>James Chiang 2019-02-01 10:18:44</b>
+                        <b>James Chiang 2019-02-01 10:18:44+00:00</b>
                     </li>
                 
                     <li>
-                        <a href="/lightning-dev/Feb_2019/001861_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
-                        <b>ZmnSCPxj 2019-02-04 04:07:01</b>
+                        <a href="/lightning-dev/Feb_2019/001859_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
+                        <b>ZmnSCPxj 2019-02-01 09:33:53+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2019/001858_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
+                        <b>James Chiang 2019-02-01 09:01:20+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Feb_2019/001857_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
+                        <b>ZmnSCPxj 2019-02-01 05:15:17+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/Jan_2019/001856_Revocations-with-OP-CSFS-signed-sequence-commitments.html">Revocations with OP_CSFS &amp; signed sequence commitments</a>
-                        <b>James Chiang 2019-01-30 22:31:47</b>
+                        <b>James Chiang 2019-01-30 22:31:47+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001857.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-February/001861.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2019-02-01T05:15:17+00:00</i></p>
+        <p><i>Published on: 2019-02-04T04:07:01+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The email exchange between James Chiang and ZmnSCPxj revolves around understanding how channel commitment transactions can be revoked using op_checksigfromstack(msg, sig, key) and signed sequence commitments. The commitment c(n, randomness) is signed by both parties for each state, and this signature can be verified with op_csfs(c, sig(A+B), key(A+B)). The sequence number n is incremented for each new state. ZmnSCPxj suggests obfuscating the initial 'n=0' with a pre-negotiated m and applying some kind of deterministic step to this obscured initial state number. However, this method cannot result in an obfuscated number where the only requirement is that the sequence number be monotonically increasing. Instead, they suggest adding an obfuscating number to the sequence number which allows comparison of sequence numbers while obscuring the number of updates.James asks for clarification on how sequence numbers are committed to the nth commitment tx and accessible on-stack during script evaluation. Johnson Lao's and Roasbeef's Talk from Scaling Bitcoin at Stanford is referred to in response. James also wonders if n and n++ will necessarily be revealed during a unilateral close.The author learned about the concept of sequence numbers being committed to the nth commitment tx and accessible on-stack during script evaluation from Johnson Lao's and Roasbeef's Talk from Scaling Bitcoin at Stanford. To verify the existence of a newer signed commitment sequence from an older, revoked commitment transaction, an output script can examine op_checksigfromstack(c++, sig(A+B), key(A+B)) where c++ == commitment(n++, r). However, it must also have information about its own sequence number n, so it can verify that this is indeed lower than n++ (current).</p>
+        <p>In a conversation between James Chiang and ZmnSCPxj, they discuss the implementation of obfuscating the sequence number by XOR in BOLT #3. However, this method does not meet the requirement of having a monotonically increasing sequence number. ZmnSCPxj suggests adding an obfuscating number to the sequence number instead, which allows for comparison of sequence numbers while obscuring the number of updates. The step size being anything other than 1 is not very useful as long as the blinding initial number 'm' is truly selected at random. At channel setup time, both sides can select a 2^63 number as base for update 'n = 0', and publish it as 'm + n'. The next number would be 'm + n + 1', and so on.James also seeks clarification on how sequence numbers are committed to the nth commitment tx and accessible on-stack during script evaluation. He refers to Johnson Lao's and Roasbeef's Talk from Scaling Bitcoin at Stanford for more information on this concept.In an email conversation about the revocation of channel commitment transactions with op_checksigfromstack(msg, sig, key) and signed sequence commitments, ZmnSCPxj proposes obfuscating the initial 'n=0' with a pre-negotiated m and applying a deterministic step to this obscured initial state number. This ensures that sequence numbers can be compared while obscuring the number of updates. In response to James Chiang's inquiry about how sequence number n is committed to the nth commitment tx and accessible on-stack during script evaluation, Johnson Lao's and Roasbeef's Talk from Scaling Bitcoin at Stanford is suggested as a reference.The writer of the message is seeking information on how channel commitment transactions can be revoked using op_checksigfromstack(msg, sig, key) and signed sequence commitments. Each state has a commitment c(n, randomness) that is signed by both parties, and this signature can be verified with op_csfs(c, sig(A+B), key(A+B)). The sequence number n is incremented for each new state. An output script of an older, revoked commitment transaction can verify that a newer signed commitment sequence exists by examining op_checksigfromstack(c++, sig(A+B), key(A+B)) and c++ == commitment(n++, r). However, the script must also have information about its own sequence number n to ensure it is lower than n++. The writer learned about this concept from a presentation at Scaling Bitcoin at Stanford by Johnson Lao and Roasbeef.In this conversation, James seeks clarification on how channel commitment transactions can be revoked with op_checksigfromstack(msg, sig, key) and signed sequence commitments. He asks ZmnSCPxj about the n++ ?> n inequality evaluation during the sweep of the revoked nth state. James wonders if n and n++ will necessarily be revealed during a unilateral close. ZmnSCPxj provides a link to a slide from Olaoluwa that describes a prior sequence number commitment being embedded in the commitment output. James asks about the arguments for the evaluation of n++ ?>n being supplied without revealing either commitment sequence numbers. Regarding Olaoluwa's proposal (slide linked above), James doesn't understand how the prior commitment opening and embedding of the commitment in the output script contributes to this. ZmnSCPxj explains that "n++" here is a SCRIPT input such that any "n" Then the SCRIPT itself contains the "n" it has. Thus `n` is embedded in the SCRIPT directly as a constant. Now the script itself is committed via P2WSH, and the output SCRIPT is committed to in the SIGHASH algorithm used.In this email exchange, James Chiang is seeking to understand how channel commitment transactions can be revoked using op_checksigfromstack(msg, sig, key) and signed sequence commitments. The commitment is signed by both parties for each state and the signature can be verified with op_csfs(c, sig(A+B), key(A+B)). The sequence number is incremented for each new state. An output script of an older, revoked commitment transaction can verify that a newer signed commitment sequence exists by examining op_checksigfromstack(c++, sig(A+B), key(A+B)) and c++ == commitment(n++, r). However, it must also have information about its own sequence number n, so it can verify that this is indeed lower than n++ (current). `n` is embedded in the SCRIPT directly as a constant and the script itself is committed via P2WSH, and the output SCRIPT is committed to in the SIGHASH algorithm used.The author of the message is trying to understand how channel commitment transactions can be revoked using op_checksigfromstack(msg, sig, key) and signed sequence commitments.</p>
         <hr>
-        <p><i>Updated on: 2023-06-03T21:36:02.801337+00:00</i></p>
+        <p><i>Updated on: 2023-07-31T21:25:37.713502+00:00</i></p>
     
 
     

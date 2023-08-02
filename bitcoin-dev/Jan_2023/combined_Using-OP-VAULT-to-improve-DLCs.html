@@ -20,32 +20,12 @@
                 
                     <li>
                         <a href="/bitcoin-dev/Jan_2023/021359_Using-OP-VAULT-to-improve-DLCs.html">Using OP_VAULT to improve DLCs</a>
-                        <b>Billy Tetrud 2023-01-19 22:42:43</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2023/021359_Using-OP-VAULT-to-improve-DLCs.html">Using OP_VAULT to improve DLCs</a>
-                        <b>Billy Tetrud 2023-01-19 22:42:43</b>
+                        <b>Billy Tetrud 2023-01-19 22:42:43+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/Jan_2023/021339_Using-OP-VAULT-to-improve-DLCs.html">Using OP_VAULT to improve DLCs</a>
-                        <b>Ben Carman 2023-01-12 12:32:06</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2023/021339_Using-OP-VAULT-to-improve-DLCs.html">Using OP_VAULT to improve DLCs</a>
-                        <b>Ben Carman 2023-01-12 12:32:06</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2023/021359_Using-OP-VAULT-to-improve-DLCs.html">Using OP_VAULT to improve DLCs</a>
-                        <b>Billy Tetrud 2023-01-19 22:42:43</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/Jan_2023/021339_Using-OP-VAULT-to-improve-DLCs.html">Using OP_VAULT to improve DLCs</a>
-                        <b>Ben Carman 2023-01-12 12:32:06</b>
+                        <b>Ben Carman 2023-01-12 12:32:06+00:00</b>
                     </li>
                 
             
@@ -56,9 +36,9 @@
         <p><i>Published on: 2023-01-19T22:42:43+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>A new proposal has been introduced to create not-so-simple covenants using the OP_UNVAULT opcode. The idea is to restrict the script using OP_UNVAULT to only contain that one opcode call, which can be used for Jeremy Rubin's congestion control transactions. However, with the addition of a scriptPubKey for authorizing recovery, more general covenants can be created by setting unvault-target-hash to an unsatisfiable number and placing arbitrary conditions on spending the utxo to the "recovery address." This approach could be used as a general CTV-like covenant.The proposal was suggested by Ben Carman after reading James O'Beirne's OP_VAULT proposal. It would use more blockchain space but should have all the same computational savings as the original CTV proposal. The main downside is that the final spending script will be slightly larger. A similar construction could be done by creating a taproot tree similar to Lloyd's construction, with each leaf looking like `0 OP_UNVAULT CHECKSIG`. Compared to the original CTV proposal, this should get all the same computational savings but would use more blockchain space. Instead of just having `OP_CTV`, it will be replaced with `0 OP_UNVAULT` (34 bytes extra, not including the witness discount). However, this may be negligible in the case of a DLC with many outcomes as a lot of the input size will be coming from the control block. The proposal credits Lloyd Fournier for the original idea.</p>
+        <p>A proposal has been put forward to use the OP_UNVAULT opcode as a means of creating more complex covenants. The idea is to restrict the script to only contain the OP_UNVAULT call, allowing it to be used for Jeremy Rubin's congestion control transactions. However, by adding a scriptPubKey for authorization recovery, it becomes possible to create more general covenants by setting the unvault-target-hash to an unsatisfiable number and placing arbitrary conditions on spending the UTXO to the recovery address. This concept, proposed by Ben Carman after reading James O'Beirne's OP_VAULT proposal, can be seen as a general CTV-like covenant.While this approach would require more blockchain space, it should offer the same computational savings as the original CTV proposal. The main drawback is that the final spending script will be slightly larger. Another proposal suggests using the OP_UNVAULT output to create a not-so-simple covenant by setting the unvault-target-hash to desired output restrictions. This construction can recreate many aspects of CTV, including Lloyd's improvement to DLCs. A taproot tree similar to Lloyd's construction could also be created, with each leaf appearing as `0 OP_UNVAULT CHECKSIG`. This variation should provide the same computational benefits as the original CTV proposal but would consume more blockchain space. The downside is that the final spending script would be slightly larger, with `OP_CTV` being replaced by `0 OP_UNVAULT` (adding 34 bytes, excluding the witness discount). However, in the case of a DLC with multiple outcomes, the impact may be negligible as the input size will primarily come from the control block.This idea was inspired by James O'Beirne's OP_VAULT proposal, and credit is given to Lloyd Fournier for the original proposal.</p>
         <hr>
-        <p><i>Updated on: 2023-06-16T03:55:54.240319+00:00</i></p>
+        <p><i>Updated on: 2023-08-02T08:47:59.670284+00:00</i></p>
     
 
     

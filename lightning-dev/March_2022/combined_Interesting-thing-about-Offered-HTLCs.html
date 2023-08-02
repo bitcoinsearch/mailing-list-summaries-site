@@ -19,46 +19,46 @@
             
                 
                     <li>
-                        <a href="/lightning-dev/March_2022/003506_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
-                        <b>Eugene Siegel 2022-03-07 20:26:51</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2022/003507_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
-                        <b>Antoine Riard 2022-03-07 22:46:07</b>
+                        <a href="/lightning-dev/March_2022/003518_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
+                        <b>darosior 2022-03-16 10:03:29+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/March_2022/003517_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
-                        <b>Eugene Siegel 2022-03-15 15:26:25</b>
+                        <b>Eugene Siegel 2022-03-15 15:26:25+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/March_2022/003509_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
-                        <b>darosior 2022-03-11 13:47:00</b>
-                    </li>
-                
-                    <li>
-                        <a href="/lightning-dev/March_2022/003518_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
-                        <b>darosior 2022-03-16 10:03:29</b>
+                        <b>darosior 2022-03-11 13:47:00+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/lightning-dev/March_2022/003508_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
-                        <b>Eugene Siegel 2022-03-10 14:55:24</b>
+                        <b>Eugene Siegel 2022-03-10 14:55:24+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2022/003507_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
+                        <b>Antoine Riard 2022-03-07 22:46:07+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/March_2022/003506_Interesting-thing-about-Offered-HTLCs.html">Interesting thing about Offered HTLCs</a>
+                        <b>Eugene Siegel 2022-03-07 20:26:51+00:00</b>
                     </li>
                 
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003506.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003518.html">Click here to read the original discussion on the lightning-dev mailing list</a>
         
-        <p><i>Published on: 2022-03-07T20:26:51+00:00</i></p>
+        <p><i>Published on: 2022-03-16T10:03:29+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>In an email conversation, Antoine Riard and Eugene Siegel discuss the implications of offered HTLC outputs in Lightning transactions. Offered HTLCs have three claim paths: revocation case, offerer claiming through the HTLC-timeout transaction, and the receiver claiming via their signature and preimage. The offering party can claim via the HTLC-timeout case on their commitment transaction with their signature and the remote's signature after the cltv_expiry timeout. However, they can only spend with the HTLC-timeout transaction due to SIGHASH_ALL, even if the remote party gives them a signature + preimage. The conversation also touches on the issue of unintended paths in Lightning transactions. They suggest using Miniscript, a subset of script, to prevent surprises and improve security. It is noted that Miniscripts with duplicate keys are considered insane and a policy compiler would never produce such a Miniscript. Additionally, splitting the Script branches into two tapleaves and having bip342 signature digest committing to the tapleaf_hash could solve the problem with offered HTLC outputs. Antoine also mentions from a receiving counterparty safety viewpoint, if you're already suffering a contest, it means your HTLC-claim on your own local commitment transaction inbound HTLC output has been inefficient, and your fee-bumping strategy is to blame. Finally, Eugene believes that there are no cases where the offering party would know the preimage and want to force close, so this is a benign issue.</p>
+        <p>In a recent discussion on the Lightning-dev mailing list, the use of Miniscript was suggested as a solution to prevent unintended paths in Lightning transactions. Miniscript is a subset of script that can improve security and avoid surprises. The conversation also focused on the issue of offered HTLC outputs and the three claim paths associated with them.The offering party in an HTLC transaction can claim via the HTLC-timeout case on their commitment transaction, using their signature and the remote's signature after the cltv_expiry timeout. However, they can only spend with the HTLC-timeout transaction due to SIGHASH_ALL. This means that even if they have the remote's signature and preimage after the timeout, they cannot spend using those. This limitation does not alleviate the need for the offering party to respect the CLTV delay, and the timespan of the offered HTLC cannot be shortened.In cases of competing HTLC races, once the absolute timelock is expired, the offering counterparty can compete against the receiving counterparty with a more feerate-efficient witness. However, from a receiving counterparty safety viewpoint, suffering a contest indicates that the HTLC-claim on their own local commitment transaction inbound HTLC output has been inefficient, and their fee-bumping strategy is to blame.To address these issues, Antoine Riard suggests splitting the Script branches into two tapleaves and having bip342 signature digest committing to the tapleaf_hash. This solution could potentially resolve the problem with offered HTLC outputs in Lightning transactions.Meanwhile, Eugene Siegel shares an observation about offered HTLCs having three claim paths: the revocation case, the offerer claiming through the HTLC-timeout transaction, and the receiver claiming via their signature and preimage. The offering party can claim with the remote's signature + preimage but can only spend with the HTLC-timeout transaction due to SIGHASH_ALL. Eugene believes that this issue is benign since he cannot think of any cases where the offering party would know the preimage and want to force close. However, he acknowledges that the remote party claiming it first could be a potential problem.In summary, the use of Miniscript in Lightning transactions can help prevent unintended paths. The issue of offered HTLC outputs and the limitations of spending with the HTLC-timeout transaction due to SIGHASH_ALL were discussed. Splitting the Script branches into tapleaves and using bip342 signature digest committing to the tapleaf_hash was proposed as a possible solution. Further exploration of these topics is expected, and more details can be found in the provided links.</p>
         <hr>
-        <p><i>Updated on: 2023-06-04T03:10:37.730916+00:00</i></p>
+        <p><i>Updated on: 2023-08-01T00:09:47.694049+00:00</i></p>
     
 
     

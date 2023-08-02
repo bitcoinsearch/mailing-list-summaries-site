@@ -20,32 +20,12 @@
                 
                     <li>
                         <a href="/bitcoin-dev/April_2014/005283_question-about-ProcessMessage-.html">question about ProcessMessage()</a>
-                        <b>Matthieu Riou 2014-04-17 18:00:04</b>
+                        <b>Matthieu Riou 2014-04-17 18:00:04+00:00</b>
                     </li>
                 
                     <li>
                         <a href="/bitcoin-dev/April_2014/005273_question-about-ProcessMessage-.html">question about ProcessMessage()</a>
-                        <b>Sharon Dvir 2014-04-17 09:43:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/April_2014/005283_question-about-ProcessMessage-.html">question about ProcessMessage()</a>
-                        <b>Matthieu Riou 2014-04-17 18:00:04</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/April_2014/005273_question-about-ProcessMessage-.html">question about ProcessMessage()</a>
-                        <b>Sharon Dvir 2014-04-17 09:43:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/April_2014/005273_question-about-ProcessMessage-.html">question about ProcessMessage()</a>
-                        <b>Sharon Dvir 2014-04-17 09:43:19</b>
-                    </li>
-                
-                    <li>
-                        <a href="/bitcoin-dev/April_2014/005283_question-about-ProcessMessage-.html">question about ProcessMessage()</a>
-                        <b>Matthieu Riou 2014-04-17 18:00:04</b>
+                        <b>Sharon Dvir 2014-04-17 09:43:19+00:00</b>
                     </li>
                 
             
@@ -56,9 +36,9 @@
         <p><i>Published on: 2014-04-17T18:00:04+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The email thread revolves around a specific line of code in the main.cpp file on Github's Bitcoin repository. The function ProcessMessage() contains a line of code that checks if the size of a vector called vAddr is 1000, and if it is, the function returns. The purpose of this line of code is to flag a peer as having no more addresses to learn from, and a previous check ensures that peers sending more than 1000 addresses are disallowed to prevent flooding.One question raised in the email thread is whether the variable pfrom->fGetAddr can be true only if the size of vAddr is 1000. However, the answer to this question could not be found in the list archive, and further investigation may be required to understand how this variable relates to the vAddr vector.Overall, there seems to be a concern about the behavior of the ProcessMessage() function and how it interacts with the vAddr vector and the pfrom->fGetAddr variable. The discussion concludes with a link to a book about graph databases, which may be useful for further investigation.</p>
+        <p>The email thread revolves around a specific line of code in the main.cpp file on Github's Bitcoin repository. The initial inquiry seeks clarification about the purpose of a line that checks if 'vAddr.size()' is greater than an unknown quantity. In response, it is explained that this line flags a peer as having no more addresses to learn from. Furthermore, it is mentioned that a prior check ensures that peers sending more than 1000 addresses are disallowed to prevent flooding. Additionally, the email states that 'pfrom->fGetAddr' is only allowed when 'vAddr.size()==1000'.Moving on to the main.cpp file itself, there is a function called ProcessMessage(). Within this function, there exists a line of code that checks if the size of a vector called vAddr is equal to 1000. If the condition is met, the function will return. However, the question arises as to whether the variable pfrom->fGetAddr can be true only when the size of vAddr is 1000. Unfortunately, the answer to this question could not be found in the list archive.Consequently, it remains unclear what the purpose of pfrom->fGetAddr is and how it relates to the size of the vAddr vector. To obtain a definitive answer, it may be necessary to examine other parts of the code or seek input from other developers. Overall, there appears to be a concern regarding the behavior of the ProcessMessage() function and its interaction with the vAddr vector and the pfrom->fGetAddr variable. Further investigation is warranted to fully comprehend the issue at hand and find a suitable solution.To conclude the discussion, a link to a book about graph databases is shared. This resource may prove helpful in gaining a deeper understanding of the topic under consideration.</p>
         <hr>
-        <p><i>Updated on: 2023-06-08T19:54:49.904378+00:00</i></p>
+        <p><i>Updated on: 2023-08-01T08:47:15.348586+00:00</i></p>
     
 
     
