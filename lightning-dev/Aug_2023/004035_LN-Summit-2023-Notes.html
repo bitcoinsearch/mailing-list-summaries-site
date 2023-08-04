@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>LN Summit 2023 Notes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2023-08-03 03:29:50+00:00
+            <br><i>Published on: 2023-08-03T03:29:50+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2023/combined_LN-Summit-2023-Notes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004035.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In a discussion about the monetary approach to DoS (Denial of Service) deterrence, Clara Shikhelman clarifies her intention to highlight that monetary-based research is still worth pursuing alongside reputation-based methods. She emphasizes that her outlined scheme was meant as a rough proof-of-work and not something that should distract from reputation-based approaches.Regarding liquidity DoS, the ideal solution would be to charge fees based on the time an HTLC (Hash Time Locked Contract) is held, but currently, there is no reasonable way to achieve this. Clara challenges the statement that there is no universal clock, suggesting using the chain tip as a clock or setting up local clocks with each peer and dealing with slight synchronization issues.Addressing the concern of proving message transmission, Clara explains that in her suggested scheme, commitment tx updates handle all communication. There is no need for proof of message delivery; if a message was sent, the commitment tx is already updated accordingly, and if it wasn't, the channel is considered invalid and closed on-chain.Clara acknowledges that it's possible for the fee for an unresolved HTLC with a distant timeout to be higher than for a quickly resolving one. However, she suggests that this situation can be avoided, offering a sketch of one possible approach to do so.Regarding time-based fees, Clara discusses the scenario where the victim tries to charge a fee to the attacker. If the attacker refuses to pay the fee, the victim has to force close the channel. The victim cannot prove whether they or someone downstream holds the HTLC, but the goal is for the victim to get paid for their liquidity being held hostage, regardless of whether the channel remains open or gets closed.Responding to concerns about enforceability, Clara points out that if the cap is 500ppm per block, then liquidity fees for a $0.60 payment are redeemable on-chain. She clarifies that this adjustment does not affect the on-chain size or cost of the commitment tx and that the link to on-chain fees is through the cap. The adjustment aims to ensure that the extra profit gained from it does not outweigh the costs associated with unilateral channel closes and reopening.Clara suggests that exploring these ideas in an environment that supports millisat/picobtc values natively could be easier, as it would minimize the difference between commitment tx inclusions and closing/reopening friction. She mentions Liquid as a potential platform for achieving picobtc precision on-chain but acknowledges the challenges and limitations involved in setting it up and adapting a lightning client to work with it.In conclusion, Clara signs off as "aj" and expresses her perspective on the discussed topics.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-04T02:16:01.062464+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
