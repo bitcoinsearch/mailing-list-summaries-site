@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Ark: An Alternative Privacy-preserving Second Layer Solution</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2023-08-06 22:43:55+00:00
+            <br><i>Published on: 2023-08-06T22:43:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_Ark-An-Alternative-Privacy-preserving-Second-Layer-Solution.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021858.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The Ark proposal involves a protocol played between the sender, receiver, and ASP (Application Service Provider), with three types of transactions: pool_tx, ATLC-connection_tx, and ATLC-refund_tx. The pool_tx spends an on-chain funding input and has three outputs: the commitment output, the connector output, and the change output. The receiver vTXO scriptpubkey on pool_tx N includes a pseudo-script that allows for multisig(receiver, ASP) or ((pk(receiver)+24h) or (pk(ASP)+4weeks)).An ATLC-connection_tx is associated with a pool_tx N and spends vTXOs outputs from the receiver at pool_tx N-1 and one or more connector outputs from pool_tx N. There is a potential weakness during the vTXLO transfer phase, where an ATLC-refund transaction using the unilateral exit path could result in a loss of funds. This means that Alice (the sender) and Bob (the receiver) can collude to "double-spend" the ASP without the service provider earning compensation for the pool_tx state N+1 funding input.To address this weakness, there may be a need for another round of interactivity between the sender and the ASP, such as disclosing a revocation secret for the ATLC-refund transaction. However, this should be done without opening the door for the ASP to stall the next pool_tx N+1 broadcast and steal user funds by waiting for the 4-week time lock expiration.In another conversation, Burak explains the three purposes of Ark: mixing coins, paying Lightning invoices, and making internal transfers. The initial onboarding phase of Ark is non-interactive and does not involve PSBT (Partially Signed Bitcoin Transactions). Onboarding simply requires funding a Bitcoin address.Burak provides a refactored explanation of how Bob can deposit 1 BTC with Alice using the Ark protocol. Bob asks his friend Charlie to send 1 BTC to an on-chain Bitcoin address with a specific script. From here, Bob has several options: unilaterally withdraw, collaboratively withdraw, or collaboratively trade commitments.If Bob chooses to collaboratively trade commitments, Alice crafts a transaction called "pool" with three outputs: the commitment output, the connector output, and the change output. The commitment output constrains its descendant transaction to a set of transaction outputs. Alice also creates a connector output that she can spend herself. She keeps this transaction secret and does not broadcast it.To withdraw the funds, Alice signs her one-in, three-out transaction and broadcasts it. Bob can then claim the funds by revealing the appropriate transactions and waiting for a specified time period. Further steps can be taken to send funds to another party, with Alice crafting a new transaction with different outputs.Overall, Ark provides a scalable, off-chain mixing solution and interoperability with Lightning for paying invoices. It allows for internal money transfers without inbound liquidity assumptions.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-07T02:06:01.429997+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

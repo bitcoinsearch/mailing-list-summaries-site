@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pull-req to remove the arbitrary limits on OP_Return outputs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2023/021857_Pull-req-to-remove-the-arbitrary-limits-on-OP-Return-outputs.html">Pull-req to remove the arbitrary limits on OP_Return outputs</a>
+                        <b>John Light 2023-08-06 20:35:38+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Aug_2023/021840_Pull-req-to-remove-the-arbitrary-limits-on-OP-Return-outputs.html">Pull-req to remove the arbitrary limits on OP_Return outputs</a>
+                        <b>Peter Todd 2023-08-03 11:42:40+00:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021857.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2023-08-06T20:35:38+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email addressed to Peter, John Light raises questions regarding a proposed policy change that would remove the OP_RETURN output count and data size limits. The first question asks if there are cases where using OP_RETURN to embed data actually results in fewer bytes onchain compared to using segwit/taproot witness space. Robin Linus suggests there may be a case where small inscriptions receive a discount, but further confirmation and specific details are needed. John invites Robin to respond directly.The second question pertains to the prunability of OP_RETURN outputs. John wonders if there are tools available for full node operators to prune this data from their nodes. He references PR #2791 by Pieter Wuille, which implemented pruning of provably-unspendable outputs, assumed to include OP_RETURN outputs. This leads to additional questions: i) Is the unspendable output pruning in PR #2791 enabled by default or does it require a flag to be enabled? If it's a flag, what is it called and how can it be enabled? If it's on by default, how can it be disabled?ii) If a full node operator prunes OP_RETURN outputs, does it affect their ability to help a new node with initial block download (IBD) for blockchain validation? And would the answer differ if Taproot witness space (i.e., "envelopes" or "inscriptions") were pruned instead?John also mentions Sjors Provoost's suggestion to send an email to the mailing list to notify them about the intention to merge the pull request. The pull request aims to remove standardness restrictions on OP_RETURN outputs, allowing more than 80 bytes and 1 output per transaction. The rationale behind this proposal is to potentially open up additional transaction pinning vectors. Transaction pinning involves intentionally including certain transactions in blocks to prevent others from being confirmed. While some may view transaction pinning as a problem, the author of the email does not consider it a significant concern. It is noted that some miners are already mining non-bitcoin-core-standard transactions, implying that pinning vectors may already exist.</p>
+        <hr>
+        <p><i>Updated on: 2023-08-07T02:10:21.933640+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP-352 Silent Payments addresses should have an expiration time</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Samson Mow 2023-08-04 18:41:39+00:00
+            <br><i>Published on: 2023-08-04T18:41:39+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_BIP-352-Silent-Payments-addresses-should-have-an-expiration-time.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021853.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Wallets don't last forever and are often compromised or lost, resulting in the addresses generated from those wallets becoming a form of toxic data. This means that funds sent to those addresses can be easily lost forever. While all Bitcoin addresses have this problem, existing Bitcoin addresses aren't supposed to be reused. However, Silent Payments addresses are meant to be reused, creating a need for them to eventually expire in a reasonable amount of time to avoid harm.The solution to this issue is simple: adding a 3 byte field to silent payments addresses that encodes the expiration date in terms of days after some epoch. With 2^24 days (45,000 years) or even 2 bytes (180 years), the expiration period is more than sufficient. It is unlikely that Bitcoin will still exist in 180 years. Wallets should pick a reasonable default, such as 1 year, for newly created addresses. If an attempt is made to pay an expired address, it should simply fail with a message stating "address expired".This concept can also be applied to Lightning invoices, which expire for similar reasons as silent payments. Although invoices do not require expiration from a technical standpoint, they do expire for user experience purposes. By implementing this expiration feature for both silent payments addresses and Lightning invoices, the risk of funds being lost forever can be greatly reduced.To read the full discussion thread, visit the bitcoin-dev mailing list archives at [URL].</p>
+    <hr>
+    <p><i> Updated on: 2023-08-07T02:10:57.971580+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
