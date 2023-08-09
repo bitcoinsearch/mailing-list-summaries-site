@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Pull-req to remove the arbitrary limits on OP_Return outputs</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2023-08-08 01:34:56+00:00
+            <br><i>Published on: 2023-08-08T01:34:56+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_Pull-req-to-remove-the-arbitrary-limits-on-OP-Return-outputs.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021859.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>OP_RETURN outputs are already pruned and not inserted into the UTXO database. Pruning in this context refers to removing or not inserting OP_RETURN from the UTXO database. The UTXO database is kept small to reduce lookups of spent UTXOs for faster validation. Archival nodes retain the raw OP_RETURN data as part of the block data to prove validity. Block-pruning nodes also retain this data to serve recent blocks that contain valid transactions with OP_RETURN. To prove a block's validity, OP_RETURN data must be provided to show the correctly formatted transaction and its txid in the Merkle tree. Block relay requires retaining OP_RETURN data for verification. Pruning in this context means not keeping OP_RETURN TXOs in the UTXO database.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-09T02:07:16.373335+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
