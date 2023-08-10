@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Concrete MATT opcodes</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Salvatore Ingala 2023-08-09 08:38:48+00:00
+            <br><i>Published on: 2023-08-09T08:38:48+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_Concrete-MATT-opcodes.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021865.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Salvatore thanks Johan for the comments and independent implementation. The main concern for the reordering was to put it at the bottom as it is typically passed via the witness stack. The right next was added to allow specifying via the witness the input index or output for certain UTXOs with CCV encumbrance. This helps in designing more flexible contracts that can batch transactions. Other parameters are usually hardcoded or propagated from the current input with special values. Johan's ordering is considered more aesthetically pleasing. The deferred output amount check is not enough for coinpools, but it has no cost if there is already a parameter. The intent is to preserve amounts for many-to-one contracts and one-to-one cases. Efforts to define and add explicit introspection for exciting use cases can proceed independently without nullifying the advantages of this optional feature of CCV.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-10T02:11:13.958233+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
