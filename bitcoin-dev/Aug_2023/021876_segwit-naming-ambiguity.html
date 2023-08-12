@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>segwit naming ambiguity</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> symphonicbtc 2023-08-11 07:38:13+00:00
+            <br><i>Published on: 2023-08-11T07:38:13+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_segwit-naming-ambiguity.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021876.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Transactions can be classified as segwit if they adhere to the witness program structure defined in BIP141, which includes a 1-byte push opcode followed by a data push between 2 and 40 bytes. This classification applies to both version 0 segwit outputs and version 1 taproot outputs. To differentiate between v0 and taproot scripts, a different function could be proposed, similar to the enum used in Bitcoin Core. However, the naming scheme of the enum used in the wallet logic of Bitcoin Core is confusing and should be avoided. It's important to consider nested witness programs inside P2SH and determine whether they should be differentiated from other P2SH. Core has separate enums for this purpose. Ambiguity may arise, so it is necessary to explicitly document how these functions would return for different types of programs. Even though nested programs technically have segregated witness data, they should also be considered segwit for a simple `is_segwit` check. The term "v0" commonly refers to version 0 segwit.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-12T01:47:50.890523+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
