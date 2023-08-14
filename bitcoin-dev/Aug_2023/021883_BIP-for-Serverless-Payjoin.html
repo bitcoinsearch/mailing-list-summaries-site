@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>BIP for Serverless Payjoin</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Dan Gould 2023-08-12 21:20:37+00:00
+            <br><i>Published on: 2023-08-12T21:20:37+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_BIP-for-Serverless-Payjoin.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021883.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Blockchain Commons UR is being suggested as the most elegant choice, considering the prevalence of QR codes. This would allow encoding a public key directly in the `pj=` endpoint without the need for a separate method. However, there are concerns regarding payjoin implementations written in JavaScript, as there is currently no JavaScript ur library available. It is suggested that a JavaScript library could be created based on the rust implementation. The draft has been updated to incorporate these suggestions and has been posted to the bips repository (<a href="https://github.com/bitcoin/bips/pull/1483)">https://github.com/bitcoin/bips/pull/1483)</a>. The major change in the draft is the replacement of symmetric crypto with a Noise IK-based cryptosystem using Secp256k1/Sha256/ChaChaPoly1305, which aims to address the issues identified by waxwing. Input on the transport protocol is also welcomed, particularly regarding the discussion on Nostr's censorship resistant properties. It is important to reach rough consensus within the BIP process before deployment. This is why the email is being sent to the list first instead of developing and deploying a complete reference implementation.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-14T01:52:49.946230+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
