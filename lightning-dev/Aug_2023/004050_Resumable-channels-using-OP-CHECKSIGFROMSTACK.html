@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Resumable channels using OP_CHECKSIGFROMSTACK</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2023-08-17 14:20:38+00:00
+            <br><i>Published on: 2023-08-17T14:20:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2023/combined_Resumable-channels-using-OP-CHECKSIGFROMSTACK.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004050.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the email, the sender discusses the feasibility of wallet providers attempting to cheat in a mobile wallet scenario. They argue that it would be risky for providers to do so because the mobile wallet can constantly check for cheating attempts, and the provider would suffer reputation loss if caught. Therefore, the sender believes that adding complexity to solve this issue is unnecessary.The sender clarifies a previous statement about the danger of signing "commitments" by wallet providers. They explain that it is dangerous for the provider's reputation if the service is only best-effort, as there are race conditions in the lightning protocol that may prevent the provider from having the latest state of the mobile wallet. Keeping track of the mobile wallet's state is not straightforward.The main topic discussed in the email is related to the design choice of sending data in existing messages. There is a length issue because the `commitment_signed` message may already fill up the message, leaving no room for an additional backup.To further explore the discussion, the sender provides a link [1] that contains the end of the discussion on the mentioned design choice. The earlier comments in the link provide more details on that specific design decision.Overall, the email highlights the potential risks and complexities associated with cheating attempts by wallet providers in a mobile wallet scenario. It also raises concerns about the danger to the reputation of wallet providers when signing commitments and addresses the issue of sending data in existing messages.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-18T01:50:20.435151+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

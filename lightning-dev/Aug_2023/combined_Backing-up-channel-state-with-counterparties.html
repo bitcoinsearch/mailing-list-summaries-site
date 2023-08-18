@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Backing up channel state with counterparties <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2023/004048_Backing-up-channel-state-with-counterparties.html">Backing up channel state with counterparties</a>
+                        <b>Thomas Voegtlin 2023-08-17 09:36:58+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2023/004044_Backing-up-channel-state-with-counterparties.html">Backing up channel state with counterparties</a>
+                        <b>Peter Todd 2023-08-15 11:06:26+00:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004048.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2023-08-17T09:36:58+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email begins by disagreeing with the reasoning and numerical values proposed by Peter. The sender clarifies that the terms used in the equations must represent the probability of data loss and the probability of a specific behavior at each connection event, rather than probabilities per year. The joint probability of data loss and the observed behavior is then discussed, with the clarification that these events are not independent.The relevant quantity to determine if Bob can profit is the conditional probability of data loss given the information available to him. This can be expressed using Bayes' theorem. The posterior probability of data loss is higher if Alice behaves as if she has lost her data.Moving on to the numerical values, the sender points out that the probability of users connecting without having their data becomes higher if the feature of restoring channels from seed is available. The frequency at which users restore their wallet from seed is more relevant than the frequency of actual data loss.Lastly, the sender highlights that the observed behavior encompasses all the information available to Bob, not just the fact that Alice has been offline for a few days. If Alice's wallet uses Electrum servers, the server operator can infer whether Alice has been restoring from seed or not.In summary, the email presents a counter-argument to the proposal and explains why backing up channel state with the counterparty is useful and less risky. It provides definitions for relevant terms and discusses the protocol for normal operation and recovery. The conditions under which fraud could be profitable for Bob are analyzed, taking into account the probability of data loss and the value that Bob can fraudulently obtain.</p>
+        <hr>
+        <p><i>Updated on: 2023-08-18T01:51:24.026497+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
