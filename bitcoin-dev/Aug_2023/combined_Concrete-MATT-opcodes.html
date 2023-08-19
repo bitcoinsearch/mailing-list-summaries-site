@@ -19,6 +19,11 @@
             
                 
                     <li>
+                        <a href="/bitcoin-dev/Aug_2023/021892_Concrete-MATT-opcodes.html">Concrete MATT opcodes</a>
+                        <b>Salvatore Ingala 2023-08-18 15:08:39+00:00</b>
+                    </li>
+                
+                    <li>
                         <a href="/bitcoin-dev/Aug_2023/021889_Concrete-MATT-opcodes.html">Concrete MATT opcodes</a>
                         <b>symphonicbtc 2023-08-14 14:07:19+00:00</b>
                     </li>
@@ -56,14 +61,14 @@
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021889.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021892.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2023-08-14T14:07:19+00:00</i></p>
+        <p><i>Published on: 2023-08-18T15:08:39+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>Salvatore Ingala has presented a complete proposal for the core opcodes of MATT, making the opcode functionally complete with revised and improved implementation. The code is implemented in the bitcoin-inquisition repo fork, which includes OP_CHECKTEMPLATEVERIFY. The diff provides details on the implementation and includes basic functional tests. The changes compared to the previous draft include replacing OP_CHECK{IN, OUT}CONTRACTVERIFY with a single opcode, OP_CHECKCONTRACTVERIFY (CCV), and introducing an additional `flags` parameter to specify if the opcode operates on an input or an output. The default behavior for outputs includes a deferred checks mechanism for amounts, where the input amounts with CCV towards the same output are summed and act as a lower bound for that output's amount. A flag can disable this behavior. The order of parameters is also modified for better script writing. The new OP_CHECKCONTRACTVERIFY takes five parameters from the stack and checks if the -th input/output's scriptPubKey is a P2TR with a public key obtained fro optionally tweaked wit and optionally tap-tweaked with . Special values of the parameters are defined, such as using a fixed NUMS point if is empty, using the current input's taproot internal key if is -1, and using the current input's index if is -1. There are also defined flags, including CCV_FLAG_CHECK_INPUT and CCV_FLAG_IGNORE_OUTPUT_AMOUNT. After evaluating all inputs, it is verified that each output's amount is greater than or equal to the total amount in the bucket of that output, validating the deferred checks. The author notes that while some special values may not be useful in applications, they were included for flexibility. With the new opcode, the full generality of MATT, including fraud proofs, can be achieved with just two opcodes: OP_CHECKCONTRACTVERIFY and OP_CAT. However, additional opcodes and introspection may benefit certain applications. The author looks forward to comments and starting a BIP proposal.</p>
+        <p>The email exchange discusses various topics related to Bitcoin programming and proposals. Antoine expresses concerns about the risks of cross-input inspection in off-chain contracts, suggesting the implementation of smart bitcoin contracting primitives to mitigate these risks. He also mentions the need for more advanced bitcoin contracts through the introduction of a matrix or set of "tags" to encode subsets of introspected inputs/outputs.Salvatore thanks Johan for his comments and implementation, mentioning that the reordering of parameters was done for aesthetic purposes. He explains that the deferred output amount check is not enough for coinpools but has no cost if there is already a parameter. Salvatore emphasizes the advantages of the optional feature of CCV and mentions that efforts to define and add explicit introspection can proceed independently without nullifying these advantages.Johan appreciates the update on taptree verification and mentions implementing the updated opcodes in btcd. He suggests reordering the opcode parameters and proposes either removing the amount preservation check or proposing a more powerful amount introspection machinery. Johan seeks Salvatore's thoughts on these suggestions.The email also mentions a proposal for the core opcodes of MATT by Salvatore Ingala. The code is implemented in the bitcoin-inquisition repository fork and includes OP_CHECKCONTRACTVERIFY. The changes compared to the previous draft include replacing OP_CHECK{IN, OUT}CONTRACTVERIFY with a single opcode, introducing an additional `flags` parameter, modifying the order of parameters, and defining special values and flags. The author notes that while some special values may not be useful in applications, they were included for flexibility. With the new opcode, the full generality of MATT can be achieved with just two opcodes: OP_CHECKCONTRACTVERIFY and OP_CAT. Additional opcodes and introspection may benefit certain applications, and the author looks forward to comments and starting a BIP proposal.Overall, the email exchange covers discussions on mitigating risks in off-chain contracts, introducing advanced bitcoin contracts, and proposing improvements to the core opcodes of MATT. The authors provide insights into their thoughts and implementations and express openness to feedback and further development.</p>
         <hr>
-        <p><i>Updated on: 2023-08-15T01:52:44.490180+00:00</i></p>
+        <p><i>Updated on: 2023-08-19T01:44:52.127452+00:00</i></p>
     
 
     

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Resumable channels using OP_CHECKSIGFROMSTACK</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> SomberNight 2023-08-17 18:43:22+00:00
+            <br><i>Published on: 2023-08-17T18:43:22+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2023/combined_Resumable-channels-using-OP-CHECKSIGFROMSTACK.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004052.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the idea of having a peer backup solution that can be provided by any node and used without trust by any node. The suggestion is to have a default configuration where if a node runs a public forwarding node, it automatically signals the "backup-provider" feature bit. This means that if another node connects to this node, it can store its backups with the first node.The argument against reputation loss as a deterrent for replaying old backups is raised. It is suggested that something stronger, such as actual confiscation of funds, would be a more applicable deterrent. The question is raised about whether the Phoenix client happily keeps using a channel after a reconnect, and if so, what would be the risk in attempting to replay old states.The notion of symmetric resumable channels is introduced. It is proposed that Alice and Bob could have a channel where they both provide state backups to each other. To determine who goes first in the channel_reestablish process, an extra preliminary round is suggested. In this round, both Alice and Bob commit to what they will send in channel_reestablish. Alice sends hashA and Bob sends hashB. Alice persists hashB to disk upon receiving it to ensure that Bob cannot arbitrarily send a different commitment next time.The process for the opening post OP_CHECKSIGFROMSTACK on-chain enforcement is also discussed. It is suggested that the channel funding output script needs one taproot branch each for both Alice and Bob lying. The protocol would need to allow a party to admit having lost state and commit to the hash of that in round1, and then reveal the loss in round2. However, it is noted that user-error and manual copying/restoring of databases could lead to catastrophic failure with on-chain enforcement.Overall, the email raises interesting points about a peer backup solution for nodes and discusses various aspects related to reputation loss, replaying old backups, and symmetric resumable channels.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-19T01:45:58.849599+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
