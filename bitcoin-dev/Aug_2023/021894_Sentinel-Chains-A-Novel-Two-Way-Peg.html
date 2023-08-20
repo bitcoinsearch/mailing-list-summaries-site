@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Sentinel Chains: A Novel Two-Way Peg</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ryan at breen.xyz 2023-08-16 02:02:38+00:00
+            <br><i>Published on: 2023-08-16T02:02:38+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_Sentinel-Chains-A-Novel-Two-Way-Peg.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021894.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the implementation of a two-way sidechain peg within the Bitcoin protocol, in response to recent discussions on social media about drivechains. The sender proposes a novel solution to this issue, which is outlined in more detail on their blog and in a discussion on Stacker News.The main challenge addressed by BIP-300, the proposed solution, is how to establish a two-way peg without involving a multisig federation or requiring miners and full nodes to have knowledge about the sidechain or run a sidechain node. The method proposed by BIP-300 involves conducting sidechain withdrawals directly through the miners. To prevent theft, the proposal mandates a three-month period for peg-outs, during which all miners vote on the peg-out. This allows the community to respond in case of incorrect peg-outs or theft, as miners are expected to make the correct decisions under community pressure. Withdrawals are grouped into one large bundle per three-month period to streamline the process of social consensus.Despite criticisms, the sender finds BIP-300 to be a viable and likely effective solution, considering that Bitcoin's mechanism is rooted in social consensus. However, they believe there are tools available now that can improve the process, leading to the concept of Sentinel chains. Sentinel chains involve sidechain nodes functioning as Sentinels, notifying full nodes of thefts via a secondary network. These nodes monitor the state of Bitcoin blocks and mempool transactions, actively searching for peg-outs that go against sidechain consensus to steal funds. They transmit invalid transactions or blocks to public Nostr servers. Full nodes interested in participating in sidechain consensus can run a small daemon alongside Bitcoin Core, monitoring Nostr nodes for messages about invalid transactions and instructing Bitcoin Core, via RPC calls, to ignore and not forward those transactions. Full nodes can choose any group of individuals or organizations to receive updates from Nostr, forming their own decentralized web of trust.This approach reverses the conventional model of two-way pegged sidechains, as sidechains now monitor nodes instead of requiring nodes to monitor sidechains. Similar to drivechains, Sentinel chains require an initial consensus soft fork, but they differ in that they allow for instantaneous and individual withdrawals without the need for a three-month gradual social consensus. Additionally, a single daemon can monitor notifications from multiple Sentinel chains, making the solution highly scalable for numerous sidechains.In summary, drivechains involve an initial consensus soft fork, treat each new sidechain as a miner-activated soft fork, feature withdrawals occurring in three-month periods, involve withdrawals in bundles, exclude Bitcoin full nodes from participation in sidechain consensus, and are currently production-ready. On the other hand, Sentinel chains require no initial soft fork, permit each new sidechain to be miner-activated or user-activated, allow instantaneous withdrawals, facilitate individual withdrawals, enable Bitcoin full nodes to engage in consensus, and are only at the concept stage.Sentinel chains potentially offer advantages over other two-way pegs, particularly in terms of speed and efficiency of consensus. They also align more closely with Bitcoin's principles by keeping power within the realm of full nodes.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-20T01:54:02.160956+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
