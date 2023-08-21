@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Sentinel Chains: A Novel Two-Way Peg</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ryan at breen.xyz 2023-08-19 18:58:15+00:00
+            <br><i>Published on: 2023-08-19T18:58:15+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Aug_2023/combined_Sentinel-Chains-A-Novel-Two-Way-Peg.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021900.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discussion revolves around the concept of fraud proof in a Sentinel chain. The sender seeks clarification on what qualifies as a fraud proof in this context, emphasizing that there is no involvement of cryptographic proof. In the Sentinel chain, the sidechain's full nodes monitor Bitcoin mempools and blocks for withdrawals that violate the consensus rules of the sidechain, such as thefts or incorrect balances.When an invalid withdrawal is detected on Bitcoin by the sidechain's full nodes, they publish a signed attestation to a public broadcast network called Nostr. Participating Bitcoin full nodes and miners monitor this network for these attestations and subsequently reject the offending transactions. This process doesn't rely on the presentation of proof but rather operates based on a distributed trust relationship.It is mentioned that operating their own sidechain nodes is not a requirement for Bitcoin full nodes. Instead, they can choose to participate by selecting a distributed trust network comprising operators of sidechain full nodes that they trust. For example, if they follow 100 well-respected sidechain node operators, they might collectively agree that if 75 of them issue an attestation indicating that a transaction violates sidechain withdrawal rules, then that transaction should be deemed invalid by their node. Withdrawals are considered valid if no public attestations are present.Regarding potential data availability issues, the author expresses uncertainty about the specific problems that might arise. Since there are no alterations to Bitcoin Core's validation logic, when a full node operator starts a new node from the genesis block, they will validate the proof of work of the longest chain without being aware that the transactions within the blocks are associated with a sidechain.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-21T01:53:03.483721+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
