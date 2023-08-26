@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Disclosure: Fake channel DoS vector</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Antoine Riard 2023-08-24 23:33:04+00:00
+            <br><i>Published on: 2023-08-24T23:33:04+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2023/combined_Disclosure-Fake-channel-DoS-vector.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004067.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In this email, Matt is thanked for his work on the v0.0.114 release number for the LDK "fake" lightning channels mitigations. The email confirms the release number and discusses potential Denial of Service (DoS) issues in the peer state machine handling. It mentions the use of privilege watchtowers and process separation as defense mechanisms. However, these hardening architectures are not implemented yet in the "vanilla" LDK.The email also addresses some lessons learned. It clarifies the difference between a watchtower that only encompasses revoked state punishment and a "monitor replica" that encompasses second-stage HTLC. For DoS issues of this type, it is recommended to have the second deployed.Another lesson mentioned is the need for multiple processes in a Lightning node to be free of deadlock and other processing contaminating bugs. This ensures that even if the off-chain state machine coordinator (e.g., ChannelManager) faces a DoS attack or crashes, the chain monitoring can still detect revoked states and react accordingly.The author expresses the opinion that security and robustness have not been top priorities for Lightning implementations for a long time. Instead, the focus has been on maintaining usage market share by achieving spec features parity. The author suggests that more security auditing is needed for the Lightning Network to ensure the long-term sustainability and safety of end-user funds.Overall, the email highlights the importance of addressing potential DoS issues, implementing proper defense mechanisms, and prioritizing security and robustness in Lightning implementations.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-26T01:48:38.894705+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Nucleus: Capital-efficient multipeer Lightning payment channels</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> David A. Harding 2023-08-24 21:25:29+00:00
+            <br><i>Published on: 2023-08-24T21:25:29+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2023/combined_Nucleus-Capital-efficient-multipeer-Lightning-payment-channels.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004065.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In an email sent by Atomic Mr Nuclear, he expresses his gratitude for the work done on multiparty channel design. He highlights two points from a paper and questions their feasibility. The first point states that any construction relying on an honest majority is not safe when the majority consists of untrusted peers. In the context of a multiparty channel with random peers, Alice cannot accept payments safely without signatures from all other participants in the channel. This requirement for "full state updates" seems cumbersome and raises concerns about the practicality of the proposed design.The second point addresses the exclusion of uncooperative peers, which necessitates three confirmed onchain transactions. One of these transactions must have one output for each original participant, while another requires one input for every cooperative participant. Atomic Mr Nuclear finds this requirement excessive in terms of both cost and speed. He believes that such a process would be too expensive and slow to serve as a viable alternative to Lightning.Taking these two points into consideration, Atomic Mr Nuclear concludes that the proposal's reliance on "partial state updates" is not feasible for trustless payments. Without partial updates, the proposal mandates an expensive onchain process whenever even one participant becomes uncooperative. In Atomic Mr Nuclear's opinion, this approach appears inferior to existing designs for channel factories and multiparty channels mentioned in the paper.Atomic Mr Nuclear appreciates the effort put into the paper and expresses interest in learning more if there are any overlooked aspects. Furthermore, he encourages the author to review the work posted on the Lightning-Dev mailing list by John Law over the past year, as it may provide inspiring solutions to similar problems. Atomic Mr Nuclear provides a link to a collection and summary of John Law's work for reference [1].</p>
+    <hr>
+    <p><i> Updated on: 2023-08-26T01:48:11.945423+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

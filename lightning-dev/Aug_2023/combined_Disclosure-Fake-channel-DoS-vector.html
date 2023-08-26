@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Disclosure: Fake channel DoS vector <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2023/004068_Disclosure-Fake-channel-DoS-vector.html">Disclosure: Fake channel DoS vector</a>
+                        <b>Matt Corallo 2023-08-25 19:30:45+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2023/004067_Disclosure-Fake-channel-DoS-vector.html">Disclosure: Fake channel DoS vector</a>
+                        <b>Antoine Riard 2023-08-24 23:33:04+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Aug_2023/004064_Disclosure-Fake-channel-DoS-vector.html">Disclosure: Fake channel DoS vector</a>
+                        <b>Matt Morehouse 2023-08-23 18:54:20+00:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004068.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2023-08-25T19:30:45+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>In an email exchange, Antoine Riard expresses gratitude to Matt for his work and confirms the release number v0.0.114 for the LDK "fake" lightning channels mitigations. Antoine mentions potential Denial of Service (DoS) issues in peer state machine handling and suggests using privilege watchtower and process separation as defense mechanisms. However, Antoine clarifies that these architectures are not yet implemented in the "vanilla" LDK library.Antoine provides some lessons learned regarding the mitigation of DoS issues. He emphasizes the importance of using watchtowers for revoked state punishment and "monitor replica" for second-stage HTLC. Additionally, he highlights the need for a Lightning node to be free of deadlock and other processing contaminating bugs in order to maintain liveliness even if the off-chain state machine coordinator experiences a DoS or crashes. The chain monitoring should still be able to detect revoked states and react accordingly.Antoine also shares his opinion on the prioritization of security and robustness in lightning implementations. He believes that the focus has been more on spec features parity to maintain market share, rather than considering the long-term network sustainability and safety of end-user funds. He suggests that more security auditing of the Lightning Network is needed to address these issues.The email includes a link to a GitHub issue discussing the DoS vector affecting all node implementations. This vector allows an attacker to open numerous fake channels without publishing them on-chain, causing the victim to consume excessive resources. To mitigate this risk, recent releases of various node software versions have included defenses against the DoS. The email provides a list of releases that include these defenses and urges users to update their node software to at least one of the specified versions to protect their funds. A link to more detailed information about the DoS vector is also provided.</p>
+        <hr>
+        <p><i>Updated on: 2023-08-26T01:48:50.082811+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
