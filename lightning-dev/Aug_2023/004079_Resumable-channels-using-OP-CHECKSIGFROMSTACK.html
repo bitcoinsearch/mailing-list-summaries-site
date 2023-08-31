@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Resumable channels using OP_CHECKSIGFROMSTACK</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Thomas Voegtlin 2023-08-30 10:42:32+00:00
+            <br><i>Published on: 2023-08-30T10:42:32+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Aug_2023/combined_Resumable-channels-using-OP-CHECKSIGFROMSTACK.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004079.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the email, SomberNight discusses a proposal to make peer backups symmetric. The proposal involves having a first message that commits to the current state, followed by a second message that reveals the state. However, SomberNight points out a potential issue with this approach. If Alice reveals that she has lost her state, Bob might be tempted to disconnect because he expects that Alice will forget his already sent state commitment.This situation could arise if the user becomes frustrated and uninstalls/re-installs the app or decides to try from another device because the first device failed to restore her wallet. To prevent this, SomberNight suggests that Alice write Bob's state commitment on-chain in an OP_RETURN if Bob does not reveal his state. By doing so, Bob cannot expect Alice to have forgotten his state commitment.The email ends with a signature from Thomas.</p>
+    <hr>
+    <p><i> Updated on: 2023-08-31T01:58:31.475790+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
