@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Compressed Bitcoin Transactions</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Tom Briar 2023-09-05 18:30:42+00:00
+            <br><i>Published on: 2023-09-05T18:30:42+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/bitcoin-dev/Sept_2023/combined_Compressed-Bitcoin-Transactions.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021936.html">Click here to read original discussion on the bitcoin-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>In the email, Tom discusses the current approach in handling lock time in transactions. Currently, if a non-zero lock time is given, the system drops the 16 most significant bits and continues until a valid signature is obtained. However, Tom expresses hesitancy in adding more fields to this process as it can significantly increase decompression time. He mentions that the ideal use case for transaction compression is small high-security transactions, which typically do not require a lock time. Tom suggests considering dropping the grinding of the lock time in favor of grinding the block height instead. This would involve both parties agreeing on a single block height for the transaction, potentially saving several bytes. Tom mentions that he is currently working on adding an ideal transaction specification to the document.Overall, Tom's email raises concerns about the efficiency of the current approach in handling lock time in transactions and proposes an alternative solution that could potentially save space.</p>
+    <hr>
+    <p><i> Updated on: 2023-09-06T01:54:27.106500+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

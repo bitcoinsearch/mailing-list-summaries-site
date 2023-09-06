@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Remotely control your lightning node from your favorite HSM</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Bastien TEINTURIER 2023-09-05 21:26:49+00:00
+            <br><i>Published on: 2023-09-05T21:26:49+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004084.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Bastien has submitted a pull request to the bLIPs repository [1] to document an idea he has been investigating. The idea is to create a simple architecture that allows for securely sending administrative commands to a lightning node from an untrusted machine. This can be done by using a hardware security module (HSM) acting as a whitelisted lightning peer.The architecture utilizes a standard lightning connection as the communication channel and custom lightning messages to send commands. The interesting aspect of this architecture is that it requires minimal changes to the lightning node itself. Bastien mentions that this can be implemented in a custom application running on a Ledger Nano S [2], which is what he has been exploring.Although the bLIP still needs some work on the actual commands and their encoding, Bastien believes that the most significant part is the HSM app. He suggests that implementing this idea would be very useful and volunteers to provide better specifications and review the implementation. Additionally, he proposes that this work could potentially be done under an open-source grant.In conclusion, Bastien's email introduces a concept for securely sending administrative commands to a lightning node using an HSM as a whitelisted lightning peer. He highlights the minimal changes required on the lightning node itself and expresses his willingness to contribute to further development and implementation.</p>
+    <hr>
+    <p><i> Updated on: 2023-09-06T01:57:30.507274+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
