@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Parameters in BIP21 URIs <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2023/021944_Parameters-in-BIP21-URIs.html">Parameters in BIP21 URIs</a>
+                        <b>Lucas Ontivero 2023-09-08 15:07:11+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2023/021940_Parameters-in-BIP21-URIs.html">Parameters in BIP21 URIs</a>
+                        <b>kiminuo 2023-09-08 14:36:16+00:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021944.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+        
+        <p><i>Published on: 2023-09-08T15:07:11+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email discusses the issue of allowing multiple specifications of BIP21 parameters in Bitcoin URI schemes. BIP 21 defines a URI scheme for making Bitcoin payments, enabling users to easily make payments by clicking links on webpages or scanning QR codes. The "bitcoin" URI scheme is registered by Bitcoin wallets to parse BIP21 URIs and pre-fill data in a form for sending bitcoin to a recipient.According to the BIP21 grammar, it is currently allowed to specify URI parameters multiple times. For example, the URI "bitcoin:bc1qd4fxq8y8c7qh76gfnvl7amuhag3z27uw0w9f8p?amount=0.004&label=Kiminuo&message=Donation&amount=1.004" is considered valid, with the 'amount' parameter specified twice. However, Bitcoin Core implements a "last value wins" behavior, meaning that the value specified last will be taken into account instead of the earlier value.While this behavior is implemented in Bitcoin Core, it can potentially lead to confusion for users and developers. In the worst-case scenario, it could be exploited by social engineering attempts to manipulate the behavior of specific wallet software using cleverly crafted BIP21 URIs. Although there is currently no evidence of such exploitation, it remains a concern.The main question raised in the email is whether allowing multiple specifications of BIP21 parameters is useful or harmful. This issue is being discussed on GitHub (<a href="https://github.com/bitcoin/bips/pull/49),">https://github.com/bitcoin/bips/pull/49),</a> and further details can be found in the original email.</p>
+        <hr>
+        <p><i>Updated on: 2023-09-11T01:53:58.823526+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
