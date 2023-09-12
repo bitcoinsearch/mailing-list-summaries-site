@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scaling Lightning With Simple Covenants <span class="combined-summary">[combined summary]</span></h1>
+    <hr class="solid">
+    <br><b>Individual post summaries:</b>
+    
+        <ul>
+            
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2023/004098_Scaling-Lightning-With-Simple-Covenants.html">Scaling Lightning With Simple Covenants</a>
+                        <b>Antoine Riard 2023-09-11 05:27:25+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2023/004097_Scaling-Lightning-With-Simple-Covenants.html">Scaling Lightning With Simple Covenants</a>
+                        <b>Rusty Russell 2023-09-11 02:13:52+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2023/004095_Scaling-Lightning-With-Simple-Covenants.html">Scaling Lightning With Simple Covenants</a>
+                        <b>Anthony Towns 2023-09-11 00:56:40+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/lightning-dev/Sept_2023/004092_Scaling-Lightning-With-Simple-Covenants.html">Scaling Lightning With Simple Covenants</a>
+                        <b>jlspc 2023-09-08 18:54:46+00:00</b>
+                    </li>
+                
+            
+        </ul>
+        
+            <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004098.html">Click here to read the original discussion on the lightning-dev mailing list</a>
+        
+        <p><i>Published on: 2023-09-11T05:27:25+00:00</i></p>
+        <hr>
+        <h3>Summary:</h3>
+        <p>The email discusses the challenge of scaling Lightning channels for casual users and proposes solutions to address this issue. It mentions the trade-off between trust and capital efficiency in scaling Lightning and the potential risk of a "thundering herd" problem. To mitigate this risk, the email suggests a solution where casual users calculate a timeout period based on the number of users and their willingness to pay high fees. By rolling over funds to a new UTXO before the timeout period expires, the number of on-chain transactions can be controlled. However, this approach reduces the capital efficiency of the system.Furthermore, the email explores additional approaches to mitigate the scalability problem, such as peering with a dedicated node or varying the timeout at different layers of the internal tree. These approaches require further exploration and analysis.The email also discusses the use of simple covenants to enable co-ownership of off-chain Lightning channels without complex coordination or signatures. It proposes the use of timeout-trees to allow non-leaf outputs to be spent without meeting covenant conditions after a deadline. This enables casual users to continue using their Lightning channels without putting them on-chain.The email addresses the problem of availability when draining funds from an old timeout-tree to a new one and suggests a variation of the FFO-WF Lightning channel protocol to facilitate the rollover of funds without requiring input from casual users. It also mentions handling HTLCs to ensure smooth rollovers without actions from casual users.Another challenge discussed is the delay in accessing funds on-chain, which can be problematic for paying transaction fees. The email proposes using timeout-trees to provide casual users with immediately-accessible off-chain bitcoin and to rebalance funds between Lightning channels and immediately-accessible bitcoin.In conclusion, the email argues that enabling simple covenants and implementing timeout-trees can greatly improve the scalability of Lightning and make it more widely used for payments. It mentions various protocols and mechanisms to address usability concerns but acknowledges limitations such as the cost of resolving HTLCs on-chain and reliable relay of transaction packages. The email expresses hope that mechanisms like CTV or APO will be added to Bitcoin's consensus rules to allow Lightning to become a widely-used means of payment.</p>
+        <hr>
+        <p><i>Updated on: 2023-09-12T01:55:56.964919+00:00</i></p>
+    
+
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>

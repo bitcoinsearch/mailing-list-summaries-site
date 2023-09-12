@@ -19,6 +19,16 @@
             
                 
                     <li>
+                        <a href="/bitcoin-dev/Sept_2023/021951_Scaling-Lightning-With-Simple-Covenants.html">Scaling Lightning With Simple Covenants</a>
+                        <b>Antoine Riard 2023-09-11 05:27:25+00:00</b>
+                    </li>
+                
+                    <li>
+                        <a href="/bitcoin-dev/Sept_2023/021950_Scaling-Lightning-With-Simple-Covenants.html">Scaling Lightning With Simple Covenants</a>
+                        <b>Rusty Russell 2023-09-11 02:13:52+00:00</b>
+                    </li>
+                
+                    <li>
                         <a href="/bitcoin-dev/Sept_2023/021943_Scaling-Lightning-With-Simple-Covenants.html">Scaling Lightning With Simple Covenants</a>
                         <b>Anthony Towns 2023-09-11 00:56:40+00:00</b>
                     </li>
@@ -31,14 +41,14 @@
             
         </ul>
         
-            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021943.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
+            <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021951.html">Click here to read the original discussion on the bitcoin-dev mailing list</a>
         
-        <p><i>Published on: 2023-09-11T00:56:40+00:00</i></p>
+        <p><i>Published on: 2023-09-11T05:27:25+00:00</i></p>
         <hr>
         <h3>Summary:</h3>
-        <p>The email discusses the challenge of scaling the Lightning Network in a trust-free manner and proposes solutions using covenants and timeout-trees. The author explains that currently, obtaining signatures from a large number of casual users to create Lightning channels is difficult. However, by enabling simple covenants through changes in the consensus rules, a single UTXO can be used to create Lightning channels for millions of casual users without requiring their signatures.The scalability issue lies in providing Lightning channels to casual users because they need to co-own an on-chain UTXO to co-own a Lightning channel. The author suggests that by incorporating mechanisms like CheckTemplateVerify (CTV) or AnyPrevOut (APO) in Bitcoin's consensus rules, this bottleneck can be eliminated. These covenant-based protocols allow for resizing channels off-chain, using the same capital for liquidity and routing payments, charging penalties for old states, and allowing casual users to monitor the blockchain without a watchtower service.To address the problem of forcing casual users to drain their balances to a new timeout-tree before expiry, the author proposes using a variation of the FFO-WF Lightning channel protocol. This allows a dedicated user to facilitate the rollover of the casual user's funds without requiring input from the casual user.In addition to Lightning channels, the author emphasizes the importance of off-chain bitcoin. Timeout-trees can provide casual users with immediately-accessible off-chain bitcoin. Control UTXOs can be used to rollover the casual user's bitcoin from one timeout-tree to the next without requiring any actions from the casual user.By implementing simple covenants and timeout-trees, the author believes that the scalability of Lightning can be greatly improved, making it a widely-used means of payment. They suggest incorporating mechanisms like CTV or APO in Bitcoin's consensus rules to facilitate this. The email also mentions usability properties and limitations of the protocols discussed.</p>
+        <p>The email discusses the tradeoff between trust and capital efficiency in the context of the Lightning Network. It raises concerns about the classification of users as "casual" or "dedicated" and designing protocols accordingly. The author argues that trust assumptions in Lightning are more complex than a simple dichotomy, with various choices and dependencies involved.The proposal introduces different scaling notions to measure the performance of off-chain constructions. These include onboarding scaling, which determines how many users can coexist off-chain, transactional scaling, which defines the number of transfers that can be performed off-chain per on-chain transaction, and user resource scaling, which quantifies the resources a user should mobilize to make a trust-minimized usage of the off-chain construction.The email questions whether the proposal adequately considers all dimensions of scalability and highlights the potential challenges and uncertainties in its design. It mentions the possibility of creating a radixpool with Musig2, but notes the lack of an N-party update mechanism for rebalancing channels internally. The coordination problem of adding or removing users from the group and updating their channels is also identified.Furthermore, the email points out the uncertainty and potential issues with routing funds in a network where intermediate hops can withhold HTLCs until the timeout-tree matures in favor of the dedicated user. It questions the guarantee of immediate accessibility of funds and the need for corrective actions in case of failures or delays.The fault-tolerance of the proposed off-chain construction is highlighted as a significant concern, particularly if one user becomes unresponsive. The email suggests that relying on legal and normal custody policies may be preferable to burdening the UTXO set with potential failures.Another point raised in the email is the increased cost of enforcement in the proposed approach, which could involve multiple transactions instead of just one or two. This raises questions about capital efficiency and how much enforcement is enough.Overall, the email raises important considerations and questions about the tradeoff between trust and scalability in the Lightning Network. It highlights the complexity of designing protocols that cater to different user types and addresses scalability challenges while ensuring trust-minimized usage. The author suggests further exploration of different scaling notions and optimization strategies to improve the performance and fault-tolerance of off-chain constructions.</p>
         <hr>
-        <p><i>Updated on: 2023-09-11T01:54:20.766876+00:00</i></p>
+        <p><i>Updated on: 2023-09-12T01:51:49.223906+00:00</i></p>
     
 
     
