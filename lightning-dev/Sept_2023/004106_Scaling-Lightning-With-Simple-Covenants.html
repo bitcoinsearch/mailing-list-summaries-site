@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Scaling Lightning With Simple Covenants</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> ZmnSCPxj 2023-09-18 04:14:55+00:00
+            <br><i>Published on: 2023-09-18T04:14:55+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2023/combined_Scaling-Lightning-With-Simple-Covenants.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004106.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Based on the email received, the main point discussed is the safety of user `B` creating something without a signature from user `A_i`. It is suggested that if the funding for the project comes solely from user `B`, it may not be safe unless user `A_i` provides a signature. The email mentions that if a specific user `A_i` never contacts user `B`, but still confirms the entire path from the funding transaction output to the `A_i && B` output, then the funds allocated by `B` are locked unless `B` receives a unilateral close signature from `A_i` to spend from the `A_i && B` output.The email emphasizes the need for `A_i` to be online when `B` signs the funding transaction that anchors the entire tree. It also mentions that many people lost funds when implementing `multifundchannel` because they didn't ensure that all counterparties in the same batch of openings had provided unilateral close signatures before broadcasting the funding transaction. Another alternative mentioned is to use a Spilman channel variant, where the leaf itself is infected with a lifetime `(A_i && B) || (B && CLTV)`. In this case, `B` can dedicate the leaf output to a separate transaction that spends from the `(A_i && B)` branch to a plain `A && B` Lightning channel. `B` can fund the tree and when `A_i` comes online and agrees to accept the channel from `B`, `A_i` creates two signatures: one for the transaction spending from `(A_i && B) || (B && CLTV)` to `A && B`, and another for the unilateral close transaction from the above output.Overall, the email discusses the importance of obtaining signatures from `A_i` for the safety of the project and highlights issues related to funding transactions and unilateral close signatures.</p>
+    <hr>
+    <p><i> Updated on: 2023-09-19T01:56:23.179394+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
