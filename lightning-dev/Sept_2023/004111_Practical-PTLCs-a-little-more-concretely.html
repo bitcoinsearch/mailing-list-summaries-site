@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Practical PTLCs, a little more concretely</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Anthony Towns 2023-09-21 01:56:10+00:00
+            <br><i>Published on: 2023-09-21T01:56:10+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+        <a href="/lightning-dev/Sept_2023/combined_Practical-PTLCs-a-little-more-concretely.html"> Combined Summary of all posts in thread </a>
+        </li>
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004111.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>The email discusses the concept of performing Payment Channel Timelocked Contracts (PTLCs) scriptlessly. This can be achieved by using a 2-of-2 MuSig public key and an adaptor signature. The email mentions two approaches to achieve this: via the key path or via the script path.In the key path approach, nonce exchanges are required, leading to extra communication rounds. On the other hand, in the script path approach, the "hash160 equalverify b checksig" part in the script is replaced with "a checksigverify b checksig". Alice provides Bob with an adaptor signature, which Bob completes when claiming the output.The question raised in the email is how to implement the latter approach. The author suggests that it can be done by having Alice perform a "single party musig2" calculation, rather than needing a separate API.Overall, the email discusses the possibility of performing PTLCs scriptlessly using various approaches, and proposes a solution involving a 2-of-2 MuSig public key and an adaptor signature.</p>
+    <hr>
+    <p><i> Updated on: 2023-09-22T01:54:24.549749+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
