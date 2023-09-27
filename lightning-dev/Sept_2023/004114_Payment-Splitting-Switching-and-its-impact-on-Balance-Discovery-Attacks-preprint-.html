@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title>Atom Feed Display</title>
+    <link rel="stylesheet" href="../../archive_styles.css">
+</head>
+
+<body BGCOLOR="#fffffb">
+    
+    <h1>Payment Splitting &amp; Switching and its impact on Balance Discovery Attacks (preprint)</h1>
+    <hr class="solid">
+    
+    <ul>
+        
+        
+            <p><b>Author:</b> Gijs van Dam 2023-09-22 14:53:58+00:00
+            <br><i>Published on: 2023-09-22T14:53:58+00:00</i></p>
+
+        
+        
+
+        
+        
+        <li>
+            
+                <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004114.html">Click here to read original discussion on the lightning-dev mailing list</a>
+            
+        </li>
+
+    </ul>
+
+    <hr>
+    <h3> Summary:</h3>
+    <p>Gijs van Dam begins the email by mentioning their previous discussion on Link MPP over alternative routes. They have developed a proof of concept called Payment Splitting & Switching (PSS) by creating a core-lightning plugin. The plugin works by splitting up a payment into multiple parts, with one part following the original route and using the original onion but committing to an HTLC with a lesser amount. Upon receiving this HTLC, the recipient can forward the payment but will wait for another payment from the sender. The sender then sends this additional payment over an alternative route, contingent on the payment hash of the original payment.The interest in Link MPP and PSS arises from Gijs van Dam's research on the Balance Discovery Attack (BDA), also known as the probing attack. PSS allows for route changes and amount changes without the sender's knowledge, which impacts how an attacker interprets information obtained through a BDA. In an LN simulator using real-world data, deploying PSS resulted in up to a 62% drop in information gain compared to earlier work without PSS. Further details on this research can be found in Gijs van Dam's preprint on the Cryptology ePrint Archive.Gijs van Dam welcomes feedback on their research and would like to hear thoughts on the role PSS could play in mitigating probing and/or jamming. They have also written a set of blog posts introducing the research, which can be found at the provided links. Finally, they mention that PSS may also work with PTLC, but this will be discussed at another time.Overall, the email discusses Gijs van Dam's development of the Payment Splitting & Switching (PSS) plugin, its potential applications in mitigating probing and/or jamming, and the impact of PSS on the Balance Discovery Attack (BDA). They provide links to additional resources for further reading and welcome feedback on their research.</p>
+    <hr>
+    <p><i> Updated on: 2023-09-27T01:57:21.210790+00:00 </i></p>
+    
+    
+
+    <footer>
+        <span style="font-family: Arial, Helvetica, sans-serif;">&#10084;&#65039;</span> <a href="https://chaincode.com" target="_blank" rel="noreferrer" style="text-decoration: none; color: inherit;">Chaincode</a>
+    </footer>
+</body>
+
+</html>
